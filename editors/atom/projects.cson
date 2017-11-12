@@ -1,0 +1,52 @@
+[
+  {
+    title: "~/.zshrc"
+    paths: [
+      "/Users/clay/.dotfiles/shell/.zshrc"
+    ]
+    icon: "icon-zap"
+  }
+  {
+    title: ".dotfiles"
+    group: "GitHub"
+    paths: [
+      "/Users/clay/.dotfiles"
+    ]
+    icon: "icon-repo"
+  }
+  {
+    title: "awesome-sauce"
+    paths: [
+      "/Users/clay/Projects/GitHub/awesome-sauce/readme.md"
+    ]
+    icon: "icon-zap"
+  }
+  {
+    title: "Docs"
+    paths: [
+      "Users/clay/Projects/Docs"
+    ]
+    icon: "icon-markdown"
+  }
+  {
+    title: "$home"
+    paths: [
+      "/Users/clay"
+    ]
+    icon: "icon-home"
+  }
+  {
+    title: "Atom Vscode Syntax"
+    paths: [
+      "/Users/clay/Projects/atom/atom-vscode-syntax"
+    ]
+    icon: "icon-repo"
+  }
+  {
+    title: "Key Ring"
+    paths: [
+      "/Users/clay/Projects/GitHub/KeyRing"
+    ]
+    icon: "icon-key"
+  }
+]

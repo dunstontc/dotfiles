@@ -1,0 +1,80 @@
+# https://github.com/alecthegeek/brewFile/blob/master/Brewfile
+
+# Make sure we’re using the latest Homebrew.
+brew update
+
+# Upgrade any already-installed formulae.
+brew upgrade
+
+brew tap caskroom/cask
+
+brew tap caskroom/versions
+
+brew install ack
+brew install asciinema
+brew install awscli
+brew install bash
+brew install bash-completion2
+brew install ccat
+brew install cheat
+brew install cmake
+brew install coreutils
+brew install elinks
+brew install fpp
+brew install fzf
+brew install git
+brew install gnupg
+brew install gnupg2
+brew install go
+brew install highlight
+brew install hub
+brew install imagemagick
+brew install less
+brew install libgcrypt
+brew install lua
+brew install neomutt/homebrew-neomutt/neomutt
+brew install neovim --HEAD
+brew install notmuch
+brew install openssl
+brew install openssl@1.1
+brew install postgresql
+# brew install python
+brew install python3
+brew install ranger
+brew install readline
+brew install reattach-to-user-namespace
+brew install shared-mime-info
+brew install shellcheck
+brew install sqlite
+brew install tag
+brew install tig
+brew install terminal-notifier
+brew install tmux --HEAD
+brew install tree
+brew install unrar
+brew install wget
+brew install youtube-dl
+brew install zsh
+
+# brew cask install xquartz #Pre-req for some of the brew packages
+brew cask install atom
+brew cask install alfred
+brew cask install bartender
+brew cask install dropbox
+brew cask install emacs
+brew cask install istat-menus
+brew cask install iterm2
+brew cask install firefox
+brew cask install firefoxdeveloperedition
+brew cask install flux
+brew cask install google-chrome
+brew cask install google-chrome-canary
+brew cask install gpgtools
+brew cask install opera
+brew cask install vienna
+brew cask install visual-studio-code
+brew cask install vlc
+
+brew cleanup
+
+brew cask cleanup

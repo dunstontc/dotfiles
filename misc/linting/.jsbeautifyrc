@@ -1,0 +1,58 @@
+{
+    // Documentation: https://github.com/einars/js-beautify/
+    "editorconfig": true,
+    "html": {
+        "brace_style"          : "collapse", // [collapse|expand|end-expand|none] Put braces on the same line as control statements (default), or put braces on own line (Allman / ANSI style), or just put end braces on own line, or attempt to keep them where they are
+        "end_with_newline"     : true,
+        "extra_liners": [
+          // "head",
+          // "body",
+          // "/html"
+        ],
+        "indent_char"          : " ",
+        "indent_handlebars"    : true, // e.g. {{#foo}}, {{/foo}}
+        "indent_inner_html"    : false, // Indent <head> and <body> sections
+        "indent_scripts"       : "keep", // [keep|separate|normal]
+        // "indent_size": 4,
+        "max_preserve_newlines": 10,
+        "preserve_newlines"    : true,
+        "unformatted"          : ["a", "span", "img", "code", "pre", "sub", "sup", "em", "strong", "b", "i", "u", "strike", "big", "small", "pre", "h1", "h2", "h3", "h4", "h5", "h6"],
+        // "wrap_attributes": "auto",
+        // "wrap_attributes_indent_size": 0,
+        "wrap_line_length"     : 0
+    },
+    "css": {
+        "end_with_newline"          : true,
+        "indent_char"               : " ",
+        "indent_size": 4,
+        "newline_between_rules"     : true,
+        "preserve_newlines"         : true,
+        // "selector_separator": " ",
+        "selector_separator_newline": true,
+        "space_around_combinator"   : true
+    },
+    "js": {
+        "brace_style": "collapse", // [collapse|expand|end-expand|none] Put braces on the same line as control statements (default), or put braces on own line (Allman / ANSI style), or just put end braces on own line, or attempt to keep them where they are
+        "break_chained_methods": false, // Break chained method calls across subsequent lines
+        "comma_first": false,
+        "e4x": false, // Pass E4X xml literals through untouched
+        "eol": "\n",
+        "end_with_newline": true,
+        "indent_char": " ",
+        "indent_level": 0,
+        // "indent_size": 2,
+        "indent_with_tabs": false, // verrides `indent_size` and `indent_char`
+        "jslint_happy": false, // If true, then jslint-stricter mode is enforced
+        "keep_array_indentation": true,
+        "keep_function_indentation": true,
+        "max_preserve_newlines": 0,
+        "operator_position": "before-newline",
+        "preserve_newlines": true,
+        "space_after_anon_function": false, // "function()" vs "function ()"
+        "space_before_conditional": true, // "if(true)" vs "if (true)"
+        "space_in_empty_paren": false, // "f()" vs "f( )"
+        "space_in_paren": true, // ie. f( a, b )
+        "unescape_strings": false, // Should printable characters in strings encoded in \xNN notation be unescaped, "example" vs "\x65\x78\x61\x6d\x70\x6c\x65"
+        "wrap_line_length": 0
+    }
+}

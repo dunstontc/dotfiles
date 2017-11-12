@@ -1,0 +1,25 @@
+### Terminal Syntax Highlighting
+
+# Setup: "brew install highlight"
+
+# Pipe Highlight to less
+# export les="| $(which highlight) %s --out-format xterm256 --line-numbers --quiet --force --style navy"
+# export lessopen="| /usr/local/bin/highlight %s --out-format xterm256 --quiet --force --style navy"
+# export less=" -r"
+# alias less='less -m -n -g -i -j --line-numbers --underline-special'
+# alias more='less'
+
+# -O ansi
+
+# Use "highlight" in place of "cat"
+# alias cat="highlight $1 --out-format xterm256  --quiet --force --style solarized-light"
+
+
+hl(){
+  highlight -O ansi $1 | less -r
+}
+
+
+# Setup JSON Syntax Highlighting
+# Copy js.lang to json.lang with the following command
+# cp "$(dirname $(brew list highlight | head -n 1))/share/highlight/langDefs/js.lang" "$(dirname $(brew list highlight | head -n 1))/share/highlight/langDefs/json.lang"

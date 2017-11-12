@@ -1,0 +1,107 @@
+# echo "🏃 .aliases"
+
+# Navigation
+alias .="pwd"
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ~="cd ~"
+alias 1='cd -'
+alias 2='cd -2'
+alias 3='cd -3'
+alias 4='cd -4'
+alias 5='cd -5'
+
+# Directories
+# alias sl="ls"
+# alias l="ls -a"
+alias lsa="ls -A"
+alias la="l -Al"
+alias las='ls -lah'
+alias ..l="cd .. && ls -a"
+alias l="colorls -A --sort-files"
+
+# Abbreviations
+alias c="clear"
+alias e="exit"
+alias n="nvim"
+alias rgr="ranger"
+alias t="tmux"
+alias v="vim"
+alias _="sudo"
+alias please="sudo"
+
+# NPM
+alias npi="npm install"
+alias npmlg="ls /Users/clay/.node_global/bin" # Much faster & gives Process Names as opposed to Package Names
+alias npmD="npm i -D "
+alias npo="npm outdated"
+alias npr="npm run"
+alias npp="npm init -y"
+
+# Tmux
+alias tls="tmux ls"
+alias tmn="tmux new"
+alias tmnn="tmux new -s $1"
+alias tma="tmux a"
+alias tmaa="tmux a -t $1"
+
+# Shortcuts
+alias keyring="nvim ~/Projects/GitHub/KeyRing/keys"
+alias awesome="nvim ~/Projects/GitHub/awesome-sauce/readme.md"
+alias dotread="nvim ~/.dotfiles/readme.md"
+# alias cheat="nvim ~/.dotfiles/misc/docs/neovim.md"
+alias dots="cd ~/.dotfiles"
+alias proj="cd ~/Projects"
+alias dl="cd ~/Downloads"
+
+# Fixes issues with zsh completion:
+function fixzsh() {
+  rm ~/.zcompdump*;
+  rm ~/.antigen/.zcompdump*
+  rm ~/.zplug/zcompdump
+  # rm -rf /usr/local/opt/zplug/zcomp*
+  exec zsh
+}
+
+
+# Reload zsh
+alias zre="source ~/.zshrc"
+
+# Reload bash
+alias bbbash="source ~/.bashrc"
+
+# Configure Neovim
+alias vimcept="nvim ~/.dotfiles/editors/nvim/init.vim"
+
+# Configure tmux
+alias remux="nvim $DOTFILES/config/tmux/.tmux.conf"
+
+# Print each PATH entry on a separate line
+alias path='echo -e ${PATH//:/\\n}'
+
+# Show/hide hidden files in Finder
+alias fshow="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias fhide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+
+# Test for color support
+alias truecolortest="printf \"\x1b[38;2;255;100;0mTRUECOLOR\x1b[0m\n\" echo \"If that's in red, you got true color\" \n"
+
+# Copy cwd to the clipboard
+alias pcd="pwd | pbcopy"
+
+# Get our IP
+alias ips="ifconfig -a | perl -nle\"/(\d+\.\d+\.\d+\.\d+)/ && print $1\""
+
+# Get gpg keys
+alias gitkeys="gpg --list-secret-keys --keyid-format LONG"
+
+# Kill all the tabs in Chrome to free up memory
+# [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
+alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
+
+# Not xterm-italic
+# alias ssh="TERM=xterm-256color ssh"
+
+alias treee="tree -I 'node_modules|bower_components|cache|ignore'"

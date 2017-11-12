@@ -1,0 +1,35 @@
+#   ╔═╗╔╦╗╦╔╦╗╔═╗╦═╗┌─┐┌─┐┌┐┌┌─┐┬┌─┐
+#   ║╣  ║║║ ║ ║ ║╠╦╝│  │ ││││├┤ ││ ┬
+#  o╚═╝═╩╝╩ ╩ ╚═╝╩╚═└─┘└─┘┘└┘└  ┴└─┘
+#
+#  http://editorconfig.org/
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_size = 2
+indent_style = space
+insert_final_newline = true
+max_line_length = 233
+trim_trailing_whitespace = true
+
+[*.md]
+trim_trailing_whitespace = false
+
+[*.{bash,html,js,json,lua,rb,sh}]
+indent_size = 2
+indent_style = space
+
+[*.{c,cs,jar,java,kt,php,pl,py,rs,swift}]
+indent_size = 4
+indent_style = space
+
+[*.go]
+indent_size = 1
+indent_style = tab
+
+
+# [*.{rb,sh,bash,zsh}]
+# indent_size = 4
+# indent_style = space

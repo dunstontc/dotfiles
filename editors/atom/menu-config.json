@@ -1,0 +1,1807 @@
+{
+	"main": {
+		"Atom": {
+			"enabled": true,
+			"children": {
+				"About Atom": {
+					"enabled": true,
+					"children": {}
+				},
+				"View License": {
+					"enabled": true,
+					"children": {}
+				},
+				"Restart and Install Update": {
+					"enabled": true,
+					"children": {}
+				},
+				"Check for Update": {
+					"enabled": true,
+					"children": {}
+				},
+				"Preferences…": {
+					"enabled": true,
+					"children": {}
+				},
+				"Config…": {
+					"enabled": true,
+					"children": {}
+				},
+				"Init Script…": {
+					"enabled": true,
+					"children": {}
+				},
+				"Keymap…": {
+					"enabled": true,
+					"children": {}
+				},
+				"Snippets…": {
+					"enabled": true,
+					"children": {}
+				},
+				"Stylesheet…": {
+					"enabled": true,
+					"children": {}
+				},
+				"Install Shell Commands": {
+					"enabled": true,
+					"children": {}
+				},
+				"Services": {
+					"enabled": true,
+					"children": {}
+				},
+				"Hide Atom": {
+					"enabled": true,
+					"children": {}
+				},
+				"Hide Others": {
+					"enabled": true,
+					"children": {}
+				},
+				"Show All": {
+					"enabled": true,
+					"children": {}
+				},
+				"Quit": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		"File": {
+			"enabled": true,
+			"children": {
+				"New Window": {
+					"enabled": true,
+					"children": {}
+				},
+				"New File": {
+					"enabled": true,
+					"children": {}
+				},
+				"Open…": {
+					"enabled": true,
+					"children": {}
+				},
+				"Add Project Folder…": {
+					"enabled": true,
+					"children": {}
+				},
+				"Reopen Project": {
+					"enabled": true,
+					"children": {
+						"Clear Project History": {
+							"enabled": true,
+							"children": {}
+						}
+					}
+				},
+				"Reopen Last Item": {
+					"enabled": true,
+					"children": {}
+				},
+				"Save": {
+					"enabled": true,
+					"children": {}
+				},
+				"Save As…": {
+					"enabled": true,
+					"children": {}
+				},
+				"Save All": {
+					"enabled": true,
+					"children": {}
+				},
+				"Close Tab": {
+					"enabled": true,
+					"children": {}
+				},
+				"Close Pane": {
+					"enabled": true,
+					"children": {}
+				},
+				"Close Window": {
+					"enabled": true,
+					"children": {}
+				},
+				"Close All Tabs": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		"Edit": {
+			"enabled": true,
+			"children": {
+				"Undo": {
+					"enabled": true,
+					"children": {}
+				},
+				"Redo": {
+					"enabled": true,
+					"children": {}
+				},
+				"Cut": {
+					"enabled": true,
+					"children": {}
+				},
+				"Copy": {
+					"enabled": true,
+					"children": {}
+				},
+				"Copy Path": {
+					"enabled": true,
+					"children": {}
+				},
+				"Paste": {
+					"enabled": true,
+					"children": {}
+				},
+				"Select All": {
+					"enabled": true,
+					"children": {}
+				},
+				"Toggle Comments": {
+					"enabled": true,
+					"children": {}
+				},
+				"Lines": {
+					"enabled": true,
+					"children": {
+						"Indent": {
+							"enabled": true,
+							"children": {}
+						},
+						"Outdent": {
+							"enabled": true,
+							"children": {}
+						},
+						"Auto Indent": {
+							"enabled": true,
+							"children": {}
+						},
+						"Move Line Up": {
+							"enabled": true,
+							"children": {}
+						},
+						"Move Line Down": {
+							"enabled": true,
+							"children": {}
+						},
+						"Duplicate Lines": {
+							"enabled": true,
+							"children": {}
+						},
+						"Delete Line": {
+							"enabled": true,
+							"children": {}
+						},
+						"Join Lines": {
+							"enabled": true,
+							"children": {}
+						}
+					}
+				},
+				"Columns": {
+					"enabled": true,
+					"children": {
+						"Move Selection Left": {
+							"enabled": true,
+							"children": {}
+						},
+						"Move Selection Right": {
+							"enabled": true,
+							"children": {}
+						}
+					}
+				},
+				"Text": {
+					"enabled": true,
+					"children": {
+						"Upper Case": {
+							"enabled": true,
+							"children": {}
+						},
+						"Lower Case": {
+							"enabled": true,
+							"children": {}
+						},
+						"Delete to End of Word": {
+							"enabled": true,
+							"children": {}
+						},
+						"Delete to Previous Word Boundary": {
+							"enabled": true,
+							"children": {}
+						},
+						"Delete to Next Word Boundary": {
+							"enabled": true,
+							"children": {}
+						},
+						"Delete Line": {
+							"enabled": true,
+							"children": {}
+						},
+						"Transpose": {
+							"enabled": true,
+							"children": {}
+						}
+					}
+				},
+				"Folding": {
+					"enabled": true,
+					"children": {
+						"Fold": {
+							"enabled": true,
+							"children": {}
+						},
+						"Unfold": {
+							"enabled": true,
+							"children": {}
+						},
+						"Fold All": {
+							"enabled": true,
+							"children": {}
+						},
+						"Unfold All": {
+							"enabled": true,
+							"children": {}
+						},
+						"Fold Level 1": {
+							"enabled": true,
+							"children": {}
+						},
+						"Fold Level 2": {
+							"enabled": true,
+							"children": {}
+						},
+						"Fold Level 3": {
+							"enabled": true,
+							"children": {}
+						},
+						"Fold Level 4": {
+							"enabled": true,
+							"children": {}
+						},
+						"Fold Level 5": {
+							"enabled": true,
+							"children": {}
+						},
+						"Fold Level 6": {
+							"enabled": true,
+							"children": {}
+						},
+						"Fold Level 7": {
+							"enabled": true,
+							"children": {}
+						},
+						"Fold Level 8": {
+							"enabled": true,
+							"children": {}
+						},
+						"Fold Level 9": {
+							"enabled": true,
+							"children": {}
+						}
+					}
+				},
+				"Reflow Selection": {
+					"enabled": true,
+					"children": {}
+				},
+				"Bookmark": {
+					"enabled": true,
+					"children": {
+						"View All": {
+							"enabled": true,
+							"children": {}
+						},
+						"Toggle Bookmark": {
+							"enabled": true,
+							"children": {}
+						},
+						"Jump to Next Bookmark": {
+							"enabled": true,
+							"children": {}
+						},
+						"Jump to Previous Bookmark": {
+							"enabled": true,
+							"children": {}
+						}
+					}
+				},
+				"Select Encoding": {
+					"enabled": true,
+					"children": {}
+				},
+				"Go to Line": {
+					"enabled": true,
+					"children": {}
+				},
+				"Select Grammar": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		"View": {
+			"enabled": true,
+			"children": {
+				"Toggle Full Screen": {
+					"enabled": true,
+					"children": {}
+				},
+				"Panes": {
+					"enabled": true,
+					"children": {
+						"Split Up": {
+							"enabled": true,
+							"children": {}
+						},
+						"Split Down": {
+							"enabled": true,
+							"children": {}
+						},
+						"Split Left": {
+							"enabled": true,
+							"children": {}
+						},
+						"Split Right": {
+							"enabled": true,
+							"children": {}
+						},
+						"Focus Next Pane": {
+							"enabled": true,
+							"children": {}
+						},
+						"Focus Previous Pane": {
+							"enabled": true,
+							"children": {}
+						},
+						"Focus Pane Above": {
+							"enabled": true,
+							"children": {}
+						},
+						"Focus Pane Below": {
+							"enabled": true,
+							"children": {}
+						},
+						"Focus Pane On Left": {
+							"enabled": true,
+							"children": {}
+						},
+						"Focus Pane On Right": {
+							"enabled": true,
+							"children": {}
+						},
+						"Close Pane": {
+							"enabled": true,
+							"children": {}
+						}
+					}
+				},
+				"Developer": {
+					"enabled": true,
+					"children": {
+						"Open In Dev Mode…": {
+							"enabled": true,
+							"children": {}
+						},
+						"Reload Window": {
+							"enabled": true,
+							"children": {}
+						},
+						"Run Package Specs": {
+							"enabled": true,
+							"children": {}
+						},
+						"Run Benchmarks": {
+							"enabled": true,
+							"children": {}
+						},
+						"Toggle Developer Tools": {
+							"enabled": true,
+							"children": {}
+						}
+					}
+				},
+				"Increase Font Size": {
+					"enabled": true,
+					"children": {}
+				},
+				"Decrease Font Size": {
+					"enabled": true,
+					"children": {}
+				},
+				"Reset Font Size": {
+					"enabled": true,
+					"children": {}
+				},
+				"Toggle Soft Wrap": {
+					"enabled": true,
+					"children": {}
+				},
+				"Toggle Command Palette": {
+					"enabled": true,
+					"children": {}
+				},
+				"Toggle Git Tab": {
+					"enabled": true,
+					"children": {}
+				},
+				"Toggle GitHub Tab": {
+					"enabled": true,
+					"children": {}
+				},
+				"Toggle Tree View": {
+					"enabled": true,
+					"children": {}
+				},
+				"Toggle Tool Bar": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		"Selection": {
+			"enabled": true,
+			"children": {
+				"Add Selection Above": {
+					"enabled": true,
+					"children": {}
+				},
+				"Add Selection Below": {
+					"enabled": true,
+					"children": {}
+				},
+				"Single Selection": {
+					"enabled": true,
+					"children": {}
+				},
+				"Split into Lines": {
+					"enabled": true,
+					"children": {}
+				},
+				"Select to Top": {
+					"enabled": true,
+					"children": {}
+				},
+				"Select to Bottom": {
+					"enabled": true,
+					"children": {}
+				},
+				"Select Line": {
+					"enabled": true,
+					"children": {}
+				},
+				"Select Word": {
+					"enabled": true,
+					"children": {}
+				},
+				"Select to Beginning of Word": {
+					"enabled": true,
+					"children": {}
+				},
+				"Select to Beginning of Line": {
+					"enabled": true,
+					"children": {}
+				},
+				"Select to First Character of Line": {
+					"enabled": true,
+					"children": {}
+				},
+				"Select to End of Word": {
+					"enabled": true,
+					"children": {}
+				},
+				"Select to End of Line": {
+					"enabled": true,
+					"children": {}
+				},
+				"Select Inside Brackets": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		"Find": {
+			"enabled": true,
+			"children": {
+				"Find in Buffer": {
+					"enabled": true,
+					"children": {}
+				},
+				"Replace in Buffer": {
+					"enabled": true,
+					"children": {}
+				},
+				"Select Next": {
+					"enabled": true,
+					"children": {}
+				},
+				"Select All": {
+					"enabled": true,
+					"children": {}
+				},
+				"Toggle Find in Buffer": {
+					"enabled": true,
+					"children": {}
+				},
+				"Find in Project": {
+					"enabled": true,
+					"children": {}
+				},
+				"Toggle Find in Project": {
+					"enabled": true,
+					"children": {}
+				},
+				"Find All": {
+					"enabled": true,
+					"children": {}
+				},
+				"Find Next": {
+					"enabled": true,
+					"children": {}
+				},
+				"Find Previous": {
+					"enabled": true,
+					"children": {}
+				},
+				"Replace Next": {
+					"enabled": true,
+					"children": {}
+				},
+				"Replace All": {
+					"enabled": true,
+					"children": {}
+				},
+				"Clear History": {
+					"enabled": true,
+					"children": {}
+				},
+				"Find Buffer": {
+					"enabled": true,
+					"children": {}
+				},
+				"Find File": {
+					"enabled": true,
+					"children": {}
+				},
+				"Find Modified File": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		"Packages": {
+			"enabled": true,
+			"children": {
+				"Atom Clock": {
+					"enabled": true,
+					"children": {
+						"Toggle clock in status bar": {
+							"enabled": true,
+							"children": {}
+						},
+						"Toggle UTC mode": {
+							"enabled": true,
+							"children": {}
+						}
+					}
+				},
+				"Bracket Matcher": {
+					"enabled": true,
+					"children": {
+						"Go To Matching Bracket": {
+							"enabled": true,
+							"children": {}
+						},
+						"Select Inside Brackets": {
+							"enabled": true,
+							"children": {}
+						},
+						"Remove Brackets From Selection": {
+							"enabled": true,
+							"children": {}
+						},
+						"Close Current Tag": {
+							"enabled": true,
+							"children": {}
+						},
+						"Remove Matching Brackets": {
+							"enabled": true,
+							"children": {}
+						}
+					}
+				},
+				"Command Palette": {
+					"enabled": true,
+					"children": {
+						"Toggle": {
+							"enabled": true,
+							"children": {}
+						}
+					}
+				},
+				"Dev Live Reload": {
+					"enabled": true,
+					"children": {
+						"Reload All Styles": {
+							"enabled": true,
+							"children": {}
+						}
+					}
+				},
+				"Git Diff": {
+					"enabled": true,
+					"children": {
+						"Move to Next Diff": {
+							"enabled": true,
+							"children": {}
+						},
+						"Move to Previous Diff": {
+							"enabled": true,
+							"children": {}
+						},
+						"Toggle Diff List": {
+							"enabled": true,
+							"children": {}
+						}
+					}
+				},
+				"GitHub": {
+					"enabled": true,
+					"children": {
+						"Toggle Git Tab": {
+							"enabled": true,
+							"children": {}
+						},
+						"Toggle GitHub Tab": {
+							"enabled": true,
+							"children": {}
+						}
+					}
+				},
+				"Keybinding Resolver": {
+					"enabled": true,
+					"children": {
+						"Toggle": {
+							"enabled": true,
+							"children": {}
+						}
+					}
+				},
+				"Markdown Preview": {
+					"enabled": true,
+					"children": {
+						"Toggle Preview": {
+							"enabled": true,
+							"children": {}
+						}
+					}
+				},
+				"Open On GitHub": {
+					"enabled": true,
+					"children": {
+						"Blame": {
+							"enabled": true,
+							"children": {}
+						},
+						"Branch Compare": {
+							"enabled": true,
+							"children": {}
+						},
+						"Copy URL": {
+							"enabled": true,
+							"children": {}
+						},
+						"File": {
+							"enabled": true,
+							"children": {}
+						},
+						"File on Master": {
+							"enabled": true,
+							"children": {}
+						},
+						"History": {
+							"enabled": true,
+							"children": {}
+						},
+						"Issues": {
+							"enabled": true,
+							"children": {}
+						},
+						"Repository": {
+							"enabled": true,
+							"children": {}
+						}
+					}
+				},
+				"Package Generator": {
+					"enabled": true,
+					"children": {
+						"Generate Atom Package": {
+							"enabled": true,
+							"children": {}
+						},
+						"Generate Atom Syntax Theme": {
+							"enabled": true,
+							"children": {}
+						}
+					}
+				},
+				"platformio-ide-terminal": {
+					"enabled": true,
+					"children": {
+						"Toggle": {
+							"enabled": true,
+							"children": {}
+						},
+						"Focus": {
+							"enabled": true,
+							"children": {}
+						},
+						"New Terminal": {
+							"enabled": true,
+							"children": {}
+						},
+						"Previous Terminal": {
+							"enabled": true,
+							"children": {}
+						},
+						"Next Terminal": {
+							"enabled": true,
+							"children": {}
+						},
+						"Toggle Fullscreen": {
+							"enabled": true,
+							"children": {}
+						},
+						"Close Terminal": {
+							"enabled": true,
+							"children": {}
+						},
+						"Close All Terminals": {
+							"enabled": true,
+							"children": {}
+						}
+					}
+				},
+				"Project Manager": {
+					"enabled": true,
+					"children": {
+						"List Projects": {
+							"enabled": true,
+							"children": {}
+						},
+						"Save Project": {
+							"enabled": true,
+							"children": {}
+						},
+						"Edit Project": {
+							"enabled": true,
+							"children": {}
+						},
+						"Edit Projects": {
+							"enabled": true,
+							"children": {}
+						},
+						"Update Projects": {
+							"enabled": true,
+							"children": {}
+						}
+					}
+				},
+				"Settings View": {
+					"enabled": true,
+					"children": {
+						"Open": {
+							"enabled": true,
+							"children": {}
+						},
+						"Show Keybindings": {
+							"enabled": true,
+							"children": {}
+						},
+						"Install Packages/Themes": {
+							"enabled": true,
+							"children": {}
+						},
+						"Update Packages/Themes": {
+							"enabled": true,
+							"children": {}
+						},
+						"Manage Packages": {
+							"enabled": true,
+							"children": {}
+						},
+						"Manage Themes": {
+							"enabled": true,
+							"children": {}
+						}
+					}
+				},
+				"Snippets": {
+					"enabled": true,
+					"children": {
+						"Expand": {
+							"enabled": true,
+							"children": {}
+						},
+						"Next Stop": {
+							"enabled": true,
+							"children": {}
+						},
+						"Previous Stop": {
+							"enabled": true,
+							"children": {}
+						},
+						"Available": {
+							"enabled": true,
+							"children": {}
+						}
+					}
+				},
+				"Spell Check": {
+					"enabled": true,
+					"children": {
+						"Toggle": {
+							"enabled": true,
+							"children": {}
+						}
+					}
+				},
+				"Styleguide": {
+					"enabled": true,
+					"children": {
+						"Show": {
+							"enabled": true,
+							"children": {}
+						}
+					}
+				},
+				"Symbols": {
+					"enabled": true,
+					"children": {
+						"File Symbols": {
+							"enabled": true,
+							"children": {}
+						},
+						"Project Symbols": {
+							"enabled": true,
+							"children": {}
+						}
+					}
+				},
+				"Timecop": {
+					"enabled": true,
+					"children": {
+						"Show": {
+							"enabled": true,
+							"children": {}
+						}
+					}
+				},
+				"Todo-Show": {
+					"enabled": true,
+					"children": {
+						"Find in Workspace": {
+							"enabled": true,
+							"children": {}
+						},
+						"Find in Project": {
+							"enabled": true,
+							"children": {}
+						},
+						"Find in Open Files": {
+							"enabled": true,
+							"children": {}
+						},
+						"Find in Active File": {
+							"enabled": true,
+							"children": {}
+						}
+					}
+				},
+				"Tree View": {
+					"enabled": true,
+					"children": {
+						"Focus": {
+							"enabled": true,
+							"children": {}
+						},
+						"Toggle": {
+							"enabled": true,
+							"children": {}
+						},
+						"Reveal Active File": {
+							"enabled": true,
+							"children": {}
+						},
+						"Toggle Tree Side": {
+							"enabled": true,
+							"children": {}
+						}
+					}
+				}
+			}
+		},
+		"Window": {
+			"enabled": false,
+			"children": {
+				"Minimize": {
+					"enabled": true,
+					"children": {}
+				},
+				"Zoom": {
+					"enabled": true,
+					"children": {}
+				},
+				"Bring All to Front": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		"Help": {
+			"enabled": false,
+			"children": {
+				"Terms of Use": {
+					"enabled": true,
+					"children": {}
+				},
+				"Documentation": {
+					"enabled": true,
+					"children": {}
+				},
+				"Frequently Asked Questions": {
+					"enabled": true,
+					"children": {}
+				},
+				"Community Discussions": {
+					"enabled": true,
+					"children": {}
+				},
+				"Report Issue": {
+					"enabled": true,
+					"children": {}
+				},
+				"Search Issues": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		}
+	},
+	"context": {
+		"atom-workspace": {
+			"enabled": true,
+			"children": {
+				"Inspect Element": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		"atom-text-editor, .overlayer": {
+			"enabled": true,
+			"children": {
+				"Undo": {
+					"enabled": true,
+					"children": {}
+				},
+				"Redo": {
+					"enabled": true,
+					"children": {}
+				},
+				"Cut": {
+					"enabled": true,
+					"children": {}
+				},
+				"Copy": {
+					"enabled": true,
+					"children": {}
+				},
+				"Paste": {
+					"enabled": true,
+					"children": {}
+				},
+				"Delete": {
+					"enabled": true,
+					"children": {}
+				},
+				"Select All": {
+					"enabled": true,
+					"children": {}
+				},
+				"Split Up": {
+					"enabled": false,
+					"children": {}
+				},
+				"Split Down": {
+					"enabled": false,
+					"children": {}
+				},
+				"Split Left": {
+					"enabled": false,
+					"children": {}
+				},
+				"Split Right": {
+					"enabled": false,
+					"children": {}
+				},
+				"Close Pane": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		"atom-pane": {
+			"enabled": true,
+			"children": {
+				"Split Up": {
+					"enabled": false,
+					"children": {}
+				},
+				"Split Down": {
+					"enabled": false,
+					"children": {}
+				},
+				"Split Left": {
+					"enabled": false,
+					"children": {}
+				},
+				"Split Right": {
+					"enabled": false,
+					"children": {}
+				},
+				"Close Pane": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		"atom-text-editor:not([mini])": {
+			"enabled": true,
+			"children": {
+				"Change Encoding": {
+					"enabled": true,
+					"children": {}
+				},
+				"Correct Spelling": {
+					"enabled": true,
+					"children": {}
+				},
+				"Go to Declaration": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		".tree-view li.directory": {
+			"enabled": true,
+			"children": {
+				"Search in Directory": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		".path-details.list-item": {
+			"enabled": true,
+			"children": {
+				"Copy Path": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		".github-FilePatchListView-item": {
+			"enabled": true,
+			"children": {
+				"Open File": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		".github-FilePatchView": {
+			"enabled": true,
+			"children": {
+				"Open File": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		".github-FilePatchView.is-staged": {
+			"enabled": true,
+			"children": {
+				"Unstage Selection": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		".github-FilePatchView.is-unstaged": {
+			"enabled": true,
+			"children": {
+				"Stage Selection": {
+					"enabled": true,
+					"children": {}
+				},
+				"Discard Selection": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		".github-DotComMarkdownHtml .issue-link": {
+			"enabled": true,
+			"children": {
+				"Open in New Tab": {
+					"enabled": true,
+					"children": {}
+				},
+				"Open in This Tab": {
+					"enabled": true,
+					"children": {}
+				},
+				"Open in Browser": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		".github-UnstagedChanges .github-StagingView-header": {
+			"enabled": true,
+			"children": {
+				"Stage All Changes": {
+					"enabled": true,
+					"children": {}
+				},
+				"Discard All Changes": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		".github-StagedChanges .github-StagingView-header": {
+			"enabled": true,
+			"children": {
+				"Unstage All Changes": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		".github-CommitView": {
+			"enabled": true,
+			"children": {
+				"Toggle Expanded Commit Message Editor": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		"atom-text-editor": {
+			"enabled": true,
+			"children": {
+				"View Unstaged Changes": {
+					"enabled": true,
+					"children": {}
+				},
+				"View Staged Changes": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		".overlayer": {
+			"enabled": true,
+			"children": {
+				"Change Grammar": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		".image-view": {
+			"enabled": true,
+			"children": {
+				"Reload Image": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		".markdown-preview": {
+			"enabled": true,
+			"children": {
+				"Copy As HTML": {
+					"enabled": true,
+					"children": {}
+				},
+				"Save As HTML…": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		".tree-view .file .name[data-name$=\\.markdown]": {
+			"enabled": true,
+			"children": {
+				"Markdown Preview": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		".tree-view .file .name[data-name$=\\.md]": {
+			"enabled": true,
+			"children": {
+				"Markdown Preview": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		".tree-view .file .name[data-name$=\\.mdown]": {
+			"enabled": true,
+			"children": {
+				"Markdown Preview": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		".tree-view .file .name[data-name$=\\.mkd]": {
+			"enabled": true,
+			"children": {
+				"Markdown Preview": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		".tree-view .file .name[data-name$=\\.mkdown]": {
+			"enabled": true,
+			"children": {
+				"Markdown Preview": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		".tree-view .file .name[data-name$=\\.ron]": {
+			"enabled": true,
+			"children": {
+				"Markdown Preview": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		".tree-view .file .name[data-name$=\\.txt]": {
+			"enabled": true,
+			"children": {
+				"Markdown Preview": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		".tab": {
+			"enabled": true,
+			"children": {
+				"Close Tab": {
+					"enabled": true,
+					"children": {}
+				},
+				"Close Other Tabs": {
+					"enabled": true,
+					"children": {}
+				},
+				"Close Tabs to the Right": {
+					"enabled": true,
+					"children": {}
+				},
+				"Close Tabs to the Left": {
+					"enabled": true,
+					"children": {}
+				},
+				"Close Saved Tabs": {
+					"enabled": true,
+					"children": {}
+				},
+				"Close All Tabs": {
+					"enabled": true,
+					"children": {}
+				},
+				"Split Up": {
+					"enabled": false,
+					"children": {}
+				},
+				"Split Down": {
+					"enabled": false,
+					"children": {}
+				},
+				"Split Left": {
+					"enabled": false,
+					"children": {}
+				},
+				"Split Right": {
+					"enabled": false,
+					"children": {}
+				}
+			}
+		},
+		".tab.texteditor": {
+			"enabled": true,
+			"children": {
+				"Open In New Window": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		".tab.pending-tab": {
+			"enabled": true,
+			"children": {
+				"Keep Pending Tab": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		".tab-bar": {
+			"enabled": true,
+			"children": {
+				"Reopen Closed Tab": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		".tree-view .full-menu": {
+			"enabled": true,
+			"children": {
+				"New File": {
+					"enabled": true,
+					"children": {}
+				},
+				"New Folder": {
+					"enabled": true,
+					"children": {}
+				},
+				"Rename": {
+					"enabled": true,
+					"children": {}
+				},
+				"Duplicate": {
+					"enabled": true,
+					"children": {}
+				},
+				"Delete": {
+					"enabled": true,
+					"children": {}
+				},
+				"Copy": {
+					"enabled": true,
+					"children": {}
+				},
+				"Cut": {
+					"enabled": true,
+					"children": {}
+				},
+				"Paste": {
+					"enabled": true,
+					"children": {}
+				},
+				"Add Project Folder": {
+					"enabled": true,
+					"children": {}
+				},
+				"Copy Full Path": {
+					"enabled": true,
+					"children": {}
+				},
+				"Copy Project Path": {
+					"enabled": false,
+					"children": {}
+				},
+				"Open In New Window": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		".tree-view .full-menu [is=\"tree-view-file\"]": {
+			"enabled": true,
+			"children": {
+				"Split Up": {
+					"enabled": false,
+					"children": {}
+				},
+				"Split Down": {
+					"enabled": false,
+					"children": {}
+				},
+				"Split Left": {
+					"enabled": false,
+					"children": {}
+				},
+				"Split Right": {
+					"enabled": false,
+					"children": {}
+				}
+			}
+		},
+		".tree-view .full-menu .project-root > .header": {
+			"enabled": true,
+			"children": {
+				"New File": {
+					"enabled": true,
+					"children": {}
+				},
+				"New Folder": {
+					"enabled": true,
+					"children": {}
+				},
+				"Rename": {
+					"enabled": true,
+					"children": {}
+				},
+				"Duplicate": {
+					"enabled": true,
+					"children": {}
+				},
+				"Delete": {
+					"enabled": true,
+					"children": {}
+				},
+				"Copy": {
+					"enabled": true,
+					"children": {}
+				},
+				"Cut": {
+					"enabled": true,
+					"children": {}
+				},
+				"Paste": {
+					"enabled": true,
+					"children": {}
+				},
+				"Add Project Folder": {
+					"enabled": true,
+					"children": {}
+				},
+				"Remove Project Folder": {
+					"enabled": true,
+					"children": {}
+				},
+				"Copy Full Path": {
+					"enabled": true,
+					"children": {}
+				},
+				"Copy Project Path": {
+					"enabled": true,
+					"children": {}
+				},
+				"Open In New Window": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		".platform-darwin .tree-view .full-menu": {
+			"enabled": true,
+			"children": {
+				"Show in Finder": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		".platform-win32 .tree-view .full-menu": {
+			"enabled": true,
+			"children": {
+				"Show in Explorer": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		".platform-linux .tree-view .full-menu": {
+			"enabled": true,
+			"children": {
+				"Show in File Manager": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		".tree-view .multi-select": {
+			"enabled": true,
+			"children": {
+				"Delete": {
+					"enabled": true,
+					"children": {}
+				},
+				"Copy": {
+					"enabled": true,
+					"children": {}
+				},
+				"Cut": {
+					"enabled": true,
+					"children": {}
+				},
+				"Paste": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		"atom-pane[data-active-item-path] .item-views": {
+			"enabled": true,
+			"children": {
+				"Reveal in Tree View": {
+					"enabled": false,
+					"children": {}
+				}
+			}
+		},
+		"atom-pane[data-active-item-path] .tab.active": {
+			"enabled": true,
+			"children": {
+				"Rename": {
+					"enabled": true,
+					"children": {}
+				},
+				"Reveal in Tree View": {
+					"enabled": false,
+					"children": {}
+				}
+			}
+		},
+		".platform-darwin atom-pane[data-active-item-path] .tab.active": {
+			"enabled": true,
+			"children": {
+				"Show In Finder": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		".platform-win32 atom-pane[data-active-item-path] .tab.active": {
+			"enabled": true,
+			"children": {
+				"Show In Explorer": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		".platform-linux atom-pane[data-active-item-path] .tab.active": {
+			"enabled": true,
+			"children": {
+				"Show In File Manager": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		".platform-darwin atom-text-editor:not([mini])": {
+			"enabled": true,
+			"children": {
+				"Show In Finder": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		".platform-win32 atom-text-editor:not([mini])": {
+			"enabled": true,
+			"children": {
+				"Show In Explorer": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		".platform-linux atom-text-editor:not([mini])": {
+			"enabled": true,
+			"children": {
+				"Show In File Manager": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		".tool-bar": {
+			"enabled": true,
+			"children": {
+				"Edit Tool Bar": {
+					"enabled": false,
+					"children": {}
+				},
+				"&Hide Tool Bar": {
+					"enabled": false,
+					"children": {}
+				},
+				"&Position": {
+					"enabled": false,
+					"children": {
+						"Top": {
+							"enabled": true,
+							"children": {}
+						},
+						"Right": {
+							"enabled": true,
+							"children": {}
+						},
+						"Bottom": {
+							"enabled": true,
+							"children": {}
+						},
+						"Left": {
+							"enabled": true,
+							"children": {}
+						}
+					}
+				}
+			}
+		},
+		".platformio-ide-terminal .pio-terminal-status-icon": {
+			"enabled": true,
+			"children": {
+				"Red": {
+					"enabled": true,
+					"children": {}
+				},
+				"Orange": {
+					"enabled": true,
+					"children": {}
+				},
+				"Yellow": {
+					"enabled": true,
+					"children": {}
+				},
+				"Green": {
+					"enabled": true,
+					"children": {}
+				},
+				"Blue": {
+					"enabled": true,
+					"children": {}
+				},
+				"Purple": {
+					"enabled": true,
+					"children": {}
+				},
+				"Pink": {
+					"enabled": true,
+					"children": {}
+				},
+				"Cyan": {
+					"enabled": true,
+					"children": {}
+				},
+				"Magenta": {
+					"enabled": true,
+					"children": {}
+				},
+				"Default": {
+					"enabled": true,
+					"children": {}
+				},
+				"Hide": {
+					"enabled": true,
+					"children": {}
+				},
+				"Rename": {
+					"enabled": true,
+					"children": {}
+				},
+				"Close": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		".platformio-ide-terminal .terminal": {
+			"enabled": true,
+			"children": {
+				"Copy": {
+					"enabled": true,
+					"children": {}
+				},
+				"Paste": {
+					"enabled": true,
+					"children": {}
+				},
+				"Hide": {
+					"enabled": true,
+					"children": {}
+				},
+				"Close": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		".show-todo-preview": {
+			"enabled": true,
+			"children": {
+				"Save As Text…": {
+					"enabled": true,
+					"children": {}
+				},
+				"Refresh Todos": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		".github-UnstagedChanges .github-FilePatchListView": {
+			"enabled": true,
+			"children": {
+				"Stage": {
+					"enabled": true,
+					"children": {}
+				},
+				"Discard Changes": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		".github-StagedChanges .github-FilePatchListView": {
+			"enabled": true,
+			"children": {
+				"Unstage": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		},
+		".github-MergeConflictPaths .github-FilePatchListView": {
+			"enabled": true,
+			"children": {
+				"Stage": {
+					"enabled": true,
+					"children": {}
+				},
+				"Resolve File As Ours": {
+					"enabled": true,
+					"children": {}
+				},
+				"Resolve File As Theirs": {
+					"enabled": true,
+					"children": {}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,78 @@
+{
+    "bold": {
+      "prefix": "bold",
+      "body": "**$1**$0",
+      "rightLabelHTML": "<span>&nbsp; Make things bold </span>",
+      "description": "Make things bold"
+    },
+    "italic": {
+      "prefix": "italic",
+      "body": "*$1*$0",
+      "rightLabelHTML": "<span>&nbsp; Make things italic </span>",
+      "description": " Make things italic "
+    },
+    "strike": {
+      "prefix": "strike",
+      "body": "~~$1~~$0",
+      "rightLabelHTML": "<span>&nbsp; Strike things out</span>",
+      "description": "Strike things out"
+    },
+    "underline": {
+      "prefix": "underline",
+      "body": "__$1__$0",
+      "rightLabelHTML": "<span>&nbsp; Underline things out</span>",
+      "description": "Underline things"
+    },
+    "link": {
+      "prefix": "link",
+      "body": "[$1]($2)$0",
+      "description": "Insert a link"
+    },
+    "image": {
+      "prefix": "image",
+      "body": "[![${1:alt}](${2:img src})](${3:link})$0",
+      "description": "Insert an image as a link"
+    },
+    "Markdown link w/ info": {
+      "prefix": "info link",
+      "body": "- [$1]($2) \n    - $0"
+    },
+    "Markdown code block": {
+      "prefix": "code block",
+      "body": "```$1\n$0\n```"
+    },
+    "Line Break": {
+      "prefix": "br",
+      "body": "<br/>",
+      "rightLabelHTML": "<span> &lt;br/&gt; </span>"
+    },
+    "Definition": {
+      "prefix": "definition",
+      "body": "__${1:Term}__ &nbsp;-&nbsp; ${0:Definition}",
+      "rightLabelHTML": "<span> &nbsp;<strong>Term</strong> - Definition </span>"
+    },
+    "h1": {
+      "prefix": "h1",
+      "body": "# $0"
+    },
+    "h2": {
+      "prefix": "h2",
+      "body": "## $0"
+    },
+    "h3": {
+      "prefix": "h3",
+      "body": "### $0"
+    },
+    "h4": {
+      "prefix": "h4",
+      "body": "#### $0"
+    },
+    "h5": {
+      "prefix": "h5",
+      "body": "##### $0"
+    },
+    "h6": {
+      "prefix": "h6",
+      "body": "###### $0"
+    }
+  }

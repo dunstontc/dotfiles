@@ -1,0 +1,188 @@
+"*":
+  "atom-beautify":
+    general:
+      _analyticsUserId: "d0604a4f-b56b-497e-8134-8098ab3b06a2"
+  "atom-clock":
+    dateFormat: "h:mm a"
+  "atom-easy-jsdoc":
+    beta: true
+    useReturns: true
+  core:
+    audioBeep: false
+    automaticallyUpdate: false
+    closeDeletedFileTabs: true
+    customFileTypes:
+      "source.shell": [
+        "aliases"
+        "conf"
+        "env"
+        "exports"
+        "functions"
+        "highlight"
+        "inputrc"
+        "liquidpromptrc"
+        "local"
+        "macos"
+        "npmrc"
+        "npmignore"
+        "path"
+        "profile"
+        "pylintrc"
+        "textlintrc"
+      ]
+      "source.viml": [
+        "viminfo"
+        "snippets"
+        "snip"
+      ]
+      "text.manpage": [
+        "man"
+        "manpage"
+      ]
+    disabledPackages: [
+      "language-gfm"
+      "atom-ternjs"
+      "autohide-tree-view"
+      "git-plus"
+      "editor-settings"
+      "editor-stats"
+      "emmet-snippets-compatibility"
+      "markdown-writer"
+      "color-picker"
+      "minimap"
+      "tidy-markdown"
+      "autosave"
+      "wrap-guide"
+      "whitespace"
+      "welcome"
+      "block-cursor"
+      "background-tips"
+      "flex-tool-bar"
+      "tool-bar"
+      "emmet"
+      "tree-view-autoresize"
+    ]
+    excludeVcsIgnoredPaths: false
+    ignoredNames: [
+      ".git"
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "._*"
+      "Thumbs.db"
+      "desktop.ini"
+      "Icon?"
+      "*.pyc"
+    ]
+    openEmptyEditorOnStart: false
+    packagesWithKeymapsDisabled: [
+      "emmet"
+      "tree-view"
+      "platformio-ide-terminal"
+      "fuzzy-theme-switcher"
+    ]
+    projectHome: "/Users/ClayDunston/Projects/atom/"
+    reopenProjectMenuCount: 5
+    telemetryConsent: "limited"
+    themes: [
+      "one-dark-ui"
+      "dark-plus-syntax"
+    ]
+    titleBar: "custom"
+  "dark-plus-syntax": {}
+  editor:
+    fontSize: 13
+    preferredLineLength: 100000000000
+    scrollPastEnd: true
+    scrollSensitivity: 75
+  "exception-reporting":
+    userId: "203b703e-f085-4a60-82c1-775b13bb5428"
+  "file-icons": {}
+  "flex-tool-bar": {}
+  "language-markdown":
+    indentListItems: false
+  "line-ending-selector":
+    defaultLineEnding: "LF"
+  "linter-ui-default":
+    panelHeight: 69
+  pigments:
+    extendAutocompleteToColorValue: true
+    extendAutocompleteToVariables: true
+    extendedSearchNames: [
+      "**/*.css"
+      "**/*.less"
+      "**/*.sass"
+      "**/*.scss"
+    ]
+    filetypesForColorWords: [
+      "css"
+      "less"
+      "styl"
+      "stylus"
+      "sass"
+      "scss"
+      "vim"
+    ]
+    notifyReloads: false
+    sourceNames: [
+      "**/*.css"
+      "**/*.styl"
+      "**/*.stylus"
+      "**/*.less"
+      "**/*.sass"
+      "**/*.scss"
+      "**/*.vim"
+    ]
+  "platformio-ide-terminal":
+    ansiColors:
+      normal:
+        black: "#282c34"
+        blue: "#61afef"
+        cyan: "#56b6c2"
+        green: "#98c379"
+        magenta: "#c678dd"
+        red: "#e06c75"
+        white: "#abb2bf"
+        yellow: "#e5c07b"
+      zBright:
+        brightBlack: "#3e4452"
+        brightBlue: "#61afef"
+        brightCyan: "#56b6c2"
+        brightGreen: "#98c379"
+        brightMagenta: "#c678dd"
+        brightRed: "#be5046"
+        brightWhite: "#5c6370"
+        brightYellow: "#e5c07b"
+    iconColors:
+      blue: "#61afef"
+      cyan: "#56b6c2"
+      green: "#98c379"
+      magenta: "#c678dd"
+      orange: "#d19a66"
+      red: "#be5046"
+      yellow: "#e5c07b"
+    style:
+      fontFamily: "SpaceMono Nerd Font Mono"
+      theme: "one-dark"
+    toggles:
+      cursorBlink: false
+  "project-manager":
+    alwaysOpenInSameWindow: true
+  "todo-show":
+    saveOutputAs: "Table"
+  "tool-bar":
+    position: "Left"
+  "tree-view":
+    hideIgnoredNames: true
+  "tree-view-autoresize":
+    animationMilliseconds: 100
+    delayMilliseconds: 50
+  wakatime:
+    apikey: "Saved in your ~/.wakatime.cfg file"
+    showStatusBarIcon: false
+  welcome:
+    showOnStartup: false
+".md.text":
+  editor:
+    softWrap: false
+    trimTrailingWhitespace: false

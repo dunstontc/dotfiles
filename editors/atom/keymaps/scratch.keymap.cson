@@ -1,0 +1,73 @@
+# # Your keymap
+# #
+# # Atom keymaps work similarly to style sheets. Just as style sheets use
+# # selectors to apply styles to elements, Atom keymaps use selectors to associate
+# # keystrokes with events in specific contexts.
+# # Unlike style sheets however, each selector can only be declared once.
+# #
+# # You can find more information about keymaps in these guides:
+# # * http://flight-manual.atom.io/using-atom/sections/basic-customization/#_customizing_keybindings
+# # * http://flight-manual.atom.io/behind-atom/sections/keymaps-in-depth/
+# #
+# # See the Debugging Guide for more information:
+# # * http://flight-manual.atom.io/hacking-atom/sections/debugging/#check-the-keybindings
+# #
+# # This file uses CoffeeScript Object Notation (CSON).
+# # If you are unfamiliar with CSON, you can read more about it in the Atom Flight Manual:
+# # http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
+# # ==========================================================================================================================
+# # 'atom-text-editor':
+
+
+# '.editor:not([mini])':
+
+#     # select-line
+#     'cmd-I': 'editor:select-line'
+#     # fold-selection
+#     'cmd-shift-[': 'editor:fold-selection'
+#     # go-to-matching-bracket
+#     # select-inside-brackets
+
+#     'ctrl-[': 'term2:open-split-left'
+#     'ctrl-]': 'term2:open-split-right'
+
+# 'atom-workspace':
+#     'cmd-r': '	window:reload'
+#     'ctrl-shift-T': 'todo-show:find-in-workspace'
+
+# # ==========================================================================================================================
+
+# # 'atom-text-editor[data-grammar~="source"]':
+#     # 'ctrl-M': 'source-preview:toggle'
+# # # useful keybindings and overrides
+# # '.editor:not([mini])':
+# #     # duplicate-lines
+# #         'alt-shift-down': 'editor:duplicate-lines'
+# #     # select-word
+# #         'alt-shift-W': 'editor:select-word'
+# #     # select-line
+# #         'cmd-I': 'editor:select-line'
+# #     # fold-selection
+# #         'cmd-shift-[': 'editor:fold-selection'
+# #     # go-to-matching-bracket
+# #         'cmd-shift-b': 'bracket-matcher:go-to-matching-bracket'
+# #     # select-inside-brackets
+# #         'cmd-|': 'bracket-matcher:select-inside-brackets'
+# #     # beautify: re-indent
+# #         # 'cmd-{': 'atom-beautify:beautify-editor'
+# #         # 'cmd-}': 'atom-beautify:beautify-editor'
+# #     # markdown-preview
+# #         'cmd-shift-v': 'markdown-preview:toggle'
+# #     # term2 open console
+# #         # 'ctrl-`': 'term2:open'
+# #         'ctrl-[': 'term2:open-split-left'
+# #         'ctrl-]': 'term2:open-split-right'
+# #     #Project Manager
+# #         # 'cmd-ctrl-p':
+# #     #beautify
+# #         #'alt-shift-f':''
+# #     # new command line
+# # 'atom-workspace':
+# #     'cmd-r': '	window:reload'
+# #     'ctrl-shift-T': 'todo-show:find-in-workspace'
+# # # 'ctrl-`': 'platformio-ide-terminal:new'

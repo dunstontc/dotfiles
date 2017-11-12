@@ -1,0 +1,84 @@
+@import 'ui-variables';
+
+atom-text-editor {
+    * {
+          font-variant-ligatures: normal;
+          // (GitHub Flavored FontFamily)
+          // font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace
+          // font-family: 'Noto Mono';
+          // font-family: 'Operator Mono';
+          font-family: 'Monaco';
+          // font-family: 'FuraCode Nerd Font Mono';
+          // font-family: 'SpaceMono Nerd Font';
+          // font-family: 'FantasqueSansMono Nerd Font';
+          // font-family: 'mononoki Nerd Font Mono';
+          // font-family: 'CodeNewRoman Nerd Font';
+
+    }
+
+    .wrap-guide { visibility: hidden; }
+
+    .platformio-ide-terminal .xterm {
+        background-color: black;
+        ::selection { background-color: lightgrey; }
+    }
+
+    &.editor {
+        .cursors.blink-off .cursor { opacity: 1; }
+    }
+}
+
+
+status-bar {
+    .atom-clock { color: #569CD6; }
+
+    .cursor-position.inline-block a,
+    .encoding-status.inline-block a,
+    .grammar-status.inline-block a,
+    .busy.inline-block span,
+    .line-ending-tile.inline-block,
+    span.current-size { color: #505050; }
+
+
+    .encoding-status.inline-block a,
+    .line-ending-tile.inline-block,
+    .icon.icon-squirrel.inline-block { display: none; }
+    .busy {}
+}
+
+// atom-text-editor, atom-text-editor.editor {
+//     .cursor {
+//       // transition: 88ms ease-in-out;
+//         // transition: opacity 1000ms ease-in-out;
+//         transition: opacity 1s ease-in-out;
+//     }
+// }
+atom-text-editor {
+
+  .syntax--json {
+      .syntax--invalid.syntax--illegal.syntax--expected-array-separator {
+          background-color: transparent;
+    }
+  }
+
+  .syntax--md {
+      // &.syntax--link .syntax--punctuation { color: #606060; }
+  }
+
+  // .syntax--meta.syntax--brace.syntax--square.syntax--coffee,
+  // .syntax--meta.syntax--brace.syntax--curly.syntax--coffee { color: #606060; }
+  .syntax--comment.syntax--line.syntax--number-sign,
+  .syntax--comment.syntax--line.syntax--double-slash,
+  .syntax--comment.syntax--punctuation.syntax--definition {
+      // color: #606060;
+  }
+
+  .syntax--css.syntax--punctuation {
+      &.syntax--section.syntax--property-list.syntax--end.syntax--bracket.syntax--curly,
+      &.syntax--section.syntax--property-list.syntax--begin.syntax--bracket.syntax--curly,
+      &.syntax--separator.syntax--list.syntax--comma,
+      &.syntax--terminator.syntax--rule {
+          // color: #606060;
+      }
+  }
+}

@@ -1,0 +1,29 @@
+'atom-workspace':
+    'cmd-shift-r': 'window:reload'
+
+
+'atom-workspace atom-text-editor:not([mini])':
+    'shift-enter': 'emmet:expand-abbreviation-with-tab'
+    # 'ctrl-tab': 'snippets:next-tab-stop'
+    # 'ctrl-shift-tab': 'snippets:previous-tab-stop'
+    'alt-up': 'editor:move-line-up'
+    'alt-down': 'editor:move-line-down'
+    'cmd-i': 'editor:select-word'
+    'cmd-shift-i': 'editor:select-line' # TODO: + core:select-left
+    'alt-shift-down': 'editor:duplicate-lines'
+    'alt-shift-up': 'editor:duplicate-lines'
+    'alt-cmd-down': 'editor:add-selection-below'
+    'alt-cmd-up': 'editor:add-selection-above'
+    'cmd-shift-v': 'markdown-preview:toggle'
+    'cmd-ctrl-p': 'editor:log-cursor-scope'
+        # go-to-matching-bracket (emmet)
+        # select-inside-brackets (emmet)
+    'cmd-b': 'tree-view:toggle'
+    'ctrl-space': 'snippets:available'
+
+# 'atom-text-editor[data-grammar~="text md"]:not([mini])':
+    # 'cmd-shift-v': 'markdown-preview:toggle'
+# language-specific Tab triggers
+# you can add more triggers by changing `grammar` attribute values
+# 'atom-text-editor[data-grammar="text html basic"]:not([mini]), atom-text-editor[data-grammar~="erb"]:not([mini]), atom-text-editor[data-grammar~="jade"]:not([mini]), atom-text-editor[data-grammar~="css"]:not([mini]), atom-text-editor[data-grammar~="stylus"]:not([mini]), atom-text-editor[data-grammar~="sass"]:not([mini]), atom-text-editor[data-grammar~="scss"]:not([mini]), atom-text-editor[data-grammar~="markdown"]:not([mini]), atom-text-editor[data-grammar~="md"]:not([mini])' :
+#     'tab': 'emmet:expand-abbreviation-with-tab'

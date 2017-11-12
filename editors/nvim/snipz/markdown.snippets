@@ -1,0 +1,66 @@
+    priority -50
+
+###########################
+# sections and paragraphs #
+###########################
+
+snippet h1 "section" b
+# ${1:section name} #
+$0
+endsnippet
+
+snippet h2 "sub section" b
+## ${1:section name} ##
+$0
+endsnippet
+
+snippet h3 "subsub section" b
+### ${1:section name} ###
+$0
+endsnippet
+
+snippet h4 "paragraph" b
+#### ${1:paragraph name} ####
+$0
+endsnippet
+
+snippet h5 "paragraph" b
+##### ${1:paragraph name} #####
+$0
+endsnippet
+
+################
+# common stuff #
+################
+
+snippet bold "be bold"
+**$1** $0
+endsnippet
+
+snippet italic "make things italic"
+*$1* $0
+endsnippet
+
+snippet strike "strike out text"
+~~$1~~$0
+endsnippet
+
+snippet link "link"
+[${2:title}](${1:www.url.com})$0
+endsnippet
+
+snippet lynk "link"
+[${1:2ext}](${3:http://${2:www.url.com}})$0
+endsnippet
+
+snippet img "image"
+![${1:title}](${2:link})$0
+endsnippet
+
+snippet block "a block of code" b
+\`\`\`${1:language}
+$0
+\`\`\`
+endsnippet
+
+# vim:ft=snippets:

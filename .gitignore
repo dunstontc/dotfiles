@@ -1,0 +1,31 @@
+# Mac files
+Icon?
+.DS_store
+Desktop.ini
+._*
+Thumbs.db
+
+# Files that might appear on external disks
+.Spotlight-V100
+.Trashes
+
+# Private
+ignore/**
+
+# Python stuff
+*.pyc
+VENV
+
+# Logs
+npm-debug.log
+yarn-error.log
+
+# Misc.
+.idea
+.vscode
+.projectile
+
+
+# dotfiles
+shell/fish/fundle/**
+shell/zsh/plugins/zsh-autosuggestions

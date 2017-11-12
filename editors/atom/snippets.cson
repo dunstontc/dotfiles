@@ -1,0 +1,165 @@
+Divider:
+    prefix        : 'divider'
+    body          : '=========================================================================='
+    rightLabelHTML: '<span> /* === */ </span>'
+Divider2:
+    prefix        : 'divider2'
+    body          : '/* ========================================================================== */'
+    rightLabelHTML: '<span> /* === */ </span>'
+TODO:
+    prefix: 'todo'
+    body  : 'TODO: $0'
+FIXME:
+    prefix: 'fixme'
+    body  : 'FIXME: $0'
+NOTE:
+    prefix: 'note'
+    body  : 'NOTE: $0'
+XXX:
+    prefix: 'xxx'
+    body  : 'XXX: $0'
+QUESTION:
+    prefix: 'question'
+    body  : 'QUESTION: $0'
+CHANGED:
+    prefix: 'changed'
+    body  : 'CHANGED: $0'
+IDEA:
+    prefix: 'idea'
+    body  : 'IDEA: $0'
+NBSP:
+    prefix     : 'nbsp'
+    body       : '&nbsp;'
+    description: '&nbsp;'
+
+'.source.gfm, .text.md':
+    bold:
+        prefix        : 'bold'
+        body          : '**$1**$0'
+        rightLabelHTML: '<span>&nbsp; Make things bold </span>'
+        description   : 'Make things bold'
+
+    italic:
+        prefix        : 'italic'
+        body          : '*$1*$0'
+        rightLabelHTML: '<span>&nbsp; Make things italic </span>'
+        description   : ' Make things italic '
+
+    strike:
+        prefix        : 'strike'
+        body          : '~~$1~~$0'
+        rightLabelHTML: '<span>&nbsp; Strike things out</span>'
+        description   : 'Strike things out'
+
+    underline:
+        prefix        : 'underline'
+        body          : '__$1__$0'
+        rightLabelHTML: '<span>&nbsp; Underline things out</span>'
+        description   : 'Underline things'
+
+    link:
+        prefix     : 'link'
+        body       : '[$2]($1)$0'
+        description: 'Insert a link'
+
+    image:
+        prefix: 'image'
+        body  : '![$2]($1)$0'
+        description: 'Insert an image'
+
+    image:
+        prefix     : 'image'
+        body       : '[![${3:alt}](${2:img src})](${1:link})$0'
+        description: 'Insert an image as a link'
+
+    'Markdown link w/ info':
+        prefix: 'info link'
+        body  : '- [$2]($1) \n    - $0'
+
+    'Markdown code block':
+        prefix: 'code block'
+        body  : """
+            ```$1
+            $0
+            ```
+        """
+
+    'Line Break':
+        prefix        : 'br'
+        body          : '<br/>'
+        rightLabelHTML: '<span> &lt;br/&gt; </span>'
+
+    Definition:
+        prefix        : 'definition'
+        body          : '__${1:Term}__ &nbsp;-&nbsp; ${0:Definition}'
+        rightLabelHTML: '<span> &nbsp;<strong>Term</strong> - Definition </span>'
+
+    h1:
+        prefix: 'h1'
+        body  : '# $0'
+    h2:
+        prefix: 'h2'
+        body  : '## $0'
+    h3:
+        prefix: 'h3'
+        body  : '### $0'
+    h4:
+        prefix: 'h4'
+        body  : '#### $0'
+    h5:
+        prefix: 'h5'
+        body  : '##### $0'
+    h6:
+        prefix: 'h6'
+        body  : '###### $0'
+
+'.source.less':
+    syntax:
+        prefix        : 'stx'
+        body          : 'syntax--'
+        rightLabelHTML: '<span> &nbsp; syntax-- </span>'
+
+'.source.json':
+    'key:value':
+        prefix     : '|,'
+        body       : "\"${1:Key}\": \"${2:Value}\",$0"
+        description: "\"key\": \"value\","
+
+    'JSON Object':
+        prefix: '||,'
+        body  : """
+            "$1": {
+              $0
+            },
+        """
+        description: "JSON object,"
+
+    'JSON Array,':
+        prefix: '|||,'
+        body  : """
+            "$1": [
+              $0
+            ],
+        """
+        description: 'JSON array'
+
+'.source.viml':
+    'Plug':
+        prefix     : 'plug'
+        body       : 'Plug \'${1:repo}\'$0'
+        description: 'vim-plug'
+    'Comment':
+        prefix     : 'comment'
+        body       : '" $0'
+        description: 'Don\'t match that mark Atom'
+    'Divider':
+        prefix     : 'divider'
+        body       : """
+          \" =============================================================================
+          $0
+        """
+        description: 'Divide'
+    'Highlight':
+        prefix     : 'highlight'
+        body       : "call <sid>hi('${1:target}', s:${2:color}, {}, 'none', {})$0"
+        description: 'Custom vim Highlighting'

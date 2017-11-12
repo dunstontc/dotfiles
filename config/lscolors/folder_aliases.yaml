@@ -1,0 +1,38 @@
+bin:              config
+include:          config
+.config:          config
+.terminfo:        config
+GitHub:           .git
+# .npm: node_modules
+.node-gyp:        node_modules
+.node_global:     .npm
+.oni:             .vim
+.vscode-insiders: .vscode
+.rbenv:           .gem
+.rustup:          .cargo
+.multirust:       .cargo
+.keys:            keys
+.gnupg:           keys
+.gnupg_pre_2.1:   keys
+atom:             .atom
+vim:              Vim
+nvim:             Vim
+neovim:           Vim
+vscode:           .vscode
+.composer:        PHP
+fontforge:        FontForge
+
+.electron:        Electron
+.subversion:      Subversion
+Shell:            shell
+.zplug:           Zsh
+.oh-my-zsh:       Zsh
+zsh:              Zsh
+.bash_sessions:   Bash
+bash:             Bash
+fish:             Fish
+.terminfo:        shell
+.spacemacs.d:     Emacs
+.emacs.d:         Emacs
+emacs:            Emacs
+

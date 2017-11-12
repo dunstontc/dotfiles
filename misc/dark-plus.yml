@@ -1,0 +1,57 @@
+---
+
+very-light-gray:
+  - hex: '#d4d4d4'
+  - cterm: 188
+light-gray:
+  - hex: '#808080'
+  - cterm: 8
+dark-gray:
+  - hex: '#282C34'
+  - cterm: 0
+very-dark-gray:
+  - hex: '#1e1e1e'
+  - cterm: 234
+dark-red:
+  - hex: '#d16969'
+  - cterm: 167
+light-red:
+  - hex: '#F44747'
+  - cterm: 203
+orange:
+  - hex: '#ce9178'
+  - cterm: 173, 137
+light-yellow:
+  - hex: '#dcdcaa'
+  - cterm: 187
+dark-yellow:
+  - hex: '#d7ba7d'
+  - cterm: 179
+puke:
+  - hex: '#b5cea8'
+  - cterm: 151
+comment-green:
+  - hex: '#608b4e'
+  - cterm: 65
+seafoam-green:
+  - hex: '#4ec9b0'
+  - cterm: 43
+light-blue:
+  - hex: '#9cdcfe'
+  - cterm: 117
+dark-blue:
+  - hex: '#569cd6'
+  - cterm: 75
+bright-blue:
+  - hex: '#007acc'
+  - cterm: 0
+selection:
+  - hex: '#264f78'
+  - cterm: 73
+purple:
+  - hex: '#646695'
+  - cterm: 60
+pink:
+  - hex: '#c586c0'
+  - cterm: 176
+...

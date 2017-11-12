@@ -1,0 +1,22 @@
+'atom-workspace atom-text-editor:not([mini])':
+    'cmd-alt-p': 'project-manager:list-projects'
+    'alt-shift-f':'atom-beautify:beautify-editor'
+
+'.platform-darwin .platformio-ide-terminal .terminal':
+    'cmd-c': 'platformio-ide-terminal:copy'
+    'cmd-v': 'platformio-ide-terminal:paste'
+
+'.platform-darwin atom-workspace':
+    # 'shift-cmd-C': 'color-picker:open'
+    'cmd-`':        'platformio-ide-terminal:new'
+    'ctrl-shift-`': 'platformio-ide-terminal:close'
+    'ctrl-`':       'platformio-ide-terminal:toggle'
+    'cmd-k cmd-t':  'fuzzy-theme-switcher:toggle'
+    'cmd-n':        'advanced-open-file:toggle'
+    'cmd-alt-p': 'project-manager:list-projects'
+    'cmd-alt-v': 'svg-preview:toggle'
+
+# 'atom-text-editor[data-grammar~="text xml svg"]:not([mini])':
+    # 'cmd-alt-v': 'svg-preview:toggle'
+    # 'atom-text-editor[data-grammar="text html basic"]:not([mini]), atom-text-editor[data-grammar~="erb"]:not([mini]), atom-text-editor[data-grammar~="jade"]:not([mini]), atom-text-editor[data-grammar~="css"]:not([mini]), atom-text-editor[data-grammar~="stylus"]:not([mini]), atom-text-editor[data-grammar~="sass"]:not([mini]), atom-text-editor[data-grammar~="scss"]:not([mini])':
+    # 'tab': 'emmet:expand-abbreviation-with-tab'
