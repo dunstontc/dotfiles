@@ -16,7 +16,7 @@
 ## Contents
   - Bash *v4.4.12* &nbsp;🏗 
   - Zsh *v5.2* ✔
-  - tmux *v2.5* &nbsp;🏗
+  - tmux *v2.5* ✔
   - Atom ✔
   - VS Code 👷
   - Neovim *v5.2* ✔
