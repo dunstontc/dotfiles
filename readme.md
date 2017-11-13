@@ -1,8 +1,5 @@
 # ~/.dotfiles
-
-> So I recently had to reinstall my OS and lost most all of my settings 🕳   
-> On the bright side, I got rid of a ton of stuff I probably wasn't using;  
-> but everything I am using is going in this repo.  
+ 
 > Feel free to have a look around.
 
 <!-- <div align="center"> -->
@@ -21,58 +18,50 @@
   - VS Code 👷
   - Neovim *v5.2* ✔
   - [Links](#links)
-    - [Docs](#docs)
     - [Resources](#resources)
     - [Themes](#themes)
     - [Misc.](#misc)
     - [Reference](#reference)
 
+| Key     | Context | Action            |
+|---------|---------|-------------------|
+| <⌘-⌥-s> | Alfred  | Search Snippets   |
+| <⌘-⌥-,> | Alfred  | Clipboard History |
 
 ## Links
 
-### Docs:
-  - [Neovim Options](https://neovim.io/doc/user/options.html)
-  - [zsh-lovers](http://grml.org/zsh/zsh-lovers.html)
-  - [oh-my-zsh cheat sheet](https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet)
+### Resources:
   - [explainshell](https://explainshell.com/)
+  - [GitHub does dotfiles](http://dotfiles.github.io/)
+  - [Terminals Are Sexy](https://terminalsare.sexy/)
   - [jlevy/the-art-of-command-line](https://github.com/jlevy/the-art-of-command-line)
+  - [VimAwesome](https://vimawesome.com/)
+  - [Neovim Options](https://neovim.io/doc/user/options.html)
+  - [vim registers](http://www.brianstorti.com/vim-registers/)
   - https://neovim.io/doc/user/motion.html#'operator'
   - https://neovim.io/doc/user/options.html#'statusline'
-  - [vim registers](http://www.brianstorti.com/vim-registers/)
-
-
-### Resources:
-  - [GitHub does dotfiles](http://dotfiles.github.io/)
-  - [VimAwesome](https://vimawesome.com/)
-  - [Terminals Are Sexy](https://terminalsare.sexy/)
+  - [zsh-lovers](http://grml.org/zsh/zsh-lovers.html)
   - [awesome zsh plugins](https://github.com/unixorn/awesome-zsh-plugins)
-  - [colours in terminal](https://gist.github.com/XVilka/8346728)
+  - [oh-my-zsh cheat sheet](https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet)
   - [Bash CheatSheet for UNIX Systems](https://gist.github.com/LeCoupa/122b12050f5fb267e75f)
   - [tmux cheatsheet](https://gist.github.com/MohamedAlaa/2961058)
 
 
 ### Themes:
+  - [colours in terminal](https://gist.github.com/XVilka/8346728)
   - [terminal.sexy](https://terminal.sexy/)
   - [xcolors.net](http://www.xcolors.net/)
   - [atomthemes.io](http://atomthemes.io/)
   - [~/.vim/colors](http://vimcolors.com/)
-  - [joshdick/onedark.vim](https://github.com/joshdick/onedark.vim)
   - [iterm_schemer](https://github.com/crowsonkb/iterm_schemer)
     - Translates iTerm2 color schemes between dark- and light-background, as well as performing other bulk editing tasks.
 
 
 ### Misc:
   - [howdoi](https://github.com/gleitz/howdoi)
-  - [tldr-pages](https://github.com/tldr-pages/tldr/)
+  - [tldr](https://github.com/tldr-pages/tldr/)
   - [fzf](https://github.com/junegunn/fzf)
-  - [Powerline](https://github.com/powerline/powerline)
-  - [powerline/fonts](https://github.com/powerline/fonts)
   - [Nerdfonts](https://github.com/ryanoasis/nerd-fonts)
-  - [ranger](http://ranger.nongnu.org/)
-  - [haxornews](https://github.com/donnemartin/haxor-news)
-  - [autojump](https://github.com/wting/autojump)
-  - [awesome-hyper](https://github.com/bnb/awesome-hyper)
-    - [HyperLine](https://github.com/Hyperline/hyperline)
   - [.tern-project](https://stackoverflow.com/questions/41371789/figuring-out-javascript-libraries-for-vim-autocompletion-with-ternjs-in-tern-pr/41377689#41377689)
 
 

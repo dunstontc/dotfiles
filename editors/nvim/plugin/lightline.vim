@@ -22,7 +22,7 @@ let g:lightline = {
       \               [ 'fsize' ] ]
       \},
       \  'component': {
-      \    'clipboard': ' %{v:register}',
+      \    'clipboard': '"%{v:register}',
       \    'displace' : '%F',
       \},
       \  'component_function': {
@@ -48,6 +48,9 @@ let g:lightline = {
       \   'linter_errors':   'error',
       \   'linter_ok':       'ok'
       \},
+      \ 'component_visible_condition': {
+      \   'clipboard': '(&filetype !~# "\v(cheat40|denite|gundo|help|nerdtree|peekaboo|quickmenu|startify|undotree|unite|vimfiler|vimshell)")',
+      \ },
       \}
 
 
@@ -55,8 +58,11 @@ let g:lightline = {
 
 
 " =============================================================================
+      " \   'readonly': '(&filetype!="help"&& &readonly)',
+      " \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+      " \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())',
 
-let g:tcd_blacklist = '\v(cheat40|denite|gundo|help|nerdtree|quickmenu|startify|undotree|unite|vimfiler|vimshell)'
+let g:tcd_blacklist = '\v(cheat40|denite|gundo|help|nerdtree|peekaboo|quickmenu|startify|undotree|unite|vimfiler|vimshell)'
 
 " =============================================================================
 
@@ -70,19 +76,23 @@ let g:tcd_blacklist = '\v(cheat40|denite|gundo|help|nerdtree|quickmenu|startify|
 " =============================================================================
 
 function! LightlineMode() abort
-  return expand('%:t') ==#  '__Tagbar__' ? 'Tagbar':
-        \ expand('%:t') ==# 'ControlP'   ? 'CtrlP' :
-        \ &filetype ==#     'unite'      ? 'Unite' :
-        \ &filetype ==#     'denite'     ? 'Denite' :
+  return expand('%:t') ==#  '__Tagbar__' ? 'Tagbar'   :
+        \ expand('%:t') ==# 'ControlP'   ? 'CtrlP'    :
+        \ expand('%:t') ==# 'peekaboo'   ? 'Peekaboo' :
+        \ &filetype ==#     'cheat40'    ? 'Cheat40'  :
+        \ &filetype ==#     'denite'     ? 'Denite'   :
+        \ &filetype ==#     'deol'       ? 'Deol'     :
+        \ &filetype ==#     'gitcommit'  ? 'Fugitive' :
+        \ &filetype ==#     'help'       ? 'Help'     :
+        \ &filetype ==#     'neoterm'    ? 'NeoTerm'  :
+        \ &filetype ==#     'nerdtree'   ? 'NERDTree' :
+        \ &filetype ==#     'peekaboo'   ? 'Peekaboo' :
+        \ &filetype ==#     'quickmenu'  ? 'Menu':
+        \ &filetype ==#     'startify'   ? 'Startify' :
+        \ &filetype ==#     'unite'      ? 'Unite'    :
+        \ &filetype ==#     'undotree'   ? 'UndoTree' :
         \ &filetype ==#     'vimfiler'   ? 'VimFiler' :
         \ &filetype ==#     'vimshell'   ? 'VimShell' :
-        \ &filetype ==#     'neoterm'    ? 'NeoTerm' :
-        \ &filetype ==#     'deol'       ? 'Deol' :
-        \ &filetype ==#     'cheat40'    ? 'Cheat40' :
-        \ &filetype ==#     'quickmenu'  ? 'Menu' :
-        \ &filetype ==#     'startify'   ? 'Startify' :
-        \ &filetype ==#     'nerdtree'   ? 'NERDTree' :
-        \ &filetype ==#     'gitcommit'  ? 'Fugitive' :
         \ lightline#mode()
 endfunction
 

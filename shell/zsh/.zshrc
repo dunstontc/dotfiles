@@ -23,6 +23,7 @@ zplug "changyuheng/fz", defer:1
 # zplug "Vifon/deer",     from:github, use:deer
 # zplug "changyuheng/zsh-interactive-cd", from:github
 zplug "djui/alias-tips"
+zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "denysdovhan/spaceship-zsh-theme",       use:spaceship.zsh, from:github, at:3.0, as:theme
@@ -111,10 +112,10 @@ setopt inc_append_history
 
 
 # =============================================================================
-export FZ_CASE_INSENSITIVE=1
-# setopt FZ_CASE_INSENSITIVE
-
-
+# export FZ_CASE_INSENSITIVE=1
+# # setopt FZ_CASE_INSENSITIVE
+#
+#
 # autoload -U deer
 # zle -N deer
 # bindkey '\ek' deer

@@ -6,13 +6,12 @@ augroup MyAutoCmds
 
   " Head straight into insert mode in vim-terms
   autocmd BufEnter * if &buftype == 'terminal' | :startinsert | endif
+  " autocmd BufEnter * if &filetype == 'terminal' | :startinsert | endif
 
-  " Don't use Lightline in interface buffers
-  " autocmd FileType nerdtree call lightline#disable()
-  " autocmd FileType cheat40 call lightline#disable()
-  " autocmd FileType quickmenu call lightline#disable()
-  " autocmd FileType  call lightline#disable()
+  autocmd FileType python setlocal completeopt-=preview
 
+  " Close vim if only NERDtree is open
+  " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
   " if has('folding')
   "   " Like the autocmd described in `:h last-position-jump` but we add `:foldopen!`.

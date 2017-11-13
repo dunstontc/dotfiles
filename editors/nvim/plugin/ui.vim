@@ -53,6 +53,8 @@ let g:startify_list_order = [
         \ 'commands',
         \ ]
 
+" let g:startify_custom_footer =
+  " \ ['', "   Vim is charityware. Please read ':help uganda'.", '']
 
 
 " =============================================================================
@@ -71,7 +73,7 @@ let g:NERDTreeDirArrowExpandable = ''
 let g:NERDTreeDirArrowCollapsible = ''
 let g:NERDTreeIgnore=['\.git$','\.sass-cache$','\.idea','\.vscode','Icon?','\.DS_store']
 " Close vim if only NERDtree is open
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 let g:NERDTreeMapJumpPrevSibling='<Nop>'
 let g:NERDTreeMapJumpNextSibling='<Nop>'

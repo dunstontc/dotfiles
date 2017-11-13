@@ -9,6 +9,8 @@ augroup filetypes
 
     autocmd BufRead,BufNewFile .spacemacs set filetype=lisp
 
+    autocmd BufRead,BufNewFile {topydo,columns,column}.conf set filetype=dosini
+
     autocmd BufRead,BufNewFile .{aliases,env,exports,functions,highlight,inputrc,path,} set filetype=sh
     " autocmd BufRead,BufNewFile .{bash_prompt,bash_profile} set filetype=sh
 
@@ -29,14 +31,13 @@ augroup END
 " =============================================================================
 
 "  === Markdown ===
-let g:markdown_fenced_languages = ['html', 'js=javascript', 'bash=sh']
+let g:markdown_fenced_languages = ['html', 'js=javascript', 'vim', 'ruby', 'python', 'bash=sh']
 let g:markdown_syntax_conceal = 0
 let g:markdown_minlines = 100
 
 "  === JSON ===
 let g:vim_json_syntax_conceal = 0
 
-autocmd FileType json setlocal completeopt+=menu,preview
 
 
 

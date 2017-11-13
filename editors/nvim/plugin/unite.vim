@@ -19,6 +19,7 @@ call denite#custom#option('default', {
 call denite#custom#var(
       \ 'buffer',
       \ 'date_format', '%m-%d-%Y %H:%M:%S')
+      " \ 'start_insert': 0)
 
 " replace grep with silver searcher
 call denite#custom#var('grep', 'command', ['ag'])
@@ -36,6 +37,13 @@ call denite#custom#var('grep', 'final_opts',     [])
 
 " =============================================================================
 
+
+call denite#custom#map('insert',  '<down>',
+    \ '',
+    \ 'noremap')
+call denite#custom#map('insert',  '<up>',
+    \ '',
+    \ 'noremap')
 " Use ctrl-Q to make a selection
 call denite#custom#map('normal',  '<C-q>',
     \ '<NOP>',
@@ -84,8 +92,7 @@ nnoremap <C-p> :<C-u>Denite file_rec<CR>
 " nnoremap <leader>s :<C-u>Denite buffer<CR>
 " nnoremap <leader>8 :<C-u>DeniteCursorWord grep:. -mode=normal<CR>
 " nnoremap <leader>/ :<C-u>Denite grep:. -mode=normal<CR>
-" nnoremap <leader><Space>/ :<C-u>DeniteBufferDir grep:. -mode=normal<CR>
-
+nnoremap <leader>/ :<C-u>DeniteBufferDir grep:. -mode=normal<CR>
 
 
 
@@ -105,6 +112,8 @@ nnoremap <C-p> :<C-u>Denite file_rec<CR>
 " nnoremap <leader>hs :<C-u>Denite history:search -mode=normal<CR>
 " nnoremap <leader>hc :<C-u>Denite history:cmd -mode=normal<CR>
 
+
+
 " =============================================================================
 "  vim-denite-sessions
 " =============================================================================
@@ -120,6 +129,18 @@ call denite#custom#source('z', 'sorters', ['sorter_z'])
 
 command! -nargs=+ -complete=command Z
       \ call denite#start([{'name': 'z', 'args': [<q-args>]}])
+
+
+
+" =============================================================================
+"  denite-taskwarrior
+" =============================================================================
+
+call denite#custom#var('task', 'taskrc', '~/.taskrc')
+call denite#custom#var('task', 'data_dir', '~/.task')
+call denite#custom#var('task', 'format', '{id:3.3} | {priority:1.1} | {project:15.15} | {description:40.40} | {entry} | {due}')
+call denite#custom#var('task', 'date_format', '%y-%m-%d %H:%M')
+call denite#custom#var('task', 'label_width', 17)
 
 
 " =============================================================================
@@ -140,7 +161,7 @@ command! -nargs=+ -complete=command Z
 let g:neoyank#limit=100
 " let g:neoyank#file= /history_yank
 " let g:neoyank#save_registers=['"']
-autocmd BufWinEnter \(*.asc\|*.gpg\) let g:neoyank_disable = 1
+" autocmd BufWinEnter \(*.asc\|*.gpg\) let g:neoyank_disable = 1
 
 
 " =============================================================================
@@ -148,26 +169,26 @@ autocmd BufWinEnter \(*.asc\|*.gpg\) let g:neoyank_disable = 1
 " =============================================================================
 call unite#filters#matcher_default#use(['matcher_fzf'])
 call unite#filters#sorter_default#use(['sorter_rank'])
-" let g:unite_source_history_yank_enable = 1
-" call unite#custom#profile('default', 'context', {
-"       \   'safe': 0,
-"       \   'start_insert': 1,
-"       \   'ignorecase' : 1,
-"       \   'short_source_names': 1,
-"       \   'update_time': 200,
-"       \   'direction': 'rightbelow',
-"       \   'winwidth': 40,
-"       \   'winheight': 15,
-"       \   'max_candidates': 100,
-"       \   'no_auto_resize': 1,
-"       \   'vertical_preview': 1,
-"       \   'cursor_line_time': '0.10',
-"       \   'hide_icon': 0,
-"       \   'candidate-icon': ' ',
-"       \   'marked_icon': '✓',
-"       \   'prompt' : '❯❯ '
-"       \ })
-nnoremap <C-p> :Unite file_rec/async<cr>
+let g:unite_source_history_yank_enable = 1
+call unite#custom#profile('default', 'context', {
+      \   'safe': 1,
+      \   'start_insert': 0,
+      \   'ignorecase' : 1,
+      \   'short_source_names': 0,
+      \   'update_time': 200,
+      \   'direction': 'rightbelow',
+      \   'winwidth': 0,
+      \   'winheight': 15,
+      \   'max_candidates': 100,
+      \   'no_auto_resize': 1,
+      \   'vertical_preview': 1,
+      \   'cursor_line_time': '0.10',
+      \   'hide_icon': 0,
+      \   'candidate-icon': ' ',
+      \   'marked_icon': '✓',
+      \   'prompt' : '❯❯ '
+      \ })
+" nnoremap <C-p> :Unite file_rec/async<cr>
 nnoremap <space>/ :Unite grep:.<cr>
 
 
@@ -175,13 +196,13 @@ nnoremap <space>/ :Unite grep:.<cr>
 "  === vim-bookmarks ===
 " =============================================================================
 
-call unite#custom#profile('source/vim_bookmarks', 'context', {
-  \   'winheight': 13,
-  \   'direction': 'botright',
-  \   'start_insert': 0,
-  \   'keep_focus': 1,
-  \   'no_quit': 1,
-\ })
+" call unite#custom#profile('source/vim_bookmarks', 'context', {
+"   \   'winheight': 13,
+"   \   'direction': 'botright',
+"   \   'start_insert': 0,
+"   \   'keep_focus': 1,
+"   \   'no_quit': 1,
+" \ })
 
 " =============================================================================
 "   fastunite

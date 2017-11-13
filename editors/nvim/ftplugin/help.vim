@@ -1,3 +1,9 @@
 setl nolist
 
-nmap <buffer> <silent>  q :q<cr>
+setlocal iskeyword+=:
+setlocal iskeyword+=#
+setlocal iskeyword+=-
+
+nmap <buffer> <silent> q :q<cr>
+
+

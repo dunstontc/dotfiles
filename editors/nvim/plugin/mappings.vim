@@ -7,11 +7,11 @@ set timeoutlen=500
 
 nnoremap <leader><leader>  <esc>
 
-inoremap <esc> <C-o>:echo "Use ctrl-Q dumbass"<cr>
+inoremap <esc> <C-o>:echo "Use ctrl-Q dumbass "<cr>
 
 noremap Q <nop>
 " TODO: make new shortcut for macros
-" noremap q <nop>
+
 
 "      👇
 nnoremap ; :
@@ -21,23 +21,33 @@ vnoremap ; :
 nnoremap 𐌔 :w<cr>
 inoremap 𐌔 <C-o>:w<cr>
 
+" Save wih ⌘ + /
+noremap <silent>𐌍 :TComment<CR>
+inoremap <silent>𐌍 <esc>:TComment<CR>
 
-" Yank into the void
-noremap d "_d
-noremap D "_D
-noremap dd "_dd
-
-" and toss out our leftovers when we put
-" vnoremap p "_dP
-vnoremap ,p "0p
-
+" use ctrl-q instead of ⎋ , stay on the home row
 inoremap <C-q> <esc>
 nnoremap <C-q> <esc>
 vnoremap <C-q> <esc>
-
+xnoremap <C-q> <esc>
+cnoremap <C-q> normal! <esc>
 
 " Clear highlights & commands
 nnoremap <silent>\ :noh<CR>:call anzu#clear_search_status()<CR>:echo<CR>
+
+" <S-CR> New line below
+inoremap 𐌄 <esc> o
+" <C-CR> New line above
+inoremap 𐌂 <esc> O
+
+
+noremap ,, :call quickmenu#toggle(2)<CR>
+noremap ,0 :call quickmenu#toggle(0)<CR>
+noremap ,1 :call quickmenu#toggle(1)<CR>
+noremap ,2 :call quickmenu#toggle(2)<CR>
+noremap ,3 :call quickmenu#toggle(3)<CR>
+noremap ,4 :call quickmenu#toggle(4)<CR>
+noremap ,5 :call quickmenu#toggle(5)<CR>
 
 " Bigger Steps
 noremap <S-H> 0
@@ -45,8 +55,9 @@ noremap <S-L> $
 inoremap <C-E> <C-o>$
 " imap <C-B> <C-o>0 " TODO: bind key to $ in insert mode
 
-" nnoremap , i<Space><Esc>
 nnoremap <BS> i<DEL><esc><right>
+nnoremap ,<space> i<space><Esc>
+
 
 " Undo & Redo
 nnoremap <leader>r :redo<cr>
@@ -57,9 +68,19 @@ nnoremap <leader>q :q<CR>
 nnoremap fj :wq<CR>
 inoremap fj <esc>:wq<CR>
 
+" Yank into the void
+noremap d "_d
+noremap D "_D
+noremap dd "_dd
+
 " Yank Better
 nnoremap <S-y> Vy
 noremap 𐌋 mxV"zy"zp`xj
+
+" and toss out our leftovers when we put
+" vnoremap p "_dP
+nnoremap ,p "0P
+vnoremap ,p "0P
 
 " Indentation
 vmap <silent> <leader>[ <gv
@@ -68,6 +89,14 @@ nmap <silent> <leader>[ <<
 nmap <silent> <leader>] >>
 imap <silent> <leader>[ <esc><<
 imap <silent> <leader>] <esc>>>
+
+" ⌘
+vmap <silent> 𐌀 <gv
+vmap <silent> 𐌁 >gv
+nmap <silent> 𐌀 <<
+nmap <silent> 𐌁 >>
+imap <silent> 𐌀 <C-o><<
+imap <silent> 𐌁 <c-o>>>
 
 " move the current line up or down
 " nnoremap <A-j> :m .+1<CR>==
@@ -84,15 +113,6 @@ inoremap 𐌞 <Esc>:m .-2<CR>==gi
 inoremap 𐌓 <Esc>:m .+1<CR>==gi
 vnoremap 𐌞 :m '<-2<CR>gv=gv
 vnoremap 𐌓 :m '>+1<CR>gv=gv
-
-" inoremap 𐌇
-" inoremap 𐌝
-
-
-noremap <silent>𐌍 :TComment<CR>
-inoremap <silent>𐌍 <esc>:TComment<CR>
-" noremap <leader>tc :TComment<CR>
-
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
@@ -179,27 +199,30 @@ omap q iq
 
 " Define prefix dictionary
 let g:lmap={
-            \  ' ': ['',                           'Cancel'          ],
-            \  '`': ['vsplit +terminal normal! i', 'New Terminal'    ],
-            \  '[': ['',                           'Decrease Indent' ],
-            \  ']': ['',                           'Increase Indent' ],
-            \  'M': ['',                           'ViMagit'         ],
-            \  'q': ['',                           'Quit'            ],
-            \  'r': ['',                           'Redo'            ],
-            \  ',': ['call quickmenu#toggle(0)',   'Quickmenu'       ],
-            \  '*': ['',                           'Search'          ],
+            \  ' ': ['',                                        'Cancel'          ],
+            \  '`': ['vsplit +terminal normal! i',              'New Terminal'    ],
+            \  '[': ['',                                        'Decrease Indent' ],
+            \  ']': ['',                                        'Increase Indent' ],
+            \  'M': ['',                                        'ViMagit'         ],
+            \  'o': ['vsplit $HOME/Projects/Vim/neovim.org.md', 'Org'             ],
+            \  'q': ['',                                        'Quit'            ],
+            \  'r': ['',                                        'Redo'            ],
+            \  ',': ['call quickmenu#toggle(0)',                'Quickmenu'       ],
+            \  '*': ['',                                        'Search'          ],
+            \  'x': ['vimgrep TODO **/*.%:e \| cw<CR>',         'list Todos'      ],
             \}
 
 
 let g:lmap.b={
             \ 'name': '+Buffers',
-            \    'h': ['Startify', 'Home'              ],
-            \    'n': ['bnext',    'Next Buffer'       ],
-            \    'p': ['bprev',    'Previous Buffer'   ],
-            \    'q': [ 'q',       'Close'             ],
-            \    'Q': [ 'q!',      'Force Close'       ],
-            \    'S': [ 'wa',      'Save All'          ],
-            \    'w': [ 'w',       'Save'             ],
+            \    'h': ['Startify',       'Home'              ],
+            \    'n': ['bnext',          'Next Buffer'       ],
+            \    'p': ['bprev',          'Previous Buffer'   ],
+            \    'l': ['Denite buffer',  'List Buffers'      ],
+            \    'q': [ 'q',             'Close'             ],
+            \    'Q': [ 'q!',            'Force Close'       ],
+            \    'S': [ 'wa',            'Save All'          ],
+            \    'w': [ 'w',             'Save'              ],
             \}
 
 
@@ -233,7 +256,7 @@ let g:lmap.d={
             \    'm': ['Denite file_mru',                                         'Most Recent Files'       ],
             \    'M': ['Denite directory_mru',                                    'Most Recent Directories' ],
             \    'h': ['Denite help',                                             'Help Docs'               ],
-            \    'r': ['Denite neoyank',                                          'Old Registers'           ],
+            \    'r': ['<C-u>Denite -mode=insert history/yank<CR>',               'Neoyank Registers'       ],
             \    't': ['Denite todo',                                             'Todos'                   ],
             \    'T': ['Denite todo:done',                                        'Finished Todos'          ],
             \    'z': ['Denite z',                                                'Z (jump around)'         ],
@@ -247,11 +270,9 @@ let g:lmap.e={
             \ 'x': ['normal! "+x"',      'Cut to System'    ],
             \ 'f': {
             \ 'name': '+File',
-            \    'c': ['let @+=expand("%:f")',     'Copy File Name With Path'      ],
-            \    'f': ['let @+=expand("%:t:r:r")', 'Copy File Name'                ],
-            \    'e': ['let @+=expand("%:t")',     'Copy File Name With Extension' ],
-            \    'a': ['let @+=expand("%:p:h")',   'Copy File Absolute Path'       ],
-            \    'r': ['let @+=expand("%:h")',     'Copy File Relative Path'       ],
+            \    'n': ['GetName',     'Copy name of the active buffer'       ],
+            \    'p': ['GetFullPath', 'Copy Absolute Path to current file'   ],
+            \    'r': ['GetRelPath',  'Copy Relative Path to current file'   ],
             \}
             \}
 
@@ -277,8 +298,10 @@ let g:lmap.h={
             \    'm': [ 'messages',                 'Messages'    ],
             \    'd': {
             \    'name': 'Describe',
-            \       'f': [ 'set filetype?',             'Echo Filetype'      ],
-            \       's': [ 'call functions#SynStack()', 'Syntax'             ],
+            \       'c': [ 'ascii',                     'Character '         ],
+            \       'f': [ 'set filetype?',             'Filetype'           ],
+            \       'p': ['GetFullPath',                'Current Path'       ],
+            \       's': [ 'SynDef',                    'Syntax Item'        ],
             \       'S': [ 'syntax',                    'List Syntax Groups' ],
             \}
             \}
@@ -287,6 +310,7 @@ let g:lmap.h={
 let g:lmap.i={
             \ 'name': '+Interfaces',
             \    'c': ['Cheat40Open',                'Cheat Sheet'     ],
+            \    'q': ['call quickmenu#toggle(0)',   'Quickmenu'       ],
             \    'm': ['call magit#show_magit("v")', 'Magit'           ],
             \    'n': ['NERDTreeToggle',             'NERDTree'        ],
             \    's': ['vsplit +Startify',           'Startify'        ],

@@ -8,22 +8,33 @@ export PAGER='less'
 
 export TERM='xterm-256color'
 
+# Todo.txt
+# export TODO_DIR="$HOME/.todo"
+
+# Taskwarrior
+# export TASKRC="$HOME/.taskrc"
+# export TASKDATA="$HOME/.task"
+
+
+
+export TCD_BASH_COMPLETION_DIR="/usr/local/etc/bash_completion.d"
+# export ZSH_COMPLETION_DIR="/usr/local/share/zsh/site-functions"
+# export FISH_COMPLETION_DIR="/usr/local/share/fish/vendor_completions.d"
+
+
 # export CLICOLOR=1
 # export CLICOLOR_FORCE=1
 
-export WIDGETPATH='/Users/clay/Library/Application Support/Übersicht/widgets'
+# export XDG_CONFIG_HOME=$HOME/.config
 
 # export RANGER_LOAD_DEFAULT_RC=FALSE
-
-# export XDG_CONFIG_HOME=$HOME/.config
+# export W3MIMGDISPLAY_PATH=$HOME/.iterm2/bin/imgcat
 
 # export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
 
 
-# export $FPP_EDITOR='nvim'
-
-# export W3MIMGDISPLAY_PATH=$HOME/.iterm2/bin/imgcat
+# for highlighting files
 export HL_DIR='$HOME/.highlight'
 export HIGHLIGHT_DATADIR='$HOME/.highlight'
 
@@ -31,6 +42,7 @@ export HIGHLIGHT_DATADIR='$HOME/.highlight'
 # If you intend to process AsciiDoc files through an XML stage
 # (such as a2x for manpage generation) you need to add something like:
 # export XML_CATALOG_FILES=/usr/local/etc/xml/catalog
+export WIDGETPATH='/Users/clay/Library/Application Support/Übersicht/widgets'
 
 
 # export NODE_REPL_HISTORY=~/.node_history;  # Enable persistent REPL history for `node`.

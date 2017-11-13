@@ -24,13 +24,14 @@ set backspace=indent,eol,start
 
 "  Tabs & Spaces
 set autoindent                  " Autoidentation on
-set smartindent                 " Smart Indentation on
 set copyindent                  " Copy indent from the previous line
-set smarttab                    " Tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
 set expandtab                   " Expand Tabs (pressing Tab inserts spaces)
+set smartindent                 " Smart Indentation on
+set smarttab                    " Tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
 
 " set notimeout
 " set ttimeout
+set nopaste
 
 " =============================================================================
 "   Styles
@@ -51,7 +52,7 @@ let g:enable_italic_font=1     " Enable italic font in colorscheme
 set synmaxcol=200              " Don't syntax highlight long lines
 " set colorcolumn=80             " Highlight the 80th character limit
 highlight Comment gui=italic
-
+set conceallevel=2
 set cursorline                 " Highlight current line
 set noshowmode                 " Don't show the current mode (airline takes care of this)
 set notitle                    " Don't Show the filename in the window titlebar
@@ -64,6 +65,7 @@ set sidescrolloff=3            " Start scrolling x columns before vertical borde
 set sidescroll=3
 " set showtabline=2              " Always show tab bar
 set showmatch                  " Highlight matching braces
+
 
 " set listchars+=tab:→\ ,eol:¬,trail:·,nbsp:·,extends:❯,precedes:❮
 set listchars+=tab:→\
@@ -97,7 +99,7 @@ endif
 set mouse=a                     " Enable the mouse
 set nostartofline               " Don't reset cursor to start of line when moving around
 set virtualedit=block
-set whichwrap+=<,>,h,l,[,]      " Lake Left/Right at the Start/End of lines work like you'd expect
+" set whichwrap+=<,>,h,l,[,]      " Lake Left/Right at the Start/End of lines work like you'd expect
 
 "  Search
 set magic                       " Enable extended regexes
@@ -106,6 +108,7 @@ set incsearch                   " Search as characters are entered
 set hlsearch                    " Highlight matches
 set ignorecase                  " Ignore case of searches
 set smartcase                   " Ignore 'ignorecase' if search patter contains uppercase characters
+
 
 set wildmenu                    " Visual autocomplete for command menu
 set wildignore+=*.pyc            "stuff to ignore when tab completing
@@ -120,9 +123,13 @@ set wildignore+=*.swp
 set wildignore+=*.zip
 set wildignorecase
 " set wildmode=longest:full,full
-set wildmode=list:longest,list:full
+" set wildmode=list:longest,list:full
+" set wildmode=list:longest
+set wildmode=list:full
 
 " set completeopt=longest,menu,preview
+" set completeopt+=menu
+" set completeopt+=longest
 set completeopt+=noinsert
 set completeopt+=preview
 
