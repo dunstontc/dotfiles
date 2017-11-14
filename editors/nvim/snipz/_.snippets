@@ -1,3 +1,21 @@
-snippet key_value
+# Global Snippets
+
+snippet key_value "'key':'value',"
   '${1:key}': '${2:value}',${3}
+endsnippet
+
+snippet date "YYYY-MM-DD" w
+`!v strftime("%Y-%m-%d")`
+endsnippet
+
+snippet time "HH:MM" w
+`!v strftime("%H:%M")`
+endsnippet
+
+snippet datetime_readable "1997 Apr 27 11:53:25" w
+`!v strftime("%Y %b %d %X")`
+endsnippet
+
+snippet datetime_iso8601 "1997 Apr 27 11:53:25" w
+`!v strftime("%Y-%m-%dT%H:%M:%S")`
 endsnippet

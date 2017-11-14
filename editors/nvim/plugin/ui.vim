@@ -68,7 +68,7 @@ let g:NERDTreeShowHidden=1      " Show hidden files in NERDTree
 let g:NERDTreeSortHiddenFirst=1 " Show hidden files first
 " let g:NERDTreeStatusline='%{ getcwd() }'
 " let g:NERDTreeStatusline="%t"
-let g:NERDTreeWinSize=40
+let g:NERDTreeWinSize=35
 let g:NERDTreeDirArrowExpandable = ''
 let g:NERDTreeDirArrowCollapsible = ''
 let g:NERDTreeIgnore=['\.git$','\.sass-cache$','\.idea','\.vscode','Icon?','\.DS_store']
@@ -125,12 +125,36 @@ let s:salmon      = "EE6E73"
 let s:green       = "8FAA54"
 let s:lightGreen  = "31B53E"
 let s:white       = "FFFFFF"
-let s:rspec_red   = 'FE405F'
 
+let s:rspec_red   = 'fe405f'
 let s:vim_green   = '90a959'
-let s:git_orange  = 'F54D27'
+let s:git_orange  = 'f54d27'
 let s:coffee_blue = '43547c'
 let s:hidden_gray = '404040'
+
+"#905532
+"#3AFFDB
+"#689FB6
+"#44788E
+"#834F79
+"#834F79
+"#AE403F
+"#F5C06F
+"#F09F17
+"#D4843E
+"#F16529
+"#CB6F6F
+"#EE6E73
+"#8FAA54
+"#31B53E
+"#FFFFFF
+"#FE405F
+"#fe405f
+"#90a959
+"#f54d27
+"#43547c
+"#404040
+
 
 let g:NERDTreeExtensionHighlightColor = {}                             " this line is needed to avoid error
 let g:NERDTreeExtensionHighlightColor['css'] = s:blue                  " sets the color of css files to blue
@@ -182,30 +206,33 @@ let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['Downloads'] = ''
 
 
 "   Extensions
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['bash']     = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['css']      = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['cson']     = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['coffee']   = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['el']       = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['fish']     = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['html']     = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['js']       = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['json']     = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['less']     = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['md']       = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['md']       = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['org']      = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['vim']      = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['vimrc']    = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['vue']      = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['ttf']      = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['otf']      = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['woff']     = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['DS_Store'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['yaml']     = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['yml']      = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['bash']       = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['css']        = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['cson']       = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['coffee']     = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['el']         = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['fish']       = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['html']       = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['js']         = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['json']       = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['less']       = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['md']         = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['md']         = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['org']        = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['otf']        = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['projectile'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['snippets']   = ' '
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['ttf']        = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['txt']        = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['vim']        = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['vimrc']      = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['vue']        = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['woff']       = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['yaml']       = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['yml']        = ''
 
 "   Exact names
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['DS_Store']  = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.ds_store']     = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['readme.md']     = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.npmrc']        = ''

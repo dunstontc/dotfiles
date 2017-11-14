@@ -25,6 +25,7 @@ call dein#begin(expand('~/.config/nvim/dein'))
 call dein#add('Shougo/dein.vim')
 
 
+
 " 🖥  UI
 call dein#add('mhinz/vim-startify')
 call dein#add('airblade/vim-gitgutter')
@@ -40,9 +41,9 @@ call dein#add('hecal3/vim-leader-guide')
 call dein#add('CharlesGueunet/quickmenu.vim')
 call dein#add('osyo-manga/vim-anzu')
 " call dein#add('henrik/vim-indexed-search')
-" call dein#add('pelodelfuego/vim-swoop')
-" call dein#add('romainl/vim-qf')
 call dein#add('dhruvasagar/vim-zoom')
+
+
 
 
 " 🎨  Make Vim Sexy
@@ -76,6 +77,7 @@ call dein#add('othree/html5.vim',             {'lazy':1, 'on_ft': ['html']})
 " call dein#add('elzr/vim-json',                {'lazy':1, 'on_ft': ['json']})
 call dein#add('Quramy/vison',                 {'lazy':1, 'on_ft': ['json']})
 " call dein#add('othree/yajs.vim')
+call dein#add('fatih/vim-go',                 {'lazy':1, 'on_ft': ['go']})
 call dein#add('heavenshell/vim-jsdoc',        {'lazy':1, 'on_ft': ['js', 'jsx', 'javascript']})
 call dein#add('pangloss/vim-javascript',      {'lazy':1, 'on_ft': ['js', 'jsx', 'javascript']})
 " call dein#add('othree/javascript-libraries-syntax.vim')
@@ -85,9 +87,9 @@ call dein#add('tbastos/vim-lua',              {'lazy':1, 'on_ft': ['lua']})
 call dein#add('leafo/moonscript-vim',         {'lazy':1, 'on_ft': ['moon']})
 call dein#add('tpope/vim-markdown')
 call dein#add('jceb/vim-orgmode',             {'lazy':1, 'on_ft': ['org']})
-call dein#add('python-mode/python-mode',  {'lazy':1, 'on_ft': ['py', 'python']})
+" call dein#add('python-mode/python-mode',      {'lazy':1, 'on_ft': ['py', 'python']})
 call dein#add('hynek/vim-python-pep8-indent', {'lazy':1, 'on_ft': ['py', 'python']})
-" call dein#add('davidhalter/jedi-vim')
+call dein#add('davidhalter/jedi-vim')
 call dein#add('cespare/vim-toml',             {'lazy':1, 'on_ft': ['toml', 'tml']})
 call dein#add('jpalardy/vim-slime',           {'lazy':1, 'on_ft': ['lisp', 'el']})
 call dein#add('rhysd/vim-wasm',               {'lazy':1, 'on_ft': ['wast']})
@@ -97,6 +99,8 @@ call dein#add('tmux-plugins/vim-tmux')
 call dein#add('aliva/vim-fish',               {'lazy':1, 'on_ft': ['fish']})
 call dein#add('chrisbra/vim-zsh',             {'lazy':1, 'on_ft': ['zsh']})
 call dein#add('zplug/vim-zplug')
+
+
 
 
 " ✔ Linting+
@@ -109,6 +113,7 @@ call dein#add('w0rp/ale')
 
 
 
+
 " ⚙   Utilities
 call dein#add('ervandew/supertab')
 call dein#add('tpope/vim-rsi')
@@ -116,7 +121,6 @@ call dein#add('tpope/vim-eunuch')
 call dein#add('tpope/vim-repeat')
 call dein#add('tpope/vim-fugitive')
 call dein#add('tpope/vim-speeddating')
-" call dein#add('tpope/vim-scriptease')
 call dein#add('tpope/vim-surround')
 call dein#add('tomtom/tcomment_vim')
 call dein#add('Raimondi/delimitMate')
@@ -124,9 +128,9 @@ call dein#add('thalesmello/tabfold')
 call dein#add('junegunn/vim-easy-align')
 call dein#add('farmergreg/vim-lastplace')
 call dein#add('dhruvasagar/vim-table-mode')
-" call dein#add('nelstrom/vim-visual-star-search')
 " call dein#add('terryma/vim-multiple-cursors')
 " call dein#add('supercrabtree/vim-resurrect')
+" call dein#add('nelstrom/vim-visual-star-search')
 " call dein#add('rhysd/clever-f.vim')
 " call dein#add('airblade/vim-matchquote')
 call dein#add('justinmk/vim-sneak')
@@ -134,27 +138,31 @@ call dein#add('justinmk/vim-sneak')
 " call dein#add('haya14busa/incsearch-easymotion.vim')
 " call dein#add('haya14busa/vim-asterisk')
 " call dein#add('junegunn/vim-slash')
+" call dein#add('romainl/vim-qf')
 " call dein#add('romainl/vim-qlist')
 " call dein#add('romainl/vim-quicklist')
 call dein#add('sgur/vim-editorconfig')
 call dein#add('terryma/vim-expand-region')
 
 
-" call dein#add('kana/vim-textobj-syntax')
+
+
+" Text Objects
 call dein#add('kana/vim-textobj-user')
 call dein#add('kana/vim-textobj-line')
+" call dein#add('kana/vim-textobj-syntax')
 " call dein#add('kana/vim-textobj-indent')
 call dein#add('michaeljsmith/vim-indent-object')
 call dein#add('Konfekt/vim-textobj-entire')
 " call dein#add('junegunn/vim-after-object')
 " call dein#add('paulhybryant/vim-textobj-path')
-call dein#add('beloglazov/vim-textobj-quotes')
+" call dein#add('beloglazov/vim-textobj-quotes')
 " call dein#add('vimtaku/vim-textobj-keyvalue')
 " call dein#add('reedes/vim-textobj-sentence')
 call dein#add('Julian/vim-textobj-variable-segment')
 " call dein#add('Julian/vim-textobj-brace')
 " call dein#add('jceb/vim-textobj-uri')
-" call dein#add('saihoooooooo/vim-textobj-space')
+call dein#add('saihoooooooo/vim-textobj-space')
 " call dein#add('saaguero/vim-textobj-pastedtext')
 " call dein#add('glts/vim-textobj-comment')
 " call dein#add('fvictorio/vim-textobj-backticks')
@@ -167,12 +175,12 @@ call dein#add('Julian/vim-textobj-variable-segment')
 
 
 
+
 " ✨  Make life easy
 call dein#add('Shougo/context_filetype.vim')
-" call dein#add('Shougo/echodoc.vim')
-call dein#add('Shougo/vimproc.vim', {
-      \ 'build' : 'make',
-      \ 'on_source': ['unite.vim', 'vimshell.vim']})
+" call dein#add('Shougo/vimproc.vim', {
+"       \ 'build' : 'make',
+"       \ 'on_source': ['unite.vim', 'vimshell.vim']})
 call dein#add('Shougo/unite.vim')
 call dein#add('Shougo/unite-outline')
 " call dein#add('Shougo/unite-session')
@@ -209,11 +217,11 @@ call dein#add('MattesGroeger/vim-bookmarks')
 
 
 
+
 " 💬  Completion
 " call dein#add('mattn/emmet-vim')
 " call dein#add('/usr/local/opt/fzf')
 " call dein#add('junegunn/fzf.vim')
-" call dein#add('lifepillar/vim-mucomplete')
 call dein#add('Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' })
 call dein#add('Shougo/neco-vim')
 call dein#add('Shougo/neco-syntax')
@@ -222,12 +230,15 @@ call dein#add('zchee/deoplete-jedi')
 " call dein#add('zchee/deoplete-jedi',  {'lazy':1, 'on_ft': ['py', 'python']})
 call dein#add('zchee/deoplete-zsh',   {'lazy':1, 'on_ft': ['zsh']})
 " call dein#add('carlitux/deoplete-ternjs')
+" call dein#add('tweekmonster/deoplete-clang2')
 call dein#add('wellle/tmux-complete.vim')
 call dein#add('fszymanski/deoplete-emoji')
 " call dein#add('ternjs/tern_for_vim')
 " call dein#add('1995eaton/vim-better-javascript-completion')
 " call dein#add('mopp/googlesuggest-source.vim')
 " call dein#add('mattn/googlesuggest-complete-vim')
+
+
 
 " 🛴 Misc 1
 call dein#add('ciaranm/securemodelines', {
@@ -248,28 +259,36 @@ call dein#add('freitass/todo.txt-vim')
 call dein#add('rafi/vim-denite-task')
 call dein#add('dunstontc/vim-taskwarrior')
 call dein#add('tbabej/taskwiki')
-" call dein#add('Shougo/junkfile.vim')
-" call dein#add('ryanss/vim-hackernews')
-" call dein#add('vmchale/vim-twitter')
-" call dein#add('junegunn/vim-github-dashboard')
-" call dein#add('suan/vim-instant-markdown')
-" call dein#add('tweekmonster/startuptime.vim')
-" call dein#add('othree/vim-autocomplpop')
-" call dein#add('tyru/capture.vim')
-" call dein#add('tyru/eskk.vim')
-" call dein#add('Shougo/deol.nvim')
 call dein#add('Shougo/deol.nvim', {
       \ 'lazy'  : 1,
       \ 'on_cmd': 'Deol'
       \})
 call dein#add('Shougo/vimshell.vim')
 call dein#add('kassio/neoterm')
+" call dein#add('Shougo/junkfile.vim')
 " call dein#add('vifm/neovim-vifm')
+
+
+
+" 🔬  Dev
+" call dein#add('neomake/neomake')
+" call dein#add('dahu/vimple')
+" call dein#add('tpope/vim-scriptease')
+" call dein#add('tweekmonster/helpful.vim')
+call dein#add('tweekmonster/startuptime.vim')
 " call dein#add('cyansprite/Extract')
+" call dein#add('tyru/capture.vim')
+" call dein#add('tyru/eskk.vim')
+" call dein#add('othree/vim-autocomplpop')
+" call dein#add('Shougo/echodoc.vim')
+
 
 
 
 " 🛴 Lazy
+" call dein#add('ryanss/vim-hackernews')
+" call dein#add('vmchale/vim-twitter')
+" call dein#add('junegunn/vim-github-dashboard')
 call dein#add('pelodelfuego/vim-swoop', {
       \ 'lazy'  : 1,
       \ 'on_source': 'swoop',
@@ -310,8 +329,8 @@ call dein#add('itchyny/screensaver.vim', {
 " call dein#add('$HOME/.dotfiles/editors/neovim/snippetz/')
 call dein#add('$HOME/Projects/vim/vim-code-dark')
 call dein#add('$HOME/Projects/Vim/tcd')
-call dein#add('$HOME/Projects/vim/Input')
-call dein#add('$HOME/Projects/Vim/vim-hud')
+" call dein#add('$HOME/Projects/vim/Input')
+" call dein#add('$HOME/Projects/Vim/vim-hud')
 
 call dein#end()
 
@@ -322,4 +341,3 @@ endif
 filetype plugin indent on
 syntax on
 set nocompatible           " Not compatible with vi
-

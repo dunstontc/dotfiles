@@ -22,7 +22,7 @@ let g:lightline = {
       \               [ 'fsize' ] ]
       \},
       \  'component': {
-      \    'clipboard': '"%{v:register}',
+      \    'clipboard': '%{v:register}',
       \    'displace' : '%F',
       \},
       \  'component_function': {

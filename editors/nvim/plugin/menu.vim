@@ -201,7 +201,8 @@ call g:quickmenu#append(
       \ 'edit $HOME/Projects/Vim/tcd',
       \ 'Scratch Plugin (for now :)',
       \ '', 0, 'vt')
-call g:quickmenu#append('# Shell', '')
+
+call g:quickmenu#append('# Shells', '')
 call g:quickmenu#append(
       \ '.zshrc',
       \ 'edit $HOME/.dotfiles/shell/zsh/.zshrc',
@@ -217,6 +218,36 @@ call g:quickmenu#append(
       \ 'edit $HOME/.dotfiles/config/tmux/.tmux.conf',
       \ '',
       \ '', 0, 'dt')
+
+
+call g:quickmenu#append('# Global', '')
+call g:quickmenu#append(
+      \ '.aliases',
+      \ 'TwoSplit $HOME/.dotfiles/shell/.aliases',
+      \ '',
+      \ '', 0, 'da')
+call g:quickmenu#append(
+      \ '.exports',
+      \ 'TwoSplit $HOME/.dotfiles/shell/.exports',
+      \ '',
+      \ '', 0, 'de')
+call g:quickmenu#append(
+      \ '.functions',
+      \ 'TwoSplit $HOME/.dotfiles/shell/.functions',
+      \ '',
+      \ '', 0, 'df')
+call g:quickmenu#append(
+      \ '.highlight',
+      \ 'TwoSplit $HOME/.dotfiles/shell/.highlight',
+      \ '',
+      \ '', 0, 'dh')
+call g:quickmenu#append(
+      \ '.path',
+      \ 'TwoSplit $HOME/.dotfiles/shell/.path',
+      \ '',
+      \ '', 0, 'dp')
+
+
 
 
 " =============================================================================
@@ -290,4 +321,3 @@ call g:quickmenu#append(
       \ 'Unite todo',
       \ '',
       \ '', 0, 'utd')
-

@@ -23,16 +23,15 @@ call denite#custom#var(
 
 " replace grep with silver searcher
 call denite#custom#var('grep', 'command', ['ag'])
-" call denite#custom#var('grep', 'default_opts',
-"       \ ['--hidden',
-"       \  '--vimgrep',
-"       \  '--no-heading',
-"       \  '-S'])
 
 call denite#custom#var('grep', 'recursive_opts', [])
-call denite#custom#var('grep', 'pattern_opt',    ['--regexp'])
 call denite#custom#var('grep', 'separator',      ['--'])
 call denite#custom#var('grep', 'final_opts',     [])
+
+
+" enable unite menu compatibility
+call denite#custom#var('menu', 'unite_source_menu_compatibility', 1)
+
 
 
 " =============================================================================
@@ -88,11 +87,37 @@ call denite#custom#map('normal', '<C-v>',
 "       \ 'noremap' )
 
 
-nnoremap <C-p> :<C-u>Denite file_rec<CR>
+" " KEY MAPPINGS
+" let s:insert_mode_mappings = [
+"       \  ['jk', '<denite:enter_mode:normal>', 'noremap'],
+"       \ ['<Tab>', '<denite:move_to_next_line>', 'noremap'],
+"       \ ['<S-tab>', '<denite:move_to_previous_line>', 'noremap'],
+"       \  ['<Esc>', '<denite:enter_mode:normal>', 'noremap'],
+"       \  ['<C-N>', '<denite:assign_next_matched_text>', 'noremap'],
+"       \  ['<C-P>', '<denite:assign_previous_matched_text>', 'noremap'],
+"       \  ['<Up>', '<denite:assign_previous_text>', 'noremap'],
+"       \  ['<Down>', '<denite:assign_next_text>', 'noremap'],
+"       \  ['<C-Y>', '<denite:redraw>', 'noremap'],
+"       \ ]
+"
+" let s:normal_mode_mappings = [
+"       \   ["'", '<denite:toggle_select_down>', 'noremap'],
+"       \   ['<C-n>', '<denite:jump_to_next_source>', 'noremap'],
+"       \   ['<C-p>', '<denite:jump_to_previous_source>', 'noremap'],
+"       \   ['gg', '<denite:move_to_first_line>', 'noremap'],
+"       \   ['st', '<denite:do_action:tabopen>', 'noremap'],
+"       \   ['sg', '<denite:do_action:vsplit>', 'noremap'],
+"       \   ['sv', '<denite:do_action:split>', 'noremap'],
+"       \   ['q', '<denite:quit>', 'noremap'],
+"       \   ['r', '<denite:redraw>', 'noremap'],
+"       \ ]
+
+
+" nnoremap <C-p> :<C-u>Denite file_rec<CR>
 " nnoremap <leader>s :<C-u>Denite buffer<CR>
 " nnoremap <leader>8 :<C-u>DeniteCursorWord grep:. -mode=normal<CR>
 " nnoremap <leader>/ :<C-u>Denite grep:. -mode=normal<CR>
-nnoremap <leader>/ :<C-u>DeniteBufferDir grep:. -mode=normal<CR>
+" nnoremap <leader>/ :<C-u>DeniteBufferDir grep:. -mode=normal<CR>
 
 
 
@@ -164,6 +189,10 @@ let g:neoyank#limit=100
 " autocmd BufWinEnter \(*.asc\|*.gpg\) let g:neoyank_disable = 1
 
 
+
+
+
+
 " =============================================================================
 "   Unite
 " =============================================================================
@@ -191,6 +220,19 @@ call unite#custom#profile('default', 'context', {
 " nnoremap <C-p> :Unite file_rec/async<cr>
 nnoremap <space>/ :Unite grep:.<cr>
 
+let g:unite_source_file_rec_max_depth = 6
+let g:unite_source_grep_default_opts =
+      \ '-i --vimgrep --hidden --ignore ' .
+      \ '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
+let g:unite_source_grep_recursive_opt = ''
+
+call unite#custom#profile('file_rec/async', 'context', {
+      \   'start_insert' : 1,
+      \   'quit'         : 1,
+      \   'split'        : 1,
+      \   'keep_focus'   : 1,
+      \   'winheight'    : 20,
+      \ })
 
 " =============================================================================
 "  === vim-bookmarks ===
@@ -214,4 +256,3 @@ nnoremap <space>/ :Unite grep:.<cr>
 "   \   'prompt_direction': 'top',
 "   \   'winheight': 10
 "   \ })
-

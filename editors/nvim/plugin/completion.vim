@@ -1,7 +1,7 @@
 " =============================================================================
 " === Shougo/deoplete ===
 " =============================================================================
-let g:deoplete#enable_at_startup = 1
+" let g:deoplete#enable_at_startup = 1
 let g:deoplete#auto_completion_start_length = 2
 " let g:deoplete#enable_camel_case = 1
 " let g:deoplete#skip_chars = ['(', ')', '<', '>']

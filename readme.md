@@ -23,10 +23,12 @@
     - [Misc.](#misc)
     - [Reference](#reference)
 
-| Key     | Context | Action            |
-|---------|---------|-------------------|
-| <⌘-⌥-s> | Alfred  | Search Snippets   |
-| <⌘-⌥-,> | Alfred  | Clipboard History |
+| Key       | Context | Action            |
+|-----------|---------|-------------------|
+| `⌘-Space` | Alfred  | Hotkey            |
+| `⌘-⌥-s`   | Alfred  | Search Snippets   |
+| `⌘-⌥-,`   | Alfred  | Clipboard History |
+| `⌥-Space` | iTerm2  | Focus to iTerm2   |
 
 ## Links
 
