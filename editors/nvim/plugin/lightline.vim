@@ -144,8 +144,8 @@ function! PaddedStats() abort
     let l:padRow = ' ' . l:row
   endif
 
-  return &filetype !~# g:tcd_blacklist ? (' ' . l:padRow  . '/' . l:total . ' :' . l:padCol) :
-                                       \ ( l:row  . '/' . l:total )
+  return &filetype !~# g:tcd_blacklist && winwidth(0) > 60 ? (' ' . l:padRow  . '/' . l:total . ' :' . l:padCol) :
+                                       \ ( l:row  . '/' . l:total . ':' . l:column )
 endfunction
 
 " =============================================================================
@@ -160,15 +160,15 @@ function! FileSize() abort
   endif
 
   if l:bytes <= 0
-    return &filetype !~# g:tcd_blacklist ? ('0 B') : ''
+    return &filetype !~# g:tcd_blacklist && winwidth(0) > 60 ? ('0 B') : ''
   endif
 
   if (exists('l:mbytes'))
-    return &filetype !~# g:tcd_blacklist ? (l:mbytes . ' MB') : ''
+    return &filetype !~# g:tcd_blacklist && winwidth(0) > 60 ? (l:mbytes . ' MB') : ''
   elseif (exists('l:kbytes'))
-    return &filetype !~# g:tcd_blacklist ? (l:kbytes . ' KB') : ''
+    return &filetype !~# g:tcd_blacklist && winwidth(0) > 60 ? (l:kbytes . ' KB') : ''
   else
-    return &filetype !~# g:tcd_blacklist ? (l:bytes . ' B') : ''
+    return &filetype !~# g:tcd_blacklist && winwidth(0) > 60 ? (l:bytes . ' B') : ''
   endif
 endfunction
 

@@ -1,7 +1,7 @@
 " =============================================================================
 " === Shougo/deoplete ===
 " =============================================================================
-" let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_at_startup = 1
 let g:deoplete#auto_completion_start_length = 2
 " let g:deoplete#enable_camel_case = 1
 " let g:deoplete#skip_chars = ['(', ')', '<', '>']
@@ -58,7 +58,7 @@ call deoplete#custom#source('omni',          'rank', 600)
 call deoplete#custom#source('ultisnips',     'rank', 510)
 call deoplete#custom#source('member',        'rank', 500)
 " call deoplete#custom#source('file_include',  'rank', 420)
-call deoplete#custom#source('file',          'rank', 410)
+call deoplete#custom#source('file',          'rank', 450)
 " call deoplete#custom#source('tag',           'rank', 400)
 call deoplete#custom#source('around',        'rank', 330)
 call deoplete#custom#source('buffer',        'rank', 320)

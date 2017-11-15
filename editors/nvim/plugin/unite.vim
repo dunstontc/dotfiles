@@ -7,6 +7,7 @@ augroup deniteresize
         \'winheight', winheight(0) / 4)
 augroup end
 
+let s:menus = {}
 
 call denite#custom#option('default', {
       \ 'auto_accel'  :     v:true,
@@ -30,48 +31,28 @@ call denite#custom#var('grep', 'final_opts',     [])
 
 
 " enable unite menu compatibility
-call denite#custom#var('menu', 'unite_source_menu_compatibility', 1)
+" call denite#custom#var('menu', 'unite_source_menu_compatibility', 1)
 
 
 
 " =============================================================================
 
 
-call denite#custom#map('insert',  '<down>',
-    \ '',
-    \ 'noremap')
-call denite#custom#map('insert',  '<up>',
-    \ '',
-    \ 'noremap')
+call denite#custom#map('insert', '<down>', '<Nop>',                          'noremap')
+call denite#custom#map('insert', '<up>',   '<Nop>',                          'noremap')
 " Use ctrl-Q to make a selection
-call denite#custom#map('normal',  '<C-q>',
-    \ '<NOP>',
-    \ 'noremap')
-call denite#custom#map('insert', '<C-q>',
-    \ '<denite:enter_mode:normal>',
-    \ 'noremap')
-call denite#custom#map('normal', '<Esc>',
-    \ '<NOP>',
-    \ 'noremap')
-call denite#custom#map('insert', '<Esc>',
-    \ '<denite:enter_mode:normal>',
-    \ 'noremap')
-
+call denite#custom#map('normal', '<C-q>',  '<NOP>',                          'noremap')
+call denite#custom#map('normal', '𐌘',      '<NOP>',                          'noremap')
+call denite#custom#map('insert', '𐌘',      '<denite:enter_mode:normal>',     'noremap')
+call denite#custom#map('insert', '<C-q>',  '<denite:enter_mode:normal>',     'noremap')
+call denite#custom#map('normal', '<Esc>',  '<NOP>',                          'noremap')
+call denite#custom#map('insert', '<Esc>',  '<denite:enter_mode:normal>',     'noremap')
 " or use ctrl-n/ctrl-p to cycle them
-call denite#custom#map('insert', '<C-n>',
-    \ '<denite:move_to_next_line>',
-    \ 'noremap')
-call denite#custom#map('insert', '<C-p>',
-    \ '<denite:move_to_previous_line>',
-    \ 'noremap')
-
+call denite#custom#map('insert', '<C-n>',  '<denite:move_to_next_line>',     'noremap')
+call denite#custom#map('insert', '<C-p>',  '<denite:move_to_previous_line>', 'noremap')
 " and then ctrl-v to split into it
-call denite#custom#map('insert', '<C-v>',
-    \ '<denite:do_action:vsplit>',
-    \ 'noremap')
-call denite#custom#map('normal', '<C-v>',
-    \ '<denite:do_action:vsplit>',
-    \ 'noremap')
+call denite#custom#map('insert', '<C-v>',  '<denite:do_action:vsplit>',      'noremap')
+call denite#custom#map('normal', '<C-v>',  '<denite:do_action:vsplit>',      'noremap')
 
 
 
@@ -167,6 +148,42 @@ call denite#custom#var('task', 'format', '{id:3.3} | {priority:1.1} | {project:1
 call denite#custom#var('task', 'date_format', '%y-%m-%d %H:%M')
 call denite#custom#var('task', 'label_width', 17)
 
+
+" Git from denite...ERMERGERD -----------------------------------------------{{{
+  let s:menus.git = {
+    \ 'description' : 'Fugitive interface',
+    \}
+  let s:menus.git.command_candidates = [
+    \[' git status', 'Gstatus'],
+    \[' git diff', 'Gvdiff'],
+    \[' git commit', 'Gcommit'],
+    \[' git stage/add', 'Gwrite'],
+    \[' git checkout', 'Gread'],
+    \[' git rm', 'Gremove'],
+    \[' git cd', 'Gcd'],
+    \[' git push', 'exe "Git! push " input("remote/branch: ")'],
+    \[' git pull', 'exe "Git! pull " input("remote/branch: ")'],
+    \[' git pull rebase', 'exe "Git! pull --rebase " input("branch: ")'],
+    \[' git checkout branch', 'exe "Git! checkout " input("branch: ")'],
+    \[' git fetch', 'Gfetch'],
+    \[' git merge', 'Gmerge'],
+    \[' git browse', 'Gbrowse'],
+    \[' git head', 'Gedit HEAD^'],
+    \[' git parent', 'edit %:h'],
+    \[' git log commit buffers', 'Glog --'],
+    \[' git log current file', 'Glog -- %'],
+    \[' git log last n commits', 'exe "Glog -" input("num: ")'],
+    \[' git log first n commits', 'exe "Glog --reverse -" input("num: ")'],
+    \[' git log until date', 'exe "Glog --until=" input("day: ")'],
+    \[' git log grep commits',  'exe "Glog --grep= " input("string: ")'],
+    \[' git log pickaxe',  'exe "Glog -S" input("string: ")'],
+    \[' git index', 'exe "Gedit " input("branchname\:filename: ")'],
+    \[' git mv', 'exe "Gmove " input("destination: ")'],
+    \[' git grep',  'exe "Ggrep " input("string: ")'],
+    \[' git prompt', 'exe "Git! " input("command: ")'],
+    \] " Append ' --' after log to get commit info commit buffers
+"}}}
+call denite#custom#var('menu', 'menus', s:menus)
 
 " =============================================================================
 "  unite-location

@@ -1,4 +1,4 @@
-"  ________   ___      ___ ___  ___ ______   ________  ________
+"  ________   ___      ___ ___  ___ _________   ________  ________
 " |\   ___  \|\  \    /  /|\  \|\   _ \  _   \|\   __  \|\   ____\
 " \ \  \\ \  \ \  \  /  / | \  \ \  \\\__\ \  \ \  \|\  \ \  \___|
 "  \ \  \\ \  \ \  \/  / / \ \  \ \  \\|__| \  \ \   _  _\ \  \
@@ -6,7 +6,10 @@
 "    \ \__\\ \__\ \__/ /     \ \__\ \__\    \ \__\ \__\\ _\\ \_______\
 "     \|__| \|__|\|__|/       \|__|\|__|     \|__|\|__|\|__|\|_______|
 "
-"
+
+if !has('nvim')
+  finish
+endif
 " =============================================================================
 "  Plugins
 " =============================================================================
@@ -42,6 +45,7 @@ call dein#add('CharlesGueunet/quickmenu.vim')
 call dein#add('osyo-manga/vim-anzu')
 " call dein#add('henrik/vim-indexed-search')
 call dein#add('dhruvasagar/vim-zoom')
+call dein#add('thinca/vim-poslist')
 
 
 
@@ -49,21 +53,23 @@ call dein#add('dhruvasagar/vim-zoom')
 " 🎨  Make Vim Sexy
 call dein#add('blueyed/vim-diminactive')
 call dein#add('itchyny/vim-cursorword')
+" call dein#add('machakann/vim-highlightedundo')
+call dein#add('thalesmello/nvim-better-operator-message')
 call dein#add('chrisbra/Colorizer', {
       \ 'lazy'  : 1,
       \ 'on_cmd': 'ColorToggle',
       \})
 call dein#add('mswift42/vim-themes')
-call dein#add('chriskempson/base16-vim')
+" call dein#add('chriskempson/base16-vim')
 " call dein#add('wincent/pinnacle')
 " call dein#add('thaerkh/vim-indentguides')
 " call dein#add('itchyny/vim-parenmatch')
 " call dein#add('joshdick/onedark.vim')
 " call dein#add('dunstontc/vim-code-dark')
 " call dein#add('rafi/awesome-vim-colorschemes')
-" call dein#add('tyrannicaltoucan/vim-deep-space')
-" call dein#add('reedes/vim-colors-pencil')
-" call dein#add('rhysd/vim-color-spring-night')
+call dein#add('tyrannicaltoucan/vim-deep-space')
+call dein#add('reedes/vim-colors-pencil')
+call dein#add('rhysd/vim-color-spring-night')
 
 
 
@@ -96,7 +102,8 @@ call dein#add('rhysd/vim-wasm',               {'lazy':1, 'on_ft': ['wast']})
 call dein#add('chrisbra/csv.vim',             {'lazy':1, 'on_ft': ['csv', 'tsv']})
 call dein#add('tmux-plugins/vim-tmux')
 " call dein#add('kballard/vim-fish',        {'lazy':1, 'on_ft': ['fish']})
-call dein#add('aliva/vim-fish',               {'lazy':1, 'on_ft': ['fish']})
+" call dein#add('aliva/vim-fish',               {'lazy':1, 'on_ft': ['fish']})
+call dein#add('dag/vim-fish',                 {'lazy':1, 'on_ft': ['fish']})
 call dein#add('chrisbra/vim-zsh',             {'lazy':1, 'on_ft': ['zsh']})
 call dein#add('zplug/vim-zplug')
 
@@ -138,6 +145,7 @@ call dein#add('justinmk/vim-sneak')
 " call dein#add('haya14busa/incsearch-easymotion.vim')
 " call dein#add('haya14busa/vim-asterisk')
 " call dein#add('junegunn/vim-slash')
+call dein#add('thalesmello/vim-slasher')
 " call dein#add('romainl/vim-qf')
 " call dein#add('romainl/vim-qlist')
 " call dein#add('romainl/vim-quicklist')
@@ -164,7 +172,7 @@ call dein#add('Julian/vim-textobj-variable-segment')
 " call dein#add('jceb/vim-textobj-uri')
 call dein#add('saihoooooooo/vim-textobj-space')
 " call dein#add('saaguero/vim-textobj-pastedtext')
-" call dein#add('glts/vim-textobj-comment')
+call dein#add('glts/vim-textobj-comment')
 " call dein#add('fvictorio/vim-textobj-backticks')
 " call dein#add('thinca/vim-textobj-between')
 " call dein#add('rhysd/vim-textobj-anyblock')
@@ -209,8 +217,8 @@ call dein#add('Shougo/neoyank.vim')
 call dein#add('rafi/vim-denite-z')
 call dein#add('rafi/vim-denite-session')
 call dein#add('chemzqm/denite-extra')
-" call dein#add('chemzqm/denite-git')
-" call dein#add('chemzqm/vim-easygit')
+call dein#add('chemzqm/denite-git')
+call dein#add('chemzqm/vim-easygit')
 " call dein#add('t9md/vim-choosewin')
 call dein#add('christoomey/vim-tmux-navigator')
 call dein#add('MattesGroeger/vim-bookmarks')
@@ -227,9 +235,10 @@ call dein#add('Shougo/neco-vim')
 call dein#add('Shougo/neco-syntax')
 call dein#add('SirVer/ultisnips')
 call dein#add('zchee/deoplete-jedi')
-" call dein#add('zchee/deoplete-jedi',  {'lazy':1, 'on_ft': ['py', 'python']})
-call dein#add('zchee/deoplete-zsh',   {'lazy':1, 'on_ft': ['zsh']})
-" call dein#add('carlitux/deoplete-ternjs')
+call dein#add('zchee/deoplete-jedi',       {'lazy':1, 'on_ft': ['py', 'python']})
+call dein#add('zchee/deoplete-zsh',        {'lazy':1, 'on_ft': ['zsh']})
+call dein#add('ponko2/deoplete-fish',      {'lazy':1, 'on_ft': ['fish']})
+call dein#add('carlitux/deoplete-ternjs',  {'lazy':1, 'on_ft': ['js', 'jsx', 'javascript']})
 " call dein#add('tweekmonster/deoplete-clang2')
 call dein#add('wellle/tmux-complete.vim')
 call dein#add('fszymanski/deoplete-emoji')
@@ -252,17 +261,12 @@ call dein#add('ciaranm/securemodelines', {
 call dein#add('mattn/webapi-vim')
 " call dein#add('vimwiki/vimwiki')
 call dein#add('thinca/vim-scouter')
-" call dein#add('jez/vim-superman')
 call dein#add('aaronbieber/vim-quicktask')
 call dein#add('chemzqm/todoapp.vim')
 call dein#add('freitass/todo.txt-vim')
 call dein#add('rafi/vim-denite-task')
 call dein#add('dunstontc/vim-taskwarrior')
 call dein#add('tbabej/taskwiki')
-call dein#add('Shougo/deol.nvim', {
-      \ 'lazy'  : 1,
-      \ 'on_cmd': 'Deol'
-      \})
 call dein#add('Shougo/vimshell.vim')
 call dein#add('kassio/neoterm')
 " call dein#add('Shougo/junkfile.vim')
@@ -289,6 +293,10 @@ call dein#add('tweekmonster/startuptime.vim')
 " call dein#add('ryanss/vim-hackernews')
 " call dein#add('vmchale/vim-twitter')
 " call dein#add('junegunn/vim-github-dashboard')
+call dein#add('Shougo/deol.nvim', {
+      \ 'lazy'  : 1,
+      \ 'on_cmd': 'Deol'
+      \})
 call dein#add('pelodelfuego/vim-swoop', {
       \ 'lazy'  : 1,
       \ 'on_source': 'swoop',
@@ -329,8 +337,8 @@ call dein#add('itchyny/screensaver.vim', {
 " call dein#add('$HOME/.dotfiles/editors/neovim/snippetz/')
 call dein#add('$HOME/Projects/vim/vim-code-dark')
 call dein#add('$HOME/Projects/Vim/tcd')
-" call dein#add('$HOME/Projects/vim/Input')
-" call dein#add('$HOME/Projects/Vim/vim-hud')
+" call dein#add('$HOME/Projects/Vim/forks/vim-hud')
+" call dein#add('~/Projects/Vim/forks/vim-sidemenu')
 
 call dein#end()
 

@@ -22,16 +22,20 @@ Add Surround             S<A>          V
 # Text Objects
 word                     iw
 WORD                     i«S-W»
+sentence                 is
+paragraph                ip
 camelCase / snake_case   iv
-(') / (") / (`)          iq
-" Single Quotes            i'
-" Double Quotes            i"
+' Single Quotes          i'
+" Double Quotes          i"
+` Backtics                i`
 ()                       ib
 {}                       i«S-B»
 []                       i]
+comment                  ac
+space                    iS
 line                     il
-paragraph                ip
 Indent +line above       ai
+' / " / `                iq
 Indent (no line)         ii
 Indent +above/below      aI
 Around entire buffer     ae

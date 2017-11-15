@@ -35,6 +35,14 @@ call dein#add('${1:plugin}', {
       \\})$0
 endsnippet
 
+snippet menu_item "Quickmenu Item" b
+call g:quickmenu#append(
+      \ '${1:name}',
+      \ '${2:command}',
+      \ '${3:description}',
+      \ '${4:filetypes}', 0, '${5:shortcut}')
+endsnippet
+
 snippet divider "Divider" b
 " =============================================================================
 endsnippet

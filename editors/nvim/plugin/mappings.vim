@@ -1,53 +1,45 @@
 " =============================================================================
 "  Key Mappings
 " =============================================================================
-let mapleader="\<Space>"
-
 set timeoutlen=500
+
+let mapleader="\<Space>"
+" let g:mapleader="\<Space>"
 
 nnoremap <leader><leader>  <esc>
 
-inoremap <esc> <C-o>:echo "Use ctrl-Q dumbass "<cr>
-
-noremap Q <nop>
-" TODO: make new shortcut for macros
-
-
-"      👇
 nnoremap ; :
 vnoremap ; :
 
-" Save wih ⌘ + s
-nnoremap 𐌔 :w<cr>
-inoremap 𐌔 <C-o>:w<cr>
-
-" Save wih ⌘ + /
-noremap <silent>𐌍 :TComment<CR>
-inoremap <silent>𐌍 <esc>:TComment<CR>
-
 " use ctrl-q instead of ⎋ , stay on the home row
-inoremap <C-q> <esc>
-nnoremap <C-q> <esc>
-vnoremap <C-q> <esc>
-xnoremap <C-q> <esc>
-cnoremap <C-q> normal! <esc>
+inoremap <esc> <C-o>:echo "Use ctrl-Q dumbass "<CR>
+inoremap <C-q> <C-c>
+nnoremap <C-q> <Nop>
+vnoremap <C-q> <C-c>
+" xnoremap <C-q> <C-c>
 
 " Clear highlights & commands
 nnoremap <silent>\ :noh<CR>:call anzu#clear_search_status()<CR>:echo<CR>
+
+noremap Q <Nop>
+" TODO: make new shortcut for macros
+
+" Escape the terminal
+tnoremap <Esc> <C-\><C-n>
+
+" Save wih ⌘ -s
+nnoremap 𐌔 :w<CR>
+inoremap 𐌔 <C-o>:w<CR>
+
+" Comment wih ⌘ -/
+noremap <silent>𐌍 :TComment<CR>
+inoremap <silent>𐌍 <esc>:TComment<CR>
 
 " <S-CR> New line below
 inoremap 𐌄 <esc> o
 " <C-CR> New line above
 inoremap 𐌂 <esc> O
 
-
-noremap ,, :call quickmenu#toggle(2)<CR>
-noremap ,0 :call quickmenu#toggle(0)<CR>
-noremap ,1 :call quickmenu#toggle(1)<CR>
-noremap ,2 :call quickmenu#toggle(2)<CR>
-noremap ,3 :call quickmenu#toggle(3)<CR>
-noremap ,4 :call quickmenu#toggle(4)<CR>
-noremap ,5 :call quickmenu#toggle(5)<CR>
 
 " Bigger Steps
 noremap <S-H> 0
@@ -58,37 +50,39 @@ inoremap <C-E> <C-o>$
 nnoremap <BS> i<DEL><esc><right>
 nnoremap ,<space> i<space><Esc>
 
-
-" Undo & Redo
-nnoremap <leader>r :redo<cr>
-" Quick Close
+nnoremap <leader>u :redo<CR>
 nnoremap <leader>q :q<CR>
 
-" Quick Save
+" gtfo
 nnoremap fj :wq<CR>
 inoremap fj <esc>:wq<CR>
-
-" Yank into the void
-noremap d "_d
-noremap D "_D
-noremap dd "_dd
 
 " Yank Better
 nnoremap <S-y> Vy
 noremap 𐌋 mxV"zy"zp`xj
 
+
+" Yank into the void
+noremap d "_d
+noremap D "_D
+noremap dd "_dd
+noremap c "_c
+noremap C "_C
+
 " and toss out our leftovers when we put
 " vnoremap p "_dP
-nnoremap ,p "0P
-vnoremap ,p "0P
+nnoremap ,p "0p
+vnoremap ,p "0p
+" nnoremap p "0P
+" vnoremap p "0P
 
-" Indentation
-vmap <silent> <leader>[ <gv
-vmap <silent> <leader>] >gv
-nmap <silent> <leader>[ <<
-nmap <silent> <leader>] >>
-imap <silent> <leader>[ <esc><<
-imap <silent> <leader>] <esc>>>
+" " Indentation
+" vmap <silent> <leader>[ <gv
+" vmap <silent> <leader>] >gv
+" nmap <silent> <leader>[ <<
+" nmap <silent> <leader>] >>
+" imap <silent> <leader>[ <esc><<
+" imap <silent> <leader>] <esc>>>
 
 " ⌘
 vmap <silent> 𐌀 <gv
@@ -120,13 +114,23 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 
-" Escape the terminal
-tnoremap <Esc> <C-\><C-n>
+
 " Use ⌥ left/right in command mode
 " cnoremap <Esc>b <S-Left>
 " cnoremap <Esc>f <S-Right>
 
 
+nmap <Leader>y <Plug>(sidemenu)
+xmap <Leader>y <Plug>(sidemenu-visual)
+
+
+noremap ,, :call quickmenu#toggle(2)<CR>
+noremap ,0 :call quickmenu#toggle(0)<CR>
+noremap ,1 :call quickmenu#toggle(1)<CR>
+noremap ,2 :call quickmenu#toggle(2)<CR>
+noremap ,3 :call quickmenu#toggle(3)<CR>
+noremap ,4 :call quickmenu#toggle(4)<CR>
+noremap ,5 :call quickmenu#toggle(5)<CR>
 
 " === Unused ===
 " imap <C-F>
@@ -153,8 +157,8 @@ tnoremap <Esc> <C-\><C-n>
 "  Custom Motions & Objects
 " =============================================================================
 " pretty much autoselect quotes
-xmap q iq
-omap q iq
+" xmap q iq
+" omap q iq
 
 " " operator mappings
 " nmap <silent>sa <Plug>(operator-surround-append)a
@@ -200,9 +204,7 @@ omap q iq
 " Define prefix dictionary
 let g:lmap={
             \  ' ': ['',                                        'Cancel'          ],
-            \  '`': ['vsplit +terminal normal! i',              'New Terminal'    ],
-            \  '[': ['',                                        'Decrease Indent' ],
-            \  ']': ['',                                        'Increase Indent' ],
+            \  '`': ['vsplit +terminal',                        'New Terminal'    ],
             \  'M': ['',                                        'ViMagit'         ],
             \  'o': ['vsplit $HOME/Projects/Vim/neovim.org.md', 'Org'             ],
             \  'q': ['',                                        'Quit'            ],
@@ -235,15 +237,15 @@ let g:lmap.c={
             \},
             \    'e': {
             \    'name': 'Edit',
-            \       'c': [ 'vsplit ~/.dotfiles/editors/nvim/plugin/commands.vim',        'Commands'               ],
-            \       'd': [ 'vsplit $MYVIMRC',                                            '.vimrc'                 ],
-            \       'e': [ 'vsplit ~/.dotfiles/editors/nvim/plugin/settings.vim',        'Settings'               ],
-            \       'i': [ 'vsplit ~/.dotfiles/editors/nvim/plugin/ui.vim',              'UI'                     ],
-            \       'k': [ 'vsplit ~/.dotfiles/editors/nvim/plugin/mappings.vim',        'Keybindings'            ],
-            \       'p': [ 'vsplit ~/.dotfiles/editors/nvim/plugin/plugins.vim',         'Plugins'                ],
-            \       's': [ 'vsplit ~/.dotfiles/editors/nvim/plugin/lightline.vim',       'Statusline'             ],
-            \       't': [ 'vsplit ~/Projects/vim/vim-code-dark/colors/codedark.vim',    'Theme'                  ],
-            \       'u': [ 'vsplit ~/.dotfiles/editors/nvim/plugin/unite.vim',           'Unite/Denite Interface' ],
+            \       'c': [ 'TwoSplit "~/.dotfiles/editors/nvim/plugin/commands.vim"',        'Commands'               ],
+            \       'd': [ 'TwoSplit $MYVIMRC',                                              '.vimrc'                 ],
+            \       'e': [ 'TwoSplit "~/.dotfiles/editors/nvim/plugin/settings.vim"',        'Settings'               ],
+            \       'i': [ 'TwoSplit "~/.dotfiles/editors/nvim/plugin/ui.vim"',              'UI'                     ],
+            \       'k': [ 'TwoSplit "~/.dotfiles/editors/nvim/plugin/mappings.vim"',        'Keybindings'            ],
+            \       'p': [ 'TwoSplit "~/.dotfiles/editors/nvim/plugin/plugins.vim"',         'Plugins'                ],
+            \       's': [ 'TwoSplit "~/.dotfiles/editors/nvim/plugin/lightline.vim"',       'Statusline'             ],
+            \       't': [ 'TwoSplit "~/Projects/vim/vim-code-dark/colors/codedark.vim"',    'Theme'                  ],
+            \       'u': [ 'TwoSplit "~/.dotfiles/editors/nvim/plugin/unite.vim"',           'Unite/Denite Interface' ],
             \}
             \}
 
@@ -260,6 +262,12 @@ let g:lmap.d={
             \    't': ['Denite todo',                                             'Todos'                   ],
             \    'T': ['Denite todo:done',                                        'Finished Todos'          ],
             \    'z': ['Denite z',                                                'Z (jump around)'         ],
+            \    'd': {
+            \    'name': '+Unite',
+            \       'h': [ 'H unite',    'Help'          ],
+            \       't': [ 'Unite todo', 'Todos'         ],
+            \       'u': [ 'Unite',      '(interactive)' ],
+            \}
             \}
 
 
@@ -284,6 +292,12 @@ let g:lmap.f={
             \       'c': [ 'e ~/.dotfiles/editors/nvim/doc/cheat40.txt',              'Cheat Sheet'            ],
             \       'r': [ 'source $MYVIMRC',                                         'reload config'          ],
             \},
+            \    'p': {
+            \    'name': '+File',
+            \       'n': ['GetName',     'Copy name of the active buffer'       ],
+            \       'p': ['GetFullPath', 'Copy Absolute Path to current file'   ],
+            \       'r': ['GetRelPath',  'Copy Relative Path to current file'   ],
+            \},
             \    's': [ 'w',              'Save'      ],
             \    'S': [ 'wa',             'Save All'  ],
             \    't': [ 'NERDTreeToggle', 'File Tree' ],
@@ -300,7 +314,7 @@ let g:lmap.h={
             \    'name': 'Describe',
             \       'c': [ 'ascii',                     'Character '         ],
             \       'f': [ 'set filetype?',             'Filetype'           ],
-            \       'p': ['GetFullPath',                'Current Path'       ],
+            \       'p': [ 'GetFullPath',               'Current Path'       ],
             \       's': [ 'SynDef',                    'Syntax Item'        ],
             \       'S': [ 'syntax',                    'List Syntax Groups' ],
             \}
@@ -344,14 +358,6 @@ let g:lmap.t={
             \}
 
 
-let g:lmap.u={
-            \ 'name': '+Unite',
-            \    'h': [ 'H unite',    'Help'  ],
-            \    't': [ 'Unite todo', 'Todos' ],
-            \    'u': [ 'Unite',      '(interactive)' ],
-            \}
-
-
 let g:lmap.w={
             \ 'name': '+Window',
             \    'h': [ 'split',             'Horizontal Split'        ],
@@ -360,6 +366,7 @@ let g:lmap.w={
             \    'v': [ 'vs',                'Vertical Split'          ],
             \    'z': ['call zoom#toggle()', 'Toggle Zoom'             ],
             \}
+
 
 let g:lmap.v={
             \ 'name': '+Wiki',

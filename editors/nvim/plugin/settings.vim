@@ -3,8 +3,7 @@
 " =============================================================================
 " set encoding=utf-8         " BOM needed for DevIcons
 set encoding=utf-8 nobomb
-set clipboard=unnamed  " Use the OS clipboard by default (on versions compiled with `+clipboard`)
-" let l:cache_enabled = 0
+set clipboard=unnamedplus " Use the OS clipboard by default (on versions compiled with `+clipboard`)
 set modeline               " Respect modeline in files
 set modelines=5            " Well, in the first 5 lines of files
 set noerrorbells           " Disable error bells
@@ -40,7 +39,7 @@ set nopaste
 " =============================================================================
 set termguicolors
 " set t_Co=256
-colorscheme codedark
+colorscheme deep-space
 set background=dark
 let g:enable_bold_font=1       " Enable bold font in colorscheme
 let g:enable_italic_font=1     " Enable italic font in colorscheme
@@ -52,9 +51,9 @@ set nowrap                     " Do not wrap lines
 set number                     " Enable line numbers
 " set relativenumber             " Show numbers relative to current line
 set ruler                      " Show the cursor position
-set scrolloff=2                " Start scrolling x lines before horizontal border of window
-set sidescrolloff=3            " Start scrolling x columns before vertical border of window
-set sidescroll=3
+set scrolloff=5                " Start scrolling x lines before horizontal border of window
+set sidescrolloff=5            " Start scrolling x columns before vertical border of window
+set sidescroll=5
 " set showtabline=2              " Always show tab bar
 set showmatch                  " Highlight matching braces
 
@@ -64,7 +63,6 @@ set showcmd                    " Show (partial) command in the last line of the 
 " set shortmess=a                " We don't like presing enter to continue
 set noshowmode                 " Don't show the current mode (airline takes care of this)
 set notitle                    " Don't Show the filename in the window titlebar
-" set cmdheight=2
 
 set listchars+=tab:→\
 set listchars+=eol:¬
@@ -129,21 +127,22 @@ set wildignore+=*.zip
 set wildignorecase
 " set wildmode=longest:full,full
 " set wildmode=list:longest,list:full
-" set wildmode=list:longest
-set wildmode=list:full
+set wildmode=list:longest
+" set wildmode=list:full
 
 " set completeopt=longest,menu,preview
 " set completeopt+=menu
 " set completeopt+=longest
-set completeopt+=noinsert
-set completeopt+=preview
-
+" set completeopt+=noinsert
+" set completeopt+=preview
+set completeopt+=menuone
+set completeopt-=preview
 
 "  Folding
 if has('folding')
   set foldenable                  " Enable folding
   set foldmethod=syntax
-  set foldlevelstart=3            " Default folding level when buffer is opened
+  set foldlevelstart=5            " Default folding level when buffer is opened
   set foldnestmax=10              " Maximum nested fold
   " set foldtext=functions#NeatFoldText()
 endif

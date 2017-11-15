@@ -4,7 +4,8 @@ export DOTFILES='$HOME/.dotfiles'
 
 export EDITOR='nvim'
 
-export PAGER='less'
+# export PAGER='less'
+export PAGER=vimpager
 
 export TERM='xterm-256color'
 

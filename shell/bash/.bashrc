@@ -52,7 +52,8 @@ bind "set completion-map-case on"
 # Display matches for ambiguous patterns at first tab press
 bind "set show-all-if-ambiguous on"
 
-
+# enable control-s and control-q
+stty -ixon
 
 # Record each line as it gets issued
 # PROMPT_COMMAND='history -a'
@@ -115,3 +116,5 @@ eval "$(thefuck --alias)"
 # Use bash-completion, if available
 [[ $PS1 && -f /usr/local/share/bash-completion/bash_completion ]] && \
     . /usr/local/share/bash-completion/bash_completion
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

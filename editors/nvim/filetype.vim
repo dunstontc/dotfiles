@@ -9,7 +9,7 @@ augroup filetypes
 
     autocmd BufRead,BufNewFile .spacemacs set filetype=lisp
 
-    autocmd BufRead,BufNewFile {topydo,columns,column}.conf set filetype=dosini
+    autocmd BufRead,BufNewFile {topydo,columns,column}.conf,column,columns,topydo set filetype=dosini
 
     autocmd BufRead,BufNewFile .{aliases,env,exports,functions,highlight,inputrc,path,} set filetype=sh
     " autocmd BufRead,BufNewFile .{bash_prompt,bash_profile} set filetype=sh

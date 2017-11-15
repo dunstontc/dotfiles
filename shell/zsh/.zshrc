@@ -17,11 +17,10 @@ source ~/.zplug/init.zsh
 zplug 'zplug/zplug',    hook-build:'zplug --self-manage'
 zplug "plugins/git",    from:oh-my-zsh
 zplug "lib/completion", from:oh-my-zsh
-# zplug "plugins/z",      from:oh-my-zsh
 zplug "rupa/z",         use:z.sh
 zplug "changyuheng/fz", defer:1
-# zplug "Vifon/deer",     from:github, use:deer
 # zplug "changyuheng/zsh-interactive-cd", from:github
+# zplug "Vifon/deer",     from:github, use:deer
 zplug "djui/alias-tips"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"
@@ -29,7 +28,7 @@ zplug "zsh-users/zsh-history-substring-search"
 zplug "denysdovhan/spaceship-zsh-theme",       use:spaceship.zsh, from:github, at:3.0, as:theme
 zplug "zsh-users/zsh-syntax-highlighting",     defer:2
 zplug "mafredri/zsh-async",                    from:github
-zplug "eventi/noreallyjustfuckingstopalready", from:github
+# zplug "eventi/noreallyjustfuckingstopalready", from:github
 # zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
 
 
@@ -59,7 +58,9 @@ for file in $HOME/.dotfiles/shell/.{path,exports,aliases,functions}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
+
 source $HOME/.dotfiles/ignore/.private
+
 
 # =============================================================================
 # # # Make sure the terminal is in application mode, which zle is active. Only then
@@ -83,7 +84,10 @@ source $HOME/.dotfiles/shell/.highlight
 # =============================================================================
 # If this option is unset, output flow control via start/stop characters
 # (usually assigned to ^S/^Q) is disabled in the shell's editor.
-unsetopt flow_control
+stty start undef
+stty stop undef
+setopt noflowcontrol
+# unsetopt flow_control
 
 # zmodload zsh/complist
 # autoload -Uz compinit
@@ -172,3 +176,8 @@ ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=yellow'
 # =============================================================================
 eval $(thefuck --alias --enable-experimental-instant-mode)
 compdef vman="man"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
+

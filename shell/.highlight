@@ -19,6 +19,24 @@ hl(){
   highlight -O ansi $1 | less -r
 }
 
+hll(){
+  highlight -O xterm256 $1 | less -r
+  # highlight $1 --out-format xterm256
+}
+
+
+alias dog='pygmentize -g'
+
+cdc() {
+    for fn do
+        if [[ "${fn##*/}" == .* ]]
+        then
+            source-highlight --src-lang=sh --out-format=esc -i "$fn"
+        else
+            source-highlight               --out-format=esc -i "$fn"
+        fi 2> /dev/null  ||  /bin/cat "$fn"
+    done
+  }
 
 # Setup JSON Syntax Highlighting
 # Copy js.lang to json.lang with the following command

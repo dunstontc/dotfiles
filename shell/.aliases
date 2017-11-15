@@ -30,6 +30,7 @@ alias rgr="ranger"
 alias t="tmux"
 alias tpd="topydo"
 alias v="vim"
+alias vim="stty stop '' -ixoff ; vim"
 alias _="sudo"
 alias please="sudo"
 
@@ -68,7 +69,7 @@ function fixzsh() {
 
 
 # Reload zsh
-alias zre="source ~/.zshrc"
+alias zr="source ~/.zshrc"
 
 # Reload bash
 alias bbbash="source ~/.bashrc"

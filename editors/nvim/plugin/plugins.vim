@@ -151,7 +151,7 @@ let g:instant_markdown_allow_external_content = 1
 " =============================================================================
 "  === Slash ===
 " =============================================================================
-" noremap <plug>(slash-after) zz
+noremap <plug>(slash-after) zz
 
 
 " =============================================================================
@@ -509,4 +509,5 @@ let g:python_highlight_all=1
 " =============================================================================
 let g:task_rc_override = 'rc.defaultwidth=0'
 let g:task_rc_override = 'rc.defaultheight=0'
+
 

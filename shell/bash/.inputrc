@@ -25,7 +25,7 @@ set mark-symlinked-directories on
 set expand-tilde off
 
 # Flip through autocompletion matches with Shift-Tab.
-"\e[Z": menu-complete
+# "\e[Z": menu-complete
 
 # on menu-complete, first display the common prefix, then cycle through the
 # options when hitting TAB

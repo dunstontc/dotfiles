@@ -6,7 +6,7 @@ let g:quickmenu_ft_blacklist= ['help', 'netrw', 'nerdtree', 'cheat40']
 let g:quickmenu_special_keys = 0
 let g:quickmenu_padding_left = 3
 let g:quickmenu_padding_right = 3
-" let g:quickmenu_max_width = 40   " TODO: add min_width
+let g:quickmenu_max_width = 50   " TODO: add min_width
 
 " call g:quickmenu#append("Window manipulation" , ':call quickmenu#bottom(2)'   , 'New tab / split / resize' , '' , 0 , 'w')
 
@@ -45,13 +45,18 @@ call g:quickmenu#append(
       \ '',
       \ '', 0, '4')
 
+call g:quickmenu#append('# ===========', '')
+
+
+
+
 
 " =============================================================================
 " Plugins
 " =============================================================================
 call g:quickmenu#current(1)
 call g:quickmenu#header('Plugins')
-call g:quickmenu#append('# Plugins', '')
+call g:quickmenu#append('# Plugins','')
 call g:quickmenu#append(
       \ '  UndoTree',
       \ 'UndotreeToggle',
@@ -73,7 +78,7 @@ call g:quickmenu#append(
       \ 'Show a small cheatsheet',
       \ '', 0, 'ch')
 call g:quickmenu#append(
-      \ ' Calendar',
+      \ '  Calendar',
       \ 'Calendar',
       \ 'show Calendar',
       \ '', 0, 'ca')
@@ -87,11 +92,15 @@ call g:quickmenu#append(
       \ 'ScreenSaver largeclock',
       \ 'Save your screen',
       \ '', 0, 'ss')
-" call g:quickmenu#append(
-"       \ '',
-"       \ '',
-"       \ '',
-"       \ '', 0, '')
+call g:quickmenu#append('# ===========','')
+call g:quickmenu#append(
+      \ ' Main Menu',
+      \ 'call quickmenu#toggle(0)',
+      \ '',
+      \ '', 0, 'cd')
+
+
+
 
 
 " =============================================================================
@@ -99,9 +108,9 @@ call g:quickmenu#append(
 " =============================================================================
 call g:quickmenu#current(2)
 call g:quickmenu#header('Settings')
-call g:quickmenu#append('# General Settings', '')
+call g:quickmenu#append('# General Settings','')
 call g:quickmenu#append(
-			\ '  init.vim ',
+			\ '  init.vim ',
 			\ 'TwoSplit $MYVIMRC',
 			\ 'init file',
       \ '', 0, 'iv')
@@ -124,7 +133,7 @@ call g:quickmenu#append(
       \ '  Commands',
       \ 'TwoSplit "~/.dotfiles/editors/nvim/plugin/commands.vim"',
       \ 'user-defined commands',
-      \ '', 0, 'cd')
+      \ '', 0, 'cm')
 call g:quickmenu#append(
       \ '  Autocommands',
       \ 'TwoSplit "~/.dotfiles/editors/nvim/plugin/autocmnds.vim"',
@@ -152,7 +161,7 @@ call g:quickmenu#append(
       \ '', 0, 'sn')
 
 
-call g:quickmenu#append('# Plugin Settings', '')
+call g:quickmenu#append('# Plugin Settings','')
 call g:quickmenu#append(
       \ '  Completion',
       \ 'TwoSplit "~/.dotfiles/editors/nvim/plugin/completion.vim"',
@@ -179,73 +188,140 @@ call g:quickmenu#append(
       \ 'statusline settings',
       \ '', 0, 'sl')
 call g:quickmenu#append(
-      \ ' Menu',
+      \ '  Menu',
       \ 'TwoSplit "~/.dotfiles/editors/nvim/plugin/menu.vim"',
       \ 'Settings for This Menu',
       \ '', 0, 'mu')
+
+
+call g:quickmenu#append('# ===========','')
+call g:quickmenu#append(
+      \ ' Main Menu',
+      \ 'call quickmenu#toggle(0)',
+      \ '',
+      \ '', 0, 'cd')
+
+
+
 
 
 " =============================================================================
 " Projects
 " =============================================================================
 call g:quickmenu#current(3)
-call g:quickmenu#header("Projects")
-call g:quickmenu#append('# Vim', '')
-" call g:quickmenu#append(
-"       \ 'vim/tcd',
-"       \ 'edit $HOME/Projects/Vim/tcd',
-"       \ 'Scratch Plugin (for now :)',
-"       \ '', 0, 't')
-call g:quickmenu#append(
-      \ 'vim/tcd',
-      \ 'edit $HOME/Projects/Vim/tcd',
-      \ 'Scratch Plugin (for now :)',
-      \ '', 0, 'vt')
+call g:quickmenu#header("Dotfiles")
+call g:quickmenu#append('# Vim','')
 
-call g:quickmenu#append('# Shells', '')
 call g:quickmenu#append(
-      \ '.zshrc',
-      \ 'edit $HOME/.dotfiles/shell/zsh/.zshrc',
+      \ ' .vimrc',
+      \ 'TwoSplit "~/.dotfiles/editors/vim/.vimrc"',
+      \ 'Vim 8',
+      \ '', 0, 'vi')
+
+
+call g:quickmenu#append('# Shells','')
+call g:quickmenu#append(
+      \ ' .zshrc',
+      \ 'TwoSplit "~/.dotfiles/shell/zsh/.zshrc"',
       \ '',
       \ '', 0, 'dz')
 call g:quickmenu#append(
-      \ '.bashrc',
-      \ 'edit $HOME/.dotfiles/shell/bash/.bashrc',
+      \ '  prompt.zsh',
+      \ 'TwoSplit "~/.dotfiles/shell/zsh/prompt.zsh"',
+      \ '',
+      \ '', 0, 'zp')
+call g:quickmenu#append(
+      \ ' .bashrc',
+      \ 'TwoSplit "~/.dotfiles/shell/bash/.bashrc"',
       \ '',
       \ '', 0, 'db')
 call g:quickmenu#append(
-      \ '.tmux.conf',
-      \ 'edit $HOME/.dotfiles/config/tmux/.tmux.conf',
+      \ ' .inputrc',
+      \ 'TwoSplit "~/.dotfiles/shell/bash/.inputrc"',
+      \ '',
+      \ '', 0, 'di')
+call g:quickmenu#append(
+      \ '  config.fish',
+      \ 'TwoSplit "~/.dotfiles/shell/fish/config.fish"',
+      \ '',
+      \ '', 0, 'df')
+call g:quickmenu#append(
+      \ '  prompt.fish',
+      \ 'TwoSplit "~/.dotfiles/shell/fish/config.fish"',
+      \ '',
+      \ '', 0, 'fp')
+call g:quickmenu#append(
+      \ ' .tmux.conf',
+      \ 'TwoSplit "~/.dotfiles/config/tmux/.tmux.conf"',
       \ '',
       \ '', 0, 'dt')
 
 
-call g:quickmenu#append('# Global', '')
+call g:quickmenu#append('# Global','')
 call g:quickmenu#append(
-      \ '.aliases',
-      \ 'TwoSplit $HOME/.dotfiles/shell/.aliases',
+      \ ' .aliases',
+      \ 'TwoSplit "~/.dotfiles/shell/.aliases"',
       \ '',
-      \ '', 0, 'da')
+      \ '', 0, 'ga')
 call g:quickmenu#append(
-      \ '.exports',
-      \ 'TwoSplit $HOME/.dotfiles/shell/.exports',
+      \ ' .exports',
+      \ 'TwoSplit "~/.dotfiles/shell/.exports"',
       \ '',
-      \ '', 0, 'de')
+      \ '', 0, 'ge')
 call g:quickmenu#append(
-      \ '.functions',
-      \ 'TwoSplit $HOME/.dotfiles/shell/.functions',
+      \ ' .functions',
+      \ 'TwoSplit "~/.dotfiles/shell/.functions"',
       \ '',
-      \ '', 0, 'df')
+      \ '', 0, 'gf')
 call g:quickmenu#append(
-      \ '.highlight',
-      \ 'TwoSplit $HOME/.dotfiles/shell/.highlight',
+      \ ' .path',
+      \ 'TwoSplit "~/.dotfiles/shell/.path"',
       \ '',
-      \ '', 0, 'dh')
+      \ '', 0, 'gp')
+
+call g:quickmenu#append('# Ranger','')
 call g:quickmenu#append(
-      \ '.path',
-      \ 'TwoSplit $HOME/.dotfiles/shell/.path',
+      \ 'commands.py',
+      \ 'TwoSplit "~/.dotfiles/config/ranger/commands_full.py"',
       \ '',
-      \ '', 0, 'dp')
+      \ '', 0, 'rk')
+call g:quickmenu#append(
+      \ 'scope.sh',
+      \ 'TwoSplit "~/.dotfiles/config/ranger/scope.sh"',
+      \ '',
+      \ '', 0, 'rs')
+call g:quickmenu#append(
+      \ 'rifle.conf',
+      \ 'TwoSplit "~/.dotfiles/config/ranger/rifle.conf"',
+      \ '',
+      \ '', 0, 'ri')
+call g:quickmenu#append(
+      \ 'rc.conf',
+      \ 'TwoSplit "~/.dotfiles/config/ranger/rc.conf"',
+      \ '',
+      \ '', 0, 'rc')
+
+
+call g:quickmenu#append('# Todo','')
+call g:quickmenu#append(
+      \ '.taskrc',
+      \ 'TwoSplit "~/.dotfiles/misc/.taskrc"',
+      \ '',
+      \ '', 0, 'wr')
+call g:quickmenu#append(
+      \ '.task.theme',
+      \ 'TwoSplit "~/.task/tcd-tw.theme"',
+      \ '',
+      \ '', 0, 'wt')
+
+
+call g:quickmenu#append('# ===========','')
+call g:quickmenu#append(
+      \ ' Main Menu',
+      \ 'call quickmenu#toggle(0)',
+      \ '',
+      \ '', 0, 'cd')
+
 
 
 
@@ -254,10 +330,9 @@ call g:quickmenu#append(
 "  Unite/Denite
 " =============================================================================
 
-
 call g:quickmenu#current(4)
 call g:quickmenu#header(' Unite/Denite')
-call g:quickmenu#append('# Denite', '')
+call g:quickmenu#append('# Denite','')
 call g:quickmenu#append(
       \ ' Buffers',
       \ 'Denite buffer',
@@ -299,6 +374,11 @@ call g:quickmenu#append(
       \ '',
       \ '', 0, 'td')
 call g:quickmenu#append(
+      \ 'Tasks ',
+      \ 'Denite todo',
+      \ '',
+      \ '', 0, 'tk')
+call g:quickmenu#append(
       \ 'Finished Todos',
       \ 'Denite todo:done',
       \ '',
@@ -310,7 +390,7 @@ call g:quickmenu#append(
       \ '', 0, 'z')
 
 
-call g:quickmenu#append('# Unite', '')
+call g:quickmenu#append('# Unite','')
 call g:quickmenu#append(
       \ ' Unite (interactive)',
       \ 'Unite',
@@ -320,4 +400,13 @@ call g:quickmenu#append(
       \ 'Todos',
       \ 'Unite todo',
       \ '',
-      \ '', 0, 'utd')
+      \ '', 0, 'ut')
+
+
+call g:quickmenu#append('# ===========', '')
+call g:quickmenu#append(
+      \ ' Main Menu',
+      \ 'call quickmenu#toggle(0)',
+      \ '',
+      \ '', 0, 'cd')
+

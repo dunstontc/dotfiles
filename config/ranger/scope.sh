@@ -97,20 +97,8 @@ esac
 case "$mimetype" in
     # Syntax highlight for text files:
     text/* | */xml)
-    #     if [ "$(tput colors)" -ge 256 ]; then
-    #         pygmentize_format=terminal256
-    #         highlight_format=xterm256
-    #     else
-    #         pygmentize_format=terminal
-    #         highlight_format=ansi
-    #     fi
-        # try highlight --out-format=xterm256-color "$path" && { dump | trim; exit 5; }
-        try hl "$path" && { dump | trim; exit 5; }
-        # try safepipe pygmentize -f ${pygmentize_format} "$path" && { dump | trim; exit 5; }
-        exit 2;;
-    # text/* | */xml)
-        # try pygmentize -f 256 -O style=monokai "$path" && { dump | trim; exit 5; }
-        # exit 2;;
+        /usr/local/bin/highlight --out-format=ansi "$path" && { dump | trim; exit 5; } || exit 2;;
+        # try hl "$path" && { dump | trim; exit 5; } || exit 2;;
     # Ascii-previews of images:
     image/*)
         img2txt --gamma=0.6 --width="$width" "$path" && exit 4 || exit 1;;
