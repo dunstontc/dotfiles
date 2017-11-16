@@ -15,22 +15,20 @@ alias 5='cd -5'
 
 # Directories
 # alias sl="ls"
-# alias l="ls -a"
-alias lsa="ls -A"
-alias la="l -Al"
-alias las='ls -lah'
-alias ..l="cd .. && ls -a"
 alias l="colorls -A --sort-files"
+alias ll="colorls -Al --sort-files"
+alias lsa="ls -A"
+alias lsl='ls -lAh'
+alias ..l="cd .. && ls -A"
 
 # Abbreviations
 alias c="clear"
 alias e="exit"
 alias n="nvim"
 alias rgr="ranger"
-alias t="tmux"
+alias t="todo.sh"
 alias tpd="topydo"
 alias v="vim"
-alias vim="stty stop '' -ixoff ; vim"
 alias _="sudo"
 alias please="sudo"
 
@@ -43,6 +41,7 @@ alias npr="npm run"
 alias npp="npm init -y"
 
 # Tmux
+alias tm="tmux"
 alias tls="tmux ls"
 alias tmn="tmux new"
 alias tmnn="tmux new -s $1"

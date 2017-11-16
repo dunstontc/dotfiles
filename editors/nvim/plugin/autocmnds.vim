@@ -5,7 +5,7 @@ augroup MyAutoCmds
   autocmd VimResized * wincmd =
 
   " Head straight into insert mode in vim-terms
-  autocmd BufEnter * if &buftype == 'terminal' | :startinsert | endif
+  " autocmd BufEnter * if &buftype == 'terminal' | :startinsert | endif
   " autocmd BufEnter * if &filetype == 'terminal' | :startinsert | endif
 
   autocmd FileType python setlocal completeopt-=preview

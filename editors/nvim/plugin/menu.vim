@@ -184,7 +184,7 @@ call g:quickmenu#append(
       \ '', 0, 'un')
 call g:quickmenu#append(
       \ '  Statusline',
-      \ 'TwoSplit "~/.dotfiles/editors/nvim/plugin/lightline.vim"',
+      \ 'TwoSplit "~/.dotfiles/editors/nvim/plugin/statline.vim"',
       \ 'statusline settings',
       \ '', 0, 'sl')
 call g:quickmenu#append(

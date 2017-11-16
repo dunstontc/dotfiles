@@ -17,18 +17,22 @@
   - Atom ✔
   - VS Code 👷
   - Neovim *v5.2* ✔
+  - Vim *8.0.125* ✔
   - [Links](#links)
     - [Resources](#resources)
     - [Themes](#themes)
     - [Misc.](#misc)
     - [Reference](#reference)
 
-| Key       | Context | Action            |
-|-----------|---------|-------------------|
-| `⌘-Space` | Alfred  | Hotkey            |
-| `⌘-⌥-s`   | Alfred  | Search Snippets   |
-| `⌘-⌥-,`   | Alfred  | Clipboard History |
-| `⌥-Space` | iTerm2  | Focus to iTerm2   |
+| Key       | Context | Action              |
+|-----------|---------|---------------------|
+| `⌘-Space` | Alfred  | Hotkey              |
+| `⌘-⌥-s`   | Alfred  | Search Snippets     |
+| `⌘-⌥-,`   | Alfred  | Clipboard History   |
+| `⌥-Space` | iTerm2  | Focus to iTerm2     |
+| `⌘ - s`   | nvim    | Write active buffer |
+|
+
 
 ## Links
 

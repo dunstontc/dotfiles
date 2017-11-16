@@ -1,5 +1,5 @@
-let g:UtilNoColorcolumn = ['qf', 'fzf', 'netrw', 'help', 'markdown', 'startify', 'GrepperSide', 'txt']
-let g:UtilMkviewFiletypeBlacklist = ['diff', 'hgcommit', 'gitcommit']
+" let g:UtilNoColorcolumn = ['qf', 'fzf', 'netrw', 'help', 'markdown', 'startify', 'GrepperSide', 'txt']
+" let g:UtilMkviewFiletypeBlacklist = ['diff', 'hgcommit', 'gitcommit']
 
 function! functions#hasFileType(list) abort
   return index(a:list, &filetype) != -1

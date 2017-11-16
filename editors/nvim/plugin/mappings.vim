@@ -48,14 +48,15 @@ inoremap <C-E> <C-o>$
 " imap <C-B> <C-o>0 " TODO: bind key to $ in insert mode
 
 nnoremap <BS> i<DEL><esc><right>
-nnoremap ,<space> i<space><Esc>
+noremap ,, i<space><esc>
+" nnoremap ,<space> i<space><Esc>
 
 nnoremap <leader>u :redo<CR>
 nnoremap <leader>q :q<CR>
 
 " gtfo
-nnoremap fj :wq<CR>
-inoremap fj <esc>:wq<CR>
+nnoremap fj :x<CR>
+inoremap fj <esc>:x<CR>
 
 " Yank Better
 nnoremap <S-y> Vy
@@ -120,17 +121,16 @@ nmap ga <Plug>(EasyAlign)
 " cnoremap <Esc>f <S-Right>
 
 
-nmap <Leader>y <Plug>(sidemenu)
-xmap <Leader>y <Plug>(sidemenu-visual)
+" nmap <Leader>y <Plug>(sidemenu)
+" xmap <Leader>y <Plug>(sidemenu-visual)
 
 
-noremap ,, :call quickmenu#toggle(2)<CR>
-noremap ,0 :call quickmenu#toggle(0)<CR>
-noremap ,1 :call quickmenu#toggle(1)<CR>
-noremap ,2 :call quickmenu#toggle(2)<CR>
-noremap ,3 :call quickmenu#toggle(3)<CR>
-noremap ,4 :call quickmenu#toggle(4)<CR>
-noremap ,5 :call quickmenu#toggle(5)<CR>
+nnoremap ,0 :call quickmenu#toggle(0)<CR>
+nnoremap ,1 :call quickmenu#toggle(1)<CR>
+nnoremap ,2 :call quickmenu#toggle(2)<CR>
+nnoremap ,3 :call quickmenu#toggle(3)<CR>
+nnoremap ,4 :call quickmenu#toggle(4)<CR>
+nnoremap ,5 :call quickmenu#toggle(5)<CR>
 
 " === Unused ===
 " imap <C-F>
@@ -346,15 +346,16 @@ let g:lmap.s={
 
 let g:lmap.t={
             \ 'name': '+Toggle',
-            \    'c': [ 'TComment',           'Comment'               ],
-            \    'k': [ 'ColorToggle',        'Colors'                ],
-            \    'f': [ 'normal! zi',         'Folding'               ],
-            \    'h': [ 'set nohlsearch',     'Highlight'             ],
-            \    'l': [ 'set wrap!',          'Line Wrap'             ],
-            \    'm': [ 'tablemode#Toggle()', 'Table Mode'            ],
-            \    'p': [ 'set nopaste',        'Paste Mode'            ],
-            \    'r': [ 'set rnu!',           'Relative Line Numbers' ],
-            \    'w': [ 'set list!',          'Invisible Characters'  ],
+            \    'c': [ 'TComment',                'Comment'               ],
+            \    'k': [ 'ColorToggle',             'Colors'                ],
+            \    'f': [ 'normal! zi',              'Folding'               ],
+            \    'g': [ 'call gitgutter#toggle()', 'GitGutter'             ],
+            \    'h': [ 'set nohlsearch',          'Highlight'             ],
+            \    'l': [ 'set wrap!',               'Line Wrap'             ],
+            \    'm': [ 'tablemode#Toggle()',      'Table Mode'            ],
+            \    'p': [ 'set nopaste',             'Paste Mode'            ],
+            \    'r': [ 'set rnu!',                'Relative Line Numbers' ],
+            \    'w': [ 'set list!',               'Invisible Characters'  ],
             \}
 
 

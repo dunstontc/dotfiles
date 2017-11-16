@@ -53,7 +53,7 @@ bind "set completion-map-case on"
 bind "set show-all-if-ambiguous on"
 
 # enable control-s and control-q
-stty -ixon
+# stty -ixon
 
 # Record each line as it gets issued
 # PROMPT_COMMAND='history -a'

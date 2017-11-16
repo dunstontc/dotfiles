@@ -15,7 +15,7 @@ set ttyfast
 set undofile               " Persistent Undo though
 set undodir=~/.config/nvim/undo
 set shell=/usr/local/bin/bash
-
+set nohidden
 
 " =============================================================================
 "   Input & Navigation
@@ -39,7 +39,7 @@ set nopaste
 " =============================================================================
 set termguicolors
 " set t_Co=256
-colorscheme deep-space
+colorscheme codedark
 set background=dark
 let g:enable_bold_font=1       " Enable bold font in colorscheme
 let g:enable_italic_font=1     " Enable italic font in colorscheme
@@ -81,7 +81,7 @@ set nolist
 " set list         " Show invisible characters
 
 set synmaxcol=200              " Don't syntax highlight long lines
-" set colorcolumn=80             " Highlight the 80th character limit
+" set colorcolumn=80            " Highlight the 80th character limit
 " if exists('+colorcolumn')
 "   let &l:colorcolumn='+' . join(range(0, 254), ',+')
 " endif

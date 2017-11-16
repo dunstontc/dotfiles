@@ -109,10 +109,6 @@ let g:ale_lint_on_enter = 1
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_vim_vint_show_style_issues = 1
-highlight clear ALEErrorSign
-hi clear ALEWarningSign
-hi Error NONE
-hi ErrorMsg NONE
 
 
 " =============================================================================
@@ -131,10 +127,13 @@ hi ErrorMsg NONE
 " inoreabbrev <expr> __
 "           \ <SID>isAtStartOfLine('__') ?
 "           \ '<c-o>:silent! TableModeDisable<cr>' : '__'
+let g:table_mode_disable_mappings = 0
+let g:table_mode_syntax = 1
 let g:table_mode_corner='|'
 let g:table_mode_auto_align = 1
-" let g:table_mode_motion_left_map=''
-" let g:table_mode_motion_right_map = ''
+let g:table_mode_update_time = 500
+" let g:table_mode_motion_left_map='<s-tab>'
+" let g:table_mode_motion_right_map = '<tab>'
 " let g:table_mode_motion_down_map = ''
 " let g:table_mode_motion_up_map = ''
 
@@ -258,12 +257,12 @@ let g:vimwiki_list = [{'path': '~/vimwiki.md.d/',
 " =============================================================================
 "  === extra-whitespace ===
 " =============================================================================
-  let g:extra_whitespace_ignored_filetypes = [
-        \ 'unite',
-        \ 'mkd',
-        \ 'startify',
-        \ 'cheat40'
-        \]
+let g:extra_whitespace_ignored_filetypes = [
+      \ 'unite',
+      \ 'mkd',
+      \ 'startify',
+      \ 'cheat40'
+      \]
 
 
 
@@ -465,14 +464,14 @@ let g:expand_region_text_objects = {
       \ 'ie'  :0,
       \ }
 
-call expand_region#custom_text_objects({
-      \ "\/\\n\\n\<CR>": 1,
-      \ 'a]' :1,
-      \ 'ab' :1,
-      \ 'aB' :1,
-      \ 'ii' :0,
-      \ 'ai' :0,
-      \ })
+" call expand_region#custom_text_objects({
+"       \ "\/\\n\\n\<CR>": 1,
+"       \ 'a]' :1,
+"       \ 'ab' :1,
+"       \ 'aB' :1,
+"       \ 'ii' :0,
+"       \ 'ai' :0,
+"       \ })
 
 
 
@@ -510,4 +509,12 @@ let g:python_highlight_all=1
 let g:task_rc_override = 'rc.defaultwidth=0'
 let g:task_rc_override = 'rc.defaultheight=0'
 
-
+" =============================================================================
+" === vim-togglecursor ===
+" =============================================================================
+let g:togglecursor_default = 'block'
+let g:togglecursor_insert = 'line'
+let g:togglecursor_leave = 'block'
+let g:togglecursor_replace = 'underline'
+let g:togglecursor_disable_tmux = 0
+let g:togglecursor_disable_default_init = 1

@@ -29,6 +29,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tomtom/tcomment_vim'
+Plug 'raimondi/delimitmate'
 " Pretty Things
 Plug 'itchyny/vim-cursorword'
 Plug 'jszakmeister/vim-togglecursor'
@@ -40,6 +41,11 @@ Plug 'flazz/vim-colorschemes'
 Plug 'sgur/vim-editorconfig'
 Plug 'ciaranm/securemodelines'
 Plug 'jez/vim-superman'
+" Enhancements
+Plug 'Shougo/deoplete.nvim'
+" Plug 'roxma/nvim-yarp'
+" Plug 'roxma/vim-hug-neovim-rpc'
+" Plug 'Shougo/deoplete.nvim'
 call plug#end()
 
 
@@ -95,8 +101,6 @@ set splitbelow                 " New split placed below
 
 " === Theming ===
 " set Vim-specific sequences for RGB colors
-" let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-" let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 " set rtp+=~/.vim/autoload/rgb.txt
 " exe 'set rtp+=' . expand('~/.vim/autoload/rgb.txt')
 " set rtp+=/usr/share/vim/vim74/rgb.txt
@@ -106,7 +110,7 @@ set termguicolors
 let g:enable_bold_font=1       " Enable bold font in colorscheme
 let g:enable_italic_font=1     " Enable italic font in colorscheme
 colorscheme gruvbox
-highlight Comment gui=italic
+highlight! Comment gui=italic
 
 
 " === Invisible Characters ===
@@ -210,8 +214,8 @@ nnoremap <leader>u :redo<CR>
 " Clear highlights & commands
 nnoremap <silent>\ :noh<CR>:echo<CR>
 " gtfo
-nnoremap fj :wq<CR>
-inoremap fj <esc>:wq<CR>
+nnoremap fj :x<CR>
+inoremap fj <esc>:x<CR>
 
 noremap <S-H> 0
 noremap <S-L> $
@@ -249,6 +253,9 @@ let g:togglecursor_default = 'block'
 let g:togglecursor_insert = 'line'
 let g:togglecursor_leave = 'block'
 let g:togglecursor_replace = 'underline'
-let g:togglecursor_disable_tmux = 1
+let g:togglecursor_disable_tmux = 0
 let g:togglecursor_disable_default_init = 1
 
+
+" === deoplete ===
+" let g:deoplete#enable_at_startup = 1
