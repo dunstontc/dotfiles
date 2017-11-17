@@ -3,22 +3,29 @@
 " =============================================================================
 " Center our header
 function! s:filter_header(lines) abort
-    let longest_line   = max(map(copy(a:lines), 'strwidth(v:val)'))
-    let centered_lines = map(copy(a:lines),
-        \ 'repeat(" ", (&columns / 2) - (longest_line / 2)) . v:val')
-    return centered_lines
+    let l:longest_line   = max(map(copy(a:lines), 'strwidth(v:val)'))
+    let l:centered_lines = map(copy(a:lines),
+        \ 'repeat(" ", (&columns / 1) - (l:longest_line / 3)) . v:val')
+    return l:centered_lines
 endfunction
 let g:startify_custom_header = s:filter_header(startify#fortune#cowsay())
+" let g:startify_custom_header = s:filter_header(fortune())
 
 " Start numbering from 10
 let g:startify_custom_indices = map(range(1,100), 'string(v:val)')
 
 " Number of recent files shown
 let g:startify_files_number = 10
-
 " Show <empty buffer> and <quit>.
 let g:startify_enable_special = 0
 
+let g:startify_change_to_dir          = 0
+let g:startify_change_to_vcs_root     = 0
+let g:startify_fortune_use_unicode    = 1
+let g:startify_use_env                = 1
+let g:startify_session_autoload       = 0
+let g:startify_session_persistence    = 0
+let g:startify_update_oldfiles        = 1
 " Open NERDTree along with Startify
 " autocmd VimEnter *
 "       \   if !argc()
@@ -53,8 +60,8 @@ let g:startify_list_order = [
         \ 'commands',
         \ ]
 
-" let g:startify_custom_footer =
-  " \ ['', "   Vim is charityware. Please read ':help uganda'.", '']
+let g:startify_custom_footer =
+  \ ['','','','','','','']
 
 
 " =============================================================================

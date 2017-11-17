@@ -60,7 +60,7 @@ inoremap fj <esc>:x<CR>
 
 " Yank Better
 nnoremap <S-y> Vy
-noremap 𐌋 mxV"zy"zp`xj
+nnoremap 𐌋 mxV"zy"zp`xj
 
 
 " Yank into the void
@@ -139,6 +139,32 @@ nnoremap ,5 :call quickmenu#toggle(5)<CR>
 " noremap <M-RIGHT> :NERDTreeToggle<CR>
 
 nnoremap <H-e> :echo "noice"<cr>
+
+" Substitute
+" nnoremap <leader>s :%s//g<left><left>
+
+" Toggle Comments
+nnoremap <leader>tc :TComment<CR>
+" Toggle Coloring for hex/rgb/cterm values
+nnoremap <leader>tk :ColorToggle<CR>
+" Toggle Folding
+nnoremap <leader>tf :normal! zi<CR>
+" Toggle GitGutter
+nnoremap <leader>tg :call gitgutter#toggle()<CR>
+" Toggle Search Highlight
+nnoremap <leader>th :set nohlsearch<CR>
+" Toggle Line Wrapping
+nnoremap <leader>tl :set wrap!<CR>
+" Toggle TableMode
+nnoremap <leader>tm :tablemode#Toggle()<CR>
+" Toggle Paste
+nnoremap <leader>tp :set nopaste<CR>
+" Toggle the Quickfix List
+nnoremap <leader>tq :copen<CR>
+" Toggle Relative Line Numbers
+nnoremap <leader>tr :set rnu!<CR>
+" Toggle Invisible Characters (whitespace)
+nnoremap <leader>tw :set list!<CR>
 
 
 
@@ -338,6 +364,7 @@ let g:lmap.i={
 
 let g:lmap.s={
             \ 'name': '+Search',
+            \    'r': [ ':%s//g<left><left>', 'Search & Replace' ],
             \    's': {
             \    'name': 'Swoop',
             \       'l': ['call Swoop()',      'Local (current buffer)'  ],

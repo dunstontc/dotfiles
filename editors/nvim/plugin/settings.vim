@@ -9,6 +9,8 @@ set modelines=5            " Well, in the first 5 lines of files
 set noerrorbells           " Disable error bells
 set visualbell             " Use visual bell instead of audible bell (annnnnoying)
 set belloff=all
+set report=0
+set shortmess=aoOTI
 set noswapfile             " No thanks
 set nobackup               " I'm alright
 set ttyfast

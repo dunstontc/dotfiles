@@ -24,6 +24,7 @@ augroup MyAutoCmds
 
   autocmd BufNewFile,BufRead * setlocal formatoptions-=r
   autocmd BufNewFile,BufRead * setlocal formatoptions-=o
+
   " Close vim if only NERDtree is open
   " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 

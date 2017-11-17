@@ -40,12 +40,11 @@ call dein#add('tiagofumo/vim-nerdtree-syntax-highlight')
 call dein#add('junegunn/vim-peekaboo')
 call dein#add('ryanoasis/vim-devicons')
 call dein#add('hecal3/vim-leader-guide')
-" call dein#add('skywind3000/quickmenu.vim')
 call dein#add('CharlesGueunet/quickmenu.vim')
 call dein#add('osyo-manga/vim-anzu')
 " call dein#add('henrik/vim-indexed-search')
 call dein#add('dhruvasagar/vim-zoom')
-call dein#add('thinca/vim-poslist')
+call dein#add('thalesmello/nvim-better-operator-message')
 
 
 
@@ -53,9 +52,9 @@ call dein#add('thinca/vim-poslist')
 " 🎨  Make Vim Sexy
 call dein#add('blueyed/vim-diminactive')
 call dein#add('itchyny/vim-cursorword')
+call dein#add('kien/rainbow_parentheses.vim')
 call dein#add('jszakmeister/vim-togglecursor')
 " call dein#add('machakann/vim-highlightedundo')
-call dein#add('thalesmello/nvim-better-operator-message')
 call dein#add('chrisbra/Colorizer', {
       \ 'lazy'  : 1,
       \ 'on_cmd': 'ColorToggle',
@@ -70,12 +69,14 @@ call dein#add('mswift42/vim-themes')
 " call dein#add('rafi/awesome-vim-colorschemes')
 call dein#add('tyrannicaltoucan/vim-deep-space')
 call dein#add('reedes/vim-colors-pencil')
+call dein#add('romainl/Apprentice')
 call dein#add('rhysd/vim-color-spring-night')
-
+call dein#add('junegunn/seoul256.vim')
 
 
 
 " 📜   Language Support
+" call dein#add('autozimu/LanguageClient-neovim')
 call dein#add('hail2u/vim-css3-syntax',       {'lazy':1, 'on_ft': ['css']})
 call dein#add('kchmck/vim-coffee-script',     {'lazy':1, 'on_ft': ['coff', 'coffee', 'cson']})
 call dein#add('rhysd/vim-crystal',            {'lazy':1, 'on_ft': ['crystal', 'cr']})
@@ -140,16 +141,16 @@ call dein#add('dhruvasagar/vim-table-mode')
 " call dein#add('terryma/vim-multiple-cursors')
 " call dein#add('supercrabtree/vim-resurrect')
 " call dein#add('nelstrom/vim-visual-star-search')
-" call dein#add('rhysd/clever-f.vim')
+call dein#add('rhysd/clever-f.vim')
 " call dein#add('airblade/vim-matchquote')
 call dein#add('justinmk/vim-sneak')
 " call dein#add('haya14busa/incsearch.vim')
 " call dein#add('haya14busa/incsearch-easymotion.vim')
 " call dein#add('haya14busa/vim-asterisk')
 " call dein#add('junegunn/vim-slash')
-call dein#add('thalesmello/vim-slasher')
-" call dein#add('romainl/vim-qf')
-" call dein#add('romainl/vim-qlist')
+" call dein#add('thalesmello/vim-slasher')
+call dein#add('romainl/vim-qf')
+call dein#add('romainl/vim-qlist')
 " call dein#add('romainl/vim-quicklist')
 call dein#add('sgur/vim-editorconfig')
 call dein#add('terryma/vim-expand-region')
@@ -210,7 +211,6 @@ call dein#add('ujihisa/unite-colorscheme')
 " call dein#add('tacroe/unite-mark')
 " call dein#add('noyuno/unite-latexsymbols')
 " call dein#add('kelvinst/unite-menus')
-" call dein#add('cskeeters/unite-fzf')
 " call dein#add('raw1z/unite-projects')
 " call dein#add('osyo-manga/unite-option')
 call dein#add('Shougo/denite.nvim')
@@ -230,8 +230,6 @@ call dein#add('MattesGroeger/vim-bookmarks')
 
 " 💬  Completion
 " call dein#add('mattn/emmet-vim')
-" call dein#add('/usr/local/opt/fzf')
-" call dein#add('junegunn/fzf.vim')
 call dein#add('Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' })
 call dein#add('Shougo/neco-vim')
 call dein#add('Shougo/neco-syntax')
@@ -248,7 +246,6 @@ call dein#add('fszymanski/deoplete-emoji')
 " call dein#add('1995eaton/vim-better-javascript-completion')
 " call dein#add('mopp/googlesuggest-source.vim')
 " call dein#add('mattn/googlesuggest-complete-vim')
-
 
 
 " 🛴 Misc 1
@@ -269,9 +266,9 @@ call dein#add('freitass/todo.txt-vim')
 call dein#add('rafi/vim-denite-task')
 call dein#add('dunstontc/vim-taskwarrior')
 call dein#add('tbabej/taskwiki')
-call dein#add('Shougo/vimshell.vim')
-call dein#add('kassio/neoterm')
 " call dein#add('Shougo/junkfile.vim')
+" call dein#add('Shougo/vimshell.vim')
+" call dein#add('kassio/neoterm')
 " call dein#add('vifm/neovim-vifm')
 
 
@@ -286,7 +283,7 @@ call dein#add('tweekmonster/startuptime.vim')
 " call dein#add('tyru/capture.vim')
 " call dein#add('tyru/eskk.vim')
 " call dein#add('othree/vim-autocomplpop')
-" call dein#add('Shougo/echodoc.vim')
+call dein#add('Shougo/echodoc.vim')
 
 
 
@@ -312,10 +309,6 @@ call dein#add('majutsushi/tagbar', {
       \ 'lazy'  : 1,
       \ 'on_cmd': 'Tagbar',
       \})
-call dein#add('jreybert/vimagit', {
-      \ 'on_cmd': [
-      \ 'Magit', 'MagitOnly'
-      \]})
 call dein#add('itchyny/calendar.vim', {
       \ 'lazy'  : 1,
       \ 'on_cmd': 'Calendar',

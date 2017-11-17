@@ -277,7 +277,7 @@ let g:diminactive_enable_focus = 1
 " =============================================================================
 "  === echodoc ===
 " =============================================================================
-" let g:echodoc#enable_at_startup = 1
+let g:echodoc#enable_at_startup = 1
 " set noshowmode
 
 
@@ -400,7 +400,7 @@ nmap # <Plug>(anzu-sharp-with-echo)
 
 
 " clear status
-nmap <Esc><Esc> <Plug>(anzu-clear-search-status)
+" nmap <Esc><Esc> <Plug>(anzu-clear-search-status)
 
 
 " =============================================================================
@@ -452,6 +452,7 @@ map J <Plug>(expand_region_shrink)
 
 " Default settings. (NOTE: Remove comments in dictionary before sourcing)
 let g:expand_region_text_objects = {
+      \ 'iv'  :0,
       \ 'iw'  :0,
       \ 'iW'  :0,
       \ 'i"'  :0,
@@ -463,16 +464,6 @@ let g:expand_region_text_objects = {
       \ 'ip'  :0,
       \ 'ie'  :0,
       \ }
-
-" call expand_region#custom_text_objects({
-"       \ "\/\\n\\n\<CR>": 1,
-"       \ 'a]' :1,
-"       \ 'ab' :1,
-"       \ 'aB' :1,
-"       \ 'ii' :0,
-"       \ 'ai' :0,
-"       \ })
-
 
 
 " =============================================================================
