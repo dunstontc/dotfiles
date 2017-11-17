@@ -1,7 +1,13 @@
 " =============================================================================
 " === statline ===
 " =============================================================================
-" source /Users/clay/.dotfiles/editors/nvim/autoload/lightline/DarkPlus.vim
+
+let g:tcd_blacklist = '\v(cheat40|denite|gundo|help|nerdtree|peekaboo|quickmenu|startify|undotree|unite|vimfiler|vimshell)'
+
+let g:unite_force_overwrite_statusline = 0
+let g:denite_force_overwrite_statusline = 0
+let g:vimfiler_force_overwrite_statusline = 0
+
 let g:currentmode={
       \ 'n'  : 'Normal',
       \ 'no' : 'N·Operator Pending ',
@@ -23,13 +29,6 @@ let g:currentmode={
       \ '!'  : 'Shell ',
       \ 't'  : 'Terminal '
       \}
-
-" =============================================================================
-let g:tcd_blacklist = '\v(cheat40|denite|gundo|help|nerdtree|peekaboo|quickmenu|startify|undotree|unite|vimfiler|vimshell)'
-
-let g:unite_force_overwrite_statusline = 0
-let g:denite_force_overwrite_statusline = 0
-let g:vimfiler_force_overwrite_statusline = 0
 
 " =============================================================================
 
@@ -156,7 +155,6 @@ function! FileSize() abort
 endfunction
 
 " =============================================================================
-
 " ale
 function! LinterWarnings() abort
   let l:counts = ale#statusline#Count(bufnr(''))
@@ -180,6 +178,7 @@ function! LinterOK() abort
 endfunction
 
 " =============================================================================
+
 
 " Create mode-based hilight groups
 function! ChangeStatuslineColor()
@@ -208,14 +207,13 @@ function! ChangeStatuslineColor()
   return ''
 endfunction
 
-highlight User1 guibg=None    guifg=None    cterm=None gui=None
-highlight User2 guifg=#d4d4d4 guibg=#505050 cterm=None gui=None
-highlight User3 guibg=#303030    guifg=#505050 cterm=None gui=None
-highlight User4 guibg=#303030 guifg=#303030 cterm=None gui=None
+" highlight User1 guibg=None    guifg=None    cterm=None gui=None
+highlight User2 guifg=#d4d4d4 guibg=#505050
+highlight User3 guibg=#303030    guifg=#505050
+highlight User4 guibg=#303030 guifg=#303030
 
 
 " =============================================================================
-
 
 set laststatus=2
 set statusline=

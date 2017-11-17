@@ -302,7 +302,12 @@ call g:quickmenu#append(
       \ '', 0, 'rc')
 
 
-call g:quickmenu#append('# Todo','')
+call g:quickmenu#append('# Other','')
+call g:quickmenu#append(
+      \ 'init.lua',
+      \ 'TwoSplit "~/.dotfiles/config/hammerspoon/init.lua"',
+      \ 'Hammerspoon Config',
+      \ '', 0, 'hs')
 call g:quickmenu#append(
       \ '.taskrc',
       \ 'TwoSplit "~/.dotfiles/misc/.taskrc"',

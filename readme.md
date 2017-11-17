@@ -24,14 +24,18 @@
     - [Misc.](#misc)
     - [Reference](#reference)
 
-| Key       | Context | Action              |
-|-----------|---------|---------------------|
-| `⌘-Space` | Alfred  | Hotkey              |
-| `⌘-⌥-s`   | Alfred  | Search Snippets     |
-| `⌘-⌥-,`   | Alfred  | Clipboard History   |
-| `⌥-Space` | iTerm2  | Focus to iTerm2     |
-| `⌘ - s`   | nvim    | Write active buffer |
-|
+| Key             | Context   | Action                |
+|-----------------|-----------|-----------------------|
+| `⌘ - Space`     | Alfred    | Hotkey                |
+| `⌘ - ⌥ - s`     | Alfred    | Search Snippets       |
+| `⌘ - ⌥ - ,`     | Alfred    | Clipboard History     |
+| `⌘ - ⌥ - Space` | Bartender | Toggle Bartender Menu |
+| `⌥ - Space`     | iTerm2    | Focus to iTerm2       |
+| `⌃ - hjkl`      | iTerm2    | Navigate Vim/Tmux     |
+| `⌃ - q`         | iTerm2    | Ctrl-C                |
+| `⌘ - /`         | nvim      | Toggle Comments       |
+| `⌘ - s`         | nvim      | Write active buffer   |
+| `⌃ - a`         | tmux      | prefix                |
 
 
 ## Links

@@ -32,7 +32,7 @@ call dein#add('Shougo/dein.vim')
 " 🖥  UI
 call dein#add('mhinz/vim-startify')
 call dein#add('airblade/vim-gitgutter')
-" call dein#add('itchyny/lightline.vim')
+call dein#add('itchyny/lightline.vim')
 " call dein#add('bling/vim-bufferline')
 call dein#add('scrooloose/nerdtree')
 call dein#add('Xuyuanp/nerdtree-git-plugin')
@@ -124,6 +124,7 @@ call dein#add('w0rp/ale')
 
 " ⚙   Utilities
 call dein#add('ervandew/supertab')
+call dein#add('pbrisbin/vim-mkdir')
 call dein#add('tpope/vim-rsi')
 call dein#add('tpope/vim-eunuch')
 call dein#add('tpope/vim-repeat')

@@ -20,7 +20,12 @@ set nohidden
 " =============================================================================
 "   Input & Navigation
 " =============================================================================
+set mouse=a                     " Enable the mouse
 set backspace=indent,eol,start
+" set formatoptions-=c
+set formatoptions-=r
+set formatoptions-=o
+" set whichwrap+=<,>,h,l,[,]      " Lake Left/Right at the Start/End of lines work like you'd expect
 
 "  Tabs & Spaces
 set autoindent                  " Autoidentation on
@@ -29,10 +34,13 @@ set expandtab                   " Expand Tabs (pressing Tab inserts spaces)
 set smartindent                 " Smart Indentation on
 set smarttab                    " Tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
 set nojoinspaces                " don't autoinsert two spaces after '.', '?', '!' for join command
+set nostartofline               " Don't reset cursor to start of line when moving around
 
+set virtualedit=block
 " set notimeout
 " set ttimeout
 set nopaste
+
 
 " =============================================================================
 "   Styles
@@ -96,13 +104,6 @@ set winminheight=0              " Allow splits to be reduced to a single line
 " =============================================================================
 "   Preferences
 " =============================================================================
-"
-"  Navigation
-set mouse=a                     " Enable the mouse
-set nostartofline               " Don't reset cursor to start of line when moving around
-set virtualedit=block
-" set whichwrap+=<,>,h,l,[,]      " Lake Left/Right at the Start/End of lines work like you'd expect
-
 
 "  Search
 set magic                       " Enable extended regexes

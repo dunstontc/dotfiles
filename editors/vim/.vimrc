@@ -33,6 +33,7 @@ Plug 'raimondi/delimitmate'
 " Pretty Things
 Plug 'itchyny/vim-cursorword'
 Plug 'jszakmeister/vim-togglecursor'
+Plug 'ryanoasis/vim-devicons'
 " Colorful Things
 Plug '~/Projects/Vim/vim-code-dark'
 Plug 'mswift42/vim-themes'
@@ -41,6 +42,7 @@ Plug 'flazz/vim-colorschemes'
 Plug 'sgur/vim-editorconfig'
 Plug 'ciaranm/securemodelines'
 Plug 'jez/vim-superman'
+Plug 'christoomey/vim-tmux-navigator'
 " Enhancements
 Plug 'Shougo/deoplete.nvim'
 " Plug 'roxma/nvim-yarp'
@@ -104,13 +106,17 @@ set splitbelow                 " New split placed below
 " set rtp+=~/.vim/autoload/rgb.txt
 " exe 'set rtp+=' . expand('~/.vim/autoload/rgb.txt')
 " set rtp+=/usr/share/vim/vim74/rgb.txt
-set t_Co=256
+if &term =~# '^screen'
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+endif
+" set t_Co=256
 set background=dark
 set termguicolors
-let g:enable_bold_font=1       " Enable bold font in colorscheme
-let g:enable_italic_font=1     " Enable italic font in colorscheme
+" let g:enable_bold_font=1       " Enable bold font in colorscheme
+" let g:enable_italic_font=1     " Enable italic font in colorscheme
 colorscheme gruvbox
-highlight! Comment gui=italic
+highlight! Comment gui=italic cterm=italic
 
 
 " === Invisible Characters ===

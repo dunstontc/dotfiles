@@ -6,7 +6,7 @@ set timeoutlen=500
 let mapleader="\<Space>"
 " let g:mapleader="\<Space>"
 
-nnoremap <leader><leader>  <esc>
+nnoremap <leader><leader> <esc>
 
 nnoremap ; :
 vnoremap ; :
@@ -137,6 +137,8 @@ nnoremap ,5 :call quickmenu#toggle(5)<CR>
 " nmap S
 " noremap <M-LEFT> :NERDTreeToggle<CR>
 " noremap <M-RIGHT> :NERDTreeToggle<CR>
+
+nnoremap <H-e> :echo "noice"<cr>
 
 
 
@@ -354,6 +356,7 @@ let g:lmap.t={
             \    'l': [ 'set wrap!',               'Line Wrap'             ],
             \    'm': [ 'tablemode#Toggle()',      'Table Mode'            ],
             \    'p': [ 'set nopaste',             'Paste Mode'            ],
+            \    'q': [ 'copen',                   'Quickfix List'         ],
             \    'r': [ 'set rnu!',                'Relative Line Numbers' ],
             \    'w': [ 'set list!',               'Invisible Characters'  ],
             \}
