@@ -37,9 +37,9 @@ function condont() {
     source deactivate $1
 }
 
-function armour() {
-  gpg --armor --export $1
-}
+# function armour() {
+#   gpg --armor --export $1
+# }
 
 # Determine size of a file or total size of a directory
 function fs() {
@@ -54,6 +54,11 @@ function fs() {
 		du $arg .[^.]* ./*;
 	fi;
 }
+
+function hdi(){
+  howdoi $* -c -n 5;
+}
+
 # =============================================================================
 
 # # `n` with no arguments opens the current directory in Vim, otherwise opens the given location

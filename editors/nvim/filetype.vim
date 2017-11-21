@@ -12,14 +12,17 @@ augroup filetypes
     autocmd BufRead,BufNewFile {topydo,columns,column}.conf,column,columns,topydo set filetype=dosini
 
     autocmd BufRead,BufNewFile .{aliases,env,exports,functions,highlight,inputrc,path,} set filetype=sh
-    " autocmd BufRead,BufNewFile .{bash_prompt,bash_profile} set filetype=sh
+    autocmd BufRead,BufNewFile .{bash_prompt,bash_profile} set filetype=sh
 
     autocmd BufRead,BufNewFile *.cson set filetype=coffee
 
     autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
-    autocmd BufNewFile,BufReadPost *.snippets set filetype=snippets
-    autocmd BufNewFile,BufReadPost *.snip set filetype=snippets
+    autocmd BufNewFile,BufRead *.pug set filetype=pug
+
+    autocmd BufNewFile,BufReadPost *{snippets,snip} set filetype=snippets
+
+    autocmd BufNewFile,BufRead *.ts set filetype=typescript
 
     autocmd BufNewFile,BufReadPost *.wiki set filetype=wiki
 
@@ -31,8 +34,8 @@ augroup END
 " =============================================================================
 
 "  === Markdown ===
-let g:markdown_fenced_languages = ['html', 'js=javascript', 'vim', 'ruby', 'python', 'bash=sh']
-let g:markdown_syntax_conceal = 0
+let g:markdown_fenced_languages = ['html', 'js=javascript', 'python', 'ruby', 'sh', 'bash=sh', 'vim',]
+let g:markdown_syntax_conceal = 1
 let g:markdown_minlines = 100
 
 "  === JSON ===

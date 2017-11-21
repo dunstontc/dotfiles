@@ -1,5 +1,5 @@
 " =============================================================================
-"  deol
+"  Shougo/deol
 " =============================================================================
 
 " nnoremap <silent> N :<C-u>call deol#new({'command': 'zsh'})<CR>
@@ -8,34 +8,137 @@
 
 
 " =============================================================================
-"  === neoterm ===
+"  === Shougo/vimfiler ===
 " =============================================================================
 
-let g:neoterm_position = 'horizontal'
-let g:neoterm_automap_keys = ',tt'
+let g:vimfiler_as_default_explorer = 1
 
+" Like Textmate icons.
+let g:vimfiler_tree_leaf_icon = ' '
+let g:vimfiler_tree_opened_icon = '▾'
+let g:vimfiler_tree_closed_icon = '▸'
+let g:vimfiler_file_icon = '-'
+let g:vimfiler_marked_file_icon = '*'
+let g:vimfiler_readonly_file_icon='X'
 
-" hide/close terminal
-nnoremap <silent> ,th :call neoterm#close()<cr>
-" clear terminal
-nnoremap <silent> ,tl :call neoterm#clear()<cr>
-" kills the current job (send a <c-c>)
-nnoremap <silent> ,tc :call neoterm#kill()<cr>
+let g:vimfiler_time_format = " "
+let g:vimfiler_enable_auto_cd = 1
+let g:vimfiler_no_default_key_mappings=1
 
+" call vimfiler#set_execute_file('txt', 'notepad')
+" call vimfiler#set_execute_file('c', ['gvim', 'notepad'])
 
+" let g:vimfiler_directory_display_top=1
+" let g:vimfiler_ignore_pattern = ['^\.git$', '^\.DS_Store$']
+let g:vimfiler_ignore_pattern = ['^\.git$', '^\.DS_Store$']
+
+" Enable file operation commands.
+" Edit file by tabedit.
+call vimfiler#custom#profile('default', 'context', {
+     \ 'safe'       : 0,
+     \ 'no-quit'    : 1,
+     \ 'split'      : 1,
+     \ 'winwidth'   : 50,
+     \ 'fnamewidth' : 0,
+     \ 'edit_action': 'vsplit',
+     \ 'sort_type'  : 'filename',
+     \ 'direction'  : 'topleft',
+     \ 'columns'    : 'type:size',
+     \ })
+
+" " File explorer like behavior.
+" :VimFiler -buffer-name=explorer
+" \ -split -simple -winwidth=35 -toggle -no-quit
+" :VimFilerExplorer
+augroup MyAutoCmds
+  autocmd!
+
+  autocmd Filetype vimfiler setlocal norelativenumber
+  autocmd Filetype vimfiler setlocal nolist
+  autocmd Filetype vimfiler setlocal nowrap
+
+  autocmd FileType vimfiler nmap <buffer> i :VimFilerPrompt<CR>
+  " autocmd FileType vimfiler nmap <buffer> q <Plug>(vimfiler_close)
+  " autocmd Filetype vimfiler setlocal
+augroup END
+
+nmap <buffer> <C-l>
+	\ <Plug>(vimfiler_redraw_screen)
+
+" " Switches to next line with loop.
+" <Plug>(vimfiler_loop_cursor_down)
+" " Switches to previous line with loop.
+" <Plug>(vimfiler_loop_cursor_up)
+"
+" <Plug>(vimfiler_cursor_top)
+" " Redraws vimfiler screen.
+" <Plug>(vimfiler_redraw_screen)
+" " Toggles mark in cursor line and move down.
+" <Plug>(vimfiler_toggle_mark_current_line)
+" " Clears marks in all lines.
+" <Plug>(vimfiler_clear_mark_all_lines)
+" " Mark in cursor line.
+" <Plug>(vimfiler_mark_current_line)
+" " Moves marked files to destination directory. If exists another
+" " vimfiler buffer, destination directory is another vimfiler directory.
+" " If no marked files, mark current file.
+" <Plug>(vimfiler_move_file)
+" " Deletes marked files completely.
+" " If no marked files, mark current file.
+" <Plug>(vimfiler_delete_file)
+" " Copies marked files to vimfiler clipboard.
+" " If no marked files, mark current file.
+" <Plug>(vimfiler_clipboard_copy_file)
+" " Moves marked files to vimfiler clipboard.
+" " If no marked files, mark current file.
+" <Plug>(vimfiler_clipboard_move_file)
+" " Execute move or copy operation from vimfiler clipboard to
+" " cursor directory. If directory tree is opened, will execute
+" " the operation in directory tree.
+" <Plug>(vimfiler_clipboard_paste)
+" " Creates new directory. If directory tree is opened, will
+" " create new directory in directory tree.
+" " If you marked files, will move the files in new directory.
+" <Plug>(vimfiler_make_directory)
+" " Creates new files. If directory tree is opened, create new files in directory tree.
+" <Plug>(vimfiler_new_file)
+" " Renames cursor file or selected files.
+" " If selected files, vimfiler will open exrename buffer.
+" <Plug>(vimfiler_rename_file)
+" " Change cursor directory or edit cursor file.
+" <Plug>(vimfiler_cd_or_edit)
+" <Plug>(vimfiler_switch_to_parent_directory)
+" <Plug>(vimfiler_switch_to_home_directory)
+" <Plug>(vimfiler_yank_full_path)
+" " Executes grep word in selected files or all current files by
+" " |unite| interface.
+" " Note: This mapping use |vimproc|.
+" <Plug>(vimfiler_grep)
+" " Note: This mapping use |vimproc|.
+" <Plug>(vimfiler_find)
+" " If directory tree is opened, it will unexpand directory tree.
+" " Else switches to parent directory.
+" <Plug>(vimfiler_smart_h)
+" " Switches to cursor directory or edit cursor file.
+" " If enabled "explorer" option, it will expand directory tree or
+" " edit cursor file.
+" <Plug>(vimfiler_smart_l)
 
 " =============================================================================
-"  vim-multiple-cursors
+"  === kassio/neoterm ===
 " =============================================================================
-let g:multi_cursor_use_default_mapping=0
 
-" Default mapping
-" let g:multi_cursor_next_key='𐌍' " (C-m)
-" let g:multi_cursor_prev_key='<C-p>'
-" let g:multi_cursor_skip_key='<C-x>'
-" let g:multi_cursor_quit_key='<Esc>'
+" let g:neoterm_position = 'horizontal'
+" let g:neoterm_automap_keys = ',tt'
 
 
+" " hide/close terminal
+" nnoremap <silent> ,th :call neoterm#close()<cr>
+" " clear terminal
+" nnoremap <silent> ,tl :call neoterm#clear()<cr>
+" " kills the current job (send a <c-c>)
+" nnoremap <silent> ,tc :call neoterm#kill()<cr>
+"
 
 " =============================================================================
 "  === fzf ===
@@ -104,11 +207,23 @@ let g:ale_fix_on_save = 0
 " let g:ale_completion_enabled = 0
 " let g:ale_sign_column_always = 1
 let g:ale_sign_error = '✗'
-let g:ale_sign_warning = '◊'
+" let g:ale_sign_error = '●'
+" let g:ale_sign_warning = '◊'
+let g:ale_sign_warning = '●'
 let g:ale_lint_on_enter = 1
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_vim_vint_show_style_issues = 1
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s'
+highlight clear ALEErrorSign
+highlight clear ALEWarningSign
+
+" =============================================================================
+"  === qfedit ===
+" =============================================================================
+let g:qfedit_enable=1
 
 
 " =============================================================================
@@ -127,7 +242,6 @@ let g:ale_vim_vint_show_style_issues = 1
 " inoreabbrev <expr> __
 "           \ <SID>isAtStartOfLine('__') ?
 "           \ '<c-o>:silent! TableModeDisable<cr>' : '__'
-let g:table_mode_disable_mappings = 0
 let g:table_mode_syntax = 1
 let g:table_mode_corner='|'
 let g:table_mode_auto_align = 1
@@ -148,25 +262,10 @@ let g:instant_markdown_allow_external_content = 1
 
 
 " =============================================================================
-"  === Slash ===
-" =============================================================================
-noremap <plug>(slash-after) zz
-
-
-" =============================================================================
 "  === UndoTree ===
 " =============================================================================
 let g:undotree_WindowLayout = 2
 let g:undotree_SetFocusWhenToggle = 1
-
-" =============================================================================
-"  === TComment ===
-" =============================================================================
-let g:tcommentMaps=0
-let g:tcommentMapLeader1=''
-let g:tcommentMapLeader2=''
-let g:tcommentMapLeaderCommentAnyway=''
-let g:tcommentTextObjectInlineComment=''
 
 
 " =============================================================================
@@ -192,18 +291,10 @@ let g:colorizer_auto_filetype=''
 
 
 " =============================================================================
-"  === gitgutter ===
-" =============================================================================
-let g:gitgutter_map_keys = 0
-
-
-" =============================================================================
 "  === vim-bookmarks ===
 " =============================================================================
 let g:bookmark_annotation_sign = '☰'
 let g:bookmark_sign = '⚑'
-
-let g:bookmark_no_default_key_mappings = 1
 
 let g:bookmark_save_per_working_dir = 0
 let g:bookmark_auto_save = 1
@@ -217,23 +308,12 @@ let g:bookmark_center = 0
 let g:bookmark_location_list = 1
 let g:bookmark_disable_ctrlp = 1
 
-" nmap <Leader><Leader> <Plug>BookmarkToggle
-" nmap <Leader>i <Plug>BookmarkAnnotate
-" nmap <Leader>a <Plug>BookmarkShowAll
-" nmap <Leader>j <Plug>BookmarkNext
-" nmap <Leader>k <Plug>BookmarkPrev
-" nmap <Leader>c <Plug>BookmarkClear
-" nmap <Leader>x <Plug>BookmarkClearAll
-" nmap <Leader>kk <Plug>BookmarkMoveUp
-" nmap <Leader>jj <Plug>BookmarkMoveDown
-" nmap <Leader>g <Plug>BookmarkMoveToLine
 
 
 " =============================================================================
 "  === cheat40 ===
 " =============================================================================
 let g:cheat40_use_default = 0
-nnoremap <leader>h<space> :Cheat40Open<cr>
 
 
 " =============================================================================
@@ -385,51 +465,10 @@ let g:indentguides_spacechar = '┃'
 let g:indentguides_tabchar = '┆'
 
 
-" =============================================================================
-"  === vim-anzu ===
-" =============================================================================
-" mapping
-nmap n <Plug>(anzu-n-with-echo)
-nmap N <Plug>(anzu-N-with-echo)
-nmap * <Plug>(anzu-star-with-echo)
-nmap # <Plug>(anzu-sharp-with-echo)
-" if start anzu-mode key mapping
-" anzu-mode is anzu(12/51) in screen
-" nmap n <Plug>(anzu-mode-n)
-" nmap N <Plug>(anzu-mode-N)
-
-
-" clear status
-" nmap <Esc><Esc> <Plug>(anzu-clear-search-status)
-
-
-" =============================================================================
-"  === vim-sneak ===
-" =============================================================================
-" let g:sneak#prompt = 'Ƨ '
-let g:sneak#prompt = '§ '
-
-let g:sneak#label = 1
-let g:sneak#label_esc = "\<Space>"
-let g:sneak#target_labels = "asldkfjghz,xmcnvb"
-
-let g:sneak#s_next = 0
-let g:sneak#use_ic_scs = 1
-
-" noremap z <Plug>Sneak_s
-" noremap Z <Plug>Sneak_S
-
-" map f <Plug>Sneak_f
-" map F <Plug>Sneak_F
-" map t <Plug>Sneak_t
-" map T <Plug>Sneak_T
-
-
 
 " =============================================================================
 "  === vim-swoop ===
 " =============================================================================
-let g:swoopUseDefaultKeyMap = 0
 let g:swoopIgnoreCase = 1
 " let g:swoopWindowsVerticalLayout = 0
 " let g:defaultWinSwoopWidth = 12
@@ -447,8 +486,6 @@ let g:swoopIgnoreCase = 1
 " =============================================================================
 "  === vim-expand-region ===
 " =============================================================================
-map K <Plug>(expand_region_expand)
-map J <Plug>(expand_region_shrink)
 
 " Default settings. (NOTE: Remove comments in dictionary before sourcing)
 let g:expand_region_text_objects = {
@@ -494,6 +531,7 @@ let g:jedi#rename_command = ""
 
 let g:python_highlight_all=1
 
+
 " =============================================================================
 "  === taskwarrior ===
 " =============================================================================
@@ -501,7 +539,7 @@ let g:task_rc_override = 'rc.defaultwidth=0'
 let g:task_rc_override = 'rc.defaultheight=0'
 
 " =============================================================================
-" === vim-togglecursor ===
+" === jszakmeister/vim-togglecursor ===
 " =============================================================================
 let g:togglecursor_default = 'block'
 let g:togglecursor_insert = 'line'
@@ -509,3 +547,25 @@ let g:togglecursor_leave = 'block'
 let g:togglecursor_replace = 'underline'
 let g:togglecursor_disable_tmux = 0
 let g:togglecursor_disable_default_init = 1
+
+
+" =============================================================================
+"  === junegunn/rainbow_parentheses.vim ===
+" =============================================================================
+let g:rainbow#max_level = 16
+" let g:rainbow#pairs = [['(', ')'], ['[', ']']]
+
+" List of colors that you do not want. ANSI code or #RRGGBB
+let g:rainbow#blacklist = [233, 234]
+
+
+" =============================================================================
+"  === wincent/loupe ===
+" =============================================================================
+let g:LoupeClearHighlightMap=1
+
+
+" =============================================================================
+"  === itchyny/vim-parenmatch ===
+" =============================================================================
+let g:parenmatch=1

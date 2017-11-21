@@ -21,6 +21,8 @@ export TERM='xterm-256color'
 export TCD_BASH_COMPLETION_DIR="/usr/local/etc/bash_completion.d"
 # export ZSH_COMPLETION_DIR="/usr/local/share/zsh/site-functions"
 # export FISH_COMPLETION_DIR="/usr/local/share/fish/vendor_completions.d"
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+export FZF_COMPLETION_TRIGGER='/'
 
 
 # export CLICOLOR=1

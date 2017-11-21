@@ -76,6 +76,8 @@ shopt -s cdspell 2> /dev/null  # Correct spelling errors in arguments supplied t
 #  completion +
 # =============================================================================
 bind "TAB:menu-complete"
+bind -x '"\C-g": "fzf-file-widget"'
+bind '"\C-f": " \C-e\C-u`__fzf_cd__`\e\C-e\er\C-m"'
 
 
 # =============================================================================

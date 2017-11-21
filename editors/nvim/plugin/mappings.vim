@@ -1,18 +1,17 @@
 " =============================================================================
 "  Key Mappings
 " =============================================================================
-set timeoutlen=500
-
-let mapleader="\<Space>"
-" let g:mapleader="\<Space>"
-
-nnoremap <leader><leader> <esc>
+set timeoutlen=750
 
 nnoremap ; :
 vnoremap ; :
 
+
+
+nnoremap <C-p> :Denite menu<CR>
+
 " use ctrl-q instead of ⎋ , stay on the home row
-inoremap <esc> <C-o>:echo "Use ctrl-Q dumbass "<CR>
+" inoremap <esc> <C-g>:echo "Use ctrl-Q dumbass "<CR>
 inoremap <C-q> <C-c>
 nnoremap <C-q> <Nop>
 vnoremap <C-q> <C-c>
@@ -21,7 +20,9 @@ vnoremap <C-q> <C-c>
 " Clear highlights & commands
 nnoremap <silent>\ :noh<CR>:call anzu#clear_search_status()<CR>:echo<CR>
 
-noremap Q <Nop>
+nnoremap R <Nop>
+nnoremap q :q<CR>
+" noremap Q q
 " TODO: make new shortcut for macros
 
 " Escape the terminal
@@ -29,30 +30,24 @@ tnoremap <Esc> <C-\><C-n>
 
 " Save wih ⌘ -s
 nnoremap 𐌔 :w<CR>
-inoremap 𐌔 <C-o>:w<CR>
+inoremap 𐌔 <C-g>:w<CR>
 
 " Comment wih ⌘ -/
 noremap <silent>𐌍 :TComment<CR>
 inoremap <silent>𐌍 <esc>:TComment<CR>
 
 " <S-CR> New line below
-inoremap 𐌄 <esc> o
+inoremap 𐌄 <esc>o
 " <C-CR> New line above
-inoremap 𐌂 <esc> O
+inoremap 𐌂 <esc>O
 
 
 " Bigger Steps
 noremap <S-H> 0
 noremap <S-L> $
-inoremap <C-E> <C-o>$
-" imap <C-B> <C-o>0 " TODO: bind key to $ in insert mode
 
 nnoremap <BS> i<DEL><esc><right>
 noremap ,, i<space><esc>
-" nnoremap ,<space> i<space><Esc>
-
-nnoremap <leader>u :redo<CR>
-nnoremap <leader>q :q<CR>
 
 " gtfo
 nnoremap fj :x<CR>
@@ -61,7 +56,6 @@ inoremap fj <esc>:x<CR>
 " Yank Better
 nnoremap <S-y> Vy
 nnoremap 𐌋 mxV"zy"zp`xj
-
 
 " Yank into the void
 noremap d "_d
@@ -77,6 +71,14 @@ vnoremap ,p "0p
 " nnoremap p "0P
 " vnoremap p "0P
 
+nnoremap X Vx
+
+" Thanks w0rp:
+" " Run macros with \, which is easier to press.
+" nnoremap \ @
+" " Repeat macros with \\ too.
+" nnoremap \\ @@
+
 " " Indentation
 " vmap <silent> <leader>[ <gv
 " vmap <silent> <leader>] >gv
@@ -84,14 +86,14 @@ vnoremap ,p "0p
 " nmap <silent> <leader>] >>
 " imap <silent> <leader>[ <esc><<
 " imap <silent> <leader>] <esc>>>
-
-" ⌘
+" Indentation
 vmap <silent> 𐌀 <gv
 vmap <silent> 𐌁 >gv
 nmap <silent> 𐌀 <<
 nmap <silent> 𐌁 >>
-imap <silent> 𐌀 <C-o><<
-imap <silent> 𐌁 <c-o>>>
+imap <silent> 𐌀 <esc><<
+imap <silent> 𐌁 <esc>>>
+
 
 " move the current line up or down
 " nnoremap <A-j> :m .+1<CR>==
@@ -109,20 +111,11 @@ inoremap 𐌓 <Esc>:m .+1<CR>==gi
 vnoremap 𐌞 :m '<-2<CR>gv=gv
 vnoremap 𐌓 :m '>+1<CR>gv=gv
 
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
-
-
 
 " Use ⌥ left/right in command mode
 " cnoremap <Esc>b <S-Left>
 " cnoremap <Esc>f <S-Right>
 
-
-" nmap <Leader>y <Plug>(sidemenu)
-" xmap <Leader>y <Plug>(sidemenu-visual)
 
 
 nnoremap ,0 :call quickmenu#toggle(0)<CR>
@@ -138,78 +131,120 @@ nnoremap ,5 :call quickmenu#toggle(5)<CR>
 " noremap <M-LEFT> :NERDTreeToggle<CR>
 " noremap <M-RIGHT> :NERDTreeToggle<CR>
 
-nnoremap <H-e> :echo "noice"<cr>
-
-" Substitute
-" nnoremap <leader>s :%s//g<left><left>
-
-" Toggle Comments
-nnoremap <leader>tc :TComment<CR>
-" Toggle Coloring for hex/rgb/cterm values
-nnoremap <leader>tk :ColorToggle<CR>
-" Toggle Folding
-nnoremap <leader>tf :normal! zi<CR>
-" Toggle GitGutter
-nnoremap <leader>tg :call gitgutter#toggle()<CR>
-" Toggle Search Highlight
-nnoremap <leader>th :set nohlsearch<CR>
-" Toggle Line Wrapping
-nnoremap <leader>tl :set wrap!<CR>
-" Toggle TableMode
-nnoremap <leader>tm :tablemode#Toggle()<CR>
-" Toggle Paste
-nnoremap <leader>tp :set nopaste<CR>
-" Toggle the Quickfix List
-nnoremap <leader>tq :copen<CR>
-" Toggle Relative Line Numbers
-nnoremap <leader>tr :set rnu!<CR>
-" Toggle Invisible Characters (whitespace)
-nnoremap <leader>tw :set list!<CR>
-
-
-
-" =============================================================================
-"  vim-tmux-navigator
-" =============================================================================
-" let g:tmux_navigator_no_mappings = 1
+" nnoremap <H-y> :echo "noice"<cr>
 "
-" nnoremap <silent> {Left-Mapping} :TmuxNavigateLeft<cr>
-" nnoremap <silent> {Down-Mapping} :TmuxNavigateDown<cr>
-" nnoremap <silent> {Up-Mapping} :TmuxNavigateUp<cr>
-" nnoremap <silent> {Right-Mapping} :TmuxNavigateRight<cr>
-" nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
+" map <S-ScrollWheelUp> <C-U>
+" map <S-ScrollWheelDown> <C-D>
 
+" nnoremap <leader>x :vimgrep TODO **/*.%:e \| cw<CR>
+
+
+
+" =============================================================================
+"  Plugins
+" =============================================================================
+
+" === EasyAlign ===
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+
+" === vim-expand-region ===
+map K <Plug>(expand_region_expand)
+map J <Plug>(expand_region_shrink)
+
+" === junegunn/vim-table-mode ===
+let g:table_mode_disable_mappings = 0
+
+" === vim-swoop ===
+let g:swoopUseDefaultKeyMap = 0
+
+" === gitgutter ===
+let g:gitgutter_map_keys = 0
+
+" === slash ===
+noremap <plug>(slash-after) zz
+
+" === tcomment ===
+let g:tcommentMaps=0
+let g:tcommentMapLeader1=''
+let g:tcommentMapLeader2=''
+let g:tcommentMapLeaderCommentAnyway=''
+let g:tcommentTextObjectInlineComment=''
+
+" === w0rp/ale ===
+" nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+" nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
+" === vim-multiple-cursors ===
+let g:multi_cursor_use_default_mapping=0
+" Default mapping
+" let g:multi_cursor_next_key='𐌍' " (C-m)
+" let g:multi_cursor_prev_key='<C-p>'
+" let g:multi_cursor_skip_key='<C-x>'
+" let g:multi_cursor_quit_key='<Esc>'
+
+" === Anzu ===
+" nmap n <Plug>(anzu-n-with-echo)
+nmap n <Plug>(anzu-n)
+nmap N <Plug>(anzu-N)
+nmap * <Plug>(anzu-star)
+nmap # <Plug>(anzu-sharp)
+" if start anzu-mode key mapping
+" nmap n <Plug>(anzu-mode-n)
+" nmap N <Plug>(anzu-mode-N)
+
+" === sidemenu ===
+" nmap <Leader>y <Plug>(sidemenu)
+" xmap <Leader>y <Plug>(sidemenu-visual)<Paste><LeftMouse>
+
+" === MattesGroeger/vim-bookmarks ===
+let g:bookmark_no_default_key_mappings = 1
+" nmap <Leader><Leader> <Plug>BookmarkToggle
+" nmap <Leader>i <Plug>BookmarkAnnotate
+" nmap <Leader>a <Plug>BookmarkShowAll
+" nmap <Leader>j <Plug>BookmarkNext
+" nmap <Leader>k <Plug>BookmarkPrev
+" nmap <Leader>c <Plug>BookmarkClear
+" nmap <Leader>x <Plug>BookmarkClearAll
+" nmap <Leader>kk <Plug>BookmarkMoveUp
+" nmap <Leader>jj <Plug>BookmarkMoveDown
+" nmap <Leader>g <Plug>BookmarkMoveToLine
+
+
+" =============================================================================
+"  === vim-sneak ===
+" =============================================================================
+" let g:sneak#prompt = 'Ƨ '
+let g:sneak#prompt = '§ '
+
+let g:sneak#label = 1
+let g:sneak#label_esc = "\<Space>"
+let g:sneak#target_labels = "asldkfjghz,xmcnvb"
+
+let g:sneak#s_next = 0
+let g:sneak#use_ic_scs = 1
+
+" noremap z <Plug>Sneak_s
+" noremap Z <Plug>Sneak_S
+
+" map f <Plug>Sneak_f
+" map F <Plug>Sneak_F
+" map t <Plug>Sneak_t
+" map T <Plug>Sneak_T
 
 
 " =============================================================================
 "  Custom Motions & Objects
 " =============================================================================
+" === kana/vim-textobj-fold ===
+" let g:textobj_fold_no_default_key_mappings=0
+" noremap az	<Plug>(textobj-fold-a)
+" noremap iz	<Plug>(textobj-fold-i)
+
+
 " pretty much autoselect quotes
 " xmap q iq
 " omap q iq
-
-" " operator mappings
-" nmap <silent>sa <Plug>(operator-surround-append)a
-" nmap <silent>sd <Plug>(operator-surround-delete)a
-" nmap <silent>sr <Plug>(operator-surround-replace)a
-" nmap <silent>sc <Plug>(operator-surround-replace)a
-
-
-" " delete or replace most inner surround
-
-" " if you use vim-textobj-multiblock
-" nmap <silent>sdd <Plug>(operator-surround-delete)<Plug>(textobj-multiblock-a)
-" nmap <silent>srr <Plug>(operator-surround-replace)<Plug>(textobj-multiblock-a)
-
-" " if you use vim-textobj-anyblock
-" nmap <silent>sdd <Plug>(operator-surround-delete)<Plug>(textobj-anyblock-a)
-" nmap <silent>srr <Plug>(operator-surround-replace)<Plug>(textobj-anyblock-a)
-
-" " if you use vim-textobj-between
-" nmap <silent>sdb <Plug>(operator-surround-delete)<Plug>(textobj-between-a)
-" nmap <silent>srb <Plug>(operator-surround-replace)<Plug>(textobj-between-a)
-
-
 
 " " let g:textobj_between_no_default_key_mappings=0
 " autocmd VimEnter * call after_object#enable('=', ':', '-', '#', ' ')
@@ -217,226 +252,174 @@ nnoremap <leader>tw :set list!<CR>
 " autocmd VimEnter * call after_object#enable([']', '['], '=', ':')
 
 
+
 " =============================================================================
-"  Guide
+"  Leader Mappings
 " =============================================================================
-" let g:leaderGuide_position = botright
-" let g:leaderGuide_vertical = 0
-" let g:leaderGuide_hspace = 5
-" let g:leaderGuide_sort_horizontal = 0
-" let g:leaderGuide_run_map_on_popup = 1
-" let g:leaderGuide_flatten = 1
-" " let g:leaderGuide_displayfunc
-" let g:leaderGuide_max_size = 0
+" let mapleader="\<Space>"
+let g:mapleader="\<Space>"
 
-" Define prefix dictionary
-let g:lmap={
-            \  ' ': ['',                                        'Cancel'          ],
-            \  '`': ['vsplit +terminal',                        'New Terminal'    ],
-            \  'M': ['',                                        'ViMagit'         ],
-            \  'o': ['vsplit $HOME/Projects/Vim/neovim.org.md', 'Org'             ],
-            \  'q': ['',                                        'Quit'            ],
-            \  'r': ['',                                        'Redo'            ],
-            \  ',': ['call quickmenu#toggle(0)',                'Quickmenu'       ],
-            \  '*': ['',                                        'Search'          ],
-            \  'x': ['vimgrep TODO **/*.%:e \| cw<CR>',         'list Todos'      ],
-            \}
+nnoremap <leader><leader> <esc>
 
-
-let g:lmap.b={
-            \ 'name': '+Buffers',
-            \    'h': ['Startify',       'Home'              ],
-            \    'n': ['bnext',          'Next Buffer'       ],
-            \    'p': ['bprev',          'Previous Buffer'   ],
-            \    'l': ['Denite buffer',  'List Buffers'      ],
-            \    'q': [ 'q',             'Close'             ],
-            \    'Q': [ 'q!',            'Force Close'       ],
-            \    'S': [ 'wa',            'Save All'          ],
-            \    'w': [ 'w',             'Save'              ],
-            \}
-
-
-let g:lmap.c={
-            \ 'name': '+Config',
-            \    'd': {
-            \    'name': 'Dein',
-            \       'l': ['Denite dein',        'List Plugins'  ],
-            \       'u': ['call dein#update()', 'Update Plugins'],
-            \},
-            \    'e': {
-            \    'name': 'Edit',
-            \       'c': [ 'TwoSplit "~/.dotfiles/editors/nvim/plugin/commands.vim"',        'Commands'               ],
-            \       'd': [ 'TwoSplit $MYVIMRC',                                              '.vimrc'                 ],
-            \       'e': [ 'TwoSplit "~/.dotfiles/editors/nvim/plugin/settings.vim"',        'Settings'               ],
-            \       'i': [ 'TwoSplit "~/.dotfiles/editors/nvim/plugin/ui.vim"',              'UI'                     ],
-            \       'k': [ 'TwoSplit "~/.dotfiles/editors/nvim/plugin/mappings.vim"',        'Keybindings'            ],
-            \       'p': [ 'TwoSplit "~/.dotfiles/editors/nvim/plugin/plugins.vim"',         'Plugins'                ],
-            \       's': [ 'TwoSplit "~/.dotfiles/editors/nvim/plugin/lightline.vim"',       'Statusline'             ],
-            \       't': [ 'TwoSplit "~/Projects/vim/vim-code-dark/colors/codedark.vim"',    'Theme'                  ],
-            \       'u': [ 'TwoSplit "~/.dotfiles/editors/nvim/plugin/unite.vim"',           'Unite/Denite Interface' ],
-            \}
-            \}
-
-
-let g:lmap.d={
-            \ 'name': '+Denite',
-            \    'b': ['Denite buffer',                                           'Buffers'                 ],
-            \    'c': ['Denite command_history -default-action=edit_and_execute', 'Command History'         ],
-            \    'f': ['Denite file_manager',                                     'File Manager'            ],
-            \    'm': ['Denite file_mru',                                         'Most Recent Files'       ],
-            \    'M': ['Denite directory_mru',                                    'Most Recent Directories' ],
-            \    'h': ['Denite help',                                             'Help Docs'               ],
-            \    'r': ['<C-u>Denite -mode=insert history/yank<CR>',               'Neoyank Registers'       ],
-            \    't': ['Denite todo',                                             'Todos'                   ],
-            \    'T': ['Denite todo:done',                                        'Finished Todos'          ],
-            \    'z': ['Denite z',                                                'Z (jump around)'         ],
-            \    'd': {
-            \    'name': '+Unite',
-            \       'h': [ 'H unite',    'Help'          ],
-            \       't': [ 'Unite todo', 'Todos'         ],
-            \       'u': [ 'Unite',      '(interactive)' ],
-            \}
-            \}
-
-
-let g:lmap.e={
-            \ 'name': '+Edit',
-            \ 'a': ['<Plug>(EasyAlign)', 'Align'            ],
-            \ 'p': ['normal! "+gP"',     'Pase from System' ],
-            \ 'x': ['normal! "+x"',      'Cut to System'    ],
-            \ 'f': {
-            \ 'name': '+File',
-            \    'n': ['GetName',     'Copy name of the active buffer'       ],
-            \    'p': ['GetFullPath', 'Copy Absolute Path to current file'   ],
-            \    'r': ['GetRelPath',  'Copy Relative Path to current file'   ],
-            \}
-            \}
-
-
-let g:lmap.f={
-            \ 'name': '+Files',
-            \    'e': {
-            \    'name': '+Edit',
-            \       'c': [ 'e ~/.dotfiles/editors/nvim/doc/cheat40.txt',              'Cheat Sheet'            ],
-            \       'r': [ 'source $MYVIMRC',                                         'reload config'          ],
-            \},
-            \    'p': {
-            \    'name': '+File',
-            \       'n': ['GetName',     'Copy name of the active buffer'       ],
-            \       'p': ['GetFullPath', 'Copy Absolute Path to current file'   ],
-            \       'r': ['GetRelPath',  'Copy Relative Path to current file'   ],
-            \},
-            \    's': [ 'w',              'Save'      ],
-            \    'S': [ 'wa',             'Save All'  ],
-            \    't': [ 'NERDTreeToggle', 'File Tree' ],
-            \}
-
-
-let g:lmap.h={
-            \ 'name': '+Help',
-            \    ' ': [ 'Cheat40Open',              'Cheat Sheet' ],
-            \    'i': [ 'H index',                  'index.man'   ],
-            \    'h': [ 'call quickmenu#toggle(0)', 'Quickmenu'   ],
-            \    'm': [ 'messages',                 'Messages'    ],
-            \    'd': {
-            \    'name': 'Describe',
-            \       'c': [ 'ascii',                     'Character '         ],
-            \       'f': [ 'set filetype?',             'Filetype'           ],
-            \       'p': [ 'GetFullPath',               'Current Path'       ],
-            \       's': [ 'SynDef',                    'Syntax Item'        ],
-            \       'S': [ 'syntax',                    'List Syntax Groups' ],
-            \}
-            \}
-
-
-let g:lmap.i={
-            \ 'name': '+Interfaces',
-            \    'c': ['Cheat40Open',                'Cheat Sheet'     ],
-            \    'q': ['call quickmenu#toggle(0)',   'Quickmenu'       ],
-            \    'm': ['call magit#show_magit("v")', 'Magit'           ],
-            \    'n': ['NERDTreeToggle',             'NERDTree'        ],
-            \    's': ['vsplit +Startify',           'Startify'        ],
-            \    't': ['TagBarToggle',               'Tagbar'          ],
-            \    'u': ['Unite',                      'Unite'           ],
-            \    'z': ['UndotreeToggle',             'Undotree'        ],
-            \}
-
-
-let g:lmap.s={
-            \ 'name': '+Search',
-            \    'r': [ ':%s//g<left><left>', 'Search & Replace' ],
-            \    's': {
-            \    'name': 'Swoop',
-            \       'l': ['call Swoop()',      'Local (current buffer)'  ],
-            \       'g': ['call SwoopMulti()', 'Global (multi buffer)'   ],
-            \}
-            \}
-
-
-let g:lmap.t={
-            \ 'name': '+Toggle',
-            \    'c': [ 'TComment',                'Comment'               ],
-            \    'k': [ 'ColorToggle',             'Colors'                ],
-            \    'f': [ 'normal! zi',              'Folding'               ],
-            \    'g': [ 'call gitgutter#toggle()', 'GitGutter'             ],
-            \    'h': [ 'set nohlsearch',          'Highlight'             ],
-            \    'l': [ 'set wrap!',               'Line Wrap'             ],
-            \    'm': [ 'tablemode#Toggle()',      'Table Mode'            ],
-            \    'p': [ 'set nopaste',             'Paste Mode'            ],
-            \    'q': [ 'copen',                   'Quickfix List'         ],
-            \    'r': [ 'set rnu!',                'Relative Line Numbers' ],
-            \    'w': [ 'set list!',               'Invisible Characters'  ],
-            \}
-
-
-let g:lmap.w={
-            \ 'name': '+Window',
-            \    'h': [ 'split',             'Horizontal Split'        ],
-            \    'q': [ 'q',                 'Close'                   ],
-            \    'Q': [ 'q!',                'Force Close'             ],
-            \    'v': [ 'vs',                'Vertical Split'          ],
-            \    'z': ['call zoom#toggle()', 'Toggle Zoom'             ],
-            \}
-
-
-let g:lmap.v={
-            \ 'name': '+Wiki',
-            \    'h': [ 'H vimwiki',          'Help'  ],
-            \    'i': [ '<plug>VimwikiIndex', 'Index' ],
-            \}
-
-
-" let g:lmap.f = {
-"             \'name': 'FZF & Find',
-"             \'a': ['FzfAg', 'Ag'],
-"             \'c': ['FzfCommits', 'Commit'],
-"             \'b': ['FzfBuffers', 'Buffers'],
-"             \'l': ['FzfTodo', 'Todo List'],
-"             \'g': ['FzfLines', 'Lines'],
-"             \'f': ['call ShowfindFiles()', 'File'],
-"             \'d': ['FzfCommands', 'Commands'],
-"             \'t': ['FzfBTags', 'Bufer`s Tags'],
-"             \'T': ['call FzfTagsFunction()', 'Tags'],
-"             \'m': ['FzfMarks', 'Marks'],
-"             \'p': ['FzfMaps', 'Maps'],
-"             \'h': ['FzfHistory', 'Histroy'],
+" let g:lmap.i={
+"             \ 'name': '+Interfaces',
+"             \    'c': ['Cheat40Open',                'Cheat Sheet'     ],
+"             \    'q': ['call quickmenu#toggle(0)',   'Quickmenu'       ],
+"             \    'm': ['call magit#show_magit("v")', 'Magit'           ],
+"             \    'n': ['NERDTreeToggle',             'NERDTree'        ],
+"             \    's': ['vsplit +Startify',           'Startify'        ],
+"             \    't': ['TagBarToggle',               'Tagbar'          ],
+"             \    'u': ['Unite',                      'Unite'           ],
+"             \    'z': ['UndotreeToggle',             'Undotree'        ],
 "             \}
 
+" ` -- Same as VSCode term hotkey
+nnoremap <leader>` :Deol -split -start-insert<CR>
+" vsplit +terminal
+nnoremap <leader>ft :VimFiler<CR>
+" nnoremap <leader>ft :VimFiler -direction="topleft"
+" g -- Grep
+nnoremap <leader>g :vimgrep TODO **/*.%:e \| cw<CR>
+" q -- Quit
+nnoremap <leader>q :q<CR>
+" o -- Only
+nnoremap <leader>o :o<CR>
+" q -- Q
+nnoremap <leader>q q
+" s -- Search & Replace
+nnoremap <leader>s :%s//g<left><left>
+" r -- Reload
+nnoremap <leader>rr :source $MYVIMRC<CR>
+" u -- Unundo
+nnoremap <leader>u :redo<CR>
 
-" let g:lmap.t = {
-"             \'name': 'Tab',
-"             \'n': ['tabnew', 'New'],
-"             \'c': ['tabc', 'Close'],
-"             \'o': ['tabo', 'Only'],
-"             \'a': ['tabp', 'Previous'],
-"             \'d': ['tabn', 'Next'],
-"             \'w': ['tabfirst', 'First'],
-"             \'s': ['tablast', 'Last'],
-"            \}
 
 
-" Create new menus not based on existing mappings:
-call leaderGuide#register_prefix_descriptions("<Space>", "g:lmap")
-nnoremap <silent><nowait> <leader> :<c-u>LeaderGuide '<Space>'<CR>
-vnoremap <silent><nowait> <leader> :<c-u>LeaderGuideVisual '<Space>'<CR>
+" =============================================================================
+"  === b -- Buffers===
+" =============================================================================
+" Next Buffer
+nnoremap <leader>bn :bn<CR>
+" Previous Buffer
+nnoremap <leader>bp :bp<CR>
+
+
+
+" =============================================================================
+"  === d -- Denite ===
+" =============================================================================
+nnoremap <leader>dc :Denite menu:config<CR>
+nnoremap <leader>dd :Denite menu:Denite<CR>
+nnoremap <leader>dm :Denite file_mru<CR>
+nnoremap <leader>dh :Denite help<CR>
+nnoremap <leader>du :Unite <Tab>
+
+
+" =============================================================================
+"  === e -- Edit ===
+" =============================================================================
+" lowercase to split
+" uppercase for current edit
+" (other than 't')
+
+" Edit Init.vim
+nnoremap <leader>ev :vsplit $MYVIMRC<CR>
+nnoremap <leader>e<S-V> :edit $MYVIMRC<CR>
+" Edit Settings
+nnoremap <leader>es :vs ~/.dotfiles/editors/nvim/plugin/settings.vim<CR>
+nnoremap <leader>e<S-S> :edit ~/.dotfiles/editors/nvim/plugin/settings.vim<CR>
+" Edit Lightline
+nnoremap <leader>el :vsplit ~/.dotfiles/editors/nvim/plugin/lightline.vim<CR>
+nnoremap <leader>e<S-L> :edit ~/.dotfiles/editors/nvim/plugin/lightline.vim<CR>
+" Edit Keys
+nnoremap <leader>ek :vsplit ~/.dotfiles/editors/nvim/plugin/mappings.vim<CR>
+nnoremap <leader>e<S-K> :edit ~/.dotfiles/editors/nvim/plugin/mappings.vim<CR>
+" Edit Denite
+nnoremap <leader>ed :vsplit ~/.dotfiles/editors/nvim/plugin/unite.vim<CR>
+nnoremap <leader>e<S-D> :edit ~/.dotfiles/editors/nvim/plugin/unite.vim<CR>
+" Edit Commands
+nnoremap <leader>ec :vsplit ~/.dotfiles/editors/nvim/plugin/commands.vim<CR>
+nnoremap <leader>e<S-C> :edit ~/.dotfiles/editors/nvim/plugin/commands.vim<CR>
+" Edit Plugins
+nnoremap <leader>ep :vsplit ~/.dotfiles/editors/nvim/plugin/plugins.vim<CR>
+nnoremap <leader>e<S-P> :edit ~/.dotfiles/editors/nvim/plugin/plugins.vim<CR>
+" Edit Interfaces
+nnoremap <leader>ei :vsplit ~/.dotfiles/editors/nvim/plugin/ui.vim<CR>
+nnoremap <leader>e<S-I> :edit ~/.dotfiles/editors/nvim/plugin/ui.vim<CR>
+" Edit Theme
+nnoremap <leader>et :vsplit ~/Projects/vim/vim-code-dark/colors/codedark.vim<CR>
+nnoremap <leader>eT :edit ~/Projects/vim/vim-code-dark/colors/codedark.vim<CR>
+" Edit Themes/
+nnoremap <leader>eu :vsplit ~/.dotfiles/editors/nvim/colors<CR>
+
+
+
+
+" =============================================================================
+"  === h -- Help ===
+" =============================================================================
+" Search the docs
+nnoremap <leader><S-H> :Denite help<CR>
+" Cheat Sheet
+nnoremap <leader>hc :Cheat40Open<CR>
+" Check Health
+nnoremap <leader>hh :checkhealth nvim
+" index.man
+nnoremap <leader>hi :H index
+" Quickmenu
+" nnoremap <leader>, :call quickmenu#toggle(0)<CR>
+" Messages
+nnoremap <leader>hm :messages<CR>
+
+" Describe Character
+nnoremap <leader>hdc :ascii<CR>
+" Describe Filetype
+nnoremap <leader>hdf :set filetype?<CR>
+" Describe Current Path'       ],
+nnoremap <leader>hdp :GetFullPath<CR>
+" Describe Syntax at the cursosr
+nnoremap <leader>hds :SynDef<CR>
+" List Defined Syntax Groups
+nnoremap <leader>hd<S-s> :syntax<CR>
+
+
+
+" =============================================================================
+"   p -- Plugins
+" =============================================================================
+
+" Update Plugins
+nnoremap <leader>pu :call dein#update()<CR>
+
+
+
+" =============================================================================
+"   t -- Toggle
+" =============================================================================
+
+" Braces
+nnoremap <leader>tb :RainbowParentheses!!<CR>
+" Comments
+nnoremap <leader>tc :TComment<CR>
+" Coloring for hex/rgb/cterm values
+nnoremap <leader>tk :ColorToggle<CR>
+" Folding
+nnoremap <leader>tf :normal! zi<CR>
+" GitGutter
+nnoremap <leader>tg :call gitgutter#toggle()<CR>
+" Search Highlight
+nnoremap <leader>th :set nohlsearch<CR>
+" Line Wrapping
+nnoremap <leader>tl :set wrap!<CR>
+" Toggle TableMode
+nnoremap <leader>tm :tablemode#Toggle()<CR>
+" Paste
+nnoremap <leader>tp :set nopaste<CR>
+" Quickfix List
+nnoremap <leader>tq :copen<CR>
+" Relative Line Numbers (set nru!)
+nnoremap <leader>tr :set norelativenumber!<CR>
+" Invisible Characters (whitespace)
+nnoremap <leader>tw :set list!<CR>
+
 

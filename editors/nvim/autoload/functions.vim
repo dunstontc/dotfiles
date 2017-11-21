@@ -1,9 +1,4 @@
 " let g:UtilNoColorcolumn = ['qf', 'fzf', 'netrw', 'help', 'markdown', 'startify', 'GrepperSide', 'txt']
-" let g:UtilMkviewFiletypeBlacklist = ['diff', 'hgcommit', 'gitcommit']
-
-function! functions#hasFileType(list) abort
-  return index(a:list, &filetype) != -1
-endfunction
 
 function! functions#should_turn_off_colorcolumn() abort
   return functions#hasFileType(g:UtilNoColorcolumn)
@@ -67,6 +62,20 @@ function! functions#ThreeSplit(filepath)
 endfunction
 
 " =============================================================================
+
+function! functions#Chomp()
+  " let l:column = virtcol('.') " cursor position
+
+  if (virtcol('.') != 1)
+    " execute 'call feedkeys("a\<bs>\<esc>")'
+    exec 'normal i<del><esc><right>'
+  else
+    exec 'normal a<bs><esc>'
+    " execute 'call feedkeys("a\<del>\<esc>\<right>")'
+  endif
+endfunction
+
+" =============================================================================
 "  === Utilities ===
 " =============================================================================
 
@@ -77,7 +86,7 @@ function! s:fnameescape(file) abort
     return escape(a:file," \t\n*?[{`$\\%#'\"|!<")
   endif
 endfunction
-
+d
 function! s:runtime_globpath(file) abort
   return split(globpath(escape(&runtimepath, ' '), a:file), "\n")
 endfunction

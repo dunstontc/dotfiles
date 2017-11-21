@@ -2,35 +2,36 @@
 " === Shougo/deoplete ===
 " =============================================================================
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#auto_completion_start_length = 2
+let g:deoplete#auto_completion_start_length = 1
 " let g:deoplete#enable_camel_case = 1
+let g:deoplete#enable_ignore_case=1
 " let g:deoplete#skip_chars = ['(', ')', '<', '>']
-let g:deoplete#enable_smart_case = 1
+" let g:deoplete#enable_smart_case = 1
 let g:deoplete#file#enable_buffer_path=1
 " let g:deoplete#ignore_sources =
 " let g:deoplete#omni#input_patterns =
 " let g:deoplete#omni_patterns =
 
 
-call deoplete#custom#set('vim',           'mark', '')
-call deoplete#custom#set('omni',          'mark', '⌾')
-call deoplete#custom#set('file',          'mark', '')
-call deoplete#custom#set('jedi',          'mark', '')
-call deoplete#custom#set('emoji',         'mark', '')
-call deoplete#custom#set('around',        'mark', '↻')
-call deoplete#custom#set('buffer',        'mark', '')
-call deoplete#custom#set('member',        'mark', '.')
-call deoplete#custom#set('necovim',       'mark', '')
-call deoplete#custom#set('ultisnips',     'mark', ' ')
-call deoplete#custom#set('necosyntax',    'mark', 'ns')
-call deoplete#custom#set('tmux-complete', 'mark', '⧉ ')
+call deoplete#custom#source('vim',           'mark', '')
+call deoplete#custom#source('omni',          'mark', '⌾')
+call deoplete#custom#source('file',          'mark', '')
+call deoplete#custom#source('jedi',          'mark', '')
+call deoplete#custom#source('emoji',         'mark', '')
+call deoplete#custom#source('around',        'mark', '↻')
+call deoplete#custom#source('buffer',        'mark', '')
+call deoplete#custom#source('member',        'mark', '.')
+call deoplete#custom#source('necovim',       'mark', '')
+call deoplete#custom#source('ultisnips',     'mark', ' ')
+call deoplete#custom#source('necosyntax',    'mark', 'ns')
+call deoplete#custom#source('tmux-complete', 'mark', '⧉ ')
 
-call deoplete#custom#set('jedi', 'matchers', ['matcher_fuzzy'])
-call deoplete#custom#set('necovim', 'matchers', ['matcher_fuzzy'])
-call deoplete#custom#set('ultisnips', 'matchers', ['matcher_fuzzy'])
-call deoplete#custom#set('necosyntax', 'matchers', ['matcher_fuzzy'])
-call deoplete#custom#set('tmux-complete', 'matchers', ['matcher_fuzzy'])
-call deoplete#custom#set('emoji', 'filetypes', ['gitcommit', 'markdown', 'org', 'rst'])
+call deoplete#custom#source('jedi', 'matchers', ['matcher_fuzzy'])
+call deoplete#custom#source('necovim', 'matchers', ['matcher_fuzzy'])
+call deoplete#custom#source('ultisnips', 'matchers', ['matcher_fuzzy'])
+call deoplete#custom#source('necosyntax', 'matchers', ['matcher_fuzzy'])
+call deoplete#custom#source('tmux-complete', 'matchers', ['matcher_fuzzy'])
+call deoplete#custom#source('emoji', 'filetypes', ['gitcommit', 'markdown', 'org', 'rst'])
 " call deoplete#custom#source('ultisnips', 'rank', 1000)
 
 
@@ -48,22 +49,22 @@ call deoplete#custom#set('emoji', 'filetypes', ['gitcommit', 'markdown', 'org', 
 
 
 
-" call deoplete#custom#source('padawan',       'rank', 660)
+" call deoplete#custom#source('padawan',       'rank',  60)
 " call deoplete#custom#source('go',            'rank', 650)
 " call deoplete#custom#source('vim',           'rank', 640)
 " call deoplete#custom#source('TernJS',        'rank', 620)
-call deoplete#custom#source('jedi',          'rank', 610)
+" call deoplete#custom#source('jedi',          'rank', 610)
 call deoplete#custom#source('omni',          'rank', 600)
+call deoplete#custom#source('file',          'rank', 650)
 " call deoplete#custom#source('neosnippet',    'rank', 510)
 call deoplete#custom#source('ultisnips',     'rank', 510)
 call deoplete#custom#source('member',        'rank', 500)
 " call deoplete#custom#source('file_include',  'rank', 420)
-call deoplete#custom#source('file',          'rank', 450)
-" call deoplete#custom#source('tag',           'rank', 400)
+call deoplete#custom#source('tag',           'rank', 400)
+call deoplete#custom#source('tmux-complete', 'rank', 400)
 call deoplete#custom#source('around',        'rank', 330)
 call deoplete#custom#source('buffer',        'rank', 320)
 call deoplete#custom#source('dictionary',    'rank', 310)
-call deoplete#custom#source('tmux-complete', 'rank', 300)
 call deoplete#custom#source('syntax',        'rank', 200)
 
 function! Multiple_cursors_before()

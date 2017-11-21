@@ -14,16 +14,17 @@ let g:lightline = {
       \    'right': [ [''], ],
       \},
       \  'active': {
-      \    'left': [ [ 'mode' ],
-      \            [   'readonly', 'filename' ],
-      \            [   'foremat' ] ],
-      \    'right': [ [ 'cool_col', 'paste' ],
-      \               [ 'linter_warnings', 'linter_errors', 'tabsize' ],
-      \               [ 'fsize' ] ]
+      \    'left': [ [ 's','mode','s' ],
+      \            [   'readonly', 'filename', ],
+      \            [   'icon',     'fsize' ] ],
+      \    'right': [ [ 'cool_col' ],
+      \               [ 'tabsize'  ],
+      \               [ 'linter_warnings', 'linter_errors', 's', 'anzu', 's', 'paste' ] ]
       \},
       \  'component': {
       \    'clipboard': ' %{v:register}',
       \    'displace' : '%F',
+      \    's'        : ' ',
       \},
       \  'component_function': {
       \    'mode':            'Mode',
@@ -34,12 +35,14 @@ let g:lightline = {
       \    'fsize':           'FileSize',
       \    'gitbranch':       'GitInfo',
       \    'highlite':        'StatuslineCurrentHighlight',
-      \    'linter_warnings': 'LightlineLinterWarnings',
-      \    'linter_errors':   'LightlineLinterErrors',
       \    'tabsize':         'TabSizing',
       \    'hud':             'Hud',
-      \    'foremat':         'MyFiletype',
-      \    'fivemat':         'MyFileformat'
+      \    'icon':            'MyFiletype',
+      \    'anzu':            'anzu#search_status'
+      \},
+      \ 'component_expand': {
+      \   'linter_warnings': 'LightlineLinterWarnings',
+      \   'linter_errors':   'LightlineLinterErrors',
       \},
       \ 'component_type': {
       \   'linter_warnings': 'warning',
@@ -54,11 +57,11 @@ let g:lightline = {
 
 " =============================================================================
 
-let g:tcd_blacklist = '\v(cheat40|denite|gundo|help|nerdtree|peekaboo|quickmenu|startify|undotree|unite|vimfiler|vimshell)'
+let g:tcd_blacklist = '\v(cheat40|denite|gundo|help|nerdtree|netrw|peekaboo|quickmenu|startify|undotree|unite|vimfiler|vimshell)'
 
-let g:unite_force_overwrite_statusline = 0
-let g:denite_force_overwrite_statusline = 0
-let g:vimfiler_force_overwrite_statusline = 0
+" let g:unite_force_overwrite_statusline = 0
+" let g:denite_force_overwrite_statusline = 0
+" let g:vimfiler_force_overwrite_statusline = 0
 
 " =============================================================================
 
@@ -74,8 +77,9 @@ function! Mode() abort
         \ &filetype ==#     'help'       ? 'Help'     :
         \ &filetype ==#     'neoterm'    ? 'NeoTerm'  :
         \ &filetype ==#     'nerdtree'   ? 'NERDTree' :
+        \ &filetype ==#     'netrw'      ? 'netrw'    :
         \ &filetype ==#     'peekaboo'   ? 'Peekaboo' :
-        \ &filetype ==#     'quickmenu'  ? 'Menu':
+        \ &filetype ==#     'quickmenu'  ? 'Menu'     :
         \ &filetype ==#     'startify'   ? 'Startify' :
         \ &filetype ==#     'unite'      ? 'Unite'    :
         \ &filetype ==#     'undotree'   ? 'UndoTree' :
@@ -89,28 +93,26 @@ endfunction
 function! Filename() abort
   let l:filename = expand('%:t') !=# '' ? expand('%:t') : ''
   let l:modified = &modified ? ' +' : ''
-  return &filetype !~# g:tcd_blacklist ? (l:filename . l:modified) : ''
+  return &filetype !~# g:tcd_blacklist ? (' ' . l:filename . '' . l:modified) : ' '
 endfunction
-
 
 " =============================================================================
 
 function! Readonly() abort
-  return &readonly && &filetype !~# g:tcd_blacklist ? '' : ''
+  return &readonly && &filetype !~# g:tcd_blacklist ? '  ' : ''
 endfunction
-
 
 " =============================================================================
 
 function! TabSizing() abort
-  return &filetype !~# g:tcd_blacklist ? ( '␉ ' . &shiftwidth ) : ''
+  return &filetype !~# g:tcd_blacklist && winwidth(0) > 60 ? ( '␉ ' . &shiftwidth . ' ') : ''
 endfunction
 
 " =============================================================================
 
 function! MyFiletype()
   " return winwidth(0) > 60 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
-  return &filetype !~# g:tcd_blacklist ? WebDevIconsGetFileTypeSymbol() : ''
+  return &filetype !~# g:tcd_blacklist && winwidth(0) > 60 ? ('  '.WebDevIconsGetFileTypeSymbol().' ') : ''
 endfunction
 
 " =============================================================================
@@ -147,8 +149,8 @@ function! PaddedStats() abort
     let l:padRow = ' ' . l:row
   endif
 
-  return &filetype !~# g:tcd_blacklist ? (' ' . l:padRow  . '/' . l:total . ' :' . l:padCol) :
-                                       \ ( l:row  . '/' . l:total )
+  return &filetype !~# g:tcd_blacklist && winwidth(0) > 60 ? (' ' . l:padRow  . '/' . l:total . ' :' . l:padCol . ' ') :
+                                       \ ( l:row  . '/' . l:total . ':' . l:column . ' ')
 endfunction
 
 " =============================================================================
@@ -167,31 +169,40 @@ function! FileSize() abort
   endif
 
   if (exists('l:mbytes'))
-    return &filetype !~# g:tcd_blacklist ? (l:mbytes . ' MB') : ''
+    return &filetype !~# g:tcd_blacklist && winwidth(0) > 60 ? (l:mbytes . ' MB') : ''
   elseif (exists('l:kbytes'))
-    return &filetype !~# g:tcd_blacklist ? (l:kbytes . ' KB') : ''
+    return &filetype !~# g:tcd_blacklist && winwidth(0) > 60 ? (l:kbytes . ' KB') : ''
   else
-    return &filetype !~# g:tcd_blacklist ? (l:bytes . ' B') : ''
+    return &filetype !~# g:tcd_blacklist && winwidth(0) > 60 ? (l:bytes . ' B') : ''
   endif
 endfunction
 
 " =============================================================================
-
-autocmd User ALELint call lightline#update()
-
 " ale + lightline
+
+augroup lightline#ale
+  autocmd!
+  autocmd User ALELint call lightline#update()
+augroup END
+
+" let s:indicator_warnings = get(g:, 'lightline#ale#indicator_warnings', 'W:')
+" let s:indicator_errors = get(g:, 'lightline#ale#indicator_errors', 'E:')
+" let s:indicator_ok = get(g:, 'lightline#ale#indicator_ok', 'OK')
+
 function! LightlineLinterWarnings() abort
   let l:counts = ale#statusline#Count(bufnr(''))
   let l:all_errors = l:counts.error + l:counts.style_error
   let l:all_non_errors = l:counts.total - l:all_errors
-  return l:counts.total == 0 ? '' : printf('◊ %d', all_non_errors)
+  " return l:counts.total == 0 ? '' : printf('◊ %d ', all_non_errors)
+  return l:counts.total == 0 ? '' : printf('● %d ', all_non_errors)
 endfunction
 
 function! LightlineLinterErrors() abort
   let l:counts = ale#statusline#Count(bufnr(''))
   let l:all_errors = l:counts.error + l:counts.style_error
   let l:all_non_errors = l:counts.total - l:all_errors
-  return l:counts.total == 0 ? '' : printf('✗ %d  ', all_errors)
+  return l:counts.total == 0 ? '' : printf('✗ %d', all_errors)
+  " return l:counts.total == 0 ? '' : printf('● %d', all_errors)
 endfunction
 
 function! LightlineLinterOK() abort

@@ -9,8 +9,8 @@ command -nargs=0 GetName :let @+ = expand("%:t")
 
 
 " Make these commonly mistyped commands still work
-command! WQ wq
-command! Wq wq
+command! WQ x
+command! Wq x
 command! Wqa wqa
 command! W w
 command! Q q
@@ -22,6 +22,11 @@ command! C nohlsearch
 
 command SynDef call functions#SynStack()
 
+" command! -nargs=0 Chompp call functions#Chomp()
+
 command! -nargs=1 TwoSplit call functions#TwoSplit(<args>)
 
 command! ClearRegisters call functions#ClearRegisters()
+
+command! -nargs=0 Mail vsplit term://mutt
+

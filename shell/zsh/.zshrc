@@ -174,10 +174,16 @@ ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=yellow'
 ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=yellow'
 
 # =============================================================================
-eval $(thefuck --alias --enable-experimental-instant-mode)
-compdef vman="man"
+# Change the default CTRL_T to CTRL_F
+bindkey '^F' fzf-file-widget
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_COMPLETION_TRIGGER='/'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# =============================================================================
+eval $(thefuck --alias --enable-experimental-instant-mode)
+compdef vman="man"
 
 
 

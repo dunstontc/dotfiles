@@ -12,6 +12,11 @@ if has('nvim')
   finish
 endif
 "
+" if has('win32')
+"   let $VIMHOME = expand('~\vimfiles')
+" else
+"   let $VIMHOME = expand('~/.vim')
+" endif
 "
 " =============================================================================
 "  Plugins
@@ -26,25 +31,25 @@ endif
 
 call plug#begin('~/.vim/plugged')
 " Useful Things
-Plug 'tpope/vim-rsi'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-fugitive'
-Plug 'tomtom/tcomment_vim'
-Plug 'raimondi/delimitmate'
-Plug 'junegunn/vim-peekaboo'
-Plug 'junegunn/vim-easy-align'
+Plug 'tpope/vim-rsi'                 " Better insert-mode experience
+Plug 'tpope/vim-repeat'              " Repeat plugin actions with '.'
+Plug 'tpope/vim-surround'            " Alter surrounding punctuation
+Plug 'tpope/vim-fugitive'            " Git interface
+Plug 'tomtom/tcomment_vim'           " Comments
+Plug 'raimondi/delimitmate'          " Automatically close delimiters
+Plug 'junegunn/vim-peekaboo'         " Visual interface for registers
+Plug 'junegunn/vim-easy-align'       " Easily align all of the things
 " Syntactic Things
-Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-user'         " Define new textobjects
 Plug 'kana/vim-textobj-line'
 Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-indent'
 Plug 'glts/vim-textobj-comment'
 Plug 'Julian/vim-textobj-variable-segment'
-Plug 'terryma/vim-expand-region'
+Plug 'terryma/vim-expand-region'     " Easier textobject selection
 " Pretty Things
-Plug 'itchyny/vim-cursorword'
-Plug 'jszakmeister/vim-togglecursor'
+Plug 'itchyny/vim-cursorword'        " Hilight all occurances of the word under the cursor
+Plug 'jszakmeister/vim-togglecursor' " Switch between block & horizontal line
 Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
 " Colorful Things
@@ -53,17 +58,19 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'mswift42/vim-themes'
 Plug 'flazz/vim-colorschemes'
 Plug 'morhetz/gruvbox'
+Plug 'romainl/Apprentice'
 " Utilities
-Plug 'jez/vim-superman'
-Plug 'pbrisbin/vim-mkdir'
-Plug 'sgur/vim-editorconfig'
-Plug 'ciaranm/securemodelines'
-Plug 'christoomey/vim-tmux-navigator'
+Plug 'jez/vim-superman'               " Open manpages in vim
+Plug 'pbrisbin/vim-mkdir'             " Make new directories along with new files
+Plug 'sgur/vim-editorconfig'          " .editorconfig support
+Plug 'ciaranm/securemodelines'        " Better safe than sorry
+Plug 'dietsche/vim-lastplace'         " Persist cursor position
+Plug 'christoomey/vim-tmux-navigator' " Move smoothly between vim & tmux
 " Enhancements
 Plug 'Shougo/deoplete.nvim'           " Async Completion
 Plug 'roxma/nvim-yarp'                " Make deoplete play nice with Vim8
 Plug 'roxma/vim-hug-neovim-rpc'       " Make deoplete play nice with Vim8
-Plug 'Shougo/neco-syntax'
+Plug 'Shougo/neco-syntax'             " ???
 Plug 'Shougo/neco-vim'                " Completions for Viml
 Plug 'wellle/tmux-complete.vim'       " Completions for adjascent tmux panes
 " Plug 'CharlesGueunet/quickmenu.vim'
@@ -84,6 +91,11 @@ set shell=/usr/local/bin/bash
 if has('mouse')
     set mouse=a                " Enable mouse in all modes
 endif
+" if has('unnamedplus')
+"   set clipboard=unnamedplus,unnamed
+" else
+"   set clipboard+=unnamed
+" endif
 set noerrorbells               " Disable error bells
 set novisualbell                 " ☝
 
@@ -131,7 +143,7 @@ set termguicolors
 " let g:enable_italic_font=1     " Enable italic font in colorscheme
 colorscheme gruvbox
 highlight! Comment gui=italic cterm=italic
-" set guifont=Operator\ Mono\ Nerd\ Font\ Complete
+set guifont=Operator\ Mono\ Nerd\ Font\ Complete\ 14
 
 " ==== Invisible Characters ====
 set listchars+=tab:→\
@@ -208,7 +220,7 @@ endif
 " =============================================================================
 "  Commands
 " =============================================================================
-" Open manpages in vertical splits
+" Open help in vertical splits
 command -nargs=* -complete=help H vertical belowright help <args>
 
 " copy path of the active buffer
@@ -237,7 +249,8 @@ set timeoutlen=1000
 let mapleader="\<Space>"
 
 nnoremap <leader><leader> <esc>
-nnoremap <leader>ev :edit $MYVIMRC<CR>
+nnoremap <leader>cev :edit $MYVIMRC<CR>
+" nnoremap <leader>cef :edit
 nnoremap <silent> <leader>sv :source $MYVIMRC<CR>
 nnoremap <leader>pi :PlugInstall<CR>
 nnoremap <leader>ps :PlugStatus<CR>
@@ -247,6 +260,10 @@ nnoremap <leader>ps :PlugStatus<CR>
 nnoremap ; :
 vnoremap ; :
 
+" Better searching
+nnoremap / /\v
+vnoremap / /\v
+
 " Use ctrl-q instead of ⎋ , stay on the home row
 inoremap <C-Q> <C-c>
 nnoremap <C-Q> <Nop>
@@ -255,6 +272,9 @@ cnoremap <C-Q> <C-c>
 tnoremap <C-Q> <C-c>
 
 " noremap Q <Nop>
+
+nnoremap <BS> i<DEL><esc><right>
+nnoremap ,, i<space><esc>
 
 nnoremap <leader>q :q<CR>
 nnoremap <leader>u :redo<CR>
@@ -267,8 +287,6 @@ inoremap fj <esc>:x<CR>
 noremap <S-H> 0
 noremap <S-L> $
 
-nnoremap <BS> i<DEL><esc><right>
-nnoremap ,, i<space><esc>
 
 " Yank into the void
 noremap d "_d
@@ -343,6 +361,7 @@ nnoremap <leader>tw :set list!<CR>
 " =============================================================================
 "  Plugins
 " =============================================================================
+
 
 " ==== deoplete ====
 let g:deoplete#enable_at_startup = 1

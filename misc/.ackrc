@@ -1,21 +1,41 @@
---ignore-ack-defaults
+# Always sort the files
+--sort-files
+
+# Always color, even if piping to another program
+--color
+
+# Don't include line breaks
+--nobreak
+
+# Use "less -r" as my pager
+# --pager=less -FRSX
+--nopager
+
+
+--color-filename=cyan
+--color-match=bright_blue
+--color-lineno=yellow
+# --ignore-ack-defaults
+
 --ignore-directory=is:.git
 --ignore-directory=is:build
 --ignore-directory=is:dist
 --ignore-directory=is:reports
---ignore-file=is:templates.js
 --ignore-directory=is:bower_components
 --ignore-directory=is:node_modules
---ignore-file=match:/[._].*\.swp$/
---ignore-file=match:/[.-]min[.]js$/
---ignore-file=match:/[.]js[.]min$/
---ignore-file=match:/[.]min[.]css$/
---ignore-file=match:/[.]css[.]min$/
---ignore-file=ext:pdf
---ignore-file=ext:heapsnapshot
---ignore-file=ext:log
---ignore-file=ext:pub
---ignore-file=ext:gif,jpg,jpeg,png
+
+# --ignore-file=is:templates.js
+# --ignore-file=match:/[._].*\.swp$/
+# --ignore-file=match:/[.-]min[.]js$/
+# --ignore-file=match:/[.]js[.]min$/
+# --ignore-file=match:/[.]min[.]css$/
+# --ignore-file=match:/[.]css[.]min$/
+# --ignore-file=ext:pdf
+# --ignore-file=ext:heapsnapshot
+# --ignore-file=ext:log
+# --ignore-file=ext:pub
+# --ignore-file=ext:gif,jpg,jpeg,png
+
 --type-add=perl:ext:pl,pm,pod,t,psgi
 --type-add=perl:firstlinematch:/^#!.*\bperl/
 --type-add=perltest:ext:t
@@ -37,10 +57,10 @@
 --type-add=clojure:ext:clj
 --type-add=cc:ext:c,h,xs
 --type-add=hh:ext:h
---type-add=coffeescript:ext:coffee
+--type-add=coffeescript:ext:coffee,cson
 --type-add=cpp:ext:cpp,cc,cxx,m,hpp,hh,h,hxx
 --type-add=csharp:ext:cs
---type-add=css:ext:css
+--type-add=css:ext:css,less,sass,scss
 --type-add=dart:ext:dart
 --type-add=delphi:ext:pas,int,dfm,nfm,dof,dpk,dproj,groupproj,bdsgroup,bdsproj
 --type-add=elixir:ext:ex,exs

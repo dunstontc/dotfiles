@@ -5,10 +5,21 @@ fundle plugin 'fisherman/segment'
 
 fundle init --profile
 
-set --export EDITOR nvim
+# set -x DOTFILES $HOME/.dotfiles
+# set -x EDITOR nvim
+
+
+function fish_prompt
+    segment black cyan (pwd)
+    segment_close
+end
+
+function fish_right_prompt
+    segment_close
+end
 
 set fish_color_normal white         # the default color
-# set fish_color_command            # the color for commands
+set fish_color_command grey         # the color for commands
 set fish_color_quote orange         # the color for quoted blocks of text
 # set fish_color_redirection        # the color for IO redirections
 set fish_color_end grey             # the color for process separators like ';' and '&'
@@ -31,8 +42,8 @@ set fish_color_selection blue
 # set fish_color_cwd_root
 
 # Additionally, the following variables are available to change the highlighting in the completion pager:
-# set fish_pager_color_prefix       # the color of the prefix string, i.e. the string that is to be completed
-set fish_pager_color_completion grey 
-# set fish_pager_color_description  # the color of the completion description
+set fish_pager_color_prefix grey        # the color of the prefix string, i.e. the string that is to be completed
+set fish_pager_color_completion blue 
+set fish_pager_color_description violet # the color of the completion description
 # set fish_pager_color_progress     # the color of the progress bar at the bottom left corner
 # set fish_pager_color_secondary    # the background color of the every second completion
