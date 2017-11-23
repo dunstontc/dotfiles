@@ -30,7 +30,7 @@ let g:vimfiler_no_default_key_mappings=1
 
 " let g:vimfiler_directory_display_top=1
 " let g:vimfiler_ignore_pattern = ['^\.git$', '^\.DS_Store$']
-let g:vimfiler_ignore_pattern = ['^\.git$', '^\.DS_Store$']
+let g:vimfiler_ignore_pattern = ['^\.git$', '^\.DS_Store$', '^\Icon']
 
 " Enable file operation commands.
 " Edit file by tabedit.
@@ -39,7 +39,6 @@ call vimfiler#custom#profile('default', 'context', {
      \ 'no-quit'    : 1,
      \ 'split'      : 1,
      \ 'winwidth'   : 50,
-     \ 'fnamewidth' : 0,
      \ 'edit_action': 'vsplit',
      \ 'sort_type'  : 'filename',
      \ 'direction'  : 'topleft',
@@ -58,12 +57,30 @@ augroup MyAutoCmds
   autocmd Filetype vimfiler setlocal nowrap
 
   autocmd FileType vimfiler nmap <buffer> i :VimFilerPrompt<CR>
+  autocmd FileType vimfiler nmap <buffer> j <Plug>(vimfiler_loop_cursor_down)
+  autocmd FileType vimfiler nmap <buffer> k <Plug>(vimfiler_loop_cursor_up)
+  autocmd FileType vimfiler nmap <buffer> h <Plug>(vimfiler_smart_h)
+  autocmd FileType vimfiler nmap <buffer> l <Plug>(vimfiler_smart_l)
+  autocmd FileType vimfiler nmap <buffer> gg <Plug>(vimfiler_cursor_top)
+  autocmd FileType vimfiler nmap <buffer> <CR> <Plug>(vimfiler_cd_or_edit)
+  autocmd FileType vimfiler nmap <buffer> o <Plug>(vimfiler_expand_or_exit)
+  autocmd FileType vimfiler nmap <buffer> <S-n> <Plug>(vimfiler_new_file)
+  autocmd FileType vimfiler nmap <buffer> K <Plug>(vimfiler_make_directory)
+  autocmd FileType vimfiler nmap <buffer> ~ <Plug>(vimfiler_switch_to_home_directory)
+  autocmd FileType vimfiler nmap <buffer> ? <Plug>(vimfiler_help)
+  autocmd FileType vimfiler nmap <buffer> yy <Plug>(vimfiler_yank_full_path)
+  autocmd FileType vimfiler nmap <buffer> gr <Plug>(vimfiler_grep)
+  autocmd FileType vimfiler nmap <buffer> gf <Plug>(vimfiler_find)
+  " autocmd FileType vimfiler nmap <buffer> <2-LeftMouse> <Plug>(vimfiler_double_click)
+  autocmd FileType vimfiler nmap <buffer> <2-LeftMouse> <Plug>(vimfiler_edit_file)
+  autocmd FileType vimfiler nmap <buffer> e <Plug>(vimfiler_edit_file)
+  autocmd FileType vimfiler nmap <buffer> <S-e> <Plug>(vimfiler_split_edit_file)
+  autocmd FileType vimfiler nmap <buffer> <left> <left>
+  " autocmd FileType vimfiler nmap <buffer> <Plug>(vimfiler_)
+  " autocmd FileType vimfiler nmap <buffer> <C-l> <Plug>(vimfiler_redraw_screen)
   " autocmd FileType vimfiler nmap <buffer> q <Plug>(vimfiler_close)
-  " autocmd Filetype vimfiler setlocal
 augroup END
 
-nmap <buffer> <C-l>
-	\ <Plug>(vimfiler_redraw_screen)
 
 " " Switches to next line with loop.
 " <Plug>(vimfiler_loop_cursor_down)
@@ -358,7 +375,6 @@ let g:diminactive_enable_focus = 1
 "  === echodoc ===
 " =============================================================================
 let g:echodoc#enable_at_startup = 1
-" set noshowmode
 
 
 " =============================================================================

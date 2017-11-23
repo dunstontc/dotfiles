@@ -10,7 +10,7 @@ let g:lightline = {
       \  'separator': { 'left': '', 'right': '' },
       \  'subseparator': { 'left': '', 'right': '' },
       \  'inactive': {
-      \    'left': [ ['displace' ], ],
+      \    'left': [ ['displace', 'mood'], ],
       \    'right': [ [''], ],
       \},
       \  'active': {
@@ -23,11 +23,12 @@ let g:lightline = {
       \},
       \  'component': {
       \    'clipboard': ' %{v:register}',
-      \    'displace' : '%F',
+      \    'displace' : ' %F',
       \    's'        : ' ',
       \},
       \  'component_function': {
       \    'mode':            'Mode',
+      \    'mood':            'Mood',
       \    'filename':        'Filename',
       \    'readonly':        'Readonly',
       \    'filesymbol':      'WebDevIconsGetFileTypeSymbol',
@@ -88,6 +89,12 @@ function! Mode() abort
         \ lightline#mode()
 endfunction
 
+" =============================================================================
+
+function! Mood() abort
+  let l:modified = &modified ? ' (+) ' : ''
+  return &filetype !~# g:tcd_blacklist ? (l:modified) : ''
+endfunction
 " =============================================================================
 
 function! Filename() abort

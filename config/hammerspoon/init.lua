@@ -1,25 +1,8 @@
----- Simple configuration reloading ----
---
+--- Reload Hammerspoon configuration
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "R", function()
   hs.reload()
+  hs.notify.new({title="Hammerspoon", informativeText="Config reloaded"}):send()
 end)
-hs.alert.show("Config loaded")
-
-
-
----- Hello World ----
---
--- hs.hotkey.bind({"cmd", "alt", "ctrl"}, "W", function()
---   hs.alert.show("Hello World!")
--- end)
-
-
----- Fancier Hello World ----
---
--- `hs.notify` - system notifications
--- hs.hotkey.bind({"cmd", "alt", "ctrl"}, "W", function()
---   hs.notify.new({title="Hammerspoon", informativeText="Hello World"}):send()
--- end)
 
 
 ---- Introduction to window movement ----

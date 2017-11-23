@@ -50,7 +50,7 @@ include ~/.task/tcd-tw.theme
 # urgency.next.coefficient=15.0                   # +next tag
 # urgency.due.coefficient=100.0                   # overdue or near due date
 # urgency.blocking.coefficient=8.0                # blocking other tasks
-# urgency.priority.coefficient=6.0                # priority
+# urgency.priority.coefficient=7.0                # priority
 # urgency.active.coefficient=4.0                  # already started tasks
 # urgency.scheduled.coefficient=4.0               # scheduled tasks
 # urgency.age.coefficient=0.0                     # Urgency coefficient for age
@@ -60,7 +60,9 @@ include ~/.task/tcd-tw.theme
 # urgency.blocked.coefficient=-50.0               # blocked by other tasks
 # urgency.waiting.coefficient=-100.0              # waiting task
 # urgency.user.tag.waiting.coefficient=-20.0      # specific project
+
 color.project.Vim=blue
+color.project.SomedayMaybe=white bright
 color.project.work=cyan
 color.header=bright yellow
 color.footnote=bright yellow

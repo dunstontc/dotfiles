@@ -187,8 +187,9 @@ let g:NERDTreeExactMatchHighlightColor = {}                            " this li
 "  === DevIcons ===
 " =============================================================================
 let g:webdevicons_enable_unite = 1
-let g:webdevicons_enable_denite = 1
+let g:webdevicons_enable_denite = 0
 let g:webdevicons_enable_deoplete = 1
+" let g:webdevicons_enable_vimfiler=0
 " let g:webdevicons_enable_nerdtree = 1
 let g:DevIconsEnableFoldersOpenClose = 0
 let g:WebDevIconsUnicodeDecorateFolderNodes = 0
@@ -255,6 +256,7 @@ let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.tmux.conf']        = '�
 let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.gitignore']        = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.gitkeep']          = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.gitconfig']        = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['Makefile']        = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['archey']            = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['hugo']              = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['terminal-notifier'] = ''

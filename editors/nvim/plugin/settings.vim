@@ -10,21 +10,22 @@ set noerrorbells           " Disable error bells
 set visualbell             " Use visual bell instead of audible bell (annnnnoying)
 set belloff=all
 set report=0
+set ttyfast
+set hidden
+set nospell
 set noswapfile             " No thanks
 set nobackup               " I'm alright
-set ttyfast
 set undofile               " Persistent Undo though
 set undodir=~/.config/nvim/undo
 set shell=/usr/local/bin/bash
-set hidden
 
 " =============================================================================
 "   Input & Navigation
 " =============================================================================
 set mouse=a                     " Enable the mouse
 set backspace=indent,eol,start
-set formatoptions-=c            " Auto-wrap comments using textwidth, inserting the current comment leader automatically.
-set formatoptions-=r            " Automatically insert the current comment leader after hitting <Enter> in Insert mode.
+" set formatoptions-=c            " Auto-wrap comments using textwidth, inserting the current comment leader automatically.
+" set formatoptions-=r            " Automatically insert the current comment leader after hitting <Enter> in Insert mode.
 set formatoptions-=o            " Automatically insert the current comment leader after hitting 'o' or 'O' in Normal mode.
 " set whichwrap+=<,>,h,l,[,]      " Lake Left/Right at the Start/End of lines work like you'd expect
 
@@ -53,10 +54,11 @@ set termguicolors
 
 " set nvim_tui_enable_cursor_shape=1
 " let $NVIM_TUI_ENABLE_CURSOR_SHAPE=2
-set t_Co=256
+" set t_Co=256
 colorscheme codedark
-" colorscheme space-vim-dark
-set background=dark
+" colorscheme gruvbox
+" colorscheme OceanicNext
+" set background=dark
 let g:enable_bold_font=1       " Enable bold font in colorscheme
 let g:enable_italic_font=1     " Enable italic font in colorscheme
 highlight Comment gui=italic
@@ -78,21 +80,20 @@ set sidescroll=5
 
 
 " ==== Messages, etc. ====
-" set shortmess=filnxtToOc
-" set shortmess=a                " Assorted abbreviations
+set shortmess=a                " Assorted abbreviations
 set shortmess+=o               " Overwrite message for writing a file with subsequent message
                                "     for reading a file (useful for ":wn" or when 'autowrite' on)
 set shortmess+=O               " Message for reading a file overwrites any previous message.
-		                           "     Also for quickfix message (e.g., ":cn").
+                               "     Also for quickfix message (e.g., ":cn").
 set shortmess+=c               " Don't give |ins-completion-menu| messages.  For example,
-	                             "     -- XXX completion (YYY)", "match 1 of 2", "The only match",
-		                           "     Pattern not found", "Back at original", etc.
-set shortmess+=s	             " Don't give 'search hit BOTTOM, continuing at TOP' or 'search
+                               "     -- XXX completion (YYY)", "match 1 of 2", "The only match",
+                               "     Pattern not found", "Back at original", etc.
+set shortmess+=s               " Don't give 'search hit BOTTOM, continuing at TOP' or 'search
                                "     hit TOP, continuing at BOTTOM" messages
-set shortmess+=t	             " Truncate file message at the start if it is too long to fit
+set shortmess+=t               " Truncate file message at the start if it is too long to fit
                                "     on the command-line, "<" will appear in the left most column.
                                "     Ignored in Ex mode.
-set shortmess+=T	             " Truncate other messages in the middle if they are too long to
+set shortmess+=T               " Truncate other messages in the middle if they are too long to
                                "     fit on the command line.  "..." will appear in the middle.
                                "     Ignored in Ex mode.
 set shortmess+=F               " Don't give the file info when editing a file,
@@ -100,19 +101,22 @@ set shortmess+=F               " Don't give the file info when editing a file,
 set showcmd                    " Show (partial) command in the last line of the screen.
 set noshowmode                 " Don't show the current mode (airline takes care of this)
 set notitle                    " Don't Show the filename in the window titlebar
-set report=10                  " Report more than 10 lines changed at once
+" set report=10                  " Report more than 10 lines changed at once
 " set linespace=0    " No extra spaces between rows
 " set pumheight=20   " Avoid the pop up menu occupying the whole screen
 
 
-set listchars+=tab:→\
-set listchars+=eol:¬
-set listchars+=trail:·
-set listchars+=nbsp:·
+set listchars+=tab:→\   " Comment here to keep whitespace intact
+" set listchars+=eol:¬
+set listchars+=eol:\    " Comment here to keep whitespace intact
+" set listchars+=trail:·
+set listchars+=trail:●
+set listchars+=nbsp:\   " Comment here to keep whitespace intact
 set listchars+=extends:❯
 set listchars+=precedes:❮
 set showbreak=↪
-set nolist
+" set nolist
+set list
 
 " if has('windows')
 "   set fillchars=diff:⣿                " BOX DRAWINGS
@@ -161,11 +165,11 @@ set wildignore+=*.so
 set wildignore+=*.swp
 set wildignore+=*.zip
 set wildignorecase
-" set wildmode=longest:full,full
+set wildmode=longest:full,full
 " set wildmode=list:longest,list:full
 " set wildmode=list:full
 " set wildmode=list:longest
-set wildmode=list:longest,full
+" set wildmode=list:longest,full
 
 " set completeopt=longest,menu,preview
 " set completeopt+=menu
@@ -179,7 +183,7 @@ set completeopt-=preview
 "  Folding
 set foldenable                  " Enable folding
 " set foldmethod=syntax
-set foldlevelstart=1            " Default folding level when buffer is opened
+set foldlevelstart=3            " Default folding level when buffer is opened
 set foldnestmax=10              " Maximum nested fold
 " set foldtext=functions#NeatFoldText()
 

@@ -1,22 +1,29 @@
 " =============================================================================
 "   Denite
 " =============================================================================
-augroup deniteresize
-  autocmd!
-  autocmd VimResized,VimEnter * call denite#custom#option('default',
-        \'winheight', winheight(0) / 4)
-augroup end
+" augroup deniteresize
+  " autocmd!
+  " autocmd VimResized,VimEnter * call denite#custom#option('default',
+        " \'winheight', winheight(0) / 4)
+" augroup end
 
 let s:menus = {}
 
 call denite#custom#option('default', {
-      \ 'auto_accel'  :     v:true,
-      \ 'auto_preview':     v:false,
-      \ 'prompt'      :     '❯ ',
-      \ 'source_names':     'long',
-      \ 'prompt_highlight': 'helpSpecial',
-      \ 'highlight_mode':   'ModeMsg',
+      \ 'prompt':                 '❯ ',
+      \ 'auto_accel':             1,
+      \ 'auto_preview':           0,
+      \ 'auto_resize':            1,
+      \ 'reversed':               1,
+      \ 'updatetime':             1,
+      \ 'winheight':              10,
+      \ 'prompt_highlight':       'helpSpecial',
+      \ 'highlight_matched_char': 'Underlined',
+      \ 'highlight_mode_normal':  'deniteModeNormal',
+      \ 'highlight_mode_insert':  'deniteModeInsert',
       \ })
+
+" \ 'source_names':           'long',
 
 " buffer source
 call denite#custom#var(
@@ -139,7 +146,7 @@ call denite#custom#var('task', 'taskrc', '~/.taskrc')
 call denite#custom#var('task', 'data_dir', '~/.task')
 call denite#custom#var('task', 'format', '{id:3.3} | {priority:1.1} | {project:15.15} | {description:40.40} | {entry} | {due}')
 call denite#custom#var('task', 'date_format', '%y-%m-%d %H:%M')
-call denite#custom#var('task', 'label_width', 17)
+" call denite#custom#var('task', 'label_width', 17)
 
 
 " =============================================================================
@@ -210,7 +217,7 @@ let s:menus.Denite.command_candidates = [
   \ ['Plugins',             'Denite dein'],
   \ ['Recent Files',        'Denite file_mru'],
   \ ['Recent Directories',  'Denite directory_mru'],
-  \ ['Sessions',            'Denite sessions'],
+  \ ['Sessions',            'Denite session'],
   \ ['Taskwarrior',         'Denite task'],
   \ ['Todos',               'Denite todo'],
   \ ['Z (Jump Around)',     'Denite z'],
@@ -218,6 +225,7 @@ let s:menus.Denite.command_candidates = [
 
 " =============================================================================
 
+" Thanks Mike -- https://github.com/mhartington/dotfiles
 let s:menus.Fugitive = { 'description' : ' Fugitive interface' }
 let s:menus.Fugitive.command_candidates = [
   \[' git status', 'Gstatus'],

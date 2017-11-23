@@ -1,7 +1,7 @@
 " Open manpages in vertical splits
 command -nargs=* -complete=help H vertical belowright help <args>
 
-
+command -nargs=* TabsToSpaces :%s/	/ /g
 " copy path of the active buffer
 command -nargs=0 GetRelPath :let @+ = expand("%")
 command -nargs=0 GetFullPath :let @+ = expand("%:p")

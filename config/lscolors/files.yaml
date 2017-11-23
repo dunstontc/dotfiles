@@ -89,4 +89,6 @@ X11:          "\ue120" # 
 org:          "\ue15e" # 
 fish:         "\ue14c" # 
 ranger:       "\ue0f8" # 
-# inputrc:      "\u" # 
+inputrc:      "\ue779" # 
+makefile:     "\ue779" # 
+todo:         "\uf45e" # 

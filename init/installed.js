@@ -31,9 +31,10 @@ module.exports = {
     'yo',
   ],
   'pip3': [
+    'glances',
+    'jrnl,'
     'maybe',
     'neovim',
-    'glances',
     'proselint',
     'Pygments',
     'vim-vint',

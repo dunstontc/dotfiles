@@ -81,6 +81,8 @@ aliases:      shell
 functions:    shell
 path:         shell
 exports:      shell
+z:            shell
+ackrc:        shell
 xauthority:   X11
 spacemacs:    el
 bashrc:       bash
@@ -93,3 +95,11 @@ rc.conf:      ranger
 rifle.conf:   ranger
 scope.sh:     ranger
 commands.py:  ranger
+vimrc      :  vim
+viminfo    :  vim
+vim-bookmarks: vim
+taskrc     :  todo
+todo       :  todo
+# todo.txt   :  todo
+# done.txt   :  todo
+# zcompdump:    trash

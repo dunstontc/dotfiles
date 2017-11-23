@@ -17,30 +17,24 @@ nnoremap <C-q> <Nop>
 vnoremap <C-q> <C-c>
 " xnoremap <C-q> <C-c>
 
+" Move splits around, as we use ctrl-hjkl to navigate
+nnoremap <C-W><left> <C-W>H
+nnoremap <C-W><right> <C-W>L
+nnoremap <C-W><down> <C-W>J
+nnoremap <C-W><up> <C-W>K
+
 " Clear highlights & commands
 nnoremap <silent>\ :noh<CR>:call anzu#clear_search_status()<CR>:echo<CR>
 
 nnoremap R <Nop>
+" Quit with q
 nnoremap q :q<CR>
-" noremap Q q
-" TODO: make new shortcut for macros
+" (Record macros wth <leader>q)
+" Save some strokes
+noremap Q @
 
 " Escape the terminal
 tnoremap <Esc> <C-\><C-n>
-
-" Save wih ⌘ -s
-nnoremap 𐌔 :w<CR>
-inoremap 𐌔 <C-g>:w<CR>
-
-" Comment wih ⌘ -/
-noremap <silent>𐌍 :TComment<CR>
-inoremap <silent>𐌍 <esc>:TComment<CR>
-
-" <S-CR> New line below
-inoremap 𐌄 <esc>o
-" <C-CR> New line above
-inoremap 𐌂 <esc>O
-
 
 " Bigger Steps
 noremap <S-H> 0
@@ -53,9 +47,6 @@ noremap ,, i<space><esc>
 nnoremap fj :x<CR>
 inoremap fj <esc>:x<CR>
 
-" Yank Better
-nnoremap <S-y> Vy
-nnoremap 𐌋 mxV"zy"zp`xj
 
 " Yank into the void
 noremap d "_d
@@ -64,8 +55,6 @@ noremap dd "_dd
 noremap c "_c
 noremap C "_C
 
-" and toss out our leftovers when we put
-" vnoremap p "_dP
 nnoremap ,p "0p
 vnoremap ,p "0p
 " nnoremap p "0P
@@ -73,12 +62,25 @@ vnoremap ,p "0p
 
 nnoremap X Vx
 
-" Thanks w0rp:
-" " Run macros with \, which is easier to press.
-" nnoremap \ @
-" " Repeat macros with \\ too.
-" nnoremap \\ @@
+" Yank Better
+nnoremap yy Vy
+nnoremap <S-y> v$y
 
+" Save wih ⌘ -s
+nnoremap <silent> 𐌔 :w<CR>
+inoremap <silent> 𐌔 <C-g>:w<CR>
+
+" Comment wih ⌘ -/
+noremap <silent>𐌍 :TComment<CR>
+inoremap <silent>𐌍 <esc>:TComment<CR>
+
+" <S-CR> New line below
+inoremap 𐌄 <esc>o
+" <C-CR> New line above
+inoremap 𐌂 <esc>O
+
+" Dupe lines with ⌥ - ⇧ - down
+nnoremap 𐌋 mxV"zy"zp`xj
 " " Indentation
 " vmap <silent> <leader>[ <gv
 " vmap <silent> <leader>] >gv
@@ -138,6 +140,12 @@ nnoremap ,5 :call quickmenu#toggle(5)<CR>
 
 " nnoremap <leader>x :vimgrep TODO **/*.%:e \| cw<CR>
 
+
+" === readline ===
+" inoremap <C-a> <C-o>0
+" inoremap <C-e> <C-o>$
+" inoremap <M-left> <C-o>b
+" inoremap <M-right> <C-o>e
 
 
 " =============================================================================
@@ -234,6 +242,18 @@ let g:sneak#use_ic_scs = 1
 
 
 " =============================================================================
+"  === christoomey/vim-tmux-navigator ===
+" =============================================================================
+
+" let g:tmux_navigator_no_mappings = 1
+"
+" nnoremap <silent> {Left-Mapping} :TmuxNavigateLeft<cr>
+" nnoremap <silent> {Down-Mapping} :TmuxNavigateDown<cr>
+" nnoremap <silent> {Up-Mapping} :TmuxNavigateUp<cr>
+" nnoremap <silent> {Right-Mapping} :TmuxNavigateRight<cr>
+" nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
+
+" =============================================================================
 "  Custom Motions & Objects
 " =============================================================================
 " === kana/vim-textobj-fold ===
@@ -287,7 +307,7 @@ nnoremap <leader>o :o<CR>
 " q -- Q
 nnoremap <leader>q q
 " s -- Search & Replace
-nnoremap <leader>s :%s//g<left><left>
+nnoremap <leader>s :%s///g<left><left><left>
 " r -- Reload
 nnoremap <leader>rr :source $MYVIMRC<CR>
 " u -- Unundo
@@ -302,7 +322,10 @@ nnoremap <leader>u :redo<CR>
 nnoremap <leader>bn :bn<CR>
 " Previous Buffer
 nnoremap <leader>bp :bp<CR>
-
+" Allocate all buffers into Horizontal Splits
+nnoremap <leader>bh :ball<CR>
+" Allocate all buffers into Vertical Splits
+nnoremap <leader>bv :vert ball<CR>
 
 
 " =============================================================================
@@ -323,34 +346,34 @@ nnoremap <leader>du :Unite <Tab>
 " (other than 't')
 
 " Edit Init.vim
-nnoremap <leader>ev :vsplit $MYVIMRC<CR>
-nnoremap <leader>e<S-V> :edit $MYVIMRC<CR>
+nnoremap <silent> <leader>ev :vsplit $MYVIMRC<CR>
+nnoremap <silent> <leader>e<S-V> :edit $MYVIMRC<CR>
 " Edit Settings
-nnoremap <leader>es :vs ~/.dotfiles/editors/nvim/plugin/settings.vim<CR>
-nnoremap <leader>e<S-S> :edit ~/.dotfiles/editors/nvim/plugin/settings.vim<CR>
+nnoremap <silent> <leader>es :vs ~/.dotfiles/editors/nvim/plugin/settings.vim<CR>
+nnoremap <silent> <leader>e<S-S> :edit ~/.dotfiles/editors/nvim/plugin/settings.vim<CR>
 " Edit Lightline
-nnoremap <leader>el :vsplit ~/.dotfiles/editors/nvim/plugin/lightline.vim<CR>
-nnoremap <leader>e<S-L> :edit ~/.dotfiles/editors/nvim/plugin/lightline.vim<CR>
+nnoremap <silent> <leader>el :vsplit ~/.dotfiles/editors/nvim/plugin/lightline.vim<CR>
+nnoremap <silent> <leader>e<S-L> :edit ~/.dotfiles/editors/nvim/plugin/lightline.vim<CR>
 " Edit Keys
-nnoremap <leader>ek :vsplit ~/.dotfiles/editors/nvim/plugin/mappings.vim<CR>
-nnoremap <leader>e<S-K> :edit ~/.dotfiles/editors/nvim/plugin/mappings.vim<CR>
+nnoremap <silent> <leader>ek :vsplit ~/.dotfiles/editors/nvim/plugin/mappings.vim<CR>
+nnoremap <silent> <leader>e<S-K> :edit ~/.dotfiles/editors/nvim/plugin/mappings.vim<CR>
 " Edit Denite
-nnoremap <leader>ed :vsplit ~/.dotfiles/editors/nvim/plugin/unite.vim<CR>
-nnoremap <leader>e<S-D> :edit ~/.dotfiles/editors/nvim/plugin/unite.vim<CR>
+nnoremap <silent> <leader>ed :vsplit ~/.dotfiles/editors/nvim/plugin/unite.vim<CR>
+nnoremap <silent> <leader>e<S-D> :edit ~/.dotfiles/editors/nvim/plugin/unite.vim<CR>
 " Edit Commands
-nnoremap <leader>ec :vsplit ~/.dotfiles/editors/nvim/plugin/commands.vim<CR>
-nnoremap <leader>e<S-C> :edit ~/.dotfiles/editors/nvim/plugin/commands.vim<CR>
+nnoremap <silent> <leader>ec :vsplit ~/.dotfiles/editors/nvim/plugin/commands.vim<CR>
+nnoremap <silent> <leader>e<S-C> :edit ~/.dotfiles/editors/nvim/plugin/commands.vim<CR>
 " Edit Plugins
-nnoremap <leader>ep :vsplit ~/.dotfiles/editors/nvim/plugin/plugins.vim<CR>
-nnoremap <leader>e<S-P> :edit ~/.dotfiles/editors/nvim/plugin/plugins.vim<CR>
+nnoremap <silent> <leader>ep :vsplit ~/.dotfiles/editors/nvim/plugin/plugins.vim<CR>
+nnoremap <silent> <leader>e<S-P> :edit ~/.dotfiles/editors/nvim/plugin/plugins.vim<CR>
 " Edit Interfaces
-nnoremap <leader>ei :vsplit ~/.dotfiles/editors/nvim/plugin/ui.vim<CR>
-nnoremap <leader>e<S-I> :edit ~/.dotfiles/editors/nvim/plugin/ui.vim<CR>
+nnoremap <silent> <leader>ei :vsplit ~/.dotfiles/editors/nvim/plugin/ui.vim<CR>
+nnoremap <silent> <leader>e<S-I> :edit ~/.dotfiles/editors/nvim/plugin/ui.vim<CR>
 " Edit Theme
-nnoremap <leader>et :vsplit ~/Projects/vim/vim-code-dark/colors/codedark.vim<CR>
-nnoremap <leader>eT :edit ~/Projects/vim/vim-code-dark/colors/codedark.vim<CR>
+nnoremap <silent> <leader>et :vsplit ~/Projects/vim/vim-code-dark/colors/codedark.vim<CR>
+nnoremap <silent> <leader>eT :edit ~/Projects/vim/vim-code-dark/colors/codedark.vim<CR>
 " Edit Themes/
-nnoremap <leader>eu :vsplit ~/.dotfiles/editors/nvim/colors<CR>
+nnoremap <silent> <leader>eu :vsplit ~/.dotfiles/editors/nvim/colors<CR>
 
 
 
@@ -419,6 +442,10 @@ nnoremap <leader>tp :set nopaste<CR>
 nnoremap <leader>tq :copen<CR>
 " Relative Line Numbers (set nru!)
 nnoremap <leader>tr :set norelativenumber!<CR>
+" Toggle Spell Checking
+nnoremap <leader>ts :set spell<CR>
+" Toggle TableMode
+nnoremap <leader>tt :TagBarToggle<CR>
 " Invisible Characters (whitespace)
 nnoremap <leader>tw :set list!<CR>
 

@@ -2,12 +2,12 @@
 " === Shougo/deoplete ===
 " =============================================================================
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_ignore_case = 1
 let g:deoplete#auto_completion_start_length = 1
 " let g:deoplete#enable_camel_case = 1
-let g:deoplete#enable_ignore_case=1
 " let g:deoplete#skip_chars = ['(', ')', '<', '>']
 " let g:deoplete#enable_smart_case = 1
-let g:deoplete#file#enable_buffer_path=1
+let g:deoplete#file#enable_buffer_path = 1
 " let g:deoplete#ignore_sources =
 " let g:deoplete#omni#input_patterns =
 " let g:deoplete#omni_patterns =

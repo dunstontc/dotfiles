@@ -18,6 +18,7 @@ atom:             .atom
 vim:              Vim
 nvim:             Vim
 neovim:           Vim
+.vim-data:        Vim
 vscode:           .vscode
 .composer:        PHP
 fontforge:        FontForge
@@ -32,6 +33,7 @@ zsh:              Zsh
 bash:             Bash
 fish:             Fish
 .terminfo:        shell
+.ssh:             shell
 .spacemacs.d:     Emacs
 .emacs.d:         Emacs
 emacs:            Emacs
