@@ -1,50 +1,45 @@
 " =============================================================================
 "   Denite
 " =============================================================================
-" augroup deniteresize
-  " autocmd!
-  " autocmd VimResized,VimEnter * call denite#custom#option('default',
-        " \'winheight', winheight(0) / 4)
-" augroup end
 
 let s:menus = {}
 
 call denite#custom#option('default', {
-      \ 'prompt':                 '❯ ',
-      \ 'auto_accel':             1,
-      \ 'auto_preview':           0,
-      \ 'auto_resize':            1,
-      \ 'reversed':               1,
-      \ 'updatetime':             1,
-      \ 'winheight':              10,
-      \ 'prompt_highlight':       'helpSpecial',
-      \ 'highlight_matched_char': 'Underlined',
-      \ 'highlight_mode_normal':  'deniteModeNormal',
-      \ 'highlight_mode_insert':  'deniteModeInsert',
-      \ })
+  \ 'prompt':                 '❯ ',
+  \ 'auto_accel':             1,
+  \ 'auto_preview':           0,
+  \ 'auto_resize':            1,
+  \ 'reversed':               1,
+  \ 'updatetime':             1,
+  \ 'winheight':              10,
+  \ 'prompt_highlight':       'helpSpecial',
+  \ 'highlight_matched_char': 'Underlined',
+  \ 'highlight_mode_normal':  'deniteModeNormal',
+  \ 'highlight_mode_insert':  'deniteModeInsert',
+  \ })
 
 " \ 'source_names':           'long',
 
 " buffer source
 call denite#custom#var(
-      \ 'buffer',
-      \ 'date_format', '%m-%d-%Y %H:%M:%S')
+  \ 'buffer',
+  \ 'date_format', '%m-%d-%Y %H:%M:%S')
 
 
 if executable('ag')
-	" The Silver Searcher
-	call denite#custom#var('file_rec', 'command',
-		\ ['ag', '-U', '--hidden', '--follow', '--nocolor', '--nogroup', '-g', ''])
+  " The Silver Searcher
+  call denite#custom#var('file_rec', 'command',
+       \ ['ag', '-U', '--hidden', '--follow', '--nocolor', '--nogroup', '-g', ''])
 
-	" Setup ignore patterns in your .agignore file!
-	" https://github.com/ggreer/the_silver_searcher/wiki/Advanced-Usage
-	call denite#custom#var('grep', 'command', ['ag'])
-	call denite#custom#var('grep', 'recursive_opts', [])
-	call denite#custom#var('grep', 'pattern_opt', [])
-	call denite#custom#var('grep', 'separator', ['--'])
-	call denite#custom#var('grep', 'final_opts', [])
-	call denite#custom#var('grep', 'default_opts',
-		\ [ '--skip-vcs-ignores', '--vimgrep', '--smart-case', '--hidden' ])
+  " Setup ignore patterns in your .agignore file!
+  " https://github.com/ggreer/the_silver_searcher/wiki/Advanced-Usage
+  call denite#custom#var('grep', 'command', ['ag'])
+  call denite#custom#var('grep', 'recursive_opts', [])
+  call denite#custom#var('grep', 'pattern_opt', [])
+  call denite#custom#var('grep', 'separator', ['--'])
+  call denite#custom#var('grep', 'final_opts', [])
+  call denite#custom#var('grep', 'default_opts',
+       \ [ '--skip-vcs-ignores', '--vimgrep', '--smart-case', '--hidden' ])
 endif
 
 
@@ -58,8 +53,8 @@ call denite#custom#map('insert', '<C-v>',  '<denite:do_action:vsplit>',      'no
 call denite#custom#map('insert', '<C-n>',  '<denite:move_to_next_line>',     'noremap')
 call denite#custom#map('insert', '<C-p>',  '<denite:move_to_previous_line>', 'noremap')
 
-call denite#custom#map('insert', '<ScrollWheelUp>',    '<denite:move_to_next_line>',     'noremap')
-call denite#custom#map('insert', '<ScrollWheelDown>',  '<denite:move_to_previous_line>', 'noremap')
+" call denite#custom#map('insert', '<ScrollWheelUp>',    '<denite:move_to_next_line>',     'noremap')
+" call denite#custom#map('insert', '<ScrollWheelDown>',  '<denite:move_to_previous_line>', 'noremap')
 
 call denite#custom#map('normal', '<Esc>',  '<NOP>',                          'noremap')
 call denite#custom#map('normal', '<C-q>',  '<NOP>',                          'noremap')
@@ -155,26 +150,25 @@ call denite#custom#var('task', 'date_format', '%y-%m-%d %H:%M')
 
 let s:menus.config = { 'description': ' Neovim Settings' }
 let s:menus.config.file_candidates = [
-    \ ['init.vim',              '~/.dotfiles/editors/nvim/init.vim'],
-    \ ['Settings',              '~/.dotfiles/editors/nvim/plugin/settings.vim'],
-    \ ['Plugin Settings',       '~/.dotfiles/editors/nvim/plugin/plugins.vim'],
-    \ ['Mappings',              '~/.dotfiles/editors/nvim/plugin/mappings/mappings.vim'],
-    \ ['Mappings - Leader',     '~/.dotfiles/editors/nvim/plugin/mappings/leader.vim'],
-    \ ['Filetypes',             '~/.dotfiles/editors/nvim/filetype.vim'],
-    \ ['Theme - DarkPlus',      '~/Projects/vim/vim-code-dark/colors/codedark.vim'],
-    \ ['Unite/Denite',          '~/.dotfiles/editors/nvim/plugin/unite.vim'],
-    \ ['Snippets/',             '~/.dotfiles/editors/nvim/snipz'],
-    \ ['Interfaces',            '~/.dotfiles/editors/nvim/plugin/ui.vim'],
-    \ ['Lightline',             '~/.dotfiles/editors/nvim/plugin/lightline.vim'],
-    \ ['Statusline - Handmade', '~/.dotfiles/editors/nvim/plugin/statline.vim'],
-    \ ['Completion',            '~/.dotfiles/editors/nvim/plugin/completion.vim'],
-    \ ['Menus',                 '~/.dotfiles/editors/nvim/plugin/menu.vim'],
-    \ ['FTPlugin/',             '~/.dotfiles/editors/nvim/ftplugin'],
-    \ ['Autocommands',          '~/.dotfiles/editors/nvim/plugin/autocmnds.vim'],
-    \ ['Commands',              '~/.dotfiles/editors/nvim/plugin/commands.vim'],
-    \ ['Functions',             '~/.dotfiles/editors/nvim/autoload/functions.vim'],
-    \ ['Cheatsheet',            '~/.dotfiles/editors/nvim/doc/cheat40.txt'],
-    \ ]
+  \ ['init.vim',              '~/.dotfiles/editors/nvim/init.vim'],
+  \ ['Settings',              '~/.dotfiles/editors/nvim/plugin/settings.vim'],
+  \ ['Plugin Settings',       '~/.dotfiles/editors/nvim/plugin/plugins.vim'],
+  \ ['Plugins/ (After)',      '~/.dotfiles/editors/nvim/after/plugin'],
+  \ ['Mappings',              '~/.dotfiles/editors/nvim/plugin/mappings.vim'],
+  \ ['Filetypes',             '~/.dotfiles/editors/nvim/filetype.vim'],
+  \ ['Theme - DarkPlus',      '~/Projects/vim/vim-code-dark/colors/codedark.vim'],
+  \ ['Unite/Denite',          '~/.dotfiles/editors/nvim/plugin/unite.vim'],
+  \ ['Snippets/',             '~/.dotfiles/editors/nvim/snipz'],
+  \ ['Lightline',             '~/.dotfiles/editors/nvim/plugin/lightline.vim'],
+  \ ['Statusline - Handmade', '~/.dotfiles/editors/nvim/plugin/statline.vim'],
+  \ ['Completion',            '~/.dotfiles/editors/nvim/plugin/completion.vim'],
+  \ ['Menus',                 '~/.dotfiles/editors/nvim/plugin/menu.vim'],
+  \ ['FTPlugin/',             '~/.dotfiles/editors/nvim/ftplugin'],
+  \ ['Autocommands',          '~/.dotfiles/editors/nvim/plugin/autocmnds.vim'],
+  \ ['Commands',              '~/.dotfiles/editors/nvim/plugin/commands.vim'],
+  \ ['Functions',             '~/.dotfiles/editors/nvim/autoload/functions.vim'],
+  \ ['Cheatsheet',            '~/.dotfiles/editors/nvim/doc/cheat40.txt'],
+  \ ]
 
 " =============================================================================
 
@@ -200,9 +194,9 @@ let s:menus.dotfiles.file_candidates = [
 
 let s:menus.Denite = { 'description': ' Denite Commands' }
 let s:menus.Denite.command_candidates = [
-  \ ['Menu -- Fugitive',  'Denite menu:git'],
-  \ ['Menu -- Config',    'Denite menu:config'],
-  \ ['Menu -- .dotfiles', 'Denite menu:dotfiles'],
+  \ ['Menu -- Fugitive',    'Denite menu:git'],
+  \ ['Menu -- Config',      'Denite menu:config'],
+  \ ['Menu -- .dotfiles',   'Denite menu:dotfiles'],
   \ ['Buffers',             'Denite buffer'],
   \ ['Colorschemes',        'Denite colorscheme'],
   \ ['Commands',            'Denite command'],
@@ -292,6 +286,20 @@ let g:neoyank#limit=100
 " call unite#filters#matcher_default#use(['matcher_fzf'])
 " call unite#filters#sorter_default#use(['sorter_rank'])
 " let g:unite_source_history_yank_enable = 1
+call unite#custom#profile('default', 'context', {
+      \  'safe': 1,
+      \  'start_insert': 1,
+      \  'ignorecase' : 1,
+      \  'update_time': 1,
+      \  'direction': 'rightbelow',
+      \  'winheight': 15,
+      \  'max_candidates': 100,
+      \  'auto_resize': 1,
+      \  'hide_icon': 0,
+      \  'candidate-icon': ' ',
+      \  'marked_icon': '✓',
+      \  'prompt' : '❯❯ '
+      \})
 " call unite#custom#profile('default', 'context', {
 "       \   'safe': 1,
 "       \   'start_insert': 0,
@@ -331,21 +339,11 @@ let g:neoyank#limit=100
 "  === vim-bookmarks ===
 " =============================================================================
 
-" call unite#custom#profile('source/vim_bookmarks', 'context', {
-"   \   'winheight': 13,
-"   \   'direction': 'botright',
-"   \   'start_insert': 0,
-"   \   'keep_focus': 1,
-"   \   'no_quit': 1,
-" \ })
+call unite#custom#profile('source/vim_bookmarks', 'context', {
+  \   'winheight': 13,
+  \   'direction': 'botright',
+  \   'start_insert': 1,
+  \   'keep_focus': 1,
+  \   'no_quit': 1,
+  \ })
 
-" =============================================================================
-"   fastunite
-" =============================================================================
-
-" let g:fastunite_default_options = {}
-" call extend(g:fastunite_default_options, {
-"   \   'direction': 'botright',
-"   \   'prompt_direction': 'top',
-"   \   'winheight': 10
-"   \ })

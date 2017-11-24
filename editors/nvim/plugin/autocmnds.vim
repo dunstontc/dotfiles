@@ -9,7 +9,7 @@ augroup MyAutoCmds
   " autocmd VimEnter * let w:created=1
 
   " Disable yank history in sensitive files
-  " autocmd BufWinEnter \(*.asc\|*.gpg\) let g:neoyank_disable = 1
+  autocmd BufWinEnter \(*.asc\|*.gpg\) let g:neoyank_disable = 1
 
   " autocmd InsertLeave * set nopaste
 

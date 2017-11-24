@@ -1,8 +1,8 @@
 " =============================================================================
 "   Config
 " =============================================================================
-" set encoding=utf-8         " BOM needed for DevIcons
 set encoding=utf-8 nobomb
+" scriptencoding utf-8
 set clipboard=unnamedplus " Use the OS clipboard by default (on versions compiled with `+clipboard`)
 set modeline               " Respect modeline in files
 set modelines=5            " Well, in the first 5 lines of files
@@ -55,19 +55,26 @@ set termguicolors
 " set nvim_tui_enable_cursor_shape=1
 " let $NVIM_TUI_ENABLE_CURSOR_SHAPE=2
 " set t_Co=256
-colorscheme codedark
-" colorscheme gruvbox
-" colorscheme OceanicNext
 " set background=dark
-let g:enable_bold_font=1       " Enable bold font in colorscheme
-let g:enable_italic_font=1     " Enable italic font in colorscheme
-highlight Comment gui=italic
-set conceallevel=2             " Enable conceal
 
+" colorscheme codedark
+" colorscheme gruvbox
+" colorscheme apprentice
+" let g:enable_bold_font=1       " Enable bold   font in one dark colorscheme
+" let g:enable_italic_font=1     " Enable italic font in one dark colorscheme
+
+let g:quantum_black=1
+colorscheme quantum
+let g:quantum_italics=1
+
+highlight Comment gui=italic
 " syntax sync minlines=200
 " syntax sync maxlines=500
 " set synmaxcol=400
 
+
+set conceallevel=2             " Enable conceal
+set cmdheight=2
 set cursorline                 " Highlight current line
 set nowrap                     " Do not wrap lines
 set number                     " Enable line numbers
@@ -165,8 +172,8 @@ set wildignore+=*.so
 set wildignore+=*.swp
 set wildignore+=*.zip
 set wildignorecase
-set wildmode=longest:full,full
-" set wildmode=list:longest,list:full
+" set wildmode=longest:full,full   " 👈
+set wildmode=list:longest,list:full
 " set wildmode=list:full
 " set wildmode=list:longest
 " set wildmode=list:longest,full
@@ -182,7 +189,7 @@ set completeopt-=preview
 
 "  Folding
 set foldenable                  " Enable folding
-" set foldmethod=syntax
+set foldmethod=manual
 set foldlevelstart=3            " Default folding level when buffer is opened
 set foldnestmax=10              " Maximum nested fold
 " set foldtext=functions#NeatFoldText()
@@ -192,7 +199,7 @@ iabbrev busniess business
 iabbrev congif config
 iabbrev teh the
 iabbrev w/ with
-iabbrev ldr \<leader\>
+iabbrev ldr \<leader>
 
 " Disable standard plugins
 " let g:loaded_getscriptPlugin = 1

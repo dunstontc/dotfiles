@@ -8,7 +8,8 @@ vnoremap ; :
 
 
 
-nnoremap <C-p> :Denite menu<CR>
+nnoremap <C-p> :Denite<space>
+nnoremap ,u :Unite<space>
 
 " use ctrl-q instead of ⎋ , stay on the home row
 " inoremap <esc> <C-g>:echo "Use ctrl-Q dumbass "<CR>
@@ -258,8 +259,8 @@ let g:sneak#use_ic_scs = 1
 " =============================================================================
 " === kana/vim-textobj-fold ===
 " let g:textobj_fold_no_default_key_mappings=0
-" noremap az	<Plug>(textobj-fold-a)
-" noremap iz	<Plug>(textobj-fold-i)
+" noremap az <Plug>(textobj-fold-a)
+" noremap iz <Plug>(textobj-fold-i)
 
 
 " pretty much autoselect quotes
@@ -293,31 +294,29 @@ nnoremap <leader><leader> <esc>
 "             \    'z': ['UndotreeToggle',             'Undotree'        ],
 "             \}
 
-" ` -- Same as VSCode term hotkey
+" Tab  -- We don't use tabs...?
+nnoremap <leader><Tab> :bn<CR>
+" `  -- Same as VSCode term hotkey
 nnoremap <leader>` :Deol -split -start-insert<CR>
-" vsplit +terminal
-nnoremap <leader>ft :VimFiler<CR>
-" nnoremap <leader>ft :VimFiler -direction="topleft"
-" g -- Grep
+" g  -- Grep
 nnoremap <leader>g :vimgrep TODO **/*.%:e \| cw<CR>
-" q -- Quit
+" q  -- Quit
 nnoremap <leader>q :q<CR>
-" o -- Only
-nnoremap <leader>o :o<CR>
-" q -- Q
-nnoremap <leader>q q
-" s -- Search & Replace
+" s  -- Search & Replace
 nnoremap <leader>s :%s///g<left><left><left>
-" r -- Reload
+" r  -- Reload
 nnoremap <leader>rr :source $MYVIMRC<CR>
-" u -- Unundo
+" u  -- Unundo
 nnoremap <leader>u :redo<CR>
-
+" ft -- FileTree
+nnoremap <leader>ft :VimFilerExplorer<CR>
 
 
 " =============================================================================
 "  === b -- Buffers===
 " =============================================================================
+" List Buffers
+nnoremap <leader>bl :ls<CR>
 " Next Buffer
 nnoremap <leader>bn :bn<CR>
 " Previous Buffer
@@ -326,6 +325,10 @@ nnoremap <leader>bp :bp<CR>
 nnoremap <leader>bh :ball<CR>
 " Allocate all buffers into Vertical Splits
 nnoremap <leader>bv :vert ball<CR>
+" Done with a buffer
+nnoremap <leader>bd :bd<CR>
+" Close a buffer, leave it on the list
+nnoremap <leader>bq :q<CR>
 
 
 " =============================================================================
@@ -445,7 +448,7 @@ nnoremap <leader>tr :set norelativenumber!<CR>
 " Toggle Spell Checking
 nnoremap <leader>ts :set spell<CR>
 " Toggle TableMode
-nnoremap <leader>tt :TagBarToggle<CR>
+nnoremap <leader>tt :TagbarToggle<CR>
 " Invisible Characters (whitespace)
 nnoremap <leader>tw :set list!<CR>
 

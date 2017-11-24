@@ -41,7 +41,8 @@ Indent +above/below      aI
 Around entire buffer     ae
 In entire buffer         ie
 }}}
-VimFiler
+VimFiler {{{
+=========================
 VimFilerPrompt           i
 loop_cursor_down         j
 loop_cursor_u            k
@@ -51,19 +52,21 @@ cursor_to                gg
 cd_or_edit               <Enter>
 expand_or_edit           o
 edit_file                e
-split_edit_file          E
-new_file                 N
-make_directory           K
-rename_file              r
+split_edit_file          <S-E>
+preview_file             <S-P>
+delete_file              <S-D>
+new_file                 <S-N>
+rename_file              <S-M>
+make_directory           <S-K>
 yank_full_path           yy
 grep                     gr
 find                     gf
 double_click             <2-LeftMouse>
 cd to $HOME              ~
 help                     ?
+redraw_screen            <S-R>
+VimFiler Defaults {{{2
 cd_vim_current_dir       gc
-# Defaults
-redraw_screen                 <C-l>
 toggle_mark_current_line      <Space>
 toggle_mark_current_line      <S-LeftMouse>
 toggle_mark_current_line_up   <S-Space>
@@ -72,7 +75,6 @@ mark_similar_lines            #
 clear_mark_all_lines          U
 copy_file                     c
 move_file                     m
-delete_file                   d
 clipboard_copy_file           Cc
 clipboard_move_file           Cm
 clipboard_paste               Cp
@@ -92,7 +94,6 @@ execute_shell_command         !
 hide                          q
 exit                          Q
 close                         -
-preview_file                  v
 sync_with_current_vimfiler    O
 print_filename                <C-g>
 toggle_maximize_window        g<C-g>
