@@ -6,7 +6,8 @@ set timeoutlen=750
 nnoremap ; :
 vnoremap ; :
 
-
+nnoremap ' `
+nnoremap ` '
 
 nnoremap <C-p> :Denite<space>
 nnoremap ,u :Unite<space>
@@ -24,12 +25,15 @@ nnoremap <C-W><right> <C-W>L
 nnoremap <C-W><down> <C-W>J
 nnoremap <C-W><up> <C-W>K
 
+nnoremap <C-A> vie
+
 " Clear highlights & commands
 nnoremap <silent>\ :noh<CR>:call anzu#clear_search_status()<CR>:echo<CR>
 
 nnoremap R <Nop>
 " Quit with q
 nnoremap q :q<CR>
+nnoremap <H-Q> :q<CR>
 " (Record macros wth <leader>q)
 " Save some strokes
 noremap Q @
@@ -69,7 +73,7 @@ nnoremap <S-y> v$y
 
 " Save wih ⌘ -s
 nnoremap <silent> 𐌔 :w<CR>
-inoremap <silent> 𐌔 <C-g>:w<CR>
+inoremap <silent> 𐌔 <C-o>:w<CR>
 
 " Comment wih ⌘ -/
 noremap <silent>𐌍 :TComment<CR>
@@ -301,7 +305,7 @@ nnoremap <leader>` :Deol -split -start-insert<CR>
 " g  -- Grep
 nnoremap <leader>g :vimgrep TODO **/*.%:e \| cw<CR>
 " q  -- Quit
-nnoremap <leader>q :q<CR>
+nnoremap <leader>q :Bdelete<CR>
 " s  -- Search & Replace
 nnoremap <leader>s :%s///g<left><left><left>
 " r  -- Reload

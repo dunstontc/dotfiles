@@ -5,6 +5,12 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, "R", function()
 end)
 
 
+
+-- hs.hotkey.bind({"cmd", "alt", "ctrl"}, "R", function()
+--   hs.reload()
+--   hs.notify.new({title="Hammerspoon", informativeText="Config reloaded"}):send()
+-- end)
+
 ---- Introduction to window movement ----
 --
 -- hs.hotkey.bind({"cmd", "alt", "ctrl"}, "H", function()

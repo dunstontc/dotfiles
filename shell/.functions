@@ -1,26 +1,26 @@
 # echo "🏃 .functions"
 
 function take() {
-    mkdir -p $1
-    cd $1
+  mkdir -p $1
+  cd $1
 }
 
 # Change working directory to the top-most Finder window location
 function cdf() { # short for `cdfinder`
-	cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')";
+  cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')";
 }
 
 function watdo() {
-    alias | grep $1
+  alias | grep $1
 }
 
 # Walk & Talk
 function cdd() {
-    cd $1 && ls -a
+  cd $1 && ls -a
 }
 
 function komet() {
-    git add . && git commit -m $1  # TODO: filter the input here
+  git add . && git commit -m $1  # TODO: filter the input here
 }
 
 function forrk() {
@@ -30,11 +30,11 @@ function forrk() {
 
 # activate conda env
 function condoo() {
-    source activate $1
+  source activate $1
 }
 # deactivate conda env
 function condont() {
-    source deactivate $1
+  source deactivate $1
 }
 
 # function armour() {

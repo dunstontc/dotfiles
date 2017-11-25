@@ -9,15 +9,17 @@ set modelines=5            " Well, in the first 5 lines of files
 set noerrorbells           " Disable error bells
 set visualbell             " Use visual bell instead of audible bell (annnnnoying)
 set belloff=all
-set report=0
-set ttyfast
+set report=100
+" set ttyfast
+" set autochdir
 set hidden
 set nospell
+set shell=/usr/local/bin/bash
+
 set noswapfile             " No thanks
 set nobackup               " I'm alright
 set undofile               " Persistent Undo though
 set undodir=~/.config/nvim/undo
-set shell=/usr/local/bin/bash
 
 " =============================================================================
 "   Input & Navigation
@@ -55,16 +57,16 @@ set termguicolors
 " set nvim_tui_enable_cursor_shape=1
 " let $NVIM_TUI_ENABLE_CURSOR_SHAPE=2
 " set t_Co=256
-" set background=dark
+set background=dark
 
-" colorscheme codedark
+colorscheme codedark
 " colorscheme gruvbox
 " colorscheme apprentice
 " let g:enable_bold_font=1       " Enable bold   font in one dark colorscheme
 " let g:enable_italic_font=1     " Enable italic font in one dark colorscheme
 
 let g:quantum_black=1
-colorscheme quantum
+" colorscheme spring-night
 let g:quantum_italics=1
 
 highlight Comment gui=italic
@@ -78,8 +80,9 @@ set cmdheight=2
 set cursorline                 " Highlight current line
 set nowrap                     " Do not wrap lines
 set number                     " Enable line numbers
+" set numberwidth=4
 set relativenumber             " Show numbers relative to current line
-" set ruler                      " Show the cursor position
+set noruler                      " Show the cursor position
 set scrolloff=5                " Start scrolling x lines before horizontal border of window
 set sidescrolloff=5            " Start scrolling x columns before vertical border of window
 set sidescroll=5
@@ -105,7 +108,7 @@ set shortmess+=T               " Truncate other messages in the middle if they a
                                "     Ignored in Ex mode.
 set shortmess+=F               " Don't give the file info when editing a file,
                                "     like `:silent` was used for the command
-set showcmd                    " Show (partial) command in the last line of the screen.
+set noshowcmd                    " Show (partial) command in the last line of the screen.
 set noshowmode                 " Don't show the current mode (airline takes care of this)
 set notitle                    " Don't Show the filename in the window titlebar
 " set report=10                  " Report more than 10 lines changed at once
@@ -159,8 +162,14 @@ set hlsearch                    " Highlight matches
 set ignorecase                  " Ignore case of searches
 set smartcase                   " Ignore 'ignorecase' if search patter contains uppercase characters
 
-
 set wildmenu                    " ≈ Visual autocomplete for command menu
+set wildcharm=<C-z>
+" set wildmode=longest:full,full   " 👈
+set wildmode=list:longest,list:full
+" set wildmode=list:full
+" set wildmode=list:longest
+" set wildmode=list:longest,full
+set wildignorecase
 set wildignore+=*.pyc            "stuff to ignore when tab completing
 set wildignore+=.git/*
 set wildignore+=.hg/*
@@ -171,12 +180,6 @@ set wildignore+=*/tmp/*
 set wildignore+=*.so
 set wildignore+=*.swp
 set wildignore+=*.zip
-set wildignorecase
-" set wildmode=longest:full,full   " 👈
-set wildmode=list:longest,list:full
-" set wildmode=list:full
-" set wildmode=list:longest
-" set wildmode=list:longest,full
 
 " set completeopt=longest,menu,preview
 " set completeopt+=menu
@@ -210,3 +213,7 @@ iabbrev ldr \<leader>
 " let g:loaded_zipPlugin = 1
 " let g:loaded_gzip = 1
 " let g:loaded_rrhelper = 1
+
+
+let g:wiki = { 'root' : '~/Documents/Wiki/' }
+

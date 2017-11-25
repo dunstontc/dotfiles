@@ -24,10 +24,12 @@ augroup filetypes
 
     autocmd BufNewFile,BufRead *.ts set filetype=typescript
 
-    autocmd BufNewFile,BufReadPost *.wiki set filetype=wiki
+    " autocmd BufNewFile,BufReadPost *.wiki set filetype=wiki
 
     autocmd BufRead,BufNewFile .{babel,eslint,stylelint,jshint,prettier}rc,.tern-*,*.json set ft=json
 
+    " https://github.com/tjdevries/config_manager
+    autocmd TermOpen term://*  set filetype=term
 augroup END
 " =============================================================================
 "  Language Specific Settings

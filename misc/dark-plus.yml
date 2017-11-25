@@ -13,14 +13,14 @@ very-dark-gray:
   - hex: '#1e1e1e'
   - cterm: 234
 dark-red:
-  - hex: '#d16969'
+  - hex: '#f44747'
   - cterm: 167
 light-red:
-  - hex: '#F44747'
+  - hex: '#d16969'
   - cterm: 203
 orange:
   - hex: '#ce9178'
-  - cterm: 173, 137
+  - cterm: 173
 light-yellow:
   - hex: '#dcdcaa'
   - cterm: 187

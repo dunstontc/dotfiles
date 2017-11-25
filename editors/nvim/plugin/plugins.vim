@@ -71,7 +71,7 @@ augroup VimFilerAutocommands
   autocmd FileType vimfiler nmap <buffer> p <Plug>(vimfiler_preview_file)
 
   autocmd FileType vimfiler nmap <buffer> <2-LeftMouse> <Plug>(vimfiler_double_click)
-  " autocmd FileType vimfiler nmap <buffer> <2-LeftMouse> <Plug>(vimfiler_edit_file)
+  autocmd FileType vimfiler nmap <buffer> <2-LeftMouse> <Plug>(vimfiler_smart_l)
   autocmd FileType vimfiler nmap <buffer> <S-N> <Plug>(vimfiler_new_file)
   autocmd FileType vimfiler nmap <buffer> <S-D> <Plug>(vimfiler_delete_file)
   autocmd FileType vimfiler nmap <buffer> <S-M> <Plug>(vimfiler_rename_file)

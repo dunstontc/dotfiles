@@ -88,6 +88,14 @@ let g:SuperTabCrMapping                = 0
 " inoremap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
 
+" =============================================================================
+"  === https://www.reddit.com/r/vim/comments/4gjbqn/what_tricks_do_you_use_instead_of_popular_plugins/d2iatu9/ ===
+" =============================================================================
+
+
+cnoremap <expr> <Tab>   getcmdtype() == "/" \|\| getcmdtype() == "?" ? "<CR>/<C-r>/" : "<C-z>"
+cnoremap <expr> <S-Tab> getcmdtype() == "/" \|\| getcmdtype() == "?" ? "<CR>?<C-r>/" : "<S-Tab>"
+
 
 " =============================================================================
 " === Ultisnips ===
@@ -123,7 +131,7 @@ let g:necosyntax#max_syntax_line=300
 
 
 " =============================================================================
-"  ===  ===
+"  === deoplete-jedi ===
 " =============================================================================
 let g:deoplete#sources#jedi#show_docstring = 1
 

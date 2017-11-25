@@ -1,4 +1,4 @@
-# ~/.dotfiles
+# ~/.dotfiles #
  
 > Feel free to have a look around.
 
@@ -10,7 +10,7 @@
 
 
 
-## Contents
+## Contents ##
   - Bash *v4.4.12* &nbsp;🏗 
   - Zsh *v5.2* ✔
   - tmux *v2.5* ✔
@@ -38,9 +38,9 @@
 | `⌃ - hjkl`      | vim/tmux  | Navigate Vim/Tmux   |
 
 
-## Links
+## Links ##
 
-### Resources:
+### Resources: ###
   - [explainshell](https://explainshell.com/)
   - [GitHub does dotfiles](http://dotfiles.github.io/)
   - [Terminals Are Sexy](https://terminalsare.sexy/)
@@ -57,7 +57,7 @@
   - [tmux cheatsheet](https://gist.github.com/MohamedAlaa/2961058)
 
 
-### Themes:
+### Themes: ###
   - [colours in terminal](https://gist.github.com/XVilka/8346728)
   - [terminal.sexy](https://terminal.sexy/)
   - [xcolors.net](http://www.xcolors.net/)
@@ -67,7 +67,7 @@
     - Translates iTerm2 color schemes between dark- and light-background, as well as performing other bulk editing tasks.
 
 
-### Misc:
+### Misc: ###
   - [howdoi](https://github.com/gleitz/howdoi)
   - [tldr](https://github.com/tldr-pages/tldr/)
   - [fzf](https://github.com/junegunn/fzf)
@@ -75,7 +75,7 @@
   - [.tern-project](https://stackoverflow.com/questions/41371789/figuring-out-javascript-libraries-for-vim-autocompletion-with-ternjs-in-tern-pr/41377689#41377689)
 
 
-### Reference:
+### Reference: ###
   - [Mathias Bynens' dotfiles](https://github.com/mathiasbynens/dotfiles)
     - 🔧 .files, including ~/.macos — sensible hacker defaults for macOS
   - [Shougo/shougo-s-github](https://github.com/Shougo/shougo-s-github)

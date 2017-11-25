@@ -2,8 +2,8 @@
 
 
 # Be careful
-alias rm='rmtrash'
-alias rmdir='rmdirtrash'
+alias mr='rmtrash'
+alias mrd='rmdirtrash'
 
 # Navigation
 alias .="pwd"
