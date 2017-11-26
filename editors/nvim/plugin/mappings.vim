@@ -25,7 +25,7 @@ nnoremap <C-W><right> <C-W>L
 nnoremap <C-W><down> <C-W>J
 nnoremap <C-W><up> <C-W>K
 
-nnoremap <C-A> vie
+nnoremap <C-A> ggVG
 
 " Clear highlights & commands
 nnoremap <silent>\ :noh<CR>:call anzu#clear_search_status()<CR>:echo<CR>
@@ -340,9 +340,10 @@ nnoremap <leader>bq :q<CR>
 " =============================================================================
 nnoremap <leader>dc :Denite menu:config<CR>
 nnoremap <leader>dd :Denite menu:Denite<CR>
-nnoremap <leader>dm :Denite file_mru<CR>
 nnoremap <leader>dh :Denite help<CR>
-nnoremap <leader>du :Unite <Tab>
+nnoremap <leader>dm :Denite file_mru<CR>
+nnoremap <leader>ds :Denite menu:dotfiles<CR>
+nnoremap <leader>du :Unite
 
 
 " =============================================================================
@@ -400,7 +401,7 @@ nnoremap <leader>hi :H index
 " nnoremap <leader>, :call quickmenu#toggle(0)<CR>
 " Messages
 nnoremap <leader>hm :messages<CR>
-
+" hd -- Help, Describe:
 " Describe Character
 nnoremap <leader>hdc :ascii<CR>
 " Describe Filetype

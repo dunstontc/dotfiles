@@ -10,7 +10,7 @@ endfunction
 " Log scope @ the cursor
 function! functions#SynStack()
   if !exists('*synstack')
-    return
+    return ''
   endif
 
   let l:syntaks = map(synstack(line('.'), col('.')), "synIDattr(v:val, 'name')")
@@ -74,6 +74,18 @@ function! functions#Chomp()
     " execute 'call feedkeys("a\<del>\<esc>\<right>")'
   endif
 endfunction
+
+
+" =============================================================================
+function! functions#tcdtoggle()
+  if ( g:tcd#testvar )
+    let g:tcd#testvar = 0
+  else
+    let g:tcd#testvar = 1
+  endif
+  echom g:tcd#testvar
+endfunction
+
 
 " =============================================================================
 "  === Utilities ===

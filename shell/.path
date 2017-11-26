@@ -6,7 +6,7 @@ dirs_to_prepend=(
   "/usr/local/opt/ncurses/bin"                                         # Newer ncurses
   "/usr/local/bin"
   "/usr/local/mysql/bin"                                               #
-  "/usr/local/bin/FIGlet"                                              # For usage in Vim
+  # "/usr/local/bin/FIGlet"                                              # For usage in Vim
   "$(brew --prefix coreutils)/libexec/gnubin"                          # GNU Coreutils
   "$HOME/.cargo/bin"                                                   #
   "node_modules/.bin:vendor/bin"                                       # use local packages before global

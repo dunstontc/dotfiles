@@ -101,7 +101,7 @@ call dein#add('jceb/vim-orgmode',             {'lazy':1, 'on_ft': ['org']})
 " call dein#add('vim-pandoc/vim-pandoc-syntax', {'lazy':1, 'on_ft': ['md', 'md.pandoc', 'pandoc']})
 call dein#add('vim-perl/vim-perl',            {'lazy':1, 'on_ft': ['pearl']})
 " call dein#add('python-mode/python-mode',      {'lazy':1, 'on_ft': ['py', 'python']})
-" call dein#add('vim-python/python-syntax',     {'lazy':1, 'on_ft': ['python'      ]})
+call dein#add('vim-python/python-syntax',     {'lazy':1, 'on_ft': ['python'      ]})
 " call dein#add('hynek/vim-python-pep8-indent', {'lazy':1, 'on_ft': ['py', 'python']})
 " call dein#add('Vimjas/vim-python-pep8-indent', {'lazy':1, 'on_ft': ['python']}) " ???
 call dein#add('davidhalter/jedi-vim',         {'lazy':1, 'on_ft': ['py', 'python']})

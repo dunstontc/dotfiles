@@ -20,11 +20,22 @@ function! ${1:function_name}($2)
 endfunction
 endsnippet
 
+snippet ifelse "if else"
+if ($1)
+  $2
+else
+  $3
+endif $4
+endsnippet
+
+
+# =============================================================================
+
 snippet cdap "call dein#add('plugin')"
 call dein#add('${1:plugin}')$0
 endsnippet
 
-snippet cdaf "call dein#add('language support')"
+snippet cdaf "call dein#add('filetype support')"
 call dein#add('${1:plugin}', {'lazy':1, 'on_ft': [${2:languages}]})$0
 endsnippet
 

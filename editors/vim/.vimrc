@@ -22,6 +22,7 @@ endif
 "  Plugins
 " =============================================================================
 " execute pathogen#infect()
+" TODO: ~/.vim --> $VIMHOME
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -46,7 +47,7 @@ Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-indent'
 Plug 'glts/vim-textobj-comment'
 Plug 'Julian/vim-textobj-variable-segment'
-Plug 'terryma/vim-expand-region'     " Easier textobject selection
+" Plug 'terryma/vim-expand-region'     " Easier textobject selection
 " Pretty Things
 Plug 'itchyny/vim-cursorword'        " Hilight all occurances of the word under the cursor
 Plug 'jszakmeister/vim-togglecursor' " Switch between block & horizontal line
@@ -67,15 +68,16 @@ Plug 'ciaranm/securemodelines'        " Better safe than sorry
 Plug 'dietsche/vim-lastplace'         " Persist cursor position
 Plug 'christoomey/vim-tmux-navigator' " Move smoothly between vim & tmux
 " Enhancements
-Plug 'Shougo/deoplete.nvim'           " Async Completion
 Plug 'roxma/nvim-yarp'                " Make deoplete play nice with Vim8
 Plug 'roxma/vim-hug-neovim-rpc'       " Make deoplete play nice with Vim8
+Plug 'Shougo/deoplete.nvim'           " Async Completion
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets'
 Plug 'Shougo/neco-syntax'             " ???
 Plug 'Shougo/neco-vim'                " Completions for Viml
 Plug 'wellle/tmux-complete.vim'       " Completions for adjascent tmux panes
 " Plug 'CharlesGueunet/quickmenu.vim'
 call plug#end()
-
 
 
 " =============================================================================
@@ -155,6 +157,10 @@ set listchars+=precedes:❮
 set showbreak=↪
 set nolist
 
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
 
 
 " =============================================================================
@@ -236,33 +242,19 @@ command! Wqa wqa
 command! W w
 command! Q q
 
-" Use :C to clear hlsearch
-command! C nohlsearch
-
 
 
 " =============================================================================
 "  Keymaps
 " =============================================================================
-set timeoutlen=1000
-
-let mapleader="\<Space>"
-
-nnoremap <leader><leader> <esc>
-nnoremap <leader>cev :edit $MYVIMRC<CR>
-" nnoremap <leader>cef :edit
-nnoremap <silent> <leader>sv :source $MYVIMRC<CR>
-nnoremap <leader>pi :PlugInstall<CR>
-nnoremap <leader>ps :PlugStatus<CR>
-
 
 " Remap : to ;
 nnoremap ; :
 vnoremap ; :
 
 " Better searching
-nnoremap / /\v
-vnoremap / /\v
+" nnoremap / /\v
+" vnoremap / /\v
 
 " Use ctrl-q instead of ⎋ , stay on the home row
 inoremap <C-Q> <C-c>
@@ -271,13 +263,15 @@ vnoremap <C-Q> <C-c>
 cnoremap <C-Q> <C-c>
 tnoremap <C-Q> <C-c>
 
-" noremap Q <Nop>
 
+" Small edits in Normal mode
 nnoremap <BS> i<DEL><esc><right>
 nnoremap ,, i<space><esc>
 
-nnoremap <leader>q :q<CR>
-nnoremap <leader>u :redo<CR>
+" q to Quit
+nnoremap q :q<CR>
+" Q to replay q macro
+noremap Q @q
 " Clear highlights & commands
 nnoremap <silent>\ :noh<CR>:echo<CR>
 " gtfo
@@ -287,15 +281,16 @@ inoremap fj <esc>:x<CR>
 noremap <S-H> 0
 noremap <S-L> $
 
-
 " Yank into the void
 noremap d "_d
 noremap D "_D
 noremap dd "_dd
 noremap c "_c
 noremap C "_C
+
 " Yank Better
-nnoremap <S-y> Vy
+nnoremap <S-y> y$
+nnoremap yy Vy
 
 inoremap <C-E> <C-o>$
 
@@ -331,7 +326,37 @@ vnoremap 𐌞 :m '<-2<CR>gv=gv
 vnoremap 𐌓 :m '>+1<CR>gv=gv
 
 
+
+
+" =============================================================================
 " ==== Leader Maps ====
+" =============================================================================
+set timeoutlen=1000
+
+let mapleader="\<Space>"
+
+nnoremap <leader><leader> <esc>
+
+
+" ==== e -- Edit ====
+nnoremap <silent> <leader>ev :vsplit $MYVIMRC<CR>
+nnoremap <silent> <leader>e<S-V> :edit $MYVIMRC<CR>
+
+
+" ==== p -- Plug ====
+nnoremap <leader>pi :PlugInstall<CR>
+nnoremap <leader>ps :PlugStatus<CR>
+
+
+" ==== r -- Reload ====
+nnoremap <silent> <leader><S-s> :source $MYVIMRC<CR>
+
+
+" ==== u -- Redo (un-undo...)
+nnoremap <leader>u :redo<CR>
+
+
+" ==== t -- Toggle ====
 " Toggle Comments
 nnoremap <leader>tc :TComment<CR>
 " Toggle Folding
@@ -359,13 +384,13 @@ nnoremap <leader>tw :set list!<CR>
 
 
 " =============================================================================
-"  Plugins
+"  Plugins Settings
 " =============================================================================
 
 
 " ==== deoplete ====
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#auto_completion_start_length = 2
+let g:deoplete#auto_completion_start_length = 1
 let g:deoplete#enable_smart_case = 1
 let g:deoplete#file#enable_buffer_path=1
 " let g:deoplete#ignore_sources =
@@ -381,6 +406,7 @@ call deoplete#custom#set('buffer',        'mark', ' ')
 call deoplete#custom#set('member',        'mark', 'mb')
 call deoplete#custom#set('necovim',       'mark', 'nv')
 call deoplete#custom#set('ultisnips',     'mark', ' ')
+call deoplete#custom#set('neosnippet',    'mark', ' ')
 call deoplete#custom#set('necosyntax',    'mark', 'ns')
 call deoplete#custom#set('tmux-complete', 'mark', '⧉ ')
 
@@ -391,14 +417,30 @@ call deoplete#custom#set('necosyntax', 'matchers', ['matcher_fuzzy'])
 call deoplete#custom#set('tmux-complete', 'matchers', ['matcher_fuzzy'])
 
 
+" ==== Neosnippet ====
+" let g:neosnippet#disable_runtime_snippets = 1
+" let g:neosnippet#enable_snipmate_compatibility = 1
+" let g:neosnippet#snippets_directory='~/.vim/plugged/vim-snippets/snippets'
+
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+" smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+" xmap <C-k>     <Plug>(neosnippet_expand_target)
+imap <expr><TAB>
+  \ pumvisible() ? "\<C-n>" :
+  \   neosnippet#expandable_or_jumpable() ?
+  \     "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+  \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+
 " ==== easy-align ====
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 
 " ==== expand-region ====
-map K <Plug>(expand_region_expand)
-map J <Plug>(expand_region_shrink)
+map <S-K> <Plug>(expand_region_expand)
+map <S-J> <Plug>(expand_region_shrink)
 
 let g:expand_region_text_objects = {
       \ 'iv'  :1,
