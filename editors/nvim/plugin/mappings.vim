@@ -1,6 +1,16 @@
-" =============================================================================
+" ==============================================================================
+"  === Mouse ===
+" ==============================================================================
+
+:map <ScrollWheelUp> <C-Y>
+:map <S-ScrollWheelUp> <C-U>
+:map <ScrollWheelDown> <C-E>
+:map <S-ScrollWheelDown> <C-D>
+
+
+" ==============================================================================
 "  Key Mappings
-" =============================================================================
+" ==============================================================================
 set timeoutlen=750
 
 nnoremap ; :
@@ -25,7 +35,7 @@ nnoremap <C-W><right> <C-W>L
 nnoremap <C-W><down> <C-W>J
 nnoremap <C-W><up> <C-W>K
 
-nnoremap <C-A> ggVG
+" nnoremap <C-A> ggVG
 
 " Clear highlights & commands
 nnoremap <silent>\ :noh<CR>:call anzu#clear_search_status()<CR>:echo<CR>
@@ -72,34 +82,41 @@ nnoremap yy Vy
 nnoremap <S-y> v$y
 
 " Save wih ⌘ -s
-nnoremap <silent> 𐌔 :w<CR>
-inoremap <silent> 𐌔 <C-o>:w<CR>
+" ᚠ - runic letter f (U+16A0)
+nnoremap <silent>ᚠ :silent w<CR>
+inoremap <silent>ᚠ <C-o>:silent w<CR>
 
 " Comment wih ⌘ -/
-noremap <silent>𐌍 :TComment<CR>
-inoremap <silent>𐌍 <esc>:TComment<CR>
+" ᚣ - runic letter yr (U+16A3)
+noremap <silent>ᚣ :TComment<CR>
+inoremap <silent>ᚣ <esc>:TComment<CR>
 
 " <S-CR> New line below
-inoremap 𐌄 <esc>o
+" ᚾ - runic letter n (U+16BE)
+inoremap ᚾ <esc>o
 " <C-CR> New line above
-inoremap 𐌂 <esc>O
+" ᚩ - runic letter os o (U+16A9)
+inoremap ᚩ <esc>O
 
 " Dupe lines with ⌥ - ⇧ - down
 nnoremap 𐌋 mxV"zy"zp`xj
 " " Indentation
-" vmap <silent> <leader>[ <gv
-" vmap <silent> <leader>] >gv
-" nmap <silent> <leader>[ <<
-" nmap <silent> <leader>] >>
-" imap <silent> <leader>[ <esc><<
-" imap <silent> <leader>] <esc>>>
+" vmap <silent><leader>[ <gv
+" vmap <silent><leader>] >gv
+" nmap <silent><leader>[ <<
+" nmap <silent><leader>] >>
+" imap <silent><leader>[ <esc><<
+" imap <silent><leader>] <esc>>>
+
 " Indentation
-vmap <silent> 𐌀 <gv
-vmap <silent> 𐌁 >gv
-nmap <silent> 𐌀 <<
-nmap <silent> 𐌁 >>
-imap <silent> 𐌀 <esc><<
-imap <silent> 𐌁 <esc>>>
+" ᚻ - runic letter h (U+16BB)
+" ᚢ - runic letter u (U+16A2)
+vmap <silent>ᚻ <gv
+vmap <silent>ᚢ >gv
+nmap <silent>ᚻ <<
+nmap <silent>ᚢ >>
+imap <silent>ᚻ <silent><esc><<A
+imap <silent>ᚢ <silent><esc>>>A
 
 
 " move the current line up or down
@@ -124,14 +141,6 @@ vnoremap 𐌓 :m '>+1<CR>gv=gv
 " cnoremap <Esc>f <S-Right>
 
 
-
-nnoremap ,0 :call quickmenu#toggle(0)<CR>
-nnoremap ,1 :call quickmenu#toggle(1)<CR>
-nnoremap ,2 :call quickmenu#toggle(2)<CR>
-nnoremap ,3 :call quickmenu#toggle(3)<CR>
-nnoremap ,4 :call quickmenu#toggle(4)<CR>
-nnoremap ,5 :call quickmenu#toggle(5)<CR>
-
 " === Unused ===
 " imap <C-F>
 " nmap S
@@ -153,9 +162,9 @@ nnoremap ,5 :call quickmenu#toggle(5)<CR>
 " inoremap <M-right> <C-o>e
 
 
-" =============================================================================
+" ==============================================================================
 "  Plugins
-" =============================================================================
+" ==============================================================================
 
 " === EasyAlign ===
 xmap ga <Plug>(EasyAlign)
@@ -206,9 +215,22 @@ nmap # <Plug>(anzu-sharp)
 " nmap n <Plug>(anzu-mode-n)
 " nmap N <Plug>(anzu-mode-N)
 
+
+" === AndrewRadev/splitjoin.vim ===
+let g:splitjoin_split_mapping = ''
+let g:splitjoin_join_mapping = ''
+" nmap sj :SplitjoinSplit<cr>
+" nmap sk :SplitjoinJoin<cr>
+
+" === AndrewRadev/switch.vim ===
+let g:switch_mapping = "-"
+
 " === sidemenu ===
 " nmap <Leader>y <Plug>(sidemenu)
-" xmap <Leader>y <Plug>(sidemenu-visual)<Paste><LeftMouse>
+" xmap <Leader>y <Plug>(sidemenu-visual)
+nnoremap ,0 :call quickmenu#toggle(0)<CR>
+
+
 
 " === MattesGroeger/vim-bookmarks ===
 let g:bookmark_no_default_key_mappings = 1
@@ -224,9 +246,9 @@ let g:bookmark_no_default_key_mappings = 1
 " nmap <Leader>g <Plug>BookmarkMoveToLine
 
 
-" =============================================================================
+" ==============================================================================
 "  === vim-sneak ===
-" =============================================================================
+" ==============================================================================
 " let g:sneak#prompt = 'Ƨ '
 let g:sneak#prompt = '§ '
 
@@ -246,9 +268,9 @@ let g:sneak#use_ic_scs = 1
 " map T <Plug>Sneak_T
 
 
-" =============================================================================
+" ==============================================================================
 "  === christoomey/vim-tmux-navigator ===
-" =============================================================================
+" ==============================================================================
 
 " let g:tmux_navigator_no_mappings = 1
 "
@@ -258,9 +280,9 @@ let g:sneak#use_ic_scs = 1
 " nnoremap <silent> {Right-Mapping} :TmuxNavigateRight<cr>
 " nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
 
-" =============================================================================
+" ==============================================================================
 "  Custom Motions & Objects
-" =============================================================================
+" ==============================================================================
 " === kana/vim-textobj-fold ===
 " let g:textobj_fold_no_default_key_mappings=0
 " noremap az <Plug>(textobj-fold-a)
@@ -278,9 +300,9 @@ let g:sneak#use_ic_scs = 1
 
 
 
-" =============================================================================
+" ==============================================================================
 "  Leader Mappings
-" =============================================================================
+" ==============================================================================
 " let mapleader="\<Space>"
 let g:mapleader="\<Space>"
 
@@ -304,6 +326,7 @@ nnoremap <leader><Tab> :bn<CR>
 nnoremap <leader>` :Deol -split -start-insert<CR>
 " g  -- Grep
 nnoremap <leader>g :vimgrep TODO **/*.%:e \| cw<CR>
+" l -- List Buffers
 " q  -- Quit
 nnoremap <leader>q :Bdelete<CR>
 " s  -- Search & Replace
@@ -316,11 +339,11 @@ nnoremap <leader>u :redo<CR>
 nnoremap <leader>ft :VimFilerExplorer<CR>
 
 
-" =============================================================================
+" ==============================================================================
 "  === b -- Buffers===
-" =============================================================================
-" List Buffers
-nnoremap <leader>bl :ls<CR>
+" ==============================================================================
+" l -- List Buffers
+nnoremap <leader>l :ls<CR>
 " Next Buffer
 nnoremap <leader>bn :bn<CR>
 " Previous Buffer
@@ -335,10 +358,11 @@ nnoremap <leader>bd :bd<CR>
 nnoremap <leader>bq :q<CR>
 
 
-" =============================================================================
+" ==============================================================================
 "  === d -- Denite ===
-" =============================================================================
+" ==============================================================================
 nnoremap <leader>dc :Denite menu:config<CR>
+nnoremap <leader>db :Denite buffer<CR>
 nnoremap <leader>dd :Denite menu:Denite<CR>
 nnoremap <leader>dh :Denite help<CR>
 nnoremap <leader>dm :Denite file_mru<CR>
@@ -346,49 +370,59 @@ nnoremap <leader>ds :Denite menu:dotfiles<CR>
 nnoremap <leader>du :Unite
 
 
-" =============================================================================
+" ==============================================================================
 "  === e -- Edit ===
-" =============================================================================
+" ==============================================================================
 " lowercase to split
 " uppercase for current edit
 " (other than 't')
 
 " Edit Init.vim
-nnoremap <silent> <leader>ev :vsplit $MYVIMRC<CR>
-nnoremap <silent> <leader>e<S-V> :edit $MYVIMRC<CR>
+nnoremap <silent><leader>ev :vsplit $MYVIMRC<CR>
+nnoremap <silent><leader>e<S-V> :edit $MYVIMRC<CR>
 " Edit Settings
-nnoremap <silent> <leader>es :vs ~/.dotfiles/editors/nvim/plugin/settings.vim<CR>
-nnoremap <silent> <leader>e<S-S> :edit ~/.dotfiles/editors/nvim/plugin/settings.vim<CR>
+nnoremap <silent><leader>es :vs ~/.dotfiles/editors/nvim/plugin/settings.vim<CR>
+nnoremap <silent><leader>e<S-S> :edit ~/.dotfiles/editors/nvim/plugin/settings.vim<CR>
 " Edit Lightline
-nnoremap <silent> <leader>el :vsplit ~/.dotfiles/editors/nvim/plugin/lightline.vim<CR>
-nnoremap <silent> <leader>e<S-L> :edit ~/.dotfiles/editors/nvim/plugin/lightline.vim<CR>
+nnoremap <silent><leader>el :vsplit ~/.dotfiles/editors/nvim/plugin/lightline.vim<CR>
+nnoremap <silent><leader>e<S-L> :edit ~/.dotfiles/editors/nvim/plugin/lightline.vim<CR>
 " Edit Keys
-nnoremap <silent> <leader>ek :vsplit ~/.dotfiles/editors/nvim/plugin/mappings.vim<CR>
-nnoremap <silent> <leader>e<S-K> :edit ~/.dotfiles/editors/nvim/plugin/mappings.vim<CR>
+nnoremap <silent><leader>ek :vsplit ~/.dotfiles/editors/nvim/plugin/mappings.vim<CR>
+nnoremap <silent><leader>e<S-K> :edit ~/.dotfiles/editors/nvim/plugin/mappings.vim<CR>
 " Edit Denite
-nnoremap <silent> <leader>ed :vsplit ~/.dotfiles/editors/nvim/plugin/unite.vim<CR>
-nnoremap <silent> <leader>e<S-D> :edit ~/.dotfiles/editors/nvim/plugin/unite.vim<CR>
+nnoremap <silent><leader>ed :vsplit ~/.dotfiles/editors/nvim/plugin/unite.vim<CR>
+nnoremap <silent><leader>e<S-D> :edit ~/.dotfiles/editors/nvim/plugin/unite.vim<CR>
 " Edit Commands
-nnoremap <silent> <leader>ec :vsplit ~/.dotfiles/editors/nvim/plugin/commands.vim<CR>
-nnoremap <silent> <leader>e<S-C> :edit ~/.dotfiles/editors/nvim/plugin/commands.vim<CR>
+nnoremap <silent><leader>ec :vsplit ~/.dotfiles/editors/nvim/plugin/commands.vim<CR>
+nnoremap <silent><leader>e<S-C> :edit ~/.dotfiles/editors/nvim/plugin/commands.vim<CR>
 " Edit Plugins
-nnoremap <silent> <leader>ep :vsplit ~/.dotfiles/editors/nvim/plugin/plugins.vim<CR>
-nnoremap <silent> <leader>e<S-P> :edit ~/.dotfiles/editors/nvim/plugin/plugins.vim<CR>
+nnoremap <silent><leader>ep :vsplit ~/.dotfiles/editors/nvim/plugin/plugins.vim<CR>
+nnoremap <silent><leader>e<S-P> :edit ~/.dotfiles/editors/nvim/plugin/plugins.vim<CR>
 " Edit Interfaces
-nnoremap <silent> <leader>ei :vsplit ~/.dotfiles/editors/nvim/plugin/ui.vim<CR>
-nnoremap <silent> <leader>e<S-I> :edit ~/.dotfiles/editors/nvim/plugin/ui.vim<CR>
+nnoremap <silent><leader>ei :vsplit ~/.dotfiles/editors/nvim/plugin/ui.vim<CR>
+nnoremap <silent><leader>e<S-I> :edit ~/.dotfiles/editors/nvim/plugin/ui.vim<CR>
 " Edit Theme
-nnoremap <silent> <leader>et :vsplit ~/Projects/vim/vim-code-dark/colors/codedark.vim<CR>
-nnoremap <silent> <leader>eT :edit ~/Projects/vim/vim-code-dark/colors/codedark.vim<CR>
+nnoremap <silent><leader>et :vsplit ~/Projects/vim/vim-code-dark/colors/codedark.vim<CR>
+nnoremap <silent><leader>eT :edit ~/Projects/vim/vim-code-dark/colors/codedark.vim<CR>
 " Edit Themes/
-nnoremap <silent> <leader>eu :vsplit ~/.dotfiles/editors/nvim/colors<CR>
+nnoremap <silent><leader>eu :vsplit ~/.dotfiles/editors/nvim/colors<CR>
 
 
 
 
-" =============================================================================
+" ==============================================================================
+"  === f -- FZF ===
+" ==============================================================================
+"
+nnoremap <leader>fd :FZF ~/.dotfiles<CR>
+" nnoremap <leader>fv :FZF ~/.dotfiles/editors/nvim<CR>
+nnoremap <leader>fv :FZF ~/.config/nvim<CR>
+
+
+
+" ==============================================================================
 "  === h -- Help ===
-" =============================================================================
+" ==============================================================================
 " Search the docs
 nnoremap <leader><S-H> :Denite help<CR>
 " Cheat Sheet
@@ -415,31 +449,31 @@ nnoremap <leader>hd<S-s> :syntax<CR>
 
 
 
-" =============================================================================
+" ==============================================================================
 "   p -- Plugins
-" =============================================================================
+" ==============================================================================
 
 " Update Plugins
 nnoremap <leader>pu :call dein#update()<CR>
 
 
 
-" =============================================================================
+" ==============================================================================
 "   t -- Toggle
-" =============================================================================
+" ==============================================================================
 
 " Braces
 nnoremap <leader>tb :RainbowParentheses!!<CR>
-" Comments
-nnoremap <leader>tc :TComment<CR>
-" Coloring for hex/rgb/cterm values
-nnoremap <leader>tk :ColorToggle<CR>
+" Cursorline Highlight
+nnoremap <leader>tc :set cul!<CR>
 " Folding
 nnoremap <leader>tf :normal! zi<CR>
 " GitGutter
 nnoremap <leader>tg :call gitgutter#toggle()<CR>
 " Search Highlight
 nnoremap <leader>th :set nohlsearch<CR>
+" Highlight Color Values
+nnoremap <leader>tk :ColorToggle<CR>
 " Line Wrapping
 nnoremap <leader>tl :set wrap!<CR>
 " Toggle TableMode
@@ -451,7 +485,7 @@ nnoremap <leader>tq :copen<CR>
 " Relative Line Numbers (set nru!)
 nnoremap <leader>tr :set norelativenumber!<CR>
 " Toggle Spell Checking
-nnoremap <leader>ts :set spell<CR>
+nnoremap <leader>ts :set spell!<CR>
 " Toggle TableMode
 nnoremap <leader>tt :TagbarToggle<CR>
 " Invisible Characters (whitespace)

@@ -4,6 +4,28 @@ augroup MyAutoCmds
   " Automatically make splits equal in size
   autocmd VimResized * wincmd =
 
+  " =============================================================================
+
+  " autocmd WinEnter * hi LineNr ctermfg=247 guifg=#9e9e9e ctermbg=233 guibg=#121212
+  " autocmd WinLeave * hi LineNr ctermfg=274 guifg=#e9e9e9 ctermbg=133 guibg=#212121
+  " autocmd WinLeave * hi LineNr ctermfg=274 guifg=#e9e9e9 ctermbg=133 guibg=#212121
+
+  " autocmd WinEnter * hi Normal guifg=#d4d4d4 guibg=#303030 " ctermfg=188 ctermbg=234
+
+  " autocmd WinEnter * hi set winhl=NormalNC:ColorColumn
+
+  " autocmd WinEnter * hi Normal guifg=#d4d4d4 guibg=#303030
+
+  " autocmd WinEnter * hi Normal guifg=#d4d4d4 guibg=#303030
+  " autocmd BufEnter * set winhl=Normal:CursorLine
+  " autocmd BufLeave * set winhl=Normal:Cursor
+
+  " autocmd BufAdd * set winhl=Normal:Cursor
+  " autocmd BufWinEnter * set winhl=Normal:Cursor
+  " autocmd BufLeave * setl winhl=Normal:Cursor
+  " autocmd BufEnter * setl winhl=Normal:TermCursor
+  " =============================================================================
+
   " http://vim.wikia.com/wiki/Detect_window_creation_with_WinEnter
   " autocmd VimEnter * autocmd WinEnter * let w:created=1
   " autocmd VimEnter * let w:created=1
@@ -22,9 +44,9 @@ augroup MyAutoCmds
 
   " autocmd FileType python setlocal completeopt-=preview
 
-  " autocmd InsertEnter * highlight! CursorLineNr guifg=#569CD6 guibg=#303030
+  autocmd InsertEnter * highlight! CursorLineNr guifg=#569CD6 " guibg=#303030
   " autocmd InsertEnter * hi! EndOfBuffer guifg=#569CD6 guibg=#303030
-  " autocmd InsertLeave * highlight! CursorLineNr guifg=#608B4E guibg=#303030
+  autocmd InsertLeave * highlight! CursorLineNr guifg=#608B4E " guibg=#303030
   " autocmd InsertLeave * hi! EndOfBuffer guifg=#608B4E guibg=#303030
 
   autocmd BufNewFile,BufRead * setlocal formatoptions-=r

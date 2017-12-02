@@ -1,6 +1,6 @@
-" =============================================================================
+" ==============================================================================
 "   Denite
-" =============================================================================
+" ==============================================================================
 
 let s:menus = {}
 
@@ -11,13 +11,13 @@ call denite#custom#option('default', {
   \ 'auto_resize':            1,
   \ 'reversed':               1,
   \ 'updatetime':             1,
-  \ 'winheight':              10,
   \ 'prompt_highlight':       'helpSpecial',
   \ 'highlight_matched_char': 'Underlined',
   \ 'highlight_mode_normal':  'deniteModeNormal',
   \ 'highlight_mode_insert':  'deniteModeInsert',
   \ })
 
+  " \ 'winheight':              10,
 " \ 'source_names':           'long',
 
 " buffer source
@@ -43,15 +43,20 @@ if executable('ag')
 endif
 
 
-" =============================================================================
+" ==============================================================================
 
 
 call denite#custom#map('insert', '<Esc>',  '<denite:enter_mode:normal>',     'noremap')
 call denite#custom#map('insert', '<C-q>',  '<denite:enter_mode:normal>',     'noremap')
 call denite#custom#map('insert', '𐌘',      '<denite:enter_mode:normal>',     'noremap')
 call denite#custom#map('insert', '<C-v>',  '<denite:do_action:vsplit>',      'noremap')
+call denite#custom#map('insert', '<C-s>',  '<denite:do_action:split>',      'noremap')
 call denite#custom#map('insert', '<C-n>',  '<denite:move_to_next_line>',     'noremap')
 call denite#custom#map('insert', '<C-p>',  '<denite:move_to_previous_line>', 'noremap')
+" call denite#custom#map('insert', '<M-BS>', '<denite:delete_word_before_caret>', 'noremap')
+" call denite#custom#map('insert', '<M-left>',   '<denite:move_caret_to_one_word_left>', 'noremap')
+" call denite#custom#map('insert', '<M-right>',  '<denite:move_caret_to_end_of_word>', 'noremap')
+" call denite#custom#map('insert', '<>',  '<denite:>', 'noremap')
 
 " call denite#custom#map('insert', '<ScrollWheelUp>',    '<denite:move_to_next_line>',     'noremap')
 " call denite#custom#map('insert', '<ScrollWheelDown>',  '<denite:move_to_previous_line>', 'noremap')
@@ -60,7 +65,7 @@ call denite#custom#map('normal', '<Esc>',  '<NOP>',                          'no
 call denite#custom#map('normal', '<C-q>',  '<NOP>',                          'noremap')
 call denite#custom#map('normal', '𐌘',      '<NOP>',                          'noremap')
 call denite#custom#map('normal', '<C-v>',  '<denite:do_action:vsplit>',      'noremap')
-
+call denite#custom#map('normal', '<C-s>',  '<denite:do_action:split>',      'noremap')
 
 
 " call denite#custom#map('normal',  'a',
@@ -107,24 +112,24 @@ call denite#custom#map('normal', '<C-v>',  '<denite:do_action:vsplit>',      'no
 " nnoremap <leader>/ :<C-u>DeniteBufferDir grep:. -mode=normal<CR>
 
 
-" =============================================================================
+" ==============================================================================
 " === denite-extra  ===
-" =============================================================================
+" ==============================================================================
 " nnoremap <leader>o :<C-u>Denite location_list -mode=normal -no-empty<CR>
 " nnoremap <leader>hs :<C-u>Denite history:search -mode=normal<CR>
 " nnoremap <leader>hc :<C-u>Denite history:cmd -mode=normal<CR>
 
 
 
-" =============================================================================
+" ==============================================================================
 "  vim-denite-sessions
-" =============================================================================
+" ==============================================================================
 call denite#custom#var('session', 'path', '~/.vim/sessions')
 
 
-" =============================================================================
+" ==============================================================================
 "  denite-z
-" =============================================================================
+" ==============================================================================
 call denite#custom#var('z', 'order', 'frecent')
 
 call denite#custom#source('z', 'sorters', ['sorter_z'])
@@ -133,9 +138,9 @@ command! -nargs=+ -complete=command Z
       \ call denite#start([{'name': 'z', 'args': [<q-args>]}])
 
 
-" =============================================================================
+" ==============================================================================
 "  === rafi/vim-denite-task ===
-" =============================================================================
+" ==============================================================================
 
 call denite#custom#var('task', 'taskrc', '~/.taskrc')
 call denite#custom#var('task', 'data_dir', '~/.task')
@@ -144,57 +149,65 @@ call denite#custom#var('task', 'date_format', '%y-%m-%d %H:%M')
 " call denite#custom#var('task', 'label_width', 17)
 
 
-" =============================================================================
+" ==============================================================================
 "  Custom Menus
-" =============================================================================
+" ==============================================================================
 
 let s:menus.config = { 'description': ' Neovim Settings' }
+let s:menus.config.command_candidates = [
+  \ ['Menu -- Denite',    'Denite menu:Denite'],
+  \ ['Snippets/',             'VimFiler -explorer ~/.dotfiles/editors/nvim/snipz'],
+  \ ['after/plugin/',         'VimFiler -explorer ~/.dotfiles/editors/nvim/after/plugin'],
+  \ ['ftplugin/',             'VimFiler -explorer ~/.dotfiles/editors/nvim/ftplugin'],
+  \ ]
 let s:menus.config.file_candidates = [
   \ ['init.vim',              '~/.dotfiles/editors/nvim/init.vim'],
   \ ['Settings',              '~/.dotfiles/editors/nvim/plugin/settings.vim'],
   \ ['Plugin Settings',       '~/.dotfiles/editors/nvim/plugin/plugins.vim'],
-  \ ['Plugins/ (After)',      '~/.dotfiles/editors/nvim/after/plugin'],
   \ ['Mappings',              '~/.dotfiles/editors/nvim/plugin/mappings.vim'],
   \ ['Filetypes',             '~/.dotfiles/editors/nvim/filetype.vim'],
   \ ['Theme - DarkPlus',      '~/Projects/vim/vim-code-dark/colors/codedark.vim'],
   \ ['Denite',                '~/.dotfiles/editors/nvim/plugin/unite.vim'],
-  \ ['Snippets/',             '~/.dotfiles/editors/nvim/snipz'],
   \ ['Lightline',             '~/.dotfiles/editors/nvim/plugin/lightline.vim'],
+  \ ['Lightline Theme',       '~/.dotfiles/editors/nvim/autoload/lightline/DarkPlus.vim'],
   \ ['Statusline - Handmade', '~/.dotfiles/editors/nvim/plugin/statline.vim'],
   \ ['Completion',            '~/.dotfiles/editors/nvim/plugin/completion.vim'],
   \ ['Menus',                 '~/.dotfiles/editors/nvim/plugin/menu.vim'],
-  \ ['FTPlugin/',             '~/.dotfiles/editors/nvim/ftplugin'],
   \ ['Autocommands',          '~/.dotfiles/editors/nvim/plugin/autocmnds.vim'],
   \ ['Commands',              '~/.dotfiles/editors/nvim/plugin/commands.vim'],
   \ ['Functions',             '~/.dotfiles/editors/nvim/autoload/functions.vim'],
   \ ['Cheatsheet',            '~/.dotfiles/editors/nvim/doc/cheat40.txt'],
   \ ]
 
-" =============================================================================
+" ==============================================================================
 
 let s:menus.dotfiles = { 'description': ' Edit $HOME/.dotfiles' }
 let s:menus.dotfiles.file_candidates = [
-  \ [' .zshrc',      '~/.dotfiles/shell/zsh/.zshrc'],
-  \ [' prompt.zsh',  '~/.dotfiles/shell/zsh/prompt.zsh'],
-  \ [' .bashrc',     '~/.dotfiles/shell/bash/.bashrc'],
-  \ [' .inputrc',    '~/.dotfiles/shell/bash/.inputrc'],
-  \ [' config.fish', '~/.dotfiles/shell/fish/config.fish'],
-  \ [' .aliases',    '~/.dotfiles/shell/.aliases'],
-  \ [' .exports',    '~/.dotfiles/shell/.exports'],
-  \ [' .functions',  '~/.dotfiles/shell/.functions'],
-  \ [' .path',       '~/.dotfiles/shell/.path'],
-  \ [' .highlight',  '~/.dotfiles/shell/.highlight'],
-  \ [' Vim8',      '~/.dotfiles/editors/vim/.vimrc'],
-  \ [' init.el',   '~/.dotfiles/editors/emacs/init.el'],
-  \ [' .hyper.js',   '~/.dotfiles/config/.hyper.js'],
-  \ [' Alacritty',   '~/.dotfiles/config/alacritty.yml'],
-  \ [' Kitty',       '~/.dotfiles/config/kitty/kitty.conf'],
-  \ [' .tmux.conf',  '~/.dotfiles/config/tmux/.tmux.conf'],
-  \ [' Hammerspoon', '~/.dotfiles/config/hammerspoon/init.lua'],
-  \ [' Taskwarrior', '~/.dotfiles/misc/.taskrc'],
+  \ [' .zshrc',              '~/.dotfiles/shell/zsh/.zshrc'],
+  \ [' prompt.zsh',          '~/.dotfiles/shell/zsh/prompt.zsh'],
+  \ [' .bashrc',             '~/.dotfiles/shell/bash/.bashrc'],
+  \ [' .inputrc',            '~/.dotfiles/shell/bash/.inputrc'],
+  \ [' config.fish',         '~/.dotfiles/shell/fish/config.fish'],
+  \ [' .aliases',            '~/.dotfiles/shell/.aliases'],
+  \ [' .exports',            '~/.dotfiles/shell/.exports'],
+  \ [' .functions',          '~/.dotfiles/shell/.functions'],
+  \ [' .path',               '~/.dotfiles/shell/.path'],
+  \ [' .highlight',          '~/.dotfiles/shell/.highlight'],
+  \ [' Vim8',                '~/.dotfiles/editors/vim/.vimrc'],
+  \ [' init.el',             '~/.dotfiles/editors/emacs/init.el'],
+  \ [' .tmux.conf',          '~/.dotfiles/config/tmux/.tmux.conf'],
+  \ [' .hyper.js',           '~/.dotfiles/config/.hyper.js'],
+  \ [' Kitty',               '~/.dotfiles/config/kitty/kitty.conf'],
+  \ [' Alacritty',           '~/.dotfiles/config/alacritty.yml'],
+  \ [' Hammerspoon',         '~/.dotfiles/config/hammerspoon/init.lua'],
+  \ [' Taskwarrior',         '~/.dotfiles/misc/.taskrc'],
+  \ [' files.yaml',          '~/.dotfiles/config/lscolors/files.yaml'],
+  \ [' file_aliases.yaml',   '~/.dotfiles/config/lscolors/file_aliases.yaml'],
+  \ [' folders.yaml',        '~/.dotfiles/config/lscolors/folders.yaml'],
+  \ [' folder_aliases.yaml', '~/.dotfiles/config/lscolors/folder_aliases.yaml'],
   \ ]
 
-" =============================================================================
+" ==============================================================================
 
 let s:menus.Denite = { 'description': ' Denite Commands' }
 let s:menus.Denite.command_candidates = [
@@ -216,12 +229,13 @@ let s:menus.Denite.command_candidates = [
   \ ['Recent Files',        'Denite file_mru'],
   \ ['Recent Directories',  'Denite directory_mru'],
   \ ['Sessions',            'Denite session'],
+  \ ['Sample',              'Denite sample'],
   \ ['Taskwarrior',         'Denite task'],
   \ ['Todos',               'Denite todo'],
   \ ['Z (Jump Around)',     'Denite z'],
   \ ]
 
-" =============================================================================
+" ==============================================================================
 
 " Thanks Mike -- https://github.com/mhartington/dotfiles
 let s:menus.Fugitive = { 'description' : ' Fugitive interface' }
@@ -256,16 +270,16 @@ let s:menus.Fugitive.command_candidates = [
   \] " Append ' --' after log to get commit info commit buffers
 
 
-" =============================================================================
+" ==============================================================================
 
 " enable unite menu compatibility
 " call denite#custom#var('menu', 'unite_source_menu_compatibility', 1)
 call denite#custom#var('menu', 'menus', s:menus)
 
 
-" =============================================================================
+" ==============================================================================
 "  unite-location
-" =============================================================================
+" ==============================================================================
 
 " nnoremap <silent> <space>p  :<C-u>Denite -resume<CR>
 " nnoremap <silent> <space>j  :call execute('Denite -resume -select=+'.v:count1.' -immediately')<CR>
@@ -274,19 +288,18 @@ call denite#custom#var('menu', 'menus', s:menus)
 " nnoremap <silent> <space>l  :<C-u>Denite -mode=normal -auto-resize location_list<CR>
 
 
-" =============================================================================
+" ==============================================================================
 "  === neoyank ===
-" =============================================================================
+" ==============================================================================
 
 let g:neoyank#limit=100
-" let g:neoyank#file= /history_yank
+" let g:neoyank#file=~/.cache/neoyank/history_yank
 " let g:neoyank#save_registers=['"']
-" autocmd BufWinEnter \(*.asc\|*.gpg\) let g:neoyank_disable = 1
 
 
-" =============================================================================
+" ==============================================================================
 "   Unite
-" =============================================================================
+" ==============================================================================
 " call unite#filters#matcher_default#use(['matcher_fzf'])
 " call unite#filters#sorter_default#use(['sorter_rank'])
 " let g:unite_source_history_yank_enable = 1
@@ -296,7 +309,6 @@ call unite#custom#profile('default', 'context', {
       \  'ignorecase' : 1,
       \  'update_time': 1,
       \  'direction': 'rightbelow',
-      \  'winheight': 15,
       \  'max_candidates': 100,
       \  'auto_resize': 1,
       \  'hide_icon': 0,
@@ -339,9 +351,9 @@ call unite#custom#profile('default', 'context', {
 "       \   'winheight'    : 20,
 "       \ })
 
-" =============================================================================
+" ==============================================================================
 "  === vim-bookmarks ===
-" =============================================================================
+" ==============================================================================
 
 call unite#custom#profile('source/vim_bookmarks', 'context', {
   \   'winheight': 13,

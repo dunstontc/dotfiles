@@ -1,7 +1,7 @@
-" =============================================================================
+scriptencoding utf-8
+" ==============================================================================
 " === Lightline ===
-" =============================================================================
-" set laststatus=2  " Always show statusline
+" ==============================================================================
 
 source /Users/clay/.dotfiles/editors/nvim/autoload/lightline/DarkPlus.vim
 
@@ -11,10 +11,10 @@ let g:lightline = {
       \  'subseparator': { 'left': '', 'right': '' },
       \  'inactive': {
       \    'left': [ ['displace', 'mood'], ],
-      \    'right': [ [''], ],
+      \    'right': [],
       \},
       \  'active': {
-      \    'left': [ [ 's','mode','s' ],
+      \    'left': [ ['s','mode','s'],
       \            [   'readonly', 'filename', ],
       \            [   'icon',     'fsize' ] ],
       \    'right': [ [ 'cool_col' ],
@@ -56,7 +56,7 @@ let g:lightline = {
 
 
 
-" =============================================================================
+" ==============================================================================
 
 let g:tcd_blacklist = '\v(cheat40|denite|gundo|help|nerdtree|netrw|peekaboo|quickmenu|startify|undotree|unite|vimfiler|vimshell)'
 
@@ -64,7 +64,7 @@ let g:tcd_blacklist = '\v(cheat40|denite|gundo|help|nerdtree|netrw|peekaboo|quic
 " let g:denite_force_overwrite_statusline = 0
 " let g:vimfiler_force_overwrite_statusline = 0
 
-" =============================================================================
+" ==============================================================================
 
 
 function! Mode() abort
@@ -89,13 +89,13 @@ function! Mode() abort
         \ lightline#mode()
 endfunction
 
-" =============================================================================
+" ==============================================================================
 
 function! Mood() abort
   let l:modified = &modified ? ' (+) ' : ''
   return &filetype !~# g:tcd_blacklist ? (l:modified) : ''
 endfunction
-" =============================================================================
+" ==============================================================================
 
 function! Filename() abort
   let l:filename = expand('%:t') !=# '' ? expand('%:t') : ''
@@ -103,26 +103,26 @@ function! Filename() abort
   return &filetype !~# g:tcd_blacklist ? (' ' . l:filename . '' . l:modified) : ' '
 endfunction
 
-" =============================================================================
+" ==============================================================================
 
 function! Readonly() abort
   return &readonly && &filetype !~# g:tcd_blacklist ? '  ' : ''
 endfunction
 
-" =============================================================================
+" ==============================================================================
 
 function! TabSizing() abort
   return &filetype !~# g:tcd_blacklist && winwidth(0) > 60 ? ( '␉ ' . &shiftwidth . ' ') : ''
 endfunction
 
-" =============================================================================
+" ==============================================================================
 
 function! MyFiletype()
   " return winwidth(0) > 60 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
   return &filetype !~# g:tcd_blacklist && winwidth(0) > 60 ? ('  '.WebDevIconsGetFileTypeSymbol().' ') : ''
 endfunction
 
-" =============================================================================
+" ==============================================================================
 
 function! GitInfo()
   let l:git = fugitive#head()
@@ -133,7 +133,7 @@ function! GitInfo()
   endif
 endfunction
 
-" =============================================================================
+" ==============================================================================
 
 function! PaddedStats() abort
   let l:column = virtcol('.')
@@ -160,7 +160,7 @@ function! PaddedStats() abort
                                        \ ( l:row  . '/' . l:total . ':' . l:column . ' ')
 endfunction
 
-" =============================================================================
+" ==============================================================================
 
 function! FileSize() abort
   let l:bytes = getfsize(expand('%:p'))
@@ -184,7 +184,7 @@ function! FileSize() abort
   endif
 endfunction
 
-" =============================================================================
+" ==============================================================================
 " ale + lightline
 
 augroup lightline#ale
