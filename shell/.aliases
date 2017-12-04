@@ -30,10 +30,10 @@ alias ..l="cd .. && ls -A"
 alias c="clear"
 alias e="exit"
 alias n="nvim"
+alias v="vim"
 alias rgr="ranger"
 alias td="todo.sh"
 alias tpd="topydo"
-alias v="vim"
 # alias _="sudo"
 alias please="sudo"
 
@@ -47,10 +47,10 @@ alias npp="npm init -y"
 
 # Tmux
 # alias tm="tmux"
-alias tls="tmux ls"
+# alias tls="tmux ls"
 # alias tmn="tmux new"
-alias tmnn="tmux new -s $1"
-alias tma="tmux a"
+# alias tmnn="tmux new -s $1"
+# alias tma="tmux a"
 # alias tmaa="tmux a -t $1"
 
 # Shortcuts
@@ -59,7 +59,7 @@ alias awesome="nvim ~/Projects/GitHub/awesome-sauce/readme.md"
 alias dotread="nvim ~/.dotfiles/readme.md"
 # alias cheat="nvim ~/.dotfiles/misc/docs/neovim.md"
 alias dots="cd ~/.dotfiles"
-alias proj="cd ~/Projects"
+alias pj="cd ~/Projects"
 alias dl="cd ~/Downloads"
 
 # Fixes issues with zsh completion:
@@ -108,3 +108,5 @@ alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v exten
 # alias ssh="TERM=xterm-256color ssh"
 
 alias treee="tree -I 'node_modules|bower_components|cache|ignore'"
+
+alias fzag="ag --nobreak --nonumbers --noheading . | fzf"

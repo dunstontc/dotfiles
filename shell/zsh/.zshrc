@@ -1,3 +1,4 @@
+
 HISTSIZE=5000
 SAVEHIST=5000
 export HISTFILE=~/.cache/shell/.zsh_history
@@ -14,22 +15,21 @@ fi
 source ~/.zplug/init.zsh
 
 # Let zplug plug zplug
-zplug 'zplug/zplug',    hook-build:'zplug --self-manage'
-zplug "plugins/git",    from:oh-my-zsh
-zplug "lib/completion", from:oh-my-zsh
-zplug "rupa/z",         use:z.sh
-zplug "changyuheng/fz", defer:1
+zplug 'zplug/zplug',        hook-build:'zplug --self-manage'
+zplug "mafredri/zsh-async", from:github
+zplug "plugins/git",        from:oh-my-zsh
+zplug "lib/completion",     from:oh-my-zsh
+zplug "rupa/z",             use:z.sh
+zplug "changyuheng/fz",     defer:1
+zplug "uvaes/fzf-marks",    from:github
 # zplug "changyuheng/zsh-interactive-cd", from:github
 # zplug "Vifon/deer",     from:github, use:deer
 zplug "djui/alias-tips"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-history-substring-search"
-zplug "denysdovhan/spaceship-zsh-theme",       use:spaceship.zsh, from:github, at:3.0, as:theme
 zplug "zsh-users/zsh-syntax-highlighting",     defer:2
-zplug "mafredri/zsh-async",                    from:github
-# zplug "eventi/noreallyjustfuckingstopalready", from:github
-# zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
+zplug "denysdovhan/spaceship-zsh-theme",       use:spaceship.zsh, from:github, at:3.0, as:theme, defer:1
 
 
 if ! zplug check --verbose; then
@@ -43,13 +43,10 @@ fi
 
 zplug load
 
-# if zplug check b4b4r07/enhancd; then
-#     # export ENHANCD_FILTER=fzy
-# fi
 
-if zplug check denysdovhan/spaceship-zsh-theme; then
-    source /Users/clay/.dotfiles/shell/zsh/prompt.zsh
-fi
+# if zplug check denysdovhan/spaceship-zsh-theme; then
+#     # source /Users/clay/.dotfiles/shell/zsh/prompt.zsh
+# fi
 
 # =============================================================================
 
@@ -87,7 +84,6 @@ source $HOME/.dotfiles/shell/.highlight
 stty start undef
 stty stop undef
 setopt noflowcontrol
-# unsetopt flow_control
 
 # zmodload zsh/complist
 # autoload -Uz compinit
@@ -98,9 +94,7 @@ setopt noflowcontrol
 
 setopt auto_cd
 setopt auto_pushd
-# setopt pushd_ignore_dups
 setopt auto_list
-# zstyle ':completion:*' menu select
 setopt clobber
 setopt interactive_comments
 
@@ -182,8 +176,62 @@ export FZF_COMPLETION_TRIGGER='/'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # =============================================================================
-eval $(thefuck --alias --enable-experimental-instant-mode)
+# eval $(thefuck --alias --enable-experimental-instant-mode)
 compdef vman="man"
 
+#  =============================================================================
 
+SPACESHIP_PROMPT_ORDER=(
+  user
+  host
+  time
+  dir
+  battery
+  git
+  hg
+  package
+  node
+  ruby
+  swift
+  golang
+  php
+  rust
+  docker
+  aws
+  venv
+  conda
+  pyenv
+  dotnet
+  ember
+  exec_time
+  vi_mode
+  jobs
+  exit_code
+  line_sep
+  char
+)
 
+# CHAR
+SPACESHIP_CHAR_SYMBOL="╚═ $ "
+
+# PROMPT
+SPACESHIP_PROMPT_SEPARATE_LINE=true
+# SPACESHIP_PROMPT_ADD_NEWLINE=false
+SPACESHIP_PROMPT_PREFIXES_SHOW=false
+SPACESHIP_PROMPT_SUFFIXES_SHOW=true
+SPACESHIP_PROMPT_DEFAULT_PREFIX="via "
+SPACESHIP_PROMPT_DEFAULT_SUFFIX=" "
+
+# TIME
+SPACESHIP_TIME_SHOW=true
+# SPACESHIP_TIME_FORMAT="%D{╔═ %a %I:%M %p} "
+SPACESHIP_TIME_FORMAT="╔═"
+SPACESHIP_TIME_12HR=true
+SPACESHIP_TIME_COLOR="green"
+
+# DIR
+SPACESHIP_DIR_SHOW=true
+SPACESHIP_DIR_PREFIX=" "
+SPACESHIP_DIR_SUFFIX="$SPACESHIP_PROMPT_DEFAULT_SUFFIX"
+SPACESHIP_DIR_TRUNC=3
+SPACESHIP_DIR_COLOR="cyan"

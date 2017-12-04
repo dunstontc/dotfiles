@@ -1,4 +1,6 @@
-setl nolist
+setlocal nolist
+setlocal number
+
 
 setlocal iskeyword+=:
 setlocal iskeyword+=#

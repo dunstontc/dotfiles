@@ -29,7 +29,6 @@ source $HOME/.dotfiles/shell/bash/.bash_prompt
 source $HOME/.dotfiles/shell/bash/.fzf.bash
 source $HOME/.dotfiles/shell/.highlight
 source $HOME/.bplug/z.sh
-complete -o default -o nospace -F _man vman
 
 
 # =============================================================================
@@ -52,8 +51,8 @@ bind "set completion-map-case on"
 # Display matches for ambiguous patterns at first tab press
 bind "set show-all-if-ambiguous on"
 
-# enable control-s and control-q
-# stty -ixon
+### Disable CTRL-S and CTRL-Q
+# [[ $- =~ i ]] && stty -ixoff -ixon
 
 # Record each line as it gets issued
 # PROMPT_COMMAND='history -a'
@@ -75,15 +74,19 @@ shopt -s cdspell 2> /dev/null  # Correct spelling errors in arguments supplied t
 # =============================================================================
 #  completion +
 # =============================================================================
+complete -o default -o nospace -F _man vman
+complete -F _fzf_path_completion -o default -o bashdefault ag
+complete -F _fzf_dir_completion -o default -o bashdefault tree
+
 bind "TAB:menu-complete"
 bind -x '"\C-g": "fzf-file-widget"'
-bind '"\C-f": " \C-e\C-u`__fzf_cd__`\e\C-e\er\C-m"'
+bind "'\C-f': ' \C-e\C-u$(__fzf_cd__)\e\C-e\er\C-m'"
+# bind "'\C-f': ' \C-e\C-u`__fzf_cd__`\e\C-e\er\C-m'"
 
 
 # =============================================================================
 #  history
 # =============================================================================
-
 
 HISTCONTROL="erasedups:ignoreboth"               # Don't put duplicate lines or lines starting with space in the history
 # export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history" # Commands that don't need to get recorded
@@ -112,7 +115,7 @@ HISTTIMEFORMAT='%F %T '                          # Set history timestamp format
 
 # if [ -f $(brew --prefix)/etc/bash_completion ]; then source $(brew --prefix)/etc/bash_completion; fi
 
-eval "$(thefuck --alias)"
+# eval "$(thefuck --alias)"
 # eval $(thefuck --alias --enable-experimental-instant-mode)
 
 # Use bash-completion, if available

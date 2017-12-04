@@ -2,19 +2,18 @@
 "   Denite
 " ==============================================================================
 
-let s:menus = {}
-
 call denite#custom#option('default', {
-  \ 'prompt':                 '❯ ',
-  \ 'auto_accel':             1,
-  \ 'auto_preview':           0,
-  \ 'auto_resize':            1,
-  \ 'reversed':               1,
-  \ 'updatetime':             1,
-  \ 'prompt_highlight':       'helpSpecial',
-  \ 'highlight_matched_char': 'Underlined',
-  \ 'highlight_mode_normal':  'deniteModeNormal',
-  \ 'highlight_mode_insert':  'deniteModeInsert',
+  \ 'prompt':                  '❯ ',
+  \ 'auto_accel':              1,
+  \ 'auto_preview':            0,
+  \ 'auto_resize':             1,
+  \ 'reversed':                1,
+  \ 'updatetime':              1,
+  \ 'prompt_highlight':        'helpSpecial',
+  \ 'highlight_matched_char':  'Italic',
+  \ 'highlight_matched_range': 'Underlined',
+  \ 'highlight_mode_normal':   'deniteModeNormal',
+  \ 'highlight_mode_insert':   'deniteModeInsert',
   \ })
 
   " \ 'winheight':              10,
@@ -65,18 +64,10 @@ call denite#custom#map('normal', '<Esc>',  '<NOP>',                          'no
 call denite#custom#map('normal', '<C-q>',  '<NOP>',                          'noremap')
 call denite#custom#map('normal', '𐌘',      '<NOP>',                          'noremap')
 call denite#custom#map('normal', '<C-v>',  '<denite:do_action:vsplit>',      'noremap')
-call denite#custom#map('normal', '<C-s>',  '<denite:do_action:split>',      'noremap')
-
-
-" call denite#custom#map('normal',  'a',
-"       \ '<denite:do_action:add>',
-"       \ 'noremap')
-" call denite#custom#map('normal',  'd',
-"       \ '<denite:do_action:delete>',
-"       \ 'noremap')
-" call denite#custom#map('normal',  'r',
-"       \ '<denite:do_action:reset>',
-"       \ 'noremap' )
+call denite#custom#map('normal', '<C-s>',  '<denite:do_action:split>',       'noremap')
+call denite#custom#map('normal', 'a',      '<denite:do_action:add>',         'noremap')
+call denite#custom#map('normal', 'd',      '<denite:do_action:delete>',      'noremap')
+call denite#custom#map('normal', 'r',      '<denite:do_action:reset>',       'noremap')
 
 
 " " KEY MAPPINGS
@@ -118,7 +109,7 @@ call denite#custom#map('normal', '<C-s>',  '<denite:do_action:split>',      'nor
 " nnoremap <leader>o :<C-u>Denite location_list -mode=normal -no-empty<CR>
 " nnoremap <leader>hs :<C-u>Denite history:search -mode=normal<CR>
 " nnoremap <leader>hc :<C-u>Denite history:cmd -mode=normal<CR>
-
+call denite#custom#var('commands', 'config', '~/commands.json')
 
 
 " ==============================================================================
@@ -152,6 +143,8 @@ call denite#custom#var('task', 'date_format', '%y-%m-%d %H:%M')
 " ==============================================================================
 "  Custom Menus
 " ==============================================================================
+
+let s:menus = {}
 
 let s:menus.config = { 'description': ' Neovim Settings' }
 let s:menus.config.command_candidates = [
@@ -205,34 +198,77 @@ let s:menus.dotfiles.file_candidates = [
   \ [' file_aliases.yaml',   '~/.dotfiles/config/lscolors/file_aliases.yaml'],
   \ [' folders.yaml',        '~/.dotfiles/config/lscolors/folders.yaml'],
   \ [' folder_aliases.yaml', '~/.dotfiles/config/lscolors/folder_aliases.yaml'],
+  \ ['  Projects',            '~/Projects/projects.json']
   \ ]
+
+" ==============================================================================
+
+let s:menus.FZF = { 'description': 'FZF Actions' }
+let s:menus.FZF.command_candidates = [
+  \ ['Git files (git status)',             'GFiles?'],
+  \ ['Open Buffers',                       'Buffers'],
+  \ ['Color Schemes',                      'Colors'],
+  \ ['Marks',                              'Marks'],
+  \ ['Windows',                            'Windows'],
+  \ ['Locate PATTERN',                     '`Locate` command output'],
+  \ ['v:oldfiles & Open Buffers',          'History'],
+  \ ['Command History:',                   'History:'],
+  \ ['Search History/',                    'History/'],
+  \ ['Snippets (Ultisnips)',               'Snippets'],
+  \ ['Git Commits',                        'Commits'],
+  \ ['Git commits for the current buffer', 'BCommits'],
+  \ ['Commands',                           'Commands'],
+  \ ['Normal Mode Mappings',               'Maps'],
+  \ ['Helptags [1]',                       'Helptags'],
+  \ ['File types',                         'Filetypes'],
+  \ ]
+" \ ['Files (similar to :FZF)',            'Files [PATH]'],
+" \ ['Git Giles (git ls-files)',           'GFiles [OPTS]'],
+" \ ['',                                   'Ag [PATTERN]'],
+" \ ['',                                   'Lines [QUERY]'],
+" \ ['',                                   'BLines [QUERY]'],
+" \ ['',                                   'Tags [QUERY]'],
+" \ ['',                                   'BTags [QUERY]'],
 
 " ==============================================================================
 
 let s:menus.Denite = { 'description': ' Denite Commands' }
 let s:menus.Denite.command_candidates = [
-  \ ['Menu -- Fugitive',    'Denite menu:git'],
-  \ ['Menu -- Config',      'Denite menu:config'],
-  \ ['Menu -- .dotfiles',   'Denite menu:dotfiles'],
-  \ ['Buffers',             'Denite buffer'],
-  \ ['Colorschemes',        'Denite colorscheme'],
-  \ ['Commands',            'Denite command'],
-  \ ['Command History',     'Denite command_history -default-action=edit_and_execute'],
-  \ ['Filetypes',           'Denite filetype'],
-  \ ['Grep',                'Denite grep'],
-  \ ['Help',                'Denite help'],
-  \ ['Quickfix',            'Denite quickfix'],
-  \ ['Jumplist',            'Denite jump'],
-  \ ['Junkfiles',           'Denite Junkfile'],
-  \ ['Neoyank',             'Denite -mode=insert history/yank<CR>'],
-  \ ['Plugins',             'Denite dein'],
-  \ ['Recent Files',        'Denite file_mru'],
-  \ ['Recent Directories',  'Denite directory_mru'],
-  \ ['Sessions',            'Denite session'],
-  \ ['Sample',              'Denite sample'],
-  \ ['Taskwarrior',         'Denite task'],
-  \ ['Todos',               'Denite todo'],
-  \ ['Z (Jump Around)',     'Denite z'],
+  \ ['Menu -- FZF',        'Denite menu:FZF'],
+  \ ['Menu -- Config',     'Denite menu:config'],
+  \ ['Menu -- .dotfiles',  'Denite menu:dotfiles'],
+  \ ['Menu -- Fugitive',   'Denite menu:git'],
+  \ ['ALE',                'Denite ale'],
+  \ ['Buffers',            'Denite buffer'],
+  \ ['Changes',            'Denite change'],
+  \ ['Colorschemes',       'Denite colorscheme'],
+  \ ['User Commands',      'Denite commands'],
+  \ ['Vim Commands',       'Denite command'],
+  \ ['Command History',    'Denite command_history -default-action=edit_and_execute'],
+  \ ['Dein',               'Denite dein'],
+  \ ['Filetypes',          'Denite filetype'],
+  \ ['Grep',               'Denite grep'],
+  \ ['Help',               'Denite help'],
+  \ ['Jumplist',           'Denite jump'],
+  \ ['Junkfiles',          'Denite Junkfile'],
+  \ ['Location List',      'Denite location_list'],
+  \ ['Mappings/Normal',    'Denite mappings'],
+  \ ['Mappings/Verbose',   'Denite mappings_verbose'],
+  \ ['NeoMRU Directories', 'Denite directory_mru'],
+  \ ['NeoMRU Files',       'Denite file_mru'],
+  \ ['Neoyank',            'Denite neoyank'],
+  \ ['Outline',            'Denite outline'],
+  \ ['Projects',           'Denite project'],
+  \ ['Quickfix List',      'Denite quickfix'],
+  \ ['Recent Directories', 'Denite directory_rec'],
+  \ ['Recent Files',       'Denite file_rec'],
+  \ ['Registers',          'Denite register'],
+  \ ['Sample',             'Denite sample'],
+  \ ['Sessions',           'Denite session'],
+  \ ['Tags',               'Denite tag'],
+  \ ['Taskwarrior',        'Denite task'],
+  \ ['Todos',              'Denite todo'],
+  \ ['Z (Jump Around)',    'Denite z'],
   \ ]
 
 " ==============================================================================
@@ -240,41 +276,41 @@ let s:menus.Denite.command_candidates = [
 " Thanks Mike -- https://github.com/mhartington/dotfiles
 let s:menus.Fugitive = { 'description' : ' Fugitive interface' }
 let s:menus.Fugitive.command_candidates = [
-  \[' git status', 'Gstatus'],
-  \[' git diff', 'Gvdiff'],
-  \[' git commit', 'Gcommit'],
-  \[' git stage/add', 'Gwrite'],
-  \[' git checkout', 'Gread'],
-  \[' git rm', 'Gremove'],
-  \[' git cd', 'Gcd'],
-  \[' git push', 'exe "Git! push " input("remote/branch: ")'],
-  \[' git pull', 'exe "Git! pull " input("remote/branch: ")'],
-  \[' git pull rebase', 'exe "Git! pull --rebase " input("branch: ")'],
-  \[' git checkout branch', 'exe "Git! checkout " input("branch: ")'],
-  \[' git fetch', 'Gfetch'],
-  \[' git merge', 'Gmerge'],
-  \[' git browse', 'Gbrowse'],
-  \[' git head', 'Gedit HEAD^'],
-  \[' git parent', 'edit %:h'],
-  \[' git log commit buffers', 'Glog --'],
-  \[' git log current file', 'Glog -- %'],
-  \[' git log last n commits', 'exe "Glog -" input("num: ")'],
-  \[' git log first n commits', 'exe "Glog --reverse -" input("num: ")'],
-  \[' git log until date', 'exe "Glog --until=" input("day: ")'],
-  \[' git log grep commits',  'exe "Glog --grep= " input("string: ")'],
-  \[' git log pickaxe',  'exe "Glog -S" input("string: ")'],
-  \[' git index', 'exe "Gedit " input("branchname\:filename: ")'],
-  \[' git mv', 'exe "Gmove " input("destination: ")'],
-  \[' git grep',  'exe "Ggrep " input("string: ")'],
-  \[' git prompt', 'exe "Git! " input("command: ")'],
-  \] " Append ' --' after log to get commit info commit buffers
+  \ [' git status', 'Gstatus'],
+  \ [' git diff', 'Gvdiff'],
+  \ [' git commit', 'Gcommit'],
+  \ [' git stage/add', 'Gwrite'],
+  \ [' git checkout', 'Gread'],
+  \ [' git rm', 'Gremove'],
+  \ [' git cd', 'Gcd'],
+  \ [' git push', 'exe "Git! push " input("remote/branch: ")'],
+  \ [' git pull', 'exe "Git! pull " input("remote/branch: ")'],
+  \ [' git pull rebase', 'exe "Git! pull --rebase " input("branch: ")'],
+  \ [' git checkout branch', 'exe "Git! checkout " input("branch: ")'],
+  \ [' git fetch', 'Gfetch'],
+  \ [' git merge', 'Gmerge'],
+  \ [' git browse', 'Gbrowse'],
+  \ [' git head', 'Gedit HEAD^'],
+  \ [' git parent', 'edit %:h'],
+  \ [' git log commit buffers', 'Glog --'],
+  \ [' git log current file', 'Glog -- %'],
+  \ [' git log last n commits', 'exe "Glog -" input("num: ")'],
+  \ [' git log first n commits', 'exe "Glog --reverse -" input("num: ")'],
+  \ [' git log until date', 'exe "Glog --until=" input("day: ")'],
+  \ [' git log grep commits',  'exe "Glog --grep= " input("string: ")'],
+  \ [' git log pickaxe',  'exe "Glog -S" input("string: ")'],
+  \ [' git index', 'exe "Gedit " input("branchname\:filename: ")'],
+  \ [' git mv', 'exe "Gmove " input("destination: ")'],
+  \ [' git grep',  'exe "Ggrep " input("string: ")'],
+  \ [' git prompt', 'exe "Git! " input("command: ")'],
+  \ ]
 
 
 " ==============================================================================
 
+call denite#custom#var('menu', 'menus', s:menus)
 " enable unite menu compatibility
 " call denite#custom#var('menu', 'unite_source_menu_compatibility', 1)
-call denite#custom#var('menu', 'menus', s:menus)
 
 
 " ==============================================================================

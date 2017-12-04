@@ -3,12 +3,13 @@
 # Directories to be prepended to $PATH
 declare -a dirs_to_prepend
 dirs_to_prepend=(
-  "/usr/local/opt/ncurses/bin"                                         # Newer ncurses
-  "/usr/local/bin"
-  "/usr/local/mysql/bin"                                               #
-  # "/usr/local/bin/FIGlet"                                              # For usage in Vim
-  "$(brew --prefix coreutils)/libexec/gnubin"                          # GNU Coreutils
+  "$HOME/bin"
+  "$GOPATH/bin"
   "$HOME/.cargo/bin"                                                   #
+  "/usr/local/opt/ncurses/bin"                                         # Newer ncurses
+  "/usr/local/mysql/bin"                                               #
+  "/usr/local/bin"
+  "$(brew --prefix coreutils)/libexec/gnubin"                          # GNU Coreutils
   "node_modules/.bin:vendor/bin"                                       # use local packages before global
   "$HOME/.node_global/bin"                                             # npm installed -g
   "$HOME/.Pokemon-Terminal"

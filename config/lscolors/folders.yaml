@@ -9,7 +9,7 @@
 .vscode:      "\ue70c"
 config:       "\ue5fc"
 # folder:      "\uf114"  # 
-folder:       "\uf115"  # 
+folder:       "\uf115"   # 
 # folder:      "\uf07b"  # 
 # folder:      "\uf07c"  # 
 hidden:       "\uf023"
@@ -34,7 +34,7 @@ Downloads:    "\uf409"  # 
 Docs:         "\ue171"  # 
 docs:         "\ue171"  # 
 Dropbox:      "\uf16b"
-.dropbox:      "\uf16b"
+.dropbox:     "\uf16b"
 Google Drive: "\ue731"  # 
 Library:      "\ue119"  # 
 Music:        "\uf025"  # 
@@ -58,16 +58,16 @@ Docs:         "\uf48a"  # 
 Electron:     "\ue140"  # 
 Emacs:        "\ue13f"  # 
 FontForge:    "\ue152"  # 
-Go:           "\ue626"  #  
-JS:           "\ue74e"  #
+go:           "\ue627"  #  
+JS:           "\ue74e"  # 
 Lua:          "\ue620"  # 
 Mercural:     "\ue11e"  # 
 MySQL:        "\ue704"  # 
-org:          "\ue15e" # 
+org:          "\ue15e"  # 
 PHP:          "\ue73d"  # 
 php:          "\ue73d"
 Python:       "\ue606"  # 
-Ruby:         "\uf219"  #
+Ruby:         "\uf219"  # 
 shell:        "\ue159"  # 
 Subversion:   "\ue11f"  # 
 Vim:          "\ue7c5"  # 

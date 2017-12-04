@@ -15,25 +15,35 @@ let g:fzf_action = {
 let g:fzf_layout = { 'down': '~40%' }
 
 " In Neovim, you can set up fzf window using a Vim command
-let g:fzf_layout = { 'window': 'enew' }
-let g:fzf_layout = { 'window': '-tabnew' }
-let g:fzf_layout = { 'window': '10split enew' }
+" let g:fzf_layout = { 'window': 'enew' }
+" let g:fzf_layout = { 'window': '-tabnew' }
+" let g:fzf_layout = { 'window': '10split enew' }
 
 " Customize fzf colors to match your color scheme
 let g:fzf_colors =
-\ { 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'Comment'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-  \ 'hl+':     ['fg', 'Statement'],
-  \ 'info':    ['fg', 'PreProc'],
-  \ 'border':  ['fg', 'Ignore'],
-  \ 'prompt':  ['fg', 'Conditional'],
-  \ 'pointer': ['fg', 'Exception'],
-  \ 'marker':  ['fg', 'Keyword'],
-  \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment'] }
+\ { 'fg':      ['fg', 'StatusLineNC'],
+  \ 'bg':      ['bg', 'StatusLineNC'],
+  \ 'hl':      ['fg', 'StatusLineNC'],
+  \ 'fg+':     ['fg', 'StatusLineNC', 'StatusLineNC', 'StatusLineNC'],
+  \ 'bg+':     ['bg', 'StatusLineNC', 'StatusLineNC'],
+  \ 'hl+':     ['fg', 'StatusLineNC'],
+  \ 'info':    ['fg', 'StatusLineNC'],
+  \ 'border':  ['fg', 'StatusLineNC'],
+  \ 'prompt':  ['fg', 'StatusLineNC'],
+  \ 'pointer': ['fg', 'StatusLineNC'],
+  \ 'marker':  ['fg', 'StatusLineNC'],
+  \ 'spinner': ['fg', 'StatusLineNC'],
+  \ 'header':  ['fg', 'StatusLineNC'] }
+
+" let g:fzf_colors =
+" \ { 'fg':      ['fg', 'StatusLineNC'],
+"   \ 'bg':      ['bg', 'StatusLineNC'],
+"   \ 'hl':      ['fg', 'StatusLineNC'],
+"   \ 'fg+':     ['fg', 'StatusLineNC', 'StatusLineNC', 'StatusLineNC'],
+"   \ 'bg+':     ['bg', 'StatusLineNC', 'StatusLineNC'],
+"   \ 'hl+':     ['fg', 'StatusLineNC'],
+"   \ 'info':    ['fg', 'StatusLineNC'],
+"   \ 'border':  ['fg', 'StatusLineNC'] }
 
 " Enable per-command history.
 " CTRL-N and CTRL-P will be automatically bound to next-history and
@@ -52,3 +62,19 @@ let g:fzf_buffers_jump = 1
 
 " [Commands] --expect expression for directly executing the command
 " let g:fzf_commands_expect = 'alt-enter,ctrl-x'
+
+" autocmd! FileType fzf
+" autocmd  FileType fzf set laststatus=0 noshowmode noruler
+  " \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+
+
+" function! s:fzf_statusline()
+"   " Override statusline as you like
+"   highlight fzf1 ctermfg=161 ctermbg=251
+"   highlight fzf2 ctermfg=23 ctermbg=251
+"   highlight fzf3 ctermfg=237 ctermbg=251
+"   setlocal statusline=%#fzf1#\ >\ %#fzf2#fz%#fzf3#f
+" endfunction
+"
+" autocmd! User FzfStatusLine call <SID>fzf_statusline()
+

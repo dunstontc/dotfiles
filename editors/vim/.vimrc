@@ -126,7 +126,7 @@ set sidescroll=5
 set showmatch                  " Highlight matching braces
 set noshowmode                 " Show the current mode
 if has('showcmd')
-  set showcmd                  " Show the (partial) command as it’s being typed
+  set noshowcmd                " Show the (partial) command as it’s being typed
 endif
 set winminheight=0             " Allow splits to be reduced to a single line
 set splitright                 " New split placed right
@@ -134,7 +134,7 @@ set splitbelow                 " New split placed below
 
 
 " ==== Theming ====
-if &term =~# '^screen'
+if &term =~# '(^screen|^tmux)'
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 endif
@@ -216,7 +216,7 @@ set wildmode=list:longest,full
 " ==== Folding ====
 if has('folding')
   set foldenable               " Enable folding
-  set foldmethod=manual
+  set foldmethod=manual        " Syntax isn't fast enough
   set foldlevelstart=5         " Default folding level when buffer is opened
   set foldnestmax=10           " Maximum nested fold
 endif
@@ -393,9 +393,6 @@ let g:deoplete#enable_at_startup = 1
 let g:deoplete#auto_completion_start_length = 1
 let g:deoplete#enable_smart_case = 1
 let g:deoplete#file#enable_buffer_path=1
-" let g:deoplete#ignore_sources =
-" let g:deoplete#omni#input_patterns =
-" let g:deoplete#omni_patterns =
 
 call deoplete#custom#set('vim',           'mark', ' ')
 call deoplete#custom#set('omni',          'mark', '⌾ ')

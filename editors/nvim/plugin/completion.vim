@@ -47,23 +47,24 @@ call deoplete#custom#source('_', 'matchers', ['matcher_fuzzy'])
 " call deoplete#custom#source('_', 'sorters', ['sorter_word'])
 " call deoplete#custom#source('_', 'sorters', ['sorter_rank'])
 
-call deoplete#custom#source('vim',           'mark', '')
-call deoplete#custom#source('tag',           'mark', '⌦')
-call deoplete#custom#source('webcomplete',   'mark', '')
-call deoplete#custom#source('omni',          'mark', '⌾')
-call deoplete#custom#source('file',          'mark', '')
-call deoplete#custom#source('look',          'mark', '')
-call deoplete#custom#source('jedi',          'mark', '')
-call deoplete#custom#source('emoji',         'mark', '')
-call deoplete#custom#source('around',        'mark', '↻')
-call deoplete#custom#source('buffer',        'mark', '')
-call deoplete#custom#source('dictionary',    'mark', '')
-call deoplete#custom#source('member',        'mark', '.')
-call deoplete#custom#source('necovim',       'mark', '')
-call deoplete#custom#source('ultisnips',     'mark', ' ')
-call deoplete#custom#source('neosnippet',    'mark', ' ')
-call deoplete#custom#source('necosyntax',    'mark', '♯')
-call deoplete#custom#source('tmux-complete', 'mark', '⧉ ')
+call deoplete#custom#source('vim',            'mark', '' )
+call deoplete#custom#source('tag',            'mark', '⌦' )
+call deoplete#custom#source('webcomplete',    'mark', '' )
+call deoplete#custom#source('omni',           'mark', '⌾' )
+call deoplete#custom#source('file',           'mark', '' )
+call deoplete#custom#source('look',           'mark', '' )
+call deoplete#custom#source('jedi',           'mark', '' )
+call deoplete#custom#source('emoji',          'mark', '' )
+call deoplete#custom#source('around',         'mark', '↻' )
+call deoplete#custom#source('buffer',         'mark', '' )
+call deoplete#custom#source('dictionary',     'mark', '' )
+call deoplete#custom#source('member',         'mark', '.' )
+call deoplete#custom#source('necovim',        'mark', '' )
+call deoplete#custom#source('ultisnips',      'mark', ' ')
+call deoplete#custom#source('neosnippet',     'mark', ' ')
+call deoplete#custom#source('necosyntax',     'mark', '♯' )
+call deoplete#custom#source('tmux-complete',  'mark', '⧉ ')
+call deoplete#custom#source('LanguageClient', 'mark', '⌾' )
 
 " call deoplete#custom#source('jedi',          'matchers', ['matcher_fuzzy'])
 " call deoplete#custom#source('necovim',       'matchers', ['matcher_fuzzy'])
@@ -82,23 +83,25 @@ call deoplete#custom#source('dictionary', 'min_pattern_length', 2)
 
 
 " Default rank is 100, higher is better.
-call deoplete#custom#source('go',            'rank', 700)
-call deoplete#custom#source('TernJS',        'rank', 700)
-call deoplete#custom#source('jedi',          'rank', 700)
-call deoplete#custom#source('padawan',       'rank', 700)
-call deoplete#custom#source('omni',          'rank', 600)     " Default: 500
-call deoplete#custom#source('file',          'rank', 650)     " Default: 150
-call deoplete#custom#source('ultisnips',     'rank', 550)
-call deoplete#custom#source('neosnippet',    'rank', 550)
-call deoplete#custom#source('member',        'rank', 500)     " Default: 100
-call deoplete#custom#source('tmux-complete', 'rank', 500)
-call deoplete#custom#source('file_include',  'rank', 420)
-call deoplete#custom#source('tag',           'rank', 400)     " Default: 100
-call deoplete#custom#source('around',        'rank', 330)     " Default: 800
-call deoplete#custom#source('dictionary',    'rank', 310)     " Default: 100
-call deoplete#custom#source('buffer',        'rank', 300)     " Default: 100
-call deoplete#custom#source('vim',           'rank', 200)
-call deoplete#custom#source('syntax',        'rank', 200)
+
+call deoplete#custom#source('LanguageClient', 'rank', 800)
+call deoplete#custom#source('go',             'rank', 700)
+call deoplete#custom#source('TernJS',         'rank', 700)
+call deoplete#custom#source('jedi',           'rank', 700)
+call deoplete#custom#source('padawan',        'rank', 700)
+call deoplete#custom#source('omni',           'rank', 600)     " Default: 500
+call deoplete#custom#source('file',           'rank', 650)     " Default: 150
+call deoplete#custom#source('ultisnips',      'rank', 550)
+call deoplete#custom#source('neosnippet',     'rank', 550)
+call deoplete#custom#source('member',         'rank', 500)     " Default: 100
+call deoplete#custom#source('tmux-complete',  'rank', 500)
+call deoplete#custom#source('file_include',   'rank', 420)
+call deoplete#custom#source('tag',            'rank', 400)     " Default: 100
+call deoplete#custom#source('around',         'rank', 330)     " Default: 800
+call deoplete#custom#source('dictionary',     'rank', 310)     " Default: 100
+call deoplete#custom#source('buffer',         'rank', 300)     " Default: 100
+call deoplete#custom#source('vim',            'rank', 200)
+call deoplete#custom#source('syntax',         'rank', 200)
 
 
 " function! Multiple_cursors_before()

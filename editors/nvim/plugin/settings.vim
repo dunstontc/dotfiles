@@ -2,30 +2,29 @@
 "   Config
 " ==============================================================================
 set encoding=utf-8 nobomb
-" scriptencoding utf-8
-set clipboard=unnamedplus " Use the OS clipboard by default (on versions compiled with `+clipboard`)
+set clipboard=unnamedplus  " Use the OS clipboard by default (on versions compiled with `+clipboard`)
 set modeline               " Respect modeline in files
 set modelines=5            " Well, in the first 5 lines of files
 set noerrorbells           " Disable error bells
-set visualbell             " Use visual bell instead of audible bell (annnnnoying)
-set belloff=all
-set report=100
+set visualbell             " Disable error bells
+set belloff=all            " Disable error bells
+set report=100             " Minimum # of changes for commandline notification
 " set ttyfast
-" set autochdir
-set nohidden
-set nospell
-set shell=/usr/local/bin/bash
+set hidden                 " Keep buffers alive
+set nospell                " Let filetype settings set spell
 
 set noswapfile             " No thanks
 set nobackup               " I'm alright
 set undofile               " Persistent Undo though
 set undodir=~/.config/nvim/undo
 
+set shell=/usr/local/bin/bash
+
 " ==============================================================================
 "   Input & Navigation
 " ==============================================================================
 set mouse=a                     " Enable the mouse
-set backspace=indent,eol,start
+set backspace=indent,eol,start  " Make <BS> work as expected
 " set formatoptions-=c            " Auto-wrap comments using textwidth, inserting the current comment leader automatically.
 " set formatoptions-=r            " Automatically insert the current comment leader after hitting <Enter> in Insert mode.
 set formatoptions-=o            " Automatically insert the current comment leader after hitting 'o' or 'O' in Normal mode.
@@ -177,7 +176,7 @@ set ignorecase                  " Ignore case of searches
 set smartcase                   " Ignore 'ignorecase' if search patter contains uppercase characters
 
 set wildmenu                    " Visual autocomplete for command menu
-set wildcharm=<C-z>
+" set wildcharm=<C-z>
 " set wildmode=longest:full,full   " 👈
 set wildmode=list:longest,list:full
 " set wildmode=list:full
@@ -210,6 +209,7 @@ set dictionary+=~/grammar/google-10000-english-usa.txt
 "  Folding
 set foldenable                  " Enable folding
 set foldmethod=manual
+set foldmethod=syntax
 set foldlevelstart=3            " Default folding level when buffer is opened
 set foldnestmax=10              " Maximum nested fold
 " set foldtext=functions#NeatFoldText()
@@ -219,8 +219,7 @@ iabbrev busniess business
 iabbrev congif config
 iabbrev teh the
 iabbrev w/ with
-iabbrev ldr \<leader>
-
+iabbrev ldr leader
 " Disable standard plugins
 " let g:loaded_getscriptPlugin = 1
 " let g:loaded_netrwPlugin = 1
@@ -239,22 +238,23 @@ let g:wiki = { 'root' : '~/Documents/Wiki/' }
 
 let g:tcd#testvar=1
 
-let g:terminal_color_0 =  "#282a36"
-let g:terminal_color_1 =  "#ff5555"
-let g:terminal_color_2 =  "#50fa7b"
-let g:terminal_color_3 =  "#f1fa8c"
-let g:terminal_color_4 =  "#bd93f9"
-let g:terminal_color_5 =  "#ff79c6"
-let g:terminal_color_6 =  "#8be9fd"
-let g:terminal_color_7 =  "#e9e9f4"
-let g:terminal_color_8 =  "#282a36"
-let g:terminal_color_9 =  "#ff5555"
-let g:terminal_color_10 = "#50fa7b"
-let g:terminal_color_11 = "#f1fa8c"
-let g:terminal_color_12 = "#bd93f9"
-let g:terminal_color_13 = "#ff79c6"
-let g:terminal_color_14 = "#8be9fd"
-let g:terminal_color_15 = "#e9e9f4"
+
+let g:terminal_color_0 =  "#1e1e1e"  " black
+let g:terminal_color_1 =  "#d16969"  " red
+let g:terminal_color_2 =  "#608b4e"  " green
+let g:terminal_color_3 =  "#d7ba7d"  " yellow
+let g:terminal_color_4 =  "#569cd6"  " blue
+let g:terminal_color_5 =  "#c586c0"  " magenta
+let g:terminal_color_6 =  "#4ec9b0"  " cyan
+let g:terminal_color_7 =  "#d4d4d4"  " white
+let g:terminal_color_8 =  "#1e1e1e"  " bright_black
+let g:terminal_color_9 =  "#d16969"  " bright_red
+let g:terminal_color_10 = "#608b4e"  " bright_green
+let g:terminal_color_11 = "#d7ba7d"  " bright_yellow
+let g:terminal_color_12 = "#569cd6"  " bright_blue
+let g:terminal_color_13 = "#c586c0"  " bright_magenta
+let g:terminal_color_14 = "#4ec9b0"  " bright_cyan
+let g:terminal_color_15 = "#d4d4d4"  " bright_white
 let g:terminal_color_background = g:terminal_color_0
 let g:terminal_color_foreground = g:terminal_color_7
 if &background == "light"

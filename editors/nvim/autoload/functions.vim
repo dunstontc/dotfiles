@@ -9,13 +9,13 @@ endfunction
 " https://github.com/mhartington/dotfiles/blob/master/config/nvim/init.vim#L216 🙏
 " Log scope @ the cursor
 function! functions#SynStack()
-  if !exists('*synstack')
-    return ''
-  endif
-
-  let l:syntaks = map(synstack(line('.'), col('.')), "synIDattr(v:val, 'name')")
-  echo l:syntaks
-endfunction
+  " if !exists('*synstack')
+  "   return
+  " endif
+  " let l:syntaks = map(synstack(line('.'), col('.')), "synIDattr(v:val, 'name')")
+  " echo l:syntaks
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
 
 " =============================================================================
 

@@ -2,9 +2,9 @@
 "  === Mouse ===
 " ==============================================================================
 
-:map <ScrollWheelUp> <C-Y>
+" :map <ScrollWheelUp> <C-Y>
 :map <S-ScrollWheelUp> <C-U>
-:map <ScrollWheelDown> <C-E>
+" :map <ScrollWheelDown> <C-E>
 :map <S-ScrollWheelDown> <C-D>
 
 
@@ -115,8 +115,8 @@ vmap <silent>ᚻ <gv
 vmap <silent>ᚢ >gv
 nmap <silent>ᚻ <<
 nmap <silent>ᚢ >>
-imap <silent>ᚻ <silent><esc><<A
-imap <silent>ᚢ <silent><esc>>>A
+imap <silent>ᚻ <esc><<A
+imap <silent>ᚢ <esc>>>A
 
 
 " move the current line up or down
@@ -475,7 +475,7 @@ nnoremap <leader>th :set nohlsearch<CR>
 " Highlight Color Values
 nnoremap <leader>tk :ColorToggle<CR>
 " Line Wrapping
-nnoremap <leader>tl :set wrap!<CR>
+nnoremap <leader>tl :set wrap!<CR>:echo<CR>
 " Toggle TableMode
 nnoremap <leader>tm :tablemode#Toggle()<CR>
 " Paste
@@ -485,7 +485,7 @@ nnoremap <leader>tq :copen<CR>
 " Relative Line Numbers (set nru!)
 nnoremap <leader>tr :set norelativenumber!<CR>
 " Toggle Spell Checking
-nnoremap <leader>ts :set spell!<CR>
+nnoremap <leader>ts :set spell!<CR>:echo<CR>
 " Toggle TableMode
 nnoremap <leader>tt :TagbarToggle<CR>
 " Invisible Characters (whitespace)
