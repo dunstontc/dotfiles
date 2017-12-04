@@ -4116,7 +4116,9 @@ g:lightline	editors/nvim/plugin/lightline.vim	/^let g:lightline = {$/;"	v
 g:lightline#colorscheme#DarkPlus#palette	editors/nvim/autoload/lightline/DarkPlus.vim	/^let g:lightline#colorscheme#DarkPlus#palette = lightline#colorscheme#flatten(s:p)$/;"	v
 g:lightline#colorscheme#apprentice#palette	editors/nvim/autoload/lightline/apprentice.vim	/^let g:lightline#colorscheme#apprentice#palette = s:p$/;"	v
 g:lightline#colorscheme#gruvbox#palette	editors/vim/autoload/lightline/gruvbox.vim	/^  let g:lightline#colorscheme#gruvbox#palette = lightline#colorscheme#flatten(s:p)$/;"	v
+g:loaded_netrwPlugin	editors/nvim/plugin/settings.vim	/^let g:loaded_netrwPlugin = 1$/;"	v
 g:loaded_plug	editors/vim/autoload/plug.vim	/^let g:loaded_plug = 1$/;"	v
+g:loaded_tutor_mode_plugin	editors/nvim/plugin/settings.vim	/^let g:loaded_tutor_mode_plugin = 1$/;"	v
 g:mapleader	editors/nvim/plugin/mappings.vim	/^let g:mapleader="\\<Space>"$/;"	v
 g:markdown_fenced_languages	editors/nvim/filetype.vim	/^let g:markdown_fenced_languages = ['html', 'js=javascript', 'python', 'ruby', 'sh', 'bash=sh', '/;"	v
 g:markdown_fenced_languages	editors/vim/plugin/filetype.vim	/^let g:markdown_fenced_languages = ['html', 'js=javascript', 'python', 'ruby', 'sh', 'bash=sh', '/;"	v

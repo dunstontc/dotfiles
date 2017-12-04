@@ -23,23 +23,25 @@ set shell=/usr/local/bin/bash
 " ==============================================================================
 "   Input & Navigation
 " ==============================================================================
+
+" === Navigation/Motion ===
 set mouse=a                     " Enable the mouse
 set backspace=indent,eol,start  " Make <BS> work as expected
+" set whichwrap+=<,>,h,l,[,]      " Lake Left/Right at the Start/End of lines work like you'd expect
 " set formatoptions-=c            " Auto-wrap comments using textwidth, inserting the current comment leader automatically.
 " set formatoptions-=r            " Automatically insert the current comment leader after hitting <Enter> in Insert mode.
 set formatoptions-=o            " Automatically insert the current comment leader after hitting 'o' or 'O' in Normal mode.
-" set whichwrap+=<,>,h,l,[,]      " Lake Left/Right at the Start/End of lines work like you'd expect
+set nostartofline               " Don't reset cursor to start of line when moving around
+set virtualedit=block
 
-"  Tabs & Spaces
+" === Tabs & Spaces ===
 set autoindent                  " Autoidentation on
 set copyindent                  " Copy indent from the previous line
 set expandtab                   " Expand Tabs (pressing Tab inserts spaces)
 set smartindent                 " Smart Indentation on
 set smarttab                    " Tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
 set nojoinspaces                " don't autoinsert two spaces after '.', '?', '!' for join command
-set nostartofline               " Don't reset cursor to start of line when moving around
 
-set virtualedit=block
 " set notimeout
 " set ttimeout
 set nopaste
@@ -78,7 +80,6 @@ highlight Comment gui=italic
 
 
 set conceallevel=2             " Enable conceal
-set cmdheight=3
 set cursorline                 " Highlight current line
 set nowrap                     " Do not wrap lines
 set number                     " Enable line numbers
@@ -90,18 +91,12 @@ set sidescrolloff=5            " Start scrolling x columns before vertical borde
 set sidescroll=5
 " set showmatch                  " Highlight matching braces
 set emoji                      " When on all Unicode emoji characters are considered to be full width.
+set notitle                    " Don't Show the filename in the window titlebar
+" set linespace=0    " No extra spaces between rows
+" set pumheight=20   " Avoid the pop up menu occupying the whole screen
 
 
-set fillchars+=stl:\           " Maybe fix issue with statuslineNC Highlighting???
-set fillchars+=stlnc:\         " Maybe fix issue with statuslineNC Highlighting???
-" set fillchars+=vert:\|│║
-set fillchars+=vert:│
-" set fillchars+=diff:-
-set fillchars+=fold:─
-
-
-
-" ==== Messages, etc. ====
+" === Messages, etc. ====
 set shortmess=a                " Assorted abbreviations
 set shortmess+=o               " Overwrite message for writing a file with subsequent message
                                "     for reading a file (useful for ":wn" or when 'autowrite' on)
@@ -120,24 +115,31 @@ set shortmess+=T               " Truncate other messages in the middle if they a
                                "     Ignored in Ex mode.
 " set shortmess+=F               " Don't give the file info when editing a file,
                                "     like `:silent` was used for the command
+
+" === Vim Commandline ===
+set cmdheight=3
 set showcmd                    " Show (partial) command in the last line of the screen.
 set noshowmode                 " Don't show the current mode (airline takes care of this)
-set notitle                    " Don't Show the filename in the window titlebar
 set report=1                  " Report more than 10 lines changed at once
-" set linespace=0    " No extra spaces between rows
-" set pumheight=20   " Avoid the pop up menu occupying the whole screen
 
 
+" === UI Characters ===
+" \ | │ ║ ─
+set fillchars+=stl:\           " Maybe fix issue with statuslineNC Highlighting???
+set fillchars+=stlnc:\         " Maybe fix issue with statuslineNC Highlighting???
+set fillchars+=vert:│
+" set fillchars+=diff:-
+set fillchars+=fold:─
+
+" === Formatting Characters ===
+" ¬ ↪ → · ● ❯ ❮
 set listchars+=tab:→\   " Comment here to keep whitespace intact
-" set listchars+=eol:¬
 set listchars+=eol:\    " Comment here to keep whitespace intact
-" set listchars+=trail:●
 set listchars+=trail:·
 set listchars+=nbsp:\   " Comment here to keep whitespace intact
 " set listchars+=extends:❯
 " set listchars+=precedes:❮
 set showbreak=↪
-" set nolist
 set list
 
 " if has('windows')
@@ -148,17 +150,14 @@ set list
 
 
 set textwidth=78
-" set synmaxcol=200              " Don't syntax highlight long lines
-" set colorcolumn=80            " Highlight the 80th character limit
+" set synmaxcol=200             " Don't syntax highlight long lines
 if exists('+colorcolumn')
 execute "set colorcolumn=" . join(range(81,335), ',')
-" let &l:colorcolumn='+' . join(range(0, 254), ',+')
-" let &l:colorcolumn=80
 endif
 " set nolazyredraw                " Don't redraw
 " set redraw
 
-" ==== Misc. ====
+" ==== Splits ====
 set splitright                  " New split placed right
 set splitbelow                  " New split placed below
 set winminheight=0              " Allow splits to be reduced to a single line
@@ -167,7 +166,7 @@ set winminheight=0              " Allow splits to be reduced to a single line
 "   Preferences
 " ==============================================================================
 
-"  Search
+" === Search ===
 set magic                       " Enable extended regexes
 set gdefault                    " By default add g flag to search/replace. Add g to toggle
 set incsearch                   " Search as characters are entered
@@ -206,25 +205,27 @@ set dictionary+=~/grammar/google-10000-english-usa.txt
 " setlocal dictionary+=/usr/share/dict/words
 " setlocal dictionary+=/usr/share/dict/american-english
 
-"  Folding
+" === Folding ===
 set foldenable                  " Enable folding
-set foldmethod=manual
+" set foldmethod=manual
 set foldmethod=syntax
 set foldlevelstart=3            " Default folding level when buffer is opened
 set foldnestmax=10              " Maximum nested fold
 " set foldtext=functions#NeatFoldText()
 
 
+" === Abbreviations ===
 iabbrev busniess business
 iabbrev congif config
 iabbrev teh the
 iabbrev w/ with
 iabbrev ldr leader
-" Disable standard plugins
+
+" === Disable standard plugins ===
 " let g:loaded_getscriptPlugin = 1
-" let g:loaded_netrwPlugin = 1
+let g:loaded_netrwPlugin = 1
 " let g:loaded_tarPlugin = 1
-" let g:loaded_tutor_mode_plugin = 1
+let g:loaded_tutor_mode_plugin = 1
 " let g:loaded_vimballPlugin = 1
 " let g:loaded_zipPlugin = 1
 " let g:loaded_gzip = 1
