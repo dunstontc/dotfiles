@@ -64,6 +64,11 @@ include ~/.task/tcd-tw.theme
 color.project.Vim=blue
 color.project.SomedayMaybe=white bright
 color.project.work=cyan
-color.header=bright yellow
+# color.header=bright yellow
+color.header=green
 color.footnote=bright yellow
 color.sync.changed=bright yellow
+color.summary.bar=green
+color.summary.background=bright black
+color.label=green
+color.label.sort=green
