@@ -28,5 +28,8 @@ command! -nargs=1 TwoSplit call functions#TwoSplit(<args>)
 
 command! ClearRegisters call functions#ClearRegisters()
 
+" http://vim.wikia.com/g00/wiki/Append_output_of_an_external_command?i10c.encReferrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8%3D
+command! -nargs=* -complete=shellcmd R new | setlocal buftype=nofile bufhidden=hide noswapfile | r !<args>
+
 " command! -nargs=0 Mail vsplit term://mutt
 

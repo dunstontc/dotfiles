@@ -3,7 +3,6 @@
 " =============================================================================
 augroup filetypes
     autocmd!
-    " au BufRead,BufNewFile rc.conf set filetype=sh
 
     autocmd BufRead,BufNewFile rc.conf set filetype=vim
 
@@ -19,6 +18,8 @@ augroup filetypes
     autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
     autocmd BufNewFile,BufRead *.pug set filetype=pug
+
+    autocmd BufReadPost *.rs setlocal filetype=rust
 
     " autocmd BufNewFile,BufReadPost *{snippets,snip} set filetype=snippets
 

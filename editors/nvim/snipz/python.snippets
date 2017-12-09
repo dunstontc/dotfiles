@@ -11,6 +11,16 @@ snippet #! "Shebang header for python scripts" b
 $0
 endsnippet
 
+snippet header "File, Author, & License" b
+# ==============================================================================
+#  File: `!v expand("%:t")`
+#  Author: ${1:Clay Dunston} ${2:<dunstontc@gmail.com>}
+#  License: ${3:MIT license}
+#  Last Modified: $4
+# ==============================================================================
+$0
+endsnippet
+
 snippet ifmain "ifmain" b
 if __name__ == `!p snip.rv = get_quoting_style(snip)`__main__`!p snip.rv = get_quoting_style(snip)`:
 	${1:${VISUAL:main()}}

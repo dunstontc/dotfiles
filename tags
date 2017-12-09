@@ -504,10 +504,10 @@ $schema	misc/linting/coffeelint.json	/^	"$schema": "http:\/\/json.schemastore.or
 <C-q>	editors/nvim/plugin/mappings.vim	/^inoremap <C-q> <C-c>$/;"	m
 <C-q>	editors/nvim/plugin/mappings.vim	/^nnoremap <C-q> <Nop>$/;"	m
 <C-q>	editors/nvim/plugin/mappings.vim	/^vnoremap <C-q> <C-c>$/;"	m
+<C-y>	editors/nvim/after/plugin/language-server.vim	/^nnoremap <silent> <C-y> :call LanguageClient_textDocument_hover()<CR>$/;"	m
 <CR>	editors/nvim/ftplugin/markdown.vim	/^nmap <buffer> <CR> :vs<CR>gf$/;"	m
 <F8>	editors/vim/plugin/switchcolor.vim	/^ map <F8>        :call SwitchColor(1)<CR>$/;"	m
 <F8>	editors/vim/plugin/switchcolor.vim	/^imap <F8>   <Esc>:call SwitchColor(1)<CR>$/;"	m
-<H-Q>	editors/nvim/plugin/mappings.vim	/^nnoremap <H-Q> :q<CR>$/;"	m
 <S-F8>	editors/vim/plugin/switchcolor.vim	/^ map <S-F8>      :call SwitchColor(-1)<CR>$/;"	m
 <S-F8>	editors/vim/plugin/switchcolor.vim	/^imap <S-F8> <Esc>:call SwitchColor(-1)<CR>$/;"	m
 <S-H>	editors/nvim/plugin/mappings.vim	/^noremap <S-H> 0$/;"	m
@@ -578,7 +578,7 @@ $schema	misc/linting/coffeelint.json	/^	"$schema": "http:\/\/json.schemastore.or
 <leader>pi	editors/vim/.vimrc	/^nnoremap <leader>pi :PlugInstall<CR>$/;"	m
 <leader>ps	editors/vim/.vimrc	/^nnoremap <leader>ps :PlugStatus<CR>$/;"	m
 <leader>pu	editors/nvim/plugin/mappings.vim	/^nnoremap <leader>pu :call dein#update()<CR>$/;"	m
-<leader>q	editors/nvim/plugin/mappings.vim	/^nnoremap <leader>q :Bdelete<CR>$/;"	m
+<leader>q	editors/nvim/plugin/mappings.vim	/^nnoremap <leader>q qq$/;"	m
 <leader>rr	editors/nvim/plugin/mappings.vim	/^nnoremap <leader>rr :source $MYVIMRC<CR>$/;"	m
 <leader>s	editors/nvim/plugin/mappings.vim	/^nnoremap <leader>s :%s\/\/\/g<left><left><left>$/;"	m
 <leader>tb	editors/nvim/plugin/mappings.vim	/^nnoremap <leader>tb :RainbowParentheses!!<CR>$/;"	m
@@ -609,6 +609,7 @@ $schema	misc/linting/coffeelint.json	/^	"$schema": "http:\/\/json.schemastore.or
 <leader>tw	editors/vim/.vimrc	/^nnoremap <leader>tw :set list!<CR>$/;"	m
 <leader>u	editors/nvim/plugin/mappings.vim	/^nnoremap <leader>u :redo<CR>$/;"	m
 <leader>u	editors/vim/.vimrc	/^nnoremap <leader>u :redo<CR>$/;"	m
+<leader>x	editors/nvim/plugin/mappings.vim	/^nnoremap <leader>x :q!<CR>$/;"	m
 <plug>(slash-after)	editors/nvim/plugin/mappings.vim	/^noremap <plug>(slash-after) zz$/;"	m
 @f	misc/emmet/emmet-default-snippets.json	/^            "@f": "@font-face {\\n\\tfont-family:|;\\n\\tsrc:url(|);\\n}",$/;"	s	object:css.snippets
 @f+	misc/emmet/emmet-default-snippets.json	/^            "@f+": "@font-face {\\n\\tfont-family: '${1:FontName}';\\n\\tsrc: url('${2:FileName}/;"	s	object:css.snippets
@@ -1072,6 +1073,7 @@ Edit Project	editors/atom/menu-config.json	/^						"Edit Project": {$/;"	o	objec
 Edit Projects	editors/atom/menu-config.json	/^						"Edit Projects": {$/;"	o	object:main.Packages.children.Project Manager.children
 Edit Tool Bar	editors/atom/menu-config.json	/^				"Edit Tool Bar": {$/;"	o	object:context..tool-bar.children
 Expand	editors/atom/menu-config.json	/^						"Expand": {$/;"	o	object:main.Packages.children.Snippets.children
+F	editors/nvim/plugin/mappings.vim	/^map F <Plug>Sneak_F$/;"	m
 FILTER	config/ranger/commands_full.py	/^    FILTER          = 'f'$/;"	v	class:scout
 FILTER_DIRS	config/ranger/commands_full.py	/^    FILTER_DIRS  = 'd'$/;"	v	class:filter_inode_type
 FILTER_FILES	config/ranger/commands_full.py	/^    FILTER_FILES = 'f'$/;"	v	class:filter_inode_type
@@ -1365,6 +1367,7 @@ Q	editors/nvim/plugin/mappings.vim	/^noremap Q @$/;"	m
 Q	editors/vim/.vimrc	/^command! Q q$/;"	c
 Q	editors/vim/.vimrc	/^noremap Q @q$/;"	m
 Quit	editors/atom/menu-config.json	/^				"Quit": {$/;"	o	object:main.Atom.children
+R	editors/nvim/plugin/commands.vim	/^command! -nargs=* -complete=shellcmd R new | setlocal buftype=nofile bufhidden=hide noswapfile |/;"	c
 R	editors/nvim/plugin/mappings.vim	/^nnoremap R <Nop>$/;"	m
 R	editors/vim/autoload/plug.vim	/^  nnoremap <silent> <buffer> R  :call <SID>retry()<cr>$/;"	m
 Readonly	editors/nvim/plugin/lightline.vim	/^function! Readonly() abort$/;"	f
@@ -1574,6 +1577,7 @@ Symbols	editors/atom/menu-config.json	/^				"Symbols": {$/;"	o	object:main.Packa
 SynDef	editors/nvim/plugin/commands.vim	/^command -nargs=0 SynDef echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')$/;"	c
 Sync Title	misc/terminal/DarkPlus.iterm2.json	/^  "Sync Title" : false,$/;"	b
 Sync Title	misc/terminal/onedark-iterm2.json	/^  "Sync Title" : false,$/;"	b
+T	editors/nvim/plugin/mappings.vim	/^map T <Plug>Sneak_T$/;"	m
 TabSize	editors/vim/plugin/statusline.vim	/^function! TabSize() abort$/;"	f
 TabSizing	editors/nvim/plugin/lightline.vim	/^function! TabSizing() abort$/;"	f
 TabsToSpaces	editors/nvim/plugin/commands.vim	/^command -nargs=* TabsToSpaces :%s\/	\/  \/g$/;"	c
@@ -3547,6 +3551,7 @@ extends	misc/linting/.eslintrc.js	/^  "extends": "eslint:recommended",$/;"	p	cla
 extensions.autoUpdate	editors/vscode/settings.json	/^    "extensions.autoUpdate": false,$/;"	b
 extract	shell/zsh/plugins/extract/extract.plugin.zsh	/^extract() {$/;"	f
 e|ellipse	misc/emmet/emmet-default-snippets.json	/^            "e|ellipse": "<ellipse  cx=\\"\\" cy=\\"\\" rx=\\"\\" ry=\\"\\"\/>",$/;"	s	object:svg.abbreviations
+f	editors/nvim/plugin/mappings.vim	/^map f <Plug>Sneak_f$/;"	m
 f	misc/emmet/emmet-default-snippets.json	/^            "f": "font:|;",$/;"	s	object:css.snippets
 f+	misc/emmet/emmet-default-snippets.json	/^            "f+": "font:${1:1em} ${2:Arial,sans-serif};",$/;"	s	object:css.snippets
 f1	misc/karabiner.json	/^                "f1": "vk_consumer_brightness_down",$/;"	s	object:profiles.0.fn_function_keys
@@ -3811,6 +3816,13 @@ g	misc/emmet/emmet-default-snippets.json	/^            "g": "<g>",$/;"	s	object:
 g	shell/github.sh	/^alias g='git'$/;"	a
 g4get	shell/github.sh	/^function g4get() {$/;"	f
 g:DevIconsEnableFoldersOpenClose	editors/nvim/after/plugin/devicons.vim	/^let g:DevIconsEnableFoldersOpenClose = 0$/;"	v
+g:LanguageClient_autoStart	editors/nvim/after/plugin/language-server.vim	/^let g:LanguageClient_autoStart = 1$/;"	v
+g:LanguageClient_changeThrottle	editors/nvim/after/plugin/language-server.vim	/^let g:LanguageClient_changeThrottle = 0$/;"	v
+g:LanguageClient_diagnosticsEnable	editors/nvim/after/plugin/language-server.vim	/^let g:LanguageClient_diagnosticsEnable = 1$/;"	v
+g:LanguageClient_diagnosticsList	editors/nvim/after/plugin/language-server.vim	/^let g:LanguageClient_diagnosticsList = "location"$/;"	v
+g:LanguageClient_selectionUI	editors/nvim/after/plugin/language-server.vim	/^let g:LanguageClient_selectionUI = "location-list"$/;"	v
+g:LanguageClient_serverCommands	editors/nvim/after/plugin/language-server.vim	/^let g:LanguageClient_serverCommands = {$/;"	v
+g:LanguageClient_windowLogMessageLevel	editors/nvim/after/plugin/language-server.vim	/^let g:LanguageClient_windowLogMessageLevel = 3$/;"	v
 g:NERDTreeChDirMode	editors/nvim/after/plugin/nerdtree.vim	/^let g:NERDTreeChDirMode=2       " Always change the root directory$/;"	v
 g:NERDTreeDirArrowCollapsible	editors/nvim/after/plugin/nerdtree.vim	/^let g:NERDTreeDirArrowCollapsible = ''$/;"	v
 g:NERDTreeDirArrowExpandable	editors/nvim/after/plugin/nerdtree.vim	/^let g:NERDTreeDirArrowExpandable = ''$/;"	v
@@ -3874,7 +3886,6 @@ g:WebDevIconsUnicodeDecorateFileNodesExactSymbols	editors/nvim/after/plugin/devi
 g:WebDevIconsUnicodeDecorateFileNodesExactSymbols	editors/nvim/after/plugin/devicons.vim	/^let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['Documents'] = ''$/;"	v
 g:WebDevIconsUnicodeDecorateFileNodesExactSymbols	editors/nvim/after/plugin/devicons.vim	/^let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['Downloads'] = ''$/;"	v
 g:WebDevIconsUnicodeDecorateFileNodesExactSymbols	editors/nvim/after/plugin/devicons.vim	/^let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['Google Drive'] = ''$/;"	v
-g:WebDevIconsUnicodeDecorateFileNodesExactSymbols	editors/nvim/after/plugin/devicons.vim	/^let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['LICENSE']           = ''$/;"	v
 g:WebDevIconsUnicodeDecorateFileNodesExactSymbols	editors/nvim/after/plugin/devicons.vim	/^let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['Makefile']          = ''$/;"	v
 g:WebDevIconsUnicodeDecorateFileNodesExactSymbols	editors/nvim/after/plugin/devicons.vim	/^let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['Movies'] = ''$/;"	v
 g:WebDevIconsUnicodeDecorateFileNodesExactSymbols	editors/nvim/after/plugin/devicons.vim	/^let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['Music'] = ''$/;"	v
@@ -3882,13 +3893,17 @@ g:WebDevIconsUnicodeDecorateFileNodesExactSymbols	editors/nvim/after/plugin/devi
 g:WebDevIconsUnicodeDecorateFileNodesExactSymbols	editors/nvim/after/plugin/devicons.vim	/^let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['Projects'] = ''$/;"	v
 g:WebDevIconsUnicodeDecorateFileNodesExactSymbols	editors/nvim/after/plugin/devicons.vim	/^let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['archey']            = ''$/;"	v
 g:WebDevIconsUnicodeDecorateFileNodesExactSymbols	editors/nvim/after/plugin/devicons.vim	/^let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['casperjs']          = ''$/;"	v
+g:WebDevIconsUnicodeDecorateFileNodesExactSymbols	editors/nvim/after/plugin/devicons.vim	/^let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['done.txt']          = ''$/;"	v
 g:WebDevIconsUnicodeDecorateFileNodesExactSymbols	editors/nvim/after/plugin/devicons.vim	/^let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['gulpfile.js']       = ''$/;"	v
 g:WebDevIconsUnicodeDecorateFileNodesExactSymbols	editors/nvim/after/plugin/devicons.vim	/^let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['hugo']              = ''$/;"	v
 g:WebDevIconsUnicodeDecorateFileNodesExactSymbols	editors/nvim/after/plugin/devicons.vim	/^let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['iCloud Drive'] = ''$/;"	v
 g:WebDevIconsUnicodeDecorateFileNodesExactSymbols	editors/nvim/after/plugin/devicons.vim	/^let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['init.vim']          = ''$/;"	v
+g:WebDevIconsUnicodeDecorateFileNodesExactSymbols	editors/nvim/after/plugin/devicons.vim	/^let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['license']           = ''$/;"	v
 g:WebDevIconsUnicodeDecorateFileNodesExactSymbols	editors/nvim/after/plugin/devicons.vim	/^let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['node_modules'] = ''$/;"	v
+g:WebDevIconsUnicodeDecorateFileNodesExactSymbols	editors/nvim/after/plugin/devicons.vim	/^let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['package.json']      = ''$/;"	v
 g:WebDevIconsUnicodeDecorateFileNodesExactSymbols	editors/nvim/after/plugin/devicons.vim	/^let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['phantomjs']         = ''$/;"	v
 g:WebDevIconsUnicodeDecorateFileNodesExactSymbols	editors/nvim/after/plugin/devicons.vim	/^let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['terminal-notifier'] = ''$/;"	v
+g:WebDevIconsUnicodeDecorateFileNodesExactSymbols	editors/nvim/after/plugin/devicons.vim	/^let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['todo.txt']          = ''$/;"	v
 g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols	editors/nvim/after/plugin/devicons.vim	/^let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {} " needed$/;"	v
 g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols	editors/nvim/after/plugin/devicons.vim	/^let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['DS_Store']      = ''$/;"	v
 g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols	editors/nvim/after/plugin/devicons.vim	/^let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['bash']       = ''$/;"	v
@@ -3903,11 +3918,14 @@ g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols	editors/nvim/after/plugin/
 g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols	editors/nvim/after/plugin/devicons.vim	/^let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['json']       = ''$/;"	v
 g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols	editors/nvim/after/plugin/devicons.vim	/^let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['less']       = ''$/;"	v
 g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols	editors/nvim/after/plugin/devicons.vim	/^let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['lua']        = ''$/;"	v
+g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols	editors/nvim/after/plugin/devicons.vim	/^let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['markdown']   = ''$/;"	v
 g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols	editors/nvim/after/plugin/devicons.vim	/^let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['md']         = ''$/;"	v
 g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols	editors/nvim/after/plugin/devicons.vim	/^let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['org']        = ''$/;"	v
 g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols	editors/nvim/after/plugin/devicons.vim	/^let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['otf']        = ''$/;"	v
+g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols	editors/nvim/after/plugin/devicons.vim	/^let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['png']        = ''$/;"	v
 g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols	editors/nvim/after/plugin/devicons.vim	/^let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['projectile'] = ''$/;"	v
 g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols	editors/nvim/after/plugin/devicons.vim	/^let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['py']         = ''$/;"	v
+g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols	editors/nvim/after/plugin/devicons.vim	/^let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['sh']         = ''$/;"	v
 g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols	editors/nvim/after/plugin/devicons.vim	/^let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['snip']       = ' '$/;"	v
 g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols	editors/nvim/after/plugin/devicons.vim	/^let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['snippets']   = ' '$/;"	v
 g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols	editors/nvim/after/plugin/devicons.vim	/^let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['ts']         = ''$/;"	v
@@ -4084,7 +4102,17 @@ g:fzf_buffers_jump	editors/nvim/after/plugin/fzf.vim	/^let g:fzf_buffers_jump = 
 g:fzf_colors	editors/nvim/after/plugin/fzf.vim	/^let g:fzf_colors =$/;"	v
 g:fzf_history_dir	editors/nvim/after/plugin/fzf.vim	/^let g:fzf_history_dir = '~\/.local\/share\/fzf-history'$/;"	v
 g:fzf_layout	editors/nvim/after/plugin/fzf.vim	/^let g:fzf_layout = { 'down': '~40%' }$/;"	v
+g:fzf_mru_relative	editors/nvim/plugin/plugins.vim	/^let g:fzf_mru_relative = 1$/;"	v
 g:gitgutter_map_keys	editors/nvim/plugin/mappings.vim	/^let g:gitgutter_map_keys = 0$/;"	v
+g:github_dashboard	editors/nvim/after/plugin/ghdashboard.vim	/^    let g:github_dashboard = { 'username': 'dunstontc', 'password': $HOMEBREW_GITHUB_API_TOKEN }$/;"	v
+g:github_dashboard	editors/nvim/after/plugin/ghdashboard.vim	/^    let g:github_dashboard = {}$/;"	v
+g:github_dashboard	editors/nvim/after/plugin/ghdashboard.vim	/^    let g:github_dashboard['api_open_timeout'] = 10$/;"	v
+g:github_dashboard	editors/nvim/after/plugin/ghdashboard.vim	/^    let g:github_dashboard['api_read_timeout'] = 20$/;"	v
+g:github_dashboard	editors/nvim/after/plugin/ghdashboard.vim	/^    let g:github_dashboard['emoji'] = 0$/;"	v
+g:github_dashboard	editors/nvim/after/plugin/ghdashboard.vim	/^    let g:github_dashboard['emoji_map'] = {$/;"	v
+g:github_dashboard	editors/nvim/after/plugin/ghdashboard.vim	/^    let g:github_dashboard['open_command'] = 'open'$/;"	v
+g:github_dashboard	editors/nvim/after/plugin/ghdashboard.vim	/^    let g:github_dashboard['position'] = 'top'$/;"	v
+g:github_dashboard	editors/nvim/after/plugin/ghdashboard.vim	/^    let g:github_dashboard['statusline'] = 0$/;"	v
 g:github_dashboard	editors/nvim/after/renameme/github-dashboard.vim	/^let g:github_dashboard = { 'username': 'you', 'password': $GITHUB_TOKEN }$/;"	v
 g:github_dashboard	editors/nvim/after/renameme/github-dashboard.vim	/^let g:github_dashboard = {}$/;"	v
 g:github_dashboard	editors/nvim/after/renameme/github-dashboard.vim	/^let g:github_dashboard['api_open_timeout'] = 10$/;"	v
@@ -4138,7 +4166,7 @@ g:plugs	editors/vim/autoload/plug.vim	/^    let g:plugs[name] = spec$/;"	v
 g:plugs	editors/vim/autoload/plug.vim	/^  let g:plugs = {}$/;"	v
 g:plugs_order	editors/vim/autoload/plug.vim	/^  let g:plugs_order = []$/;"	v
 g:plugs_order	editors/vim/autoload/plug.vim	/^  let g:plugs_order = get(g:, 'plugs_order', keys(g:plugs))$/;"	v
-g:python_highlight_all	editors/nvim/ftplugin/python.vim	/^let g:python_highlight_all=1$/;"	v
+g:projectile#data_dir	editors/nvim/after/plugin/projectile.vim	/^let g:projectile#data_dir = '~\/.config\/projectile'$/;"	v
 g:python_highlight_all	editors/nvim/init.vim	/^let g:python_highlight_all=1$/;"	v
 g:qfedit_enable	editors/nvim/plugin/plugins.vim	/^let g:qfedit_enable=1$/;"	v
 g:quantum_black	editors/nvim/plugin/settings.vim	/^let g:quantum_black=1$/;"	v
@@ -4166,7 +4194,15 @@ g:sneak#target_labels	editors/nvim/plugin/mappings.vim	/^let g:sneak#target_labe
 g:sneak#use_ic_scs	editors/nvim/plugin/mappings.vim	/^let g:sneak#use_ic_scs = 1$/;"	v
 g:splitjoin_join_mapping	editors/nvim/plugin/mappings.vim	/^let g:splitjoin_join_mapping = ''$/;"	v
 g:splitjoin_split_mapping	editors/nvim/plugin/mappings.vim	/^let g:splitjoin_split_mapping = ''$/;"	v
-g:startify_custom_header	editors/nvim/after/plugin/startify.vim	/^let g:startify_custom_header = s:filter_header(map(split(system('fortune | cowthink '), '\\n'), /;"	v
+g:startify_change_to_dir	editors/nvim/after/plugin/startify.vim	/^let g:startify_change_to_dir          = 0$/;"	v
+g:startify_change_to_vcs_root	editors/nvim/after/plugin/startify.vim	/^let g:startify_change_to_vcs_root     = 0$/;"	v
+g:startify_custom_footer	editors/nvim/after/plugin/startify.vim	/^let g:startify_custom_footer =$/;"	v
+g:startify_custom_header	editors/nvim/after/plugin/startify.vim	/^let g:startify_custom_header = map(split(system('fortune '), '\\n'), '"   ". v:val') + ['','']$/;"	v
+g:startify_custom_indices	editors/nvim/after/plugin/startify.vim	/^let g:startify_custom_indices = map(range(1,100), 'string(v:val)')$/;"	v
+g:startify_enable_special	editors/nvim/after/plugin/startify.vim	/^let g:startify_enable_special = 0$/;"	v
+g:startify_files_number	editors/nvim/after/plugin/startify.vim	/^let g:startify_files_number = 10$/;"	v
+g:startify_fortune_use_unicode	editors/nvim/after/plugin/startify.vim	/^let g:startify_fortune_use_unicode    = 1$/;"	v
+g:startify_list_order	editors/nvim/after/plugin/startify.vim	/^let g:startify_list_order = [$/;"	v
 g:switch_mapping	editors/nvim/plugin/mappings.vim	/^let g:switch_mapping = "-"$/;"	v
 g:swoopIgnoreCase	editors/nvim/after/plugin/swoop.vim	/^let g:swoopIgnoreCase = 1$/;"	v
 g:swoopUseDefaultKeyMap	editors/nvim/plugin/mappings.vim	/^let g:swoopUseDefaultKeyMap = 0$/;"	v
@@ -4231,6 +4267,7 @@ g:terminal_color_foreground	editors/nvim/colors/onedark.vim	/^  let g:terminal_c
 g:terminal_color_foreground	editors/nvim/plugin/settings.vim	/^    let g:terminal_color_foreground = g:terminal_color_2$/;"	v
 g:terminal_color_foreground	editors/nvim/plugin/settings.vim	/^let g:terminal_color_foreground = g:terminal_color_7$/;"	v
 g:tmuxcomplete#trigger	editors/nvim/plugin/completion.vim	/^let g:tmuxcomplete#trigger = ''$/;"	v
+g:todo_load_python	editors/nvim/plugin/plugins.vim	/^let g:todo_load_python = 1$/;"	v
 g:togglecursor_default	editors/nvim/plugin/plugins.vim	/^let g:togglecursor_default = 'block'$/;"	v
 g:togglecursor_default	editors/vim/.vimrc	/^let g:togglecursor_default = 'block'$/;"	v
 g:togglecursor_disable_default_init	editors/nvim/plugin/plugins.vim	/^let g:togglecursor_disable_default_init = 1$/;"	v
@@ -4264,9 +4301,9 @@ g:vimfiler_marked_file_icon	editors/nvim/after/plugin/vimfiler.vim	/^let g:vimfi
 g:vimfiler_no_default_key_mappings	editors/nvim/after/plugin/vimfiler.vim	/^let g:vimfiler_no_default_key_mappings=1$/;"	v
 g:vimfiler_readonly_file_icon	editors/nvim/after/plugin/vimfiler.vim	/^let g:vimfiler_readonly_file_icon='X'$/;"	v
 g:vimfiler_time_format	editors/nvim/after/plugin/vimfiler.vim	/^let g:vimfiler_time_format = ' '$/;"	v
-g:vimfiler_tree_closed_icon	editors/nvim/after/plugin/vimfiler.vim	/^let g:vimfiler_tree_closed_icon = '▸'$/;"	v
+g:vimfiler_tree_closed_icon	editors/nvim/after/plugin/vimfiler.vim	/^let g:vimfiler_tree_closed_icon = '▷'$/;"	v
 g:vimfiler_tree_leaf_icon	editors/nvim/after/plugin/vimfiler.vim	/^let g:vimfiler_tree_leaf_icon = ' '$/;"	v
-g:vimfiler_tree_opened_icon	editors/nvim/after/plugin/vimfiler.vim	/^let g:vimfiler_tree_opened_icon = '▾'$/;"	v
+g:vimfiler_tree_opened_icon	editors/nvim/after/plugin/vimfiler.vim	/^let g:vimfiler_tree_opened_icon = '▼'$/;"	v
 g:vimsyn_embed	editors/nvim/syntax/vim.vim	/^ let g:vimsyn_embed= 0$/;"	v
 g:vimsyn_maxlines	editors/nvim/syntax/vim.vim	/^ let g:vimsyn_maxlines= g:vim_maxlines$/;"	v
 g:vimsyn_minlines	editors/nvim/syntax/vim.vim	/^ let g:vimsyn_minlines= g:vim_minlines$/;"	v
@@ -5732,6 +5769,7 @@ syntaxUpdate	config/highlight/plugins/boilerplate.lua	/^function syntaxUpdate(de
 sys.stdin.read	shell/zsh/plugins/jsontools/jsontools.plugin.zsh	/^	json.loads(sys.stdin.read())$/;"	f
 sys.stdin.read	shell/zsh/plugins/jsontools/jsontools.plugin.zsh	/^print urllib.quote_plus(sys.stdin.read())$/;"	f
 sys.stdin.read	shell/zsh/plugins/jsontools/jsontools.plugin.zsh	/^print urllib.unquote_plus(sys.stdin.read())$/;"	f
+t	editors/nvim/plugin/mappings.vim	/^map t <Plug>Sneak_t$/;"	m
 t	ignore/snuggs-tmux.conf	/^bind-key Space command-prompt "joinp -t:%%" # %% = prompt for window.pane [-V|H] # vert|hor spli/;"	k
 t	misc/emmet/emmet-default-snippets.json	/^            "t": "top:|;",$/;"	s	object:css.snippets
 t:a	misc/emmet/emmet-default-snippets.json	/^            "t:a": "top:auto;",$/;"	s	object:css.snippets

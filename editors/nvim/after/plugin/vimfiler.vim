@@ -8,8 +8,10 @@ let g:vimfiler_as_default_explorer = 1
 
 " Like Textmate icons.
 let g:vimfiler_tree_leaf_icon = ' '
-let g:vimfiler_tree_opened_icon = '▾'
-let g:vimfiler_tree_closed_icon = '▸'
+" let g:vimfiler_tree_opened_icon = '▾'
+" let g:vimfiler_tree_closed_icon = '▸'
+let g:vimfiler_tree_opened_icon = '▼'
+let g:vimfiler_tree_closed_icon = '▷'
 let g:vimfiler_file_icon = '-'
 let g:vimfiler_marked_file_icon = '*'
 let g:vimfiler_readonly_file_icon='X'
@@ -92,7 +94,6 @@ augroup VimFilerAutocommands
 augroup END
 
 
-" <Plug>(vimfiler_redraw_screen)
 " " Toggles mark in cursor line and move down.
 " <Plug>(vimfiler_toggle_mark_current_line)
 " " Clears marks in all lines.
@@ -116,15 +117,7 @@ augroup END
 " " cursor directory. If directory tree is opened, will execute
 " " the operation in directory tree.
 " <Plug>(vimfiler_clipboard_paste)
-" " Creates new directory. If directory tree is opened, will
-" " create new directory in directory tree.
-" " If you marked files, will move the files in new directory.
-" <Plug>(vimfiler_make_directory)
-" " Creates new files. If directory tree is opened, create new files in directory tree.
-" <Plug>(vimfiler_new_file)
 " " Renames cursor file or selected files.
-" " If selected files, vimfiler will open exrename buffer.
-" <Plug>(vimfiler_rename_file)
 " " Change cursor directory or edit cursor file.
 " <Plug>(vimfiler_cd_or_edit)
 " <Plug>(vimfiler_switch_to_parent_directory)

@@ -43,7 +43,7 @@ nnoremap <silent>\ :noh<CR>:call anzu#clear_search_status()<CR>:echo<CR>
 nnoremap R <Nop>
 " Quit with q
 nnoremap q :q<CR>
-nnoremap <H-Q> :q<CR>
+" nnoremap <H-Q> :q<CR>
 " (Record macros wth <leader>q)
 " Save some strokes
 noremap Q @
@@ -262,10 +262,10 @@ let g:sneak#use_ic_scs = 1
 " noremap z <Plug>Sneak_s
 " noremap Z <Plug>Sneak_S
 
-" map f <Plug>Sneak_f
-" map F <Plug>Sneak_F
-" map t <Plug>Sneak_t
-" map T <Plug>Sneak_T
+map f <Plug>Sneak_f
+map F <Plug>Sneak_F
+map t <Plug>Sneak_t
+map T <Plug>Sneak_T
 
 
 " ==============================================================================
@@ -328,7 +328,7 @@ nnoremap <leader>` :Deol -split -start-insert<CR>
 nnoremap <leader>g :vimgrep TODO **/*.%:e \| cw<CR>
 " l -- List Buffers
 " q  -- Quit
-nnoremap <leader>q :Bdelete<CR>
+nnoremap <leader>q qq
 " s  -- Search & Replace
 nnoremap <leader>s :%s///g<left><left><left>
 " r  -- Reload
@@ -337,7 +337,8 @@ nnoremap <leader>rr :source $MYVIMRC<CR>
 nnoremap <leader>u :redo<CR>
 " ft -- FileTree
 nnoremap <leader>ft :VimFilerExplorer<CR>
-
+" x -- eXit
+nnoremap <leader>x :q!<CR>
 
 " ==============================================================================
 "  === b -- Buffers===

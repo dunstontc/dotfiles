@@ -1,6 +1,6 @@
-setlocal foldmethod=indent
-setlocal completeopt-=preview
+" setlocal foldmethod=indent
+" setlocal completeopt-=preview
 
 " autocmd FileType python setlocal completeopt-=preview
 " Highlight everything possible for python
-let g:python_highlight_all=1
+" let g:python_highlight_all=1

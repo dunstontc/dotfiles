@@ -1,23 +1,33 @@
-
+" dark-plus
+" by Clay Dunston
 " highlight group cterm=attrs ctermfg=foreground_color ctermbg=background_color
 
 highlight clear
 
-highlight Win cterm=none ctermfg=white ctermbg=black
-highlight Directory cterm=bold ctermfg=cyan ctermbg=default
-highlight Link cterm=bold ctermfg=43 ctermbg=default
-highlight BrokenLink cterm=bold ctermfg=203 ctermbg=default
-highlight Socket cterm=bold ctermfg=magenta ctermbg=default
-highlight Device cterm=bold ctermfg=red ctermbg=default
-highlight Fifo cterm=bold ctermfg=cyan ctermbg=default
-highlight Executable cterm=bold ctermfg=green ctermbg=default
+highlight Win cterm=bold ctermfg=188 ctermbg=234
+highlight Border cterm=bold ctermfg=234 ctermbg=65
 highlight Selected cterm=bold ctermfg=magenta ctermbg=default
-highlight CurrLine cterm=bold ctermfg=default ctermbg=blue
-highlight TopLine cterm=none ctermfg=black ctermbg=white
-highlight TopLineSel cterm=bold ctermfg=black ctermbg=default
-highlight StatusLine cterm=bold ctermfg=black ctermbg=white
-highlight WildMenu cterm=underline,reverse ctermfg=white ctermbg=black
-highlight CmdLine cterm=none ctermfg=white ctermbg=black
-highlight ErrorMsg cterm=none ctermfg=203 ctermbg=black
-highlight Border cterm=none ctermfg=black ctermbg=white
-highlight JobLine cterm=bold,reverse ctermfg=black ctermbg=white
+highlight CurrLine cterm=bold ctermfg=234 ctermbg=65
+highlight OtherLine cterm=bold ctermfg=65 ctermbg=234
+highlight TopLine cterm=bold ctermfg=234 ctermbg=65
+highlight TopLineSel cterm=bold ctermfg=234 ctermbg=65
+highlight StatusLine cterm=bold ctermfg=234 ctermbg=65
+
+highlight JobLine cterm=bold,reverse ctermfg=black ctermbg=234
+highlight CmdLine cterm=none ctermfg=188 ctermbg=234
+highlight WildMenu cterm=underline,reverse ctermfg=188 ctermbg=234
+highlight SuggestBox cterm=underline,reverse ctermfg=188 ctermbg=234
+
+highlight Directory cterm=bold ctermfg=117 ctermbg=default
+highlight Executable cterm=bold ctermfg=179 ctermbg=default
+highlight Socket cterm=bold ctermfg=173 ctermbg=default
+highlight Device cterm=bold ctermfg=8 ctermbg=default
+highlight Link cterm=bold ctermfg=43 ctermbg=default
+
+highlight Fifo cterm=bold ctermfg=75 ctermbg=default
+highlight CmpMismatch cterm=bold ctermfg=75 ctermbg=default
+
+highlight BrokenLink cterm=bold ctermfg=203 ctermbg=default
+highlight ErrorMsg cterm=none ctermfg=203 ctermbg=default
+
+

@@ -21,6 +21,9 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export GOPATH="$HOME/go"
 export GOBIN="$HOME/go/bin"
 
+export VIFM="$HOME/.vifm"
+export MYVIFMRC="$HOME/.vifm/vifmrc"
+
 export HL_DIR="$HOME/.highlight"
 export HIGHLIGHT_DATADIR="$HOME/.highlight"
 

@@ -10,7 +10,7 @@ call denite#custom#option('default', {
   \ 'reversed':                1,
   \ 'updatetime':              1,
   \ 'prompt_highlight':        'helpSpecial',
-  \ 'highlight_matched_char':  'Italic',
+  \ 'highlight_matched_char':  'Underlined',
   \ 'highlight_matched_range': 'Underlined',
   \ 'highlight_mode_normal':   'deniteModeNormal',
   \ 'highlight_mode_insert':   'deniteModeInsert',
@@ -49,10 +49,11 @@ call denite#custom#map('insert', '<Esc>',  '<denite:enter_mode:normal>',     'no
 call denite#custom#map('insert', '<C-q>',  '<denite:enter_mode:normal>',     'noremap')
 call denite#custom#map('insert', '𐌘',      '<denite:enter_mode:normal>',     'noremap')
 call denite#custom#map('insert', '<C-v>',  '<denite:do_action:vsplit>',      'noremap')
-call denite#custom#map('insert', '<C-s>',  '<denite:do_action:split>',      'noremap')
+call denite#custom#map('insert', '<C-x>',  '<denite:do_action:split>',      'noremap')
 call denite#custom#map('insert', '<C-n>',  '<denite:move_to_next_line>',     'noremap')
 call denite#custom#map('insert', '<C-p>',  '<denite:move_to_previous_line>', 'noremap')
-" call denite#custom#map('insert', '<M-BS>', '<denite:delete_word_before_caret>', 'noremap')
+call denite#custom#map('insert', '<C-h>', '<denite:delete_word_before_caret>', 'noremap') " TODO: See if this works, remove if not.
+call denite#custom#map('insert', '<C-a>',  '<denite:move_caret_to_one_word_left>', 'noremap')
 " call denite#custom#map('insert', '<M-left>',   '<denite:move_caret_to_one_word_left>', 'noremap')
 " call denite#custom#map('insert', '<M-right>',  '<denite:move_caret_to_end_of_word>', 'noremap')
 " call denite#custom#map('insert', '<>',  '<denite:>', 'noremap')
@@ -64,7 +65,7 @@ call denite#custom#map('normal', '<Esc>',  '<NOP>',                          'no
 call denite#custom#map('normal', '<C-q>',  '<NOP>',                          'noremap')
 call denite#custom#map('normal', '𐌘',      '<NOP>',                          'noremap')
 call denite#custom#map('normal', '<C-v>',  '<denite:do_action:vsplit>',      'noremap')
-call denite#custom#map('normal', '<C-s>',  '<denite:do_action:split>',       'noremap')
+call denite#custom#map('normal', '<C-x>',  '<denite:do_action:split>',       'noremap')
 call denite#custom#map('normal', 'a',      '<denite:do_action:add>',         'noremap')
 call denite#custom#map('normal', 'd',      '<denite:do_action:delete>',      'noremap')
 call denite#custom#map('normal', 'r',      '<denite:do_action:reset>',       'noremap')
@@ -115,7 +116,8 @@ call denite#custom#var('commands', 'config', '~/commands.json')
 " ==============================================================================
 "  vim-denite-sessions
 " ==============================================================================
-call denite#custom#var('session', 'path', '~/.vim/sessions')
+call denite#custom#var('session', 'path', '~/.config/nvim/sessions')
+" call denite#custom#var('session', 'path', '~/.vim-sessions')
 
 
 " ==============================================================================
@@ -194,11 +196,14 @@ let s:menus.dotfiles.file_candidates = [
   \ [' Alacritty',           '~/.dotfiles/config/alacritty.yml'],
   \ [' Hammerspoon',         '~/.dotfiles/config/hammerspoon/init.lua'],
   \ [' Taskwarrior',         '~/.dotfiles/misc/.taskrc'],
+  \ ['dark-plus.yml',         '~/.dotfiles/misc/dark-plus.yml'],
   \ [' files.yaml',          '~/.dotfiles/config/lscolors/files.yaml'],
   \ [' file_aliases.yaml',   '~/.dotfiles/config/lscolors/file_aliases.yaml'],
   \ [' folders.yaml',        '~/.dotfiles/config/lscolors/folders.yaml'],
   \ [' folder_aliases.yaml', '~/.dotfiles/config/lscolors/folder_aliases.yaml'],
-  \ ['  Projects',            '~/Projects/projects.json']
+  \ [' Projects',            '~/Projects/projects.json'],
+  \ ['vifmrc',                '~/.dotfiles/config/vifm/vifmrc'],
+  \ ['dark-plus.vifm',        '~/.dotfiles/config/vifm/colors/dark-plus.vifm']
   \ ]
 
 " ==============================================================================
@@ -246,28 +251,32 @@ let s:menus.Denite.command_candidates = [
   \ ['Vim Commands',       'Denite command'],
   \ ['Command History',    'Denite command_history -default-action=edit_and_execute'],
   \ ['Dein',               'Denite dein'],
+  \ ['Deol',               'Denite deol'],
   \ ['Filetypes',          'Denite filetype'],
+  \ ['GHQ',                'Denite ghq'],
   \ ['Grep',               'Denite grep'],
   \ ['Help',               'Denite help'],
   \ ['Jumplist',           'Denite jump'],
   \ ['Junkfiles',          'Denite Junkfile'],
   \ ['Location List',      'Denite location_list'],
-  \ ['Mappings/Normal',    'Denite mappings'],
+  \ ['Mappings',           'Denite mappings'],
   \ ['Mappings/Verbose',   'Denite mappings_verbose'],
   \ ['NeoMRU Directories', 'Denite directory_mru'],
   \ ['NeoMRU Files',       'Denite file_mru'],
   \ ['Neoyank',            'Denite neoyank'],
   \ ['Outline',            'Denite outline'],
   \ ['Projects',           'Denite project'],
+  \ [' Projectile',       'Denite project'],
   \ ['Quickfix List',      'Denite quickfix'],
   \ ['Recent Directories', 'Denite directory_rec'],
   \ ['Recent Files',       'Denite file_rec'],
   \ ['Registers',          'Denite register'],
   \ ['Sample',             'Denite sample'],
   \ ['Sessions',           'Denite session'],
+  \ ['Symbols',            'Denite workspaceSymbol'],
   \ ['Tags',               'Denite tag'],
-  \ ['Taskwarrior',        'Denite task'],
-  \ ['Todos',              'Denite todo'],
+  \ [' Taskwarrior',      'Denite task'],
+  \ [' Todos',            'Denite todos'],
   \ ['Z (Jump Around)',    'Denite z'],
   \ ]
 
