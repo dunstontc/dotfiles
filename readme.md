@@ -11,32 +11,32 @@
 
 
 ## Contents ##
-  - Bash *v4.4.12* &nbsp;🏗 
-  - Zsh *v5.2* ✔
-  - tmux *v2.5* ✔
+  - Bash *4.4.12* &nbsp;🏗 
+  - Zsh *5.2* ✔
+  - tmux *2.5* ✔
   - Atom ✔
   - VS Code 👷
-  - Neovim *v5.2* ✔
+  - Neovim *0.2.2* ✔
   - Vim *8.0.125* ✔
   - [Links](#links)
     - [Resources](#resources)
     - [Themes](#themes)
     - [Misc.](#misc)
     - [Reference](#reference)
-
-| Key             | Context   | Action              |
-|-----------------|-----------|---------------------|
-| `⌘ - Space`     | Alfred    | Hotkey              |
-| `⌘ - ⌥ - s`     | Alfred    | Search Snippets     |
-| `⌘ - ⌥ - ,`     | Alfred    | Clipboard History   |
-| `⌘ - ⌥ - Space` | Bartender | Toggle Bartender    |
-| `⌥ - Space`     | iTerm2    | Focus to iTerm2     |
-| `⌃ - q`         | iTerm2    | Ctrl-C              |
-| `⌃ - Space`     | tmux      | prefix              |
-| `⌘ - /`         | vim       | Toggle Comments     |
-| `⌘ - s`         | vim       | Write active buffer |
-| `⌃ - hjkl`      | vim/tmux  | Navigate Vim/Tmux   |
-
+<!--  -->
+<!-- | Key             | Context   | Action              | -->
+<!-- |-----------------|-----------|---------------------| -->
+<!-- | `⌘ - Space`     | Alfred    | Hotkey              | -->
+<!-- | `⌘ - ⌥ - s`     | Alfred    | Search Snippets     | -->
+<!-- | `⌘ - ⌥ - ,`     | Alfred    | Clipboard History   | -->
+<!-- | `⌘ - ⌥ - Space` | Bartender | Toggle Bartender    | -->
+<!-- | `⌥ - Space`     | iTerm2    | Focus to iTerm2     | -->
+<!-- | `⌃ - q`         | iTerm2    | Ctrl-C              | -->
+<!-- | `⌃ - Space`     | tmux      | prefix              | -->
+<!-- | `⌘ - /`         | vim       | Toggle Comments     | -->
+<!-- | `⌘ - s`         | vim       | Write active buffer | -->
+<!-- | `⌃ - hjkl`      | vim/tmux  | Navigate Vim/Tmux   | -->
+<!--  -->
 
 ## Links ##
 
@@ -68,9 +68,9 @@
 
 
 ### Misc: ###
+  - [fzf](https://github.com/junegunn/fzf)
   - [howdoi](https://github.com/gleitz/howdoi)
   - [tldr](https://github.com/tldr-pages/tldr/)
-  - [fzf](https://github.com/junegunn/fzf)
   - [Nerdfonts](https://github.com/ryanoasis/nerd-fonts)
   - [.tern-project](https://stackoverflow.com/questions/41371789/figuring-out-javascript-libraries-for-vim-autocompletion-with-ternjs-in-tern-pr/41377689#41377689)
 
@@ -118,7 +118,6 @@
     - Let's be honest: mostly Emacs.
   - [hlissner/doom-emacs](https://github.com/hlissner/doom-emacs)
     - An Emacs configuration for the stubborn martian vimmer
-  - [antigen in the wild](https://github.com/zsh-users/antigen/wiki/In-the-wild)
   - [guide to neovim](http://nerditya.com/code/guide-to-neovim/)
 
 ## [License](https://github.com/dunstontc/dotfiles/blob/master/LICENSE.md) ##
