@@ -171,27 +171,27 @@ fzkill() {
   fi
 }
 
-fzf_ghq() {
-    local selected_dir=$(ghq list -p | $(__fzfcmd) --query "$LBUFFER")
-    if [ -n "$selected_dir" ]; then
-        BUFFER="cd ${selected_dir}"
-        zle accept-line
-    fi
-}
-
-ghq_fzf() {
-  local selected_dir=$(ghq list | fzf --query="$LBUFFER")
-
-  if [ -n "$selected_dir" ]; then
-    BUFFER="cd $(ghq root)/${selected_dir}"
-    zle accept-line
-  fi
-
-  zle reset-prompt
-}
-zle -N fzf_ghq
-zle -N ghq_fzf
-bindkey '^g^h' fzf_ghq
+# fzf_ghq() {
+#     local selected_dir=$(ghq list -p | $(__fzfcmd) --query "$LBUFFER")
+#     if [ -n "$selected_dir" ]; then
+#         BUFFER="cd ${selected_dir}"
+#         zle accept-line
+#     fi
+# }
+#
+# ghq_fzf() {
+#   local selected_dir=$(ghq list | fzf --query="$LBUFFER")
+#
+#   if [ -n "$selected_dir" ]; then
+#     BUFFER="cd $(ghq root)/${selected_dir}"
+#     zle accept-line
+#   fi
+#
+#   zle reset-prompt
+# }
+# zle -N fzf_ghq
+# zle -N ghq_fzf
+# bindkey '^g^h' fzf_ghq
 
 # =============================================================================
 

@@ -2,23 +2,13 @@
 cmdargs:
   # Checking more strictly
   severity: style_problem
+  format: '{description} (please see {reference})'
 
   # Enable coloring
-  color: true
+  color: false
 
-  # Enable Neovim syntax
   env:
     neovim: true
-
-  # file_path
-  # file_name
-  # line_number
-  # column_number
-  # severity
-  # description
-  # policy_name
-  # reference
-  format: '{file_path}:{line_number}:{column_number}: {description}'
 
 policies:
   # Style Problems
@@ -64,3 +54,4 @@ policies:
 
   ProhibitUsingUndeclaredVariable:
     enabled: true
+...

@@ -1,0 +1,1 @@
+(C) 2017-12-10 Make a switch.vim pattern for viml variable scope. +Vim

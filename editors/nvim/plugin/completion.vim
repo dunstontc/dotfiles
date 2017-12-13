@@ -24,14 +24,14 @@ let g:deoplete#auto_complete_delay = 150
 let g:deoplete#auto_refresh_delay = 1000
 
 let g:deoplete#disable_auto_complete=0
-let g:deoplete#auto_completion_start_length = 2
+let g:deoplete#auto_completion_start_length = 1
 
-let g:deoplete#min_keyword_length=2
-let g:deoplete#min_pattern_length=2
+let g:deoplete#min_keyword_length=1
+let g:deoplete#min_pattern_length=1
 " let g:deoplete#enable_camel_case = 1
 let g:deoplete#enable_ignore_case = 1
 let g:deoplete#enable_smart_case = 1
-let g:deoplete#sources#syntax#min_keyword_length = 2
+let g:deoplete#sources#syntax#min_keyword_length = 1
 
 
 " let g:deoplete#ignore_sources =
@@ -72,8 +72,8 @@ call deoplete#custom#source('LanguageClient', 'mark', '⌾' )
 " call deoplete#custom#source('necosyntax',    'matchers', ['matcher_fuzzy'])
 " call deoplete#custom#source('tmux-complete', 'matchers', ['matcher_fuzzy'])
 
-call deoplete#custom#source('emoji', 'filetypes',      ['gitcommit', 'markdown', 'org', 'rst', 'txt'])
-call deoplete#custom#source('dictionary', 'filetypes', ['gitcommit', 'markdown', 'org', 'rst', 'txt'])
+call deoplete#custom#source('emoji',      'filetypes', ['gitcommit', 'markdown', 'org', 'rst', 'txt', 'todo'])
+call deoplete#custom#source('dictionary', 'filetypes', ['gitcommit', 'markdown', 'org', 'rst', 'txt', 'todo'])
 
 call deoplete#custom#source('dictionary', 'min_pattern_length', 2)
 
@@ -223,7 +223,10 @@ let g:necosyntax#max_syntax_line=1000
 "  === deoplete-jedi ===
 " ==============================================================================
 let g:deoplete#sources#jedi#show_docstring = 1
-
+let g:deoplete#sources#jedi#enable_cache = 1
+let g:deoplete#sources#jedi#show_docstring = 0
+let g:deoplete#sources#jedi#statement_length = 50
+let g:deoplete#sources#jedi#server_timeout = 10
 
 " ==============================================================================
 "  === wellle/tmux-complete.vim ===

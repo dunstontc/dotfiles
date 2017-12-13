@@ -90,13 +90,13 @@ set emoji                      " When on all Unicode emoji characters are consid
 set notitle                    " Don't Show the filename in the window titlebar
 " set linespace=0    " No extra spaces between rows
 " set pumheight=20   " Avoid the pop up menu occupying the whole screen
-" set nolazyredraw                " Don't redraw
+set nolazyredraw                " Don't redraw
 
 " syntax sync minlines=200
 " syntax sync maxlines=500
 " set synmaxcol=400
 
-set textwidth=78
+" set textwidth=78
 " set synmaxcol=200             " Don't syntax highlight long lines
 if exists('+colorcolumn')
   execute "set colorcolumn=" . join(range(81,335), ',')
@@ -176,7 +176,7 @@ set completeopt-=preview
 " ==============================================================================
 
 " === General ===
-set cmdheight=3
+set cmdheight=2
 set showcmd                    " Show (partial) command in the last line of the screen.
 set noshowmode                 " Don't show the current mode (airline takes care of this)
 set report=1                   " Report more than 10 lines changed at once
@@ -218,9 +218,9 @@ set shortmess+=t               " Truncate file message at the start if it is too
 set shortmess+=T               " Truncate other messages in the middle if they are too long to
                                "     fit on the command line.  "..." will appear in the middle.
                                "     Ignored in Ex mode.
-" set shortmess+=F               " Don't give the file info when editing a file,
+set shortmess+=F               " Don't give the file info when editing a file,
                                "     like `:silent` was used for the command
-
+set shortmess=aoOcstTF
 
 
 " ==============================================================================
@@ -245,10 +245,23 @@ let g:loaded_tutor_mode_plugin = 1
 " let g:loaded_gzip = 1
 " let g:loaded_rrhelper = 1
 
+let g:session_directory='~/.config/nvim/sessions'
 
 let g:wiki = { 'root' : '~/Documents/Wiki/' }
 
 let g:tcd#testvar=1
+
+if exists("$TMUX")
+  " Get the environment variable
+  let tmux_pane_name_cmd = 'tmux display -p \#D'
+  let tmux_pane_name = substitute(system(g:tmux_pane_name_cmd), "\n", "", "")
+  let tmux_env_var = "TMUX_PWD_" . substitute(g:tmux_pane_name, "%", "", "")
+  unlet tmux_pane_name tmux_pane_name_cmd
+  function! BroadcastTmuxCwd()
+    let filename = substitute(expand("%:p:h"), $HOME, "~", "")
+    let output = system("tmux setenv -g ".g:tmux_env_var." ".l:filename)
+  endfunction
+endif
 
 
 let g:terminal_color_0 =  "#1e1e1e"  " black

@@ -1,0 +1,16 @@
+PWD
+GLOBIGNORE
+Plugins
+dein
+pandoc
+pep8
+i3
+textobj
+Denite
+Denite
+dein#add
+deoplete
+readme.md
+JSON
+nvim
+denite

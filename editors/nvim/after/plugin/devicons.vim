@@ -96,4 +96,7 @@ let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.profile']          = '�
 let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.editorconfig']     = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['todo.txt']          = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['done.txt']          = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['tags']              = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['makefile']          = ''
+" let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['tags']              = ''
 

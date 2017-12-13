@@ -13,8 +13,8 @@ endsnippet
 
 snippet header "File, Author, & License" b
 # ==============================================================================
-#  File: `!v expand("%:t")`
-#  Author: ${1:Clay Dunston} ${2:<dunstontc@gmail.com>}
+#  FILE: `!v expand("%:t")`
+#  AUTHOR: ${1:Clay Dunston} ${2:<dunstontc@gmail.com>}
 #  License: ${3:MIT license}
 #  Last Modified: $4
 # ==============================================================================
@@ -702,8 +702,8 @@ ${1:${VISUAL:doc}}
 endsnippet
 
 snippet doc "doc block (triple quotes)"
-`!p snip.rv = triple_quotes(snip)`
-${1:${VISUAL:doc}}
+`!p snip.rv = triple_quotes(snip)`$1
+${2:${VISUAL:doc}}
 `!p snip.rv = triple_quotes(snip)`
 endsnippet
 
@@ -719,6 +719,61 @@ snippet pmdoc "pocoo style module doc string" b
 	:license: ${3:LICENSE_NAME}, see LICENSE for more details.
 """
 $0
+endsnippet
+
+#  =============================================================================
+#  === dunstontc ===
+#  =============================================================================
+snippet oneline "Single line docstring"
+"""$1"""$0
+endsnippet
+
+snippet attributes "'Class Attributes' doc section"
+Attributes
+	:attr $1:
+		$2
+	${5::attr $3:
+		$4}
+----------
+endsnippet
+
+snippet methods "'Class Methods' doc section"
+Methods
+-------
+endsnippet
+
+snippet parameters "Description of the function arguments, keywords and their respective types."
+Parameters
+----------
+	:param $1:
+		$2
+	${5::param $3:
+		$4}
+endsnippet
+
+snippet returns "Explanation of the returned values and their types."
+Returns
+-------
+endsnippet
+
+snippet yields "Explanation of the yielded values and their types."
+Yields
+------
+endsnippet
+
+snippet see_also "An optional section used to refer to related code."
+See Also
+--------
+endsnippet
+
+snippet notes ""
+Notes
+-----
+endsnippet
+
+snippet note ""
+Note
+----
 endsnippet
 
 # vim:ft=snippets:

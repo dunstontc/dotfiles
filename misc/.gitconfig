@@ -1,8 +1,0 @@
-# This is Git's per-user configuration file.
-[user]
-	name = Clay Dunston
-	email = dunstontc@gmail.com
-[github]
-	name = dunstontc
-[credential]
-	helper = osxkeychain

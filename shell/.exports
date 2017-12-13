@@ -2,6 +2,8 @@
 
 export EDITOR="nvim"
 
+export PS1=$PS1'$( [ -n $TMUX ] && tmux setenv -g TMUX_PWD_$(tmux display -p "#D" | tr -d %) $PWD)'
+
 # export PAGER='less'
 # export PAGER="vimpager"
 
@@ -12,10 +14,10 @@ export TERM="xterm-256color"
 export XDG_CONFIG_HOME="$HOME/.config"
 
 # Todo.txt
-# export TODO_DIR="$HOME/.todo"
+export TODO_DIR="$HOME/.todo"
 
 # Taskwarrior
-# export TASKRC="$HOME/.taskrc"
+export TASKRC="~/.taskrc"
 # export TASKDATA="$HOME/.task"
 
 export GOPATH="$HOME/go"

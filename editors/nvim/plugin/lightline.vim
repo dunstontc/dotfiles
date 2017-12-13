@@ -10,20 +10,22 @@ let g:lightline = {
       \  'separator': { 'left': '', 'right': '' },
       \  'subseparator': { 'left': '', 'right': '' },
       \  'inactive': {
-      \    'left': [ ['displace', 'mood'], ],
+      \    'left': [ ['buf_num', 'displace', 'mood'], ],
       \    'right': [],
       \},
       \  'active': {
-      \    'left': [ ['s','mode','s'],
-      \            [   'readonly', 'filename', ],
-      \            [   'icon',     'fsize' ] ],
+      \    'left': [ [ 's','mode','s'         ],
+      \            [   'readonly', 'filename' ],
+      \            [   'icon',     'fsize'    ],
+      \            [   's','s','anzu','s','paste','s' ] ],
       \    'right': [ [ 'cool_col' ],
       \               [ 'tabsize'  ],
-      \               [ 'linter_warnings', 'linter_errors', 's', 'anzu', 's', 'paste' ] ]
+      \               [ 'linter_warnings', 'linter_errors', 's' ] ]
       \},
       \  'component': {
       \    'clipboard': ' %{v:register}',
       \    'displace' : ' %F',
+      \    'buf_num' : ' %n ',
       \    's'        : ' ',
       \},
       \  'component_function': {
@@ -81,6 +83,7 @@ function! Mode() abort
         \ &filetype ==#     'netrw'      ? 'netrw'    :
         \ &filetype ==#     'peekaboo'   ? 'Peekaboo' :
         \ &filetype ==#     'quickmenu'  ? 'Menu'     :
+        \ &filetype ==#     'qf'         ? 'Quickfix' :
         \ &filetype ==#     'startify'   ? 'Startify' :
         \ &filetype ==#     'unite'      ? 'Unite'    :
         \ &filetype ==#     'undotree'   ? 'UndoTree' :
@@ -100,7 +103,8 @@ endfunction
 function! Filename() abort
   let l:filename = expand('%:t') !=# '' ? expand('%:t') : ''
   let l:modified = &modified ? ' +' : ''
-  return &filetype !~# g:tcd_blacklist ? (' ' . l:filename . '' . l:modified) : ' '
+  " return &filetype !~# g:tcd_blacklist ? (' ' . l:filename . '' . l:modified) : ' '
+  return (' ' . l:filename . '' . l:modified)
 endfunction
 
 " ==============================================================================

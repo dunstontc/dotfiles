@@ -21,7 +21,7 @@ alias 5='cd -5'
 # Directories
 # alias sl="ls"
 alias l="colorls -A --sort-files"
-alias lall="colorls -Al --sort-files"
+alias ll="colorls -Al --sort-files"
 # alias lsa="ls -A"
 # alias lsl='ls -lAh'
 alias ..l="cd .. && ls -A"
@@ -112,3 +112,5 @@ alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v exten
 alias treee="tree -I 'node_modules|bower_components|cache|ignore'"
 
 alias fzag="ag --nobreak --nonumbers --noheading . | fzf"
+
+alias fzghq="ghq list | fzf | cd"

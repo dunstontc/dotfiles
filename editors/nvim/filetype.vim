@@ -2,35 +2,43 @@
 "  Filetype Associations
 " =============================================================================
 augroup filetypes
-    autocmd!
+  autocmd!
 
-    autocmd BufRead,BufNewFile rc.conf set filetype=vim
+  autocmd BufRead,BufNewFile *.cson set filetype=coffee
 
-    autocmd BufRead,BufNewFile .spacemacs set filetype=lisp
+  autocmd BufRead,BufNewFile *.ctags set filetype=config
 
-    autocmd BufRead,BufNewFile {topydo,columns,column}.conf,column,columns,topydo set filetype=dosini
+  autocmd BufRead,BufNewFile {topydo,columns,column}.conf,column,columns,topydo,.taskrc set filetype=dosini
 
-    autocmd BufRead,BufNewFile .{aliases,env,exports,functions,highlight,inputrc,path,} set filetype=sh
-    autocmd BufRead,BufNewFile .{bash_prompt,bash_profile} set filetype=sh
+  autocmd BufRead,BufNewFile .{babel,eslint,stylelint,jshint,prettier}rc,.tern-*,*.json set filetype=json
 
-    autocmd BufRead,BufNewFile *.cson set filetype=coffee
+  autocmd BufRead,BufNewFile .spacemacs set filetype=lisp
 
-    autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+  autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
-    autocmd BufNewFile,BufRead *.pug set filetype=pug
+  autocmd BufNewFile,BufRead *.pug set filetype=pug
 
-    autocmd BufReadPost *.rs setlocal filetype=rust
+  autocmd BufReadPost *.rs setlocal filetype=rust
 
-    " autocmd BufNewFile,BufReadPost *{snippets,snip} set filetype=snippets
+  autocmd BufRead,BufNewFile .{aliases,env,exports,functions,highlight,inputrc,path,} set filetype=sh
+  autocmd BufRead,BufNewFile .{bash_prompt,bash_profile} set filetype=sh
 
-    autocmd BufNewFile,BufRead *.ts set filetype=typescript
+  autocmd BufNewFile,BufReadPost *{snippets,snip} set filetype=snippets
 
-    " autocmd BufNewFile,BufReadPost *.wiki set filetype=wiki
+  " https://github.com/tjdevries/config_manager
+  autocmd TermOpen term://*  set filetype=term
 
-    autocmd BufRead,BufNewFile .{babel,eslint,stylelint,jshint,prettier}rc,.tern-*,*.json set ft=json
+  autocmd BufNewFile,BufRead [Tt]odo.txt set filetype=todo
+  autocmd BufNewFile,BufRead *.[Tt]odo.txt set filetype=todo
+  autocmd BufNewFile,BufRead [Dd]one.txt set filetype=todo
+  autocmd BufNewFile,BufRead *.[Dd]one.txt set filetype=todo
 
-    " https://github.com/tjdevries/config_manager
-    autocmd TermOpen term://*  set filetype=term
+  autocmd BufNewFile,BufRead *.ts set filetype=typescript
+
+  autocmd BufRead,BufNewFile rc.conf set filetype=vim
+
+  " autocmd BufNewFile,BufReadPost *.wiki set filetype=wiki
+
 augroup END
 " =============================================================================
 "  Language Specific Settings

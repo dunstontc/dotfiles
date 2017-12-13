@@ -79,8 +79,8 @@ complete -F _fzf_path_completion -o default -o bashdefault ag
 complete -F _fzf_dir_completion -o default -o bashdefault tree
 
 bind "TAB:menu-complete"
-bind -x '"\C-g": "fzf-file-widget"'
-bind "'\C-f': ' \C-e\C-u$(__fzf_cd__)\e\C-e\er\C-m'"
+# bind -x '"\C-g": "fzf-file-widget"'
+# bind "'\C-f': ' \C-e\C-u$(__fzf_cd__)\e\C-e\er\C-m'"
 # bind "'\C-f': ' \C-e\C-u`__fzf_cd__`\e\C-e\er\C-m'"
 
 

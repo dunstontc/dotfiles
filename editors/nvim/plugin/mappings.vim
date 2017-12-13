@@ -2,16 +2,21 @@
 "  === Mouse ===
 " ==============================================================================
 
-" :map <ScrollWheelUp> <C-Y>
-:map <S-ScrollWheelUp> <C-U>
-" :map <ScrollWheelDown> <C-E>
-:map <S-ScrollWheelDown> <C-D>
+" map <ScrollWheelUp> <C-Y>
+map <S-ScrollWheelUp> <C-U>
+" map <ScrollWheelDown> <C-E>
+map <S-ScrollWheelDown> <C-D>
 
+" nmap <up> <C-U>
+" nmap <down> <C-D>
 
 " ==============================================================================
 "  Key Mappings
 " ==============================================================================
 set timeoutlen=750
+
+let mapleader="\<Space>"
+let maplocalleader = ","
 
 nnoremap ; :
 vnoremap ; :
@@ -19,11 +24,11 @@ vnoremap ; :
 nnoremap ' `
 nnoremap ` '
 
-nnoremap <C-p> :Denite<space>
+" nnoremap <C-p> :Denite<space>
+" nnoremap <C-p>
 nnoremap ,u :Unite<space>
 
 " use ctrl-q instead of ⎋ , stay on the home row
-" inoremap <esc> <C-g>:echo "Use ctrl-Q dumbass "<CR>
 inoremap <C-q> <C-c>
 nnoremap <C-q> <Nop>
 vnoremap <C-q> <C-c>
@@ -41,12 +46,8 @@ nnoremap <C-W><up> <C-W>K
 nnoremap <silent>\ :noh<CR>:call anzu#clear_search_status()<CR>:echo<CR>
 
 nnoremap R <Nop>
-" Quit with q
-nnoremap q :q<CR>
-" nnoremap <H-Q> :q<CR>
-" (Record macros wth <leader>q)
-" Save some strokes
-noremap Q @
+" Quit with Q
+nnoremap <S-Q> :q<CR>
 
 " Escape the terminal
 tnoremap <Esc> <C-\><C-n>
@@ -57,6 +58,8 @@ noremap <S-L> $
 
 nnoremap <BS> i<DEL><esc><right>
 noremap ,, i<space><esc>
+nnoremap [<Space> mwO<esc>mx`w
+nnoremap ]<Space> mwo<esc>mx`w
 
 " gtfo
 nnoremap fj :x<CR>
@@ -83,17 +86,17 @@ nnoremap <S-y> v$y
 
 " Save wih ⌘ -s
 " ᚠ - runic letter f (U+16A0)
-nnoremap <silent>ᚠ :silent w<CR>
-inoremap <silent>ᚠ <C-o>:silent w<CR>
+nnoremap <silent> ᚠ :silent w<CR>
+inoremap <silent> ᚠ <C-o>:silent w<CR>
 
 " Comment wih ⌘ -/
 " ᚣ - runic letter yr (U+16A3)
-noremap <silent>ᚣ :TComment<CR>
-inoremap <silent>ᚣ <esc>:TComment<CR>
+noremap <silent> ᚣ :TComment<CR>
+inoremap <silent> ᚣ <esc>:TComment<CR>
 
 " <S-CR> New line below
 " ᚾ - runic letter n (U+16BE)
-inoremap ᚾ <esc>o
+" inoremap ᚾ <esc>o
 " <C-CR> New line above
 " ᚩ - runic letter os o (U+16A9)
 inoremap ᚩ <esc>O
@@ -111,16 +114,16 @@ nnoremap 𐌋 mxV"zy"zp`xj
 " Indentation
 " ᚻ - runic letter h (U+16BB)
 " ᚢ - runic letter u (U+16A2)
-vmap <silent>ᚻ <gv
-vmap <silent>ᚢ >gv
-nmap <silent>ᚻ <<
-nmap <silent>ᚢ >>
-imap <silent>ᚻ <esc><<A
-imap <silent>ᚢ <esc>>>A
+vmap <silent> ᚻ <gv
+vmap <silent> ᚢ >gv
+nmap <silent> ᚻ <<
+nmap <silent> ᚢ >>
+imap <silent> ᚻ <esc><<A
+imap <silent> ᚢ <esc>>>A
 
 
 " move the current line up or down
-" nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-j> :m .+1<CR>==
 " nnoremap <A-k> :m .-2<CR>==
 " inoremap ê <Esc>:m .+1<CR>==gi
 " inoremap ë <Esc>:m .-2<CR>==gi
@@ -171,7 +174,8 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 " === vim-expand-region ===
-map K <Plug>(expand_region_expand)
+map ᚾ <Plug>(expand_region_expand)
+" map K <Plug>(expand_region_expand)
 map J <Plug>(expand_region_shrink)
 
 " === junegunn/vim-table-mode ===
@@ -183,8 +187,9 @@ let g:swoopUseDefaultKeyMap = 0
 " === gitgutter ===
 let g:gitgutter_map_keys = 0
 
+
 " === slash ===
-noremap <plug>(slash-after) zz
+" noremap <plug>(slash-after) zz
 
 " === tcomment ===
 let g:tcommentMaps=0
@@ -194,8 +199,8 @@ let g:tcommentMapLeaderCommentAnyway=''
 let g:tcommentTextObjectInlineComment=''
 
 " === w0rp/ale ===
-" nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-" nmap <silent> <C-j> <Plug>(ale_next_wrap)
+nmap <silent> [a <Plug>(ale_previous_wrap)
+nmap <silent> ]a <Plug>(ale_next_wrap)
 
 " === vim-multiple-cursors ===
 let g:multi_cursor_use_default_mapping=0
@@ -223,17 +228,22 @@ let g:splitjoin_join_mapping = ''
 " nmap sk :SplitjoinJoin<cr>
 
 " === AndrewRadev/switch.vim ===
-let g:switch_mapping = "-"
+" let g:switch_mapping='\<CR>'
+let g:switch_mapping="-"
+" nnoremap + :call switch#Switch({'definitions': g:variable_style_switch_definitions})<cr>
+" nnoremap - :Switch<cr>
+nnoremap - :Switch<CR>:echo<CR>
+
 
 " === sidemenu ===
 " nmap <Leader>y <Plug>(sidemenu)
 " xmap <Leader>y <Plug>(sidemenu-visual)
-nnoremap ,0 :call quickmenu#toggle(0)<CR>
+" nnoremap ,0 :call quickmenu#toggle(0)<CR>
 
 
 
 " === MattesGroeger/vim-bookmarks ===
-let g:bookmark_no_default_key_mappings = 1
+let g:bookmark_no_default_key_mappings = 0
 " nmap <Leader><Leader> <Plug>BookmarkToggle
 " nmap <Leader>i <Plug>BookmarkAnnotate
 " nmap <Leader>a <Plug>BookmarkShowAll
@@ -254,7 +264,7 @@ let g:sneak#prompt = '§ '
 
 let g:sneak#label = 1
 let g:sneak#label_esc = "\<Space>"
-let g:sneak#target_labels = "asldkfjghz,xmcnvb"
+let g:sneak#target_labels = "asldkfjghzxmcnvb"
 
 let g:sneak#s_next = 0
 let g:sneak#use_ic_scs = 1
@@ -299,12 +309,9 @@ map T <Plug>Sneak_T
 " autocmd VimEnter * call after_object#enable([']', '['], '=', ':')
 
 
-
 " ==============================================================================
 "  Leader Mappings
 " ==============================================================================
-" let mapleader="\<Space>"
-let g:mapleader="\<Space>"
 
 nnoremap <leader><leader> <esc>
 
@@ -313,32 +320,35 @@ nnoremap <leader><leader> <esc>
 "             \    'c': ['Cheat40Open',                'Cheat Sheet'     ],
 "             \    'q': ['call quickmenu#toggle(0)',   'Quickmenu'       ],
 "             \    'm': ['call magit#show_magit("v")', 'Magit'           ],
-"             \    'n': ['NERDTreeToggle',             'NERDTree'        ],
-"             \    's': ['vsplit +Startify',           'Startify'        ],
-"             \    't': ['TagBarToggle',               'Tagbar'          ],
-"             \    'u': ['Unite',                      'Unite'           ],
-"             \    'z': ['UndotreeToggle',             'Undotree'        ],
 "             \}
 
-" Tab  -- We don't use tabs...?
+" Tab -- We don't use tabs...?
 nnoremap <leader><Tab> :bn<CR>
-" `  -- Same as VSCode term hotkey
+" `   -- Same as VSCode term hotkey
 nnoremap <leader>` :Deol -split -start-insert<CR>
-" g  -- Grep
-nnoremap <leader>g :vimgrep TODO **/*.%:e \| cw<CR>
-" l -- List Buffers
-" q  -- Quit
-nnoremap <leader>q qq
-" s  -- Search & Replace
+" c   -- Comment
+noremap <silent> <leader>c :TComment<CR>
+" g   -- Grep
+" l   -- List Buffers
+" m   -- replay Macro
+nnoremap <leader>m @
+" q   -- Quit
+" nnoremap <leader>q qq
+" s   -- Search & Replace
 nnoremap <leader>s :%s///g<left><left><left>
-" r  -- Reload
+" r   -- Reload
 nnoremap <leader>rr :source $MYVIMRC<CR>
-" u  -- Unundo
+" u   -- Unundo
 nnoremap <leader>u :redo<CR>
-" ft -- FileTree
+" f t -- FileTree
 nnoremap <leader>ft :VimFilerExplorer<CR>
-" x -- eXit
+" v   -- Vertical Split
+nnoremap <leader>v :vsplit \| Startify<CR>:echo<CR>
+" x   -- eXit
 nnoremap <leader>x :q!<CR>
+
+
+
 
 " ==============================================================================
 "  === b -- Buffers===
@@ -359,6 +369,7 @@ nnoremap <leader>bd :bd<CR>
 nnoremap <leader>bq :q<CR>
 
 
+
 " ==============================================================================
 "  === d -- Denite ===
 " ==============================================================================
@@ -371,6 +382,7 @@ nnoremap <leader>ds :Denite menu:dotfiles<CR>
 nnoremap <leader>du :Unite
 
 
+
 " ==============================================================================
 "  === e -- Edit ===
 " ==============================================================================
@@ -379,34 +391,34 @@ nnoremap <leader>du :Unite
 " (other than 't')
 
 " Edit Init.vim
-nnoremap <silent><leader>ev :vsplit $MYVIMRC<CR>
-nnoremap <silent><leader>e<S-V> :edit $MYVIMRC<CR>
+nnoremap <leader>ev :vsplit $MYVIMRC<CR>:echo<CR>
+nnoremap <leader>e<S-V> :edit $MYVIMRC<CR>:echo<CR>
 " Edit Settings
-nnoremap <silent><leader>es :vs ~/.dotfiles/editors/nvim/plugin/settings.vim<CR>
-nnoremap <silent><leader>e<S-S> :edit ~/.dotfiles/editors/nvim/plugin/settings.vim<CR>
+nnoremap <leader>es :vs ~/.dotfiles/editors/nvim/plugin/settings.vim<CR>:echo<CR>
+nnoremap <leader>e<S-S> :edit ~/.dotfiles/editors/nvim/plugin/settings.vim<CR>:echo<CR>
 " Edit Lightline
-nnoremap <silent><leader>el :vsplit ~/.dotfiles/editors/nvim/plugin/lightline.vim<CR>
-nnoremap <silent><leader>e<S-L> :edit ~/.dotfiles/editors/nvim/plugin/lightline.vim<CR>
+nnoremap <leader>el :vsplit ~/.dotfiles/editors/nvim/plugin/lightline.vim<CR>:echo<CR>
+nnoremap <leader>e<S-L> :edit ~/.dotfiles/editors/nvim/plugin/lightline.vim<CR>:echo<CR>
 " Edit Keys
-nnoremap <silent><leader>ek :vsplit ~/.dotfiles/editors/nvim/plugin/mappings.vim<CR>
-nnoremap <silent><leader>e<S-K> :edit ~/.dotfiles/editors/nvim/plugin/mappings.vim<CR>
+nnoremap <leader>ek :vsplit ~/.dotfiles/editors/nvim/plugin/mappings.vim<CR>:echo<CR>
+nnoremap <leader>e<S-K> :edit ~/.dotfiles/editors/nvim/plugin/mappings.vim<CR>:echo<CR>
 " Edit Denite
-nnoremap <silent><leader>ed :vsplit ~/.dotfiles/editors/nvim/plugin/unite.vim<CR>
-nnoremap <silent><leader>e<S-D> :edit ~/.dotfiles/editors/nvim/plugin/unite.vim<CR>
+nnoremap <leader>ed :vsplit ~/.dotfiles/editors/nvim/plugin/unite.vim<CR>:echo<CR>
+nnoremap <leader>e<S-D> :edit ~/.dotfiles/editors/nvim/plugin/unite.vim<CR>:echo<CR>
 " Edit Commands
-nnoremap <silent><leader>ec :vsplit ~/.dotfiles/editors/nvim/plugin/commands.vim<CR>
-nnoremap <silent><leader>e<S-C> :edit ~/.dotfiles/editors/nvim/plugin/commands.vim<CR>
+nnoremap <leader>ec :vsplit ~/.dotfiles/editors/nvim/plugin/commands.vim<CR>:echo<CR>
+nnoremap <leader>e<S-C> :edit ~/.dotfiles/editors/nvim/plugin/commands.vim<CR>:echo<CR>
 " Edit Plugins
-nnoremap <silent><leader>ep :vsplit ~/.dotfiles/editors/nvim/plugin/plugins.vim<CR>
-nnoremap <silent><leader>e<S-P> :edit ~/.dotfiles/editors/nvim/plugin/plugins.vim<CR>
+nnoremap <leader>ep :vsplit ~/.dotfiles/editors/nvim/plugin/plugins.vim<CR>:echo<CR>
+nnoremap <leader>e<S-P> :edit ~/.dotfiles/editors/nvim/plugin/plugins.vim<CR>:echo<CR>
 " Edit Interfaces
-nnoremap <silent><leader>ei :vsplit ~/.dotfiles/editors/nvim/plugin/ui.vim<CR>
-nnoremap <silent><leader>e<S-I> :edit ~/.dotfiles/editors/nvim/plugin/ui.vim<CR>
+nnoremap <leader>ei :vsplit ~/.dotfiles/editors/nvim/plugin/ui.vim<CR>:echo<CR>
+nnoremap <leader>e<S-I> :edit ~/.dotfiles/editors/nvim/plugin/ui.vim<CR>:echo<CR>
 " Edit Theme
-nnoremap <silent><leader>et :vsplit ~/Projects/vim/vim-code-dark/colors/codedark.vim<CR>
-nnoremap <silent><leader>eT :edit ~/Projects/vim/vim-code-dark/colors/codedark.vim<CR>
+nnoremap <leader>et :vsplit ~/Projects/vim/vim-code-dark/colors/codedark.vim<CR>:echo<CR>
+nnoremap <leader>eT :edit ~/Projects/vim/vim-code-dark/colors/codedark.vim<CR>:echo<CR>
 " Edit Themes/
-nnoremap <silent><leader>eu :vsplit ~/.dotfiles/editors/nvim/colors<CR>
+nnoremap <leader>eu :vsplit ~/.dotfiles/editors/nvim/colors<CR>:echo<CR>
 
 
 
@@ -480,16 +492,17 @@ nnoremap <leader>tl :set wrap!<CR>:echo<CR>
 " Toggle TableMode
 nnoremap <leader>tm :tablemode#Toggle()<CR>
 " Paste
-nnoremap <leader>tp :set nopaste<CR>
+nnoremap <leader>tp :silent set nopaste<CR>
 " Quickfix List
 nnoremap <leader>tq :copen<CR>
 " Relative Line Numbers (set nru!)
 nnoremap <leader>tr :set norelativenumber!<CR>
 " Toggle Spell Checking
 nnoremap <leader>ts :set spell!<CR>:echo<CR>
-" Toggle TableMode
+" Toggle Tagbar
 nnoremap <leader>tt :TagbarToggle<CR>
 " Invisible Characters (whitespace)
 nnoremap <leader>tw :set list!<CR>
-
+" ToggleUndotree (as in ctrl-z)
+nnoremap <leader>tz :UndotreeToggle<CR>
 

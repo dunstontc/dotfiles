@@ -45,14 +45,14 @@ endif
 " ==============================================================================
 
 
-call denite#custom#map('insert', '<Esc>',  '<denite:enter_mode:normal>',     'noremap')
-call denite#custom#map('insert', '<C-q>',  '<denite:enter_mode:normal>',     'noremap')
-call denite#custom#map('insert', '𐌘',      '<denite:enter_mode:normal>',     'noremap')
-call denite#custom#map('insert', '<C-v>',  '<denite:do_action:vsplit>',      'noremap')
-call denite#custom#map('insert', '<C-x>',  '<denite:do_action:split>',      'noremap')
-call denite#custom#map('insert', '<C-n>',  '<denite:move_to_next_line>',     'noremap')
-call denite#custom#map('insert', '<C-p>',  '<denite:move_to_previous_line>', 'noremap')
-call denite#custom#map('insert', '<C-h>', '<denite:delete_word_before_caret>', 'noremap') " TODO: See if this works, remove if not.
+call denite#custom#map('insert', '<Esc>',  '<denite:enter_mode:normal>',           'noremap')
+call denite#custom#map('insert', '<C-q>',  '<denite:enter_mode:normal>',           'noremap')
+call denite#custom#map('insert', '𐌘',      '<denite:enter_mode:normal>',           'noremap')
+call denite#custom#map('insert', '<C-v>',  '<denite:do_action:vsplit>',            'noremap')
+call denite#custom#map('insert', '<C-x>',  '<denite:do_action:split>',             'noremap')
+call denite#custom#map('insert', '<C-p>',  '<denite:move_to_next_line>',           'noremap')
+call denite#custom#map('insert', '<C-n>',  '<denite:move_to_previous_line>',       'noremap')
+call denite#custom#map('insert', '<C-h>',  '<denite:delete_word_before_caret>',    'noremap') " TODO: See if this works, remove if not.
 call denite#custom#map('insert', '<C-a>',  '<denite:move_caret_to_one_word_left>', 'noremap')
 " call denite#custom#map('insert', '<M-left>',   '<denite:move_caret_to_one_word_left>', 'noremap')
 " call denite#custom#map('insert', '<M-right>',  '<denite:move_caret_to_end_of_word>', 'noremap')
