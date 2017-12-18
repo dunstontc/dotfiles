@@ -71,7 +71,7 @@ tex:          "\ue600"
 tex:          "\ue14f" # 
 ts:           "\ue628"
 twig:         "\ue61c"
-txt:          "\uf15c"
+# txt:          "\uf15c"
 video:        "\uf03d"
 # vim:          "\ue62b"
 vim:          "\ue7c5" # 
@@ -82,7 +82,6 @@ xml:          "\ue619"
 yarn.lock:    "\ue718"
 yml:          "\ue706" # 
 zip:          "\uf410"
-
 Mercural:     "\ue11e" # 
 Subversion:   "\ue11f" # 
 X11:          "\ue120" # 
@@ -92,3 +91,5 @@ ranger:       "\ue0f8" # 
 inputrc:      "\ue779" # 
 makefile:     "\ue779" # 
 todo:         "\uf45e" # 
+todo.txt:     "\uf45e" # 
+tags:         "\uf412" # 

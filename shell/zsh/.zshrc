@@ -78,6 +78,7 @@ source $HOME/.dotfiles/ignore/.private
 # =============================================================================
 # test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 source $HOME/.dotfiles/shell/.highlight
+source $HOME/.dotfiles/shell/functions/.fzf.functions
 
 # =============================================================================
 # If this option is unset, output flow control via start/stop characters
@@ -175,7 +176,7 @@ bindkey '^F' fzf-file-widget
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_COMPLETION_TRIGGER='/'
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # =============================================================================
 # eval $(thefuck --alias --enable-experimental-instant-mode)
 compdef vman="man"

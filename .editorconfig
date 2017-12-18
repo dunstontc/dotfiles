@@ -14,8 +14,11 @@ insert_final_newline = true
 max_line_length = 233
 trim_trailing_whitespace = true
 
-[*.md]
+[*.{md,csv,tsv}]
 trim_trailing_whitespace = false
+
+[*.{go,tsv}]
+indent_style = tab
 
 [*.{bash,html,js,json,lua,rb,sh}]
 indent_size = 2
@@ -28,7 +31,6 @@ indent_style = space
 [*.go]
 indent_size = 1
 indent_style = tab
-
 
 # [*.{rb,sh,bash,zsh}]
 # indent_size = 4

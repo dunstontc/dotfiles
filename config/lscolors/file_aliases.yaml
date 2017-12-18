@@ -89,17 +89,18 @@ bashrc:       bash
 bash_profile: bash
 bash_history: bash
 inputrc:      bash
-lesshst     : log
+lesshst:      log
 
-rc.conf:      ranger
-rifle.conf:   ranger
-scope.sh:     ranger
-commands.py:  ranger
-vimrc      :  vim
-viminfo    :  vim
+rc.conf:       ranger
+rifle.conf:    ranger
+scope.sh:      ranger
+commands.py:   ranger
+vimrc:         vim
+viminfo:       vim
 vim-bookmarks: vim
-taskrc     :  todo
-todo       :  todo
-# todo.txt   :  todo
+ctags:         tags
+taskrc:        todo
+# todo.txt:      todo
+done.txt:      todo
 # done.txt   :  todo
 # zcompdump:    trash

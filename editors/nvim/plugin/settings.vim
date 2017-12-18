@@ -1,22 +1,24 @@
 " ==============================================================================
-"   Config
+" Config
 " ==============================================================================
 set encoding=utf-8 nobomb
-set clipboard=unnamedplus  " Use the OS clipboard by default (on versions compiled with `+clipboard`)
-set modeline               " Respect modeline in files
-set modelines=5            " Well, in the first 5 lines of files
-set nopaste                " Use system pasting
-set noerrorbells           " Disable error bells
-set visualbell             " Disable error bells
-set belloff=all            " Disable error bells
-set report=100             " Minimum # of changes for commandline notification
-" set ttyfast
-set hidden                 " Keep buffers alive
-set nospell                " Let filetype settings set spell
-
-set noswapfile             " No thanks
-set nobackup               " I'm alright
-set undofile               " Persistent Undo though
+set clipboard=unnamedplus    " Use the OS clipboard by default (on versions compiled with `+clipboard`)
+set modeline                 " Respect modeline in files
+set modelines=5              " Well, in the first 5 lines of files
+set diffopt+=iwhite,vertical " Ignore changes in amount of white space
+set nopaste                  " Use system pasting
+set noerrorbells             " Disable error bells
+set visualbell               " Disable error bells
+set belloff=all              " Disable error bells
+" set ttyfast                " Assume we're using a modern terminal
+set hidden                   " Keep buffers alive
+set nospell                  " Let filetype settings set spell
+set noswapfile               " No thanks
+set nobackup                 " I'm alright
+set splitbelow               " New split placed below
+set splitright               " New split placed right
+set winminheight=0           " Allow splits to be reduced to a single line
+set undofile                 " Persistent Undo though
 set undodir=~/.config/nvim/undo
 
 set shell=/usr/local/bin/bash
@@ -31,25 +33,33 @@ set grepformat=%f:%l:%c:%m
 
 " === Navigation/Motion ===
 set mouse=a                     " Enable the mouse
+if has('mouse_sgr')
+    set ttymouse=sgr
+endif
 set backspace=indent,eol,start  " Make <BS> work as expected
 " set whichwrap+=<,>,h,l,[,]      " Lake Left/Right at the Start/End of lines work like you'd expect
 " set formatoptions-=c            " Auto-wrap comments using textwidth, inserting the current comment leader automatically.
 " set formatoptions-=r            " Automatically insert the current comment leader after hitting <Enter> in Insert mode.
 set formatoptions-=o            " Automatically insert the current comment leader after hitting 'o' or 'O' in Normal mode.
+  set formatoptions+=j          " Get rid of comment leaders when joining lines
 set nostartofline               " Don't reset cursor to start of line when moving around
+" set virtualedit=block,onemore   " TODO: See if what breaks with 'onemore' DONE: I don't think any good came of this
 set virtualedit=block
 
 " === Tabs & Spaces ===
 set autoindent                  " Autoidentation on
 set copyindent                  " Copy indent from the previous line
 set expandtab                   " Expand Tabs (pressing Tab inserts spaces)
+set shiftround                  " Round indent to multiple of 'shiftwidth'
 set smartindent                 " Smart Indentation on
 set smarttab                    " Tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
 set nojoinspaces                " don't autoinsert two spaces after '.', '?', '!' for join command
 
 " set notimeout
 " set ttimeout
-
+set timeoutlen=1000
+set ttimeoutlen=0
+set whichwrap=b,s,h,l,[,],<,> "Allow specified keys to move to the previous/next line
 
 
 " ==============================================================================
@@ -57,12 +67,18 @@ set nojoinspaces                " don't autoinsert two spaces after '.', '?', '!
 " ==============================================================================
 set termguicolors
 " set guicursor=
-" let $NVIM_TUI_ENABLE_CURSOR_SHAPE=0
+" let g:vitality_shell_cursor = 1
+" set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:block-lCursor,r-cr:hor20-Cursor/lCursor
+set guicursor=a:blinkon0
+set guicursor+=n-c:block-Cursor/lCursor-blinkon0
+set guicursor+=i-ci:block-lCursor
+set guicursor+=v:block-iCursor
+set guicursor+=r-cr-ci:hor20-Cursor/lCursor
+" let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+" let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
+" let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 
 highlight Comment gui=italic
-
-" set nvim_tui_enable_cursor_shape=1
-" let $NVIM_TUI_ENABLE_CURSOR_SHAPE=2
 " set t_Co=256
 " set background=dark
 
@@ -70,11 +86,11 @@ colorscheme codedark
 " colorscheme gruvbox
 " colorscheme apprentice
 " colorscheme spring-night
-let g:quantum_black=1
-let g:quantum_italics=1
+let g:quantum_italics=1          " Enable darker quantum colortheme
+let g:quantum_black=1            " Enable italic font in quantum colorscheme
 " let g:enable_italic_font=1     " Enable italic font in one dark colorscheme
 " let g:enable_bold_font=1       " Enable bold   font in one dark colorscheme
-
+set concealcursor=iv
 set conceallevel=2             " Enable conceal
 set cursorline                 " Highlight current line
 set nowrap                     " Do not wrap lines
@@ -86,15 +102,14 @@ set scrolloff=5                " Start scrolling x lines before horizontal borde
 set sidescrolloff=5            " Start scrolling x columns before vertical border of window
 set sidescroll=5
 " set showmatch                  " Highlight matching braces
-set emoji                      " When on all Unicode emoji characters are considered to be full width.
+set showtabline=2
 set notitle                    " Don't Show the filename in the window titlebar
 " set linespace=0    " No extra spaces between rows
 " set pumheight=20   " Avoid the pop up menu occupying the whole screen
-set nolazyredraw                " Don't redraw
+set lazyredraw                " Don't redraw
 
 " syntax sync minlines=200
 " syntax sync maxlines=500
-" set synmaxcol=400
 
 " set textwidth=78
 " set synmaxcol=200             " Don't syntax highlight long lines
@@ -103,37 +118,36 @@ if exists('+colorcolumn')
 endif
 
 
-" === UI Characters ===
-" \ | │ ║ ─
-set fillchars+=stl:\           " Maybe fix issue with statuslineNC Highlighting???
-set fillchars+=stlnc:\         " Maybe fix issue with statuslineNC Highlighting???
-set fillchars+=vert:│
-" set fillchars+=diff:-
-set fillchars+=fold:─
-" if has('windows')
-"   set fillchars=diff:⣿                " BOX DRAWINGS
-"   set fillchars+=vert:┃               " HEAVY VERTICAL (U+2503, UTF-8: E2 94 83)
-"   set fillchars+=fold:·
-" endif
-
-
+" ==============================================================================
 " === Formatting Characters ===
+" ==============================================================================
 " ¬ ↪ → · ● ❯ ❮
 set listchars+=tab:→\   " Comment here to keep whitespace intact
-set listchars+=eol:\    " Comment here to keep whitespace intact
-set listchars+=trail:·
-set listchars+=nbsp:\   " Comment here to keep whitespace intact
+" set listchars+=eol:¬   " Comment here to keep whitespace intact
+" set listchars+=eol:\    " Comment here to keep whitespace intact
+set listchars+=trail:●
+" set listchars+=nbsp:\   " Comment here to keep whitespace intact
+" set listchars+=nbsp:●   " Comment here to keep whitespace intact
+" set listchars+=space:●   " Comment here to keep whitespace intact
 " set listchars+=extends:❯
 " set listchars+=precedes:❮
 set showbreak=↪
 set list
 
-" ==== Splits ====
-set splitright                  " New split placed right
-set splitbelow                  " New split placed below
-set winminheight=0              " Allow splits to be reduced to a single line
+" === UI Characters ===
+" \ | │ ║ ─
+set fillchars+=stl:\           " Fix issue with statuslineNC Highlighting
+set fillchars+=stlnc:\         " Fix issue with statuslineNC Highlighting
+set fillchars+=vert:│
+set fillchars+=diff:─
+set fillchars+=fold:─
 
+set emoji                      " When on all Unicode emoji characters are considered to be full width.
 
+if has('ambiwidth')
+  " ref: https://gist.github.com/sgk/5991138
+  set ambiwidth=double "Use twice the width of ASCII characters for Multibyte
+endif
 
 " ==============================================================================
 "   Preferences
@@ -141,34 +155,48 @@ set winminheight=0              " Allow splits to be reduced to a single line
 
 " === Search ===
 set magic                       " Enable extended regexes
-set gdefault                    " By default add g flag to search/replace. Add g to toggle
+" set gdefault                    " By default add g flag to search/replace. Add g to toggle
 set incsearch                   " Search as characters are entered
-set hlsearch                    " Highlight matches
 set ignorecase                  " Ignore case of searches
 set smartcase                   " Ignore 'ignorecase' if search patter contains uppercase characters
+set hlsearch                    " Highlight matches
+set hlsearch | nohlsearch       " Highlight search patterns, support reloading
+set wrapscan                    " Searches wrap around the end of the file
 
-" === dictionary ===
-set spelllang=en_us        " Language and region to use for spellchecking
+" ==============================================================================
+" === Dictionary ===
+" ==============================================================================
+set spelllang=en,en_us
 set dictionary+=~/grammar/google-10000-english-usa.txt
 " setlocal dictionary+=/usr/share/dict/words
 " setlocal dictionary+=/usr/share/dict/american-english
 
+
+
+" ==============================================================================
 " === Folding ===
+" ==============================================================================
 set foldenable                  " Enable folding
 " set foldmethod=manual
-set foldmethod=syntax
-set foldlevelstart=3            " Default folding level when buffer is opened
+" set foldmethod=syntax
+set foldlevelstart=9            " Default folding level when buffer is opened
 set foldnestmax=10              " Maximum nested fold
-" set foldtext=functions#NeatFoldText()
+set foldtext=functions#NeatFoldTextTwo()
 
-" === Insert Mode Completion ===
+
+" ==============================================================================
+" === ≈ Completion ===
+" ==============================================================================
+" set completeopt&
 " set completeopt+=longest
 " set completeopt+=menu
 set completeopt+=menuone
 " set completeopt-=noinsert
 " set completeopt+=preview
 set completeopt-=preview
-" set pumheight=20   " Avoid the pop up menu occupying the whole screen
+" set pumheight=20        " Avoid the pop up menu occupying the whole screen
+set infercase             " Ignore case on insert completion
+set showfulltag           " Show rich info for ins-completion
 
 
 " ==============================================================================
@@ -177,20 +205,20 @@ set completeopt-=preview
 
 " === General ===
 set cmdheight=2
-set showcmd                    " Show (partial) command in the last line of the screen.
+set noshowcmd                  " Show (partial) command in the last line of the screen.
 set noshowmode                 " Don't show the current mode (airline takes care of this)
-set report=1                   " Report more than 10 lines changed at once
+set report=1                   " Report more than x lines changed at once
 
 " === Completion ===
 set wildmenu                    " Visual autocomplete for command menu
-set wildcharm=<C-z>             " Trigger for completion in macros
-" set wildmode=longest:full,full   " 👈
-set wildmode=list:longest,list:full
+" set wildcharm=<C-z>             " Trigger for completion in macros
+set wildmode=longest:full,full   " 👈
+" set wildmode=list:longest,list:full
+" set wildmode=list:longest,full
 " set wildmode=list:full
 " set wildmode=list:longest
-" set wildmode=list:longest,full
 set wildignorecase
-set wildignore+=*.pyc            "stuff to ignore when tab completing
+set wildignore+=*.pyc
 set wildignore+=.git/*
 set wildignore+=.hg/*
 set wildignore+=.svn/*
@@ -220,7 +248,7 @@ set shortmess+=T               " Truncate other messages in the middle if they a
                                "     Ignored in Ex mode.
 set shortmess+=F               " Don't give the file info when editing a file,
                                "     like `:silent` was used for the command
-set shortmess=aoOcstTF
+" set shortmess=aoOcstTF
 
 
 " ==============================================================================
@@ -244,6 +272,8 @@ let g:loaded_tutor_mode_plugin = 1
 " let g:loaded_zipPlugin = 1
 " let g:loaded_gzip = 1
 " let g:loaded_rrhelper = 1
+
+let dgs#username='dunstontc'
 
 let g:session_directory='~/.config/nvim/sessions'
 

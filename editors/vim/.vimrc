@@ -93,6 +93,9 @@ set shell=/usr/local/bin/bash
 if has('mouse')
     set mouse=a                " Enable mouse in all modes
 endif
+if has('mouse_sgr')            " Way better mouse support
+    set ttymouse=sgr
+  endif
 " if has('unnamedplus')
 "   set clipboard=unnamedplus,unnamed
 " else

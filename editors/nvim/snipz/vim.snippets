@@ -33,10 +33,16 @@ endsnippet
 
 # ==============================================================================
 
-snippet execute "execute('{command}')"
+snippet execute "execute('<command>')"
   execute(${2:'$1'})$0
 endsnippet
 
+snippet autogroup "Group of autocommands"
+augroup $1
+  ${2:autocmd!}
+	$0
+augroup END
+endsnippet
 
 # ==============================================================================
 #  Plugins
@@ -65,17 +71,21 @@ call g:quickmenu#append(
       \ '${4:filetypes}', 0, '${5:shortcut}')
 endsnippet
 
+snippet hilite "Syntax Highlighting Function" b
+call <sid>hi('$1',    ${2:{}},   ${3:{}}, ${4:'none'}, ${5:{}})$0
+endsnippet
+
 # ==============================================================================
 #  Dividers
 # ==============================================================================
 
 snippet header "File, Author, & License" b
-" ==============================================================================
-"  File: `!v expand("%:t")`
-"  Author: ${1:Clay Dunston} ${2:<dunstontc@gmail.com>}
-"  License: ${3:MIT license}
-"  Last Modified: $4
-" ==============================================================================
+# ==============================================================================
+#  FILE: `!v expand("%:t")`
+#  AUTHOR: Clay Dunston <dunstontc@gmail.com>
+#  License: ${3:MIT license}
+#  Last Modified: `!v strftime("%Y-%m-%d")`
+# ==============================================================================
 $0
 endsnippet
 

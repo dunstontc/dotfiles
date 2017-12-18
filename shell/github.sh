@@ -23,16 +23,16 @@ alias gst='git status'
 
 
 function komet() {
-	git add . && git commit -m $1  # TODO: filter the input here
+	git add . && git commit -m "$1"  # FIXME: filter the input here
 }
 
 function forrk() {
-  git remote add upstream $1;
+  git remote add upstream "$1";
 	git remote -v
 }
 
 # Stop tracking an ignored file.
 function g4get() {
-    git -rm --cached $1;
+    git -rm --cached "$1";
     git add .
 }

@@ -2,6 +2,9 @@
 
 Custom {{{
 =========================
+# Native
+Next in changelist       g,
+Back in changelist       g;
 # General
 Normal Mode              «C-q»        VI
 Toggle Comments          «H-/»         N
@@ -27,7 +30,7 @@ paragraph                ip
 camelCase / snake_case   iv
 ' Single Quotes          i'
 " Double Quotes          i"
-` Backtics                i`
+`Backtics                i`
 ()                       ib
 {}                       i«S-B»
 []                       i]

@@ -152,5 +152,5 @@ hi link rstEmphasis Number
 """ vimHelp {{{3
 hi link helpExample Number
 hi link helpNumber String
-hi helpURL ctermfg=110 guifg=#87afdf                           cterm=underline gui=underline
+" hi link helpURL ctermfg=110 guifg=#87afdf cterm=underline gui=underline
 hi link helpHyperTextEntry helpURL

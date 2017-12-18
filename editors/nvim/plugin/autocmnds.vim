@@ -46,9 +46,14 @@ augroup MyAutoCmds
 
   " autocmd FileType python setlocal completeopt-=preview
 
-  autocmd InsertEnter * highlight! CursorLineNr guifg=#569CD6 " guibg=#303030
+  " autocmd InsertEnter * highlight! CursorLineNr guifg=#569CD6 " guibg=#303030
+  " autocmd InsertEnter * highlight! Cursor guibg=#569CD6
+  " autocmd InsertEnter * !iterm_nudge --color l569CD6
   " autocmd InsertEnter * hi! EndOfBuffer guifg=#569CD6 guibg=#303030
-  autocmd InsertLeave * highlight! CursorLineNr guifg=#608B4E " guibg=#303030
+  " autocmd InsertLeave * highlight! CursorLineNr guifg=#608B4E " guibg=#303030
+  " autocmd InsertLeave * highlight! Cursor guibg=#608B4E
+  " autocmd InsertLeave * !iterm_nudge --color l608B4E
+
   " autocmd InsertLeave * hi! EndOfBuffer guifg=#608B4E guibg=#303030
 
   autocmd BufNewFile,BufRead * setlocal formatoptions-=r

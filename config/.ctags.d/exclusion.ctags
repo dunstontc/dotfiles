@@ -1,0 +1,52 @@
+# Exclustions:
+--exclude=tags
+--exclude=TAGS
+--exclude=GTAGS
+--exclude=GPATH
+
+--exclude=*.hg*
+--exclude=*.cvs*
+--exclude=*.svn*
+--exclude=*.git*
+--exclude=*.idea*
+--exclude=*.vscode*
+
+--exclude=*compiled*
+--exclude=*bundle.*
+--exclude=build
+--exclude=dist
+--exclude=out
+--exclude=vendor
+--exclude=target
+
+--exclude=test
+--exclude=tests
+
+--exclude=*log*
+--exclude=*.log
+--exclude=.tmp
+--exclude=\*.map
+--exclude=\*.min.\*
+--exclude=\*.cache
+--exclude=__pycache__
+
+--exclude=*vender*
+--exclude=*bower_components*
+--exclude=*node_modules*
+
+--exclude=\*.tar.\*
+--exclude=*images*
+--exclude=*.DS_Store*
+
+
+# --exclude=\*.swp
+# --exclude=\*.bak
+# --exclude=\*.pyc
+# --exclude=\*.class
+# --exclude=\*.sln
+# --exclude=\*.Master
+# --exclude=\*.csproj
+# --exclude=\*.csproj.user
+# --exclude=\*.dll
+# --exclude=\*.pdb
+# --exclude=cscope.\*

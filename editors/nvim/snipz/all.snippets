@@ -5,8 +5,8 @@ snippet todo "TODO comment" bw
 `!p snip.rv=get_comment_format()[0]` ${2:TODO}: $0${3: <${4:`!v strftime('%d-%m-%y')`}${5:, `!v g:snips_author`}>} `!p snip.rv=get_comment_format()[2]`
 endsnippet
 
-snippet modeline
-vim: set ts=${1:4} sw=${2:$1}${3: MORE OPTIONS}:$0
+snippet modeline "Vim settings" b
+vim:${1:filetype=$2:}${3:foldmethod=${4:marker}:}${5:${6:tabstop=4:}${7:shiftwidth=4:}${8:softtabstop=0:}${9:noexpandtab:}}
 endsnippet
 
 snippet date "YYYY-MM-DD" w

@@ -7,8 +7,6 @@ map <S-ScrollWheelUp> <C-U>
 " map <ScrollWheelDown> <C-E>
 map <S-ScrollWheelDown> <C-D>
 
-" nmap <up> <C-U>
-" nmap <down> <C-D>
 
 " ==============================================================================
 "  Key Mappings
@@ -47,7 +45,9 @@ nnoremap <silent>\ :noh<CR>:call anzu#clear_search_status()<CR>:echo<CR>
 
 nnoremap R <Nop>
 " Quit with Q
-nnoremap <S-Q> :q<CR>
+nnoremap q :x<CR>
+nnoremap <S-Q> q
+
 
 " Escape the terminal
 tnoremap <Esc> <C-\><C-n>
@@ -55,48 +55,40 @@ tnoremap <Esc> <C-\><C-n>
 " Bigger Steps
 noremap <S-H> 0
 noremap <S-L> $
+vnoremap <S-L> g_
 
+" Better Steps
+noremap <S-E> ge
+noremap <S-B> w
+
+" Put newly available 'w' to good use
+noremap w @:
+noremap <S-W> @@
+
+" Edits in normal mode
 nnoremap <BS> i<DEL><esc><right>
 noremap ,, i<space><esc>
 nnoremap [<Space> mwO<esc>mx`w
 nnoremap ]<Space> mwo<esc>mx`w
 
 " gtfo
-nnoremap fj :x<CR>
-inoremap fj <esc>:x<CR>
+nnoremap fj :Sayonara<CR>
+inoremap fj <esc>:Sayonara<CR>
 
-
-" Yank into the void
-noremap d "_d
-noremap D "_D
-noremap dd "_dd
-noremap c "_c
-noremap C "_C
-
-nnoremap ,p "0p
-vnoremap ,p "0p
-" nnoremap p "0P
-" vnoremap p "0P
-
-nnoremap X Vx
-
-" Yank Better
-nnoremap yy Vy
-nnoremap <S-y> v$y
 
 " Save wih ⌘ -s
 " ᚠ - runic letter f (U+16A0)
-nnoremap <silent> ᚠ :silent w<CR>
-inoremap <silent> ᚠ <C-o>:silent w<CR>
+nnoremap <silent>ᚠ :silent w<CR>
+inoremap <silent>ᚠ <C-o>:silent w<CR>
 
 " Comment wih ⌘ -/
 " ᚣ - runic letter yr (U+16A3)
-noremap <silent> ᚣ :TComment<CR>
-inoremap <silent> ᚣ <esc>:TComment<CR>
+noremap <silent>ᚣ :TComment<CR>
+inoremap <silent>ᚣ <esc>:TComment<CR>
 
 " <S-CR> New line below
 " ᚾ - runic letter n (U+16BE)
-" inoremap ᚾ <esc>o
+inoremap ᚾ <esc>o
 " <C-CR> New line above
 " ᚩ - runic letter os o (U+16A9)
 inoremap ᚩ <esc>O
@@ -114,12 +106,12 @@ nnoremap 𐌋 mxV"zy"zp`xj
 " Indentation
 " ᚻ - runic letter h (U+16BB)
 " ᚢ - runic letter u (U+16A2)
-vmap <silent> ᚻ <gv
-vmap <silent> ᚢ >gv
-nmap <silent> ᚻ <<
-nmap <silent> ᚢ >>
-imap <silent> ᚻ <esc><<A
-imap <silent> ᚢ <esc>>>A
+vmap <silent>ᚻ <gv
+vmap <silent>ᚢ >gv
+nmap <silent>ᚻ <<
+nmap <silent>ᚢ >>
+imap <silent>ᚻ <esc><<A
+imap <silent>ᚢ <esc>>>A
 
 
 " move the current line up or down
@@ -143,6 +135,12 @@ vnoremap 𐌓 :m '>+1<CR>gv=gv
 " cnoremap <Esc>b <S-Left>
 " cnoremap <Esc>f <S-Right>
 
+" Repeat on every line {{{
+" repeat last command for each line of a visual selection
+vnoremap . :normal .<CR>
+" replay @q macro for each line of a visual selection
+vnoremap @q :normal @q<CR>
+"}}}
 
 " === Unused ===
 " imap <C-F>
@@ -155,7 +153,6 @@ vnoremap 𐌓 :m '>+1<CR>gv=gv
 " map <S-ScrollWheelUp> <C-U>
 " map <S-ScrollWheelDown> <C-D>
 
-" nnoremap <leader>x :vimgrep TODO **/*.%:e \| cw<CR>
 
 
 " === readline ===
@@ -164,17 +161,55 @@ vnoremap 𐌓 :m '>+1<CR>gv=gv
 " inoremap <M-left> <C-o>b
 " inoremap <M-right> <C-o>e
 
+" ==============================================================================
+"  Copy & Paste
+" ==============================================================================
+
+" Yank into the void
+noremap d "_d
+noremap D "_D
+noremap dd "_dd
+noremap c "_c
+noremap C "_C
+
+" Paste from the top of the stack
+nnoremap ,p "0p
+vnoremap ,p "0p
+" nnoremap p "0P
+" vnoremap p "0P
+" Paste & persist
+vnoremap p pgvy
+
+" Cut better
+nnoremap X Vx
+
+" Yank Better
+nnoremap yy Vy
+nnoremap <S-y> v$y
+
+" Yank with keeping cursor position in visual mode {{{
+" Thanks @haya14busa
+function! s:keepcursor_visual_wrapper(command)
+  execute 'normal! gv' . a:command
+  execute "normal! gv\<ESC>"
+endfunction
+xnoremap <silent> y :<C-u>call <SID>keepcursor_visual_wrapper('y')<CR>
+xnoremap <silent> Y :<C-u>call <SID>keepcursor_visual_wrapper('Y')<CR>
+"}}}
+
+
+
 
 " ==============================================================================
 "  Plugins
 " ==============================================================================
 
-" === EasyAlign ===
+" === junegunn/EasyAlign ===
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 " === vim-expand-region ===
-map ᚾ <Plug>(expand_region_expand)
+map K <Plug>(expand_region_expand)
 " map K <Plug>(expand_region_expand)
 map J <Plug>(expand_region_shrink)
 
@@ -201,6 +236,9 @@ let g:tcommentTextObjectInlineComment=''
 " === w0rp/ale ===
 nmap <silent> [a <Plug>(ale_previous_wrap)
 nmap <silent> ]a <Plug>(ale_next_wrap)
+
+" === heavenshell/vim-pydocstring ===
+nmap <silent> <C-_> <Plug>(pydocstring)
 
 " === vim-multiple-cursors ===
 let g:multi_cursor_use_default_mapping=0
@@ -266,7 +304,7 @@ let g:sneak#label = 1
 let g:sneak#label_esc = "\<Space>"
 let g:sneak#target_labels = "asldkfjghzxmcnvb"
 
-let g:sneak#s_next = 0
+let g:sneak#s_next = 1
 let g:sneak#use_ic_scs = 1
 
 " noremap z <Plug>Sneak_s
@@ -329,6 +367,7 @@ nnoremap <leader>` :Deol -split -start-insert<CR>
 " c   -- Comment
 noremap <silent> <leader>c :TComment<CR>
 " g   -- Grep
+noremap <silent> <leader>g :Denite grep<CR>
 " l   -- List Buffers
 " m   -- replay Macro
 nnoremap <leader>m @
@@ -337,15 +376,15 @@ nnoremap <leader>m @
 " s   -- Search & Replace
 nnoremap <leader>s :%s///g<left><left><left>
 " r   -- Reload
-nnoremap <leader>rr :source $MYVIMRC<CR>
+nnoremap <leader>rr :source $MYVIMRC<CR>:call lightline#update_once()<CR>
 " u   -- Unundo
 nnoremap <leader>u :redo<CR>
 " f t -- FileTree
 nnoremap <leader>ft :VimFilerExplorer<CR>
 " v   -- Vertical Split
 nnoremap <leader>v :vsplit \| Startify<CR>:echo<CR>
-" x   -- eXit
-nnoremap <leader>x :q!<CR>
+" x   -- ...Todo...
+nnoremap <leader>x :Denite todo<CR>
 
 
 
@@ -354,7 +393,7 @@ nnoremap <leader>x :q!<CR>
 "  === b -- Buffers===
 " ==============================================================================
 " l -- List Buffers
-nnoremap <leader>l :ls<CR>
+nnoremap <leader>l :Denite buffer -mode=normal<CR>
 " Next Buffer
 nnoremap <leader>bn :bn<CR>
 " Previous Buffer
@@ -367,19 +406,21 @@ nnoremap <leader>bv :vert ball<CR>
 nnoremap <leader>bd :bd<CR>
 " Close a buffer, leave it on the list
 nnoremap <leader>bq :q<CR>
-
+nnoremap <leader><Left> :bprev<CR>
+nnoremap <leader><Right> :bnext<CR>
 
 
 " ==============================================================================
 "  === d -- Denite ===
 " ==============================================================================
 nnoremap <leader>dc :Denite menu:config<CR>
-nnoremap <leader>db :Denite buffer<CR>
+nnoremap <leader>db :Denite bookmark<CR>
 nnoremap <leader>dd :Denite menu:Denite<CR>
 nnoremap <leader>dh :Denite help<CR>
 nnoremap <leader>dm :Denite file_mru<CR>
 nnoremap <leader>ds :Denite menu:dotfiles<CR>
 nnoremap <leader>du :Unite
+nnoremap <leader>dt :Denite todo<CR>
 
 
 
@@ -441,13 +482,13 @@ nnoremap <leader><S-H> :Denite help<CR>
 " Cheat Sheet
 nnoremap <leader>hc :Cheat40Open<CR>
 " Check Health
-nnoremap <leader>hh :checkhealth nvim
+nnoremap <leader>hh :checkhealth nvim<CR>
 " index.man
-nnoremap <leader>hi :H index
+nnoremap <leader>hi :H index<CR>
 " Quickmenu
 " nnoremap <leader>, :call quickmenu#toggle(0)<CR>
 " Messages
-nnoremap <leader>hm :messages<CR>
+nnoremap <leader>hm :Capture messages<CR>
 " hd -- Help, Describe:
 " Describe Character
 nnoremap <leader>hdc :ascii<CR>
@@ -492,7 +533,7 @@ nnoremap <leader>tl :set wrap!<CR>:echo<CR>
 " Toggle TableMode
 nnoremap <leader>tm :tablemode#Toggle()<CR>
 " Paste
-nnoremap <leader>tp :silent set nopaste<CR>
+nnoremap <leader>tp :set nopaste<CR>
 " Quickfix List
 nnoremap <leader>tq :copen<CR>
 " Relative Line Numbers (set nru!)

@@ -74,7 +74,7 @@ shopt -s cdspell 2> /dev/null  # Correct spelling errors in arguments supplied t
 # =============================================================================
 #  completion +
 # =============================================================================
-complete -o default -o nospace -F _man vman
+# complete -o default -o nospace -F _man vman
 complete -F _fzf_path_completion -o default -o bashdefault ag
 complete -F _fzf_dir_completion -o default -o bashdefault tree
 

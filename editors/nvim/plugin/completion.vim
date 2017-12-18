@@ -1,18 +1,18 @@
 " ==============================================================================
-"  === echodoc ===
+"  === Shougo/echodoc ===
 " ==============================================================================
 let g:echodoc#enable_at_startup = 1
 " The documentation display type.
 "echo": It uses the command line |:echo|.
 "signature": It uses gonvim signature feature.
-let g:echodoc#type='echo'
+" let g:echodoc#type='echo'
 " let g:echodoc_type='echo'
 " let g:echodoc#type='signature'
 " let g:echodoc_type='signature'
 " The highlight of identifier.
-let g:echodoc#highlight_identifier = "Identifier"
+" let g:echodoc#highlight_identifier = "Identifier"
 " The highlight of current argument.
-let g:echodoc#highlight_arguments = "Special"
+" let g:echodoc#highlight_arguments = "Special"
 
 
 " ==============================================================================
@@ -23,16 +23,26 @@ let g:deoplete#max_list = 500
 let g:deoplete#auto_complete_delay = 150
 let g:deoplete#auto_refresh_delay = 1000
 
-let g:deoplete#disable_auto_complete=0
+let g:deoplete#disable_auto_complete = 0
 let g:deoplete#auto_completion_start_length = 1
 
-let g:deoplete#min_keyword_length=1
-let g:deoplete#min_pattern_length=1
-" let g:deoplete#enable_camel_case = 1
+let g:deoplete#enable_camel_case = 1
 let g:deoplete#enable_ignore_case = 1
 let g:deoplete#enable_smart_case = 1
+let g:deoplete#min_keyword_length = 1
+let g:deoplete#min_pattern_length = 1
 let g:deoplete#sources#syntax#min_keyword_length = 1
 
+let g:deoplete#keyword_patterns = {}
+let g:deoplete#keyword_patterns._ = '[a-zA-Z_]\k*\(?'
+" let g:deoplete#keyword_patterns.tex = '\\?[a-zA-Z_]\w*'
+let g:deoplete#keyword_patterns.tex = '[^\w|\s][a-zA-Z_]\w*'
+
+let g:deoplete#omni#input_patterns = {}
+let g:deoplete#omni#input_patterns.python = ''
+let g:deoplete#omni#functions = {}
+
+let g:deoplete#skip_chars = ['(', ')']
 
 " let g:deoplete#ignore_sources =
 " let g:deoplete#skip_chars = ['(', ')', '<', '>']
@@ -47,6 +57,7 @@ call deoplete#custom#source('_', 'matchers', ['matcher_fuzzy'])
 " call deoplete#custom#source('_', 'sorters', ['sorter_word'])
 " call deoplete#custom#source('_', 'sorters', ['sorter_rank'])
 
+" ⌁ ⌘ ℬ'
 call deoplete#custom#source('vim',            'mark', '' )
 call deoplete#custom#source('tag',            'mark', '⌦' )
 call deoplete#custom#source('webcomplete',    'mark', '' )
@@ -54,6 +65,7 @@ call deoplete#custom#source('omni',           'mark', '⌾' )
 call deoplete#custom#source('file',           'mark', '' )
 call deoplete#custom#source('look',           'mark', '' )
 call deoplete#custom#source('jedi',           'mark', '' )
+call deoplete#custom#source('Jedi',           'mark', '' )
 call deoplete#custom#source('emoji',          'mark', '' )
 call deoplete#custom#source('around',         'mark', '↻' )
 call deoplete#custom#source('buffer',         'mark', '' )
@@ -75,15 +87,10 @@ call deoplete#custom#source('LanguageClient', 'mark', '⌾' )
 call deoplete#custom#source('emoji',      'filetypes', ['gitcommit', 'markdown', 'org', 'rst', 'txt', 'todo'])
 call deoplete#custom#source('dictionary', 'filetypes', ['gitcommit', 'markdown', 'org', 'rst', 'txt', 'todo'])
 
-call deoplete#custom#source('dictionary', 'min_pattern_length', 2)
 
-" call deoplete#custom#source('flow',          'mark', '⌁')
-" call deoplete#custom#source('neosnippet',    'mark', '⌘')
-" call deoplete#custom#source('buffer',        'mark', 'ℬ')
 
 
 " Default rank is 100, higher is better.
-
 call deoplete#custom#source('LanguageClient', 'rank', 800)
 call deoplete#custom#source('go',             'rank', 700)
 call deoplete#custom#source('TernJS',         'rank', 700)
@@ -122,6 +129,7 @@ call deoplete#custom#source('syntax',         'rank', 200)
 " === dictionary ===
 " ==============================================================================
 
+call deoplete#custom#source('dictionary', 'min_pattern_length', 2)
 " Remove this if you'd like to use fuzzy search
 " call deoplete#custom#source('dictionary', 'matchers', ['matcher_head'])
 " If dictionary is already sorted, no need to sort it again.
@@ -139,6 +147,31 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 " inoremap <expr> <tab>   pumvisible() ? "\<c-n>" : "\<tab>"
 " inoremap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
+" ==============================================================================
+"  === (tenfyzhong/CompleteParameter.vim) ===
+" ==============================================================================
+inoremap <silent><expr> ( complete_parameter#pre_complete("()")
+smap <c-n> <Plug>(complete_parameter#goto_next_parameter)
+imap <c-n> <Plug>(complete_parameter#goto_next_parameter)
+smap <c-p> <Plug>(complete_parameter#goto_previous_parameter)
+imap <c-p> <Plug>(complete_parameter#goto_previous_parameter)
+
+let g:complete_parameter_log_level = 5
+let g:complete_parameter_use_ultisnips_mapping = 1
+
+" if !exists('g:neocomplete#force_omni_input_patterns')
+"     let g:neocomplete#force_omni_input_patterns = {}
+" endif
+" let g:neocomplete#force_omni_input_patterns.javascript = '[^. \t]\.\w*'
+
+
+let g:deoplete#sources#padawan#server_addr = 'http://127.0.0.1:15155'
+let g:deoplete#sources#padawan#server_command = 'padawan-server'
+let g:deoplete#sources#padawan#composer_command = 'composer'
+let g:deoplete#sources#padawan#log_file = '/tmp/padawan-server.log'
+let g:deoplete#sources#padawan#server_autostart = 1
+let g:deoplete#sources#padawan#add_parentheses = 0
+let g:deoplete#sources#padawan#auto_update = 0
 
 " ==============================================================================
 " === Shougo/neosnippet.vim ===
@@ -203,8 +236,8 @@ let g:UltiSnipsJumpBackwardTrigger     = '<s-tab>'
 " let g:UltiSnipsSnippetsDir             = '$HOME/.dotfiles/editors/nvim/snipz'
 let g:UltiSnipsSnippetDirectories = ["snipz"]
 " let g:UltiSnipsListSnippets            = '<c-n>'
-" let g:UltiSnipsJumpForwardTrigger      = '<c-j>'
-" let g:UltiSnipsJumpBackwardTrigger     = '<c-k>'
+" let g:UltiSnipsJumpForwardTrigger      = '<c-n>'
+" let g:UltiSnipsJumpBackwardTrigger     = '<c-p>'
 
 " inoremap <expr><tab> pumvisible() ? "\<C-n>" : "\<TAB>"
 " inoremap <expr><s-tab> pumvisible() ? "\<C-p>" : "\<TAB>"
@@ -224,7 +257,6 @@ let g:necosyntax#max_syntax_line=1000
 " ==============================================================================
 let g:deoplete#sources#jedi#show_docstring = 1
 let g:deoplete#sources#jedi#enable_cache = 1
-let g:deoplete#sources#jedi#show_docstring = 0
 let g:deoplete#sources#jedi#statement_length = 50
 let g:deoplete#sources#jedi#server_timeout = 10
 

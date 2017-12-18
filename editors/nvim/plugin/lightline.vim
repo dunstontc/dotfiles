@@ -5,72 +5,151 @@ scriptencoding utf-8
 
 source /Users/clay/.dotfiles/editors/nvim/autoload/lightline/DarkPlus.vim
 
+" let g:lightline.enable = {
+"     \ 'statusline': 1,
+"     \ 'tabline': 1
+"     \ }
+
 let g:lightline = {
       \ 'colorscheme': 'DarkPlus',
-      \  'separator': { 'left': '', 'right': '' },
-      \  'subseparator': { 'left': '', 'right': '' },
+      \ 'separator':            { 'left': '', 'right': '' },
+      \ 'subseparator':         { 'left': '',  'right': ''  },
+      \ 'tabline_separator':    { 'left': '', 'right': '' },
+      \ 'tabline_subseparator': { 'left': '  ', 'right': '  ' },
+      \ 'tabline': {
+      \   'left': [ [ 'bufferinfo' ],
+      \             [ 'separator' ],
+      \             [ 'bufferbefore', 'buffercurrent', 'bufferafter' ], ],
+      \   'right': [ [ 'undecided' ], ],
+      \},
       \  'inactive': {
-      \    'left': [ ['buf_num', 'displace', 'mood'], ],
+      \    'left': [ [ 'pending' ], ],
       \    'right': [],
       \},
       \  'active': {
       \    'left': [ [ 's','mode','s'         ],
       \            [   'readonly', 'filename' ],
-      \            [   'icon',     'fsize'    ],
-      \            [   's','s','anzu','s','paste','s' ] ],
+      \            [   'icon',     'fsize',   'deniteP' ],
+      \            [   's','s','anzu', 'paste', 'peest','s' ] ],
       \    'right': [ [ 'cool_col' ],
-      \               [ 'tabsize'  ],
+      \               [ 'register', 'tabsize', ],
       \               [ 'linter_warnings', 'linter_errors', 's' ] ]
       \},
       \  'component': {
-      \    'clipboard': ' %{v:register}',
-      \    'displace' : ' %F',
-      \    'buf_num' : ' %n ',
       \    's'        : ' ',
+      \    'displace' : ' %F',
+      \    'separator': '',
       \},
       \  'component_function': {
       \    'mode':            'Mode',
-      \    'mood':            'Mood',
-      \    'filename':        'Filename',
-      \    'readonly':        'Readonly',
-      \    'filesymbol':      'WebDevIconsGetFileTypeSymbol',
-      \    'cool_col':        'PaddedStats',
+      \    'filename':        'lightline#Filename',
       \    'fsize':           'FileSize',
+      \    'readonly':        'Readonly',
+      \    'cool_col':        'PaddedStats',
       \    'gitbranch':       'GitInfo',
       \    'highlite':        'StatuslineCurrentHighlight',
       \    'tabsize':         'TabSizing',
-      \    'hud':             'Hud',
-      \    'icon':            'MyFiletype',
-      \    'anzu':            'anzu#search_status'
+      \    'register':        'Register',
+      \    'pending':         'lightline#Pending',
+      \    'icon':            'Devicon',
+      \    'anzu':            'anzu#search_status',
+      \    'bufferinfo':      'lightline#buffer#bufferinfo',
+      \    'deniteLN':        'DeniteLine',
+      \    'deniteP':         'DenitePath',
+      \    'undecided':       'IdkYet',
       \},
       \ 'component_expand': {
       \   'linter_warnings': 'LightlineLinterWarnings',
       \   'linter_errors':   'LightlineLinterErrors',
+      \   'peest':           'Pest',
+      \   'buffercurrent':   'lightline#buffer#buffercurrent',
+      \   'bufferbefore':    'lightline#buffer#bufferbefore',
+      \   'bufferafter':     'lightline#buffer#bufferafter',
       \},
       \ 'component_type': {
       \   'linter_warnings': 'warning',
       \   'linter_errors':   'error',
-      \   'linter_ok':       'ok'
+      \   'linter_ok':       'ok',
+      \   'peest':           'error',
+      \   'buffercurrent':   'tabsel',
+      \   'bufferbefore':    'raw',
+      \   'bufferafter':     'raw',
       \},
       \}
 
-
-
+let g:lightline.mode_map = {
+    \ 'n' :     'NORMAL',
+    \ 'i' :     'INSERT',
+    \ 'R' :     'REPLACE',
+    \ 'v' :     'VISUAL',
+    \ 'V' :     'V-LINE',
+    \ "\<C-v>": 'V-BLOCK',
+    \ 'c' :     'COMMAND',
+    \ 's' :     'SELECT',
+    \ 'S' :     'S-LINE',
+    \ "\<C-s>": 'S-BLOCK',
+    \ 't':      'TERMINAL',
+    \ 'Rv' : 'V·Replace ',
+    \ 'no' : 'N·Operator Pending ',
+    \ 'cv' : 'Vim Ex ',
+    \ 'ce' : 'Ex ',
+    \ 'r'  : 'Prompt ',
+    \ 'rm' : 'More ',
+    \ 'r?' : 'Confirm ',
+    \ 'ci' : 'CMD-I ',
+    \ 'cr' : 'CMD-R ',
+    \ 'o'  : 'Pending',
+    \ 'sm' : 'SHOW-MATCH ',
+    \ '!'  : 'Shell ',
+    \ }
 
 
 " ==============================================================================
 
-let g:tcd_blacklist = '\v(cheat40|denite|gundo|help|nerdtree|netrw|peekaboo|quickmenu|startify|undotree|unite|vimfiler|vimshell)'
+let g:tcd_blacklist = '\v(cheat40|denite|gundo|help|nerdtree|netrw|peekaboo|quickmenu|startify|tagbar|undotree|unite|vimfiler|vimshell)'
 
-" let g:unite_force_overwrite_statusline = 0
-" let g:denite_force_overwrite_statusline = 0
-" let g:vimfiler_force_overwrite_statusline = 0
+let g:unite_force_overwrite_statusline = 0
+let g:denite_force_overwrite_statusline = 0
+let g:vimfiler_force_overwrite_statusline = 0
+
+" ==============================================================================
+"  === taohex/lightline-buffer ===
+" ==============================================================================
+
+let g:lightline_buffer_logo = '   '
+let g:lightline_buffer_readonly_icon = ' '
+let g:lightline_buffer_modified_icon = '(+)'
+let g:lightline_buffer_git_icon = ' '
+let g:lightline_buffer_ellipsis_icon = '..'
+let g:lightline_buffer_expand_left_icon = '◀ '
+let g:lightline_buffer_expand_right_icon = ' ▶'
+let g:lightline_buffer_active_buffer_left_icon = ' %{WebDevIconsGetFileTypeSymbol()}'
+let g:lightline_buffer_active_buffer_right_icon = ' '
+let g:lightline_buffer_separator_icon = ' '
+
+let g:lightline_buffer_show_bufnr = 0
+let g:lightline_buffer_rotate = 0
+let g:lightline_buffer_fname_mod = ':t'
+let g:lightline_buffer_excludes = ['vimfiler', 'Startify']
+
+let g:lightline_buffer_maxflen = 30
+let g:lightline_buffer_minflen = 16
+let g:lightline_buffer_maxfextlen = 4
+let g:lightline_buffer_minfextlen = 4
+" let g:lightline_buffer_reservelen = 20
+function! IdkYet() abort
+  return '     '
+endfunction
+
 
 " ==============================================================================
 
 
 function! Mode() abort
-  return expand('%:t') ==#  '__Tagbar__' ? 'Tagbar'   :
+  if &filetype ==# 'denite'
+    return denite#get_status_mode()
+  endif
+  return
         \ expand('%:t') ==# 'ControlP'   ? 'CtrlP'    :
         \ expand('%:t') ==# 'peekaboo'   ? 'Peekaboo' :
         \ &filetype ==#     'cheat40'    ? 'Cheat40'  :
@@ -85,9 +164,10 @@ function! Mode() abort
         \ &filetype ==#     'quickmenu'  ? 'Menu'     :
         \ &filetype ==#     'qf'         ? 'Quickfix' :
         \ &filetype ==#     'startify'   ? 'Startify' :
+        \ &filetype ==#     'tagbar'     ? 'Tagbar'   :
         \ &filetype ==#     'unite'      ? 'Unite'    :
         \ &filetype ==#     'undotree'   ? 'UndoTree' :
-        \ &filetype ==#     'vimfiler'   ? 'VimFiler' :
+        \ &filetype ==#     'vimfiler'   ? 'VF'       :
         \ &filetype ==#     'vimshell'   ? 'VimShell' :
         \ lightline#mode()
 endfunction
@@ -98,13 +178,67 @@ function! Mood() abort
   let l:modified = &modified ? ' (+) ' : ''
   return &filetype !~# g:tcd_blacklist ? (l:modified) : ''
 endfunction
+
 " ==============================================================================
 
-function! Filename() abort
+function! DenitePath() abort
+  if &filetype ==# 'denite'
+    return '  '.denite#get_status_path().' '
+  else
+    return ''
+  endif
+endfunction
+
+" ==============================================================================
+
+function! DeniteLine() abort
+  if &filetype ==# 'denite'
+    return denite#get_status_sources().' '
+  else
+    return ''
+  endif
+endfunction
+
+" ==============================================================================
+
+""
+" For inactive files, returns the full path and &modified.
+function! lightline#Pending() abort
+  let l:filename = expand('%F') !=# '' ? expand('%F') : ''
+  let l:modified = &modified ? ' (+) ' : ''
+
+  if &filetype == 'vimfiler'
+    return vimfiler#get_status_string()
+  else
+    return &filetype !~# g:tcd_blacklist ? ('  '.l:filename.''.l:modified) : ' '
+  endif
+endfunction
+
+" ==============================================================================
+
+function! Pest() abort
+  if &paste
+    return '----------PASTE----------PASTE----------PASTE----------PASTE----------'
+  else
+    return ''
+  endif
+endfunction
+
+" ==============================================================================
+
+function! lightline#Filename() abort
   let l:filename = expand('%:t') !=# '' ? expand('%:t') : ''
   let l:modified = &modified ? ' +' : ''
-  " return &filetype !~# g:tcd_blacklist ? (' ' . l:filename . '' . l:modified) : ' '
-  return (' ' . l:filename . '' . l:modified)
+
+  if &filetype ==# 'vimfiler'
+    return ' ' . vimfiler#get_status_string()
+  elseif &filetype ==# 'denite'
+    return ' ' . denite#get_status_sources()
+  elseif &filetype ==# 'tagbar'
+    return ' '.g:lightline.fname
+  else
+    return &filetype !~# g:tcd_blacklist ? (' '.l:filename.''.l:modified) : ' '
+  endif
 endfunction
 
 " ==============================================================================
@@ -115,14 +249,23 @@ endfunction
 
 " ==============================================================================
 
+""
+" In normal files, returns the name of the currently selected register.
+function! Register() abort
+  return &filetype !~# g:tcd_blacklist && winwidth(0) > 60 ? ' '.v:register.'' : ''
+endfunction
+
+" ==============================================================================
+
+""
+" In normal files, returns the current value of a tab.
 function! TabSizing() abort
   return &filetype !~# g:tcd_blacklist && winwidth(0) > 60 ? ( '␉ ' . &shiftwidth . ' ') : ''
 endfunction
 
 " ==============================================================================
 
-function! MyFiletype()
-  " return winwidth(0) > 60 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+function! Devicon()
   return &filetype !~# g:tcd_blacklist && winwidth(0) > 60 ? ('  '.WebDevIconsGetFileTypeSymbol().' ') : ''
 endfunction
 
@@ -131,7 +274,7 @@ endfunction
 function! GitInfo()
   let l:git = fugitive#head()
   if l:git != ''
-    return '  '.fugitive#head()
+    return '  ' . fugitive#head()
   else
     return ''
   endif
@@ -139,33 +282,63 @@ endfunction
 
 " ==============================================================================
 
+""
+" Returns the current/total rows & columns with padding to keep the statusline from resizing.
 function! PaddedStats() abort
-  let l:column = virtcol('.')
-  let l:padCol = ''
-  let l:row = line('.')
-  let l:padRow = ''
-  let l:total = line('$')
+  let l:column   = virtcol('.')
+  let l:padCol   = ''
+  let l:width    = virtcol('$')
+  let l:padWidth = ''
+  let l:row      = line('.')
+  let l:padRow   = ''
+  let l:height   = line('$')
 
+  ""
+  " Add trailing spaces to the column total.
+  if strlen(l:width) == 3
+    let l:padWidth = l:width
+  elseif strlen(l:width) == 2
+    let l:padWidth = l:width.' '
+  else
+    let l:padWidth = '0'.l:width.' '
+  endif
+
+  ""
+  " Add leading spaces to the current column.
   if strlen(l:column) == 3
     let l:padCol = l:column
   elseif strlen(l:column) == 2
     let l:padCol = ' ' . l:column
   else
-    let l:padCol = ' 0' . l:column
+    let l:padCol = ' 0'.l:column
   endif
 
+  ""
+  " Add leading spaces to the current row.
+  " FIXME: handle rows greater than 2 digits without making the rhs huge
   if (strlen(l:row) > 2)
     let l:padRow = l:row
   else
     let l:padRow = ' ' . l:row
   endif
 
-  return &filetype !~# g:tcd_blacklist && winwidth(0) > 60 ? (' ' . l:padRow  . '/' . l:total . ' :' . l:padCol . ' ') :
-                                       \ ( l:row  . '/' . l:total . ':' . l:column . ' ')
+  ""
+  " Check the filetype and return all or some of our stable width values.
+  if &filetype =~ '\v(cheat40|peekaboo|tagbar|undotree|vimfiler)'
+    return ''
+  elseif &filetype == 'denite'
+    return denite#get_status_sources()
+  else
+    return &filetype !~# g:tcd_blacklist && winwidth(0) > 60 ?
+                         \ (' '.l:padRow.':'.l:height.' /'.l:padCol .':'.l:padWidth) :
+                         \ ( l:padRow.'/'.l:height.' ')
+  endif
 endfunction
 
 " ==============================================================================
 
+""
+" Returns a human-readable filesize.
 function! FileSize() abort
   let l:bytes = getfsize(expand('%:p'))
   if (l:bytes >= 1024)
@@ -223,3 +396,19 @@ function! LightlineLinterOK() abort
   return l:counts.total == 0 ? '✓' : ''
 endfunction
 
+" ==============================================================================
+
+" let s:m = { 'ControlP': 'CtrlP', '__Tagbar__': 'Tagbar', '__Gundo__': 'Gundo', '__Gundo_Preview__': 'Gundo Preview', '[Command Line]': 'Command Line'}
+" let s:p = { 'unite': 'Unite', 'vimfiler': 'VimFiler', 'vimshell': 'VimShell', 'quickrun': 'Quickrun', 'dictionary': 'Dictionary', 'calendar': 'Calendar', 'thumbnail': 'Thumbnail', 'vimcalc': 'VimCalc', 'agit' : 'Agit', 'agit_diff' : 'Agit', 'agit_stat' : 'Agit', 'qf': 'QuickFix', 'github-dashboard': 'GitHub Dashboard' }
+" function! lightline_powerful#mode() abort
+"   if &ft ==# 'calendar'
+"     call lightline#link("nvV\<C-v>"[b:calendar.visual_mode()])
+"   elseif &ft ==# 'thumbnail'
+"     if !empty(b:thumbnail.view.visual_mode)
+"       call lightline#link(b:thumbnail.view.visual_mode)
+"     endif
+"   elseif expand('%:t') ==# 'ControlP'
+"     call lightline#link('iR'[get(g:lightline, 'ctrlp_regex', 0)])
+"   endif
+"   return get(s:m, expand('%:t'), get(s:p, &ft, lightline#mode()))
+" endfunction

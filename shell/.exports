@@ -23,6 +23,20 @@ export TASKRC="~/.taskrc"
 export GOPATH="$HOME/go"
 export GOBIN="$HOME/go/bin"
 
+# export LUA_CPATH='/Users/clay/.luarocks/lib/lua/5.2/?.so;/usr/local/lib/lua/5.2/?.so;/usr/local/lib/lua/5.2/loadall.so;./?.so'
+# export LUA_PATH='/Users/clay/.luarocks/share/lua/5.2/?.lua;/Users/clay/.luarocks/share/lua/5.2/?/init.lua;/usr/local/share/lua/5.2/?.lua;/usr/local/share/lua/5.2/?/init.lua;/usr/local/Cellar/lua/5.2.4_4/libexec/share/lua/5.2/?.lua;/usr/local/lib/lua/5.2/?.lua;/usr/local/lib/lua/5.2/?/init.lua;./?.lua'
+#   /Users/clay/.luarocks/share/lua/5.2/?.lua;
+#   /Users/clay/.luarocks/share/lua/5.2/?/init.lua;
+#   /usr/local/share/lua/5.2/?.lua;
+#   /usr/local/share/lua/5.2/?/init.lua;
+#   /usr/local/Cellar/lua/5.2.4_4/libexec/share/lua/5.2/?.lua;
+#   /usr/local/lib/lua/5.2/?.lua;
+#   /usr/local/lib/lua/5.2/?/init.lua;
+#   ./?.lua
+export LUA_PATH='/Users/clay/.luarocks/share/lua/5.2/?.lua;/Users/clay/.luarocks/share/lua/5.2/?/init.lua'
+export LUA_CPATH='/Users/clay/.luarocks/lib/lua/5.2/?.so'
+
+
 export VIFM="$HOME/.vifm"
 export MYVIFMRC="$HOME/.vifm/vifmrc"
 

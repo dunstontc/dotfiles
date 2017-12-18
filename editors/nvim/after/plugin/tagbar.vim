@@ -10,17 +10,12 @@ let g:tagbar_indent = 2
 let g:tagbar_show_visibility = 1
 let g:tagbar_iconchars = ['▶ ', '▼ ']
 
-function! TagbarStatusFunc(current, sort, fname, flags, ...) abort
-    " let l:colour = a:current ? '%#StatusLine#' : '%#StatusLineNC#'
-    let l:colour = '%#SpecialComment#'
-    let l:flagstr = join(a:flags, '')
-    if l:flagstr != ''
-        let l:flagstr = '[' . l:flagstr . '] '
-    endif
-    return l:colour . '[' . a:sort . '] ' . l:flagstr . a:fname
-endfunction
-let g:tagbar_status_func = 'TagbarStatusFunc'
+let g:tagbar_status_func = 'ClaysTagbarStatusFunc'
 
+function! ClaysTagbarStatusFunc(current, sort, fname, ...) abort
+  let g:lightline.fname = a:fname
+  return lightline#statusline(0)
+endfunction
 
 let g:tagbar_type_css = {
   \ 'ctagstype' : 'Css',
@@ -44,40 +39,61 @@ let g:tagbar_type_markdown = {
   \     's' : 'section',
   \ },
   \ 'sort': 0,
-  \ }
+  \}
 
 let g:tagbar_type_rst = {
-   \ 'ctagstype': 'rst',
-   \ 'ctagsbin' : '/path/to/rst2ctags.py',
-   \ 'ctagsargs' : '-f - --sort=yes',
-   \ 'kinds' : [
-   \     's:sections',
-   \     'i:images'
-   \ ],
-   \ 'sro' : '|',
-   \ 'kind2scope' : {
-   \     's' : 'section',
-   \ },
-   \ 'sort': 0,
-   \ }
+  \ 'ctagstype': 'rst',
+  \ 'ctagsbin' : '/path/to/rst2ctags.py',
+  \ 'ctagsargs' : '-f - --sort=yes',
+  \ 'kinds' : [
+  \     's:sections',
+  \     'i:images'
+  \ ],
+  \ 'sro' : '|',
+  \ 'kind2scope' : {
+  \     's' : 'section',
+  \ },
+  \ 'sort': 0,
+  \}
 
- let g:tagbar_type_rust = {
-   \ 'ctagstype' : 'rust',
-   \ 'kinds' : [
-   \    'T:types,type definitions',
-   \    'f:functions,function definitions',
-   \    'g:enum,enumeration names',
-   \    's:structure names',
-   \    'm:modules,module names',
-   \    'c:consts,static constants',
-   \    't:traits',
-   \    'i:impls,trait implementations',
-   \]
-   \}
+let g:tagbar_type_rust = {
+  \ 'ctagstype' : 'rust',
+  \ 'kinds' : [
+  \    'T:types,type definitions',
+  \    'f:functions,function definitions',
+  \    'g:enum,enumeration names',
+  \    's:structure names',
+  \    'm:modules,module names',
+  \    'c:consts,static constants',
+  \    't:traits',
+  \    'i:impls,trait implementations',
+  \ ]
+  \}
 
 let g:tagbar_type_snippets = {
-   \ 'ctagstype' : 'snippets',
-   \ 'kinds' : [
-   \    's:snippets',
-   \ ]
-   \}
+  \ 'ctagstype' : 'snippets',
+  \ 'kinds' : [
+  \    's:snippets',
+  \ ],
+  \ 'sort': 0
+  \}
+
+
+
+let g:tagbar_type_vim = {
+    \ 'ctagstype': 'Vim',
+    \ 'kinds' : [
+    \ 'n:vimball filenames',
+    \ 'v:variables',
+    \ 'f:functions',
+    \ 'a:autocommand groups',
+    \ 'c:commands',
+    \ 'm:maps',
+    \ 't:tags',
+    \ 'z:todos',
+    \ 's:sectons',
+    \ ],
+\     }
+
+
+" TODO TODO

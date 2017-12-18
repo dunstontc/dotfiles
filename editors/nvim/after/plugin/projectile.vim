@@ -6,5 +6,5 @@
   " finish
 " endif
 
-let g:projectile#data_dir = '~/.config/projectile'
+let g:projectile#data_dir = '~/.cache/projectile'
 

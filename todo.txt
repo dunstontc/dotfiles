@@ -1,1 +1,9 @@
-(C) 2017-12-10 Make a switch.vim pattern for viml variable scope. +Vim
+(B) 2017-12-12 Install script..
+    2017-12-12 Fix @ranger syntax highlighting in file preview
+(C) 2017-12-10 Make a switch.vim pattern for viml variable scope. +vim
+    2017-12-13 Make +vim statusline able to resize for files over 10,000 lines long.
+    2017-12-14 Add `sid` and `plug` to `vimMapModKey` group for +vim @syntax
+(B) 2017-12-15 +tmux error on startup note: `error connecting to /private/tmp/tmux-501/default (No such file or directory)`
+    2017-12-17 Unicode completion for NerdFonts +vim
+    2017-12-17 Searching +Vim @rtp
+    2017-12-17 Fix vimSet syntax group
