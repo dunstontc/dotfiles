@@ -37,12 +37,11 @@ if has('mouse_sgr')
     set ttymouse=sgr
 endif
 set backspace=indent,eol,start  " Make <BS> work as expected
-" set whichwrap+=<,>,h,l,[,]      " Lake Left/Right at the Start/End of lines work like you'd expect
 " set formatoptions-=c            " Auto-wrap comments using textwidth, inserting the current comment leader automatically.
 " set formatoptions-=r            " Automatically insert the current comment leader after hitting <Enter> in Insert mode.
-set formatoptions-=o            " Automatically insert the current comment leader after hitting 'o' or 'O' in Normal mode.
-  set formatoptions+=j          " Get rid of comment leaders when joining lines
-set nostartofline               " Don't reset cursor to start of line when moving around
+set formatoptions-=o              " Automatically insert the current comment leader after hitting 'o' or 'O' in Normal mode.
+set formatoptions+=j              " Get rid of comment leaders when joining lines
+set nostartofline                 " Don't reset cursor to start of line when moving around
 " set virtualedit=block,onemore   " TODO: See if what breaks with 'onemore' DONE: I don't think any good came of this
 set virtualedit=block
 
@@ -59,8 +58,17 @@ set nojoinspaces                " don't autoinsert two spaces after '.', '?', '!
 " set ttimeout
 set timeoutlen=1000
 set ttimeoutlen=0
-set whichwrap=b,s,h,l,[,],<,> "Allow specified keys to move to the previous/next line
-
+set whichwrap=s,[,],<,> "Allow specified keys to move to the previous/next line
+    " char   key    mode  ~
+    "  b    <BS>   Normal and Visual
+    "  s    <Space>   Normal and Visual
+    "  h    "h"   Normal and Visual (not recommended)
+    "  l    "l"   Normal and Visual (not recommended)
+    "  <    <Left>   Normal and Visual
+    "  >    <Right>   Normal and Visual
+    "  ~    "~"   Normal
+    "  [    <Left>   Insert and Replace
+    "  ]    <Right>   Insert and Replace
 
 " ==============================================================================
 "   Styles
@@ -90,7 +98,7 @@ let g:quantum_italics=1          " Enable darker quantum colortheme
 let g:quantum_black=1            " Enable italic font in quantum colorscheme
 " let g:enable_italic_font=1     " Enable italic font in one dark colorscheme
 " let g:enable_bold_font=1       " Enable bold   font in one dark colorscheme
-set concealcursor=iv
+" set concealcursor=iv
 set conceallevel=2             " Enable conceal
 set cursorline                 " Highlight current line
 set nowrap                     " Do not wrap lines
@@ -212,8 +220,8 @@ set report=1                   " Report more than x lines changed at once
 " === Completion ===
 set wildmenu                    " Visual autocomplete for command menu
 " set wildcharm=<C-z>             " Trigger for completion in macros
-set wildmode=longest:full,full   " 👈
-" set wildmode=list:longest,list:full
+" set wildmode=longest:full,full   " 👈
+set wildmode=list:longest,list:full
 " set wildmode=list:longest,full
 " set wildmode=list:full
 " set wildmode=list:longest
@@ -264,14 +272,16 @@ iabbrev w/ with
 iabbrev ldr leader
 
 " === Disable standard plugins ===
-" let g:loaded_getscriptPlugin = 1
+let g:loaded_getscriptPlugin = 1
+let g:loaded_gzip = 1
+let g:loaded_matchit = 1
+let g:loaded_matchparen = 1
 let g:loaded_netrwPlugin = 1
-" let g:loaded_tarPlugin = 1
+let g:loaded_rrhelper = 1
+let g:loaded_tarPlugin = 1
 let g:loaded_tutor_mode_plugin = 1
-" let g:loaded_vimballPlugin = 1
-" let g:loaded_zipPlugin = 1
-" let g:loaded_gzip = 1
-" let g:loaded_rrhelper = 1
+let g:loaded_vimballPlugin = 1
+let g:loaded_zipPlugin = 1
 
 let dgs#username='dunstontc'
 

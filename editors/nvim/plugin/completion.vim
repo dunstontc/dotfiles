@@ -20,8 +20,11 @@ let g:echodoc#enable_at_startup = 1
 " ==============================================================================
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#max_list = 500
+let g:deoplete#max_abbr_width = 35
+let g:deoplete#max_menu_width = 20
 let g:deoplete#auto_complete_delay = 150
 let g:deoplete#auto_refresh_delay = 1000
+let g:deoplete#enable_refresh_always = 1
 
 let g:deoplete#disable_auto_complete = 0
 let g:deoplete#auto_completion_start_length = 1
@@ -42,18 +45,19 @@ let g:deoplete#omni#input_patterns = {}
 let g:deoplete#omni#input_patterns.python = ''
 let g:deoplete#omni#functions = {}
 
-let g:deoplete#skip_chars = ['(', ')']
+let g:deoplete#skip_chars = ['(', ')', '<', '>']
 
 " let g:deoplete#ignore_sources =
-" let g:deoplete#skip_chars = ['(', ')', '<', '>']
 " let g:deoplete#file#enable_buffer_path = 1
 " let g:deoplete#buffer#require_same_filetype=0
 " let g:deoplete#omni#input_patterns =
 " let g:deoplete#omni_patterns =
 " let g:context_filetype#same_filetypes=0
+let g:deoplete#file#enable_buffer_path = 1
 
-" call deoplete#custom#source('_', 'matchers', ['matcher_full_fuzzy'])
+"  deoplete#custom#source('_', 'matchers', ['matcher_full_fuzzy'])
 call deoplete#custom#source('_', 'matchers', ['matcher_fuzzy'])
+call deoplete#custom#set('_', 'min_pattern_length', 0)
 " call deoplete#custom#source('_', 'sorters', ['sorter_word'])
 " call deoplete#custom#source('_', 'sorters', ['sorter_rank'])
 
@@ -124,6 +128,15 @@ call deoplete#custom#source('syntax',         'rank', 200)
 
 " inoremap <expr><C-d> deoplete#undo_completion()
 " inoremap <expr><C-d>  deoplete#close_popup()
+
+
+call deoplete#custom#set('_', 'converters', [
+  \ 'converter_remove_paren',
+  \ 'converter_remove_overlap',
+  \ 'converter_truncate_abbr',
+  \ 'converter_truncate_menu',
+  \ 'converter_auto_delimiter',
+  \ ])
 
 " ==============================================================================
 " === dictionary ===
@@ -242,13 +255,12 @@ let g:UltiSnipsSnippetDirectories = ["snipz"]
 " inoremap <expr><tab> pumvisible() ? "\<C-n>" : "\<TAB>"
 " inoremap <expr><s-tab> pumvisible() ? "\<C-p>" : "\<TAB>"
 
-" let g:UltiSnipsAddFiletypes = "conf.sh"
 
 
 " ==============================================================================
 "  === Shougo/neco-syntax ===
 " ==============================================================================
-let g:necosyntax#min_keyword_length=2
+let g:necosyntax#min_keyword_length=1
 let g:necosyntax#max_syntax_line=1000
 
 
@@ -257,7 +269,8 @@ let g:necosyntax#max_syntax_line=1000
 " ==============================================================================
 let g:deoplete#sources#jedi#show_docstring = 1
 let g:deoplete#sources#jedi#enable_cache = 1
-let g:deoplete#sources#jedi#statement_length = 50
+let g:deoplete#sources#jedi#short_types = 1
+let g:deoplete#sources#jedi#statement_length = 30
 let g:deoplete#sources#jedi#server_timeout = 10
 
 " ==============================================================================

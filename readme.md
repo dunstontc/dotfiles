@@ -23,20 +23,20 @@
     - [Themes](#themes)
     - [Misc.](#misc)
     - [Reference](#reference)
-<!--  -->
-<!-- | Key             | Context   | Action              | -->
-<!-- |-----------------|-----------|---------------------| -->
-<!-- | `⌘ - Space`     | Alfred    | Hotkey              | -->
-<!-- | `⌘ - ⌥ - s`     | Alfred    | Search Snippets     | -->
-<!-- | `⌘ - ⌥ - ,`     | Alfred    | Clipboard History   | -->
-<!-- | `⌘ - ⌥ - Space` | Bartender | Toggle Bartender    | -->
-<!-- | `⌥ - Space`     | iTerm2    | Focus to iTerm2     | -->
-<!-- | `⌃ - q`         | iTerm2    | Ctrl-C              | -->
-<!-- | `⌃ - Space`     | tmux      | prefix              | -->
-<!-- | `⌘ - /`         | vim       | Toggle Comments     | -->
-<!-- | `⌘ - s`         | vim       | Write active buffer | -->
-<!-- | `⌃ - hjkl`      | vim/tmux  | Navigate Vim/Tmux   | -->
-<!--  -->
+
+| Key             | Context   | Action              |
+|-----------------|-----------|---------------------|
+| `⌘ - Space`     | Alfred    | Hotkey              |
+| `⌘ - ⌥ - s`     | Alfred    | Search Snippets     |
+| `⌘ - ⌥ - ,`     | Alfred    | Clipboard History   |
+| `⌘ - ⌥ - Space` | Bartender | Toggle Bartender    |
+| `⌥ - Space`     | iTerm2    | Focus to iTerm2     |
+| `⌃ - q`         | iTerm2    | Ctrl-C              |
+| `⌃ - Space`     | tmux      | prefix              |
+| `⌘ - /`         | vim       | Toggle Comments     |
+| `⌘ - s`         | vim       | Write active buffer |
+| `⌃ - hjkl`      | vim/tmux  | Navigate Vim/Tmux   |
+
 
 ## Links ##
 

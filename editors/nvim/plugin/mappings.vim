@@ -16,6 +16,11 @@ set timeoutlen=750
 let mapleader="\<Space>"
 let maplocalleader = ","
 
+inoremap <S-Space> <esc>
+" F17 -- ^[[15;2~
+inoremap <silent><F17> <esc>
+
+
 nnoremap ; :
 vnoremap ; :
 
@@ -25,6 +30,10 @@ nnoremap ` '
 " nnoremap <C-p> :Denite<space>
 " nnoremap <C-p>
 nnoremap ,u :Unite<space>
+nnoremap ,/ :%s///g<left><left><left>
+nnoremap ,s :FZF ~/.dotfiles<CR>
+nnoremap ,c :FZF ~/.config/nvim<CR>
+
 
 " use ctrl-q instead of ⎋ , stay on the home row
 inoremap <C-q> <C-c>
@@ -43,11 +52,11 @@ nnoremap <C-W><up> <C-W>K
 " Clear highlights & commands
 nnoremap <silent>\ :noh<CR>:call anzu#clear_search_status()<CR>:echo<CR>
 
-nnoremap R <Nop>
+noremap R <C-r>
+
 " Quit with Q
 nnoremap q :x<CR>
 nnoremap <S-Q> q
-
 
 " Escape the terminal
 tnoremap <Esc> <C-\><C-n>
@@ -62,29 +71,32 @@ noremap <S-E> ge
 noremap <S-B> w
 
 " Put newly available 'w' to good use
-noremap w @:
+noremap w @
 noremap <S-W> @@
 
 " Edits in normal mode
-nnoremap <BS> i<DEL><esc><right>
-noremap ,, i<space><esc>
-nnoremap [<Space> mwO<esc>mx`w
-nnoremap ]<Space> mwo<esc>mx`w
+nnoremap <BS> mdi<DEL><esc>`d
+nnoremap ,, i<space><esc>
+nnoremap [<Space> mwO<esc>`w
+nnoremap ]<Space> mwo<esc>`w
 
 " gtfo
 nnoremap fj :Sayonara<CR>
 inoremap fj <esc>:Sayonara<CR>
 
+" ==============================================================================
+" https://unix.stackexchange.com/questions/53581/sending-function-keys-f1-f12-over-ssh
+" ==============================================================================
 
 " Save wih ⌘ -s
-" ᚠ - runic letter f (U+16A0)
-nnoremap <silent>ᚠ :silent w<CR>
-inoremap <silent>ᚠ <C-o>:silent w<CR>
+" F13 -- ^[[1;2P
+nnoremap <silent><F13> :silent w<CR>
+inoremap <silent><F13> <C-o>:silent w<CR>
 
 " Comment wih ⌘ -/
-" ᚣ - runic letter yr (U+16A3)
-noremap <silent>ᚣ :TComment<CR>
-inoremap <silent>ᚣ <esc>:TComment<CR>
+" F14 -- ^[[1;2Q
+noremap <silent><F14> :TComment<CR>
+inoremap <silent><F14> <esc>:TComment<CR>
 
 " <S-CR> New line below
 " ᚾ - runic letter n (U+16BE)
@@ -95,32 +107,48 @@ inoremap ᚩ <esc>O
 
 " Dupe lines with ⌥ - ⇧ - down
 nnoremap 𐌋 mxV"zy"zp`xj
-" " Indentation
+
+" Indentation
+" F15 -- ^[[1;2R
+" F16 -- ^[[1;2S
+vmap <silent><F15> <gv
+vmap <silent><F16> >gv
+nmap <silent><F15> <<
+nmap <silent><F16> >>
+imap <silent><F15> <esc><<A
+imap <silent><F16> <esc>>>A
 " vmap <silent><leader>[ <gv
 " vmap <silent><leader>] >gv
 " nmap <silent><leader>[ <<
 " nmap <silent><leader>] >>
 " imap <silent><leader>[ <esc><<
 " imap <silent><leader>] <esc>>>
+" ==============================================================================
+"  === Alt Keys ===
+" ==============================================================================
 
-" Indentation
-" ᚻ - runic letter h (U+16BB)
-" ᚢ - runic letter u (U+16A2)
-vmap <silent>ᚻ <gv
-vmap <silent>ᚢ >gv
-nmap <silent>ᚻ <<
-nmap <silent>ᚢ >>
-imap <silent>ᚻ <esc><<A
-imap <silent>ᚢ <esc>>>A
+" With iTerm2 on OSX
+" Alt + h = ˙
+" Alt + j = ∆
+" Alt + k = ˚
+" ALT + l = ¬
+" Move selected/current line(s) up or down
+nnoremap <silent>˚ :m .-2<CR>==
+nnoremap <silent>∆ :m .+1<CR>==
+inoremap <silent>˚ <Esc>:m .-2<CR>==gi
+inoremap <silent>∆ <Esc>:m .+1<CR>==gi
+vnoremap <silent>˚ :m '<-2<CR>gv=gv
+vnoremap <silent>∆ :m '>+1<CR>gv=gv
+" Increase or decrease indent for selected/current line(s)
+vmap <silent>˙ <gv
+vmap <silent>¬ >gv
+nmap <silent>˙ <<
+nmap <silent>¬ >>
+imap <silent>˙ <esc><<A
+imap <silent>¬ <esc>>>A
+" (Meta + j = ê)
+" (Meta + k = ë)
 
-
-" move the current line up or down
-nnoremap <A-j> :m .+1<CR>==
-" nnoremap <A-k> :m .-2<CR>==
-" inoremap ê <Esc>:m .+1<CR>==gi
-" inoremap ë <Esc>:m .-2<CR>==gi
-" vnoremap <A-j> :m '>+1<CR>gv=gv
-" vnoremap <A-k> :m '<-2<CR>gv=gv
 "        𐌞 = ⌥ + UP
 "        𐌓 = ⌥ + DOWN
 nnoremap 𐌞 :m .-2<CR>==
@@ -128,6 +156,7 @@ nnoremap 𐌓 :m .+1<CR>==
 inoremap 𐌞 <Esc>:m .-2<CR>==gi
 inoremap 𐌓 <Esc>:m .+1<CR>==gi
 vnoremap 𐌞 :m '<-2<CR>gv=gv
+vnoremap 𐌓 :m '>+1<CR>gv=gv
 vnoremap 𐌓 :m '>+1<CR>gv=gv
 
 
@@ -148,8 +177,6 @@ vnoremap @q :normal @q<CR>
 " noremap <M-LEFT> :NERDTreeToggle<CR>
 " noremap <M-RIGHT> :NERDTreeToggle<CR>
 
-" nnoremap <H-y> :echo "noice"<cr>
-"
 " map <S-ScrollWheelUp> <C-U>
 " map <S-ScrollWheelDown> <C-D>
 
@@ -189,12 +216,12 @@ nnoremap <S-y> v$y
 
 " Yank with keeping cursor position in visual mode {{{
 " Thanks @haya14busa
-function! s:keepcursor_visual_wrapper(command)
-  execute 'normal! gv' . a:command
-  execute "normal! gv\<ESC>"
-endfunction
-xnoremap <silent> y :<C-u>call <SID>keepcursor_visual_wrapper('y')<CR>
-xnoremap <silent> Y :<C-u>call <SID>keepcursor_visual_wrapper('Y')<CR>
+" function! s:keepcursor_visual_wrapper(command)
+"   execute 'normal! gv' . a:command
+"   execute "normal! gv\<ESC>"
+" endfunction
+" xnoremap <silent> y :<C-u>call <SID>keepcursor_visual_wrapper('y')<CR>
+" xnoremap <silent> Y :<C-u>call <SID>keepcursor_visual_wrapper('Y')<CR>
 "}}}
 
 
@@ -373,8 +400,7 @@ noremap <silent> <leader>g :Denite grep<CR>
 nnoremap <leader>m @
 " q   -- Quit
 " nnoremap <leader>q qq
-" s   -- Search & Replace
-nnoremap <leader>s :%s///g<left><left><left>
+
 " r   -- Reload
 nnoremap <leader>rr :source $MYVIMRC<CR>:call lightline#update_once()<CR>
 " u   -- Unundo
@@ -386,7 +412,10 @@ nnoremap <leader>v :vsplit \| Startify<CR>:echo<CR>
 " x   -- ...Todo...
 nnoremap <leader>x :Denite todo<CR>
 
-
+nnoremap <leader><Left> zc
+nnoremap <leader><Right> zo
+nnoremap <leader><Up> :bprev<CR>
+nnoremap <leader><Down> :bnext<CR>
 
 
 " ==============================================================================
@@ -406,8 +435,7 @@ nnoremap <leader>bv :vert ball<CR>
 nnoremap <leader>bd :bd<CR>
 " Close a buffer, leave it on the list
 nnoremap <leader>bq :q<CR>
-nnoremap <leader><Left> :bprev<CR>
-nnoremap <leader><Right> :bnext<CR>
+
 
 
 " ==============================================================================
@@ -418,9 +446,10 @@ nnoremap <leader>db :Denite bookmark<CR>
 nnoremap <leader>dd :Denite menu:Denite<CR>
 nnoremap <leader>dh :Denite help<CR>
 nnoremap <leader>dm :Denite file_mru<CR>
+nnoremap <leader>dt :Denite todo<CR>
+nnoremap <leader>dp :Denite projectile<CR>
 nnoremap <leader>ds :Denite menu:dotfiles<CR>
 nnoremap <leader>du :Unite
-nnoremap <leader>dt :Denite todo<CR>
 
 
 
@@ -508,7 +537,7 @@ nnoremap <leader>hd<S-s> :syntax<CR>
 " ==============================================================================
 
 " Update Plugins
-nnoremap <leader>pu :call dein#update()<CR>
+nnoremap <leader>pu :Denite menu:dein<CR>
 
 
 

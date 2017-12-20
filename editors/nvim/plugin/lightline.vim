@@ -10,6 +10,11 @@ source /Users/clay/.dotfiles/editors/nvim/autoload/lightline/DarkPlus.vim
 "     \ 'tabline': 1
 "     \ }
 
+" let g:lightline                  = {}
+" let g:lightline.tabline          = {'left': [['buffers']], 'right': [['close']]}
+" let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
+" let g:lightline.component_type   = {'buffers': 'tabsel'}
+
 let g:lightline = {
       \ 'colorscheme': 'DarkPlus',
       \ 'separator':            { 'left': '', 'right': '' },
@@ -17,9 +22,7 @@ let g:lightline = {
       \ 'tabline_separator':    { 'left': '', 'right': '' },
       \ 'tabline_subseparator': { 'left': '  ', 'right': '  ' },
       \ 'tabline': {
-      \   'left': [ [ 'bufferinfo' ],
-      \             [ 'separator' ],
-      \             [ 'bufferbefore', 'buffercurrent', 'bufferafter' ], ],
+      \   'left': [['buffers']],
       \   'right': [ [ 'undecided' ], ],
       \},
       \  'inactive': {
@@ -65,6 +68,7 @@ let g:lightline = {
       \   'buffercurrent':   'lightline#buffer#buffercurrent',
       \   'bufferbefore':    'lightline#buffer#bufferbefore',
       \   'bufferafter':     'lightline#buffer#bufferafter',
+      \   'buffers': 'lightline#bufferline#buffers',
       \},
       \ 'component_type': {
       \   'linter_warnings': 'warning',
@@ -74,6 +78,7 @@ let g:lightline = {
       \   'buffercurrent':   'tabsel',
       \   'bufferbefore':    'raw',
       \   'bufferafter':     'raw',
+      \   'buffers': 'tabsel',
       \},
       \}
 
@@ -102,7 +107,7 @@ let g:lightline.mode_map = {
     \ 'sm' : 'SHOW-MATCH ',
     \ '!'  : 'Shell ',
     \ }
-
+"
 
 " ==============================================================================
 
@@ -116,30 +121,50 @@ let g:vimfiler_force_overwrite_statusline = 0
 "  === taohex/lightline-buffer ===
 " ==============================================================================
 
-let g:lightline_buffer_logo = '   '
-let g:lightline_buffer_readonly_icon = ' '
-let g:lightline_buffer_modified_icon = '(+)'
-let g:lightline_buffer_git_icon = ' '
-let g:lightline_buffer_ellipsis_icon = '..'
-let g:lightline_buffer_expand_left_icon = '◀ '
-let g:lightline_buffer_expand_right_icon = ' ▶'
-let g:lightline_buffer_active_buffer_left_icon = ' %{WebDevIconsGetFileTypeSymbol()}'
-let g:lightline_buffer_active_buffer_right_icon = ' '
-let g:lightline_buffer_separator_icon = ' '
-
-let g:lightline_buffer_show_bufnr = 0
-let g:lightline_buffer_rotate = 0
-let g:lightline_buffer_fname_mod = ':t'
-let g:lightline_buffer_excludes = ['vimfiler', 'Startify']
-
-let g:lightline_buffer_maxflen = 30
-let g:lightline_buffer_minflen = 16
-let g:lightline_buffer_maxfextlen = 4
-let g:lightline_buffer_minfextlen = 4
-" let g:lightline_buffer_reservelen = 20
+" let g:lightline_buffer_logo = '   '
+" let g:lightline_buffer_readonly_icon = ' '
+" let g:lightline_buffer_modified_icon = '(+)'
+" let g:lightline_buffer_git_icon = ' '
+" let g:lightline_buffer_ellipsis_icon = '..'
+" let g:lightline_buffer_expand_left_icon = '◀ '
+" let g:lightline_buffer_expand_right_icon = ' ▶'
+" let g:lightline_buffer_active_buffer_left_icon = ' %{WebDevIconsGetFileTypeSymbol()}'
+" let g:lightline_buffer_active_buffer_right_icon = ' '
+" let g:lightline_buffer_separator_icon = ' '
+"
+" let g:lightline_buffer_show_bufnr = 0
+" let g:lightline_buffer_rotate = 0
+" let g:lightline_buffer_fname_mod = ':t'
+" let g:lightline_buffer_excludes = ['vimfiler', 'Startify']
+"
+" let g:lightline_buffer_maxflen = 30
+" let g:lightline_buffer_minflen = 16
+" let g:lightline_buffer_maxfextlen = 4
+" let g:lightline_buffer_minfextlen = 4
+" " let g:lightline_buffer_reservelen = 20
 function! IdkYet() abort
   return '     '
 endfunction
+
+
+" ==============================================================================
+"  === mgee/lightline-bufferline ===
+" ==============================================================================
+
+let g:lightline#bufferline#filename_modifier = ':t'
+let g:lightline#bufferline#modified          = '(+)'
+let g:lightline#bufferline#read_only         = ' '
+let g:lightline#bufferline#more_buffers      = '...'
+let g:lightline#bufferline#show_number       = 2
+let g:lightline#bufferline#shorten_path      = 1
+let g:lightline#bufferline#min_buffer_count  = 0
+let g:lightline#bufferline#unnamed           = '[No Name]'
+let g:lightline#bufferline#number_map        = {
+\ 0: ' ⁰', 1: ' ¹', 2: ' ²', 3: ' ³', 4: ' ⁴',
+\ 5: ' ⁵', 6: ' ⁶', 7: ' ⁷', 8: ' ⁸', 9: ' ⁹'}
+" let g:lightline#bufferline#number_map = {
+" \ 0: '₀', 1: '₁', 2: '₂', 3: '₃', 4: '₄',
+" \ 5: '₅', 6: '₆', 7: '₇', 8: '₈', 9: '₉'}
 
 
 " ==============================================================================
@@ -167,7 +192,7 @@ function! Mode() abort
         \ &filetype ==#     'tagbar'     ? 'Tagbar'   :
         \ &filetype ==#     'unite'      ? 'Unite'    :
         \ &filetype ==#     'undotree'   ? 'UndoTree' :
-        \ &filetype ==#     'vimfiler'   ? 'VF'       :
+        \ &filetype ==#     'vimfiler'   ? vimfiler#get_status_string()       :
         \ &filetype ==#     'vimshell'   ? 'VimShell' :
         \ lightline#mode()
 endfunction
@@ -230,8 +255,8 @@ function! lightline#Filename() abort
   let l:filename = expand('%:t') !=# '' ? expand('%:t') : ''
   let l:modified = &modified ? ' +' : ''
 
-  if &filetype ==# 'vimfiler'
-    return ' ' . vimfiler#get_status_string()
+  if &filetype ==# 'help'
+    return ' ' . l:filename
   elseif &filetype ==# 'denite'
     return ' ' . denite#get_status_sources()
   elseif &filetype ==# 'tagbar'
@@ -252,7 +277,7 @@ endfunction
 ""
 " In normal files, returns the name of the currently selected register.
 function! Register() abort
-  return &filetype !~# g:tcd_blacklist && winwidth(0) > 60 ? ' '.v:register.'' : ''
+  return &filetype !~# g:tcd_blacklist && winwidth(0) > 70 ? ' '.v:register.'' : ''
 endfunction
 
 " ==============================================================================
@@ -412,3 +437,4 @@ endfunction
 "   endif
 "   return get(s:m, expand('%:t'), get(s:p, &ft, lightline#mode()))
 " endfunction
+

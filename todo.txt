@@ -7,3 +7,5 @@
     2017-12-17 Unicode completion for NerdFonts +vim
     2017-12-17 Searching +Vim @rtp
     2017-12-17 Fix vimSet syntax group
+(C) 2017-12-18 look into `__LAST__` session +vim
+(B) 2017-12-18 Figure out what changed between @colorls 1.0.3 and 1.0.9
