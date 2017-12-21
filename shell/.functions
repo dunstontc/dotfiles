@@ -1,43 +1,44 @@
 # echo "🏃 .functions"
 
-function take() {
-  mkdir -p $1
-  cd $1
+take() {
+  mkdir -p "$1"
+  cd "$1" || return
 }
 
 # Change working directory to the top-most Finder window location
-function cdf() { # short for `cdfinder`
-  cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')";
+# `CD-Finder`
+cdf() {
+  cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')" || return;
 }
 
-function watdo() {
+watdo() {
   alias | grep "$1"
 }
 
 # Walk & Talk
-function cdd() {
+cdd() {
   cd "$1" && ls -a
 }
 
-function komet() {
-  git add . && git commit -m $1  # TODO: filter the input here
+komet() {
+  git add . && git commit -m "$1"  # TODO: filter the input here
 }
 
-function forrk() {
-  git remote add upstream $1;
+forrk() {
+  git remote add upstream "$1";
   git remote -v
 }
 
 # activate conda env
-function condoo() {
-  source activate $1
+condoo() {
+  conda source activate "$1"
 }
 # deactivate conda env
-function condont() {
-  source deactivate $1
+condont() {
+  conda source deactivate "$1"
 }
 
-function kuler() {
+kuler() {
   awk 'BEGIN{
     s="/\\/\\/\\/\\/\\"; s=s s s s s s s s;
     for (colnum = 0; colnum<77; colnum++) {
@@ -52,12 +53,16 @@ function kuler() {
     printf "\n";
   }'
 }
-# function armour() {
+
+fn_codes(){
+  for x in {1..30}; do echo -n "F$x "; tput kf$x | cat -A; echo; done
+}
+# armour() {
 #   gpg --armor --export $1
 # }
 
 # Determine size of a file or total size of a directory
-function fs() {
+fs() {
   if du -b /dev/null > /dev/null 2>&1; then
     local arg=-sbh;
   else
@@ -70,8 +75,8 @@ function fs() {
   fi;
 }
 
-function hdi(){
-  howdoi $* -c -n 5;
+hdi(){
+  howdoi "$*" -c -n 5;
 }
 
 
@@ -80,7 +85,7 @@ function hdi(){
 # =============================================================================
 
 # # `n` with no arguments opens the current directory in Vim, otherwise opens the given location
-# function n() {
+# n() {
 #   if [ $# -eq 0 ]; then
 #     nvim .;
 #   else
@@ -89,7 +94,7 @@ function hdi(){
 # }
 
 # # `o` with no arguments opens the current directory, otherwise opens the given location
-# function o() {
+# o() {
 #   if [ $# -eq 0 ]; then
 #     open .;
 #   else
