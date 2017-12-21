@@ -33,27 +33,35 @@ endsnippet
 # common stuff #
 ################
 
-snippet bold "be bold"
-**$1** $0
+snippet bold "Be bold"
+**$1**$0
 endsnippet
 
-snippet italic "make things italic"
-*$1* $0
+snippet italic "Make things italic"
+*$1*$0
 endsnippet
 
-snippet strike "strike out text"
+snippet strike "Strike out text"
 ~~$1~~$0
 endsnippet
 
-snippet link "link"
+snippet link "Markdown link"
 [$2]($1)$0
+endsnippet
+
+snippet pasteline "Markdown link from clipboard"
+[$1](`!v expand('@+')`)$0
+endsnippet
+
+snippet repo "Link to GitHub repo in clipboard"
+[`!v @+`](https://github.com/`!v @+`)$0
 endsnippet
 
 snippet lynk "link"
 [${1:2ext}](${3:http://${2:www.url.com}})$0
 endsnippet
 
-snippet image "image"
+snippet image "Markdown image"
 ![$1]($2)$0
 endsnippet
 

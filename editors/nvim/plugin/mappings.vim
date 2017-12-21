@@ -23,6 +23,9 @@ inoremap <silent><F17> <esc>
 
 nnoremap ; :
 vnoremap ; :
+" I'm in too deep
+inoremap ; :
+inoremap : ;
 
 nnoremap ' `
 nnoremap ` '
@@ -123,6 +126,8 @@ imap <silent><F16> <esc>>>A
 " nmap <silent><leader>] >>
 " imap <silent><leader>[ <esc><<
 " imap <silent><leader>] <esc>>>
+
+
 " ==============================================================================
 "  === Alt Keys ===
 " ==============================================================================
@@ -235,15 +240,14 @@ nnoremap <S-y> v$y
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
-" === vim-expand-region ===
+" === terryma/vim-expand-region ===
 map K <Plug>(expand_region_expand)
-" map K <Plug>(expand_region_expand)
 map J <Plug>(expand_region_shrink)
 
 " === junegunn/vim-table-mode ===
 let g:table_mode_disable_mappings = 0
 
-" === vim-swoop ===
+" === pelodelfuego/vim-swoop ===
 let g:swoopUseDefaultKeyMap = 0
 
 " === gitgutter ===
@@ -253,7 +257,7 @@ let g:gitgutter_map_keys = 0
 " === slash ===
 " noremap <plug>(slash-after) zz
 
-" === tcomment ===
+" === tomtom/tcomment ===
 let g:tcommentMaps=0
 let g:tcommentMapLeader1=''
 let g:tcommentMapLeader2=''
@@ -265,7 +269,10 @@ nmap <silent> [a <Plug>(ale_previous_wrap)
 nmap <silent> ]a <Plug>(ale_next_wrap)
 
 " === heavenshell/vim-pydocstring ===
-nmap <silent> <C-_> <Plug>(pydocstring)
+let g:pydocstring_enable_mapping = 0
+let g:pydocstring_enable_comment = 0
+let g:pydocstring_templates_dir  = '~/.dotfiles/editors/nvim/after/pydocstring'
+nmap <silent> <C-m> <Plug>(pydocstring)
 
 " === vim-multiple-cursors ===
 let g:multi_cursor_use_default_mapping=0
@@ -275,7 +282,7 @@ let g:multi_cursor_use_default_mapping=0
 " let g:multi_cursor_skip_key='<C-x>'
 " let g:multi_cursor_quit_key='<Esc>'
 
-" === Anzu ===
+" === osyo-manga/vim-anzu ===
 " nmap n <Plug>(anzu-n-with-echo)
 nmap n <Plug>(anzu-n)
 nmap N <Plug>(anzu-N)

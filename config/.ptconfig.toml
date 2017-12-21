@@ -1,0 +1,7 @@
+color = true
+context = 0
+ignore = ["dir1", "dir2"]
+color-path = "1;34"
+color-line-number = "1;33"
+color-match = "30;43"
+column=true

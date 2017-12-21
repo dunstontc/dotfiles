@@ -6,10 +6,12 @@ let g:dein#enable_notification = 1
 " let g:dein#notification_icon = '~/.vim/signs/warn.png'
 let g:dein#install_log_filename = '~/dein.log'
 
+
 " ==============================================================================
 "  === pbogut/fzf-mru.vim ===
 " ==============================================================================
 let g:fzf_mru_relative = 1
+
 
 " ==============================================================================
 "  === xolox/vim-easytags ===
@@ -78,7 +80,6 @@ let g:extra_whitespace_ignored_filetypes = [
       \]
 
 
-
 " ==============================================================================
 "  === indentguides ===
 " ==============================================================================
@@ -88,14 +89,12 @@ let g:indentguides_spacechar = '┃'
 let g:indentguides_tabchar = '┆'
 
 
-
 " ==============================================================================
 "  === vim-expand-region ===
 " ==============================================================================
 
-" Default settings. (NOTE: Remove comments in dictionary before sourcing)
 let g:expand_region_text_objects = {
-      \ 'iv'  :0,
+      \ 'iv'  :1,
       \ 'iw'  :0,
       \ 'iW'  :0,
       \ 'i"'  :0,
@@ -114,17 +113,6 @@ let g:expand_region_text_objects = {
 " ==============================================================================
 let g:task_rc_override = 'rc.defaultwidth=0'
 let g:task_rc_override = 'rc.defaultheight=0'
-
-
-" ==============================================================================
-" === jszakmeister/vim-togglecursor ===
-" ==============================================================================
-let g:togglecursor_default = 'block'
-let g:togglecursor_insert = 'line'
-let g:togglecursor_leave = 'block'
-let g:togglecursor_replace = 'underline'
-let g:togglecursor_disable_tmux = 0
-let g:togglecursor_disable_default_init = 1
 
 
 " ==============================================================================
@@ -154,8 +142,10 @@ let g:parenmatch=1
 " ==============================================================================
 
 let g:bullets_enabled_file_types = [
-    \ 'markdown',
-    \ 'text',
     \ 'gitcommit',
-    \ 'scratch'
+    \ 'markdown',
+    \ 'rst',
+    \ 'scratch',
+    \ 'text',
+    \ 'yaml',
     \]

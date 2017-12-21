@@ -101,4 +101,20 @@ function ${1:function_name}() {
 }
 endsnippet
 
+snippet 16fg "Escape code for truecolor foreground"
+'\\033[38;2;$1;$2;$3m'$0
+endsnippet
+
+snippet 16bg "Escape code for truecolor background"
+'\\033[48;2;$1;$2;$3m'$0
+endsnippet
+
+snippet 256fg "Escape code for 256 color foreground"
+'\\033[38;5;$1m'$0
+endsnippet
+
+snippet 256bg "Escape code for 256 color background"
+'\\033[48;5;$1m'$0
+endsnippet
+
 # vim:ft=snippets:

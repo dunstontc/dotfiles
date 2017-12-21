@@ -43,6 +43,8 @@ alias please="sudo"
 
 # todo.txt
 alias tls="todo.sh ls"
+# alias tda="todo.sh add -t"
+
 
 # NPM
 alias npi="npm install"

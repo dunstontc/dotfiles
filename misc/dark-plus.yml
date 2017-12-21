@@ -2,9 +2,11 @@
 
 very-light-gray:
   - hex: '#d4d4d4'
+  - rgb: ''
   - cterm: 188
 light-gray:
   - hex: '#808080'
+  - rgb: '128, 128, 128'
   - cterm: 8
 dark-gray:
   - hex: '#282C34'
@@ -14,12 +16,14 @@ very-dark-gray:
   - cterm: 234
 dark-red:
   - hex: '#f44747'
+  - rgb: ''
   - cterm: 167
 light-red:
   - hex: '#d16969'
-  - cterm: 203
+  - cterm: 203  # 167
 orange:
   - hex: '#ce9178'
+  - rgb: '206, 145, 120'
   - cterm: 173
 light-yellow:
   - hex: '#dcdcaa'

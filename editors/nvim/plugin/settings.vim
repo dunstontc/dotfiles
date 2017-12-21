@@ -23,7 +23,7 @@ set undodir=~/.config/nvim/undo
 
 set shell=/usr/local/bin/bash
 
-set grepprg=ag\ --vimgrep\ $*
+set grepprg=ag\ --vimgrep\ --nocolor\ $*
 set grepformat=%f:%l:%c:%m
 
 
@@ -55,8 +55,8 @@ set smarttab                    " Tab respects 'tabstop', 'shiftwidth', and 'sof
 set nojoinspaces                " don't autoinsert two spaces after '.', '?', '!' for join command
 
 " set notimeout
-" set ttimeout
 set timeoutlen=1000
+set ttimeout
 set ttimeoutlen=0
 set whichwrap=s,[,],<,> "Allow specified keys to move to the previous/next line
     " char   key    mode  ~
@@ -81,7 +81,7 @@ set guicursor=a:blinkon0
 set guicursor+=n-c:block-Cursor/lCursor-blinkon0
 set guicursor+=i-ci:block-lCursor
 set guicursor+=v:block-iCursor
-set guicursor+=r-cr-ci:hor20-Cursor/lCursor
+set guicursor+=r-cr:block-rCursor
 " let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
 " let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
 " let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"

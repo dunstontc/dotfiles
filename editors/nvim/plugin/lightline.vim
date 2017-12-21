@@ -5,15 +5,6 @@ scriptencoding utf-8
 
 source /Users/clay/.dotfiles/editors/nvim/autoload/lightline/DarkPlus.vim
 
-" let g:lightline.enable = {
-"     \ 'statusline': 1,
-"     \ 'tabline': 1
-"     \ }
-
-" let g:lightline                  = {}
-" let g:lightline.tabline          = {'left': [['buffers']], 'right': [['close']]}
-" let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
-" let g:lightline.component_type   = {'buffers': 'tabsel'}
 
 let g:lightline = {
       \ 'colorscheme': 'DarkPlus',
@@ -30,17 +21,16 @@ let g:lightline = {
       \    'right': [],
       \},
       \  'active': {
-      \    'left': [ [ 's','mode','s'         ],
+      \    'left': [ [ 's',        'mode', 's'],
       \            [   'readonly', 'filename' ],
-      \            [   'icon',     'fsize',   'deniteP' ],
-      \            [   's','s','anzu', 'paste', 'peest','s' ] ],
+      \            [   'icon',     'fsize',   ],
+      \            [   's','s',    'anzu', 'paste', 'peest', 's' ] ],
       \    'right': [ [ 'cool_col' ],
       \               [ 'register', 'tabsize', ],
       \               [ 'linter_warnings', 'linter_errors', 's' ] ]
       \},
       \  'component': {
       \    's'        : ' ',
-      \    'displace' : ' %F',
       \    'separator': '',
       \},
       \  'component_function': {
@@ -68,7 +58,7 @@ let g:lightline = {
       \   'buffercurrent':   'lightline#buffer#buffercurrent',
       \   'bufferbefore':    'lightline#buffer#bufferbefore',
       \   'bufferafter':     'lightline#buffer#bufferafter',
-      \   'buffers': 'lightline#bufferline#buffers',
+      \   'buffers':         'lightline#bufferline#buffers',
       \},
       \ 'component_type': {
       \   'linter_warnings': 'warning',
@@ -143,7 +133,7 @@ let g:vimfiler_force_overwrite_statusline = 0
 " let g:lightline_buffer_minfextlen = 4
 " " let g:lightline_buffer_reservelen = 20
 function! IdkYet() abort
-  return '     '
+  return ' '.WebDevIconsGetFileTypeSymbol().'  '
 endfunction
 
 
@@ -180,6 +170,7 @@ function! Mode() abort
         \ &filetype ==#     'cheat40'    ? 'Cheat40'  :
         \ &filetype ==#     'denite'     ? 'Denite'   :
         \ &filetype ==#     'deol'       ? 'Deol'     :
+        \ &filetype ==#     'fzf'        ? 'FZF'      :
         \ &filetype ==#     'gitcommit'  ? 'Fugitive' :
         \ &filetype ==#     'help'       ? 'Help'     :
         \ &filetype ==#     'neoterm'    ? 'NeoTerm'  :
@@ -285,13 +276,13 @@ endfunction
 ""
 " In normal files, returns the current value of a tab.
 function! TabSizing() abort
-  return &filetype !~# g:tcd_blacklist && winwidth(0) > 60 ? ( '␉ ' . &shiftwidth . ' ') : ''
+  return &filetype !~# g:tcd_blacklist && winwidth(0) > 70 ? ( '␉ ' . &shiftwidth . ' ') : ''
 endfunction
 
 " ==============================================================================
 
 function! Devicon()
-  return &filetype !~# g:tcd_blacklist && winwidth(0) > 60 ? ('  '.WebDevIconsGetFileTypeSymbol().' ') : ''
+  return &filetype !~# g:tcd_blacklist && winwidth(0) > 70 ? ('  '.WebDevIconsGetFileTypeSymbol().' ') : ''
 endfunction
 
 " ==============================================================================
@@ -352,9 +343,9 @@ function! PaddedStats() abort
   if &filetype =~ '\v(cheat40|peekaboo|tagbar|undotree|vimfiler)'
     return ''
   elseif &filetype == 'denite'
-    return denite#get_status_sources()
+    return denite#get_status_path().' '
   else
-    return &filetype !~# g:tcd_blacklist && winwidth(0) > 60 ?
+    return &filetype !~# g:tcd_blacklist && winwidth(0) > 70 ?
                          \ (' '.l:padRow.':'.l:height.' /'.l:padCol .':'.l:padWidth) :
                          \ ( l:padRow.'/'.l:height.' ')
   endif
@@ -378,11 +369,11 @@ function! FileSize() abort
   endif
 
   if (exists('l:mbytes'))
-    return &filetype !~# g:tcd_blacklist && winwidth(0) > 60 ? (l:mbytes . ' MB') : ''
+    return &filetype !~# g:tcd_blacklist && winwidth(0) > 70 ? (l:mbytes . ' MB') : ''
   elseif (exists('l:kbytes'))
-    return &filetype !~# g:tcd_blacklist && winwidth(0) > 60 ? (l:kbytes . ' KB') : ''
+    return &filetype !~# g:tcd_blacklist && winwidth(0) > 70 ? (l:kbytes . ' KB') : ''
   else
-    return &filetype !~# g:tcd_blacklist && winwidth(0) > 60 ? (l:bytes . ' B') : ''
+    return &filetype !~# g:tcd_blacklist && winwidth(0) > 70 ? (l:bytes . ' B') : ''
   endif
 endfunction
 

@@ -5,14 +5,10 @@ let g:echodoc#enable_at_startup = 1
 " The documentation display type.
 "echo": It uses the command line |:echo|.
 "signature": It uses gonvim signature feature.
-" let g:echodoc#type='echo'
-" let g:echodoc_type='echo'
+let g:echodoc#type='echo'
 " let g:echodoc#type='signature'
-" let g:echodoc_type='signature'
-" The highlight of identifier.
-" let g:echodoc#highlight_identifier = "Identifier"
-" The highlight of current argument.
-" let g:echodoc#highlight_arguments = "Special"
+let g:echodoc#highlight_identifier = "Identifier"
+let g:echodoc#highlight_arguments = "String"
 
 
 " ==============================================================================
@@ -20,8 +16,8 @@ let g:echodoc#enable_at_startup = 1
 " ==============================================================================
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#max_list = 500
-let g:deoplete#max_abbr_width = 35
-let g:deoplete#max_menu_width = 20
+let g:deoplete#max_abbr_width = 55
+let g:deoplete#max_menu_width = 75
 let g:deoplete#auto_complete_delay = 150
 let g:deoplete#auto_refresh_delay = 1000
 let g:deoplete#enable_refresh_always = 1
@@ -243,17 +239,37 @@ let g:neosnippet#snippets_directory='~/.dotfiles/editors/nvim/nsnipz'
 " ==============================================================================
 " === Ultisnips ===
 " ==============================================================================
-let g:UltiSnipsExpandTrigger           = '<tab>'
-let g:UltiSnipsJumpForwardTrigger      = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger     = '<s-tab>'
+let g:UltiSnipsUsePythonVersion    = 3
+let g:UltiSnipsExpandTrigger       = '<tab>'
+let g:UltiSnipsJumpForwardTrigger  = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+let g:UltiSnipsSnippetDirectories  = ['snipz']
+" Options: normal, doxygen, sphinx, google, numpy, or jedi
+let g:ultisnips_python_style       = 'numpy'
+let g:ultisnips_python_quoting_style = 'single'
+let g:ultisnips_python_triple_quoting_style = 'double'
 " let g:UltiSnipsSnippetsDir             = '$HOME/.dotfiles/editors/nvim/snipz'
-let g:UltiSnipsSnippetDirectories = ["snipz"]
 " let g:UltiSnipsListSnippets            = '<c-n>'
 " let g:UltiSnipsJumpForwardTrigger      = '<c-n>'
 " let g:UltiSnipsJumpBackwardTrigger     = '<c-p>'
 
 " inoremap <expr><tab> pumvisible() ? "\<C-n>" : "\<TAB>"
 " inoremap <expr><s-tab> pumvisible() ? "\<C-p>" : "\<TAB>"
+
+function! GetAllSnippets()
+  call UltiSnips#SnippetsInCurrentScope(1)
+  let list = []
+  for [key, info] in items(g:current_ulti_dict_info)
+    let parts = split(info.location, ':')
+    call add(list, {
+      \"key": key,
+      \"path": parts[0],
+      \"linenr": parts[1],
+      \"description": info.description,
+      \})
+  endfor
+  return list
+endfunction
 
 
 

@@ -14,7 +14,10 @@ export TERM="xterm-256color"
 export XDG_CONFIG_HOME="$HOME/.config"
 
 # Todo.txt
+export TODOTXT_CFG_FILE="$DOTFILES/config/todo/todo.config"
 export TODO_DIR="$HOME/.todo"
+export TODO_FILE="$TODO_DIR/todo.txt"
+export DONE_FILE="$TODO_DIR/done.txt"
 
 # Taskwarrior
 export TASKRC="~/.taskrc"
