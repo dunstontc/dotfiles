@@ -18,11 +18,9 @@ command! Wq x
 " Use :C to clear hlsearch
 " command! C nohlsearch
 
-" Commands for user-defined functions
+command! FormatJSON %!python -m json.tool
 
 command -nargs=0 SynDef echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-
-" command! -nargs=0 Chompp call functions#Chomp()
 
 command! -nargs=1 TwoSplit call functions#TwoSplit(<args>)
 

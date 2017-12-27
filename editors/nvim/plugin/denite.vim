@@ -41,8 +41,8 @@ call denite#custom#option('default', {
 " if executable('ag')
   " The Silver Searcher
   call denite#custom#var('file_rec', 'command',
-       \ ['ag', '-U', '--hidden', '--follow', '--nocolor', '--nogroup', '-g', ''])
-
+       \ [ 'ag', '--skip-vcs-ignores', '--vimgrep', '--smart-case', '--hidden' ])
+       " \ ['ag', '-U', '--hidden', '--follow', '--nocolor', '--nogroup', '-g', ''])
   " Setup ignore patterns in your .agignore file!
   " https://github.com/ggreer/the_silver_searcher/wiki/Advanced-Usage
   call denite#custom#var('grep', 'command', ['ag'])
@@ -55,7 +55,9 @@ call denite#custom#option('default', {
   call denite#custom#source('grep', 'args', ['', '', '!'])
 " endif
 
-call denite#custom#source('_', 'matchers', ['matcher_fzf'])
+" call denite#custom#source('_', 'matchers', ['matcher_fzf'])
+call denite#custom#source('help', 'matchers', ['matcher_fuzzy'])
+
 " call denite#custom#source('_', 'matchers', ['matcher_fzf', 'matcher_regexp'])
 " call denite#custom#source('grep', 'filters', ['converter_abbr_word'])
 
@@ -86,6 +88,9 @@ call denite#custom#map('normal', 'n',      '<NOP>',                          'no
 call denite#custom#map('normal', 'a',      '<denite:do_action:add>',         'noremap')
 call denite#custom#map('normal', 'd',      '<denite:do_action:delete>',      'noremap')
 call denite#custom#map('normal', 'r',      '<denite:do_action:reset>',       'noremap')
+call denite#custom#map('normal', 'c',      '<denite:do_action:custom>',       'noremap')
+call denite#custom#map('normal', '<C-p>',  '<denite:move_to_next_line>',     'noremap')
+call denite#custom#map('normal', '<C-n>',  '<denite:move_to_previous_line>', 'noremap')
 call denite#custom#map('normal', '<C-v>',  '<denite:do_action:vsplit>',      'noremap')
 call denite#custom#map('normal', '<C-x>',  '<denite:do_action:split>',       'noremap')
 

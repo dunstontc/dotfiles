@@ -91,7 +91,7 @@ let g:tagbar_type_vim = {
     \ 'm:maps',
     \ 't:tags',
     \ 'z:todos',
-    \ 's:sectons',
+    \ 'd:docs',
     \ ],
 \     }
 

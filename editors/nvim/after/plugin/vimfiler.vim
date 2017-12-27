@@ -13,8 +13,8 @@ let g:vimfiler_tree_leaf_icon = ' '
 let g:vimfiler_tree_closed_icon = '▶'
 let g:vimfiler_tree_opened_icon = '▽'
 let g:vimfiler_file_icon = ' '
-let g:vimfiler_marked_file_icon = '*'
-let g:vimfiler_readonly_file_icon='X'
+let g:vimfiler_marked_file_icon = '* '
+let g:vimfiler_readonly_file_icon='X '
 
 let g:vimfiler_time_format = ' '
 let g:vimfiler_enable_auto_cd = 1
@@ -84,6 +84,7 @@ augroup VimFilerAutocommands
   autocmd FileType vimfiler nmap <buffer> <S-K> <Plug>(vimfiler_make_directory)
   autocmd FileType vimfiler nmap <buffer> <S-R> <Plug>(vimfiler_redraw_screen)
   autocmd FileType vimfiler nmap <buffer> ~ <Plug>(vimfiler_switch_to_home_directory)
+  autocmd FileType vimfiler nmap <buffer> .. <Plug>(vimfiler_switch_to_parent_directory)
   autocmd FileType vimfiler nmap <buffer> ? <Plug>(vimfiler_help)
   autocmd FileType vimfiler nmap <buffer> yy <Plug>(vimfiler_yank_full_path)
   autocmd FileType vimfiler nmap <buffer> gr <Plug>(vimfiler_grep)

@@ -20,6 +20,7 @@ let s:menus.config.file_candidates = [
   \ [' Filetypes',             '~/.dotfiles/editors/nvim/filetype.vim'],
   \ [' Theme - DarkPlus',      '~/Projects/vim/vim-code-dark/colors/codedark.vim'],
   \ ['  Denite',               '~/.dotfiles/editors/nvim/plugin/denite.vim'],
+  \ ['  Denite Menus',         '~/.dotfiles/editors/nvim/plugin/menus.vim'],
   \ [' Lightline',             '~/.dotfiles/editors/nvim/plugin/lightline.vim'],
   \ [' Lightline Theme',       '~/.dotfiles/editors/nvim/autoload/lightline/DarkPlus.vim'],
   \ [' Statusline - Handmade', '~/.dotfiles/editors/nvim/plugin/statline.vim'],
@@ -133,6 +134,7 @@ let s:menus.Denite.command_candidates = [
   \ [' Recent Directories',   'Denite directory_rec'],
   \ [' Recent Files',         'Denite file_rec'],
   \ [' Registers',            'Denite register'],
+  \ ['  Sauce',                'Denite sauce'],
   \ [' Sample',               'Denite sample'],
   \ [' Sessions',             'Denite session'],
   \ [' Symbols',              'Denite workspaceSymbol'],
@@ -198,4 +200,4 @@ let s:menus.dein.command_candidates = [
 
 call denite#custom#var('menu', 'menus', s:menus)
 " enable unite menu compatibility
-" call denite#custom#var('menu', 'unite_source_menu_compatibility', 1)
+" call denite#custom#var('menu', 'unite_source_menu_compatibility', 'true')

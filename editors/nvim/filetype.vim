@@ -30,7 +30,7 @@ augroup filetypes
   autocmd BufNewFile,BufReadPost *{snippets,snip} set filetype=snippets
 
   " https://github.com/tjdevries/config_manager
-  :
+
   " autocmd TermOpen term://*  set filetype=term
 
   autocmd BufNewFile,BufRead [Tt]odo.txt set filetype=todo

@@ -256,21 +256,6 @@ let g:ultisnips_python_triple_quoting_style = 'double'
 " inoremap <expr><tab> pumvisible() ? "\<C-n>" : "\<TAB>"
 " inoremap <expr><s-tab> pumvisible() ? "\<C-p>" : "\<TAB>"
 
-function! GetAllSnippets()
-  call UltiSnips#SnippetsInCurrentScope(1)
-  let list = []
-  for [key, info] in items(g:current_ulti_dict_info)
-    let parts = split(info.location, ':')
-    call add(list, {
-      \"key": key,
-      \"path": parts[0],
-      \"linenr": parts[1],
-      \"description": info.description,
-      \})
-  endfor
-  return list
-endfunction
-
 
 
 " ==============================================================================

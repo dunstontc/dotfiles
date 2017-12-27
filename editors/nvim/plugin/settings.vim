@@ -6,11 +6,12 @@ set clipboard=unnamedplus    " Use the OS clipboard by default (on versions comp
 set modeline                 " Respect modeline in files
 set modelines=5              " Well, in the first 5 lines of files
 set diffopt+=iwhite,vertical " Ignore changes in amount of white space
+set lazyredraw               " Don't redraw when we don't have to
 set nopaste                  " Use system pasting
 set noerrorbells             " Disable error bells
 set visualbell               " Disable error bells
 set belloff=all              " Disable error bells
-" set ttyfast                " Assume we're using a modern terminal
+" set ttyfast                  " DEPRICATED: removed from neovim
 set hidden                   " Keep buffers alive
 set nospell                  " Let filetype settings set spell
 set noswapfile               " No thanks
@@ -18,14 +19,20 @@ set nobackup                 " I'm alright
 set splitbelow               " New split placed below
 set splitright               " New split placed right
 set winminheight=0           " Allow splits to be reduced to a single line
+set viewoptions=cursor,folds,slash,unix " What to save in sessions
 set undofile                 " Persistent Undo though
 set undodir=~/.config/nvim/undo
 
 set shell=/usr/local/bin/bash
 
-set grepprg=ag\ --vimgrep\ --nocolor\ $*
-set grepformat=%f:%l:%c:%m
-
+" set grepprg=ag\ --vimgrep\ --nocolor\ $*
+" set grepformat=%f:%l:%c:%m
+if executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+  " Use Ag for Ack
+  let g:ackprg = 'ag --vimgrep --smart-case'
+endif
 
 " ==============================================================================
 "   Input & Navigation
@@ -42,7 +49,6 @@ set backspace=indent,eol,start  " Make <BS> work as expected
 set formatoptions-=o              " Automatically insert the current comment leader after hitting 'o' or 'O' in Normal mode.
 set formatoptions+=j              " Get rid of comment leaders when joining lines
 set nostartofline                 " Don't reset cursor to start of line when moving around
-" set virtualedit=block,onemore   " TODO: See if what breaks with 'onemore' DONE: I don't think any good came of this
 set virtualedit=block
 
 " === Tabs & Spaces ===
@@ -54,10 +60,7 @@ set smartindent                 " Smart Indentation on
 set smarttab                    " Tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
 set nojoinspaces                " don't autoinsert two spaces after '.', '?', '!' for join command
 
-" set notimeout
-set timeoutlen=1000
-set ttimeout
-set ttimeoutlen=0
+
 set whichwrap=s,[,],<,> "Allow specified keys to move to the previous/next line
     " char   key    mode  ~
     "  b    <BS>   Normal and Visual
@@ -80,7 +83,7 @@ set termguicolors
 set guicursor=a:blinkon0
 set guicursor+=n-c:block-Cursor/lCursor-blinkon0
 set guicursor+=i-ci:block-lCursor
-set guicursor+=v:block-iCursor
+set guicursor+=v-ve:block-iCursor
 set guicursor+=r-cr:block-rCursor
 " let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
 " let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
@@ -99,7 +102,7 @@ let g:quantum_black=1            " Enable italic font in quantum colorscheme
 " let g:enable_italic_font=1     " Enable italic font in one dark colorscheme
 " let g:enable_bold_font=1       " Enable bold   font in one dark colorscheme
 " set concealcursor=iv
-set conceallevel=2             " Enable conceal
+set conceallevel=1             " Enable conceal
 set cursorline                 " Highlight current line
 set nowrap                     " Do not wrap lines
 set number                     " Enable line numbers
@@ -114,7 +117,7 @@ set showtabline=2
 set notitle                    " Don't Show the filename in the window titlebar
 " set linespace=0    " No extra spaces between rows
 " set pumheight=20   " Avoid the pop up menu occupying the whole screen
-set lazyredraw                " Don't redraw
+
 
 " syntax sync minlines=200
 " syntax sync maxlines=500
@@ -185,9 +188,9 @@ set dictionary+=~/grammar/google-10000-english-usa.txt
 " === Folding ===
 " ==============================================================================
 set foldenable                  " Enable folding
-" set foldmethod=manual
+set foldmethod=indent
 " set foldmethod=syntax
-set foldlevelstart=9            " Default folding level when buffer is opened
+set foldlevelstart=6            " Default folding level when buffer is opened
 set foldnestmax=10              " Maximum nested fold
 set foldtext=functions#NeatFoldTextTwo()
 
@@ -218,8 +221,8 @@ set noshowmode                 " Don't show the current mode (airline takes care
 set report=1                   " Report more than x lines changed at once
 
 " === Completion ===
-set wildmenu                    " Visual autocomplete for command menu
-" set wildcharm=<C-z>             " Trigger for completion in macros
+set wildmenu                   " Visual autocomplete for command menu
+set wildcharm=<C-z>            " Trigger for commandline completion in macros
 " set wildmode=longest:full,full   " 👈
 set wildmode=list:longest,list:full
 " set wildmode=list:longest,full

@@ -16,10 +16,11 @@ very-dark-gray:
   - cterm: 234
 dark-red:
   - hex: '#f44747'
-  - rgb: ''
+  - rgb: '244, 71, 71'
   - cterm: 167
 light-red:
   - hex: '#d16969'
+  - rgb: '209, 109, 105'
   - cterm: 203  # 167
 orange:
   - hex: '#ce9178'
@@ -27,24 +28,30 @@ orange:
   - cterm: 173
 light-yellow:
   - hex: '#dcdcaa'
+  - rgb: '220, 220, 170'
   - cterm: 187
 dark-yellow:
   - hex: '#d7ba7d'
+  - rgb: '215, 186, 125'
   - cterm: 179
 puke:
   - hex: '#b5cea8'
+  - rgb: '181, 206, 168'
   - cterm: 151
 green:
   - hex: '#608b4e'
+  - rgb: '96, 139, 78'
   - cterm: 65
 cyan:
   - hex: '#4ec9b0'
+  - rgb: '78, 201, 176'
   - cterm: 43
 light-blue:
   - hex: '#9cdcfe'
   - cterm: 117
 dark-blue:
   - hex: '#569cd6'
+  - rgb: '86, 156, 214'
   - cterm: 75
 bright-blue:
   - hex: '#007acc'

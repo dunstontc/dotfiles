@@ -2,6 +2,7 @@ let g:switch_custom_definitions =
     \ [
     \   [ '0', '1', '2', ],
     \   [ '<', '>', '^', ],
+    \   [ '(A)', '(B)', '(C)', '(D)', '(E)' ],
     \   {
     \     '\<\(\l\)\(\l\+\(\u\l\+\)\+\)\>': '\=toupper(submatch(1)) . submatch(2)',
     \     '\<\(\u\l\+\)\(\u\l\+\)\+\>': "\\=tolower(substitute(submatch(0), '\\(\\l\\)\\(\\u\\)', '\\1_\\2', 'g'))",

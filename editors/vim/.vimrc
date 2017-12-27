@@ -95,7 +95,7 @@ if has('mouse')
 endif
 if has('mouse_sgr')            " Way better mouse support
     set ttymouse=sgr
-  endif
+endif
 " if has('unnamedplus')
 "   set clipboard=unnamedplus,unnamed
 " else
@@ -219,7 +219,7 @@ set wildmode=list:longest,full
 " ==== Folding ====
 if has('folding')
   set foldenable               " Enable folding
-  set foldmethod=manual        " Syntax isn't fast enough
+  set foldmethod=indent        " Syntax isn't fast enough
   set foldlevelstart=5         " Default folding level when buffer is opened
   set foldnestmax=10           " Maximum nested fold
 endif

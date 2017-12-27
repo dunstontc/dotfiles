@@ -5,7 +5,9 @@ scriptencoding utf-8
 
 source /Users/clay/.dotfiles/editors/nvim/autoload/lightline/DarkPlus.vim
 
-
+""
+" @setting(g:lightline)
+" Settings for itchyny/|lightline|
 let g:lightline = {
       \ 'colorscheme': 'DarkPlus',
       \ 'separator':            { 'left': '', 'right': '' },
@@ -72,33 +74,34 @@ let g:lightline = {
       \},
       \}
 
-let g:lightline.mode_map = {
-    \ 'n' :     'NORMAL',
-    \ 'i' :     'INSERT',
-    \ 'R' :     'REPLACE',
-    \ 'v' :     'VISUAL',
-    \ 'V' :     'V-LINE',
-    \ "\<C-v>": 'V-BLOCK',
-    \ 'c' :     'COMMAND',
-    \ 's' :     'SELECT',
-    \ 'S' :     'S-LINE',
-    \ "\<C-s>": 'S-BLOCK',
-    \ 't':      'TERMINAL',
-    \ 'Rv' : 'V·Replace ',
-    \ 'no' : 'N·Operator Pending ',
-    \ 'cv' : 'Vim Ex ',
-    \ 'ce' : 'Ex ',
-    \ 'r'  : 'Prompt ',
-    \ 'rm' : 'More ',
-    \ 'r?' : 'Confirm ',
-    \ 'ci' : 'CMD-I ',
-    \ 'cr' : 'CMD-R ',
-    \ 'o'  : 'Pending',
-    \ 'sm' : 'SHOW-MATCH ',
-    \ '!'  : 'Shell ',
-    \ }
-"
+" let g:lightline.mode_map = {
+"     \ 'n' :     'NORMAL',
+"     \ 'i' :     'INSERT',
+"     \ 'R' :     'REPLACE',
+"     \ 'v' :     'VISUAL',
+"     \ 'V' :     'V-LINE',
+"     \ "\<C-v>": 'V-BLOCK',
+"     \ 'c' :     'COMMAND',
+"     \ 's' :     'SELECT',
+"     \ 'S' :     'S-LINE',
+"     \ "\<C-s>": 'S-BLOCK',
+"     \ 't':      'TERMINAL',
+"     \ 'Rv' : 'V·Replace ',
+"     \ 'no' : 'N·Operator Pending ',
+"     \ 'cv' : 'Vim Ex ',
+"     \ 'ce' : 'Ex ',
+"     \ 'r'  : 'Prompt ',
+"     \ 'rm' : 'More ',
+"     \ 'r?' : 'Confirm ',
+"     \ 'ci' : 'CMD-I ',
+"     \ 'cr' : 'CMD-R ',
+"     \ 'o'  : 'Pending',
+"     \ 'sm' : 'SHOW-MATCH ',
+"     \ '!'  : 'Shell ',
+"     \ }
 
+
+" 'asyncrun': '%{g:asyncrun_status}'
 " ==============================================================================
 
 let g:tcd_blacklist = '\v(cheat40|denite|gundo|help|nerdtree|netrw|peekaboo|quickmenu|startify|tagbar|undotree|unite|vimfiler|vimshell)'
@@ -183,51 +186,9 @@ function! Mode() abort
         \ &filetype ==#     'tagbar'     ? 'Tagbar'   :
         \ &filetype ==#     'unite'      ? 'Unite'    :
         \ &filetype ==#     'undotree'   ? 'UndoTree' :
-        \ &filetype ==#     'vimfiler'   ? vimfiler#get_status_string()       :
+        \ &filetype ==#     'vimfiler'   ? vimfiler#get_status_string() :
         \ &filetype ==#     'vimshell'   ? 'VimShell' :
         \ lightline#mode()
-endfunction
-
-" ==============================================================================
-
-function! Mood() abort
-  let l:modified = &modified ? ' (+) ' : ''
-  return &filetype !~# g:tcd_blacklist ? (l:modified) : ''
-endfunction
-
-" ==============================================================================
-
-function! DenitePath() abort
-  if &filetype ==# 'denite'
-    return '  '.denite#get_status_path().' '
-  else
-    return ''
-  endif
-endfunction
-
-" ==============================================================================
-
-function! DeniteLine() abort
-  if &filetype ==# 'denite'
-    return denite#get_status_sources().' '
-  else
-    return ''
-  endif
-endfunction
-
-" ==============================================================================
-
-""
-" For inactive files, returns the full path and &modified.
-function! lightline#Pending() abort
-  let l:filename = expand('%F') !=# '' ? expand('%F') : ''
-  let l:modified = &modified ? ' (+) ' : ''
-
-  if &filetype == 'vimfiler'
-    return vimfiler#get_status_string()
-  else
-    return &filetype !~# g:tcd_blacklist ? ('  '.l:filename.''.l:modified) : ' '
-  endif
 endfunction
 
 " ==============================================================================
@@ -257,36 +218,74 @@ function! lightline#Filename() abort
   endif
 endfunction
 
-" ==============================================================================
+""
+" @function(DenitePath)
+" Returns the value of |denite#get_status_path()| with some added padding.
+function! DenitePath() abort
+  if &filetype ==# 'denite'
+    return '  '.denite#get_status_path().' '
+  else
+    return ''
+  endif
+endfunction
 
+""
+" @function(DeniteLine)
+" Returns the value of |denite#get_status_sources()| with some added padding.
+function! DeniteLine() abort
+  if &filetype ==# 'denite'
+    return denite#get_status_sources().' '
+  else
+    return ''
+  endif
+endfunction
+
+""
+" @function(lighline#Pending)
+" For inactive files, returns the full path and |&modified|.
+function! lightline#Pending() abort
+  let l:filename = expand('%F') !=# '' ? expand('%F') : ''
+  let l:modified = &modified ? ' (+) ' : ''
+
+  if &filetype == 'vimfiler'
+    return vimfiler#get_status_string()
+  else
+    return &filetype !~# g:tcd_blacklist ? ('  '.l:filename.''.l:modified) : ' '
+  endif
+endfunction
+
+""
+" @function(Readonly)
+" In specific filetypes, above a specified width, returns the powerline readonly icon.
 function! Readonly() abort
   return &readonly && &filetype !~# g:tcd_blacklist ? '  ' : ''
 endfunction
 
-" ==============================================================================
-
 ""
-" In normal files, returns the name of the currently selected register.
+" @function(Register)
+" In specific filetypes, above a specified width, returns the name of the currently selected register.
 function! Register() abort
   return &filetype !~# g:tcd_blacklist && winwidth(0) > 70 ? ' '.v:register.'' : ''
 endfunction
 
-" ==============================================================================
-
 ""
-" In normal files, returns the current value of a tab.
+" @function(TabSizing)
+" In specific filetypes, above a specified width, returns the current value of a tab.
 function! TabSizing() abort
   return &filetype !~# g:tcd_blacklist && winwidth(0) > 70 ? ( '␉ ' . &shiftwidth . ' ') : ''
 endfunction
 
-" ==============================================================================
-
+""
+" @function(Devicon)
+" In specific filetypes, above a specified width, returns the corresponding filetype icon.
 function! Devicon()
   return &filetype !~# g:tcd_blacklist && winwidth(0) > 70 ? ('  '.WebDevIconsGetFileTypeSymbol().' ') : ''
 endfunction
 
-" ==============================================================================
-
+""
+" @function(GitInfo)
+" If the active file is in a git repository,
+" returns the vaule of |fugitive#head()| and the powerline branch icon.
 function! GitInfo()
   let l:git = fugitive#head()
   if l:git != ''
@@ -296,9 +295,8 @@ function! GitInfo()
   endif
 endfunction
 
-" ==============================================================================
-
 ""
+" @function(PaddedStats)
 " Returns the current/total rows & columns with padding to keep the statusline from resizing.
 function! PaddedStats() abort
   let l:column   = virtcol('.')
@@ -351,10 +349,9 @@ function! PaddedStats() abort
   endif
 endfunction
 
-" ==============================================================================
-
 ""
-" Returns a human-readable filesize.
+" @function(FileSize)
+" Returns a human-readable filesize for active buffer.
 function! FileSize() abort
   let l:bytes = getfsize(expand('%:p'))
   if (l:bytes >= 1024)
@@ -385,10 +382,6 @@ augroup lightline#ale
   autocmd User ALELint call lightline#update()
 augroup END
 
-" let s:indicator_warnings = get(g:, 'lightline#ale#indicator_warnings', 'W:')
-" let s:indicator_errors = get(g:, 'lightline#ale#indicator_errors', 'E:')
-" let s:indicator_ok = get(g:, 'lightline#ale#indicator_ok', 'OK')
-
 function! LightlineLinterWarnings() abort
   let l:counts = ale#statusline#Count(bufnr(''))
   let l:all_errors = l:counts.error + l:counts.style_error
@@ -414,18 +407,39 @@ endfunction
 
 " ==============================================================================
 
-" let s:m = { 'ControlP': 'CtrlP', '__Tagbar__': 'Tagbar', '__Gundo__': 'Gundo', '__Gundo_Preview__': 'Gundo Preview', '[Command Line]': 'Command Line'}
-" let s:p = { 'unite': 'Unite', 'vimfiler': 'VimFiler', 'vimshell': 'VimShell', 'quickrun': 'Quickrun', 'dictionary': 'Dictionary', 'calendar': 'Calendar', 'thumbnail': 'Thumbnail', 'vimcalc': 'VimCalc', 'agit' : 'Agit', 'agit_diff' : 'Agit', 'agit_stat' : 'Agit', 'qf': 'QuickFix', 'github-dashboard': 'GitHub Dashboard' }
-" function! lightline_powerful#mode() abort
-"   if &ft ==# 'calendar'
-"     call lightline#link("nvV\<C-v>"[b:calendar.visual_mode()])
-"   elseif &ft ==# 'thumbnail'
-"     if !empty(b:thumbnail.view.visual_mode)
-"       call lightline#link(b:thumbnail.view.visual_mode)
-"     endif
-"   elseif expand('%:t') ==# 'ControlP'
-"     call lightline#link('iR'[get(g:lightline, 'ctrlp_regex', 0)])
-"   endif
-"   return get(s:m, expand('%:t'), get(s:p, &ft, lightline#mode()))
-" endfunction
+let s:m = {
+      \ 'ControlP':          'CtrlP',
+      \ '__Tagbar__':        'Tagbar',
+      \ '__Gundo__':         'Gundo',
+      \ '__Gundo_Preview__': 'Gundo Preview',
+      \ '[Command Line]':    'Command Line'
+      \ }
+let s:p = {
+      \ 'unite':            'Unite',
+      \ 'vimfiler':         'VimFiler',
+      \ 'vimshell':         'VimShell',
+      \ 'quickrun':         'Quickrun',
+      \ 'dictionary':       'Dictionary',
+      \ 'calendar':         'Calendar',
+      \ 'thumbnail':        'Thumbnail',
+      \ 'vimcalc':          'VimCalc',
+      \ 'agit':             'Agit',
+      \ 'agit_diff':        'Agit',
+      \ 'agit_stat':        'Agit',
+      \ 'qf':               'QuickFix',
+      \ 'github-dashboard': 'GitHub Dashboard'
+      \ }
+
+function! lightline#powerful_mode() abort
+  if &ft ==# 'calendar'
+    call lightline#link("nvV\<C-v>"[b:calendar.visual_mode()])
+  elseif &ft ==# 'thumbnail'
+    if !empty(b:thumbnail.view.visual_mode)
+      call lightline#link(b:thumbnail.view.visual_mode)
+    endif
+  elseif expand('%:t') ==# 'ControlP'
+    call lightline#link('iR'[get(g:lightline, 'ctrlp_regex', 0)])
+  endif
+  return get(s:m, expand('%:t'), get(s:p, &ft, lightline#mode()))
+endfunction
 

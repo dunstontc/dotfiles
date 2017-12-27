@@ -15,7 +15,7 @@ endif
 " ==============================================================================
 "  Plugins
 " ==============================================================================
-"
+
 let g:dein_repo = 'https://github.com/Shougo/dein.vim.git'
 let g:dein_dir = '~/.config/nvim/dein/repos/github.com/Shougo/dein.vim'
 
@@ -30,7 +30,8 @@ call dein#begin(expand('~/.config/nvim/dein'))
 call dein#add('Shougo/dein.vim')
 call dein#add('haya14busa/dein-command.vim')
 
-" UI:
+""
+" @subsection UI, user-interface
 call dein#add('junegunn/vim-peekaboo')
 " call dein#add('airblade/vim-gitgutter')
 call dein#add('Shougo/vimfiler.vim')
@@ -40,47 +41,48 @@ call dein#add('ryanoasis/vim-devicons')
 call dein#add('mgee/lightline-bufferline')
 " call dein#add('thalesmello/nvim-better-operator-message')
 call dein#add('kshenoy/vim-signature')
+call dein#add('itchyny/vim-cursorword')
+call dein#add('blueyed/vim-diminactive')
 " call dein#add('tomtom/quickfixsigns_vim')
 " call dein#add('jeetsukumaran/vim-markology')
-" dhruvasagar/vim-markify
+" call dein#add('dhruvasagar/vim-markify')
 " call dein#add('CharlesGueunet/quickmenu.vim')
 " call dein#add('ap/vim-buftabline')
 " call dein#add('bling/vim-bufferline')
 " call dein#add('zhaocai/GoldenView.Vim')
 " call dein#add('powerman/vim-plugin-AnsiEsc')
-
-
-" Make Vim Sexy:
-" call dein#add('jszakmeister/vim-togglecursor')
-call dein#add('nickeb96/vitality.vim')
-call dein#add('blueyed/vim-diminactive')
-call dein#add('itchyny/vim-cursorword')
 call dein#add('xtal8/traces.vim')
 " call dein#add('itchyny/vim-parenmatch')
+" call dein#add('jszakmeister/vim-togglecursor')
 " call dein#add('yuttie/comfortable-motion.vim')
 " call dein#add('junegunn/rainbow_parentheses.vim')
 " call dein#add('machakann/vim-highlightedundo')
 " call dein#add('thaerkh/vim-indentguides')
 
-" call dein#add('joshdick/onedark.vim')
-call dein#add('morhetz/gruvbox')
-call dein#add('romainl/Apprentice')
+""
+" @subsection Themes
+
+" call dein#add('morhetz/gruvbox')
+" call dein#add('romainl/Apprentice')
+" call dein#add('KKPMW/moonshine-vim')
 " call dein#add('mhartington/oceanic-next')
+
+" call dein#add('joshdick/onedark.vim')
 " call dein#add('altercation/vim-colors-solarized')
 " call dein#add('mswift42/vim-themes')
 " call dein#add('chriskempson/base16-vim')
 " call dein#add('rafi/awesome-vim-colorschemes')
 " call dein#add('itchyny/landscape.vim')
 " call dein#add('junegunn/seoul256.vim')
-call dein#add('KKPMW/moonshine-vim')
-call dein#add('rhysd/vim-color-spring-night')
-call dein#add('liuchengxu/space-vim-dark')
-call dein#add('tyrannicaltoucan/vim-deep-space')
-call dein#add('tyrannicaltoucan/vim-quantum')
+" call dein#add('rhysd/vim-color-spring-night')
+" call dein#add('liuchengxu/space-vim-dark')
+" call dein#add('tyrannicaltoucan/vim-deep-space')
+" call dein#add('tyrannicaltoucan/vim-quantum')
 
 
+""
+" @subsection Language Support
 
-" Language Support:
 " call dein#add('autozimu/LanguageClient-neovim', {'do': ':UpdateRemotePlugins' })
 call dein#add('xu-cheng/brew.vim')
 call dein#add('octol/vim-cpp-enhanced-highlight', {'lazy':1, 'on_ft': ['cpp']})
@@ -113,6 +115,7 @@ call dein#add('vim-perl/vim-perl',                {'lazy':1, 'on_ft': ['pearl'  
 call dein#add('hynek/vim-python-pep8-indent',     {'lazy':1, 'on_ft': ['py', 'python'  ]})
 " call dein#add('Vimjas/vim-python-pep8-indent',  {'lazy':1, 'on_ft': ['py','python']}) " ???
 call dein#add('/Users/clay/.ghq/github.com/dunstontc/vim-pydocstring', {'lazy':1, 'on_ft': ['python']})
+call dein#add('tweekmonster/impsort.vim',         {'lazy':1, 'on_ft': ['python']})
 call dein#add('vim-ruby/vim-ruby',                {'lazy':1, 'on_ft': ['ruby', 'rb' ]})
 call dein#add('rust-lang/rust.vim',               {'lazy':1, 'on_ft': ['rust', 'rs' ]})
 " call dein#add('rbtnn/powershell.vim')
@@ -129,8 +132,8 @@ call dein#add('zplug/vim-zplug',                  {'lazy':1, 'on_ft': ['zsh'    
 " call dein#add('PotatoesMaster/i3-vim-syntax')
 
 
-
-" Linting: ✔
+""
+" @subsection Linting: ✔
 call dein#add('w0rp/ale')
 call dein#add('sbdchd/neoformat')
 call dein#add('ternjs/tern_for_vim', {'lazy':1, 'on_ft': ['js', 'jsx', 'javascript']})
@@ -141,7 +144,8 @@ call dein#add('ternjs/tern_for_vim', {'lazy':1, 'on_ft': ['js', 'jsx', 'javascri
 " call dein#add('reedes/vim-lexical')
 
 
-" Text Objects: ⌨
+""
+" @subsection Text Objects
 call dein#add('kana/vim-textobj-user')
 call dein#add('kana/vim-textobj-line')
 call dein#add('kana/vim-textobj-fold')
@@ -154,6 +158,7 @@ call dein#add('Konfekt/vim-textobj-entire')
 call dein#add('michaeljsmith/vim-indent-object')
 call dein#add('Julian/vim-textobj-variable-segment')
 call dein#add('Julian/vim-textobj-brace')
+call dein#add('Raimondi/vim_search_objects')
 " call dein#add('junegunn/vim-after-object')
 " call dein#add('thinca/vim-textobj-between')
 " call dein#add('paulhybryant/vim-textobj-path')
@@ -171,7 +176,17 @@ call dein#add('Julian/vim-textobj-brace')
 " call dein#add('kana/vim-operator-replace')
 
 
-" Utilities: ⚙
+""
+" @subsection Editing, editing
+call dein#add('tomtom/tcomment_vim')
+call dein#add('joereynolds/place.vim')
+call dein#add('AndrewRadev/splitjoin.vim', {'lazy': 1, 'on_cmd': ['SplitjoinSplit', 'SplitjoinJoin']})
+call dein#add('AndrewRadev/switch.vim',    {'lazy': 1, 'on_cmd': 'Switch'})
+call dein#add('dkarter/bullets.vim',       {'lazy': 1, 'on_ft' : ['gitcommit', 'markdown', 'rst', 'scratch', 'text', 'text', 'yaml']})
+
+
+""
+" @subsection Utilities: ⚙
 call dein#add('tpope/vim-rsi')
 " call dein#add('tpope/vim-tbone')
 call dein#add('tpope/vim-eunuch')
@@ -180,29 +195,28 @@ call dein#add('tpope/vim-fugitive')
 call dein#add('tpope/vim-surround')
 call dein#add('tpope/vim-endwise')
 call dein#add('tpope/vim-abolish')
-call dein#add('Rykka/colorv.vim')
-" call dein#add('tpope/vim-projectionist')
-call dein#add('tpope/vim-speeddating')
+call dein#add('tpope/vim-projectionist')
+" call dein#add('tpope/vim-speeddating')
+call dein#add('tpope/vim-characterize', {'lazy': 1, 'on_cmd': '<Plug>(characterize)'})
 " call dein#add('tpope/vim-commentary')
-call dein#add('tomtom/tcomment_vim')
-" call dein#add('tyru/caw.vim')
 call dein#add('airblade/vim-rooter')
+call dein#add('pbrisbin/vim-mkdir')
+" call dein#add('Rykka/colorv.vim')
+call dein#add('kopischke/vim-stay')
+" call dein#add('farmergreg/vim-lastplace')
+" call dein#add('tyru/caw.vim')
 " call dein#add('moll/vim-bbye')
 call dein#add('mhinz/vim-sayonara')
 call dein#add('ervandew/supertab')
 call dein#add('airblade/vim-matchquote')
 call dein#add('justinmk/vim-sneak')
 " call dein#add('rhysd/clever-f.vim')
-call dein#add('pbrisbin/vim-mkdir')
 " call dein#add('thalesmello/tabfold')
 call dein#add('Raimondi/delimitMate')
 call dein#add('sgur/vim-editorconfig')
 call dein#add('junegunn/vim-easy-align')
-call dein#add('farmergreg/vim-lastplace')
 call dein#add('dohsimpson/vim-macroeditor') " TODO: learn how to edit macros in split buffer
 " call dein#add('supercrabtree/vim-resurrect')
-call dein#add('AndrewRadev/splitjoin.vim')
-call dein#add('AndrewRadev/switch.vim', {'lazy': 1, 'on_cmd':'Switch'})
 " call dein#add('terryma/vim-multiple-cursors')
 " call dein#add('airblade/vim-matchquote')
 " call dein#add('thinca/vim-qfreplace')
@@ -210,9 +224,10 @@ call dein#add('AndrewRadev/switch.vim', {'lazy': 1, 'on_cmd':'Switch'})
 " call dein#add('romainl/vim-qlist')
 " call dein#add('romainl/vim-quicklist')
 " call dein#add('MattesGroeger/vim-bookmarks')
-call dein#add('dkarter/bullets.vim', {'lazy':1, 'on_ft': ['gitcommit', 'markdown', 'rst', 'scratch', 'text', 'text', 'yaml']})
-call dein#add('terryma/vim-expand-region')
+" call dein#add('terryma/vim-expand-region')
 call dein#add('christoomey/vim-tmux-navigator')
+call dein#add('nickeb96/vitality.vim')
+" call dein#add('sjl/vitality.vim')  " FIXME: figure out which `vitality.vim` is current.
 " call dein#add('dhruvasagar/vim-zoom')
 " call dein#add('simeji/winresizer')
 " call dein#add('wesQ3/vim-windowswap')
@@ -224,7 +239,8 @@ call dein#add('Shougo/vimproc.vim', { 'build' : 'make' })
 call dein#add('Shougo/vinarise.vim')
 
 
-" Unite:
+""
+" @subsection Unite
 call dein#add('Shougo/unite.vim')
 " call dein#add('Shougo/unite-outline')
 " call dein#add('Shougo/unite-session')
@@ -242,14 +258,15 @@ call dein#add('Shougo/unite.vim')
 " call dein#add('osyo-manga/unite-option')
 
 
-" Denite:
+""
+" @subsection Denite
 call dein#add('~/.ghq/github.com/dunstontc/denite.nvim')
 call dein#add('~/.ghq/github.com/dunstontc/neomru.vim')
 " call dein#add('Shougo/neomru.vim')
 call dein#add('Shougo/neoyank.vim')
 call dein#add('Jagua/vim-denite-ghq')
 call dein#add('rafi/vim-denite-z')
-call dein#add('rafi/vim-denite-task')
+" call dein#add('rafi/vim-denite-task')
 call dein#add('rafi/vim-denite-session')
 call dein#add('chemzqm/denite-git')
 call dein#add('chemzqm/vim-easygit')
@@ -265,9 +282,8 @@ call dein#add('yyotti/denite-marks')
 call dein#add('blankname/denite_fzf_matcher')
 
 
-
-
-" Completion:
+""
+" @subsection Completion
 call dein#add('Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' })
 call dein#add('Shougo/neco-vim')
 call dein#add('Shougo/neco-syntax')
@@ -285,20 +301,23 @@ call dein#add('ponko2/deoplete-fish',          { 'lazy':1, 'on_ft': ['fish'     
 call dein#add('carlitux/deoplete-ternjs',      { 'lazy':1, 'on_ft': ['js', 'jsx', 'javascript' ]})
 call dein#add('sebastianmarkow/deoplete-rust', { 'lazy':1, 'on_ft': ['rs', 'rust'              ]})
 call dein#add('zchee/deoplete-clang',          { 'lazy':1, 'on_ft': ['c', 'cpp', 'h', 'hpp'    ]})
-" call dein#add('tweekmonster/deoplete-clang2',  { 'lazy':1, 'on_ft': ['c', 'cpp', 'h', 'hpp'    ]})
+" call dein#add('tweekmonster/deoplete-clang2',  { 'lazy':1, 'on_ft': ['' ]})
 call dein#add('padawan-php/deoplete-padawan',  { 'lazy':1, 'on_ft': 'php',                      })
 " call dein#add('1995eaton/vim-better-javascript-completion')
 " call dein#add('mopp/googlesuggest-source.vim')
 " call dein#add('mattn/googlesuggest-complete-vim')
 
 
-" Misc:
+""
+" @subsection Misc
+call dein#add('mattn/webapi-vim')
+call dein#add('tbabej/taskwiki')
+call dein#add('skywind3000/asyncrun.vim')
 " call dein#add('equalsraf/neovim-gui-shim')
+call dein#add('lambdalisue/gina.vim')
 " call dein#add('lambdalisue/vim-gista', {
 "     \ 'on_cmd': 'Gista',
 "     \})
-call dein#add('mattn/webapi-vim')
-call dein#add('tbabej/taskwiki')
 " call dein#add('vim-chat/vim-chat')
 " call dein#add('vimwiki/vimwiki')
 " call dein#add('pocket7878/curses-vim')
@@ -307,7 +326,8 @@ call dein#add('tbabej/taskwiki')
 " call dein#add('vifm/neovim-vifm')
 
 
-" Search And Replace:
+""
+" @subsection Search And Replace, searching
 call dein#add('osyo-manga/vim-anzu')
 " call dein#add('junegunn/vim-slash')
 " call dein#add('thalesmello/vim-slasher')
@@ -321,28 +341,25 @@ call dein#add('osyo-manga/vim-anzu')
 " call dein#add('brooth/far.vim')
 
 
+""
+" @subsection Dev
 
-
-" Dev:
 " call dein#add('neomake/neomake')
-call dein#add('mhinz/vim-lookup')
-" call dein#add('Rykka/colorv.vim')
-" call dein#add('inkarkat/vim-ingo-library')
-" call dein#add('tpope/vim-scriptease')
-" call dein#add('sjl/vitality.vim')
-" call dein#add('tweekmonster/helpful.vim')
-" call dein#add('tweekmonster/nvim-api-viewer')
+" call dein#add('mhinz/vim-lookup',             { 'lazy': 1, 'on_cmd' : 'lookup#lookup'         })
+call dein#add('tweekmonster/helpful.vim',     { 'lazy': 1, 'on_cmd' : 'HelpfulVersion'        })
+call dein#add('tweekmonster/nvim-api-viewer', { 'lazy': 1, 'on_cmd' : ['NvimAPI', 'NvimAPI!'] })
+call dein#add('MarcWeber/vim-addon-commandline-completion')
 " call dein#add('tweekmonster/startuptime.vim')
 " call dein#add('tweekmonster/exception.vim')
 " call dein#add('tyru/eskk.vim')
-" call dein#add('tjdevries/standard.vim')
 " call dein#add('tomtom/tlib_vim')
-" call dein#add('othree/vim-autocomplpop')
+" call dein#add('tpope/vim-scriptease')
+" call dein#add('tjdevries/standard.vim')
+" call dein#add('inkarkat/vim-ingo-library')
 
 
-
-
-" Lazy:
+""
+" @subsection Lazy
 call dein#add('itchyny/dictionary.vim')
 call dein#add('heavenshell/vim-slack')
 call dein#add('ciaranm/securemodelines',       { 'lazy': 1, 'on_event' : 'BufRead'                    })
@@ -355,10 +372,7 @@ call dein#add('Shougo/deol.nvim',              { 'lazy': 1, 'on_cmd'   : 'Deol' 
 call dein#add('Shougo/junkfile.vim')
 call dein#add('majutsushi/tagbar',             { 'lazy': 1, 'on_cmd'   : 'TagbarToggle'               })
 call dein#add('mbbill/undotree',               { 'lazy': 1, 'on_cmd'   : 'UndoTreeToggle'             })
-call dein#add('jreybert/vimagit', {
-      \ 'lazy'  : 1,
-      \ 'on_cmd': 'Magit',
-      \})
+call dein#add('jreybert/vimagit',              { 'lazy': 1, 'on_cmd'   : 'Magit'                      })
 " call dein#add('sjl/gundo.vim')
 " call dein#add('vmchale/vim-twitter')
 call dein#add('itchyny/calendar.vim',          { 'lazy': 1, 'on_cmd'   : 'Calendar'                   })
@@ -369,20 +383,24 @@ call dein#add('junegunn/vim-github-dashboard', { 'lazy': 1, 'on_cmd'   : ['GHDas
 call dein#add('guns/xterm-color-table.vim',    { 'lazy': 1, 'on_cmd'   : 'XtermColorTable'            })
 
 
-" FZF:
+""
+" @subsection FZF, fzf
 call dein#add('/usr/local/opt/fzf')
 call dein#add('~/Projects/Vim/forks/fzf.vim')
-call dein#add('pbogut/fzf-mru.vim')
-call dein#add('justinhoward/fzf-neoyank')
+" call dein#add('pbogut/fzf-mru.vim')
+" call dein#add('lvht/fzf-mru')
+" call dein#add('justinhoward/fzf-neoyank')
 " call dein#add('BurningEther/fzf-proj.vim')
 " call dein#add('c-brenn/fuzzy-projectionist.vim')
 
 
-" Local Or Forked:
+""
+" @subsection Local, local
 call dein#add('~/Projects/vim/vim-code-dark')
 call dein#add('~/Projects/Vim/forks/lightline.vim')
 call dein#add('/Users/clay/.ghq/github.com/dunstontc/lightline.vim')
-call dein#add('/Users/clay/.ghq/github.com/lucc/nvimpager')
+" call dein#add('/Users/clay/.ghq/github.com/lucc/nvimpager')
+call dein#add('/Users/clay/.ghq/github.com/dunstontc/highlighter.nvim', { 'do': ':UpdateRemotePlugins' })
 call dein#add('~/Projects/Vim/me/tcd')
 " call dein#add('~/Projects/Vim/forks/webcomplete.vim')
 " call dein#add('~/.ghq/github.com/dunstontc/webcomplete.vim')
@@ -398,7 +416,7 @@ call dein#add('~/Projects/Vim/Denite/me/denite-mappings-source')
 call dein#add('~/Projects/Vim/me/projectile.nvim')
 " call dein#add('lervag/wiki')
 " call dein#add('$HOME/Projects/forks/wiki')
-call dein#add('dunstontc/vim-taskwarrior')
+" call dein#add('dunstontc/vim-taskwarrior')
 call dein#add('dunstontc/vim-cheat40', { 'lazy': 1, 'on_cmd':'Cheat40Open'})
 " call dein#add('$HOME/Projects/Vim/me/tcd')
 " call dein#add('~/Projects/Vim/forks/vim-sidemenu')
@@ -416,9 +434,10 @@ set nocompatible           " Not compatible with vi
 
 
 " ==============================================================================
-"  === vim-jedi ===
+"  === davidhalter/jedi-vim ===
 " ==============================================================================
 let g:python_highlight_all=1
+let g:python_highlight_file_headers_as_comments = 0
 let g:jedi#auto_initialization=1
 let g:jedi#auto_vim_configuration=0
 " let g:jedi#use_splits_not_buffers='left'
@@ -445,4 +464,3 @@ let g:jedi#documentation_command = '<C-p>'
 " let g:jedi#completions_command = ''
 " let g:jedi#rename_command = ''
 
-let g:python_highlight_all=1

@@ -5,51 +5,47 @@
 # --tag-relative=yes
 
 # Exclustions:
---exclude=*.hg*
---exclude=*.cvs*
---exclude=*.svn*
---exclude=*.git*
---exclude=*.idea*
---exclude=*.vscode*
-
---exclude=*compiled*
---exclude=build
---exclude=dist
---exclude=out
---exclude=target
+--exclude=.hg
+--exclude=.cvs
+--exclude=.svn
+--exclude=.git
+--exclude=.idea
+--exclude=.vscode
 --exclude=__pycache__
---exclude=*.min.js
---exclude=*.min.css
---exclude=*log*
---exclude=*.log
+--exclude=.min.js
+--exclude=.min.css
+--exclude=log
+--exclude=.log
 
---exclude=*vender*
---exclude=*bower_components*
---exclude=*node_modules*
+--exclude=vender
+--exclude=bower_components
+--exclude=node_modules
 
---exclude=*images*
---exclude=*.DS_Store*
+--exclude=images
+--exclude=.DS_Store
 
---exclude=tags
---exclude=TAGS
---exclude=GTAGS
---exclude=GPATH
+# --exclude=tags
+# --exclude=TAGS
+# --exclude=GTAGS
+# --exclude=GPATH
 
 --langdef=snippets
 --langmap=snippets:.snippets
 --regex-snippets=/^snippet (.*)/\1/s,snippet/
 
 # --regex-vim=/\/\/[ \t]*(FIXME|TODO|BUG|NOBUG|???|!!!|HACK|XXX)[ \t]*\:*(.*)/\1/t,tag,tags/
---langdef=Vim
---langmap=Vim:.vim
---regex-Vim=/^.*"\s(FIXME|TODO|BUG|HACK|XXX)\:(.*)/\1/z,todo/
---regex-Vim=/^(TODO|BUG|HACK|XXX) \:(.*)/\1/z,todo/
---regex-Vim=/"( TODO )(.*)/\2/z,todo/
+# --langdef=Vim
+# --langmap=Vim:.vim
+# --regex-Vim=/^.*"\s(FIXME|TODO|BUG|HACK|XXX)\:(.*)/\1/z,todo/
+# --regex-Vim=/^(TODO|BUG|HACK|XXX) \:(.*)/\1/z,todo/
+# --regex-Vim=/"( TODO )(.*)/\2/z,todo/
+# --regex-vim=/^.*"\s(FIXME|TODO|BUG|HACK|XXX)\:(.*)/\1/z,todo/
+# --regex-vim=/^(TODO|BUG|HACK|XXX) \:(.*)/\1/z,todo/
+# --regex-vim=/"( TODO )(.*)/\2/z,todo/
+# --regex-Vim=/"( TODO )(.*)/\2/z,todo/
+# --regex-vim=/^" (\S*) {{{\d$/\1/s,section
+--regex-vim=/^"" @(.*)/\1/d,doc/
 
---langdef=vim
---langmap=vim:.vim
---regex-vim=/"( TODO )(.*)/\2/z,todo/
---regex-vim=/^" (\S*) {{{\d$/\1/s,section
 
 # --langdef=markdown
 # --langmap=markdown:.md
