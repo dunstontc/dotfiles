@@ -3,6 +3,7 @@
 " ==============================================================================
 set encoding=utf-8 nobomb
 set clipboard=unnamedplus    " Use the OS clipboard by default (on versions compiled with `+clipboard`)
+set autoread                 " Auto-reload changed files
 set modeline                 " Respect modeline in files
 set modelines=5              " Well, in the first 5 lines of files
 set diffopt+=iwhite,vertical " Ignore changes in amount of white space

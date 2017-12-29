@@ -470,8 +470,11 @@ nnoremap <leader>bq :q<CR>
 " ==============================================================================
 "  === d -- Denite ===
 " ==============================================================================
-nnoremap <leader>dc :Denite menu:config<CR>
+nnoremap <leader>, :Denite menu:config<CR>
+nnoremap <leader>dc :Denite commands<CR>
 nnoremap <leader>db :Denite bookmark<CR>
+nnoremap <leader>dd <NOP>
+nnoremap <leader>de :Denite env<CR>
 nnoremap <leader>df :Denite menu:dotfiles<CR>
 nnoremap <leader>dh :Denite help<CR>
 nnoremap <leader>dk :Denite mapping_verbose<CR>
@@ -479,9 +482,11 @@ nnoremap <leader>dm :Denite menu:Denite<CR>
 nnoremap <leader>dp :Denite projectile -default-action=custom<CR>
 nnoremap <leader>dq :Denite quickfix<CR>
 nnoremap <leader>dt :Denite todo<CR>
+nnoremap <leader>d<S-T> :Denite todotxt<CR>
 nnoremap <leader>ds :Denite sauce<CR>
 nnoremap <leader>d<S-S> :Denite sauce_file<CR>
-nnoremap <leader>du :Unite
+nnoremap <leader>du :Denite ultinsips<CR>
+nnoremap <leader>d<S-U> :Denite ultisnips_file<CR>
 
 
 
@@ -566,7 +571,7 @@ nnoremap <leader>hm :Denite messages<CR>
 
 " Describe Character
 " nnoremap <leader>hdc :ascii<CR>
-nmap     <leader>hdc <Plug>(characterize)
+nmap     <leader>hdc :<Plug>(characterize)<CR>
 " Describe Filetype
 nnoremap <leader>hdf :set filetype?<CR>
 " Describe Current Path'       ],

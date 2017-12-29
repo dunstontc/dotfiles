@@ -4,6 +4,7 @@ let g:volatile_ftypes = [
   \ 'svn', 'cvs', 'cvsrc', 'bzr',
   \ ]
 let g:volatile_ftypes += [
+  \ '',
   \ 'cheat40',
   \ 'denite',
   \ 'deol',

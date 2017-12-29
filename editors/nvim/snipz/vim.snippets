@@ -31,18 +31,22 @@ else
 endif $4
 endsnippet
 
-# ==============================================================================
-
 snippet execute "execute('<command>')"
   execute(${2:'$1'})$0
+endsnippet
+
+snippet user_command "Define a user command." b
+command! ${1:-nargs=$2} ${3:Cmd} ${4:cmd}${6:(${5:<f-args>})}
 endsnippet
 
 snippet autogroup "Group of autocommands"
 augroup $1
   ${2:autocmd!}
-	$0
+  $0
 augroup END
 endsnippet
+
+#  =============================================================================
 
 snippet pla "Positive Look-Ahead"
 \($0\)\@=
@@ -81,10 +85,7 @@ call dein#add('${1:`!v @+`}', {'lazy':1, 'on_ft': [$2]})$0
 endsnippet
 
 snippet cdal "call dein#add('lazy')" b
-call dein#add('${1:`!v @+`}', {
-      \ 'lazy'  : 1,
-      \ '$2': '$3',
-      \\})$0
+call dein#add('${1:`!v @+`}', { 'lazy'  : 1, '$2': '$3', })$0
 endsnippet
 
 snippet menu_item "Quickmenu Item" b
@@ -96,7 +97,7 @@ call g:quickmenu#append(
 endsnippet
 
 snippet hilite "Syntax Highlighting Function" b
-call <sid>hi('$1',    ${2:{`!v @+`}},   ${3:{}}, ${4:'none'}, ${5:{}})$0
+call <sid>hi('${1:`!v @+`}',    ${2:{}},   ${3:{}}, ${4:'none'}, ${5:{}})$0
 endsnippet
 
 # ==============================================================================
