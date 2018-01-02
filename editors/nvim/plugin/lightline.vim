@@ -16,7 +16,7 @@ let g:lightline = {
       \ 'tabline_subseparator': { 'left': '  ', 'right': '  ' },
       \ 'tabline': {
       \   'left': [['buffers']],
-      \   'right': [ [ 'undecided' ], ],
+      \   'right': [ [ 'gitbranch' ], ],
       \},
       \  'inactive': {
       \    'left': [ [ 'pending' ], ],
@@ -135,9 +135,6 @@ let g:vimfiler_force_overwrite_statusline = 0
 " let g:lightline_buffer_maxfextlen = 4
 " let g:lightline_buffer_minfextlen = 4
 " " let g:lightline_buffer_reservelen = 20
-function! IdkYet() abort
-  return ' '.WebDevIconsGetFileTypeSymbol().'  '
-endfunction
 
 
 " ==============================================================================
@@ -164,15 +161,12 @@ let g:lightline#bufferline#number_map        = {
 
 
 function! Mode() abort
-  if &filetype ==# 'denite'
-    return denite#get_status_mode()
-  endif
   return
         \ expand('%:t') ==# 'ControlP'   ? 'CtrlP'    :
         \ expand('%:t') ==# 'peekaboo'   ? 'Peekaboo' :
         \ &filetype ==#     'cheat40'    ? 'Cheat40'  :
-        \ &filetype ==#     'denite'     ? 'Denite'   :
         \ &filetype ==#     'deol'       ? 'Deol'     :
+        \ &filetype ==#     'denite'     ? lightline#includeDenite() :
         \ &filetype ==#     'fzf'        ? 'FZF'      :
         \ &filetype ==#     'gitcommit'  ? 'Fugitive' :
         \ &filetype ==#     'help'       ? 'Help'     :
@@ -289,9 +283,9 @@ endfunction
 function! GitInfo()
   let l:git = fugitive#head()
   if l:git != ''
-    return '  ' . fugitive#head()
+    return '  ' . fugitive#head().'   '
   else
-    return ''
+    return '  '
   endif
 endfunction
 
@@ -407,39 +401,9 @@ endfunction
 
 " ==============================================================================
 
-let s:m = {
-      \ 'ControlP':          'CtrlP',
-      \ '__Tagbar__':        'Tagbar',
-      \ '__Gundo__':         'Gundo',
-      \ '__Gundo_Preview__': 'Gundo Preview',
-      \ '[Command Line]':    'Command Line'
-      \ }
-let s:p = {
-      \ 'unite':            'Unite',
-      \ 'vimfiler':         'VimFiler',
-      \ 'vimshell':         'VimShell',
-      \ 'quickrun':         'Quickrun',
-      \ 'dictionary':       'Dictionary',
-      \ 'calendar':         'Calendar',
-      \ 'thumbnail':        'Thumbnail',
-      \ 'vimcalc':          'VimCalc',
-      \ 'agit':             'Agit',
-      \ 'agit_diff':        'Agit',
-      \ 'agit_stat':        'Agit',
-      \ 'qf':               'QuickFix',
-      \ 'github-dashboard': 'GitHub Dashboard'
-      \ }
 
-function! lightline#powerful_mode() abort
-  if &ft ==# 'calendar'
-    call lightline#link("nvV\<C-v>"[b:calendar.visual_mode()])
-  elseif &ft ==# 'thumbnail'
-    if !empty(b:thumbnail.view.visual_mode)
-      call lightline#link(b:thumbnail.view.visual_mode)
-    endif
-  elseif expand('%:t') ==# 'ControlP'
-    call lightline#link('iR'[get(g:lightline, 'ctrlp_regex', 0)])
-  endif
-  return get(s:m, expand('%:t'), get(s:p, &ft, lightline#mode()))
+function lightline#includeDenite()
+    let mode_str = substitute(denite#get_status_mode(), "-\\| ", "", "g")
+    call lightline#link(tolower(mode_str[0]))
+    return mode_str
 endfunction
-

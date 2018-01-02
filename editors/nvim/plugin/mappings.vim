@@ -64,7 +64,7 @@ nnoremap <C-W><up> <C-W>K
 
 " nnoremap <C-A> ggVG
 nnoremap <C-p> :Denite file_mru<CR>
-
+nnoremap <S-m> :Denite messages<CR>
 
 " Clear highlights & commands
 nnoremap <silent>\ :noh<CR>:call anzu#clear_search_status()<CR>:echo<CR>
@@ -258,6 +258,12 @@ map K <Plug>(expand_region_expand)
 map J <Plug>(expand_region_shrink)
 
 ""
+" === haya14busa/vim-edgemotion ===
+"
+map <S-j> <Plug>(edgemotion-j)
+map <S-k> <Plug>(edgemotion-k)
+
+""
 " === junegunn/vim-table-mode ===
 let g:table_mode_disable_mappings = 0
 
@@ -314,7 +320,7 @@ nmap # <Plug>(anzu-sharp)
 
 ""
 " === AndrewRadev/splitjoin.vim ===
-let g:splitjoin_split_mapping = ''
+let g:splitjoin_split_mapping = 'gs'
 let g:splitjoin_join_mapping = ''
 " nmap sj :SplitjoinSplit<cr>
 " nmap sk :SplitjoinJoin<cr>
@@ -368,10 +374,19 @@ map t <Plug>Sneak_t
 map T <Plug>Sneak_T
 
 ""
+" Leader Guide
+let g:leaderGuide_map = {}
+call leaderGuide#register_prefix_descriptions('', 'g:leaderGuide_map')
+call leaderGuide#register_prefix_descriptions("<Space>", "g:lmap")
+nnoremap <silent> <leader> :<c-u>LeaderGuide '<Space>'<CR>
+vnoremap <silent> <leader> :<c-u>LeaderGuideVisual '<Space>'<CR>
+
+
+""
 " === christoomey/vim-tmux-navigator ===
 
 " let g:tmux_navigator_no_mappings = 1
-"
+
 " nnoremap <silent> {Left-Mapping} :TmuxNavigateLeft<cr>
 " nnoremap <silent> {Down-Mapping} :TmuxNavigateDown<cr>
 " nnoremap <silent> {Up-Mapping} :TmuxNavigateUp<cr>
@@ -416,6 +431,7 @@ nnoremap <leader><leader> <esc>
 
 " Tab -- We don't use tabs...?
 nnoremap <leader><Tab> :bn<CR>
+nnoremap <leader><S-Tab> :bp<CR>
 " `   -- Same as VSCode term hotkey
 " a   -- Add
 nnoremap <leader>a <Plug>(place-insert)
@@ -433,13 +449,15 @@ nnoremap <leader>m @
 " r   -- Reload
 nnoremap <leader>rr :source $MYVIMRC<CR>:call lightline#update_once()<CR>
 " u   -- Unundo
-nnoremap <leader>u :redo<CR>
+nmap <leader>u <C-r>
+nmap <S-U> <C-r>
 " f t -- FileTree
 nnoremap <leader>ft :VimFilerExplorer<CR>
 " v   -- Vertical Split
 nnoremap <leader>v :vsplit \| Startify<CR>:echo<CR>
 " x   -- ...Todo...
 nnoremap <leader>x :Denite todo<CR>
+nnoremap <leader><S-X> :Denite todotxt<CR>
 
 nnoremap <leader><Left> zc
 nnoremap <leader><Right> zo
@@ -471,13 +489,18 @@ nnoremap <leader>bq :q<CR>
 "  === d -- Denite ===
 " ==============================================================================
 nnoremap <leader>, :Denite menu:config<CR>
-nnoremap <leader>dc :Denite commands<CR>
+nnoremap <leader>dc :Denite command<CR>
+nnoremap <leader>d<S-c> :Denite command_history<CR>
 nnoremap <leader>db :Denite bookmark<CR>
 nnoremap <leader>dd <NOP>
 nnoremap <leader>de :Denite env<CR>
 nnoremap <leader>df :Denite menu:dotfiles<CR>
+nnoremap <leader>dg :Denite ghq<CR>
 nnoremap <leader>dh :Denite help<CR>
+nnoremap <leader>di :Denite help<CR>
+nnoremap <leader>dj :Denite jump<CR>
 nnoremap <leader>dk :Denite mapping_verbose<CR>
+nnoremap <leader>dl :Denite location_list<CR>
 nnoremap <leader>dm :Denite menu:Denite<CR>
 nnoremap <leader>dp :Denite projectile -default-action=custom<CR>
 nnoremap <leader>dq :Denite quickfix<CR>
@@ -485,7 +508,7 @@ nnoremap <leader>dt :Denite todo<CR>
 nnoremap <leader>d<S-T> :Denite todotxt<CR>
 nnoremap <leader>ds :Denite sauce<CR>
 nnoremap <leader>d<S-S> :Denite sauce_file<CR>
-nnoremap <leader>du :Denite ultinsips<CR>
+nnoremap <leader>du :Denite ultisnips<CR>
 nnoremap <leader>d<S-U> :Denite ultisnips_file<CR>
 
 

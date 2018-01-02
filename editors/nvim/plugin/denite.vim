@@ -9,7 +9,7 @@ call denite#custom#option('default', {
   \ 'auto_resize':             v:true,
   \ 'cursor_shape':            v:true,
   \ 'cursor_wrap':             v:true,
-  \ 'reversed':                v:true,
+  \ 'reversed':                v:false,
   \ 'statusline':              v:false,
   \ 'updatetime':              1,
   \ 'scroll':                  1,
@@ -70,8 +70,8 @@ call denite#custom#map('insert', '<C-q>',  '<denite:enter_mode:normal>',        
 call denite#custom#map('insert', '𐌘',      '<denite:enter_mode:normal>',           'noremap')
 call denite#custom#map('insert', '<C-v>',  '<denite:do_action:vsplit>',            'noremap')
 call denite#custom#map('insert', '<C-x>',  '<denite:do_action:split>',             'noremap')
-call denite#custom#map('insert', '<C-p>',  '<denite:move_to_next_line>',           'noremap')
-call denite#custom#map('insert', '<C-n>',  '<denite:move_to_previous_line>',       'noremap')
+call denite#custom#map('insert', '<C-n>',  '<denite:move_to_next_line>',           'noremap')
+call denite#custom#map('insert', '<C-p>',  '<denite:move_to_previous_line>',       'noremap')
 call denite#custom#map('insert', '<C-h>',  '<denite:delete_word_before_caret>',    'noremap') " TODO: See if this works, remove if not.
 call denite#custom#map('insert', '<C-a>',  '<denite:move_caret_to_one_word_left>', 'noremap')
 " call denite#custom#map('insert', '<M-left>',   '<denite:move_caret_to_one_word_left>', 'noremap')
@@ -89,8 +89,8 @@ call denite#custom#map('normal', 'a',      '<denite:do_action:add>',         'no
 call denite#custom#map('normal', 'd',      '<denite:do_action:delete>',      'noremap')
 call denite#custom#map('normal', 'r',      '<denite:do_action:reset>',       'noremap')
 call denite#custom#map('normal', 'c',      '<denite:do_action:custom>',       'noremap')
-call denite#custom#map('normal', '<C-p>',  '<denite:move_to_next_line>',     'noremap')
-call denite#custom#map('normal', '<C-n>',  '<denite:move_to_previous_line>', 'noremap')
+call denite#custom#map('normal', '<C-n>',  '<denite:move_to_next_line>',     'noremap')
+call denite#custom#map('normal', '<C-p>',  '<denite:move_to_previous_line>', 'noremap')
 call denite#custom#map('normal', '<C-v>',  '<denite:do_action:vsplit>',      'noremap')
 call denite#custom#map('normal', '<C-x>',  '<denite:do_action:split>',       'noremap')
 

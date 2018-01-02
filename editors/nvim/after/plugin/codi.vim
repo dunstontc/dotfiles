@@ -23,6 +23,9 @@ let g:codi#interpreters = {
      \    'bin': 'python3',
      \ 'prompt': '^\(>>>\|\.\.\.\) ',
      \ },
+     \  'sh': {
+     \ 'bin': '/usr/local/bin/bash'
+     \ },
      \ }
 
 let g:codi#aliases = {

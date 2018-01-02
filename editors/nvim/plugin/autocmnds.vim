@@ -4,8 +4,6 @@ augroup MyAutoCmds
   " Automatically make splits equal in size
   autocmd VimResized * :wincmd =
 
-  autocmd BufEnter * call BroadcastTmuxCwd()
-
   " =============================================================================
 
   " autocmd WinEnter * hi LineNr ctermfg=247 guifg=#9e9e9e ctermbg=233 guibg=#121212

@@ -134,7 +134,8 @@ let s:menus.Denite.command_candidates = [
   \ [' Recent Directories',   'Denite directory_rec'],
   \ [' Recent Files',         'Denite file_rec'],
   \ [' Registers',            'Denite register'],
-  \ ['  Sauce',                'Denite sauce'],
+  \ [' Sauce',                'Denite sauce'],
+  \ [' Sauce Files',          'Denite sauce_file'],
   \ [' Sample',               'Denite sample'],
   \ [' Sessions',             'Denite session'],
   \ [' Symbols',              'Denite workspaceSymbol'],
@@ -195,6 +196,23 @@ let s:menus.dein.command_candidates = [
   \   ['───────────────────────┴──────────────', '']
   \ ]
 
+let s:menus.interfaces = { 'description': 'Plugins I should remember to use.' }
+let s:menus.interfaces.command_candidates = [
+      \ ['Calendar',        'Calendar'],
+      \ ['Codi',            'Codi'],
+      \ ['Deol',            'Deol'],
+      \ ['GV',              'GV'],
+      \ ['GV Current File', 'GV!'],
+      \ ['GVi + LocList',   'GV?'],
+      \ ['GHActivity',      'GHActivity'],
+      \ ['GHDashboard',     'GHDashboard'],
+      \ ['HackerNews',      'HackerNews'],
+      \ ['HackerNews',      'HackerNews'],
+      \ ['Magit',           'Magit'],
+      \ ['MacroEdit',       'MacroEdit q'],
+      \ ['ScreenSaver',     'ScreenSaver'],
+      \ ['XtermColorTable', 'XtermColorTable'],
+  \ ]
 
 " ==============================================================================
 

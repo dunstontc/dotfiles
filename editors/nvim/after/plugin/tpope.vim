@@ -9,17 +9,17 @@ let g:projectionist_heuristics = {
       \     "autoload/*.vim": {
       \           "type": "auto"
       \     },
-      \     "doc/*.txt": {
-      \          "type": "doc"
-      \     },
       \     "plugin/*.vim": {
       \             "type": "plug"
       \     },
-      \     "syntax/*.vim": {
-      \             "type": "syntax"
+      \     "doc/*.txt": {
+      \          "type": "doc"
       \     },
       \     "readme.md": {
       \          "type": "doc"
+      \     },
+      \     "syntax/*.vim": {
+      \             "type": "syntax"
       \     },
       \     "todo.txt": {
       \         "type": "todo"

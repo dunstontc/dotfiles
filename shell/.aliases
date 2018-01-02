@@ -100,6 +100,8 @@ alias ips="ifconfig -a | perl -nle\"/(\d+\.\d+\.\d+\.\d+)/ && print $1\""
 
 # Get gpg keys
 alias gitkeys="gpg --list-secret-keys --keyid-format LONG"
+alias gitmsg="curl http://whatthecommit.com/index.txt"
+
 
 # Kill all the tabs in Chrome to free up memory
 # [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description

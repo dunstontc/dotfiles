@@ -276,16 +276,23 @@ iabbrev w/ with
 iabbrev ldr leader
 
 " === Disable standard plugins ===
-let g:loaded_getscriptPlugin = 1
-let g:loaded_gzip = 1
-let g:loaded_matchit = 1
-let g:loaded_matchparen = 1
-let g:loaded_netrwPlugin = 1
-let g:loaded_rrhelper = 1
-let g:loaded_tarPlugin = 1
+let g:loaded_2html_plugin      = 1
+let g:loaded_logiPat           = 1
+let g:loaded_getscriptPlugin   = 1
+let g:loaded_gzip              = 1
+let g:loaded_man               = 1
+let g:loaded_matchit           = 1
+let g:loaded_matchparen        = 1
+let g:loaded_netrwFileHandlers = 1
+let g:loaded_netrwPlugin       = 1
+let g:loaded_netrwSettings     = 1
+let g:loaded_rrhelper          = 1
+let g:loaded_shada_plugin      = 1
+let g:loaded_spellfile_plugin  = 1
+let g:loaded_tarPlugin         = 1
 let g:loaded_tutor_mode_plugin = 1
-let g:loaded_vimballPlugin = 1
-let g:loaded_zipPlugin = 1
+let g:loaded_vimballPlugin     = 1
+let g:loaded_zipPlugin         = 1
 
 let dgs#username='dunstontc'
 
@@ -294,19 +301,6 @@ let g:session_directory='~/.config/nvim/sessions'
 let g:wiki = { 'root' : '~/Documents/Wiki/' }
 
 let g:tcd#testvar=1
-
-if exists("$TMUX")
-  " Get the environment variable
-  let tmux_pane_name_cmd = 'tmux display -p \#D'
-  let tmux_pane_name = substitute(system(g:tmux_pane_name_cmd), "\n", "", "")
-  let tmux_env_var = "TMUX_PWD_" . substitute(g:tmux_pane_name, "%", "", "")
-  unlet tmux_pane_name tmux_pane_name_cmd
-  function! BroadcastTmuxCwd()
-    let filename = substitute(expand("%:p:h"), $HOME, "~", "")
-    let output = system("tmux setenv -g ".g:tmux_env_var." ".l:filename)
-  endfunction
-endif
-
 
 let g:terminal_color_0 =  "#1e1e1e"  " black
 let g:terminal_color_1 =  "#d16969"  " red

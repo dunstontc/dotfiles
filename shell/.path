@@ -3,17 +3,17 @@
 # Directories to be prepended to $PATH
 declare -a dirs_to_prepend
 dirs_to_prepend=(
-  "$HOME/bin"
-  "$GOPATH/bin"
-  "$HOME/.cargo/bin"                                                   #
-  "/usr/local/opt/ncurses/bin"                                         # Newer ncurses
-  "/usr/local/mysql/bin"                                               #
+  "$HOME/bin"                                  # Handwritten stuff
+  "$GOPATH/bin"                                # Go
+  "$HOME/.cargo/bin"                           # Rust
+  "$HOME/.composer/vendor/bin"                 # PHP
+  "/usr/local/opt/ncurses/bin"                 # Newer ncurses
+  "/usr/local/mysql/bin"                       # MySQL
   "/usr/local/bin"
-  "$(brew --prefix coreutils)/libexec/gnubin"                          # GNU Coreutils
-  "node_modules/.bin:vendor/bin"                                       # use local packages before global
-  "$HOME/.node_global/bin"                                             # npm installed -g
+  "$(brew --prefix coreutils)/libexec/gnubin"  # GNU Coreutils
+  "node_modules/.bin:vendor/bin"               # use local packages before global
+  "$HOME/.node_global/bin"                     # npm installed -g
   "$HOME/.Pokemon-Terminal"
-  "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"     # open files w/ vscode
   # "/Users/clay/.config/nvim/dein/repos/github.com/jez/vim-superman/bin"
 )
 
@@ -33,8 +33,8 @@ unset dirs_to_prepend
 
 export PATH
 
-export MANPATH="/usr/local/man:$MANPATH"
-export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+# export MANPATH="/usr/local/man:$MANPATH"
+# export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 
 # For compilers to find this software you may need to set:
