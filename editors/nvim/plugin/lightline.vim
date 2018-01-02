@@ -339,7 +339,7 @@ function! PaddedStats() abort
   else
     return &filetype !~# g:tcd_blacklist && winwidth(0) > 70 ?
                          \ (' '.l:padRow.':'.l:height.' /'.l:padCol .':'.l:padWidth) :
-                         \ ( l:padRow.'/'.l:height.' ')
+                         \ ( l:padCol.':'.l:padRow.'/'.l:height.' ')
   endif
 endfunction
 

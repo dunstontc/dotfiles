@@ -191,7 +191,7 @@ set dictionary+=~/grammar/google-10000-english-usa.txt
 set foldenable                  " Enable folding
 set foldmethod=indent
 " set foldmethod=syntax
-set foldlevelstart=6            " Default folding level when buffer is opened
+set foldlevelstart=10           " Default folding level when buffer is opened
 set foldnestmax=10              " Maximum nested fold
 set foldtext=functions#NeatFoldTextTwo()
 

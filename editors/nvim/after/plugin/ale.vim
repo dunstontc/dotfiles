@@ -36,7 +36,7 @@ let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 'never'
 
 
-let g:ale_echo_cursor = 0
+let g:ale_echo_cursor = 1
 let g:ale_echo_msg_error_str = '✗'
 let g:ale_echo_msg_warning_str = '●'
 let g:ale_echo_msg_info_str='◊'

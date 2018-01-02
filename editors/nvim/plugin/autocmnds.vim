@@ -66,4 +66,12 @@ augroup MyAutoCmds
   " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
   " autocmd VimEnter,ColorScheme * call functions#change_iterm2_profile()
+
+  " autocmd! User UltiSnipsEnterFirstSnippet
+  autocmd User UltiSnipsEnterFirstSnippet call functions#HoldOn()
+  " autocmd! User UltiSnipsExitLastSnippet
+  autocmd User UltiSnipsExitLastSnippet call functions#HandItOver()
 augroup END
+
+
+

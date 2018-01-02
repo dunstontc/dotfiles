@@ -1,6 +1,7 @@
 " Vim syntax file
-" Language:	Vim help file
-" Maintainer:	Bram Moolenaar (Bram@vim.org)
+" Language:	Write Vim help files
+" Creator:	Bram Moolenaar (Bram@vim.org)
+" Maintainer:	Clay Dunston <dunstontc@gmail.com>
 " Last Change:	2017 Oct 19
 
 " Quit when a (custom) syntax file was already loaded
@@ -14,23 +15,23 @@ set cpo&vim
 syn match helpHeadline		"^[-A-Z .][-A-Z0-9 .()]*[ \t]\+\*"me=e-1
 syn match helpSectionDelim	"^===.*===$"
 syn match helpSectionDelim	"^---.*--$"
-if has("conceal")
-  syn region helpExample	matchgroup=helpIgnore start=" >$" start="^>$" end="^[^ \t]"me=e-1 end="^<" concealends
-else
+" if has("conceal")
+"   syn region helpExample	matchgroup=helpIgnore start=" >$" start="^>$" end="^[^ \t]"me=e-1 end="^<" concealends
+" else
   syn region helpExample	matchgroup=helpIgnore start=" >$" start="^>$" end="^[^ \t]"me=e-1 end="^<"
-endif
+" endif
 syn match helpHyperTextJump	"\\\@<!|[#-)!+-~]\+|" contains=helpBar
 syn match helpHyperTextEntry	"\*[#-)!+-~]\+\*\s"he=e-1 contains=helpStar
 syn match helpHyperTextEntry	"\*[#-)!+-~]\+\*$" contains=helpStar
-if has("conceal")
-  syn match helpBar		contained "|" conceal
-  syn match helpBacktick	contained "`" conceal
-  syn match helpStar		contained "\*" conceal
-else
+" if has("conceal")
+"   syn match helpBar		contained "|" conceal
+"   syn match helpBacktick	contained "`" conceal
+"   syn match helpStar		contained "\*" conceal
+" else
   syn match helpBar		contained "|"
   syn match helpBacktick	contained "`"
   syn match helpStar		contained "\*"
-endif
+" endif
 syn match helpNormal		"|.*====*|"
 syn match helpNormal		"|||"
 syn match helpNormal		":|vim:|"	" for :help modeline
@@ -44,11 +45,11 @@ syn match helpCommand		"`[^` \t]\+`"hs=s+1,he=e-1 contains=helpBacktick
 syn match helpCommand		"\(^\|[^a-z"[]\)\zs`[^`]\+`\ze\([^a-z\t."']\|$\)"hs=s+1,he=e-1 contains=helpBacktick
 syn match helpHeader		"\s*\zs.\{-}\ze\s\=\~$" nextgroup=helpIgnore
 syn match helpGraphic		".* \ze`$" nextgroup=helpIgnore
-if has("conceal")
-  syn match helpIgnore		"." contained conceal
-else
+" if has("conceal")
+"   syn match helpIgnore		"." contained conceal
+" else
   syn match helpIgnore		"." contained
-endif
+" endif
 syn keyword helpNote		note Note NOTE note: Note: NOTE: Notes Notes:
 syn keyword helpWarning		WARNING WARNING: Warning:
 syn keyword helpDeprecated	DEPRECATED DEPRECATED: Deprecated:
@@ -207,7 +208,7 @@ hi def link helpError		Error
 hi def link helpTodo		Todo
 hi def link helpURL		String
 
-let b:current_syntax = "help"
+let b:current_syntax = "write_help"
 
 let &cpo = s:cpo_save
 unlet s:cpo_save

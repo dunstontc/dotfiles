@@ -1,17 +1,31 @@
+#   ┌─┐┬┌┬┐┬┌─┐┌┐┌┌─┐┬─┐┌─┐
+#   │ ┬│ │ ││ ┬││││ │├┬┘├┤
+#  o└─┘┴ ┴ ┴└─┘┘└┘└─┘┴└─└─┘
+
 # Mac files
 Icon?
 .DS_store
 Desktop.ini
-._*
 Thumbs.db
 
 # Files that might appear on external disks
 .Spotlight-V100
 .Trashes
 
-# Private
-ignore/**
+# dependencies
+node_modules/**
+bower_components/**
+
+# Built files
+Build/**
+build/**
+dist/**
+
+# Local files
+.env
+.variables
 .ignore/**
+ignore/**
 
 # Python stuff
 **/__pycache__/
@@ -19,17 +33,19 @@ ignore/**
 VENV
 
 # Logs
+**/*.map
 npm-debug.log
+npm-debug.log.*
 yarn-error.log
 
 # Misc.
+!.gitkeep
 .idea
 .vscode
 .projectile
 **/tags
 
-
-# dotfiles
+# ~/.dotfiles
 # editors/vim/undo/**
 # editors/vim/backups/**
 shell/fish/fundle/**

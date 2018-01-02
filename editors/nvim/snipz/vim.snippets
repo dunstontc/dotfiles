@@ -81,11 +81,11 @@ call dein#add('${1:`!v @+`}')$0
 endsnippet
 
 snippet cdaf "call dein#add('filetype support')"
-call dein#add('${1:`!v @+`}', {'lazy':1, 'on_ft': [$2]})$0
+call dein#add('${1:`!v getreg('+')`}', {'lazy':1, 'on_ft': [$2]})$0
 endsnippet
 
 snippet cdal "call dein#add('lazy')" b
-call dein#add('${1:`!v @+`}', { 'lazy'  : 1, '$2': '$3', })$0
+call dein#add('${1:`!v getreg('+')`}', { 'lazy'  : 1, '$2': '$3', })$0
 endsnippet
 
 snippet menu_item "Quickmenu Item" b

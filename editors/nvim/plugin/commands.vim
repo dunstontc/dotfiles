@@ -20,7 +20,7 @@ command! Wq x
 
 command! FormatJSON %!python -m json.tool
 
-command -nargs=0 SynDef echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+command -nargs=0 SynDef echom string(map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")'))
 
 command! -nargs=1 TwoSplit call functions#TwoSplit(<args>)
 

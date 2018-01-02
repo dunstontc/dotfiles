@@ -219,3 +219,4 @@ let s:menus.interfaces.command_candidates = [
 call denite#custom#var('menu', 'menus', s:menus)
 " enable unite menu compatibility
 " call denite#custom#var('menu', 'unite_source_menu_compatibility', 'true')
+

@@ -14,7 +14,7 @@ function! functions#SynStack()
   " endif
   " let l:syntaks = map(synstack(line('.'), col('.')), "synIDattr(v:val, 'name')")
   " echo l:syntaks
-  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+  echom map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 
 " =============================================================================
@@ -63,24 +63,15 @@ endfunction
 
 " =============================================================================
 
-function! functions#TwoSplit(filepath)
-  let l:confirmed = confirm('Open in a new window?', "&Yes\n&No", 2)
-  if l:confirmed == 1
-    execute "vsplit ".fnameescape(a:filepath)
-  else
-    execute "edit ".fnameescape(a:filepath)
-  endif
+
+function! functions#HoldOn() abort
+  let g:held_reg_val = getreg("@")
+  let g:held_reg_type = getregtype("0")
 endfunction
 
-function! functions#ThreeSplit(filepath)
-  let l:confirmed = confirm('How you want it boss?', "&Open\n&Vertical\n&Horizontal", 1)
-  if l:confirmed == 1
-    execute "edit ".fnameescape(a:filepath)
-  elseif l:confirmed == 2
-    execute "vsplit ".fnameescape(a:filepath)
-  elseif l:confirmed == 3
-    execute "split ".fnameescape(a:filepath)
-  endif
+
+function! functions#HandItOver() abort
+  call setreg('*', g:held_reg_val, g:held_reg_type)
 endfunction
 
 " =============================================================================

@@ -46,7 +46,7 @@ nnoremap ` '
 
 " nnoremap <C-p> :Denite<space>
 " nnoremap <C-p>
-nnoremap ,u :Unite<space>
+nnoremap ,u :Unite<space><C-d>
 nnoremap ,/ :%s///g<left><left><left>
 
 
@@ -107,6 +107,8 @@ inoremap fj <esc>:Sayonara<CR>
 
 " Save wih ⌘ -s
 " F13 -- ^[[1;2P
+nnoremap <silent><C-s> :silent w<CR>
+inoremap <silent><C-s> <C-o>:silent w<CR>
 nnoremap <silent><F13> :silent w<CR>
 inoremap <silent><F13> <C-o>:silent w<CR>
 
@@ -254,8 +256,8 @@ nmap ga <Plug>(EasyAlign)
 
 ""
 " === terryma/vim-expand-region ===
-map K <Plug>(expand_region_expand)
-map J <Plug>(expand_region_shrink)
+" map K <Plug>(expand_region_expand)
+" map J <Plug>(expand_region_shrink)
 
 ""
 " === haya14busa/vim-edgemotion ===
@@ -263,9 +265,27 @@ map J <Plug>(expand_region_shrink)
 map <S-j> <Plug>(edgemotion-j)
 map <S-k> <Plug>(edgemotion-k)
 
-""
-" === junegunn/vim-table-mode ===
-let g:table_mode_disable_mappings = 0
+" ""
+" " === dhruvasagar/vim-table-mode ===
+let g:table_mode_disable_mappings = 1
+let g:table_mode_delimiter = ','
+let g:table_mode_always_active = 0
+let g:table_mode_toggle_map = ''
+let g:table_mode_map_prefix = ''
+let g:table_mode_tableize_d_map = ''
+let g:table_mode_echo_cell_map = ''
+let g:table_mode_eval_formula_map = ''
+let g:table_mode_delete_row_map = ''
+let g:table_mode_delete_column_map = ''
+let g:table_mode_add_formula_map = ''
+let g:table_mode_realign_map = ''
+let g:table_mode_cell_text_object_i_map = ''
+let g:table_mode_cell_text_object_i_map = ''
+let g:table_mode_cell_text_object_a_map = ''
+let g:table_mode_motion_up_map = ''
+let g:table_mode_motion_down_map = ''
+let g:table_mode_motion_left_map = ''
+let g:table_mode_motion_right_map = ''
 
 ""
 " === pelodelfuego/vim-swoop ===
@@ -297,7 +317,7 @@ nmap <silent> ]a <Plug>(ale_next_wrap)
 let g:pydocstring_enable_mapping = 0
 let g:pydocstring_enable_comment = 0
 let g:pydocstring_templates_dir  = '~/.dotfiles/editors/nvim/after/pydocstring'
-nmap <silent>gb <Plug>(pydocstring)
+nmap <silent>gd <Plug>(pydocstring)
 
 ""
 " === vim-multiple-cursors ===
@@ -321,7 +341,7 @@ nmap # <Plug>(anzu-sharp)
 ""
 " === AndrewRadev/splitjoin.vim ===
 let g:splitjoin_split_mapping = 'gs'
-let g:splitjoin_join_mapping = ''
+let g:splitjoin_join_mapping = 'gj'
 " nmap sj :SplitjoinSplit<cr>
 " nmap sk :SplitjoinJoin<cr>
 
@@ -375,18 +395,16 @@ map T <Plug>Sneak_T
 
 ""
 " Leader Guide
-let g:leaderGuide_map = {}
-call leaderGuide#register_prefix_descriptions('', 'g:leaderGuide_map')
-call leaderGuide#register_prefix_descriptions("<Space>", "g:lmap")
-nnoremap <silent> <leader> :<c-u>LeaderGuide '<Space>'<CR>
-vnoremap <silent> <leader> :<c-u>LeaderGuideVisual '<Space>'<CR>
+" let g:leaderGuide_map = {}
+" call leaderGuide#register_prefix_descriptions('', 'g:leaderGuide_map')
+" call leaderGuide#register_prefix_descriptions("<Space>", "g:lmap")
+" nnoremap <silent> <leader> :<c-u>LeaderGuide '<Space>'<CR>
+" vnoremap <silent> <leader> :<c-u>LeaderGuideVisual '<Space>'<CR>
 
 
 ""
 " === christoomey/vim-tmux-navigator ===
-
 " let g:tmux_navigator_no_mappings = 1
-
 " nnoremap <silent> {Left-Mapping} :TmuxNavigateLeft<cr>
 " nnoremap <silent> {Down-Mapping} :TmuxNavigateDown<cr>
 " nnoremap <silent> {Up-Mapping} :TmuxNavigateUp<cr>
@@ -497,14 +515,15 @@ nnoremap <leader>de :Denite env<CR>
 nnoremap <leader>df :Denite menu:dotfiles<CR>
 nnoremap <leader>dg :Denite ghq<CR>
 nnoremap <leader>dh :Denite help<CR>
-nnoremap <leader>di :Denite help<CR>
+nnoremap <leader>di :Denite menu:interfaces<CR>
 nnoremap <leader>dj :Denite jump<CR>
 nnoremap <leader>dk :Denite mapping_verbose<CR>
+nnoremap <leader>d<S-k> :Maps<CR>
 nnoremap <leader>dl :Denite location_list<CR>
 nnoremap <leader>dm :Denite menu:Denite<CR>
 nnoremap <leader>dp :Denite projectile -default-action=custom<CR>
 nnoremap <leader>dq :Denite quickfix<CR>
-nnoremap <leader>dt :Denite todo<CR>
+nnoremap <leader>dt :Denite todotxt_local<CR>
 nnoremap <leader>d<S-T> :Denite todotxt<CR>
 nnoremap <leader>ds :Denite sauce<CR>
 nnoremap <leader>d<S-S> :Denite sauce_file<CR>
@@ -557,6 +576,7 @@ nnoremap <leader>eu :VimFiler -explorer ~/.dotfiles/editors/nvim/snipz<CR>
 " ==============================================================================
 "
 nnoremap <leader>fd :FZF ~/.dotfiles<CR>
+nnoremap <leader>fk :Maps<CR>
 " nnoremap <leader>fv :FZF ~/.dotfiles/editors/nvim<CR>
 nnoremap <leader>fv :FZF ~/.config/nvim<CR>
 
