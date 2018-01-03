@@ -80,7 +80,7 @@ alias zr="source ~/.zshrc"
 alias bbbash="source ~/.bashrc"
 
 # Configure Neovim
-alias vimcept="nvim ~/.dotfiles/editors/nvim/init.vim"
+alias vimcept="nvim ~/nvim.d/init.vim"
 
 # Configure tmux
 alias remux="nvim $DOTFILES/config/tmux/.tmux.conf"

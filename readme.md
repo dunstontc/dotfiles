@@ -15,64 +15,9 @@
   - Zsh *5.2* ✔
   - tmux *2.5* ✔
   - Atom ✔
-  - VS Code 👷
-  - Neovim *0.2.2* ✔
-  - Vim *8.0.125* ✔
-  - [Links](#links)
-    - [Resources](#resources)
-    - [Themes](#themes)
-    - [Misc.](#misc)
-    - [Reference](#reference)
-
-| Key             | Context   | Action              |
-|-----------------|-----------|---------------------|
-| `⌘ - Space`     | Alfred    | Hotkey              |
-| `⌘ - ⌥ - s`     | Alfred    | Search Snippets     |
-| `⌘ - ⌥ - ,`     | Alfred    | Clipboard History   |
-| `⌘ - ⌥ - Space` | Bartender | Toggle Bartender    |
-| `⌥ - Space`     | iTerm2    | Focus to iTerm2     |
-| `⌃ - q`         | iTerm2    | Ctrl-C              |
-| `⌃ - Space`     | tmux      | prefix              |
-| `⌘ - /`         | vim       | Toggle Comments     |
-| `⌘ - s`         | vim       | Write active buffer |
-| `⌃ - hjkl`      | vim/tmux  | Navigate Vim/Tmux   |
-
-
-## Links ##
-
-### Resources: ###
-  - [explainshell](https://explainshell.com/)
-  - [GitHub does dotfiles](http://dotfiles.github.io/)
-  - [Terminals Are Sexy](https://terminalsare.sexy/)
-  - [jlevy/the-art-of-command-line](https://github.com/jlevy/the-art-of-command-line)
-  - [VimAwesome](https://vimawesome.com/)
-  - [Neovim Options](https://neovim.io/doc/user/options.html)
-  - [vim registers](http://www.brianstorti.com/vim-registers/)
-  - https://neovim.io/doc/user/motion.html#'operator'
-  - https://neovim.io/doc/user/options.html#'statusline'
-  - [zsh-lovers](http://grml.org/zsh/zsh-lovers.html)
-  - [awesome zsh plugins](https://github.com/unixorn/awesome-zsh-plugins)
-  - [oh-my-zsh cheat sheet](https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet)
-  - [Bash CheatSheet for UNIX Systems](https://gist.github.com/LeCoupa/122b12050f5fb267e75f)
-  - [tmux cheatsheet](https://gist.github.com/MohamedAlaa/2961058)
-
-
-### Themes: ###
-  - [colours in terminal](https://gist.github.com/XVilka/8346728)
-  - [terminal.sexy](https://terminal.sexy/)
-  - [xcolors.net](http://www.xcolors.net/)
-  - [atomthemes.io](http://atomthemes.io/)
-  - [~/.vim/colors](http://vimcolors.com/)
-  - [iterm_schemer](https://github.com/crowsonkb/iterm_schemer)
-    - Translates iTerm2 color schemes between dark- and light-background, as well as performing other bulk editing tasks.
-
-
-### Misc: ###
-  - [fzf](https://github.com/junegunn/fzf)
-  - [howdoi](https://github.com/gleitz/howdoi)
-  - [tldr](https://github.com/tldr-pages/tldr/)
-  - [Nerdfonts](https://github.com/ryanoasis/nerd-fonts)
-  - [.tern-project](https://stackoverflow.com/questions/41371789/figuring-out-javascript-libraries-for-vim-autocompletion-with-ternjs-in-tern-pr/41377689#41377689)
+  - VS Code &nbsp;🏗 
+  - [Neovim](https://github.com/dunstontc/nvim.d) *0.2.2* ✔
+  - Vim *8.0.125* &nbsp;🏗 
 
 
 ### Reference: ###
