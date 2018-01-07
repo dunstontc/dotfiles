@@ -106,22 +106,32 @@
 
 [color "branch"]
 
-	current = yellow reverse
-	local = yellow
-	remote = green
+	current = magenta
+	local = magenta reverse
+	remote = blue
+	upstream = cyan
+	plain = normal
 
 [color "diff"]
 
-	meta = yellow bold
+	meta = normal
+	context = black bold
 	frag = magenta bold # line info
 	old = red # deletions
 	new = green # additions
+	commit = yellow bold
 
 [color "status"]
 
-	added = yellow
+	branch = magenta
+	localBranch = magenta
+	remoteBranch = magenta reverse
+	header = normal
+	added = green reverse
 	changed = green
-	untracked = cyan
+	untracked = yellow
+	unmerged = red
+	nobranch = red reverse
 
 [commit]
 

@@ -154,7 +154,7 @@ bindkey "^[[1;3D" backward-word
 # =============================================================================
 typeset -A ZSH_HIGHLIGHT_STYLES
 
-ZSH_HIGHLIGHT_STYLES[builtin]='fg=green,bold'
+ZSH_HIGHLIGHT_STYLES[builtin]='fg=green'
 ZSH_HIGHLIGHT_STYLES[arg0]='fg=white'
 ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
 ZSH_HIGHLIGHT_STYLES[path_pathseparator]='fg=white'
@@ -229,7 +229,7 @@ SPACESHIP_TIME_SHOW=true
 # SPACESHIP_TIME_FORMAT="%D{╔═ %a %I:%M %p} "
 SPACESHIP_TIME_FORMAT="╔═"
 SPACESHIP_TIME_12HR=true
-SPACESHIP_TIME_COLOR="green"
+SPACESHIP_TIME_COLOR="green, bold"
 
 # DIR
 SPACESHIP_DIR_SHOW=true

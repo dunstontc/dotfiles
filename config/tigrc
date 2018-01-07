@@ -309,6 +309,7 @@ bind generic	v	show-version		# Show Tig version
 # Note the four leading spaces in the string to match. This is because
 # Git automatically indents commit messages by four spaces.
 
+# color             front, back, attribute
 color "---"			blue	default
 color "diff --"			yellow	default
 color "--- "			yellow	default
@@ -333,7 +334,7 @@ color "Author: "		cyan	default
 color "Commit: "		magenta	default
 color "Tagger: "		magenta	default
 color "Merge: "			blue	default
-color "Date: "			yellow	default
+color "Date: "			242	default
 color "AuthorDate: "		yellow	default
 color "CommitDate: "		yellow	default
 color "TaggerDate: "		yellow	default
@@ -351,22 +352,22 @@ color "    Acked-by"		yellow	default
 color "    Tested-by"		yellow	default
 color "    Reviewed-by"		yellow	default
 color default			default	default	normal
-color cursor			white	default	bold
+color cursor			default	236
 color status			green	default
 color delimiter			magenta	default
-color date			blue	default
+color date			242	default
 color mode			cyan	default
 color id			magenta	default
 color overflow			red	default
 color header			yellow	default
 color section			cyan	default
-color directory			yellow	default
-color file			default	default
-color grep.file			blue	default
+color directory			33	default
+color file			33	default
+color grep.file			33	default
 color file-size			default	default
-color line-number		cyan	default
+color line-number		151	default
 color title-blur		white	blue
-color title-focus		white	blue	bold
+color title-focus		green	black
 color main-commit		default	default
 color main-tag			magenta	default	bold
 color main-local-tag		magenta	default

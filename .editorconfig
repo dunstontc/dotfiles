@@ -20,7 +20,7 @@ trim_trailing_whitespace = false
 [*.{go,tsv}]
 indent_style = tab
 
-[*.{bash,html,js,json,lua,rb,sh}]
+[*.{bash,html,js,json,lua,md,rb,sh,vim}]
 indent_size = 2
 indent_style = space
 
@@ -28,9 +28,9 @@ indent_style = space
 indent_size = 4
 indent_style = space
 
-[*.go]
-indent_size = 1
-indent_style = tab
+# [*.go]
+# indent_size = 1
+# indent_style = tab
 
 # [*.{rb,sh,bash,zsh}]
 # indent_size = 4

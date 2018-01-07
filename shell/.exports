@@ -2,7 +2,7 @@
 
 export EDITOR="nvim"
 
-export PS1=$PS1'$( [ -n $TMUX ] && tmux setenv -g TMUX_PWD_$(tmux display -p "#D" | tr -d %) $PWD)'
+# export PS1=$PS1'$( [ -n $TMUX ] && tmux setenv -g TMUX_PWD_$(tmux display -p "#D" | tr -d %) $PWD)'
 
 # export PAGER='less'
 # export PAGER="vimpager"
@@ -21,11 +21,13 @@ export TODO_FILE="$TODO_DIR/todo.txt"
 export DONE_FILE="$TODO_DIR/done.txt"
 
 # Taskwarrior
-export TASKRC="~/.taskrc"
+export TASKRC="$HOME/.taskrc"
 # export TASKDATA="$HOME/.task"
 
 export GOPATH="$HOME/go"
 export GOBIN="$HOME/go/bin"
+export GOROOT=$(go env GOROOT)
+
 
 # export LUA_CPATH='/Users/clay/.luarocks/lib/lua/5.2/?.so;/usr/local/lib/lua/5.2/?.so;/usr/local/lib/lua/5.2/loadall.so;./?.so'
 # export LUA_PATH='/Users/clay/.luarocks/share/lua/5.2/?.lua;/Users/clay/.luarocks/share/lua/5.2/?/init.lua;/usr/local/share/lua/5.2/?.lua;/usr/local/share/lua/5.2/?/init.lua;/usr/local/Cellar/lua/5.2.4_4/libexec/share/lua/5.2/?.lua;/usr/local/lib/lua/5.2/?.lua;/usr/local/lib/lua/5.2/?/init.lua;./?.lua'

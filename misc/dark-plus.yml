@@ -3,7 +3,7 @@
 very-light-gray:
   - hex: '#d4d4d4'
   - rgb: ''
-  - cterm: 188
+  - cterm: 188  # 254
 light-gray:
   - hex: '#808080'
   - rgb: '128, 128, 128'
@@ -14,6 +14,9 @@ dark-gray:
 very-dark-gray:
   - hex: '#1e1e1e'
   - cterm: 234
+bright-black:
+  - hex: '#303030'
+  - cterm: 236
 dark-red:
   - hex: '#f44747'
   - rgb: '244, 71, 71'
@@ -52,7 +55,7 @@ light-blue:
 dark-blue:
   - hex: '#569cd6'
   - rgb: '86, 156, 214'
-  - cterm: 75
+  - cterm: 75  # 32, 33
 bright-blue:
   - hex: '#007acc'
   - cterm: 0
