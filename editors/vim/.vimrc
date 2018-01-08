@@ -54,7 +54,8 @@ Plug 'jszakmeister/vim-togglecursor' " Switch between block & horizontal line
 Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
 " Colorful Things
-Plug '~/Projects/Vim/vim-code-dark'
+" Plug '~/Projects/Vim/vim-code-dark'
+Plug 'dunstontc/vim-code-dark'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'mswift42/vim-themes'
 Plug 'flazz/vim-colorschemes'
@@ -146,7 +147,8 @@ set termguicolors
 " set t_Co=256
 " let g:enable_bold_font=1       " Enable bold font in colorscheme
 " let g:enable_italic_font=1     " Enable italic font in colorscheme
-colorscheme gruvbox
+" colorscheme gruvbox
+colorscheme codedark
 highlight! Comment gui=italic cterm=italic
 set guifont=Operator\ Mono\ Nerd\ Font\ Complete\ 14
 
