@@ -23,7 +23,7 @@ def ooptime():
 
     shell_res = q.stdout.decode('utf-8')
     times = re.search(
-        r'(?:\sup\s+)(?P<days>\d+(?:\sdays?))?(?:,?\s)(?P<hours>\d+):(?P<mins>\d+)',
+        r'(?:\sup\s+)((?P<days>\d+)(?:\sdays?))?(?:,?\s+)(?P<hours>\d+):(?P<mins>\d+)',
         shell_res,
         re.M
     )
@@ -36,14 +36,14 @@ def ooptime():
     if times.group('hours'):
         hours = times.group('hours')
     else:
-        hours = '0'
+        hours = '00'
 
     if times.group('mins'):
         mins = times.group('mins')
     else:
         mins = '0'
 
-    return f'{days} {hours:0>2}h {mins:0>2}m '
+    return f'↑ {days} {hours}h {mins:0>2}m '
 
 
 print(ooptime())

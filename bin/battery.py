@@ -41,8 +41,8 @@ def juice():
         current_charge = int(data.group('charge'))
         if current_charge == 100:
             charge_attr = '#[fg=#569cd6,italics,bg=#303030]'
-        elif current_charge > 95:
-            charge_attr = '#[fg=#4ec9b0,italics,bg=#303030]'
+        # elif current_charge > 95:
+            # charge_attr = '#[fg=#4ec9b0,italics,bg=#303030]'
         elif current_charge < 50:
             charge_attr = '#[fg=#b5cea8,italics,bg=#303030]'
         elif current_charge < 25:
