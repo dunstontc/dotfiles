@@ -28,9 +28,9 @@ indent_style = space
 indent_size = 4
 indent_style = space
 
-# [*.go]
-# indent_size = 1
-# indent_style = tab
+[*.go]
+indent_size = 8
+indent_style = tab
 
 # [*.{rb,sh,bash,zsh}]
 # indent_size = 4

@@ -79,6 +79,23 @@ source $HOME/.dotfiles/ignore/.private
 # test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 source $HOME/.dotfiles/shell/.highlight
 source $HOME/.dotfiles/shell/functions/.fzf.functions
+# source $HOME/.dotfiles/shell/zsh/compl/_ghq
+
+# Pick up additional site-functions that may not be on system zsh's
+# $fpath by default
+() {
+  local site_dir site_dirs
+
+  site_dirs=( /usr/local/share/zsh/site-functions )
+  if [[ -n $HOMEBREW_PREFIX ]]; then
+    site_dirs+=$HOMEBREW_PREFIX/share/zsh/site-functions
+  fi
+  for site_dir ( $site_dirs ); do
+    if [[ -d $site_dir  && ${fpath[(I)$site_dir]} == 0 ]]; then
+      FPATH=$site_dir:$FPATH
+    fi
+  done
+}
 
 # =============================================================================
 # If this option is unset, output flow control via start/stop characters
@@ -127,12 +144,15 @@ setopt inc_append_history
 # =============================================================================
 #  Mappings
 # =============================================================================
+# make <S-Tab> work 'correctly'
+bindkey '^[[Z' reverse-menu-complete
+
 bindkey -e
+bindkey '[F' forward-word
 bindkey '[C' forward-word
 bindkey '[D' backward-word
-bindkey '[F' forward-word
 
-# History Searchi
+# History Searching
 autoload history-search-end
 zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
@@ -213,8 +233,20 @@ SPACESHIP_PROMPT_ORDER=(
   char
 )
 
+
+if [[ -n "$TMUX" ]]; then
+  local LVL=$(($SHLVL - 1))
+else
+  local LVL=$SHLVL
+fi
+if [[ $EUID -eq 0 ]]; then
+  local SUFFIX=$(printf '#%.0s' {1..$LVL})
+else
+  local SUFFIX=$(printf '$%.0s' {1..$LVL})
+fi
+
 # CHAR
-SPACESHIP_CHAR_SYMBOL="╚═ $ "
+SPACESHIP_CHAR_SYMBOL="╚═ $SUFFIX "
 
 # PROMPT
 SPACESHIP_PROMPT_SEPARATE_LINE=true
@@ -241,4 +273,7 @@ SPACESHIP_DIR_COLOR="cyan"
 # Mercurial
 SPACESHIP_HG_SYMBOL='☿'
 SPACESHIP_HG_PREFIX='on'
+
+SPACESHIP_GOLANG_SYMBOL=' '
+SPACESHIP_GOLANG_COLOR='blue'
 

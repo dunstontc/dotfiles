@@ -24,8 +24,8 @@ export DONE_FILE="$TODO_DIR/done.txt"
 export TASKRC="$HOME/.taskrc"
 # export TASKDATA="$HOME/.task"
 
-export GOPATH="$HOME/go"
-export GOBIN="$HOME/go/bin"
+export GOPATH=~/go
+export GOBIN=~/go/bin
 export GOROOT=$(go env GOROOT)
 
 

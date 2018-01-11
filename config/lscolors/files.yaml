@@ -25,6 +25,7 @@ erl:          "\ue7b1"
 el:           "\ue14e" # 
 lisp:         "\ue14d" # 
 file:         "\uf15b"
+fish:         "\ue14c" # 
 font:         "\ue153" # 
 gform:        "\uf298"
 # git:          "\uf1d3"
@@ -45,10 +46,12 @@ less:         "\ue758"
 log:          "\uf18d"
 lua:          "\ue620" # 
 man:          "\ue151" # 
+makefile:     "\ue779" # 
 md:           "\uf48a"
 mustache:     "\ue60f"
 npmignore:    "\ue71e"
 npmrc:        "\ue71e"
+org:          "\ue15e" # 
 pdf:          "\uf1c1"
 php:          "\ue73d"
 pl:           "\ue769"
@@ -67,7 +70,8 @@ scala:        "\ue737"
 shell:        "\uf489"
 sqlite3:      "\ue7c4" # 
 styl:         "\ue600"
-tex:          "\ue600"
+# tex:          "\ue600"
+toml:         "\ue123" # 
 tex:          "\ue14f" # 
 ts:           "\ue628"
 twig:         "\ue61c"
@@ -85,11 +89,8 @@ zip:          "\uf410"
 Mercural:     "\ue11e" # 
 Subversion:   "\ue11f" # 
 X11:          "\ue120" # 
-org:          "\ue15e" # 
-fish:         "\ue14c" # 
 ranger:       "\ue0f8" # 
 inputrc:      "\ue779" # 
-makefile:     "\ue779" # 
 todo:         "\uf45e" # 
 todo.txt:     "\uf45e" # 
 tags:         "\uf412" # 
