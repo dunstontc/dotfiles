@@ -48,27 +48,6 @@ module.exports = {
     "destination": "~/.vimrc"
   },
 
-// Neovim
-  ".nvimrc" : {
-    "origin"     : "$DOTFILES/editors/neovim/init.vim",
-    "destination": "$HOME/.config/nvim/init.vim"
-  },
-  "snippetz/": {
-    "origin"     : "$DOTFILES/editors/neovim/snippetz",
-    "destination": "$HOME/.config/nvim/snippetz",
-  },
-  "ftdetect/": {
-    "origin"     : "$DOTFILES/editors/neovim/ftdetect",
-    "destination": "$HOME/.config/nvim/ftdetect",
-  },
-  "cheatsheet.tsv": {
-    "origin"     : "$DOTFILES/editors/neovim/cheatsheet.tsv",
-    "destination": "$HOME/.config/nvim/cheatsheet.tsv",
-  },
-  "cheat40.txt": {
-    "origin"     : "$DOTFILES/editors/neovim/cheat40.txt",
-    "destination": "$HOME/.config/nvim/cheat40.txt",
-  },
 
 // Shell
   ".aliases": {

@@ -1,0 +1,15 @@
+{
+   "$DOTFILES/.editorconfig":                 "~/.editorconfig",
+   "$DOTFILES/shell/.profile":                "~/.profile",
+   "$DOTFILES/shell/bash/.bashrc":            "~/.bashrc",
+   "$DOTFILES/shell/input/.inputrc":          "~/.inputrc",
+   "$DOTFILES/shell/zsh/.zshrc":              "~/.zshrc",
+   "$DOTFILES/editors/atom/config.cson":      "~/.atom/config.cson",
+   "$DOTFILES/editors/atom/snippets.cson":    "~/.atom/snippets.cson",
+   "$DOTFILES/editors/atom/keymaps":          "~/.atom/keymaps",
+   "$DOTFILES/editors/atom/styles.less":      "~/.atom/styles.less",
+   "$DOTFILES/editors/atom/menu-config.json": "~/.atom/menu-config.json",
+   "$DOTFILES/editors/atom/toolbar.cson":     "~/.atom/toolbar.cson",
+   "$DOTFILES/editors/vim/.vimrc":            "~/.vimrc",
+   "$DOTFILES/editors/emacs/.spacemacs.d":    "~/.spacemacs.d"
+}
