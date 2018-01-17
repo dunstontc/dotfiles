@@ -258,7 +258,7 @@ abstracts = {
   # background for prompt / input line
   sb_prompt_bg = "%n";
   # background for info statusbar
-  sb_info_bg = "%8";
+  sb_info_bg = "%4";
   # background for topicbar (same default)
   #sb_topic_bg = "%4";
 

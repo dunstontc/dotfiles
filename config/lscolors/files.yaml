@@ -6,6 +6,7 @@ audio:        "\uf001"
 avro:         "\ue60b"
 bash:         "\ue14b" # 
 zsh:          "\ue159" # 
+cs:           "\ue62a" # 
 c:            "\ue61e"
 clj:          "\ue768"
 coffee:       "\uf0f4"
