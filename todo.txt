@@ -8,7 +8,7 @@
 (C) 2017-12-12 Fix @ranger syntax highlighting in file preview
 (D) 2017-12-17 Unicode completion for NerdFonts +vim
 (D) 2017-12-17 Fix vimSet @syntax group
-
+(A) 2018-01-19 Speed up shell (@zsh) startup. +dotfiles
 
 x 2018-01-03 2017-12-14 Add `sid` and `plug` to `vimMapModKey` group for +vim @syntax
 x 2018-01-03 2017-12-17 Searching +Vim @rtp

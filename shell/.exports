@@ -72,7 +72,7 @@ export FZF_DEFAULT_OPTS='
   --color=prompt:#608b4e,pointer:#d7ba7d
 '
 
-export WIDGETPATH='/Users/clay/Library/Application Support/Übersicht/widgets'
+# export WIDGETPATH='/Users/clay/Library/Application Support/Übersicht/widgets'
 
 # export CLICOLOR=1
 # export CLICOLOR_FORCE=1

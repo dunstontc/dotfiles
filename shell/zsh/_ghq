@@ -5,12 +5,12 @@ function _ghq () {
     declare -A opt_args
     local ret=1
 
-    _arguments -C \
-        '(-h --help)'{-h,--help}'[show help]' \
-        '(-v --version)'{-v,--version}'[print the version]' \
-        '1: :__ghq_commands' \
-        '*:: :->args' \
-        && ret=0
+    # _arguments -C \
+    #     '(-h --help)'{-h,--help}'[show help]' \
+    #     '(-v --version)'{-v,--version}'[print the version]' \
+    #     '1: :__ghq_commands' \
+    #     '*:: :->args' \
+    #     && ret=0
 
     case $state in
         (args)

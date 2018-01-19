@@ -79,7 +79,8 @@ source $HOME/.dotfiles/ignore/.private
 # test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 source $HOME/.dotfiles/shell/.highlight
 source $HOME/.dotfiles/shell/functions/.fzf.functions
-# source $HOME/.dotfiles/shell/zsh/compl/_ghq
+source $HOME/.dotfiles/shell/zsh/functions/register-completions.zsh
+
 
 # Pick up additional site-functions that may not be on system zsh's
 # $fpath by default
@@ -96,6 +97,10 @@ source $HOME/.dotfiles/shell/functions/.fzf.functions
     fi
   done
 }
+fpath=(~/.dotfiles/shell/zsh/compl $fpath)
+
+# autoload -Uz compinit && compinit
+
 
 # =============================================================================
 # If this option is unset, output flow control via start/stop characters
@@ -114,8 +119,8 @@ setopt noflowcontrol
 setopt auto_cd
 setopt auto_pushd
 setopt auto_list
-setopt clobber
-setopt interactive_comments
+# setopt clobber
+# setopt interactive_comments
 
 
 [ -z "$HISTFILE" ] && HISTFILE=$HOME/.cache/shell/.zsh_history
@@ -199,7 +204,7 @@ export FZF_COMPLETION_TRIGGER='/'
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # =============================================================================
 # eval $(thefuck --alias --enable-experimental-instant-mode)
-compdef vman="man"
+# compdef vman="man"
 
 #  =============================================================================
 

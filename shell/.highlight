@@ -36,7 +36,7 @@ cdc() {
             source-highlight               --out-format=esc -i "$fn"
         fi 2> /dev/null  ||  /bin/cat "$fn"
     done
-  }
+}
 
 # Setup JSON Syntax Highlighting
 # Copy js.lang to json.lang with the following command
