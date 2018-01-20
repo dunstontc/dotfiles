@@ -17,15 +17,15 @@ source ~/.zplug/init.zsh
 # Let zplug plug zplug
 zplug 'zplug/zplug',        hook-build:'zplug --self-manage'
 zplug "mafredri/zsh-async", from:github
-zplug "plugins/git",        from:oh-my-zsh
+# zplug "plugins/git",        from:oh-my-zsh
 zplug "lib/completion",     from:oh-my-zsh
 # zplug "zsh-users/zsh-completions" from:github
 zplug "rupa/z",             use:z.sh
-zplug "changyuheng/fz",     defer:1
+# zplug "changyuheng/fz",     defer:1
 zplug "uvaes/fzf-marks",    from:github
 # zplug "changyuheng/zsh-interactive-cd", from:github
 # zplug "Vifon/deer",     from:github, use:deer
-zplug "djui/alias-tips"
+# zplug "djui/alias-tips"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-history-substring-search"
@@ -84,7 +84,7 @@ source $HOME/.dotfiles/shell/zsh/functions/register-completions.zsh
 
 # Pick up additional site-functions that may not be on system zsh's
 # $fpath by default
-() {
+function get_them_completions() {
   local site_dir site_dirs
 
   site_dirs=( /usr/local/share/zsh/site-functions )
@@ -97,6 +97,7 @@ source $HOME/.dotfiles/shell/zsh/functions/register-completions.zsh
     fi
   done
 }
+get_them_completions()
 fpath=(~/.dotfiles/shell/zsh/compl $fpath)
 
 # autoload -Uz compinit && compinit
@@ -105,9 +106,9 @@ fpath=(~/.dotfiles/shell/zsh/compl $fpath)
 # =============================================================================
 # If this option is unset, output flow control via start/stop characters
 # (usually assigned to ^S/^Q) is disabled in the shell's editor.
-stty start undef
-stty stop undef
-setopt noflowcontrol
+# stty start undef
+# stty stop undef
+# setopt noflowcontrol
 
 # zmodload zsh/complist
 # autoload -Uz compinit
@@ -117,15 +118,15 @@ setopt noflowcontrol
 # setopt correctall
 
 setopt auto_cd
-setopt auto_pushd
-setopt auto_list
+# setopt auto_pushd
+# setopt auto_list
 # setopt clobber
 # setopt interactive_comments
 
 
-[ -z "$HISTFILE" ] && HISTFILE=$HOME/.cache/shell/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
+# [ -z "$HISTFILE" ] && HISTFILE=$HOME/.cache/shell/.zsh_history
+# HISTSIZE=10000
+# SAVEHIST=10000
 
 setopt hist_expire_dups_first
 setopt hist_find_no_dups
@@ -150,6 +151,7 @@ setopt inc_append_history
 #  Mappings
 # =============================================================================
 # make <S-Tab> work 'correctly'
+# FIXME: Shift+Tab still goes wonky sometimes
 bindkey '^[[Z' reverse-menu-complete
 
 bindkey -e
@@ -239,6 +241,8 @@ SPACESHIP_PROMPT_ORDER=(
 )
 
 
+
+# Add new `$` to prompt to reflect $shlvl
 if [[ -n "$TMUX" ]]; then
   local LVL=$(($SHLVL - 1))
 else
