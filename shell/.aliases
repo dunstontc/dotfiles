@@ -33,7 +33,8 @@ alias g="git"
 alias py2="python2"
 alias py3="python3"
 alias rgr="ranger"
-# alias task="todo.sh"
+alias rss="terminews"
+alias task="todo.sh"
 alias todo="todo.sh"
 alias tpd="topydo"
 alias v="vim"
@@ -109,6 +110,7 @@ alias gitmsg="curl http://whatthecommit.com/index.txt"
 alias gcom="git checkout master"
 alias gcod="git checkout dev"
 alias gp="git push"
+alias gs="git status -s"
 
 
 # Kill all the tabs in Chrome to free up memory
