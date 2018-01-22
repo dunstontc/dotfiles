@@ -108,7 +108,7 @@ fpath=(~/.dotfiles/shell/zsh/compl $fpath)
 # (usually assigned to ^S/^Q) is disabled in the shell's editor.
 # stty start undef
 # stty stop undef
-# setopt noflowcontrol
+setopt noflowcontrol
 
 # zmodload zsh/complist
 # autoload -Uz compinit
