@@ -61,6 +61,7 @@
       "tool-bar"
       "emmet"
       "tree-view-autoresize"
+      "vim-mode-plus"
     ]
     excludeVcsIgnoredPaths: false
     ignoredNames: [
