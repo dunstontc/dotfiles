@@ -3,7 +3,7 @@ HISTSIZE=5000
 SAVEHIST=5000
 export HISTFILE=~/.cache/shell/.zsh_history
 
-export LANG=en_US.UTF-8
+# export LANG="en_US.UTF-8"
 export DOTFILES=$HOME/.dotfiles
 export SHELL=/usr/local/bin/zsh
 
