@@ -1,5 +1,7 @@
 {
    "$DOTFILES/.editorconfig":                 "~/.editorconfig",
+   "$DOTFILES/config/git/global.gitignore":   "~/.gitignore",
+   "$DOTFILES/config/git/.gitconfig":         "~/.gitconfig",
    "$DOTFILES/shell/.profile":                "~/.profile",
    "$DOTFILES/shell/bash/.bashrc":            "~/.bashrc",
    "$DOTFILES/shell/input/.inputrc":          "~/.inputrc",
