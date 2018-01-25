@@ -5,11 +5,9 @@
 	email = dunstontc@gmail.com
 [github]
 	name = dunstontc
-[credential]
-	helper = osxkeychain
+
 
 [alias]
-
 	# View abbreviated SHA, description, and history graph of the latest 20 commits
 	l = log --pretty=oneline -n 20 --graph --abbrev-commit
 
@@ -76,7 +74,6 @@
 	contributors = shortlog --summary --numbered
 
 [core]
-
 	# Use custom `.gitignore` and `.gitattributes`
 	excludesfile = /Users/clay/.gitignore
 	# attributesfile = ~/.gitattributes
@@ -99,7 +96,6 @@
 	untrackedCache = true
 
 [color]
-
 	# Use colors in Git commands that are capable of colored output when
 	# outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
 	ui = auto
@@ -122,7 +118,6 @@
 	commit = yellow bold
 
 [color "status"]
-
 	branch = magenta
 	localBranch = magenta
 	remoteBranch = magenta reverse
@@ -144,17 +139,14 @@
 	renames = copies
 
 [diff "bin"]
-
 	# Use `hexdump` to diff binary files
 	textconv = hexdump -v -C
 
 [help]
-
 	# Automatically correct and execute mistyped commands
 	autocorrect = 1
 
 [merge]
-
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
 
@@ -187,11 +179,5 @@
 #
 # 	insteadOf = "gist:"
 
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[commit]
-	template = /Users/clay/.stCommitMsg
+[credential]
+	helper = osxkeychain

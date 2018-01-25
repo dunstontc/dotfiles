@@ -49,8 +49,8 @@ yarn-error.log
 !.gitkeep
 
 # ~/.dotfiles
-editors/vim/undo/**
-editors/vim/backups/**
+# editors/vim/undo/**
+# editors/vim/backups/**
 shell/fish/fundle/**
 shell/zsh/plugins/zsh-autosuggestions
 
