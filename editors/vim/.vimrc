@@ -47,7 +47,6 @@ Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-indent'
 Plug 'glts/vim-textobj-comment'
 Plug 'Julian/vim-textobj-variable-segment'
-" Plug 'terryma/vim-expand-region'     " Easier textobject selection
 " Pretty Things
 Plug 'itchyny/vim-cursorword'        " Hilight all occurances of the word under the cursor
 Plug 'jszakmeister/vim-togglecursor' " Switch between block & horizontal line
@@ -56,6 +55,7 @@ Plug 'vim-airline/vim-airline'
 " Colorful Things
 " Plug '~/Projects/Vim/vim-code-dark'
 Plug 'dunstontc/vim-code-dark'
+Plug 'challenger-deep-theme/vim'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'mswift42/vim-themes'
 Plug 'flazz/vim-colorschemes'
@@ -149,8 +149,9 @@ set termguicolors
 " let g:enable_italic_font=1     " Enable italic font in colorscheme
 " colorscheme gruvbox
 colorscheme codedark
+" colorscheme challenger_deep
 highlight! Comment gui=italic cterm=italic
-set guifont=Operator\ Mono\ Nerd\ Font\ Complete\ 14
+" set guifont=Operator\ Mono\ Nerd\ Font\ Complete\ 14
 
 " ==== Invisible Characters ====
 set listchars+=tab:→\
@@ -438,25 +439,6 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 " ==== easy-align ====
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
-
-
-" ==== expand-region ====
-map <S-K> <Plug>(expand_region_expand)
-map <S-J> <Plug>(expand_region_shrink)
-
-let g:expand_region_text_objects = {
-      \ 'iv'  :1,
-      \ 'iw'  :0,
-      \ 'iW'  :0,
-      \ 'i"'  :0,
-      \ 'i''' :0,
-      \ 'i]'  :1,
-      \ 'ib'  :1,
-      \ 'iB'  :1,
-      \ 'il'  :0,
-      \ 'ip'  :0,
-      \ 'ie'  :0,
-      \ }
 
 
 " ==== TComment ====

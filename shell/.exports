@@ -2,8 +2,6 @@
 
 export EDITOR="nvim"
 
-# export PS1=$PS1'$( [ -n $TMUX ] && tmux setenv -g TMUX_PWD_$(tmux display -p "#D" | tr -d %) $PWD)'
-
 # export PAGER='less'
 # export PAGER="vimpager"
 
@@ -14,19 +12,19 @@ export TERM="xterm-256color"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 
-# Todo.txt
+#  Todo.txt
 export TODOTXT_CFG_FILE="$DOTFILES/config/todo/todo.config"
 export TODO_DIR="$HOME/.todo"
 export TODO_FILE="$TODO_DIR/todo.txt"
 export DONE_FILE="$TODO_DIR/done.txt"
 
-# Taskwarrior
+#  Taskwarrior
 export TASKRC="$HOME/.taskrc"
 # export TASKDATA="$HOME/.task"
 
 export GOPATH=~/go
 export GOBIN=~/go/bin
-export GOROOT=$(go env GOROOT)
+export GOROOT="$(go env GOROOT)"
 
 
 # export LUA_CPATH='/Users/clay/.luarocks/lib/lua/5.2/?.so;/usr/local/lib/lua/5.2/?.so;/usr/local/lib/lua/5.2/loadall.so;./?.so'
@@ -46,13 +44,16 @@ export LUA_CPATH='/Users/clay/.luarocks/lib/lua/5.2/?.so'
 export VIFM="$HOME/.vifm"
 export MYVIFMRC="$HOME/.vifm/vifmrc"
 
+
 export HL_DIR="$HOME/.highlight"
 export HIGHLIGHT_DATADIR="$HOME/.highlight"
+
 
 export TCD_BASH_COMPLETION_DIR="/usr/local/etc/bash_completion.d"
 # export ZSH_COMPLETION_DIR="/usr/local/share/zsh/site-functions"
 # export FISH_COMPLETION_DIR="/usr/local/share/fish/vendor_completions.d"
 
+export TEMPLE_DIR="$XDG_CONFIG_HOME/temple/templates"
 
 # export FZF_TMUX=1
 # export FZF_COMPLETION_TRIGGER='/'
@@ -72,27 +73,18 @@ export FZF_DEFAULT_OPTS='
   --color=prompt:#608b4e,pointer:#d7ba7d
 '
 
-# export WIDGETPATH='/Users/clay/Library/Application Support/Übersicht/widgets'
-
-# export CLICOLOR=1
-# export CLICOLOR_FORCE=1
-
 # export RANGER_LOAD_DEFAULT_RC=FALSE
 # export W3MIMGDISPLAY_PATH=$HOME/.iterm2/bin/imgcat
 
-# via kakoune:
-# If you intend to process AsciiDoc files through an XML stage
-# (such as a2x for manpage generation) you need to add something like:
-# export XML_CATALOG_FILES=/usr/local/etc/xml/catalog
 
 # export NODE_REPL_HISTORY=~/.node_history;  # Enable persistent REPL history for `node`.
 # export NODE_REPL_HISTORY_SIZE='32768';     # Allow 32³ entries; the default is 1000.
 # export NODE_REPL_MODE='sloppy';            # Use sloppy mode by default, matching web browsers.
 
-# export HISTSIZE='32768';                   # Increase Bash history size. Allow 32³ entries; the default is 500.
-# export HISTFILESIZE="${HISTSIZE}";
-# export HISTCONTROL='ignoreboth';           # Omit duplicates and commands that begin with a space from history.
-
 #  Avoid issues with `gpg` as installed via Homebrew.
 #  (https://stackoverflow.com/a/42265848/96656)
 # export GPG_TTY=$(tty);
+
+
+# export PS1=$PS1'$( [ -n $TMUX ] && tmux setenv -g TMUX_PWD_$(tmux display -p "#D" | tr -d %) $PWD)'
+

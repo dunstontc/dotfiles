@@ -56,7 +56,7 @@ alias npr="npm run"
 alias npp="npm init -y"
 
 # Shortcuts
-alias keyring="nvim ~/Projects/GitHub/KeyRing/keys"
+alias keyring="nvim -c 'VimFiler -explorer ~/Projects/GitHub/KeyRing/keys'"
 alias awesome="nvim ~/Projects/GitHub/awesome-sauce/readme.md"
 alias dotread="nvim ~/.dotfiles/readme.md"
 # alias cheat="nvim ~/.dotfiles/misc/docs/neovim.md"

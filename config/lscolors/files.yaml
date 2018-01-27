@@ -71,8 +71,9 @@ scala:        "\ue737"
 shell:        "\uf489"
 sqlite3:      "\ue7c4" # 
 styl:         "\ue600"
-# tex:          "\ue600"
+svg:          "\ue134" # 
 toml:         "\ue123" # 
+# tex:          "\ue600"
 tex:          "\ue14f" # 
 ts:           "\ue628"
 twig:         "\ue61c"
@@ -87,6 +88,7 @@ xml:          "\ue619"
 yarn.lock:    "\ue718"
 yml:          "\ue706" # 
 zip:          "\uf410"
+
 Mercural:     "\ue11e" # 
 Subversion:   "\ue11f" # 
 X11:          "\ue120" # 

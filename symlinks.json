@@ -13,5 +13,6 @@
    "$DOTFILES/editors/atom/menu-config.json": "~/.atom/menu-config.json",
    "$DOTFILES/editors/atom/toolbar.cson":     "~/.atom/toolbar.cson",
    "$DOTFILES/editors/vim/.vimrc":            "~/.vimrc",
-   "$DOTFILES/editors/emacs/.spacemacs.d":    "~/.spacemacs.d"
+   "$DOTFILES/editors/emacs/.spacemacs.d":    "~/.spacemacs.d",
+   "$DOTFILES/editors/.ideavimrc":            "~/.ideavimrc"
 }

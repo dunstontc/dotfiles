@@ -65,7 +65,7 @@ selection:
 purple:
   - hex: '#646695'
   - cterm: 60
-pink:
+magenta:
   - hex: '#c586c0'
   - cterm: 176
 ...
