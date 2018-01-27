@@ -1,0 +1,82 @@
+""
+" 'clipboard'      'cb'    clipboard options
+" 'digraph'        'dg'    enable the entering of digraphs in Insert mode
+" 'gdefault'       'gd'    the ":substitute" flag 'g' is default on
+" 'history'        'hi'    number of command-lines that are remembered
+" 'hlsearch'       'hls'   highlight matches with last search pattern
+" 'ignorecase'     'ic'    ignore case in search patterns
+" 'iskeyword'      'isk'   defines keywords for commands like 'w', '*', etc.
+" 'incsearch'      'is'    show where search pattern typed so far matches
+" 'matchpairs'     'mps'   pairs of characters that "%" can match
+" 'nrformats'      'nf'    number formats recognized for CTRL-A command
+" 'number'         'nu'    print the line number in front of each line
+" 'relativenumber' 'rnu'   show the line number relative to the line with he cursor
+" 'scroll'         'scr'   lines to scroll with CTRL-U and CTRL-D
+" 'scrolljump'     'sj'    minimum number of lines to scroll
+" 'scrolloff'      'so'    minimum nr. of lines above and below cursor
+" 'selection'      'sel'   what type of selection to use
+" 'showmode'       'smd'   message on status line to show current mode
+" 'sidescroll'     'ss'    minimum number of columns to scroll horizontal
+" 'sidescrolloff'  'siso'  min. nr. of columns to left and right of cursor
+" 'smartcase'      'scs'   no ignore case when pattern has uppercase
+" 'timeout'        'to'    use timeout for mapped key sequences
+" 'timeoutlen'     'tm'    time that is waited for a mapped key sequence
+" 'undolevels'     'ul'    maximum number of changes that can be undone
+" 'viminfo'        'vi'    information to remember after restart
+" 'visualbell'     'vb'    use visual bell instead of beeping
+" 'wrapscan'       'ws'    searches wrap around the end of the file
+
+set hlsearch
+set ignorecase
+set showmode
+set smartcase
+" set matchpairs
+
+" vim-surround operators
+set surround
+
+" use ctrl-q instead of <esc>, stay on the home row
+inoremap <C-q> <C-c>
+nnoremap <C-q> <Nop>
+vnoremap <C-q> <C-c>
+
+noremap H 0
+noremap L $
+vnoremap <S-L> g_
+
+nnoremap ; :
+vnoremap ; :
+
+nnoremap ' `
+nnoremap ` '
+
+nnoremap v mvv
+
+nmap <S-U> <C-r>
+
+" Better Steps
+noremap <S-E> ge
+noremap <S-B> w
+
+" Put newly available 'w' to good use
+noremap w @
+noremap <S-W> @@
+
+" Clear highlights & commands
+nnoremap <silent>\ :noh<CR>:call anzu#clear_search_status()<CR>:echo<CR>
+
+" Edits in normal mode
+nnoremap <BS> mdi<DEL><esc>`dmd
+nnoremap ,, i<space><esc>
+nnoremap [<Space> mwO<esc>`wmw
+nnoremap ]<Space> mwo<esc>`wmw
+nnoremap <F18> mwo<esc>`wmw
+nnoremap <F19> mwO<esc>`wmw
+
+nnoremap <M-Up> :m .-2<CR>==
+nnoremap <M-Down> :m .+1<CR>==
+inoremap <M-Up> <Esc>:m .-2<CR>==gi
+inoremap <M-Down> <Esc>:m .+1<CR>==gi
+vnoremap <M-Up> :m '<-2<CR>gv=gv
+vnoremap <M-Down> :m '>+1<CR>gv=gv
+vnoremap <M-Down> :m '>+1<CR>gv=gv
