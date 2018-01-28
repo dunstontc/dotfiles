@@ -25,7 +25,7 @@ unset file;
 
 # Only load Liquid Prompt in interactive shells
 # [[ $- = *i* ]] && source ~/liquidprompt/liquidprompt
-source $HOME/.dotfiles/shell/bash/.bash_prompt
+source $HOME/.dotfiles/shell/bash/prompt.bash
 source $HOME/.dotfiles/shell/bash/.fzf.bash
 source $HOME/.dotfiles/shell/.highlight
 source $HOME/.bplug/z.sh
