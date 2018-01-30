@@ -4,6 +4,8 @@
 # Be careful
 alias mr='rmtrash'
 alias mrd='rmdirtrash'
+alias cp='cp -iv'
+alias mv='mv -iv'
 
 # Navigation
 alias .="pwd"
@@ -20,8 +22,8 @@ alias 5='cd -5'
 
 # Directories
 # alias sl="ls"
-alias l="colorls -A --sort-files"
-alias ll="colorls -Al --sort-files"
+alias l="exa -al --git --group-directories-first"
+alias ll="ls-go -al"
 # alias lsa="ls -A"
 # alias lsl='ls -lAh'
 alias ..l="cd .. && ls -A"
@@ -97,7 +99,7 @@ alias fshow="defaults write com.apple.finder AppleShowAllFiles -bool true && kil
 alias fhide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 
 # Copy cwd to the clipboard
-alias pcd="pwd | pbcopy"
+alias hdp="pwd | pbcrpy"
 
 # Get our IP
 alias ips="ifconfig -a | perl -nle\"/(\d+\.\d+\.\d+\.\d+)/ && print $1\""

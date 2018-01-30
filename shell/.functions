@@ -1,32 +1,46 @@
 # echo "🏃 .functions"
 
+# @description Create a directory(s) and cd to it.
+#
+# @param $1 string Folder or folders to make.
 take() {
   mkdir -p "$1"
   cd "$1" || return
 }
 
-# Change working directory to the top-most Finder window location
 # `CD-Finder`
+# @description Change working directory to the top-most Finder window location.
+#
+# @param $1 Directory to change into.
 cdf() {
   cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')" || return;
 }
 
+# @description Define an alias.
 watdo() {
-  alias | grep "$1"
+  alias | grep "$1";
 }
 
-# Walk & Talk
+# @description Walk & Talk
+#
+# @param $1 Directory to change into.
 cdd() {
   cd "$1" && ls -a
 }
 
+# @description Add all changes and commit with a message.
+#
+# @param $1 string String for commit message.
 komet() {
-  git add . && git commit -m "$1"  # TODO: filter the input here
+  git add . && git commit -m "$1";  # TODO: filter the input here
 }
 
+# @description Add upstream remote to a Git repository. (Usually used after forking).
+#
+# @param url The address of the repo to add.
 forrk() {
   git remote add upstream "$1";
-  git remote -v
+  git remote -v;
 }
 
 ahead_behind() {
@@ -36,15 +50,37 @@ ahead_behind() {
   git rev-list --left-right --count $curr_branch...$curr_remote/$curr_merge_branch | tr -s '\t' '|';
 }
 
-# activate conda env
-condoo() {
-  conda source activate "$1"
-}
-# deactivate conda env
-condont() {
-  conda source deactivate "$1"
+
+# @description Returns an escaped string wrapped in single quotes. Hopefully.
+#
+# @param string The string to escape. (hopefully)
+#
+# @see https://github.com/scop/bash-completion/blob/233421469b12d3b60e7595822cc9166016abe384/bash_completion#L138
+quote() {
+    local quoted=${1//\'/\'\\\'\'}
+    printf "'%s'" "$quoted"
 }
 
+# This is used for escaping command lines for remote execution.
+# From StackOverflow: https://goo.gl/sTKReB
+# Using this approach: "Put the whole string in single quotes. This works for all chars except
+# single quote itself. To escape the single quote, close the quoting before it, insert the single
+# quote, and re-open the quoting."
+#
+escape_cmd_line() {
+  escape_cmd_line_rv=""
+  for arg in "$@"; do
+    escape_cmd_line_rv+=" '"${arg/\'/\'\\\'\'}"'"
+    # This should be equivalent to the sed command below.  The quadruple backslash encodes one
+    # backslash in the replacement string. We don't need that in the pure-bash implementation above.
+    # sed -e "s/'/'\\\\''/g; 1s/^/'/; \$s/\$/'/"
+  done
+  # Remove the leading space if necessary.
+  escape_cmd_line_rv=${escape_cmd_line_rv# }
+}
+# @description Prints an array of colors to test for True Color support.
+#
+# @noargs
 kuler() {
   awk 'BEGIN{
     s="/\\/\\/\\/\\/\\"; s=s s s s s s s s;
@@ -61,6 +97,9 @@ kuler() {
   }'
 }
 
+# @description List escape codes for FN keys.
+#
+# @noargs
 fn_codes(){
   for x in {1..30}; do echo -n "F$x "; tput kf$x | cat -A; echo; done
 }
@@ -68,7 +107,9 @@ fn_codes(){
 #   gpg --armor --export $1
 # }
 
-# Determine size of a file or total size of a directory
+# @description Determine size of a file or total size of a directory.
+#
+# @noargs
 siz() {
   if du -b /dev/null > /dev/null 2>&1; then
     local arg=-sbh;
@@ -82,6 +123,7 @@ siz() {
   fi;
 }
 
+# @description Should probably be an alias.
 hdi(){
   howdoi "$*" -c -n 5;
 }

@@ -1,9 +1,11 @@
-#  =============================================================================
-#  === fzf ===
 # vim:filetype=sh:foldmethod=indent:tabstop=4:shiftwidth=4:softtabstop=0:noexpandtab:
-#  =============================================================================
+# ==============================================================================
+# === fzf ===
+# ==============================================================================
 
-# Figlet font selector => copy to clipboard
+# @usage Figlet font selector => copy to clipboard
+#
+# @param string Word or words to make.
 fgl() (
   [ $# -eq 0 ] && return
   cd /usr/local/Cellar/figlet/*/share/figlet/fonts
@@ -13,7 +15,7 @@ fgl() (
 
 #  =============================================================================
 
-# c - browse chrome history
+# @usage Browse chrome history with FZF
 ch() {
   local cols sep
   export cols=$(( COLUMNS / 3 ))
@@ -77,16 +79,17 @@ vg() {
 
 #  =============================================================================
 
-# fh - repeat history
+# @usage Search command history with FZF.
 fh() {
   print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
 }
 
 #  =============================================================================
 
-# tm - create new tmux session, or switch to existing one. Works from within tmux too. (@bag-man)
-# `tm` will allow you to select your tmux session via fzf.
-# `tm irc` will attach to the irc session (if it exists), else it will create it.
+# @description Create new tmux session, or switch to existing one. Works from within tmux too. (@bag-man)
+#
+# @usage `tm`     will allow you to select your tmux session via fzf.
+# @usage `tm irc` will attach to the irc session (if it exists), else it will create it.
 tm() {
   [[ -n "$TMUX" ]] && change="switch-client" || change="attach-session"
   if [ $1 ]; then

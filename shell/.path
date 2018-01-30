@@ -4,7 +4,7 @@
 declare -a dirs_to_prepend
 dirs_to_prepend=(
   "$HOME/bin"                                  # Handwritten stuff
-  "$GOPATH/bin"                                # Go
+  $GOBIN                                       # Go
   "$HOME/.cargo/bin"                           # Rust
   "$HOME/.composer/vendor/bin"                 # PHP
   "/usr/local/opt/ncurses/bin"                 # Newer ncurses
