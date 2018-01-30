@@ -30,7 +30,6 @@ zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-syntax-highlighting",     defer:2
-zplug "denysdovhan/spaceship-zsh-theme",       use:spaceship.zsh, from:github, at:3.0, as:theme, defer:1
 
 
 if ! zplug check --verbose; then
@@ -58,6 +57,7 @@ done;
 unset file;
 
 source $HOME/.dotfiles/ignore/.private
+source $HOME/.dotfiles/shell/zsh/prompt.zsh
 
 
 # =============================================================================
@@ -204,85 +204,3 @@ bindkey '^F' fzf-file-widget
 export FZF_COMPLETION_TRIGGER='/'
 
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-# =============================================================================
-# eval $(thefuck --alias --enable-experimental-instant-mode)
-# compdef vman="man"
-
-#  =============================================================================
-
-SPACESHIP_PROMPT_ORDER=(
-  user
-  host
-  time
-  dir
-  battery
-  git
-  hg
-  package
-  node
-  ruby
-  swift
-  golang
-  php
-  rust
-  docker
-  aws
-  venv
-  conda
-  pyenv
-  dotnet
-  ember
-  exec_time
-  vi_mode
-  jobs
-  exit_code
-  line_sep
-  char
-)
-
-
-
-# Add new `$` to prompt to reflect $shlvl
-if [[ -n "$TMUX" ]]; then
-  local LVL=$(($SHLVL - 1))
-else
-  local LVL=$SHLVL
-fi
-if [[ $EUID -eq 0 ]]; then
-  local SUFFIX=$(printf '#%.0s' {1..$LVL})
-else
-  local SUFFIX=$(printf '$%.0s' {1..$LVL})
-fi
-
-# CHAR
-SPACESHIP_CHAR_SYMBOL="╚═ $SUFFIX "
-
-# PROMPT
-SPACESHIP_PROMPT_SEPARATE_LINE=true
-# SPACESHIP_PROMPT_ADD_NEWLINE=false
-SPACESHIP_PROMPT_PREFIXES_SHOW=false
-SPACESHIP_PROMPT_SUFFIXES_SHOW=true
-SPACESHIP_PROMPT_DEFAULT_PREFIX="via "
-SPACESHIP_PROMPT_DEFAULT_SUFFIX=" "
-
-# TIME
-SPACESHIP_TIME_SHOW=true
-# SPACESHIP_TIME_FORMAT="%D{╔═ %a %I:%M %p} "
-SPACESHIP_TIME_FORMAT="╔═"
-SPACESHIP_TIME_12HR=true
-SPACESHIP_TIME_COLOR="green, bold"
-
-# DIR
-SPACESHIP_DIR_SHOW=true
-SPACESHIP_DIR_PREFIX=" "
-SPACESHIP_DIR_SUFFIX="$SPACESHIP_PROMPT_DEFAULT_SUFFIX"
-SPACESHIP_DIR_TRUNC=3
-SPACESHIP_DIR_COLOR="cyan"
-
-# Mercurial
-SPACESHIP_HG_SYMBOL='☿'
-SPACESHIP_HG_PREFIX='on'
-
-SPACESHIP_GOLANG_SYMBOL=' '
-SPACESHIP_GOLANG_COLOR='blue'
-
