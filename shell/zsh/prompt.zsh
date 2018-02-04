@@ -29,27 +29,28 @@ prompt_fn_one() {
 }
 # }}}
 
-# Add new `$` to prompt to reflect $SHLVL {{{
-if [[ -n "$TMUX" ]]; then
-    local lvl=$(($SHLVL - 1))
-else
-    local lvl=$SHLVL
-fi
+suffix() {
+  # Add new `$` to prompt to reflect $SHLVL
+  if [[ -n "$TMUX" ]]; then
+      local lvl=$(($SHLVL - 1))
+  else
+      local lvl=$SHLVL
+  fi
 
-if [[ $EUID -eq 0 ]]; then
-    local suffix=$(printf '#%.0s' {1..$lvl})
-else
-    local suffix=$(printf '$%.0s' {1..$lvl})
-fi
-# }}}
+  #  Char is `$` normally and `#` for root.
+  if [[ $EUID -eq 0 ]]; then
+    local char='#'
+  else
+    local char='$'
+  fi
 
-# Change Color if the last command didn't exit with 0. {{{
-if [[ $? -eq 0 ]]; then
-    local char="%F{2}$suffix%f"
-else
-    local char="%F{1}$suffix%f"
-fi
-# }}}
+  #  Mix it all up
+  for (( i = 0; i < $lvl; i++ )); do
+    suffix+=$char;
+  done;
+  echo -n $suffix
+}
+
 
 # ==============================================================================
 # Spaceship Sections
@@ -112,7 +113,7 @@ PS1+="%B%F{6}%1~ "
 PS1+="$vcs_branch%F{1}%b\$vcs_stats%f "
 PS1+='%B$(built_prompt)%b'
 PS1+="$newline"
-PS1+="%F{2}└─%f $char "
+PS1+='%F{2}└─%F{2} $(suffix)%f '
 
 
 # ==============================================================================

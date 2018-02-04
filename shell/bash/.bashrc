@@ -7,7 +7,7 @@
 #
 #
 # Say Hello
-echo "🏃 .bashrc";
+# echo "🏃 .bashrc";
 
 
 # Source our dotfiles

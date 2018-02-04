@@ -5,6 +5,7 @@ export USE_DEVICONS=1
 export EDITOR="nvim"
 # export PAGER='less'
 # export PAGER="vimpager"
+export MANPAGER="nvim -c 'set ft=man' -"
 
 export DOTFILES="$HOME/.dotfiles"
 

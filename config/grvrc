@@ -1,0 +1,11 @@
+# CommitView
+# DiffView
+# GitStatusView
+# HistoryView
+# RefView
+
+# theme --name [ThemeName] --component [ComponentId] --bgcolor [BackgroundColor] --fgcolor [ForegroundColor]
+
+# map view fromkeys tokeys
+
+

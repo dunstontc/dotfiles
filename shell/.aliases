@@ -99,7 +99,7 @@ alias fshow="defaults write com.apple.finder AppleShowAllFiles -bool true && kil
 alias fhide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 
 # Copy cwd to the clipboard
-alias hdp="pwd | pbcrpy"
+alias hdp="pwd | pbcopy"
 
 # Get our IP
 alias ips="ifconfig -a | perl -nle\"/(\d+\.\d+\.\d+\.\d+)/ && print $1\""
