@@ -57,7 +57,7 @@ suffix() {
 # Spaceship Sections
 # ==============================================================================
 local golang_symbol=""
-local jobs_symbol=""
+local jobs_symbol="♩"
 local dotnet_symbol=".NET"
 
 # If there are Go-specific files in current directory, or current directory is under the GOPATH {{{
@@ -118,7 +118,7 @@ PS1+='%F{2} %F{2}$(suffix)%f '
 
 
 # ==============================================================================
-RPROMPT="%F{14}%~%f"
+RPROMPT="%B%F{4}%~%f%b"
 # PS1="$VCS_BRANCH%F{1}\$VCS_STATS%f\$CHAR "
 # PROMPT='$(built_prompt)'
 

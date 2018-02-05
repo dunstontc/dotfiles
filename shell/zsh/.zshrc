@@ -16,15 +16,10 @@ source ~/.zplug/init.zsh
 
 # Let zplug plug zplug
 zplug 'zplug/zplug',        hook-build:'zplug --self-manage'
-zplug "mafredri/zsh-async", from:github
-# zplug "plugins/git",        from:oh-my-zsh
-zplug "lib/completion",     from:oh-my-zsh
-# zplug "zsh-users/zsh-completions" from:github
+# zplug "mafredri/zsh-async", from:github
 zplug "rupa/z",             use:z.sh
-# zplug "changyuheng/fz",     defer:1
 zplug "uvaes/fzf-marks",    from:github
 # zplug "changyuheng/zsh-interactive-cd", from:github
-# zplug "Vifon/deer",     from:github, use:deer
 # zplug "djui/alias-tips"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"
