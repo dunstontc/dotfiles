@@ -11,12 +11,10 @@ module.exports = {
     'vim',
   ],
   'gem': [
-    'vimgolf',
     'json',
     'json_pure',
     'lolcat',
     'neovim',
-    'sass'
   ],
   'npm': [
     'cson',
@@ -24,16 +22,13 @@ module.exports = {
     'eslint-plugin-vue',
     'gulp-cli',
     'jq.node',
-    'node',
     'npm',
-    'package-json-to-readme',
     'tern',
     'yo',
   ],
   'pip3': [
     'glances',
     'jrnl,'
-    'maybe',
     'neovim',
     'proselint',
     'Pygments',
