@@ -3,7 +3,6 @@ HISTSIZE=5000
 SAVEHIST=5000
 export HISTFILE=~/.cache/shell/.zsh_history
 
-# export LANG="en_US.UTF-8"
 export DOTFILES=$HOME/.dotfiles
 export SHELL=/usr/local/bin/zsh
 
@@ -14,17 +13,16 @@ fi
 
 source ~/.zplug/init.zsh
 
-# Let zplug plug zplug
-zplug 'zplug/zplug',        hook-build:'zplug --self-manage'
-# zplug "mafredri/zsh-async", from:github
-zplug "rupa/z",             use:z.sh
-zplug "uvaes/fzf-marks",    from:github
-# zplug "changyuheng/zsh-interactive-cd", from:github
+zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 # zplug "djui/alias-tips"
-zplug "zsh-users/zsh-completions"
-zplug "zsh-users/zsh-autosuggestions"
-zplug "zsh-users/zsh-history-substring-search"
-zplug "zsh-users/zsh-syntax-highlighting",     defer:2
+# zplug "changyuheng/zsh-interactive-cd", from:github
+# zplug "mafredri/zsh-async", from:github
+zplug "rupa/z", use:z.sh
+zplug "uvaes/fzf-marks", from:github
+zplug "zsh-users/zsh-completions", from:github
+zplug "zsh-users/zsh-autosuggestions", from:github
+zplug "zsh-users/zsh-history-substring-search", from:github
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 
 if ! zplug check --verbose; then
@@ -39,10 +37,6 @@ fi
 zplug load
 
 
-# if zplug check denysdovhan/spaceship-zsh-theme; then
-#     # source /Users/clay/.dotfiles/shell/zsh/prompt.zsh
-# fi
-
 # =============================================================================
 
 # Source our dotfiles
@@ -53,7 +47,9 @@ unset file;
 
 source $HOME/.dotfiles/ignore/.private
 source $HOME/.dotfiles/shell/zsh/prompt.zsh
-
+# source $HOME/.dotfiles/shell/.highlight
+source $HOME/.dotfiles/shell/functions/.fzf.functions
+source $HOME/.dotfiles/shell/zsh/functions/register-completions.zsh
 
 # =============================================================================
 # # # Make sure the terminal is in application mode, which zle is active. Only then
@@ -72,10 +68,6 @@ source $HOME/.dotfiles/shell/zsh/prompt.zsh
 # fi
 # =============================================================================
 # test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-source $HOME/.dotfiles/shell/.highlight
-source $HOME/.dotfiles/shell/functions/.fzf.functions
-source $HOME/.dotfiles/shell/zsh/functions/register-completions.zsh
-
 
 # Pick up additional site-functions that may not be on system zsh's
 # $fpath by default
@@ -97,7 +89,6 @@ fpath=(~/.dotfiles/shell/zsh/compl $fpath)
 
 # autoload -Uz compinit && compinit
 
-
 # =============================================================================
 # If this option is unset, output flow control via start/stop characters
 # (usually assigned to ^S/^Q) is disabled in the shell's editor.
@@ -118,7 +109,6 @@ setopt auto_cd
 # setopt clobber
 # setopt interactive_comments
 
-
 # [ -z "$HISTFILE" ] && HISTFILE=$HOME/.cache/shell/.zsh_history
 # HISTSIZE=10000
 # SAVEHIST=10000
@@ -128,28 +118,17 @@ setopt hist_find_no_dups
 setopt hist_ignore_dups
 setopt inc_append_history
 
-
 # =============================================================================
-# export FZ_CASE_INSENSITIVE=1
-# # setopt FZ_CASE_INSENSITIVE
-#
-#
-# autoload -U deer
-# zle -N deer
-# bindkey '\ek' deer
-# # typeset -Ag DEER_KEYS   # Prepare the associative table.
-# # DEER_KEYS[function]=key
-# # DEER_KEYS[action_name]=key
-# zstyle ':deer:' height 22
+zstyle ':completion:*' menu select
 
 # =============================================================================
 #  Mappings
 # =============================================================================
+bindkey -e
 # make <S-Tab> work 'correctly'
 # FIXME: Shift+Tab still goes wonky sometimes
 bindkey '^[[Z' reverse-menu-complete
 
-bindkey -e
 bindkey '[F' forward-word
 bindkey '[C' forward-word
 bindkey '[D' backward-word
@@ -159,9 +138,8 @@ autoload history-search-end
 zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
 
-bindkey  '^[[A'  history-beginning-search-backward-end
-bindkey  '^[[B'  history-beginning-search-forward-end
-
+bindkey '^[[A' history-beginning-search-backward-end
+bindkey '^[[B' history-beginning-search-forward-end
 
 
 # =============================================================================
@@ -176,20 +154,20 @@ bindkey "^[[1;3D" backward-word
 # =============================================================================
 typeset -A ZSH_HIGHLIGHT_STYLES
 
-ZSH_HIGHLIGHT_STYLES[builtin]='fg=green'
-ZSH_HIGHLIGHT_STYLES[arg0]='fg=white'
-ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
-ZSH_HIGHLIGHT_STYLES[path_pathseparator]='fg=white'
-ZSH_HIGHLIGHT_STYLES[path_prefix_pathseparator]='fg=white'
-ZSH_HIGHLIGHT_STYLES[path_prefix]='fg=white'
-ZSH_HIGHLIGHT_STYLES[function]='fg=yellow,bold'
-ZSH_HIGHLIGHT_STYLES[command]='fg=yellow,bold'
-ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=magenta'
-ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=magenta'
-ZSH_HIGHLIGHT_STYLES[alias]='fg=blue,bold'
-ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]='fg=blue'
-ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=yellow'
-ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=yellow'
+ZSH_HIGHLIGHT_STYLES[builtin]='fg=2'
+ZSH_HIGHLIGHT_STYLES[arg0]='fg=13'
+ZSH_HIGHLIGHT_STYLES[path]='fg=6'
+ZSH_HIGHLIGHT_STYLES[path_pathseparator]='fg=7'
+ZSH_HIGHLIGHT_STYLES[path_prefix_pathseparator]='fg=7'
+ZSH_HIGHLIGHT_STYLES[path_prefix]='fg=7'
+ZSH_HIGHLIGHT_STYLES[function]='fg=3'
+ZSH_HIGHLIGHT_STYLES[command]='fg=12'
+ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=13'
+ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=5'
+ZSH_HIGHLIGHT_STYLES[alias]='fg=4'
+ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]='fg=12'
+ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=11'
+ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=11'
 
 # =============================================================================
 # Change the default CTRL_T to CTRL_F

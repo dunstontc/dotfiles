@@ -1,33 +1,21 @@
-# echo "🏃 .exports"
 
+export TERM="xterm-256color"
 
-export USE_DEVICONS=1
 export EDITOR="nvim"
+
 # export PAGER='less'
-# export PAGER="vimpager"
+
 export MANPAGER="nvim -c 'set ft=man' -"
 
 export DOTFILES="$HOME/.dotfiles"
 
-export TERM="xterm-256color"
-
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 
-#  Todo.txt
-export TODOTXT_CFG_FILE="$DOTFILES/config/todo/todo.config"
-export TODO_DIR="$HOME/.todo"
-export TODO_FILE="$TODO_DIR/todo.txt"
-export DONE_FILE="$TODO_DIR/done.txt"
-
-#  Taskwarrior
-export TASKRC="$HOME/.taskrc"
-# export TASKDATA="$HOME/.task"
-
-export GOPATH=~/go
-export GOBIN=~/go/bin
+export GOPATH="$HOME/go"
+export GOBIN="$HOME/go/bin"
 export GOROOT="$(go env GOROOT)"
-
 
 # export LUA_CPATH='/Users/clay/.luarocks/lib/lua/5.2/?.so;/usr/local/lib/lua/5.2/?.so;/usr/local/lib/lua/5.2/loadall.so;./?.so'
 # export LUA_PATH='/Users/clay/.luarocks/share/lua/5.2/?.lua;/Users/clay/.luarocks/share/lua/5.2/?/init.lua;/usr/local/share/lua/5.2/?.lua;/usr/local/share/lua/5.2/?/init.lua;/usr/local/Cellar/lua/5.2.4_4/libexec/share/lua/5.2/?.lua;/usr/local/lib/lua/5.2/?.lua;/usr/local/lib/lua/5.2/?/init.lua;./?.lua'
@@ -42,20 +30,10 @@ export GOROOT="$(go env GOROOT)"
 export LUA_PATH='/Users/clay/.luarocks/share/lua/5.2/?.lua;/Users/clay/.luarocks/share/lua/5.2/?/init.lua'
 export LUA_CPATH='/Users/clay/.luarocks/lib/lua/5.2/?.so'
 
-
-export VIFM="$HOME/.vifm"
-export MYVIFMRC="$HOME/.vifm/vifmrc"
-
-
-export HL_DIR="$HOME/.highlight"
-export HIGHLIGHT_DATADIR="$HOME/.highlight"
-
-
-export TCD_BASH_COMPLETION_DIR="/usr/local/etc/bash_completion.d"
-# export ZSH_COMPLETION_DIR="/usr/local/share/zsh/site-functions"
-# export FISH_COMPLETION_DIR="/usr/local/share/fish/vendor_completions.d"
-
-export TEMPLE_DIR="$XDG_CONFIG_HOME/temple/templates"
+export TODOTXT_CFG_FILE="$DOTFILES/config/todo/todo.config"
+export TODO_DIR="$HOME/.todo"
+export TODO_FILE="$TODO_DIR/todo.txt"
+export DONE_FILE="$TODO_DIR/done.txt"
 
 # export FZF_TMUX=1
 # export FZF_COMPLETION_TRIGGER='/'
@@ -75,9 +53,20 @@ export FZF_DEFAULT_OPTS='
   --color=prompt:#608b4e,pointer:#d7ba7d
 '
 
+export VIFM="$HOME/.vifm"
+export MYVIFMRC="$HOME/.vifm/vifmrc"
+
+export HL_DIR="$HOME/.highlight"
+export HIGHLIGHT_DATADIR="$HOME/.highlight"
+
+export TCD_BASH_COMPLETION_DIR="/usr/local/etc/bash_completion.d"
+# export ZSH_COMPLETION_DIR="/usr/local/share/zsh/site-functions"
+# export FISH_COMPLETION_DIR="/usr/local/share/fish/vendor_completions.d"
+
+export TEMPLE_DIR="$XDG_CONFIG_HOME/temple/templates"
+
 # export RANGER_LOAD_DEFAULT_RC=FALSE
 # export W3MIMGDISPLAY_PATH=$HOME/.iterm2/bin/imgcat
-
 
 # export NODE_REPL_HISTORY=~/.node_history;  # Enable persistent REPL history for `node`.
 # export NODE_REPL_HISTORY_SIZE='32768';     # Allow 32³ entries; the default is 1000.
@@ -86,7 +75,6 @@ export FZF_DEFAULT_OPTS='
 #  Avoid issues with `gpg` as installed via Homebrew.
 #  (https://stackoverflow.com/a/42265848/96656)
 # export GPG_TTY=$(tty);
-
 
 # export PS1=$PS1'$( [ -n $TMUX ] && tmux setenv -g TMUX_PWD_$(tmux display -p "#D" | tr -d %) $PWD)'
 

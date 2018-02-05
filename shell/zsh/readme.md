@@ -2,6 +2,7 @@
 
 ## Plugins: ##
 - [rupa/z](https://github.com/rupa/z)
+  - Fuzzy recent directory cd
 - [zsh-users/zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
   - Fish shell like syntax highlighting for Zsh.
 - [zsh-users/zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
