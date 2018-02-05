@@ -1,0 +1,71 @@
+
+{
+  "editor.cursorBlinking": "solid",
+  "editor.cursorStyle"   : "block-outline",
+  "editor.dragAndDrop"   : false,
+  // "editor.fontFamily"   : "Menlo, Monaco, 'Courier New', monospace",
+  // "editor.fontFamily"   : "Fira Code",
+  // "editor.fontFamily"   : "Operator Mono",
+  // "editor.fontFamily"   : "SpaceMono Nerd Font",
+  "editor.fontFamily"   : "Monaco",
+  "editor.fontSize"     : 11,
+  "editor.letterSpacing": 0,
+  "editor.fontLigatures": false,
+  "editor.minimap.enabled"            : false,
+  "editor.mouseWheelScrollSensitivity": 1.1,
+  "editor.renderIndentGuides"         : true,
+  "editor.snippetSuggestions"         : "top",
+  "emmet.excludeLanguages"         : [],
+  "emmet.extensionsPath"           : "",
+  "emmet.preferences"              : {},
+  "emmet.showSuggestionsAsSnippets": true,
+  "emmet.triggerExpansionOnTab"    : true,
+  "explorer.sortOrder"          : "type",
+  "explorer.openEditors.visible": 0,
+  "extensions.autoUpdate": false,
+  "files.exclude": {
+      "**/.git"     : true,
+      "**/.svn"     : true,
+      "**/.hg"      : true,
+      "**/CVS"      : true,
+      "**/.DS_Store": true,
+      "Icon?"       : true
+  },
+  "git.enableSmartCommit": true,
+  "git.confirmSync"      : false,
+  "markdown.styles": [
+      "/Users/clay/Projects/vscode/vscode-custom-markdown-preview/build/vscode-syntax.css",
+      "/Users/clay/Projects/vscode/vscode-custom-markdown-preview/build/custom-markdown.css"
+  ],
+  "terminal.integrated.fontFamily": "Monaco for Powerline",
+  "terminal.integrated.fontSize"  : 11,
+  // "terminal.integrated.lineHeight": 1.2,
+  "files.associations": {
+      ".aliases": "shellscript",
+      ".env": "shellscript",
+      ".path": "shellscript",
+      ".viminfo": "shellscript",
+      ".nvimrc": "viml"
+  },
+  "[markdown]": {
+      "editor.wordWrap"        : "off",
+      "editor.quickSuggestions": true
+  },
+  "workbench.startupEditor": "none",
+"workbench.iconTheme": "file-icons",
+"vsicons.dontShowNewVersionMessage": true,
+"go.formatTool": "gofmt",
+"vim.disableExtension": false,
+"diffEditor.ignoreTrimWhitespace": true,
+"git.autofetch": true,
+"terminal.integrated.env.osx": {
+  "IN_VSCODE": 1
+},
+"terminal.integrated.env.linux": {
+  "IN_VSCODE": 1
+},
+"terminal.integrated.env.windows": {
+  "IN_VSCODE": 1
+},
+"workbench.statusBar.feedback.visible": false
+}
