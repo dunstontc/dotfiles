@@ -154,14 +154,14 @@ bindkey "^[[1;3D" backward-word
 # =============================================================================
 typeset -A ZSH_HIGHLIGHT_STYLES
 
-ZSH_HIGHLIGHT_STYLES[builtin]='fg=2'
+ZSH_HIGHLIGHT_STYLES[builtin]='fg=12'
 ZSH_HIGHLIGHT_STYLES[arg0]='fg=13'
 ZSH_HIGHLIGHT_STYLES[path]='fg=6'
 ZSH_HIGHLIGHT_STYLES[path_pathseparator]='fg=7'
 ZSH_HIGHLIGHT_STYLES[path_prefix_pathseparator]='fg=7'
 ZSH_HIGHLIGHT_STYLES[path_prefix]='fg=7'
 ZSH_HIGHLIGHT_STYLES[function]='fg=3'
-ZSH_HIGHLIGHT_STYLES[command]='fg=12'
+ZSH_HIGHLIGHT_STYLES[command]='fg=2'
 ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=13'
 ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=5'
 ZSH_HIGHLIGHT_STYLES[alias]='fg=4'
