@@ -119,7 +119,8 @@ setopt hist_ignore_dups
 setopt inc_append_history
 
 # =============================================================================
-zstyle ':completion:*' menu select
+# zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
 
 # =============================================================================
 #  Mappings
