@@ -30,7 +30,7 @@ def juice():
     if data.group('source') == 'Battery':
         charging = ''  # f'{data.group("days")}d'
     elif data.group('source') == 'AC':
-        charging = ' '
+        charging = '⚡'
     else:
         charging = '???'
 
@@ -49,7 +49,7 @@ def juice():
         else:
             charge_attr = '#[fg=#608b4e,italics,bg=#303030]'
 
-    return f"{charge_attr}{charging} {current_charge}% "
+    return f"{charge_attr}{charging} {current_charge}% ⚡"
 
 
 print(juice())

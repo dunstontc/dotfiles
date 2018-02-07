@@ -1,4 +1,3 @@
-
 # Git aliases
 alias g='git'
 alias ga='git add'
@@ -21,18 +20,17 @@ alias grm='git rm'
 alias gst='git status'
 
 
-
-function komet() {
+komet() {
 	git add . && git commit -m "$1"  # FIXME: filter the input here
 }
 
-function forrk() {
+forrk() {
   git remote add upstream "$1";
 	git remote -v
 }
 
 # Stop tracking an ignored file.
-function g4get() {
+g4get() {
     git -rm --cached "$1";
     git add .
 }

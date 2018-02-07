@@ -47,7 +47,6 @@ unset file;
 
 source $HOME/.dotfiles/ignore/.private
 source $HOME/.dotfiles/shell/zsh/prompt.zsh
-# source $HOME/.dotfiles/shell/.highlight
 source $HOME/.dotfiles/shell/functions/.fzf.functions
 source $HOME/.dotfiles/shell/zsh/functions/register-completions.zsh
 

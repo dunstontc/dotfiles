@@ -1,6 +1,6 @@
-If truecolor is enabled, this will return a full color spectrum
-If not, it'll just print 16 colors
-function kuler() {
+# If truecolor is enabled, this will return a full color spectrum
+# If not, it'll just print 16 colors
+kuler() {
   awk 'BEGIN{
     s="/\\/\\/\\/\\/\\"; s=s s s s s s s s;
     for (colnum = 0; colnum<77; colnum++) {
