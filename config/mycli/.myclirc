@@ -78,7 +78,7 @@ login_path_as_host = False
 auto_vertical_output = False
 
 # keyword casing preference. Possible values "lower", "upper", "auto"
-keyword_casing = auto
+keyword_casing = upper
 
 # disabled pager on startup
 enable_pager = True
@@ -86,8 +86,8 @@ enable_pager = True
 # Custom colors for the completion menu, toolbar, etc.
 [colors]
 # Completion menus.
-Token.Menu.Completions.Completion.Current = 'bg:#00aaaa #000000'
-Token.Menu.Completions.Completion = 'bg:#008888 #ffffff'
+Token.Menu.Completions.Completion.Current = 'bg:#608b4e #1e1e1e'
+Token.Menu.Completions.Completion = 'bg:#808080 #d4d4d4'
 Token.Menu.Completions.MultiColumnMeta = 'bg:#aaffff #000000'
 Token.Menu.Completions.ProgressButton = 'bg:#003333'
 Token.Menu.Completions.ProgressBar = 'bg:#00aaaa'
@@ -98,11 +98,11 @@ Token.Output.OddRow = ''
 Token.Output.EvenRow = ''
 
 # Selected text.
-Token.SelectedText = '#ffffff bg:#6666aa'
+Token.SelectedText = '#ffffff bg:#264f78'
 
 # Search matches. (reverse-i-search)
 Token.SearchMatch = '#ffffff bg:#4444aa'
-Token.SearchMatch.Current = '#ffffff bg:#44aa44'
+Token.SearchMatch.Current = '#ffffff bg:#007acc'
 
 # The bottom toolbar.
 Token.Toolbar = 'bg:#222222 #aaaaaa'
