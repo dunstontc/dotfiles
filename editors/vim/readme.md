@@ -12,6 +12,8 @@
     │   ├── p       # Previous Buffer
     │   ├── q       # Force Close 
     │   ├── s       # Save all
+    │   ├── h       # Show all buffers in horizontal splits.
+    │   ├── v       # Show all buffers in vertical splits.
     │   └── 
     │   
     ├── c       # config...
@@ -27,7 +29,8 @@
     │   ├── i       # Open index.man
     │   ├── m       # Messages
     │   ├── d       # describe...
-    │   │   ├── 
+    │   │   ├── p       # Path - Copy path to active file 
+    │   │   ├── s       # Syntax scope at the cursor
     │   │   └── 
     │   └── 
     │ 
@@ -45,9 +48,9 @@
     │   └──   
     │ 
     ├── q       # Quit 
-    ├── r       # Redo
-    ├── x       # Todos
-    ├── `       # Terminal Split
+    ├── rr      # Reload
+    ├── x       # Todos                                                       
+    ├── \`      # Terminal Split                                             
     └──         # 
 
 ```

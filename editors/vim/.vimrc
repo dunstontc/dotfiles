@@ -50,19 +50,12 @@ Plug 'Julian/vim-textobj-variable-segment'
 " Pretty Things
 Plug 'itchyny/vim-cursorword'        " Hilight all occurances of the word under the cursor
 Plug 'jszakmeister/vim-togglecursor' " Switch between block & horizontal line
-Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
 " Colorful Things
-" Plug '~/Projects/Vim/vim-code-dark'
-Plug 'dunstontc/vim-code-dark'
-Plug 'challenger-deep-theme/vim'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'mswift42/vim-themes'
-Plug 'flazz/vim-colorschemes'
+Plug 'dunstontc/vim-vscode-theme'
 Plug 'morhetz/gruvbox'
 Plug 'romainl/Apprentice'
 " Utilities
-Plug 'jez/vim-superman'               " Open manpages in vim
 Plug 'pbrisbin/vim-mkdir'             " Make new directories along with new files
 Plug 'sgur/vim-editorconfig'          " .editorconfig support
 Plug 'ciaranm/securemodelines'        " Better safe than sorry
@@ -97,11 +90,6 @@ endif
 if has('mouse_sgr')            " Way better mouse support
     set ttymouse=sgr
 endif
-" if has('unnamedplus')
-"   set clipboard=unnamedplus,unnamed
-" else
-"   set clipboard+=unnamed
-" endif
 set noerrorbells               " Disable error bells
 set novisualbell                 " ☝
 
@@ -145,13 +133,9 @@ endif
 set background=dark
 set termguicolors
 " set t_Co=256
-" let g:enable_bold_font=1       " Enable bold font in colorscheme
-" let g:enable_italic_font=1     " Enable italic font in colorscheme
 " colorscheme gruvbox
-colorscheme codedark
-" colorscheme challenger_deep
+colorscheme dark_plus
 highlight! Comment gui=italic cterm=italic
-" set guifont=Operator\ Mono\ Nerd\ Font\ Complete\ 14
 
 " ==== Invisible Characters ====
 set listchars+=tab:→\
@@ -173,7 +157,11 @@ endif
 "  Preferences
 " =============================================================================
 " ==== General ====
-set clipboard=unnamed          " Use the OS clipboard by default (on versions compiled with `+clipboard`)
+if has('unnamedplus')
+  set clipboard=unnamedplus
+else
+  set clipboard+=unnamed
+endif
 set laststatus=2               " Always show status line
 set nopaste
 
@@ -222,7 +210,7 @@ set wildmode=list:longest,full
 " ==== Folding ====
 if has('folding')
   set foldenable               " Enable folding
-  set foldmethod=indent        " Syntax isn't fast enough
+  set foldmethod=indent        " Syntax isn't fast
   set foldlevelstart=5         " Default folding level when buffer is opened
   set foldnestmax=10           " Maximum nested fold
 endif
@@ -239,15 +227,6 @@ command -nargs=* -complete=help H vertical belowright help <args>
 command -nargs=0 GetRelPath :let @+ = expand("%")
 command -nargs=0 GetFullPath :let @+ = expand("%:p")
 command -nargs=0 GetName :let @+ = expand("%:t")
-
-
-" Make these commonly mistyped commands still work
-command! WQ wq
-command! Wq wq
-command! Wqa wqa
-command! W w
-command! Q q
-
 
 
 " =============================================================================
@@ -298,38 +277,38 @@ noremap C "_C
 nnoremap <S-y> y$
 nnoremap yy Vy
 
-inoremap <C-E> <C-o>$
+" inoremap <C-E> <C-o>$
 
 tnoremap <esc> <C-\><C-n>
 
 
 " ==== Dumb Maps ====
 " Save wih `⌘-s`
-nnoremap 𐌔 :w<CR>
-inoremap 𐌔 <C-o>:w<CR>
+" nnoremap 𐌔 :w<CR>
+" inoremap 𐌔 <C-o>:w<CR>
 
 " Comment wih `⌘-/`
-noremap <silent>𐌍 :TComment<CR>
-inoremap <silent>𐌍 <esc>:TComment<CR>
+" noremap <silent>𐌍 :TComment<CR>
+" inoremap <silent>𐌍 <esc>:TComment<CR>
 
 " Use `⌥ ⇧ DOWN` to duplicate a line
-nnoremap 𐌋 mxV"zy"zp`xj
+" nnoremap 𐌋 mxV"zy"zp`xj
 
 " `⌘ [` / `⌘ ]` for Indentation
-vmap <silent> 𐌀 <gv
-vmap <silent> 𐌁 >gv
-nmap <silent> 𐌀 <<
-nmap <silent> 𐌁 >>
-imap <silent> 𐌀 <C-o><<
-imap <silent> 𐌁 <c-o>>>
+" vmap <silent> 𐌀 <gv
+" vmap <silent> 𐌁 >gv
+" nmap <silent> 𐌀 <<
+" nmap <silent> 𐌁 >>
+" imap <silent> 𐌀 <C-o><<
+" imap <silent> 𐌁 <c-o>>>
 
 "  `⌥  UP/DOWN` Move lines up and down
-nnoremap 𐌞 :m .-2<CR>==
-nnoremap 𐌓 :m .+1<CR>==
-inoremap 𐌞 <Esc>:m .-2<CR>==gi
-inoremap 𐌓 <Esc>:m .+1<CR>==gi
-vnoremap 𐌞 :m '<-2<CR>gv=gv
-vnoremap 𐌓 :m '>+1<CR>gv=gv
+" nnoremap 𐌞 :m .-2<CR>==
+" nnoremap 𐌓 :m .+1<CR>==
+" inoremap 𐌞 <Esc>:m .-2<CR>==gi
+" inoremap 𐌓 <Esc>:m .+1<CR>==gi
+" vnoremap 𐌞 :m '<-2<CR>gv=gv
+" vnoremap 𐌓 :m '>+1<CR>gv=gv
 
 
 
@@ -339,7 +318,7 @@ vnoremap 𐌓 :m '>+1<CR>gv=gv
 " =============================================================================
 set timeoutlen=1000
 
-let mapleader="\<Space>"
+let g:mapleader="\<Space>"
 
 nnoremap <leader><leader> <esc>
 
@@ -352,6 +331,7 @@ nnoremap <silent> <leader>e<S-V> :edit $MYVIMRC<CR>
 " ==== p -- Plug ====
 nnoremap <leader>pi :PlugInstall<CR>
 nnoremap <leader>ps :PlugStatus<CR>
+nnoremap <leader>pc :PlugClean<CR>
 
 
 " ==== r -- Reload ====
@@ -364,7 +344,7 @@ nnoremap <leader>u :redo<CR>
 
 " ==== t -- Toggle ====
 " Toggle Comments
-nnoremap <leader>tc :TComment<CR>
+" nnoremap <leader>tc :TComment<CR>
 " Toggle Folding
 nnoremap <leader>tf :normal! zi<CR>
 " Toggle GitGutter
@@ -400,17 +380,17 @@ let g:deoplete#auto_completion_start_length = 1
 let g:deoplete#enable_smart_case = 1
 let g:deoplete#file#enable_buffer_path=1
 
-call deoplete#custom#set('vim',           'mark', ' ')
-call deoplete#custom#set('omni',          'mark', '⌾ ')
-call deoplete#custom#set('file',          'mark', ' ')
-call deoplete#custom#set('jedi',          'mark', ' ')
-call deoplete#custom#set('around',        'mark', '↻ ')
-call deoplete#custom#set('buffer',        'mark', ' ')
-call deoplete#custom#set('member',        'mark', 'mb')
-call deoplete#custom#set('necovim',       'mark', 'nv')
-call deoplete#custom#set('ultisnips',     'mark', ' ')
-call deoplete#custom#set('neosnippet',    'mark', ' ')
-call deoplete#custom#set('necosyntax',    'mark', 'ns')
+" call deoplete#custom#set('vim',           'mark', 'V ')
+" call deoplete#custom#set('omni',          'mark', '⌾ ')
+" call deoplete#custom#set('file',          'mark', ' ')
+" call deoplete#custom#set('jedi',          'mark', ' ')
+" call deoplete#custom#set('around',        'mark', '↻ ')
+" call deoplete#custom#set('buffer',        'mark', ' ')
+" call deoplete#custom#set('member',        'mark', 'mb')
+" call deoplete#custom#set('necovim',       'mark', 'nv')
+" call deoplete#custom#set('ultisnips',     'mark', '<>')
+" call deoplete#custom#set('neosnippet',    'mark', '<>')
+" call deoplete#custom#set('necosyntax',    'mark', 'ns')
 call deoplete#custom#set('tmux-complete', 'mark', '⧉ ')
 
 call deoplete#custom#set('jedi', 'matchers', ['matcher_fuzzy'])
@@ -458,17 +438,6 @@ let g:togglecursor_disable_tmux = 0
 let g:togglecursor_disable_default_init = 1
 
 
-" ==== devicons ====
-let g:webdevicons_enable=1
-let g:webdevicons_enable_airline_statusline=1
-let g:webdevicons_enable_airline_statusline_fileformat_symbols=1
-
-
 " ==== vim-airline ====
-let g:airline_powerline_fonts = 1
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-
+let g:airline_powerline_fonts = 0
 
