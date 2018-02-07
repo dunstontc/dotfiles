@@ -6,8 +6,6 @@
 # (__)______/  /__/     \__\ |_______/    |__|  |__| | _| `._____| \______|
 #
 #
-# Say Hello
-# echo "🏃 .bashrc";
 
 
 # Source our dotfiles
@@ -23,11 +21,8 @@ unset file;
 # fi
 
 
-# Only load Liquid Prompt in interactive shells
-# [[ $- = *i* ]] && source ~/liquidprompt/liquidprompt
 source $HOME/.dotfiles/shell/bash/prompt.bash
 source $HOME/.dotfiles/shell/bash/.fzf.bash
-source $HOME/.dotfiles/shell/.highlight
 source $HOME/.bplug/z.sh
 
 

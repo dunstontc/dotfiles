@@ -9,7 +9,9 @@ local newline='
 '
 local magenta="%F{5}"
 local blue="%F{4}"
+local bright_blue="%F{12}"
 local green="%F{2}"
+local bright_green="%F{10}"
 local cyan="%F{6}"
 local dotnet_purp="%F{128}"
 # }}}
@@ -109,16 +111,16 @@ built_prompt() {
 }
 
 # TOPLINE=" %F{5}\$GO_GIT_STAT%f\$CHAR "
-PS1="%F{2} %f"
-PS1+="%B%F{4}%1~ "
+PS1="$nbsp"
+PS1+="%B%F{12}%1~ "
 PS1+="$vcs_branch%F{1}%b\$vcs_stats%f "
 PS1+='%B$(built_prompt)%b'
 PS1+="$newline"
-PS1+='%F{2} %F{2}%B$(suffix)%b%f '
+PS1+='%F{65} %B$(suffix)%b%f '
 
 
 # ==============================================================================
-RPROMPT="%B%F{4}%~%f%b"
+RPROMPT="%B%F{12}%~%f%b"
 # PS1="$VCS_BRANCH%F{1}\$VCS_STATS%f\$CHAR "
 # PROMPT='$(built_prompt)'
 
