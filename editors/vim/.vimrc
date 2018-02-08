@@ -6,22 +6,19 @@
 "     \ \__/ /     \ \__\ \__\    \ \__\ \__\\ _\\ \_______\
 "      \|__|/       \|__|\|__|     \|__|\|__|\|__|\|_______|
 "
-"
-"
 if has('nvim')
   finish
 endif
-"
+
 " if has('win32')
 "   let $VIMHOME = expand('~\vimfiles')
 " else
 "   let $VIMHOME = expand('~/.vim')
 " endif
-"
+
 " =============================================================================
 "  Plugins
 " =============================================================================
-" execute pathogen#infect()
 " TODO: ~/.vim --> $VIMHOME
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -46,7 +43,9 @@ Plug 'kana/vim-textobj-line'
 Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-indent'
 Plug 'glts/vim-textobj-comment'
+Plug 'Julian/vim-textobj-brace'
 Plug 'Julian/vim-textobj-variable-segment'
+Plug 'haya14busa/vim-edgemotion'
 " Pretty Things
 Plug 'itchyny/vim-cursorword'        " Hilight all occurances of the word under the cursor
 Plug 'jszakmeister/vim-togglecursor' " Switch between block & horizontal line
@@ -130,10 +129,10 @@ if &term =~# '(^screen|^tmux)'
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 endif
 set background=dark
-set termguicolors
-" set t_Co=256
-" colorscheme gruvbox
 colorscheme dark_plus
+" colorscheme gruvbox
+" set termguicolors
+" set t_Co=256
 highlight! Comment gui=italic cterm=italic
 
 " ==== Invisible Characters ====
@@ -274,40 +273,6 @@ noremap C "_C
 " Yank Better
 nnoremap <S-y> y$
 nnoremap yy Vy
-
-" inoremap <C-E> <C-o>$
-
-
-
-" ==== Dumb Maps ====
-" Save wih `⌘-s`
-" nnoremap 𐌔 :w<CR>
-" inoremap 𐌔 <C-o>:w<CR>
-
-" Comment wih `⌘-/`
-" noremap <silent>𐌍 :TComment<CR>
-" inoremap <silent>𐌍 <esc>:TComment<CR>
-
-" Use `⌥ ⇧ DOWN` to duplicate a line
-" nnoremap 𐌋 mxV"zy"zp`xj
-
-" `⌘ [` / `⌘ ]` for Indentation
-" vmap <silent> 𐌀 <gv
-" vmap <silent> 𐌁 >gv
-" nmap <silent> 𐌀 <<
-" nmap <silent> 𐌁 >>
-" imap <silent> 𐌀 <C-o><<
-" imap <silent> 𐌁 <c-o>>>
-
-"  `⌥  UP/DOWN` Move lines up and down
-" nnoremap 𐌞 :m .-2<CR>==
-" nnoremap 𐌓 :m .+1<CR>==
-" inoremap 𐌞 <Esc>:m .-2<CR>==gi
-" inoremap 𐌓 <Esc>:m .+1<CR>==gi
-" vnoremap 𐌞 :m '<-2<CR>gv=gv
-" vnoremap 𐌓 :m '>+1<CR>gv=gv
-
-
 
 
 " =============================================================================
