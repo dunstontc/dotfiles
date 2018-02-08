@@ -4,8 +4,63 @@
 # HistoryView
 # RefView
 
+# map view fromkeys tokeys
+
 # theme --name [ThemeName] --component [ComponentId] --bgcolor [BackgroundColor] --fgcolor [ForegroundColor]
 
-# map view fromkeys tokeys
+# theme --name darkplus --component All.Default                    --bgcolor    --fgcolor
+# theme --name darkplus --component All.SearchMatch                --bgcolor    --fgcolor
+# theme --name darkplus --component All.ActiveViewSelectedRow      --bgcolor    --fgcolor
+# theme --name darkplus --component All.InactiveViewSelectedRow    --bgcolor    --fgcolor
+# theme --name darkplus --component MainView.ActiveView            --bgcolor    --fgcolor
+# theme --name darkplus --component MainView.NormalView            --bgcolor    --fgcolor
+# theme --name darkplus --component RefView.Title                  --bgcolor    --fgcolor
+# theme --name darkplus --component RefView.Footer                 --bgcolor    --fgcolor
+# theme --name darkplus --component RefView.LocalBranchesHeader    --bgcolor    --fgcolor
+# theme --name darkplus --component RefView.RemoteBranchesHeader   --bgcolor    --fgcolor
+# theme --name darkplus --component RefView.LocalBranch            --bgcolor    --fgcolor
+# theme --name darkplus --component RefView.Head                   --bgcolor    --fgcolor
+# theme --name darkplus --component RefView.RemoteBranch           --bgcolor    --fgcolor
+# theme --name darkplus --component RefView.TagsHeader             --bgcolor    --fgcolor
+# theme --name darkplus --component RefView.Tag                    --bgcolor    --fgcolor
+# theme --name darkplus --component CommitView.Title               --bgcolor    --fgcolor
+# theme --name darkplus --component CommitView.Footer              --bgcolor    --fgcolor
+# theme --name darkplus --component CommitView.ShortOid            --bgcolor    --fgcolor
+# theme --name darkplus --component CommitView.Date                --bgcolor    --fgcolor
+# theme --name darkplus --component CommitView.Author              --bgcolor    --fgcolor
+# theme --name darkplus --component CommitView.Summary             --bgcolor    --fgcolor
+# theme --name darkplus --component CommitView.Tag                 --bgcolor    --fgcolor
+# theme --name darkplus --component CommitView.LocalBranch         --bgcolor    --fgcolor
+# theme --name darkplus --component CommitView.RemoteBranch        --bgcolor    --fgcolor
+# theme --name darkplus --component DiffView.Title                 --bgcolor    --fgcolor
+# theme --name darkplus --component DiffView.Footer                --bgcolor    --fgcolor
+# theme --name darkplus --component DiffView.Normal                --bgcolor    --fgcolor
+# theme --name darkplus --component DiffView.CommitAuthor          --bgcolor    --fgcolor
+# theme --name darkplus --component DiffView.CommitAuthorDate      --bgcolor    --fgcolor
+# theme --name darkplus --component DiffView.CommitCommitter       --bgcolor    --fgcolor
+# theme --name darkplus --component DiffView.CommitCommitterDate   --bgcolor    --fgcolor
+# theme --name darkplus --component DiffView.CommitMessage         --bgcolor    --fgcolor
+# theme --name darkplus --component DiffView.StatsFile             --bgcolor    --fgcolor
+# theme --name darkplus --component DiffView.GitDiffHeader         --bgcolor    --fgcolor
+# theme --name darkplus --component DiffView.GitDiffExtendedHeader --bgcolor    --fgcolor
+# theme --name darkplus --component DiffView.UnifiedDiffHeader     --bgcolor    --fgcolor
+# theme --name darkplus --component DiffView.HunkStart             --bgcolor    --fgcolor
+# theme --name darkplus --component DiffView.HunkHeader            --bgcolor    --fgcolor
+# theme --name darkplus --component DiffView.AddedLine             --bgcolor    --fgcolor
+# theme --name darkplus --component DiffView.RemovedLine           --bgcolor    --fgcolor
+# theme --name darkplus --component GitStatusView.StagedTitle      --bgcolor    --fgcolor
+# theme --name darkplus --component GitStatusView.UnstagedTitle    --bgcolor    --fgcolor
+# theme --name darkplus --component GitStatusView.UntrackedTitle   --bgcolor    --fgcolor
+# theme --name darkplus --component GitStatusView.ConflictedTitle  --bgcolor    --fgcolor
+# theme --name darkplus --component GitStatusView.StagedFile       --bgcolor    --fgcolor
+# theme --name darkplus --component GitStatusView.UnstagedFile     --bgcolor    --fgcolor
+# theme --name darkplus --component GitStatusView.UntrackedFile    --bgcolor    --fgcolor
+# theme --name darkplus --component GitStatusView.ConflictedFile   --bgcolor    --fgcolor
+# theme --name darkplus --component StatusBarView.Normal           --bgcolor    --fgcolor
+# theme --name darkplus --component HelpBarView.Special            --bgcolor    --fgcolor
+# theme --name darkplus --component HelpBarView.Normal             --bgcolor    --fgcolor
+# theme --name darkplus --component ErrorView.Title                --bgcolor    --fgcolor
+# theme --name darkplus --component ErrorView.Footer               --bgcolor    --fgcolor
+# theme --name darkplus --component ErrorView.Errors               --bgcolor    --fgcolor
 
 

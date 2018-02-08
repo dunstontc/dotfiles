@@ -70,7 +70,6 @@ Plug 'Shougo/neosnippet-snippets'
 Plug 'Shougo/neco-syntax'             " ???
 Plug 'Shougo/neco-vim'                " Completions for Viml
 Plug 'wellle/tmux-complete.vim'       " Completions for adjascent tmux panes
-" Plug 'CharlesGueunet/quickmenu.vim'
 call plug#end()
 
 
@@ -246,7 +245,6 @@ inoremap <C-Q> <C-c>
 nnoremap <C-Q> <Nop>
 vnoremap <C-Q> <C-c>
 cnoremap <C-Q> <C-c>
-tnoremap <C-Q> <C-c>
 
 
 " Small edits in Normal mode
@@ -279,7 +277,6 @@ nnoremap yy Vy
 
 " inoremap <C-E> <C-o>$
 
-tnoremap <esc> <C-\><C-n>
 
 
 " ==== Dumb Maps ====
