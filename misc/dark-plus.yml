@@ -61,7 +61,7 @@ dark-blue:
   - rgb:   '86, 156, 214'
   - cterm: 75
 bright-blue:
-  - hex:   '#007acc'
+  - hex:   '#007acc'  # #6796e6
   - cterm: 33
 selection:
   - hex:   '#264f78'

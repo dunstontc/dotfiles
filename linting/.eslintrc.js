@@ -10,6 +10,7 @@ module.exports = {
     "sharedData": "Hello"
   },
   "parserOptions": {
+    "ecmaVersion": 2017,
     "ecmaFeatures": {
         "jsx": true
     },
