@@ -1,168 +1,206 @@
 {
-"editor.cursorBlinking": "solid",
-"editor.cursorStyle"   : "block-outline",
-"editor.dragAndDrop"   : false,
-// "editor.fontFamily"   : "Fira Code",
-// "editor.fontFamily"   : "Operator Mono",
-"editor.fontFamily"   : "Monaco",
-"editor.fontSize"     : 11,
-"editor.letterSpacing": 0,
-"editor.fontLigatures": false,
-"editor.minimap.enabled"            : false,
-"editor.mouseWheelScrollSensitivity": 1.1,
-"editor.renderIndentGuides"         : true,
-"editor.snippetSuggestions"         : "top",
-"emmet.excludeLanguages"         : [],
-"emmet.extensionsPath"           : "",
-"emmet.preferences"              : {},
-"emmet.showSuggestionsAsSnippets": true,
-"emmet.triggerExpansionOnTab"    : true,
-"explorer.sortOrder"          : "type",
-"explorer.openEditors.visible": 0,
-"extensions.autoUpdate": false,
-"files.exclude": {
-    "**/.git"     : true,
-    "**/.svn"     : true,
-    "**/.hg"      : true,
-    "**/CVS"      : true,
-    "**/.DS_Store": true,
-    "Icon?"       : true
-},
-"git.autofetch":         true,
-"git.enableSmartCommit": true,
-"git.confirmSync"      : false,
-"diffEditor.ignoreTrimWhitespace": true,
-// "markdown.styles": [
-//     "/Users/clay/Projects/vscode/vscode-custom-markdown-preview/build/vscode-syntax.css",
-//     "/Users/clay/Projects/vscode/vscode-custom-markdown-preview/build/custom-markdown.css"
-// ],
-"terminal.integrated.fontFamily": "Monaco",
-"terminal.integrated.fontSize"  : 11,
-"files.associations": {
-    ".aliases": "shellscript",
-    ".env": "shellscript",
-    ".path": "shellscript",
-    ".viminfo": "shellscript",
-    ".nvimrc": "viml"
-},
-"[markdown]": {
-    "editor.wordWrap"        : "off",
-    "editor.quickSuggestions": true
-},
-"workbench.startupEditor": "none",
-"workbench.statusBar.feedback.visible": false,
-"vsicons.dontShowNewVersionMessage": true,
-"workbench.iconTheme": "file-icons",
-"go.formatTool": "gofmt",
-"terminal.integrated.env.osx":     {"IN_VSCODE": 1},
-"terminal.integrated.env.linux":   {"IN_VSCODE": 1},
-"terminal.integrated.env.windows": {"IN_VSCODE": 1},
-// === Vim ===
-"vim.disableExtension": false,
-"vim.useCtrlKeys": true,
-"vim.easymotion":  true,
-"vim.incsearch":   true,
-"vim.hlsearch":    true,
-"vim.useSystemClipboard": false,
-"vim.cmdLineInitialColon": true,
-"vim.statusBarColorControl": true,
-"vim.statusBarColors" : {
-  "normal": "#303030",
-  "insert": "#569cd6",
-  "visual": "#c586c0",
-  "visualline":  "#c586c0",
-  "visualblock": "#c586c0",
-  "replace": "#d16969"
-},
-"vim.neovimPath": "/usr/local/bin/nvim",
-"vim.insertModeKeyBindings": [
-  {
-    "before": ["<C-q>"],
-    "after": ["<Esc>"]
-  }
-],
-"vim.otherModesKeyBindingsNonRecursive": [
-  {
-    "before": ["q"],
-    "after": [],
-    "commands": [
-      {
-        "command": "workbench.action.files.save",
-        "args": []
-      },
-      {
-        "command": "workbench.action.closeActiveEditor",
-        "args": []
-      }
-    ]
+  "editor.cursorBlinking": "solid",
+  "editor.cursorStyle"   : "block-outline",
+  "editor.dragAndDrop"   : false,
+  "editor.fontFamily"   : "Fira Code",
+  // "editor.fontFamily"   : "Operator Mono",
+  // "editor.fontFamily"   : "Monaco",
+  "editor.fontSize"     : 11,
+  "editor.letterSpacing": 0,
+  "editor.fontLigatures": true,
+  "editor.minimap.enabled"            : false,
+  "editor.mouseWheelScrollSensitivity": 1.1,
+  "editor.renderIndentGuides"         : true,
+  "editor.snippetSuggestions"         : "top",
+  "emmet.excludeLanguages"         : [],
+  "emmet.extensionsPath"           : "",
+  "emmet.preferences"              : {},
+  "emmet.showSuggestionsAsSnippets": true,
+  "emmet.triggerExpansionOnTab"    : true,
+  "explorer.sortOrder"          : "type",
+  "explorer.openEditors.visible": 0,
+  "extensions.autoUpdate": false,
+  "files.exclude": {
+      "**/.git"     : true,
+      "**/.svn"     : true,
+      "**/.hg"      : true,
+      "**/CVS"      : true,
+      "**/.DS_Store": true,
+      "Icon?"       : true
   },
-  {
-    "before": ["f", "j"],
-    "after": [],
-    "commands": [
-      {
-        "command": "workbench.action.files.save",
-        "args": []
-      },
-      {
-        "command": "workbench.action.closeActiveEditor",
-        "args": []
-      }
-    ]
+  "git.autofetch":         true,
+  "git.enableSmartCommit": true,
+  "git.confirmSync"      : false,
+  "diffEditor.ignoreTrimWhitespace": true,
+  // "markdown.styles": [
+  //     "/Users/clay/Projects/vscode/vscode-custom-markdown-preview/build/vscode-syntax.css",
+  //     "/Users/clay/Projects/vscode/vscode-custom-markdown-preview/build/custom-markdown.css"
+  // ],
+  "terminal.integrated.fontFamily": "Monaco",
+  "terminal.integrated.fontSize"  : 11,
+  "files.associations": {
+      ".aliases": "shellscript",
+      ".env": "shellscript",
+      ".path": "shellscript",
+      ".viminfo": "shellscript",
+      ".nvimrc": "viml"
   },
-  {
-    "before": [","],
-    "after": ["i", "<space>", "<esc>", "<left>"]
+  "[markdown]": {
+      "editor.wordWrap"        : "off",
+      "editor.quickSuggestions": true
   },
-  {
-    "before": ["<bs>"],
-    "after": ["a", "<bs>", "<esc>", "<right>"]
+  "workbench.startupEditor": "none",
+  "workbench.statusBar.feedback.visible": false,
+  "vsicons.dontShowNewVersionMessage": true,
+  "workbench.iconTheme": "file-icons",
+  "go.formatTool": "gofmt",
+  "terminal.integrated.env.osx":     {"IN_VSCODE": 1},
+  "terminal.integrated.env.linux":   {"IN_VSCODE": 1},
+  "terminal.integrated.env.windows": {"IN_VSCODE": 1},
+  // === Vim ===
+  "vim.disableExtension": false,
+  "vim.useCtrlKeys": true,
+  "vim.easymotion":  true,
+  "vim.incsearch":   true,
+  "vim.hlsearch":    true,
+  "vim.useSystemClipboard": false,
+  "vim.cmdLineInitialColon": true,
+  "vim.statusBarColorControl": true,
+  "vim.statusBarColors" : {
+    "normal": "#303030",
+    "insert": "#569cd6",
+    "visual": "#c586c0",
+    "visualline":  "#c586c0",
+    "visualblock": "#c586c0",
+    "replace": "#d16969"
   },
-  {
-    "before": ["L"],
-    "after": ["$"]
-  },
-  {
-    "before": ["H"],
-    "after": ["0"]
-  },
-  {
-    "before": ["U"],
-    "after": ["<C-r>"]
-  }
-],
-"vim.leader": "<space>",
-"vim.handleKeys":{
-  "<C-a>": false,
-  "<C-f>": false,
-  "<C-e>": false,
-  "<C-q>": true
-},
-"workbench.colorCustomizations": {
-  "statusBar.background": "#c586c0",
-  "statusBar.noFolderBackground": "#c586c0",
-  "statusBar.debuggingBackground": "#c586c0"
-},
-"msbuildProjectTools": {
-  "logging": {
-    "level": "Information",
-    "seq": {},
-    "file": "",
-    "trace": false
-  },
-  "language": {
-    "disableFeature": {},
-    "useClassicProvider": false,
-    "disable": {
-      "hover": false
+  "vim.neovimPath": "/usr/local/bin/nvim",
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["<C-q>"],
+      "after": ["<Esc>"]
     }
+  ],
+  "vim.otherModesKeyBindingsNonRecursive": [
+    {
+      "before": ["q"],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.files.save",
+          "args": []
+        },
+        {
+          "command": "workbench.action.closeActiveEditor",
+          "args": []
+        }
+      ]
+    },
+    {
+      "before": ["f", "j"],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.files.save",
+          "args": []
+        },
+        {
+          "command": "workbench.action.closeActiveEditor",
+          "args": []
+        }
+      ]
+    },
+    {
+      "before": [","],
+      "after": ["i", "<space>", "<esc>"]
+    },
+    {
+      "before": ["<bs>"],
+      "after": ["a", "<bs>", "<esc>", "<right>"]
+    },
+    {
+      "before": ["L"],
+      "after": ["$"]
+    },
+    {
+      "before": ["H"],
+      "after": ["0"]
+    },
+    {
+      "before": ["U"],
+      "after": ["<C-r>"]
+    }
+  ],
+  "vim.leader": "<space>",
+  "vim.handleKeys":{
+    "<C-a>": false,
+    "<C-f>": false,
+    "<C-e>": false,
+    "<C-q>": true
   },
-  "nuget": {
-    "newestVersionsFirst": true,
-    "includePreRelease": true,
-    "disablePrefetch": false
+  "workbench.colorCustomizations": {
+    "diffEditor.insertedTextBorder": "#608b4e",
+    "diffEditor.removedTextBorder": "#d16969",
+    "editor.findMatchBackground": "#cc00b1",
+    "editor.findMatchHighlightBackground": "#007acc",
+    "editorGutter.addedBackground": "#608b4e",
+    "editorGutter.modifiedBackground": "#d7ba7d",
+    "editorGutter.deletedBackground": "#d16969",
+    "editorOverviewRuler.addedForeground": "#608b4e",
+    "editorOverviewRuler.modifiedForeground": "#d7ba7d",
+    "editorOverviewRuler.deletedForeground": "#d16969",
+    "gitDecoration.modifiedResourceForeground": "#608b4e",
+    "gitDecoration.deletedResourceForeground": "#d7ba7d",
+    "gitDecoration.untrackedResourceForeground": "#d7ba7d",
+    "gitDecoration.ignoredResourceForeground": "#808080",
+    "gitDecoration.conflictingResourceForeground": "#d16969",
+    "terminal.background": "#1e1e1e",
+    "terminal.foreground": "#d4d4d4",
+    "terminal.ansiBlack": "#808080",
+    "terminal.ansiBrightBlack": "#808080",
+    "terminal.ansiRed": "#d16969",
+    "terminal.ansiBrightRed": "#d16969",
+    "terminal.ansiBlue": "#569cd6",
+    "terminal.ansiBrightBlue": "#569cd6",
+    "terminal.ansiGreen": "#608b4e",
+    "terminal.ansiBrightGreen": "#608b4e",
+    "terminal.ansiCyan": "#4ec9b0",
+    "terminal.ansiBrightCyan": "#4ec9b0",
+    "terminal.ansiYellow": "#d7ba7d",
+    "terminal.ansiBrightYellow": "#d7ba7d",
+    "terminal.ansiMagenta": "#c586c0",
+    "terminal.ansiBrightMagenta": "#c586c0",
+    "terminal.ansiWhite": "#d4d4d4",
+    "terminal.ansiBrightWhite": "#d4d4d4",
+    "terminal.selectionBackground": "#add6ff26",
+    "terminalCursor.foreground": "#808080",
+    "statusBar.background": "#c586c0",
+    "statusBar.noFolderBackground": "#c586c0",
+    "statusBar.debuggingBackground": "#c586c0"
   },
-  "schemaVersion": 1
-}
-// ===
+  // "msbuildProjectTools": {
+  //   "logging": {
+  //     "level": "Information",
+  //     "seq": {},
+  //     "file": "",
+  //     "trace": false
+  //   },
+  //   "language": {
+  //     "disableFeature": {},
+  //     "useClassicProvider": false,
+  //     "disable": {
+  //       "hover": false
+  //     }
+  //   },
+  //   "nuget": {
+  //     "newestVersionsFirst": true,
+  //     "includePreRelease": true,
+  //     "disablePrefetch": false
+  //   },
+  //   "schemaVersion": 1
+  // },
+  "workbench.colorTheme": "dark-plus-syntax",
+  "projectManager.showProjectNameInStatusBar": false,
+  "dateTime.customFormat": "   hh:mm a  "
+
 }
