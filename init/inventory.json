@@ -1,0 +1,1782 @@
+[
+    {
+        "name": "Pip2",
+        "packages": [
+            {
+                "name": "futures",
+                "version": "3.1.1"
+            },
+            {
+                "name": "greenlet",
+                "version": "0.4.12"
+            },
+            {
+                "name": "mercurial",
+                "version": "4.4.2"
+            },
+            {
+                "name": "msgpack-python",
+                "version": "0.4.8"
+            },
+            {
+                "name": "neovim",
+                "version": "0.1.13"
+            },
+            {
+                "name": "pip",
+                "version": "9.0.1"
+            },
+            {
+                "name": "setuptools",
+                "version": "36.5.0"
+            },
+            {
+                "name": "six",
+                "version": "1.11.0"
+            },
+            {
+                "name": "trollius",
+                "version": "2.1"
+            },
+            {
+                "name": "wheel",
+                "version": "0.30.0"
+            }
+        ]
+    },
+    {
+        "name": "Pip3",
+        "packages": [
+            {
+                "name": "alabaster",
+                "version": "0.7.10"
+            },
+            {
+                "name": "ansicolor",
+                "version": "0.2.4"
+            },
+            {
+                "name": "appdirs",
+                "version": "1.4.3"
+            },
+            {
+                "name": "argh",
+                "version": "0.26.2"
+            },
+            {
+                "name": "arrow",
+                "version": "0.10.0"
+            },
+            {
+                "name": "asciinema",
+                "version": "1.4.0"
+            },
+            {
+                "name": "asn1crypto",
+                "version": "0.24.0"
+            },
+            {
+                "name": "attrs",
+                "version": "17.3.0"
+            },
+            {
+                "name": "autoflake",
+                "version": "0.6.6"
+            },
+            {
+                "name": "autopep8",
+                "version": "1.3.4"
+            },
+            {
+                "name": "awsebcli",
+                "version": "3.11.0"
+            },
+            {
+                "name": "Babel",
+                "version": "2.5.1"
+            },
+            {
+                "name": "blessed",
+                "version": "1.14.2"
+            },
+            {
+                "name": "botocore",
+                "version": "1.7.24"
+            },
+            {
+                "name": "cement",
+                "version": "2.8.2"
+            },
+            {
+                "name": "certifi",
+                "version": "2017.11.5"
+            },
+            {
+                "name": "cffi",
+                "version": "1.11.4"
+            },
+            {
+                "name": "chardet",
+                "version": "3.0.4"
+            },
+            {
+                "name": "cli-helpers",
+                "version": "1.0.1"
+            },
+            {
+                "name": "click",
+                "version": "6.6"
+            },
+            {
+                "name": "coala",
+                "version": "0.11.0"
+            },
+            {
+                "name": "coala-utils",
+                "version": "0.6.7"
+            },
+            {
+                "name": "colorama",
+                "version": "0.3.7"
+            },
+            {
+                "name": "colorclass",
+                "version": "2.2.0"
+            },
+            {
+                "name": "colorlog",
+                "version": "2.10.0"
+            },
+            {
+                "name": "colorz",
+                "version": "1.0.3"
+            },
+            {
+                "name": "configobj",
+                "version": "5.0.6"
+            },
+            {
+                "name": "cppclean",
+                "version": "0.12"
+            },
+            {
+                "name": "cryptography",
+                "version": "2.1.4"
+            },
+            {
+                "name": "cssselect",
+                "version": "1.0.1"
+            },
+            {
+                "name": "dependency-management",
+                "version": "0.4.0"
+            },
+            {
+                "name": "docker-py",
+                "version": "1.7.2"
+            },
+            {
+                "name": "dockerpty",
+                "version": "0.4.1"
+            },
+            {
+                "name": "docopt",
+                "version": "0.6.2"
+            },
+            {
+                "name": "docutils",
+                "version": "0.14"
+            },
+            {
+                "name": "eradicate",
+                "version": "0.1.6"
+            },
+            {
+                "name": "flake8",
+                "version": "3.5.0"
+            },
+            {
+                "name": "flake8-docstrings",
+                "version": "1.1.0"
+            },
+            {
+                "name": "flake8-polyfill",
+                "version": "1.0.1"
+            },
+            {
+                "name": "future",
+                "version": "0.16.0"
+            },
+            {
+                "name": "Glances",
+                "version": "2.11.1"
+            },
+            {
+                "name": "greenlet",
+                "version": "0.4.12"
+            },
+            {
+                "name": "howdoi",
+                "version": "1.1.9"
+            },
+            {
+                "name": "html-linter",
+                "version": "0.3.0"
+            },
+            {
+                "name": "http-prompt",
+                "version": "0.11.0"
+            },
+            {
+                "name": "httpie",
+                "version": "0.9.9"
+            },
+            {
+                "name": "idna",
+                "version": "2.6"
+            },
+            {
+                "name": "imagesize",
+                "version": "0.7.1"
+            },
+            {
+                "name": "jedi",
+                "version": "0.11.0"
+            },
+            {
+                "name": "Jinja2",
+                "version": "2.10"
+            },
+            {
+                "name": "jmespath",
+                "version": "0.9.3"
+            },
+            {
+                "name": "jrnl",
+                "version": "1.9.8"
+            },
+            {
+                "name": "keyring",
+                "version": "10.5.0"
+            },
+            {
+                "name": "libclang-py3",
+                "version": "3.4.0"
+            },
+            {
+                "name": "lxml",
+                "version": "4.1.1"
+            },
+            {
+                "name": "Mako",
+                "version": "1.0.7"
+            },
+            {
+                "name": "Markdown",
+                "version": "2.4.1"
+            },
+            {
+                "name": "MarkupSafe",
+                "version": "1.0"
+            },
+            {
+                "name": "mccabe",
+                "version": "0.6.1"
+            },
+            {
+                "name": "msgpack-python",
+                "version": "0.4.8"
+            },
+            {
+                "name": "mycli",
+                "version": "1.16.0"
+            },
+            {
+                "name": "neovim",
+                "version": "0.2.0"
+            },
+            {
+                "name": "numpy",
+                "version": "1.13.3"
+            },
+            {
+                "name": "numpydoc",
+                "version": "0.7.0"
+            },
+            {
+                "name": "olefile",
+                "version": "0.44"
+            },
+            {
+                "name": "packaging",
+                "version": "16.8"
+            },
+            {
+                "name": "parsedatetime",
+                "version": "2.4"
+            },
+            {
+                "name": "parsimonious",
+                "version": "0.8.0"
+            },
+            {
+                "name": "parso",
+                "version": "0.1.0"
+            },
+            {
+                "name": "pathspec",
+                "version": "0.5.5"
+            },
+            {
+                "name": "pathtools",
+                "version": "0.1.2"
+            },
+            {
+                "name": "pdoc",
+                "version": "0.3.2"
+            },
+            {
+                "name": "Pillow",
+                "version": "4.3.0"
+            },
+            {
+                "name": "pip",
+                "version": "9.0.1"
+            },
+            {
+                "name": "pluggy",
+                "version": "0.6.0"
+            },
+            {
+                "name": "prompt-toolkit",
+                "version": "1.0.15"
+            },
+            {
+                "name": "proselint",
+                "version": "0.8.0"
+            },
+            {
+                "name": "psutil",
+                "version": "5.4.0"
+            },
+            {
+                "name": "py",
+                "version": "1.5.2"
+            },
+            {
+                "name": "pyaml",
+                "version": "17.10.0"
+            },
+            {
+                "name": "pycodestyle",
+                "version": "2.3.1"
+            },
+            {
+                "name": "pycparser",
+                "version": "2.18"
+            },
+            {
+                "name": "pycrypto",
+                "version": "2.6.1"
+            },
+            {
+                "name": "pydocstyle",
+                "version": "2.1.1"
+            },
+            {
+                "name": "pyflakes",
+                "version": "1.4.0"
+            },
+            {
+                "name": "Pygments",
+                "version": "2.2.0"
+            },
+            {
+                "name": "PyMySQL",
+                "version": "0.8.0"
+            },
+            {
+                "name": "pyparsing",
+                "version": "2.2.0"
+            },
+            {
+                "name": "PyPrint",
+                "version": "0.2.6"
+            },
+            {
+                "name": "pyquery",
+                "version": "1.3.0"
+            },
+            {
+                "name": "pyroma",
+                "version": "2.2"
+            },
+            {
+                "name": "pytest",
+                "version": "3.3.1"
+            },
+            {
+                "name": "python-dateutil",
+                "version": "2.6.1"
+            },
+            {
+                "name": "pytz",
+                "version": "2017.3"
+            },
+            {
+                "name": "PyYAML",
+                "version": "3.12"
+            },
+            {
+                "name": "regex",
+                "version": "2017.12.12"
+            },
+            {
+                "name": "requests",
+                "version": "2.18.4"
+            },
+            {
+                "name": "requests-cache",
+                "version": "0.4.13"
+            },
+            {
+                "name": "sarge",
+                "version": "0.1.4"
+            },
+            {
+                "name": "scipy",
+                "version": "1.0.0"
+            },
+            {
+                "name": "semantic-version",
+                "version": "2.5.0"
+            },
+            {
+                "name": "setuptools",
+                "version": "36.5.0"
+            },
+            {
+                "name": "six",
+                "version": "1.11.0"
+            },
+            {
+                "name": "snowballstemmer",
+                "version": "1.2.1"
+            },
+            {
+                "name": "Sphinx",
+                "version": "1.6.5"
+            },
+            {
+                "name": "sphinxcontrib-websupport",
+                "version": "1.0.1"
+            },
+            {
+                "name": "sqlparse",
+                "version": "0.2.4"
+            },
+            {
+                "name": "tabulate",
+                "version": "0.8.2"
+            },
+            {
+                "name": "tasklib",
+                "version": "1.1.0"
+            },
+            {
+                "name": "template-remover",
+                "version": "0.1.9"
+            },
+            {
+                "name": "termcolor",
+                "version": "1.1.0"
+            },
+            {
+                "name": "terminaltables",
+                "version": "3.1.0"
+            },
+            {
+                "name": "tinydb",
+                "version": "3.7.0"
+            },
+            {
+                "name": "topydo",
+                "version": "0.13"
+            },
+            {
+                "name": "tox",
+                "version": "2.9.1"
+            },
+            {
+                "name": "typing",
+                "version": "3.6.2"
+            },
+            {
+                "name": "tzlocal",
+                "version": "1.4"
+            },
+            {
+                "name": "ujson",
+                "version": "1.35"
+            },
+            {
+                "name": "unidiff",
+                "version": "0.5.5"
+            },
+            {
+                "name": "urllib3",
+                "version": "1.22"
+            },
+            {
+                "name": "urwid",
+                "version": "1.3.1"
+            },
+            {
+                "name": "vim-vint",
+                "version": "0.3.18"
+            },
+            {
+                "name": "vimdoc",
+                "version": "0.6.0"
+            },
+            {
+                "name": "virtualenv",
+                "version": "15.1.0"
+            },
+            {
+                "name": "watchdog",
+                "version": "0.8.3"
+            },
+            {
+                "name": "wcwidth",
+                "version": "0.1.7"
+            },
+            {
+                "name": "websocket-client",
+                "version": "0.44.0"
+            },
+            {
+                "name": "wheel",
+                "version": "0.30.0"
+            },
+            {
+                "name": "yamllint",
+                "version": "1.6.1"
+            }
+        ]
+    },
+    {
+        "name": "Homebrew",
+        "packages": [
+            {
+                "name": "abook ",
+                "version": "0.5.6_1"
+            },
+            {
+                "name": "ack ",
+                "version": "2.18"
+            },
+            {
+                "name": "apr ",
+                "version": "1.6.3"
+            },
+            {
+                "name": "apr-util ",
+                "version": "1.6.1_1"
+            },
+            {
+                "name": "asciidoc ",
+                "version": "8.6.10 8.6.9_1"
+            },
+            {
+                "name": "autoconf ",
+                "version": "2.69"
+            },
+            {
+                "name": "automake ",
+                "version": "1.15.1"
+            },
+            {
+                "name": "aws-elasticbeanstalk ",
+                "version": "3.10.5 3.12.0"
+            },
+            {
+                "name": "bash ",
+                "version": "4.4.12"
+            },
+            {
+                "name": "bash-completion@2 ",
+                "version": "2.7"
+            },
+            {
+                "name": "boost ",
+                "version": "1.65.1 1.66.0"
+            },
+            {
+                "name": "cairo ",
+                "version": "1.14.10"
+            },
+            {
+                "name": "calcurse ",
+                "version": "4.2.2"
+            },
+            {
+                "name": "cmake ",
+                "version": "3.10.1 3.9.4 3.9.4_1 3.9.5"
+            },
+            {
+                "name": "coreutils ",
+                "version": "8.28_1"
+            },
+            {
+                "name": "dep ",
+                "version": "0.3.2"
+            },
+            {
+                "name": "docbook ",
+                "version": "5.0"
+            },
+            {
+                "name": "docbook-xsl ",
+                "version": "1.79.1"
+            },
+            {
+                "name": "doxygen ",
+                "version": "1.8.14"
+            },
+            {
+                "name": "elinks ",
+                "version": "0.11.7_2"
+            },
+            {
+                "name": "elvish ",
+                "version": "HEAD-dc1921f"
+            },
+            {
+                "name": "emacs-plus ",
+                "version": "HEAD-c015f93"
+            },
+            {
+                "name": "exa ",
+                "version": "0.8.0"
+            },
+            {
+                "name": "fd ",
+                "version": "5.0.0 6.0.0"
+            },
+            {
+                "name": "fdupes ",
+                "version": "1.6.1"
+            },
+            {
+                "name": "figlet ",
+                "version": "2.2.5"
+            },
+            {
+                "name": "fish ",
+                "version": "2.6.0"
+            },
+            {
+                "name": "fontconfig ",
+                "version": "2.12.6"
+            },
+            {
+                "name": "fortune ",
+                "version": "9708"
+            },
+            {
+                "name": "fpp ",
+                "version": "0.7.2"
+            },
+            {
+                "name": "freetype ",
+                "version": "2.8.1 2.9"
+            },
+            {
+                "name": "fzf ",
+                "version": "0.17.0-2 0.17.1"
+            },
+            {
+                "name": "gawk ",
+                "version": "4.2.0"
+            },
+            {
+                "name": "gdbm ",
+                "version": "1.13"
+            },
+            {
+                "name": "gdk-pixbuf ",
+                "version": "2.36.11"
+            },
+            {
+                "name": "gettext ",
+                "version": "0.19.8.1"
+            },
+            {
+                "name": "ghc ",
+                "version": "8.2.2"
+            },
+            {
+                "name": "gifsicle ",
+                "version": "1.91"
+            },
+            {
+                "name": "gist ",
+                "version": "4.6.1"
+            },
+            {
+                "name": "git ",
+                "version": "2.15.1_1"
+            },
+            {
+                "name": "git-heatmap ",
+                "version": "0.10.3"
+            },
+            {
+                "name": "glib ",
+                "version": "2.54.1 2.54.2"
+            },
+            {
+                "name": "global ",
+                "version": "6.6.1"
+            },
+            {
+                "name": "gmime ",
+                "version": "3.0.2 3.0.3"
+            },
+            {
+                "name": "gmp ",
+                "version": "6.1.2_1"
+            },
+            {
+                "name": "gnu-sed ",
+                "version": "4.4"
+            },
+            {
+                "name": "gnutls ",
+                "version": "3.5.16"
+            },
+            {
+                "name": "go ",
+                "version": "1.9.2"
+            },
+            {
+                "name": "gobject-introspection ",
+                "version": "1.54.1"
+            },
+            {
+                "name": "graphite2 ",
+                "version": "1.3.10"
+            },
+            {
+                "name": "harfbuzz ",
+                "version": "1.6.1 1.6.3"
+            },
+            {
+                "name": "highlight ",
+                "version": "3.39 3.40 3.40_1"
+            },
+            {
+                "name": "hr ",
+                "version": "1.2"
+            },
+            {
+                "name": "httpie ",
+                "version": "0.9.9"
+            },
+            {
+                "name": "hub ",
+                "version": "2.2.9"
+            },
+            {
+                "name": "icu4c ",
+                "version": "59.1 59.1_1"
+            },
+            {
+                "name": "imagemagick ",
+                "version": "7.0.7-10 7.0.7-21 7.0.7-7"
+            },
+            {
+                "name": "imagemagick@6 ",
+                "version": "6.9.9-20 6.9.9-22"
+            },
+            {
+                "name": "irssi ",
+                "version": "1.0.5"
+            },
+            {
+                "name": "jemalloc ",
+                "version": "5.0.1"
+            },
+            {
+                "name": "jpeg ",
+                "version": "9b"
+            },
+            {
+                "name": "jq ",
+                "version": "1.5_2"
+            },
+            {
+                "name": "kakoune ",
+                "version": "HEAD-7062022"
+            },
+            {
+                "name": "less ",
+                "version": "487"
+            },
+            {
+                "name": "libcroco ",
+                "version": "0.6.12"
+            },
+            {
+                "name": "libevent ",
+                "version": "2.1.8"
+            },
+            {
+                "name": "libffi ",
+                "version": "3.2.1"
+            },
+            {
+                "name": "libgcrypt ",
+                "version": "1.8.2"
+            },
+            {
+                "name": "libgpg-error ",
+                "version": "1.27"
+            },
+            {
+                "name": "libpng ",
+                "version": "1.6.34"
+            },
+            {
+                "name": "libpq ",
+                "version": "9.6.6"
+            },
+            {
+                "name": "librsvg ",
+                "version": "2.40.19"
+            },
+            {
+                "name": "libtasn1 ",
+                "version": "4.12"
+            },
+            {
+                "name": "libtermkey ",
+                "version": "0.20"
+            },
+            {
+                "name": "libtiff ",
+                "version": "4.0.8_4 4.0.8_5 4.0.9_1"
+            },
+            {
+                "name": "libtool ",
+                "version": "2.4.6_1"
+            },
+            {
+                "name": "libunistring ",
+                "version": "0.9.7 0.9.8"
+            },
+            {
+                "name": "libuv ",
+                "version": "1.14.1 1.15.0 1.16.0"
+            },
+            {
+                "name": "libvterm ",
+                "version": "681"
+            },
+            {
+                "name": "libyaml ",
+                "version": "0.1.7"
+            },
+            {
+                "name": "lua ",
+                "version": "5.2.4_4"
+            },
+            {
+                "name": "lua@5.1 ",
+                "version": "5.1.5_4"
+            },
+            {
+                "name": "luajit ",
+                "version": "2.0.5"
+            },
+            {
+                "name": "mercurial ",
+                "version": "4.4.2"
+            },
+            {
+                "name": "mongodb ",
+                "version": "3.4.10 3.4.9"
+            },
+            {
+                "name": "mpfr ",
+                "version": "3.1.6"
+            },
+            {
+                "name": "msgpack ",
+                "version": "2.1.5"
+            },
+            {
+                "name": "mutt ",
+                "version": "1.9.1"
+            },
+            {
+                "name": "ncurses ",
+                "version": "6.0_4"
+            },
+            {
+                "name": "neomutt ",
+                "version": "20171013 20171027"
+            },
+            {
+                "name": "neovim ",
+                "version": "HEAD-4fa0970 HEAD-6338199_1"
+            },
+            {
+                "name": "nettle ",
+                "version": "3.3 3.4"
+            },
+            {
+                "name": "oniguruma ",
+                "version": "6.6.1"
+            },
+            {
+                "name": "openssl ",
+                "version": "1.0.2l 1.0.2m 1.0.2n"
+            },
+            {
+                "name": "openssl@1.1 ",
+                "version": "1.1.0f 1.1.0g"
+            },
+            {
+                "name": "p11-kit ",
+                "version": "0.23.9"
+            },
+            {
+                "name": "pandoc ",
+                "version": "2.0.3 2.0.5"
+            },
+            {
+                "name": "pango ",
+                "version": "1.40.12 1.40.13"
+            },
+            {
+                "name": "pcre ",
+                "version": "8.41"
+            },
+            {
+                "name": "pcre2 ",
+                "version": "10.30"
+            },
+            {
+                "name": "perl ",
+                "version": "5.26.0 5.26.1"
+            },
+            {
+                "name": "pgcli ",
+                "version": "1.8.1"
+            },
+            {
+                "name": "pixman ",
+                "version": "0.34.0_1"
+            },
+            {
+                "name": "pkg-config ",
+                "version": "0.29.2"
+            },
+            {
+                "name": "pv ",
+                "version": "1.6.6"
+            },
+            {
+                "name": "python ",
+                "version": "2.7.13_1 2.7.14"
+            },
+            {
+                "name": "python3 ",
+                "version": "3.6.3"
+            },
+            {
+                "name": "ranger ",
+                "version": "1.8.1"
+            },
+            {
+                "name": "rbenv ",
+                "version": "1.1.1"
+            },
+            {
+                "name": "readline ",
+                "version": "7.0.3_1"
+            },
+            {
+                "name": "reattach-to-user-namespace ",
+                "version": "2.6"
+            },
+            {
+                "name": "rlwrap ",
+                "version": "0.43"
+            },
+            {
+                "name": "rmtrash ",
+                "version": "0.3.3"
+            },
+            {
+                "name": "ruby ",
+                "version": "2.4.2 2.4.2_1"
+            },
+            {
+                "name": "ruby-build ",
+                "version": "20170914"
+            },
+            {
+                "name": "shellcheck ",
+                "version": "0.4.6"
+            },
+            {
+                "name": "source-highlight ",
+                "version": "3.1.8_7"
+            },
+            {
+                "name": "sqlite ",
+                "version": "3.20.1 3.21.0"
+            },
+            {
+                "name": "subversion ",
+                "version": "1.9.7_1"
+            },
+            {
+                "name": "tag ",
+                "version": "0.9"
+            },
+            {
+                "name": "talloc ",
+                "version": "2.1.10"
+            },
+            {
+                "name": "task ",
+                "version": "2.5.1"
+            },
+            {
+                "name": "tasksh ",
+                "version": "1.1.0"
+            },
+            {
+                "name": "texinfo ",
+                "version": "6.5"
+            },
+            {
+                "name": "the_platinum_searcher ",
+                "version": "2.1.5"
+            },
+            {
+                "name": "the_silver_searcher ",
+                "version": "2.1.0"
+            },
+            {
+                "name": "tidy-html5 ",
+                "version": "5.6.0"
+            },
+            {
+                "name": "tig ",
+                "version": "2.3.0"
+            },
+            {
+                "name": "tmux ",
+                "version": "2.5 2.6"
+            },
+            {
+                "name": "todo-txt ",
+                "version": "2.10"
+            },
+            {
+                "name": "tokyo-cabinet ",
+                "version": "1.4.48"
+            },
+            {
+                "name": "tree ",
+                "version": "1.7.0"
+            },
+            {
+                "name": "ttygif ",
+                "version": "1.4.0"
+            },
+            {
+                "name": "ttyrec ",
+                "version": "1.0.8_1"
+            },
+            {
+                "name": "uncrustify ",
+                "version": "0.66.1"
+            },
+            {
+                "name": "unibilium ",
+                "version": "1.2.1"
+            },
+            {
+                "name": "universal-ctags ",
+                "version": "HEAD-96ceef6"
+            },
+            {
+                "name": "unrar ",
+                "version": "5.5.8"
+            },
+            {
+                "name": "vifm ",
+                "version": "0.9"
+            },
+            {
+                "name": "vim ",
+                "version": "8.0.1250"
+            },
+            {
+                "name": "vimpager ",
+                "version": "2.06"
+            },
+            {
+                "name": "weechat ",
+                "version": "2.0.1"
+            },
+            {
+                "name": "wget ",
+                "version": "1.19.1_1 1.19.2"
+            },
+            {
+                "name": "xapian ",
+                "version": "1.4.4 1.4.5"
+            },
+            {
+                "name": "xz ",
+                "version": "5.2.3"
+            },
+            {
+                "name": "youtube-dl ",
+                "version": "2017.12.10"
+            },
+            {
+                "name": "zlib ",
+                "version": "1.2.11"
+            },
+            {
+                "name": "zsh ",
+                "version": "5.4.2_1"
+            }
+        ]
+    },
+    {
+        "name": "RubyGems",
+        "packages": [
+            {
+                "name": "ast ",
+                "version": "(2.4.0)"
+            },
+            {
+                "name": "bales ",
+                "version": "(0.1.2)"
+            },
+            {
+                "name": "bigdecimal ",
+                "version": "(1.3.3, default: 1.3.0)"
+            },
+            {
+                "name": "bundler ",
+                "version": "(1.16.1)"
+            },
+            {
+                "name": "chunky_png ",
+                "version": "(1.3.8)"
+            },
+            {
+                "name": "clocale ",
+                "version": "(0.0.3)"
+            },
+            {
+                "name": "coderay ",
+                "version": "(1.1.2)"
+            },
+            {
+                "name": "colorize ",
+                "version": "(0.8.1)"
+            },
+            {
+                "name": "colorls ",
+                "version": "(1.1.0, 1.0.3)"
+            },
+            {
+                "name": "compass ",
+                "version": "(1.0.3)"
+            },
+            {
+                "name": "compass-core ",
+                "version": "(1.0.3)"
+            },
+            {
+                "name": "compass-import-once ",
+                "version": "(1.0.5)"
+            },
+            {
+                "name": "did_you_mean ",
+                "version": "(1.1.0)"
+            },
+            {
+                "name": "domain_name ",
+                "version": "(0.5.20170404)"
+            },
+            {
+                "name": "facets ",
+                "version": "(3.1.0)"
+            },
+            {
+                "name": "ffi ",
+                "version": "(1.9.18)"
+            },
+            {
+                "name": "filesize ",
+                "version": "(0.1.1)"
+            },
+            {
+                "name": "git ",
+                "version": "(1.3.0)"
+            },
+            {
+                "name": "highline ",
+                "version": "(1.7.10, 1.7.8)"
+            },
+            {
+                "name": "http-cookie ",
+                "version": "(1.0.3)"
+            },
+            {
+                "name": "io-console ",
+                "version": "(default: 0.4.6)"
+            },
+            {
+                "name": "iStats ",
+                "version": "(1.5.2, 1.5.0)"
+            },
+            {
+                "name": "json ",
+                "version": "(2.1.0, default: 2.0.4)"
+            },
+            {
+                "name": "json_pure ",
+                "version": "(2.1.0)"
+            },
+            {
+                "name": "lolcat ",
+                "version": "(90.8.8)"
+            },
+            {
+                "name": "manpages ",
+                "version": "(0.6.1)"
+            },
+            {
+                "name": "method_source ",
+                "version": "(0.9.0)"
+            },
+            {
+                "name": "mime-types ",
+                "version": "(3.1, 2.99.3)"
+            },
+            {
+                "name": "mime-types-data ",
+                "version": "(3.2016.0521)"
+            },
+            {
+                "name": "minitest ",
+                "version": "(5.10.3, 5.10.1)"
+            },
+            {
+                "name": "msgpack ",
+                "version": "(1.2.0, 1.1.0)"
+            },
+            {
+                "name": "multi_json ",
+                "version": "(1.12.2)"
+            },
+            {
+                "name": "mustermann ",
+                "version": "(1.0.1)"
+            },
+            {
+                "name": "neovim ",
+                "version": "(0.6.2, 0.5.1)"
+            },
+            {
+                "name": "net-telnet ",
+                "version": "(0.1.1)"
+            },
+            {
+                "name": "netrc ",
+                "version": "(0.11.0)"
+            },
+            {
+                "name": "openssl ",
+                "version": "(2.1.0, default: 2.0.5)"
+            },
+            {
+                "name": "paint ",
+                "version": "(2.0.1, 2.0.0)"
+            },
+            {
+                "name": "parseconfig ",
+                "version": "(1.0.8)"
+            },
+            {
+                "name": "parser ",
+                "version": "(2.4.0.2)"
+            },
+            {
+                "name": "power_assert ",
+                "version": "(1.1.1, 0.4.1)"
+            },
+            {
+                "name": "pry ",
+                "version": "(0.11.3)"
+            },
+            {
+                "name": "psych ",
+                "version": "(3.0.1, default: 2.2.2)"
+            },
+            {
+                "name": "rack ",
+                "version": "(2.0.4)"
+            },
+            {
+                "name": "rack-protection ",
+                "version": "(2.0.0)"
+            },
+            {
+                "name": "rainbow ",
+                "version": "(3.0.0)"
+            },
+            {
+                "name": "rake ",
+                "version": "(12.3.0, 12.0.0)"
+            },
+            {
+                "name": "rb-fsevent ",
+                "version": "(0.10.2)"
+            },
+            {
+                "name": "rb-inotify ",
+                "version": "(0.9.10)"
+            },
+            {
+                "name": "rdoc ",
+                "version": "(default: 5.0.0)"
+            },
+            {
+                "name": "rest-client ",
+                "version": "(2.0.2, 1.8.0)"
+            },
+            {
+                "name": "rouge ",
+                "version": "(3.0.0)"
+            },
+            {
+                "name": "ruby-terminfo ",
+                "version": "(0.1.1)"
+            },
+            {
+                "name": "sass ",
+                "version": "(3.5.4, 3.4.25)"
+            },
+            {
+                "name": "sass-listen ",
+                "version": "(4.0.0)"
+            },
+            {
+                "name": "sinatra ",
+                "version": "(2.0.0)"
+            },
+            {
+                "name": "solargraph ",
+                "version": "(0.17.1)"
+            },
+            {
+                "name": "sparkr ",
+                "version": "(0.4.1)"
+            },
+            {
+                "name": "test-unit ",
+                "version": "(3.2.7, 3.2.3)"
+            },
+            {
+                "name": "thor ",
+                "version": "(0.20.0)"
+            },
+            {
+                "name": "tilt ",
+                "version": "(2.0.8)"
+            },
+            {
+                "name": "trollop ",
+                "version": "(2.1.2)"
+            },
+            {
+                "name": "unf ",
+                "version": "(0.1.4)"
+            },
+            {
+                "name": "unf_ext ",
+                "version": "(0.0.7.4)"
+            },
+            {
+                "name": "vimgolf ",
+                "version": "(0.4.8)"
+            },
+            {
+                "name": "xmlrpc ",
+                "version": "(0.3.0, 0.2.1)"
+            },
+            {
+                "name": "yard ",
+                "version": "(0.9.12)"
+            }
+        ]
+    },
+    {
+        "name": "Go",
+        "packages": [
+            {
+                "name": "github.com/acarl005/ls-go"
+            },
+            {
+                "name": "github.com/acarl005/stripansi"
+            },
+            {
+                "name": "github.com/acarl005/textcol"
+            },
+            {
+                "name": "github.com/advancedlogic/GoOse"
+            },
+            {
+                "name": "github.com/alecthomas/chroma"
+            },
+            {
+                "name": "github.com/alecthomas/gometalinter"
+            },
+            {
+                "name": "github.com/alecthomas/template"
+            },
+            {
+                "name": "github.com/alecthomas/units"
+            },
+            {
+                "name": "github.com/alessio/shellescape"
+            },
+            {
+                "name": "github.com/andybalholm/cascadia"
+            },
+            {
+                "name": "github.com/antavelos/terminews"
+            },
+            {
+                "name": "github.com/asciimoo/wuzz"
+            },
+            {
+                "name": "github.com/atotto/clipboard"
+            },
+            {
+                "name": "github.com/bitly/go-simplejson"
+            },
+            {
+                "name": "github.com/bradfitz/slice"
+            },
+            {
+                "name": "github.com/BurntSushi/toml"
+            },
+            {
+                "name": "github.com/ChimeraCoder/gojson"
+            },
+            {
+                "name": "github.com/chrisallenlane/cheat"
+            },
+            {
+                "name": "github.com/client9/misspell"
+            },
+            {
+                "name": "github.com/cloudogu/spinners"
+            },
+            {
+                "name": "github.com/codegangsta/inject"
+            },
+            {
+                "name": "github.com/codeskyblue/go-sh"
+            },
+            {
+                "name": "github.com/d4l3k/go-pry"
+            },
+            {
+                "name": "github.com/danwakefield/fnmatch"
+            },
+            {
+                "name": "github.com/davecheney/httpstat"
+            },
+            {
+                "name": "github.com/daviddengcn/go-colortext"
+            },
+            {
+                "name": "github.com/davidrjenni/reftools"
+            },
+            {
+                "name": "github.com/dlclark/regexp2"
+            },
+            {
+                "name": "github.com/dominikh/go-tools"
+            },
+            {
+                "name": "github.com/dufferzafar/cheat"
+            },
+            {
+                "name": "github.com/dunstontc/ccat"
+            },
+            {
+                "name": "github.com/dunstontc/color"
+            },
+            {
+                "name": "github.com/dunstontc/envr"
+            },
+            {
+                "name": "github.com/dunstontc/fs"
+            },
+            {
+                "name": "github.com/dunstontc/g33t"
+            },
+            {
+                "name": "github.com/dunstontc/help"
+            },
+            {
+                "name": "github.com/dunstontc/porcelain"
+            },
+            {
+                "name": "github.com/dunstontc/prjr"
+            },
+            {
+                "name": "github.com/dunstontc/tmpl"
+            },
+            {
+                "name": "github.com/dunstontc/utils"
+            },
+            {
+                "name": "github.com/edi9999/path-extractor"
+            },
+            {
+                "name": "github.com/elves/elvish"
+            },
+            {
+                "name": "github.com/fatih/color"
+            },
+            {
+                "name": "github.com/fatih/gomodifytags"
+            },
+            {
+                "name": "github.com/fatih/motion"
+            },
+            {
+                "name": "github.com/fatih/vim-go-tutorial"
+            },
+            {
+                "name": "github.com/gdamore/encoding"
+            },
+            {
+                "name": "github.com/gdamore/tcell"
+            },
+            {
+                "name": "github.com/gobwas/glob"
+            },
+            {
+                "name": "github.com/golang/lint"
+            },
+            {
+                "name": "github.com/gonzaloserrano/git-br"
+            },
+            {
+                "name": "github.com/jbenet/go-context"
+            },
+            {
+                "name": "github.com/jessfraz/weather"
+            },
+            {
+                "name": "github.com/josharian/impl"
+            },
+            {
+                "name": "github.com/jroimartin/gocui"
+            },
+            {
+                "name": "github.com/json-iterator/go"
+            },
+            {
+                "name": "github.com/jstemmer/gotags"
+            },
+            {
+                "name": "github.com/julienschmidt/httprouter"
+            },
+            {
+                "name": "github.com/kevinburke/ssh_config"
+            },
+            {
+                "name": "github.com/kisielk/errcheck"
+            },
+            {
+                "name": "github.com/kisielk/gotool"
+            },
+            {
+                "name": "github.com/klauspost/asmfmt"
+            },
+            {
+                "name": "github.com/lucasb-eyer/go-colorful"
+            },
+            {
+                "name": "github.com/mattn/go-colorable"
+            },
+            {
+                "name": "github.com/mattn/go-isatty"
+            },
+            {
+                "name": "github.com/mattn/go-runewidth"
+            },
+            {
+                "name": "github.com/mattn/go-sqlite3"
+            },
+            {
+                "name": "github.com/mattn/go-tty"
+            },
+            {
+                "name": "github.com/mattn/vimunball"
+            },
+            {
+                "name": "github.com/maxzender/jv"
+            },
+            {
+                "name": "github.com/mdempsky/maligned"
+            },
+            {
+                "name": "github.com/mgutz/ansi"
+            },
+            {
+                "name": "github.com/michaelmacinnis/adapted"
+            },
+            {
+                "name": "github.com/michaelmacinnis/oh"
+            },
+            {
+                "name": "github.com/MichaelTJones/walk"
+            },
+            {
+                "name": "github.com/mitchellh/go-homedir"
+            },
+            {
+                "name": "github.com/mkchoi212/fac"
+            },
+            {
+                "name": "github.com/mmcdole/gofeed"
+            },
+            {
+                "name": "github.com/mmcdole/goxpp"
+            },
+            {
+                "name": "github.com/motemen/ghq"
+            },
+            {
+                "name": "github.com/motemen/go-colorine"
+            },
+            {
+                "name": "github.com/nicksnyder/go-i18n"
+            },
+            {
+                "name": "github.com/nsf/gocode"
+            },
+            {
+                "name": "github.com/nsf/termbox-go"
+            },
+            {
+                "name": "github.com/nwidger/jsoncolor"
+            },
+            {
+                "name": "github.com/pelletier/go-buffruneio"
+            },
+            {
+                "name": "github.com/pelletier/go-toml"
+            },
+            {
+                "name": "github.com/peterh/liner"
+            },
+            {
+                "name": "github.com/pkg/errors"
+            },
+            {
+                "name": "github.com/PuerkitoBio/goquery"
+            },
+            {
+                "name": "github.com/rgburke/goncurses"
+            },
+            {
+                "name": "github.com/rgburke/grv"
+            },
+            {
+                "name": "github.com/rivo/tview"
+            },
+            {
+                "name": "github.com/rjeczalik/notify"
+            },
+            {
+                "name": "github.com/rogpeppe/godef"
+            },
+            {
+                "name": "github.com/schachmat/ingo"
+            },
+            {
+                "name": "github.com/schachmat/wego"
+            },
+            {
+                "name": "github.com/sergi/go-diff"
+            },
+            {
+                "name": "github.com/shurcooL/sanitized_anchor_name"
+            },
+            {
+                "name": "github.com/simeji/jid"
+            },
+            {
+                "name": "github.com/Sirupsen/logrus"
+            },
+            {
+                "name": "github.com/src-d/gcfg"
+            },
+            {
+                "name": "github.com/src-d/go-git"
+            },
+            {
+                "name": "github.com/tchap/go-patricia"
+            },
+            {
+                "name": "github.com/tidwall/gjson"
+            },
+            {
+                "name": "github.com/tidwall/match"
+            },
+            {
+                "name": "github.com/urfave/cli"
+            },
+            {
+                "name": "github.com/urfave/negroni"
+            },
+            {
+                "name": "github.com/uudashr/gopkgs"
+            },
+            {
+                "name": "github.com/willf/pad"
+            },
+            {
+                "name": "github.com/x86kernel/htmlcolor"
+            },
+            {
+                "name": "github.com/xanzy/ssh-agent"
+            },
+            {
+                "name": "github.com/zmb3/gogetdoc"
+            }
+        ]
+    }
+]

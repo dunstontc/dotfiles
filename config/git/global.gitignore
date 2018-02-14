@@ -18,6 +18,7 @@ Thumbs.db
 .vs
 .projectile
 **/tags
+**/tags.*
 
 # dependencies
 node_modules/**
