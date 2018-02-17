@@ -19,10 +19,10 @@ zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 # zplug "mafredri/zsh-async", from:github
 zplug "rupa/z", use:z.sh
 zplug "uvaes/fzf-marks", from:github
-zplug "zsh-users/zsh-completions", from:github
+zplug "zsh-users/zsh-completions", from:github, as:plugin
 zplug "zsh-users/zsh-autosuggestions", from:github
 zplug "zsh-users/zsh-history-substring-search", from:github
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "zsh-users/zsh-syntax-highlighting", defer:3
 
 
 if ! zplug check --verbose; then
@@ -50,6 +50,27 @@ source $HOME/.dotfiles/shell/zsh/prompt.zsh
 source $HOME/.dotfiles/shell/functions/.fzf.functions
 source $HOME/.dotfiles/shell/zsh/functions/register-completions.zsh
 
+
+# =============================================================================
+#  Syntax
+# =============================================================================
+typeset -A ZSH_HIGHLIGHT_STYLES
+
+ZSH_HIGHLIGHT_STYLES[builtin]='fg=12'
+ZSH_HIGHLIGHT_STYLES[arg0]='fg=13'
+ZSH_HIGHLIGHT_STYLES[path]='fg=6'
+ZSH_HIGHLIGHT_STYLES[path_pathseparator]='fg=7'
+ZSH_HIGHLIGHT_STYLES[path_prefix_pathseparator]='fg=7'
+ZSH_HIGHLIGHT_STYLES[path_prefix]='fg=7'
+ZSH_HIGHLIGHT_STYLES[function]='fg=3'
+ZSH_HIGHLIGHT_STYLES[command]='fg=2'
+ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=13'
+ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=5'
+ZSH_HIGHLIGHT_STYLES[alias]='fg=4'
+ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]='fg=12'
+ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=11'
+ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=11'
+
 # =============================================================================
 # # # Make sure the terminal is in application mode, which zle is active. Only then
 # # are the values from $terminfo valid.
@@ -70,21 +91,21 @@ source $HOME/.dotfiles/shell/zsh/functions/register-completions.zsh
 
 # Pick up additional site-functions that may not be on system zsh's
 # $fpath by default
-function get_them_completions() {
-  local site_dir site_dirs
-
-  site_dirs=( /usr/local/share/zsh/site-functions )
-  if [[ -n $HOMEBREW_PREFIX ]]; then
-    site_dirs+=$HOMEBREW_PREFIX/share/zsh/site-functions
-  fi
-  for site_dir ( $site_dirs ); do
-    if [[ -d $site_dir  && ${fpath[(I)$site_dir]} == 0 ]]; then
-      FPATH=$site_dir:$FPATH
-    fi
-  done
-}
-get_them_completions()
-fpath=(~/.dotfiles/shell/zsh/compl $fpath)
+# function get_them_completions() {
+#   local site_dir site_dirs
+#
+#   site_dirs=( /usr/local/share/zsh/site-functions )
+#   if [[ -n $HOMEBREW_PREFIX ]]; then
+#     site_dirs+=$HOMEBREW_PREFIX/share/zsh/site-functions
+#   fi
+#   for site_dir ( $site_dirs ); do
+#     if [[ -d $site_dir  && ${fpath[(I)$site_dir]} == 0 ]]; then
+#       FPATH=$site_dir:$FPATH
+#     fi
+#   done
+# }
+# get_them_completions()
+# fpath=(~/.dotfiles/shell/zsh/compl $fpath)
 
 # autoload -Uz compinit && compinit
 
@@ -121,6 +142,9 @@ setopt inc_append_history
 # zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
 
+compdef "_files -W ~/.ghq/github.com/ -/" ghq
+
+
 # =============================================================================
 #  Mappings
 # =============================================================================
@@ -141,6 +165,7 @@ zle -N history-beginning-search-forward-end history-search-end
 bindkey '^[[A' history-beginning-search-backward-end
 bindkey '^[[B' history-beginning-search-forward-end
 
+WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
 # =============================================================================
 #  ≈ legacy
@@ -148,32 +173,11 @@ bindkey '^[[B' history-beginning-search-forward-end
 bindkey "^[[1;3C" forward-word
 bindkey "^[[1;3D" backward-word
 
-
-# =============================================================================
-#  Syntax
-# =============================================================================
-typeset -A ZSH_HIGHLIGHT_STYLES
-
-ZSH_HIGHLIGHT_STYLES[builtin]='fg=12'
-ZSH_HIGHLIGHT_STYLES[arg0]='fg=13'
-ZSH_HIGHLIGHT_STYLES[path]='fg=6'
-ZSH_HIGHLIGHT_STYLES[path_pathseparator]='fg=7'
-ZSH_HIGHLIGHT_STYLES[path_prefix_pathseparator]='fg=7'
-ZSH_HIGHLIGHT_STYLES[path_prefix]='fg=7'
-ZSH_HIGHLIGHT_STYLES[function]='fg=3'
-ZSH_HIGHLIGHT_STYLES[command]='fg=2'
-ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=13'
-ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=5'
-ZSH_HIGHLIGHT_STYLES[alias]='fg=4'
-ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]='fg=12'
-ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=11'
-ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=11'
-
 # =============================================================================
 # Change the default CTRL_T to CTRL_F
-bindkey '^F' fzf-file-widget
+# bindkey '^F' fzf-file-widget
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_COMPLETION_TRIGGER='/'
+export FZF_COMPLETION_TRIGGER='//'
 
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
