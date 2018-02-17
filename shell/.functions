@@ -133,6 +133,14 @@ hdi(){
   howdoi "$*" -c -n 5;
 }
 
+
+# @description Colorize --help output.
+help() {
+  printf "\n"
+  "$1" --help | ccat;
+  printf "\n"
+}
+
 # @description Wrap ghq() to avoid nesting shells.
 ghq () {
     if [ "$1" = look -a -n "$2" ]; then
