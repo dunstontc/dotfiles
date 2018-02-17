@@ -8,12 +8,12 @@ take() {
   cd "$1" || return
 }
 
-# `CD-Finder`
 # @description Change working directory to the top-most Finder window location.
+# 'CD-Finder'
 #
 # @param $1 Directory to change into.
 cdf() {
-  cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')" || return;
+  cd "$(osascript -e 'tell app \"Finder\" to POSIX path of (insertion location as alias)')" || return;
 }
 
 # @description Define an alias.
@@ -82,6 +82,7 @@ escape_cmd_line() {
   # Remove the leading space if necessary.
   escape_cmd_line_rv=${escape_cmd_line_rv# }
 }
+
 # @description Prints an array of colors to test for True Color support.
 #
 # @noargs
@@ -132,7 +133,15 @@ hdi(){
   howdoi "$*" -c -n 5;
 }
 
+# @description Wrap ghq() to avoid nesting shells.
+ghq () {
+    if [ "$1" = look -a -n "$2" ]; then
+        cd $(command ghq list -e -p $2)
+        return
+    fi
 
+    command ghq "$@"
+}
 
 
 # =============================================================================

@@ -32,6 +32,7 @@ alias ..l="cd .. && ls -A"
 alias c="clear"
 alias e="exit"
 alias g="git"
+alias j="jump"
 alias py2="python2"
 alias py3="python3"
 alias rgr="ranger"
@@ -117,7 +118,7 @@ alias gs="git status -s"
 
 # Kill all the tabs in Chrome to free up memory
 # [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
-alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
+alias sleepchrome="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
 
 # Not xterm-italic
 # alias ssh="TERM=xterm-256color ssh"
