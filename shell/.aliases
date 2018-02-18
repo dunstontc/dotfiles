@@ -90,7 +90,6 @@ alias vimcept="nvim ~/nvim.d/init.vim"
 alias remux="nvim $DOTFILES/config/tmux/.tmux.conf"
 
 # Print each PATH entry on a separate line
-# alias path='echo -e ${PATH//:/\\n}'
 alias list_path='echo -e ${PATH//:/\\n}'
 alias list_fpath='echo -e ${FPATH//:/\\n}'
 # for f in $fpath; do echo $f; ls -l $f/_git 2>/dev/null; done
@@ -131,4 +130,6 @@ tree \
 
 alias ,="nvim \$(fd --hidden --exclude .git --follow . ~/.dotfiles | fzf)"
 # alias fzag="ag --nobreak --nonumbers --noheading . | fzf"
+
+# alias ccat='ccat -G String="yellow" -G Keyword="blue" -G Comment="darkgray" -G Type="teal" -G Literal="blue" -G Punctuation="lightgray" -G Plaintext="lightgray" -G Tag="darkgray" -G HTMLTag="darkgray" -G HTMLAttrName="blue" -G HTMLAttrValue="yellow" -G Decimal="green"'
 

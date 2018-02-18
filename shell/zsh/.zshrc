@@ -71,6 +71,8 @@ ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]='fg=12'
 ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=11'
 ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=11'
 
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=15'
+
 # =============================================================================
 # # # Make sure the terminal is in application mode, which zle is active. Only then
 # # are the values from $terminfo valid.
@@ -123,11 +125,13 @@ setopt noflowcontrol
 # setopt no_case_glob
 # setopt correctall
 
-setopt auto_cd
+setopt auto_cd            # Implied cd if you just type a directory name
+setopt menu_complete
 # setopt auto_pushd
 # setopt auto_list
 # setopt clobber
 # setopt interactive_comments
+# setopt nolistambiguous
 
 # [ -z "$HISTFILE" ] && HISTFILE=$HOME/.cache/shell/.zsh_history
 # HISTSIZE=10000
@@ -136,14 +140,16 @@ setopt auto_cd
 setopt hist_expire_dups_first
 setopt hist_find_no_dups
 setopt hist_ignore_dups
-setopt inc_append_history
+# setopt inc_append_history
+setopt APPEND_HISTORY          # append rather than overwrite history file.
 
 # =============================================================================
 # zstyle ':completion:*' menu select
-zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
+# zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
 
 compdef "_files -W ~/.ghq/github.com/ -/" ghq
-
+# Allow SSH tab completion for mosh hostnames
+compdef mosh=ssh
 
 # =============================================================================
 #  Mappings
@@ -153,9 +159,9 @@ bindkey -e
 # FIXME: Shift+Tab still goes wonky sometimes
 bindkey '^[[Z' reverse-menu-complete
 
-bindkey '[F' forward-word
-bindkey '[C' forward-word
-bindkey '[D' backward-word
+# bindkey '[F' forward-word
+# bindkey '[C' forward-word
+# bindkey '[D' backward-word
 
 # History Searching
 autoload history-search-end
@@ -181,3 +187,5 @@ bindkey "^[[1;3D" backward-word
 export FZF_COMPLETION_TRIGGER='//'
 
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+eval $(thefuck --alias)

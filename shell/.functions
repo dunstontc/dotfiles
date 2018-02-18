@@ -13,12 +13,12 @@ take() {
 #
 # @param $1 Directory to change into.
 cdf() {
-  cd "$(osascript -e 'tell app \"Finder\" to POSIX path of (insertion location as alias)')" || return;
+  cd "$(osascript -e 'tell app \"Finder\" to POSIX path of (insertion location as alias)')" || return
 }
 
 # @description Define an alias.
 watdo() {
-  alias | grep "$1";
+  alias | grep "$1"
 }
 
 # @description Walk & Talk
@@ -32,15 +32,15 @@ cdd() {
 #
 # @param $1 string String for commit message.
 komet() {
-  git add . && git commit -m "$1";  # TODO: filter the input here
+  git add . && git commit -m "$1" # TODO: filter the input here
 }
 
 # @description Add upstream remote to a Git repository. (Usually used after forking).
 #
 # @param url The address of the repo to add.
 forrk() {
-  git remote add upstream "$1";
-  git remote -v;
+  git remote add upstream "$1"
+  git remote -v
 }
 
 nman() {
@@ -48,12 +48,11 @@ nman() {
 }
 
 ahead_behind() {
-  curr_branch=$(git rev-parse --abbrev-ref HEAD);
-  curr_remote=$(git config branch.$curr_branch.remote);
-  curr_merge_branch=$(git config branch.$curr_branch.merge | cut -d / -f 3);
-  git rev-list --left-right --count $curr_branch...$curr_remote/$curr_merge_branch | tr -s '\t' '|';
+  curr_branch=$(git rev-parse --abbrev-ref HEAD)
+  curr_remote=$(git config branch.$curr_branch.remote)
+  curr_merge_branch=$(git config branch.$curr_branch.merge | cut -d / -f 3)
+  git rev-list --left-right --count $curr_branch...$curr_remote/$curr_merge_branch | tr -s '\t' '|'
 }
-
 
 # @description Returns an escaped string wrapped in single quotes. Hopefully.
 #
@@ -61,8 +60,8 @@ ahead_behind() {
 #
 # @see https://github.com/scop/bash-completion/blob/233421469b12d3b60e7595822cc9166016abe384/bash_completion#L138
 quote() {
-    local quoted=${1//\'/\'\\\'\'}
-    printf "'%s'" "$quoted"
+  local quoted=${1//\'/\'\\\'\'}
+  printf "'%s'" "$quoted"
 }
 
 # This is used for escaping command lines for remote execution.
@@ -105,8 +104,12 @@ kuler() {
 # @description List escape codes for FN keys.
 #
 # @noargs
-fn_codes(){
-  for x in {1..30}; do echo -n "F$x "; tput kf$x | cat -A; echo; done
+fn_codes() {
+  for x in {1..30}; do
+    echo -n "F$x "
+    tput kf$x | cat -A
+    echo
+  done
 }
 # armour() {
 #   gpg --armor --export $1
@@ -116,41 +119,52 @@ fn_codes(){
 #
 # @noargs
 siz() {
-  if du -b /dev/null > /dev/null 2>&1; then
-    local arg=-sbh;
+  if du -b /dev/null >/dev/null 2>&1; then
+    local arg=-sbh
   else
-    local arg=-sh;
+    local arg=-sh
   fi
   if [[ -n "$@" ]]; then
-    du $arg -- "$@";
+    du $arg -- "$@"
   else
-    du $arg .[^.]* ./*;
-  fi;
+    du $arg .[^.]* ./*
+  fi
 }
 
 # @description Should probably be an alias.
-hdi(){
-  howdoi "$*" -c -n 5;
+hdi() {
+  howdoi "$*" -c -n 5
 }
-
 
 # @description Colorize --help output.
 help() {
-  printf "\n"
-  "$1" --help | ccat;
-  printf "\n"
+  "$1" --help | ccat
 }
 
 # @description Wrap ghq() to avoid nesting shells.
-ghq () {
-    if [ "$1" = look -a -n "$2" ]; then
-        cd $(command ghq list -e -p $2)
-        return
-    fi
+ghq() {
+  if [ "$1" = look -a -n "$2" ]; then
+    cd $(command ghq list -e -p $2)
+    return
+  fi
 
-    command ghq "$@"
+  command ghq "$@"
 }
 
+# @description Get the most used words in an input.
+wordfrequency() {
+  awk '
+  BEGIN { FS="[^a-zA-Z]+" } {
+      for (i=1; i<=NF; i++) {
+          word = tolower($i)
+          words[word]++
+      }
+  }
+  END {
+      for (w in words)
+          printf("%3d %s\n", words[w], w)
+  } ' | sort -rn
+}
 
 # =============================================================================
 

@@ -6,8 +6,9 @@ alias gb='git branch'
 alias gc='git commit -v'
 alias gca='git commit -a -v'
 alias gcb='git checkout -b'
-alias gcm='git checkout master'
+# alias gcm='git checkout master'
 alias gco='git checkout'
+alias gcom='git checkout master'
 alias gd='git diff'
 alias gf='git fetch'
 alias gl='git pull origin $(git_branch)'
@@ -21,16 +22,23 @@ alias gst='git status'
 
 
 komet() {
-	git add . && git commit -m "$1"  # FIXME: filter the input here
+  git add . && git commit -m "$1";  # FIXME: filter the input here
+  # git commit -am "$1";
 }
 
 forrk() {
   git remote add upstream "$1";
-	git remote -v
+  git remote -v;
+}
+
+upstream() {
+  # git remote add upstream "https://github.com/$1/$(pwd).git";
+  echo "https://github.com/$1/${PWD##*/}.git";
+  # git remote -v;
 }
 
 # Stop tracking an ignored file.
 g4get() {
-    git -rm --cached "$1";
-    git add .
+  git -rm --cached "$1";
+  git add .;
 }
