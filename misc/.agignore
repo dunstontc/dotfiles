@@ -1,3 +1,0 @@
-# .agignore
-**.min.*
-# matches script.min.js, styles.min.css etc.
