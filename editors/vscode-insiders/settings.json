@@ -43,7 +43,9 @@
       ".env": "shellscript",
       ".path": "shellscript",
       ".viminfo": "shellscript",
-      ".nvimrc": "viml"
+      ".nvimrc": "viml",
+      "ractive": "javascript",
+      "html": "vue-html"
   },
   "[markdown]": {
       "editor.wordWrap"        : "off",
@@ -65,15 +67,7 @@
   "vim.hlsearch":    true,
   "vim.useSystemClipboard": false,
   "vim.cmdLineInitialColon": true,
-  "vim.statusBarColorControl": true,
-  "vim.statusBarColors" : {
-    "normal": "#303030",
-    "insert": "#569cd6",
-    "visual": "#c586c0",
-    "visualline":  "#c586c0",
-    "visualblock": "#c586c0",
-    "replace": "#d16969"
-  },
+  "vim.statusBarColorControl": false,
   "vim.neovimPath": "/usr/local/bin/nvim",
   "vim.insertModeKeyBindings": [
     {
@@ -174,9 +168,9 @@
     "terminal.ansiBrightWhite": "#d4d4d4",
     "terminal.selectionBackground": "#add6ff26",
     "terminalCursor.foreground": "#808080",
-    "statusBar.background": "#c586c0",
-    "statusBar.noFolderBackground": "#c586c0",
-    "statusBar.debuggingBackground": "#c586c0"
+    "statusBar.background": "#303030",
+    "statusBar.noFolderBackground": "#303030",
+    "statusBar.debuggingBackground": "#303030"
   },
   // "msbuildProjectTools": {
   //   "logging": {
@@ -201,6 +195,20 @@
   // },
   "workbench.colorTheme": "dark-plus-syntax",
   "projectManager.showProjectNameInStatusBar": false,
-  "dateTime.customFormat": "   hh:mm a  "
-
+  "dateTime.customFormat": "   hh:mm a  ",
+  "gitlens.codeLens.scopes": [
+    "document"
+  ],
+  "gitlens.codeLens.authors.enabled": false,
+  "gitlens.codeLens.enabled": false,
+  "gitlens.currentLine.enabled": false,
+  "gitlens.hovers.currentLine.over": "line",
+  "gitlens.blame.heatmap.enabled": false,
+  "gitlens.recentChanges.highlight.locations": [
+    "line"
+  ],
+  "gitlens.statusBar.enabled": false,
+  "material-icon-theme.showUpdateMessage": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false
 }
