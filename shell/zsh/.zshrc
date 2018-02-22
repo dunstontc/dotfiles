@@ -16,7 +16,6 @@ source ~/.zplug/init.zsh
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 # zplug "djui/alias-tips"
 # zplug "changyuheng/zsh-interactive-cd", from:github
-# zplug "mafredri/zsh-async", from:github
 zplug "rupa/z", use:z.sh
 zplug "uvaes/fzf-marks", from:github
 zplug "zsh-users/zsh-completions", from:github, as:plugin
@@ -171,13 +170,10 @@ zle -N history-beginning-search-forward-end history-search-end
 bindkey '^[[A' history-beginning-search-backward-end
 bindkey '^[[B' history-beginning-search-forward-end
 
-WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
-
-# =============================================================================
-#  ≈ legacy
-# =============================================================================
 bindkey "^[[1;3C" forward-word
 bindkey "^[[1;3D" backward-word
+
+WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
 # =============================================================================
 # Change the default CTRL_T to CTRL_F
@@ -189,3 +185,4 @@ export FZF_COMPLETION_TRIGGER='//'
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 eval $(thefuck --alias)
+
