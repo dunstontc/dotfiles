@@ -43,15 +43,20 @@ forrk() {
   git remote -v
 }
 
-nman() {
-  nvim -c 'set filetype=man $1'
-}
-
 ahead_behind() {
   curr_branch=$(git rev-parse --abbrev-ref HEAD)
   curr_remote=$(git config branch.$curr_branch.remote)
   curr_merge_branch=$(git config branch.$curr_branch.merge | cut -d / -f 3)
   git rev-list --left-right --count $curr_branch...$curr_remote/$curr_merge_branch | tr -s '\t' '|'
+}
+
+nman() {
+  nvim -c 'set filetype=man $1'
+}
+
+# @description Copy the contents of a file to your clipboard
+yank() {
+  cat "$1" | pbcopy
 }
 
 # @description Returns an escaped string wrapped in single quotes. Hopefully.
@@ -111,6 +116,7 @@ fn_codes() {
     echo
   done
 }
+
 # armour() {
 #   gpg --armor --export $1
 # }

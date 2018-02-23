@@ -9,6 +9,7 @@
 - vim-vint
 - flake8
 - shellcheck
+- [HaxeCheckstyle/haxe-checkstyle](https://github.com/HaxeCheckstyle/haxe-checkstyle)
 
 ## Formatting ##
 - [beautify-web/js-beautify](https://github.com/beautify-web/js-beautify#options)
