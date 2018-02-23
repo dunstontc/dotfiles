@@ -47,6 +47,7 @@ unset file;
 source $HOME/.dotfiles/ignore/.private
 source $HOME/.dotfiles/shell/zsh/prompt.zsh
 source $HOME/.dotfiles/shell/functions/.fzf.functions
+# dotnet cli completion
 source $HOME/.dotfiles/shell/zsh/functions/register-completions.zsh
 
 
@@ -106,9 +107,8 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=15'
 #   done
 # }
 # get_them_completions()
-# fpath=(~/.dotfiles/shell/zsh/compl $fpath)
+fpath=(~/.zsh/completion $fpath)
 
-# autoload -Uz compinit && compinit
 
 # =============================================================================
 # If this option is unset, output flow control via start/stop characters
@@ -119,7 +119,6 @@ setopt noflowcontrol
 
 # zmodload zsh/complist
 # autoload -Uz compinit
-# compinit
 
 # setopt no_case_glob
 # setopt correctall
@@ -144,7 +143,10 @@ setopt APPEND_HISTORY          # append rather than overwrite history file.
 
 # =============================================================================
 # zstyle ':completion:*' menu select
-# zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
+zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
+zstyle ':completion:*:*:docker:*' option-stacking yes
+zstyle ':completion:*:*:docker-*:*' option-stacking yes
+
 
 compdef "_files -W ~/.ghq/github.com/ -/" ghq
 # Allow SSH tab completion for mosh hostnames
@@ -182,7 +184,8 @@ WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_COMPLETION_TRIGGER='//'
 
-# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 eval $(thefuck --alias)
 
+# =============================================================================
+
+autoload -Uz compinit && compinit

@@ -13,3 +13,12 @@
 ## Completions: ##
 - [zsh-users/zsh-completions](https://github.com/zsh-users/zsh-completions)
 
+
+```sh
+mkdir -p ~/.zsh/completion
+
+curl -L https://raw.githubusercontent.com/docker/cli/master/contrib/completion/zsh/_docker > ~/.zsh/completion/_docker
+
+curl -L https://raw.githubusercontent.com/docker/compose/1.19.0/contrib/completion/zsh/_docker-compose > ~/.zsh/completion/_docker-compose
+```
+
