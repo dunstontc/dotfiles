@@ -1,6 +1,5 @@
 # echo "🏃 .aliases"
 
-
 # Be careful
 alias mr='rmtrash'
 alias mrd='rmdirtrash'
@@ -8,7 +7,6 @@ alias cp='cp -iv'
 alias mv='mv -iv'
 
 # Navigation
-alias .="pwd"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
@@ -21,15 +19,12 @@ alias 4='cd -4'
 alias 5='cd -5'
 
 # Directories
-# alias sl="ls"
 alias l="exa -al --git --group-directories-first"
-alias ll="ls-go -al"
-# alias lsa="ls -A"
-# alias lsl='ls -lAh'
-alias ..l="cd .. && ls -A"
+alias ll='ls -lAh --group-directories-first'
 
 # Abbreviations
 alias c="clear"
+alias d="docker"
 alias e="exit"
 alias g="git"
 alias j="jump"
@@ -43,12 +38,9 @@ alias tpd="topydo"
 alias v="vim"
 alias vi="nvim"
 alias n="nvim"
-alias vfm="vfm"
-alias please="sudo"
 
 # todo.txt
 alias tls="todo.sh ls"
-# alias tda="todo.sh add -t"
 
 # NPM
 alias npi="npm install"
@@ -60,28 +52,16 @@ alias npp="npm init -y"
 
 # Shortcuts
 alias keyring="nvim -c 'VimFiler -explorer ~/Projects/GitHub/KeyRing/keys'"
-alias awesome="nvim ~/Projects/GitHub/awesome-sauce/readme.md"
-alias dotread="nvim ~/.dotfiles/readme.md"
-# alias cheat="nvim ~/.dotfiles/misc/docs/neovim.md"
 alias dots="cd ~/.dotfiles"
 alias nv="cd ~/nvim.d"
 alias pj="cd ~/Projects"
 alias dl="cd ~/Downloads"
 
-# Fixes issues with zsh completion:
-function fixzsh() {
-  rm ~/.zcompdump*;
-  rm ~/.antigen/.zcompdump*
-  rm ~/.zplug/zcompdump*
-  # rm -rf /usr/local/opt/zplug/zcomp*
-  exec zsh
-}
-
 # Reload zsh
 alias zr="source ~/.zshrc"
 
 # Reload bash
-alias bbbash="source ~/.bashrc"
+alias br="source ~/.bashrc"
 
 # Configure Neovim
 alias vimcept="nvim ~/nvim.d/init.vim"
@@ -92,7 +72,6 @@ alias remux="nvim $DOTFILES/config/tmux/.tmux.conf"
 # Print each PATH entry on a separate line
 alias list_path='echo -e ${PATH//:/\\n}'
 alias list_fpath='echo -e ${FPATH//:/\\n}'
-# for f in $fpath; do echo $f; ls -l $f/_git 2>/dev/null; done
 
 # Show/hide hidden files in Finder
 alias fshow="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"

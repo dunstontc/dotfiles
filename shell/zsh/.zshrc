@@ -89,8 +89,15 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=15'
 #   zle -N zle-line-finish
 # fi
 # =============================================================================
-# test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
+# Fixes issues with zsh completion:
+function fixzsh() {
+  rm ~/.zcompdump*;
+  rm ~/.antigen/.zcompdump*
+  rm ~/.zplug/zcompdump*
+  # rm -rf /usr/local/opt/zplug/zcomp*
+  exec zsh
+}
+# =============================================================================
 # Pick up additional site-functions that may not be on system zsh's
 # $fpath by default
 # function get_them_completions() {

@@ -1,0 +1,8 @@
+# Display line numbers to the left of the text area.
+set linenumbers
+# Enable mouse support, if available for your system.
+set mouse
+# Don’t hard-wrap text at all. This option conflicts with fill -- the last one given takes effect.
+set nowrap
+# Do extended regular expression searches by default.
+set regexp
