@@ -19,8 +19,8 @@ alias 4='cd -4'
 alias 5='cd -5'
 
 # Directories
-alias l="exa -al --git --group-directories-first"
-alias ll='ls -lAh --group-directories-first'
+alias l='ls -lAh --group-directories-first --color=always'
+alias ll="exa -al --git --group-directories-first"
 
 # Abbreviations
 alias c="clear"
@@ -52,8 +52,8 @@ alias npp="npm init -y"
 
 # Shortcuts
 alias keyring="nvim -c 'VimFiler -explorer ~/Projects/GitHub/KeyRing/keys'"
-alias dots="cd ~/.dotfiles"
-alias nv="cd ~/nvim.d"
+alias dots='cd $DOTFILES'
+alias nv="cd ~/.config/nvim"
 alias pj="cd ~/Projects"
 alias dl="cd ~/Downloads"
 
@@ -64,7 +64,7 @@ alias zr="source ~/.zshrc"
 alias br="source ~/.bashrc"
 
 # Configure Neovim
-alias vimcept="nvim ~/nvim.d/init.vim"
+alias vimcept="nvim ~/.config/nvim/init.vim"
 
 # Configure tmux
 alias remux="nvim $DOTFILES/config/tmux/.tmux.conf"
