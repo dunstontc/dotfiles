@@ -61,6 +61,8 @@ suffix() {
 local golang_symbol=""
 local jobs_symbol="♩"
 local dotnet_symbol=".NET"
+local npm_symbol="npm"
+local node_symbol=""
 
 # If there are Go-specific files in current directory, or current directory is under the GOPATH {{{
 prompt_golang() {
@@ -77,7 +79,7 @@ prompt_jobs() {
   [[ $jobs_amount -gt 0 ]] || return
   [[ $jobs_amount -eq 1 ]] && jobs_amount=''
 
-  echo -n "%F{11}${jobs_symbol}${jobs_amount}%f"
+  echo -n "%F{11}${jobs_symbol}${jobs_amount}%f "
 }  # }}}
 
 # Show current version of .NET SDK {{{
@@ -89,12 +91,42 @@ prompt_dotnet() {
   # therefore, this already returns the expected version for the current directory
   local dotnet_version=$(dotnet --version 2>/dev/null)
 
-  echo -n "%F{128}${dotnet_symbol} ${dotnet_version}%f"
+  echo -n "%F{128}${dotnet_symbol} ${dotnet_version}%f "
 }  # }}}
+
+# Show NPM version only when repository is a package {{{
+prompt_npm() {
+  [[ -f package.json ]] || return
+
+  # Grep and cut out package version
+  local package_version=$(grep -E '"version": "v?([0-9]+\.){1,}' package.json | cut -d\" -f4 2> /dev/null)
+
+  # Handle version not found
+  if [ ! "$package_version" ]; then
+    package_version="⚠"
+  else
+    package_version="v${package_version}"
+  fi
+
+  echo -n "%F{1}${npm_symbol} ${package_version}%f "
+}
+# }}}
+
+# Show NODE status only for JS-specific folders {{{
+prompt_node() {
+  [[ -f package.json || -d node_modules || -n *.js(#qN^/) ]] || return
+
+  local node_version=$(node -v 2>/dev/null)
+
+  echo -n "%F{65}${node_symbol} ${node_version}%f "
+}
+# }}}
 
 prompt_parts=(
   dotnet
   golang
+  node
+  npm
   jobs
 )
 
@@ -110,8 +142,6 @@ built_prompt() {
   build_prompt $prompt_parts
 }
 
-# TOPLINE=" %F{5}\$GO_GIT_STAT%f\$CHAR "
-# PS1="$nbsp"
 PS1=""
 PS1+="%B%F{12}%1~ "
 PS1+="$vcs_branch%F{1}%b\$vcs_stats%f "
@@ -122,8 +152,6 @@ PS1+='%F{65}%B$(suffix)%b%f '
 
 # ==============================================================================
 RPROMPT="%B%F{12}%~%f%b"
-# PS1="$VCS_BRANCH%F{1}\$VCS_STATS%f\$CHAR "
-# PROMPT='$(built_prompt)'
 
 #  ⬢  .  ' ' ' ' '==>' '✨ ' ' '                      
 # SYMBOL="╚═ ✨ "

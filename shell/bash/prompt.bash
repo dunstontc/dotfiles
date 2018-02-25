@@ -1,3 +1,5 @@
+source ~/.dotfiles/shell/functions/git-prompt.sh
+
 newline='
 '
 
@@ -65,6 +67,7 @@ fi
 
 PS1="\[${blue}\]\w/";
 # PS1+="\[${magenta}\] $(get_branch)";
+PS1+='\[${magenta}\]$(__git_ps1 " (%s)")'
 PS1+=$newline;
 PS1+="\[${green}\][";
 PS1+="\[${userStyle}\]\u";
