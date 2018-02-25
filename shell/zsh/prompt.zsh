@@ -111,12 +111,13 @@ built_prompt() {
 }
 
 # TOPLINE=" %F{5}\$GO_GIT_STAT%f\$CHAR "
-PS1="$nbsp"
+# PS1="$nbsp"
+PS1=""
 PS1+="%B%F{12}%1~ "
 PS1+="$vcs_branch%F{1}%b\$vcs_stats%f "
 PS1+='%B$(built_prompt)%b'
 PS1+="$newline"
-PS1+='%F{65} %B$(suffix)%b%f '
+PS1+='%F{65}%B$(suffix)%b%f '
 
 
 # ==============================================================================
