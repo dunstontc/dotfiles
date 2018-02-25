@@ -63,13 +63,6 @@ else
   hostStyle="${green}";
 fi;
 
-#  Add $CHARs to prompt to reflect $SHLVL
-# if [[ -n "$TMUX" ]]; then
-#     LVL=$((SHLVL - 1));
-# else
-#     LVL=$SHLVL;
-# fi;
-
 #  Char is `$` normally and `#` for root.
 if [[ $EUID -eq 0 ]]; then
   CHAR='#'
@@ -77,21 +70,15 @@ else
   CHAR='$'
 fi
 
-#  Mix it all up
-# for (( i = 0; i < $LVL; i++ )); do
-  # SUFFIX+='$';
-# done;
-
-
-PS1=" \[${blue}\]\w/";
+PS1="\[${blue}\]\w/";
 PS1+="\[${magenta}\] $(get_branch)";
 PS1+=$newline;
-PS1+=" ";
+PS1+="\[${green}\][";
 PS1+="\[${userStyle}\]\u";
-PS1+="\[${bright_white}\]@";
+PS1+="\[${green}\]@";
 PS1+="\[${hostStyle}\]\h";
-# PS1+="\[${bright_white}\]:";
-PS1+="\[${bright_white}\]$CHAR \[${reset}\]";
+PS1+="\[${green}\]]";
+PS1+="\[${bright_white}\] $CHAR \[${reset}\]";
 export PS1;
 
 

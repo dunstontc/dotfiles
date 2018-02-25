@@ -1,11 +1,3 @@
-#    .______        ___           _______. __    __  .______        ______
-#    |   _  \      /   \         /       ||  |  |  | |   _  \      /      |
-#    |  |_)  |    /  ^  \       |   (----`|  |__|  | |  |_)  |    |  ,----'
-#    |   _  <    /  /_\  \       \   \    |   __   | |      /     |  |
-#  __|  |_)  |  /  _____  \  .----)   |   |  |  |  | |  |\  \----.|  `----.
-# (__)______/  /__/     \__\ |_______/    |__|  |__| | _| `._____| \______|
-#
-
 # Check for an interactive session
 [ -z "$PS1" ] && return
 
@@ -27,7 +19,10 @@ source "$HOME/.bplug/z.sh"
 
 
 # =============================================================================
-## SMARTER TAB-COMPLETION (Readline bindings) ##
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
 
 # Perform file completion in a case insensitive fashion
 bind "set completion-ignore-case on"
@@ -76,8 +71,8 @@ HISTCONTROL="erasedups:ignoreboth"                     # Don't put duplicate lin
 export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear" # Commands that don't need to be recorded
 shopt -s cmdhist                                       # Save multi-line commands to the history as one command
 shopt -s histappend                                    # Append to the history file, don't overwrite it
-HISTSIZE=500000                                        # Set history size to a very large number
-HISTFILESIZE=100000
+HISTSIZE=10000                                         # Set history size to a very large number
+HISTFILESIZE=50000
 # Use standard ISO 8601 timestamp
 # %F equivalent to %Y-%m-%d
 # %T equivalent to %H:%M:%S (24-hours format)
