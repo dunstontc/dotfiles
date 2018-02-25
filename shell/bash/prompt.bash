@@ -1,10 +1,3 @@
-#  @description Returns the name of the current Git branch.
-get_branch() {
-  git branch 2> /dev/null | sed \
-    -e '/^[^*]/d' \
-    -e 's/* \(.*\)/\1/';
-}
-
 newline='
 '
 
@@ -71,7 +64,7 @@ else
 fi
 
 PS1="\[${blue}\]\w/";
-PS1+="\[${magenta}\] $(get_branch)";
+# PS1+="\[${magenta}\] $(get_branch)";
 PS1+=$newline;
 PS1+="\[${green}\][";
 PS1+="\[${userStyle}\]\u";
