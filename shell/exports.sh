@@ -1,5 +1,3 @@
-echo "running .exports"
-
 export TERM="xterm-256color"
 
 export EDITOR="nvim"
@@ -7,8 +5,6 @@ export EDITOR="nvim"
 # export PAGER='less'
 
 export MANPAGER="nvim -c 'set ft=man' -"
-
-export DOTFILES="$HOME/.dotfiles"
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export XDG_CONFIG_HOME="$HOME/.config"

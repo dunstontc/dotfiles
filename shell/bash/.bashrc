@@ -1,6 +1,9 @@
 # Check for an interactive session
 [ -z "$PS1" ] && return
 
+# =============================================================================
+#  sources
+# ============================================================================
 
 export dotfiles=$HOME/.dotfiles
 shellfiles="$dotfiles/shell/*.sh"
@@ -10,21 +13,19 @@ for file in ${shellfiles[@]}; do
 done;
 unset file;
 
+source "$HOME/.dotfiles/shell/bash/prompt.bash"
 
 # Use bash-completion, if available
-# if [ -f /usr/local/share/bash-completion/bash_completion ]; then
-#     source /usr/local/share/bash-completion/bash_completion
-# fi
+# if [ -f $(brew --prefix)/etc/bash_completion ]; then source $(brew --prefix)/etc/bash_completion; fi
+[ -f "/usr/local/share/bash-completion/bash_completion" ] && source /usr/local/share/bash-completion/bash_completion;
 
-source "$HOME/.dotfiles/shell/bash/prompt.bash"
-# source "$HOME/.dotfiles/shell/bash/.fzf.bash"
-source "$HOME/.bplug/z.sh"
-
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # =============================================================================
+#  settings
+# =============================================================================
 
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
+# check the window size after each command and, if necessary, update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
 # Perform file completion in a case insensitive fashion
@@ -57,6 +58,7 @@ shopt -s cdspell 2> /dev/null  # Correct spelling errors in arguments supplied t
 # =============================================================================
 #  completion
 # =============================================================================
+
 complete -F _fzf_path_completion -o default -o bashdefault ag
 complete -F _fzf_dir_completion  -o default -o bashdefault tree
 
@@ -85,13 +87,5 @@ HISTTIMEFORMAT='%F %T '                                # Set history timestamp f
 #  other
 # =============================================================================
 
-
 # For when we mess up
 eval "$(thefuck --alias)"
-
-# Use bash-completion, if available
-# if [ -f $(brew --prefix)/etc/bash_completion ]; then source $(brew --prefix)/etc/bash_completion; fi
-[ -f "/usr/local/share/bash-completion/bash_completion" ] && source /usr/local/share/bash-completion/bash_completion;
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-

@@ -1,5 +1,3 @@
-echo "🏃 .path"
-
 # Directories to be prepended to $PATH
 declare -a dirs_to_prepend
 dirs_to_prepend=(
@@ -13,10 +11,8 @@ dirs_to_prepend=(
   "$(brew --prefix coreutils)/libexec/gnubin"  # GNU Coreutils
   "node_modules/.bin:vendor/bin"               # use local packages before global
   "$HOME/.node_global/bin"                     # npm installed -g
-  "$HOME/.Pokemon-Terminal"
   # "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"     # open files w/ vscode
   "/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin"
-  # "/Users/clay/.config/nvim/dein/repos/github.com/jez/vim-superman/bin"
 )
 
 # Explicitly configured $PATH

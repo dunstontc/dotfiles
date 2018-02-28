@@ -1,6 +1,5 @@
-
-HISTSIZE=5000
-SAVEHIST=5000
+HISTSIZE=10000
+SAVEHIST=10000
 export HISTFILE=~/.cache/shell/.zsh_history
 
 export DOTFILES=$HOME/.dotfiles
@@ -16,7 +15,6 @@ source ~/.zplug/init.zsh
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 # zplug "djui/alias-tips"
 # zplug "changyuheng/zsh-interactive-cd", from:github
-zplug "rupa/z", use:z.sh
 zplug "uvaes/fzf-marks", from:github
 zplug "zsh-users/zsh-completions", from:github, as:plugin
 zplug "zsh-users/zsh-autosuggestions", from:github
@@ -132,7 +130,7 @@ setopt noflowcontrol
 
 setopt auto_cd            # Implied cd if you just type a directory name
 setopt menu_complete
-# setopt auto_pushd
+setopt auto_pushd
 # setopt auto_list
 # setopt clobber
 # setopt interactive_comments

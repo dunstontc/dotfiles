@@ -1,5 +1,3 @@
-echo "🏃 .aliases"
-
 # Be careful
 alias mr='rmtrash'
 alias mrd='rmdirtrash'
@@ -36,7 +34,7 @@ alias task="todo.sh"
 alias todo="todo.sh"
 alias tpd="topydo"
 alias v="vim"
-alias vi="nvim"
+# alias vi="nvim"
 alias n="nvim"
 
 # todo.txt

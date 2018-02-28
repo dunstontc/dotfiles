@@ -1,5 +1,3 @@
-echo "🏃 .functions"
-
 # @description Create a directory(s) and cd to it.
 #
 # @param $1 string Folder or folders to make.
