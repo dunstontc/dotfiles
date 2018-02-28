@@ -39,7 +39,7 @@ zplug load
 # =============================================================================
 
 # Source our dotfiles
-for file in $HOME/.dotfiles/shell/.{path,exports,aliases,functions}; do
+for file in $DOTFILES/shell/*.sh; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;

@@ -92,7 +92,7 @@
     titleBar: "custom"
   "dark-plus-syntax": {}
   editor:
-    fontSize: 13
+    fontSize: 10
     preferredLineLength: 100000000000
     scrollPastEnd: true
     scrollSensitivity: 75

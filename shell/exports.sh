@@ -1,3 +1,4 @@
+echo "running .exports"
 
 export TERM="xterm-256color"
 

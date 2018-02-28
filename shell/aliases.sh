@@ -1,4 +1,4 @@
-# echo "🏃 .aliases"
+echo "🏃 .aliases"
 
 # Be careful
 alias mr='rmtrash'

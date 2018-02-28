@@ -1,4 +1,4 @@
-# echo "🏃 .functions"
+echo "🏃 .functions"
 
 # @description Create a directory(s) and cd to it.
 #

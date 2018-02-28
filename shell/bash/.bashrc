@@ -1,9 +1,12 @@
 # Check for an interactive session
 [ -z "$PS1" ] && return
 
+
+export dotfiles=$HOME/.dotfiles
+shellfiles="$dotfiles/shell/*.sh"
 # Source our dotfiles
-for file in $HOME/.dotfiles/shell/.{path,exports,aliases,functions}; do
-    [ -r "$file" ] && [ -f "$file" ] && source "$file";
+for file in ${shellfiles[@]}; do
+  [ -f "$file" ] && source "$file";
 done;
 unset file;
 
@@ -82,14 +85,13 @@ HISTTIMEFORMAT='%F %T '                                # Set history timestamp f
 #  other
 # =============================================================================
 
-# if [ -f $(brew --prefix)/etc/bash_completion ]; then source $(brew --prefix)/etc/bash_completion; fi
 
 # For when we mess up
 eval "$(thefuck --alias)"
 
 # Use bash-completion, if available
-[[ $PS1 && -f /usr/local/share/bash-completion/bash_completion ]] && \
-    . /usr/local/share/bash-completion/bash_completion
+# if [ -f $(brew --prefix)/etc/bash_completion ]; then source $(brew --prefix)/etc/bash_completion; fi
+[ -f "/usr/local/share/bash-completion/bash_completion" ] && source /usr/local/share/bash-completion/bash_completion;
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 

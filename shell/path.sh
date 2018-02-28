@@ -1,4 +1,4 @@
-# echo "🏃 .path"
+echo "🏃 .path"
 
 # Directories to be prepended to $PATH
 declare -a dirs_to_prepend
