@@ -116,22 +116,22 @@ chatnets = {
 };
 
 channels = (
-  { name = "#python";          chatnet = "Freenode"; autojoin = "yes"; },
-  { name = "#python-offtopic"; chatnet = "Freenode"; autojoin = "yes"; },
-  { name = "#vim";             chatnet = "Freenode"; autojoin = "yes"; },
-  { name = "#zsh";             chatnet = "Freenode"; autojoin = "yes"; },
-  { name = "#bpython";         chatnet = "Freenode"; autojoin = "yes"; },
-  { name = "#twisted";         chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#pypy";            chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#tmux";            chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#python-dev";      chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#python-testing";  chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#twisted.web";     chatnet = "freenode"; autojoin = "yes"; },
-  { name = "##math";           chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#nycpython";       chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#twisted-dev";     chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#python3";         chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#pypa";            chatnet = "freenode"; autojoin = "yes"; }
+  # { name = "#python";          chatnet = "Freenode"; autojoin = "yes"; },
+  # { name = "#python-offtopic"; chatnet = "Freenode"; autojoin = "yes"; },
+  # { name = "#vim";             chatnet = "Freenode"; autojoin = "yes"; },
+  # { name = "#zsh";             chatnet = "Freenode"; autojoin = "yes"; },
+  # { name = "#bpython";         chatnet = "Freenode"; autojoin = "yes"; },
+  # { name = "#twisted";         chatnet = "freenode"; autojoin = "yes"; },
+  # { name = "#pypy";            chatnet = "freenode"; autojoin = "yes"; },
+  # { name = "#tmux";            chatnet = "freenode"; autojoin = "yes"; },
+  # { name = "#python-dev";      chatnet = "freenode"; autojoin = "yes"; },
+  # { name = "#python-testing";  chatnet = "freenode"; autojoin = "yes"; },
+  # { name = "#twisted.web";     chatnet = "freenode"; autojoin = "yes"; },
+  # { name = "##math";           chatnet = "freenode"; autojoin = "yes"; },
+  # { name = "#nycpython";       chatnet = "freenode"; autojoin = "yes"; },
+  # { name = "#twisted-dev";     chatnet = "freenode"; autojoin = "yes"; },
+  # { name = "#python3";         chatnet = "freenode"; autojoin = "yes"; },
+  # { name = "#pypa";            chatnet = "freenode"; autojoin = "yes"; }
 );
 
 aliases = {
