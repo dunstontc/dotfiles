@@ -1,4 +1,4 @@
-source ~/.dotfiles/shell/functions/git-prompt.sh
+source $DOTFILES/shell/functions/git-prompt.sh
 
 newline='
 '
