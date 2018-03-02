@@ -5,15 +5,15 @@
 #  sources
 # ============================================================================
 
-export dotfiles=$HOME/.dotfiles
-shellfiles="$dotfiles/shell/*.sh"
+export DOTFILES=$HOME/.DOTFILES
+shellfiles="$DOTFILES/shell/*.sh"
 # Source our dotfiles
 for file in ${shellfiles[@]}; do
   [ -f "$file" ] && source "$file";
 done;
 unset file;
 
-[ -f "$DOTFILES/shell/bash/prompt.bash" ] && source "$DOTFILES/shell/bash/prompt.bash"
+[ -f $DOTFILES/shell/bash/prompt.bash ] && source $DOTFILES/shell/bash/prompt.bash
 # source "$HOME/.dotfiles/shell/bash/prompt.bash"
 
 # Use bash-completion, if available

@@ -5,11 +5,44 @@ export HISTFILE=~/.cache/shell/.zsh_history
 export DOTFILES=$HOME/.dotfiles
 export SHELL=/usr/local/bin/zsh
 
+# if [[ ! -d ~/.zplug ]]; then
+#     git clone https://github.com/zplug/zplug ~/.zplug
+#     source ~/.zplug/init.zsh && zplug update --self
+# fi
+#
+# source ~/.zplug/init.zsh
+#
+# zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+# zplug "uvaes/fzf-marks", from:github
+# # zplug "zsh-users/zsh-completions", from:github, as:plugin
+# zplug "zsh-users/zsh-autosuggestions", from:github
+# zplug "zsh-users/zsh-history-substring-search", from:github
+# zplug "zsh-users/zsh-syntax-highlighting", defer:3
+#
+#
+# if ! zplug check --verbose; then
+#     printf "Install zplugins? [y/N]: "
+#     if read -q; then
+#         echo; zplug install
+#     else
+#         echo
+#     fi
+# fi
+#
+# zplug load
+
+# =============================================================================
+
 # Source our dotfiles
 for file in $DOTFILES/shell/*.sh; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
+
+source ~/.zsh/plugins/fzf-marks/fzf-marks.plugin.zsh
+source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 
 source $DOTFILES/ignore/.private
 source $DOTFILES/shell/zsh/prompt.zsh
@@ -159,7 +192,4 @@ WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_COMPLETION_TRIGGER='//'
 
-source ~/.zsh/plugins/fzf-marks/fzf-marks.plugin.zsh
-source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
