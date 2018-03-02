@@ -5,48 +5,17 @@ export HISTFILE=~/.cache/shell/.zsh_history
 export DOTFILES=$HOME/.dotfiles
 export SHELL=/usr/local/bin/zsh
 
-if [[ ! -d ~/.zplug ]]; then
-    git clone https://github.com/zplug/zplug ~/.zplug
-    source ~/.zplug/init.zsh && zplug update --self
-fi
-
-source ~/.zplug/init.zsh
-
-zplug 'zplug/zplug', hook-build:'zplug --self-manage'
-# zplug "djui/alias-tips"
-# zplug "changyuheng/zsh-interactive-cd", from:github
-zplug "uvaes/fzf-marks", from:github
-zplug "zsh-users/zsh-completions", from:github, as:plugin
-zplug "zsh-users/zsh-autosuggestions", from:github
-zplug "zsh-users/zsh-history-substring-search", from:github
-zplug "zsh-users/zsh-syntax-highlighting", defer:3
-
-
-if ! zplug check --verbose; then
-    printf "Install zplugins? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    else
-        echo
-    fi
-fi
-
-zplug load
-
-
-# =============================================================================
-
 # Source our dotfiles
 for file in $DOTFILES/shell/*.sh; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
 
-source $HOME/.dotfiles/ignore/.private
-source $HOME/.dotfiles/shell/zsh/prompt.zsh
-source $HOME/.dotfiles/shell/functions/.fzf.functions
+source $DOTFILES/ignore/.private
+source $DOTFILES/shell/zsh/prompt.zsh
+source $DOTFILES/shell/functions/.fzf.functions
 # dotnet cli completion
-source $HOME/.dotfiles/shell/zsh/functions/register-completions.zsh
+source $DOTFILES/shell/zsh/functions/register-completions.zsh
 
 
 # =============================================================================
@@ -152,6 +121,7 @@ zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
 zstyle ':completion:*:*:docker:*' option-stacking yes
 zstyle ':completion:*:*:docker-*:*' option-stacking yes
 
+autoload -Uz compinit && compinit
 
 compdef "_files -W ~/.ghq/github.com/ -/" ghq
 # Allow SSH tab completion for mosh hostnames
@@ -189,8 +159,7 @@ WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_COMPLETION_TRIGGER='//'
 
-eval $(thefuck --alias)
+source ~/.zsh/plugins/fzf-marks/fzf-marks.plugin.zsh
+source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# =============================================================================
-
-autoload -Uz compinit && compinit

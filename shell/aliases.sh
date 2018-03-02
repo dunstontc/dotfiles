@@ -65,7 +65,7 @@ alias br="source ~/.bashrc"
 alias vimcept="nvim ~/.config/nvim/init.vim"
 
 # Configure tmux
-alias remux="nvim $DOTFILES/config/tmux/.tmux.conf"
+alias remux="nvim $DOTFILES/config/.tmux.conf"
 
 # Print each PATH entry on a separate line
 alias list_path='echo -e ${PATH//:/\\n}'
