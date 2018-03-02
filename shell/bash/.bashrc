@@ -13,7 +13,8 @@ for file in ${shellfiles[@]}; do
 done;
 unset file;
 
-source "$HOME/.dotfiles/shell/bash/prompt.bash"
+[ -f "$DOTFILES/shell/bash/prompt.bash" ] && source "$DOTFILES/shell/bash/prompt.bash"
+# source "$HOME/.dotfiles/shell/bash/prompt.bash"
 
 # Use bash-completion, if available
 # if [ -f $(brew --prefix)/etc/bash_completion ]; then source $(brew --prefix)/etc/bash_completion; fi
@@ -88,4 +89,4 @@ HISTTIMEFORMAT='%F %T '                                # Set history timestamp f
 # =============================================================================
 
 # For when we mess up
-eval "$(thefuck --alias)"
+# eval "$(thefuck --alias)"
