@@ -5,7 +5,7 @@
 #  sources
 # ============================================================================
 
-export DOTFILES=$HOME/.DOTFILES
+export DOTFILES=$HOME/.dotfiles
 shellfiles="$DOTFILES/shell/*.sh"
 # Source our dotfiles
 for file in ${shellfiles[@]}; do
