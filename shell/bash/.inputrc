@@ -7,7 +7,8 @@ set bell-style none
 # =============================================================================
 
 # Try to stay at the same the cursor position when moving through the history.
-set history-preserve-point on
+# set history-preserve-point on
+set history-preserve-point off
 
 # =============================================================================
 # Autocompletion
@@ -32,29 +33,21 @@ set expand-tilde off
 set menu-complete-display-prefix on
 
 # Do not autocomplete hidden files ("dot files") unless the pattern explicitly begins with a dot.
-set match-hidden-files on
+# set match-hidden-files on
+set match-hidden-files off
 
 # Show all autocomplete results at once.
 set page-completions off
 
 # If there are more than 200 possible completions for a word, ask to show them all.
-set completion-query-items 200
+set completion-query-items 100
 
 # Immediately show all possible completions.
 set show-all-if-ambiguous on
 
-
-# If there are more than 200 possible completions for a word, ask to show them all
-set completion-query-items 200
-
 # Don't display control characters like ^C if I input them
 set echo-control-characters off
 
-# Expand tilde to full path on completion
-set expand-tilde on
-
-# Preserve caret position while browsing through history lines
-# set history-preserve-point on
 
 # When completing directories, add a trailing slash
 set mark-directories on
