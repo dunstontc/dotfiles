@@ -65,16 +65,17 @@ else
   CHAR='$'
 fi
 
+PS1="";
 PS1="\[${blue}\]\w/";
 # PS1+="\[${magenta}\] $(get_branch)";
-PS1+='\[${magenta}\]$(__git_ps1 " (%s)")'
+# PS1+='\[${magenta}\]$(__git_ps1 " (%s)")'
 PS1+=$newline;
 PS1+="\[${green}\][";
 PS1+="\[${userStyle}\]\u";
 PS1+="\[${green}\]@";
 PS1+="\[${hostStyle}\]\h";
 PS1+="\[${green}\]]";
-PS1+="\[${bright_white}\] $CHAR \[${reset}\]";
+PS1+="\[${bright_white}\]$CHAR \[${reset}\]";
 export PS1;
 
 

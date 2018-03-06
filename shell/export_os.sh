@@ -5,6 +5,6 @@ if stringContains 'Debian' "$(uname -a)";  then export OS_NAME="debian";  fi
 if stringContains 'Ubuntu' "$(uname -a)";  then export OS_NAME="ubuntu";  fi
 if stringContains 'MANJARO' "$(uname -a)"; then export OS_NAME="manjaro"; fi
 if stringContains 'aufs' "$(uname -a)";    then export OS_NAME="arch";    fi
-if stringContains 'el7' "$(uname -a)";     then export OS_NAME="centos";  fi
+if stringContains 'el7' "$(uname -a)";     then export OS_NAME="rhel/centos";  fi
 
 unset stringContains
