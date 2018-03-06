@@ -52,8 +52,6 @@ Plug 'jszakmeister/vim-togglecursor' " Switch between block & horizontal line
 Plug 'vim-airline/vim-airline'
 " Colorful Things
 Plug 'dunstontc/vim-vscode-theme'
-Plug 'morhetz/gruvbox'
-Plug 'romainl/Apprentice'
 " Utilities
 Plug 'pbrisbin/vim-mkdir'             " Make new directories along with new files
 Plug 'sgur/vim-editorconfig'          " .editorconfig support

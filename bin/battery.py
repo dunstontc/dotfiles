@@ -50,7 +50,7 @@ def Juice():
     else:
         charge_attr = '#[fg=#608b4e,italics,bg=#303030]'
 
-    return f"{charge_attr}{charging} {current_charge}% ⚡"
+    return "{}{} {}% ⚡".format(charge_attr, charging, current_charge)
 
 
 def LinuxJuice():
@@ -98,7 +98,7 @@ def LinuxJuice():
     else:
         charge_attr = '#[fg=#608b4e,italics,bg=#303030]'
 
-    return f"{charge_attr}{charging} {current_charge}% ⚡"
+    return "{}{} {}% ⚡".format(charge_attr, charging, current_charge)
 
 
 def Joose():
