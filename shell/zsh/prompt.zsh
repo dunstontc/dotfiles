@@ -58,11 +58,16 @@ suffix() {
 # ==============================================================================
 # Spaceship Sections
 # ==============================================================================
+local ansible_symbol=""
 local golang_symbol=""
 local jobs_symbol="♩"
-local dotnet_symbol=".NET"
-local npm_symbol="npm"
+# local dotnet_symbol=".NET"
+local dotnet_symbol=""
+local npm_symbol="npm" # 
 local node_symbol=""
+local swift_symbol=""
+local docker_symbol=""
+
 
 # If there are Go-specific files in current directory, or current directory is under the GOPATH {{{
 prompt_golang() {
@@ -122,11 +127,29 @@ prompt_node() {
 }
 # }}}
 
+# Show current Docker version and connected machine {{{
+prompt_docker() {
+  # Show Docker status only for Docker-specific folders
+  [[ -f Dockerfile || -f docker-compose.yml ]] || return
+
+  # if docker daemon isn't running you'll get an error saying it can't connect
+  local docker_version=$(docker version -f "{{.Server.Version}}" 2>/dev/null)
+  [[ -z $docker_version ]] && return
+
+  if [[ -n $DOCKER_MACHINE_NAME ]]; then
+    docker_version+=" via ($DOCKER_MACHINE_NAME)"
+  fi
+
+    echo -n "%F{117}${docker_symbol} ${docker_version}%f "
+}
+# }}}
+
 prompt_parts=(
   dotnet
   golang
   node
   npm
+  docker
   jobs
 )
 
