@@ -1,4 +1,3 @@
-#!/usr/local/bin/env python
 # -*- coding: utf-8 -*-
 """I just wanted to see my damn uptime."""
 

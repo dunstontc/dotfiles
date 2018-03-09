@@ -1,4 +1,3 @@
-#!/usr/local/bin/env python
 # -*- coding: utf-8 -*-
 """Tmux battery info segment."""
 
@@ -80,7 +79,7 @@ def LinuxJuice():
     )
 
     if state is not None:
-        charging = '+'
+        charging = '⚡'
     else:
         charging = ''
 
