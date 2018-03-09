@@ -86,6 +86,7 @@ function fixzsh() {
 # }
 # get_them_completions()
 fpath=(~/.zsh/completion $fpath)
+fpath=(~/.zsh/plugins/zsh-completions/src $fpath)
 
 
 # =============================================================================
@@ -130,6 +131,7 @@ autoload -Uz compinit && compinit
 compdef "_files -W ~/.ghq/github.com/ -/" ghq
 # Allow SSH tab completion for mosh hostnames
 compdef mosh=ssh
+compdef vboxmanage=VBoxManage
 
 # =============================================================================
 #  Mappings
@@ -167,5 +169,6 @@ export FZF_COMPLETION_TRIGGER='//'
 
 source ~/.zsh/plugins/fzf-marks/fzf-marks.plugin.zsh
 source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# source ~/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+
