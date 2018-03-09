@@ -2,14 +2,8 @@
 # Git status
 #
 
-# ------------------------------------------------------------------------------
-# Configuration
-# ------------------------------------------------------------------------------
-
-GIT_STATUS_SHOW=true
-GIT_STATUS_PREFIX=" ["
-GIT_STATUS_SUFFIX="]"
-GIT_STATUS_COLOR="red"
+GIT_STATUS_PREFIX=""
+GIT_STATUS_SUFFIX=""
 GIT_STATUS_UNTRACKED="?"
 GIT_STATUS_ADDED="+"
 GIT_STATUS_MODIFIED="!"
@@ -21,9 +15,16 @@ GIT_STATUS_AHEAD="⇡"
 GIT_STATUS_BEHIND="⇣"
 GIT_STATUS_DIVERGED="⇕"
 
+
+if ag --version >/dev/null 2>&1; then
+    srch_prg="ag"
+else
+    search_prg="grep"
+fi
+
 # ------------------------------------------------------------------------------
 
-spaceship_git_status() {
+prompt_git_status() {
   $(command git rev-parse --is-inside-work-tree &>/dev/null) || return
 
   local INDEX git_status=""
@@ -31,7 +32,7 @@ spaceship_git_status() {
   INDEX=$(command git status --porcelain -b 2> /dev/null)
 
   # Check for untracked files
-  if $(echo "$INDEX" | command grep -E '^\?\? ' &> /dev/null); then
+  if $(echo "$INDEX" | command $srch_prg '^\?\? ' &> /dev/null); then
     git_status="$GIT_STATUS_UNTRACKED$git_status"
   fi
 
@@ -99,8 +100,6 @@ spaceship_git_status() {
 
   if [[ -n $git_status ]]; then
     # Status prefixes are colorized
-    spaceship::section \
-      "$GIT_STATUS_COLOR" \
-      "$GIT_STATUS_PREFIX$git_status$GIT_STATUS_SUFFIX"
+      echo -n "%F{1}$GIT_STATUS_PREFIX$git_status$GIT_STATUS_SUFFIX%f"
   fi
 }

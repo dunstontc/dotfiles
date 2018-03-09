@@ -1,7 +1,8 @@
 setopt PROMPT_SUBST
 autoload -U add-zsh-hook
 precmd() { vcs_info }
-precmd_functions+=(prompt_fn_one)
+# precmd_functions+=(prompt_fn_one)
+source $DOTFILES/shell/zsh/git-prompt.zsh
 
 # Variables {{{
 local nbsp=" "
@@ -23,15 +24,10 @@ zstyle ':vcs_info:*' check-for-changes false
 zstyle ':vcs_info:*' formats "%b"
 # zstyle ':vcs_info:git*:*' formats '[%b%m%c%u] ' # default ' (%s)-[%b]%c%u-'
 # VCS_BRANCH="%F{5}$NBSP\${vcs_info_msg_0_}%f"
-# }}}
 vcs_branch="%F{5}\${vcs_info_msg_0_}%f"
-
-# More detailed stats with porcelain. {{{
-prompt_fn_one() {
-    vcs_stats=$($GOBIN/porcelain -raw)
-}
 # }}}
 
+# Prompt Character {{{
 suffix() {
   # Add new `$` to prompt to reflect $SHLVL
   if [[ -n "$TMUX" ]]; then
@@ -53,20 +49,21 @@ suffix() {
   done;
   echo -n $suffix
 }
+# }}}
 
 
 # ==============================================================================
 # Spaceship Sections
 # ==============================================================================
 local ansible_symbol=""
+local dotnet_symbol=""
+# local dotnet_symbol=".NET"
+local docker_symbol=""
 local golang_symbol=""
 local jobs_symbol="♩"
-# local dotnet_symbol=".NET"
-local dotnet_symbol=""
-local npm_symbol="npm" # 
 local node_symbol=""
+local npm_symbol="npm" # 
 local swift_symbol=""
-local docker_symbol=""
 
 
 # If there are Go-specific files in current directory, or current directory is under the GOPATH {{{
@@ -145,6 +142,7 @@ prompt_docker() {
 # }}}
 
 prompt_parts=(
+  git_status
   dotnet
   golang
   node
@@ -176,7 +174,6 @@ PS1+='%F{65}%B$(suffix)%b%f '
 # ==============================================================================
 RPROMPT="%B%F{12}%~%f%b"
 
-#  ⬢  .  ' ' ' ' '==>' '✨ ' ' '                      
-# SYMBOL="╚═ ✨ "
-# SPACESHIP_TIME_FORMAT="%D{╔═ %a %I:%M %p} "
+# %D{╔═ %a %I:%M %p
+#    ╚═ ✨ "
 
