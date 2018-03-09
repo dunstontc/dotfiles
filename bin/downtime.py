@@ -28,7 +28,7 @@ def ooptime():
     )
 
     if times.group('days'):
-        days = f' {times.group("days")}d'
+        days = ' {}d'.format(times.group("days"))
     else:
         days = ''
 
@@ -42,7 +42,7 @@ def ooptime():
     else:
         mins = '0'
 
-    return f'↑{days} {hours}h {mins:0>2}m '
+    return '↑{} {}h {:0>2}m '.format(days, hours, mins)
 
 
 print(ooptime())
