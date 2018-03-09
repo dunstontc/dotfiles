@@ -6,6 +6,11 @@ take() {
   cd "$1" || return
 }
 
+# @description Source a file if it exists.
+include () {
+  [[ -f "$1" ]] && source "$1"
+}
+
 # @description Change working directory to the top-most Finder window location.
 # 'CD-Finder'
 #

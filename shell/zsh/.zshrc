@@ -15,11 +15,10 @@ done;
 unset file;
 
 
-source $DOTFILES/ignore/.private
+
+[[ -f "$DOTFILES/ignore/.private" ]] && source "$DOTFILES/ignore/.private"
 source $DOTFILES/shell/zsh/prompt.zsh
 source $DOTFILES/shell/functions/.fzf.functions
-# dotnet cli completion
-source $DOTFILES/shell/zsh/functions/register-completions.zsh
 
 
 # =============================================================================
@@ -64,9 +63,9 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=15'
 # Fix issues with zsh completion:
 function fixzsh() {
   rm ~/.zcompdump*;
-  rm ~/.antigen/.zcompdump*
-  rm ~/.zplug/zcompdump*
-  exec zsh
+  rm ~/.antigen/.zcompdump*;
+  rm ~/.zplug/zcompdump*;
+  exec zsh;
 }
 # =============================================================================
 # Pick up additional site-functions that may not be on system zsh's
@@ -88,6 +87,8 @@ function fixzsh() {
 fpath=(~/.zsh/completion $fpath)
 fpath=(~/.zsh/plugins/zsh-completions/src $fpath)
 
+# dotnet cli completion
+source $DOTFILES/shell/zsh/functions/register-completions.zsh
 
 # =============================================================================
 # If this option is unset, output flow control via start/stop characters
@@ -129,16 +130,17 @@ zstyle ':completion:*:*:docker-*:*' option-stacking yes
 autoload -Uz compinit && compinit
 
 compdef "_files -W ~/.ghq/github.com/ -/" ghq
+
 # Allow SSH tab completion for mosh hostnames
 compdef mosh=ssh
 compdef vboxmanage=VBoxManage
+compdef vmb=VBoxManage
 
 # =============================================================================
 #  Mappings
 # =============================================================================
 bindkey -e
-# make <S-Tab> work 'correctly'
-# FIXME: Shift+Tab still goes wonky sometimes
+# make <S-Tab> work *correctly*
 bindkey '^[[Z' reverse-menu-complete
 
 # bindkey '[F' forward-word
@@ -160,7 +162,6 @@ WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
 # =============================================================================
 # Change the default CTRL_T to CTRL_F
-# bindkey '^F' fzf-file-widget
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_COMPLETION_TRIGGER='//'

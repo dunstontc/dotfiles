@@ -8,4 +8,4 @@
 - [git](https://github.com/git/git/tree/master/contrib/completion)
 - [gradle](https://github.com/gradle/gradle-completion)
 - [httpie](https://github.com/jakubroztocil/httpie/tree/master/extras)
-- 
+- [vagrant (bash)](https://github.com/hashicorp/vagrant/blob/master/contrib/bash/completion.sh)
