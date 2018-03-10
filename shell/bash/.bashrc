@@ -88,5 +88,7 @@ HISTTIMEFORMAT='%F %T '                                # Set history timestamp f
 #  other
 # =============================================================================
 
+unset command_not_found_handle
+
 # For when we mess up
 # eval "$(thefuck --alias)"
