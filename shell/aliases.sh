@@ -105,7 +105,7 @@ tree \
 -I 'node_modules|bower_components|cache|ignore|undo|dein'\
 "
 
-alias ,="nvim \$(fd --hidden --exclude .git --follow . ~/.dotfiles | fzf)"
+alias ,="nvim \$(find $DOTFILES -name \"*\" -not -path \"*/.git/**\" -not -path \"*/plugged/**\" -not -path \"*/ignore/**\" | fzf)"
 alias repos="cd \$(find \$(pwd) -type d -exec test -e '{}/.git' ';' -print -prune | fzf)"
 # alias fzag="ag --nobreak --nonumbers --noheading . | fzf"
 

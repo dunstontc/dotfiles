@@ -21,7 +21,7 @@ prompt_git_status() {
   local GIT_STATUS_UNTRACKED=""
   local GIT_STATUS_ADDED=""
   local GIT_STATUS_MODIFIED=""
-  local GIT_STATUS_RENAMED=""
+  # local GIT_STATUS_RENAMED=""
   local GIT_STATUS_DELETED=""
   local GIT_STATUS_STASHED=""
   local GIT_STATUS_UNMERGED=""
@@ -117,9 +117,9 @@ prompt_git_status() {
   git_status+="$GIT_STATUS_ADDED";
 
   git_status+="$GIT_STATUS_MODIFIED";
-  # git_status+="$GIT_STATUS_RENAMED";
   git_status+="$GIT_STATUS_UNTRACKED";
   git_status+="$GIT_STATUS_DELETED";
+  # git_status+="$GIT_STATUS_RENAMED";
 
   git_status+="$GIT_STATUS_STASHED";
 

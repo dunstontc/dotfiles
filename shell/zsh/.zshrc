@@ -89,6 +89,7 @@ fpath=(~/.zsh/plugins/zsh-completions/src $fpath)
 
 # dotnet cli completion
 source $DOTFILES/shell/zsh/functions/register-completions.zsh
+source $DOTFILES/shell/zsh/functions/clipcopy.zsh
 
 # =============================================================================
 # If this option is unset, output flow control via start/stop characters
