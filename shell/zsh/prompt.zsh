@@ -4,6 +4,8 @@ precmd() { vcs_info }
 # precmd_functions+=(prompt_fn_one)
 source $DOTFILES/shell/zsh/git-prompt.zsh
 
+
+
 # Variables {{{
 local nbsp=" "
 local newline='
@@ -14,6 +16,8 @@ local bright_blue="%F{12}"
 local green="%F{2}"
 local bright_green="%F{10}"
 local cyan="%F{6}"
+
+local code_green="%F{65}"
 local dotnet_purp="%F{128}"
 # }}}
 
@@ -24,7 +28,7 @@ zstyle ':vcs_info:*' check-for-changes false
 zstyle ':vcs_info:*' formats "%b"
 # zstyle ':vcs_info:git*:*' formats '[%b%m%c%u] ' # default ' (%s)-[%b]%c%u-'
 # VCS_BRANCH="%F{5}$NBSP\${vcs_info_msg_0_}%f"
-vcs_branch="%F{5}\${vcs_info_msg_0_}%f"
+vcs_branch="$magenta\${vcs_info_msg_0_}%f"
 # }}}
 
 # Prompt Character {{{
@@ -163,16 +167,27 @@ built_prompt() {
   build_prompt $prompt_parts
 }
 
+
+# *  -  Unstaged Change
+# +  -  Staged Change
+# %  -  Untracked Files
+# $  -  Stashed
+# <  -  Behind Upstream
+# >  -  Ahead of Upstream
+# <> -  D
+# =  -  No difference between upstream
+# $(__git_ps1 " (%s)")
+
 PS1=""
-PS1+="%B%F{12}%1~ "
-PS1+="$vcs_branch%F{1}%b\$vcs_stats%f "
+PS1+="%B$bright_blue%1~%f "
+PS1+="$vcs_branch "
 PS1+='%B$(built_prompt)%b'
 PS1+="$newline"
-PS1+='%F{65}%B$(suffix)%b%f '
+PS1+="$code_green%B\$(suffix)%b%f "
 
 
 # ==============================================================================
-RPROMPT="%B%F{12}%~%f%b"
+RPROMPT="%B$bright_blue%~%f%b"
 
 # %D{╔═ %a %I:%M %p
 #    ╚═ ✨ "

@@ -59,7 +59,11 @@ nman() {
 
 # @description Copy the contents of a file to your clipboard
 yank() {
-  cat "$1" | pbcopy
+  cat "$1" | pbcopy;
+}
+
+put() {
+  pbpaste > "$1";
 }
 
 # @description Returns an escaped string wrapped in single quotes. Hopefully.

@@ -90,7 +90,7 @@ alias gcom="git checkout master"
 alias gcod="git checkout dev"
 alias gp="git push"
 alias gs="git status -s"
-
+alias repoz="find \$(pwd) -type d -exec test -e '{}/.git' ';' -print -prune"
 
 # Kill all the tabs in Chrome to free up memory
 # [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
@@ -106,6 +106,7 @@ tree \
 "
 
 alias ,="nvim \$(fd --hidden --exclude .git --follow . ~/.dotfiles | fzf)"
+alias repos="cd \$(find \$(pwd) -type d -exec test -e '{}/.git' ';' -print -prune | fzf)"
 # alias fzag="ag --nobreak --nonumbers --noheading . | fzf"
 
 # alias ccat='ccat -G String="yellow" -G Keyword="blue" -G Comment="darkgray" -G Type="teal" -G Literal="blue" -G Punctuation="lightgray" -G Plaintext="lightgray" -G Tag="darkgray" -G HTMLTag="darkgray" -G HTMLAttrName="blue" -G HTMLAttrValue="yellow" -G Decimal="green"'
