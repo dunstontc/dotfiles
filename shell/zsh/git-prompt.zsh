@@ -43,7 +43,11 @@ prompt_git_status() {
   #   GIT_STATUS_ADDED="$GIT_ADDED_ICON";
   # elif $(echo "$index" | command grep '^UA' &> /dev/null); then
   # fi
-  if $(git diff --name-only --cached &> /dev/null); then
+
+  # if $(command git diff --name-only --cached &> /dev/null) == ""; then
+  if [ -n $(command git diff --name-only --cached &> /dev/null) ]; then
+    GIT_STATUS_ADDED="";
+  else
     GIT_STATUS_ADDED="$GIT_ADDED_ICON";
   fi
 
@@ -98,8 +102,9 @@ prompt_git_status() {
   if [[ "$is_ahead" == true && "$is_behind" == true ]]; then
     GIT_STATUS_DIVERGED="$GIT_DIVERGED_ICON"
   else
-    [[ "$is_ahead" == true ]] && GIT_STATUS_AHEAD="$GIT_AHEAD_ICON "
-    [[ "$is_behind" == true ]] && GIT_STATUS_BEHIND="$GIT_BEHIND_ICON "
+    [[ "$is_ahead" == true ]] && GIT_STATUS_AHEAD="$GIT_AHEAD_ICON ";
+    [[ "$is_behind" == true ]] && GIT_STATUS_BEHIND="$GIT_BEHIND_ICON ";
+    # GIT_STATUS_ADDED="";
   fi
 
   git_status+="$GIT_STATUS_DIVERGED";
@@ -112,8 +117,8 @@ prompt_git_status() {
 
   git_status+="$GIT_STATUS_MODIFIED";
   git_status+="$GIT_STATUS_RENAMED";
-  git_status+="$GIT_STATUS_DELETED";
   git_status+="$GIT_STATUS_UNTRACKED";
+  git_status+="$GIT_STATUS_DELETED";
 
   git_status+="$GIT_STATUS_STASHED";
 
