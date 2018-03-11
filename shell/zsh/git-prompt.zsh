@@ -1,7 +1,7 @@
 GIT_UNTRACKED_ICON="?"
 GIT_ADDED_ICON="+"  # FIXME: staged files
 GIT_MODIFIED_ICON="!"
-GIT_RENAMED_ICON="»"
+# GIT_RENAMED_ICON="»"
 GIT_DELETED_ICON="✘"
 GIT_STASHED_ICON="$"
 GIT_UNMERGED_ICON="="
@@ -39,17 +39,18 @@ prompt_git_status() {
   fi
 
   # Check for staged files
-  # if $(echo "$index" | command grep '^A[ MDAU] ' &> /dev/null); then
-  #   GIT_STATUS_ADDED="$GIT_ADDED_ICON";
-  # elif $(echo "$index" | command grep '^UA' &> /dev/null); then
-  # fi
-
-  # if $(command git diff --name-only --cached &> /dev/null) == ""; then
-  if [ -n $(command git diff --name-only --cached &> /dev/null) ]; then
-    GIT_STATUS_ADDED="";
-  else
+  if $(echo "$index" | command grep '^A[ MDAU] ' &> /dev/null); then
+    GIT_STATUS_ADDED="$GIT_ADDED_ICON";
+  elif $(echo "$index" | command grep '^UA' &> /dev/null); then
     GIT_STATUS_ADDED="$GIT_ADDED_ICON";
   fi
+
+  # if $(command git diff --name-only --cached &> /dev/null) == ""; then
+  # if [ -z $(command git diff --name-only --cached &> /dev/null) ]; then
+  #   GIT_STATUS_ADDED="";
+  # else
+  #   GIT_STATUS_ADDED="$GIT_ADDED_ICON";
+  # fi
 
   # Check for modified files
   if $(echo "$index" | command grep '^M[ MD] ' &> /dev/null); then
@@ -59,9 +60,9 @@ prompt_git_status() {
   fi
 
   # Check for renamed files
-  if $(echo "$index" | command grep '^R[ MD] ' &> /dev/null); then
-    GIT_STATUS_RENAMED="$GIT_RENAMED_ICON";
-  fi
+  # if $(echo "$index" | command grep '^R[ MD] ' &> /dev/null); then
+  #   GIT_STATUS_RENAMED="$GIT_RENAMED_ICON";
+  # fi
 
   # Check for deleted files
   if $(echo "$index" | command grep '^[MARCDU ]D ' &> /dev/null); then
@@ -116,7 +117,7 @@ prompt_git_status() {
   git_status+="$GIT_STATUS_ADDED";
 
   git_status+="$GIT_STATUS_MODIFIED";
-  git_status+="$GIT_STATUS_RENAMED";
+  # git_status+="$GIT_STATUS_RENAMED";
   git_status+="$GIT_STATUS_UNTRACKED";
   git_status+="$GIT_STATUS_DELETED";
 
