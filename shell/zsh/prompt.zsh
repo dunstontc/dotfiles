@@ -10,15 +10,15 @@ source $DOTFILES/shell/zsh/git-prompt.zsh
 local nbsp=" "
 local newline='
 '
-local magenta="%F{5}"
-local blue="%F{4}"
-local bright_blue="%F{12}"
-local green="%F{2}"
-local bright_green="%F{10}"
-local cyan="%F{6}"
+local red="%F{167}"
+local yellow="%F{179}"
+local green="%F{65}"
+local blue="%F{75}"
+local light_blue="%F{117}"
+local cyan="%F{43}"
+local magenta="%F{176}"
 
-local code_green="%F{65}"
-local dotnet_purp="%F{128}"
+local purp="%F{128}"
 # }}}
 
 # Use vcs_info to show the branch {{{
@@ -75,7 +75,7 @@ prompt_golang() {
   [[ -d Godeps || -f glide.yaml || -n *.go(#qN^/) || -f Gopkg.yml || -f Gopkg.lock || ( $GOPATH && $PWD =~ $GOPATH ) ]] || return
 
   local go_version=$(go version | grep --colour=never -oE '[[:digit:]].[[:digit:]]')
-  echo -n "%F{12}$golang_symbol v${go_version} "
+  echo -n "$light_blue$golang_symbol v${go_version} "
 }  # }}}
 
 # Show icon if there's a working jobs in the background {{{
@@ -85,7 +85,7 @@ prompt_jobs() {
   [[ $jobs_amount -gt 0 ]] || return
   [[ $jobs_amount -eq 1 ]] && jobs_amount=''
 
-  echo -n "%F{11}${jobs_symbol}${jobs_amount}%f "
+  echo -n "$yellow${jobs_symbol}${jobs_amount}%f "
 }  # }}}
 
 # Show current version of .NET SDK {{{
@@ -97,7 +97,7 @@ prompt_dotnet() {
   # therefore, this already returns the expected version for the current directory
   local dotnet_version=$(dotnet --version 2>/dev/null)
 
-  echo -n "%F{128}${dotnet_symbol} ${dotnet_version}%f "
+  echo -n "$purp${dotnet_symbol} ${dotnet_version}%f "
 }  # }}}
 
 # Show NPM version only when repository is a package {{{
@@ -114,7 +114,7 @@ prompt_npm() {
     package_version="v${package_version}"
   fi
 
-  echo -n "%F{1}${npm_symbol} ${package_version}%f "
+  echo -n "$red${npm_symbol} ${package_version}%f "
 }
 # }}}
 
@@ -124,7 +124,7 @@ prompt_node() {
 
   local node_version=$(node -v 2>/dev/null)
 
-  echo -n "%F{65}${node_symbol} ${node_version}%f "
+  echo -n "$green${node_symbol} ${node_version}%f "
 }
 # }}}
 
@@ -141,7 +141,7 @@ prompt_docker() {
     docker_version+=" via ($DOCKER_MACHINE_NAME)"
   fi
 
-    echo -n "%F{117}${docker_symbol} ${docker_version}%f "
+    echo -n "$light_blue${docker_symbol} ${docker_version}%f "
 }
 # }}}
 
@@ -179,15 +179,15 @@ built_prompt() {
 # $(__git_ps1 " (%s)")
 
 PS1=""
-PS1+="%B$bright_blue%1~%f "
+PS1+="%B$blue%1~%f "
 PS1+="$vcs_branch "
 PS1+='%B$(built_prompt)%b'
 PS1+="$newline"
-PS1+="$code_green%B\$(suffix)%b%f "
+PS1+="$green%B\$(suffix)%b%f "
 
 
 # ==============================================================================
-RPROMPT="%B$bright_blue%~%f%b"
+RPROMPT="%B$blue%~%f%b"
 
 # %D{╔═ %a %I:%M %p
 #    ╚═ ✨ "
