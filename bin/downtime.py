@@ -42,7 +42,7 @@ def ooptime():
     else:
         mins = '0'
 
-    return '↑{} {}h {:0>2}m '.format(days, hours, mins)
+    return '↑ {} {:0>2}h {:0>2}m '.format(days, hours, mins)
 
 
 print(ooptime())
