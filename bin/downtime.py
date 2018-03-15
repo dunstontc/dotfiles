@@ -36,14 +36,16 @@ def ooptime():
     if times.group('hours'):
         hours = times.group('hours')
     else:
-        hours = '00'
+        hours = '0'
 
     if times.group('mins'):
         mins = times.group('mins')
+    elif times.group('minz'):
+        mins = times.group('minz')
     else:
         mins = '0'
 
-    return '↑ {} {:0>2}h {:0>2}m '.format(days, hours, mins)
+    return '↑ {} {:0>1}h {:0>2}m '.format(days, hours, mins)
 
 
 print(ooptime())
