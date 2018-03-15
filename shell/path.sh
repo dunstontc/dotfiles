@@ -48,7 +48,7 @@ PATH="/usr/local/opt/ncurses/bin:$PATH"                # Newer ncurses
 PATH="/usr/local/mysql/bin:$PATH"                      # MySQL
 PATH="/usr/local/bin:$PATH"
 # PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH" # GNU Coreutils
-PATH="/usr/local/coreutils/libexec/gnubin:$PATH" # GNU Coreutils
+PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH" # GNU Coreutils
 
 PATH="node_modules/.bin:vendor/bin:$PATH"              # use local packages before global
 PATH="$HOME/.node_global/bin:$PATH"                    # npm installed -g

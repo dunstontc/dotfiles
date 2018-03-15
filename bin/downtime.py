@@ -22,7 +22,8 @@ def ooptime():
 
     shell_res = q.stdout.decode('utf-8')
     times = re.search(
-        r'(?:\sup\s+)((?P<days>\d+)(?:\sdays?))?(?:,?\s+)(?P<hours>\d+):(?P<mins>\d+)',
+        # r'(?:\sup\s+)((?P<days>\d+)(?:\sdays?))?(?:,?\s+)(?P<hours>\d+):(?P<mins>\d+)',
+        r'(?:\sup\s+)((?P<days>\d+)(?:\sdays?))?(?:,?\s+)?(?P<hours>\d+):(?P<mins>\d+)|(?P<minz>\d+)(?:\smin)',
         shell_res,
         re.M
     )
