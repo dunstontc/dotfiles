@@ -13,10 +13,8 @@
 #   "$HOME/.node_global/bin"                     # npm installed -g
 #   "/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin"
 # )
-
 # Explicitly configured $PATH
 # PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # for dir in ${dirs_to_prepend[@]}
 # do
 #   if [ -d ${dir} ];
@@ -33,13 +31,6 @@
 # export MANPATH="/usr/local/man:$MANPATH"
 # export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
-
-# For compilers to find this software you may need to set:
-#     LDFLAGS:  -L/usr/local/opt/ncurses/lib
-#     CPPFLAGS: -I/usr/local/opt/ncurses/include
-# For pkg-config to find this software you may need to set:
-#     PKG_CONFIG_PATH: /usr/local/opt/ncurses/lib/pkgconfig
-
 PATH="$HOME/bin:$PATH"                                 # Handwritten stuff
 PATH=$GOBIN:$PATH                                      # Go
 PATH="$HOME/.cargo/bin:$PATH"                          # Rust
@@ -53,4 +44,6 @@ PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH" # GNU Coreutils
 PATH="node_modules/.bin:vendor/bin:$PATH"              # use local packages before global
 PATH="$HOME/.node_global/bin:$PATH"                    # npm installed -g
 PATH="/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin:$PATH"
+
+export PATH
 
