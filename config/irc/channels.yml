@@ -1,0 +1,13 @@
+---
+freenode:
+  - "#alpine-devel"
+  - "#alpine-linux"
+  - "#archlinux"           # Support and general discussion about Arch Linux.
+  - "#archlinux-offtopic"  # Social
+  - "#elasticsearch"
+  - "#docker-compose"
+  - "#graphql"
+  - "#hammerspoon"
+  - "#manjaro"
+  - "#parabola"
+  - "#tmux"
