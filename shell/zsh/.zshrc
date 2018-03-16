@@ -88,7 +88,8 @@ fpath=(~/.zsh/completion $fpath)
 fpath=(~/.zsh/plugins/zsh-completions/src $fpath)
 
 # dotnet cli completion
-source $DOTFILES/shell/zsh/functions/register-completions.zsh
+source $DOTFILES/shell/zsh/functions/dotnet.completions.zsh
+# source $DOTFILES/shell/zsh/functions/awscli.completions.sh
 # Clipboard compat for MacOS/Linux
 source $DOTFILES/shell/zsh/functions/clipcopy.zsh
 
