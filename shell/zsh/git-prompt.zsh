@@ -1,3 +1,4 @@
+GIT_BRANCH_ICON=""
 GIT_UNTRACKED_ICON="?"
 GIT_ADDED_ICON="+"  # FIXME: staged files
 GIT_MODIFIED_ICON="!"
@@ -8,6 +9,8 @@ GIT_UNMERGED_ICON="="
 GIT_AHEAD_ICON="⇡"
 GIT_BEHIND_ICON="⇣"
 GIT_DIVERGED_ICON="⇕"
+
+local magenta="%F{176}"
 
 
 # ahead_behind() {
@@ -30,6 +33,7 @@ prompt_git_status() {
   local GIT_STATUS_DIVERGED=""
   $(command git rev-parse --is-inside-work-tree &>/dev/null) || return
 
+  local brunch=$(command git symbolic-ref HEAD | cut -d'/' -f3)
   local index=$(command git status --porcelain -b -s 2> /dev/null)
   local git_status=""
 
@@ -124,7 +128,9 @@ prompt_git_status() {
   git_status+="$GIT_STATUS_STASHED";
 
 
-  if [[ -n $git_status ]]; then
-    echo -n "%F{1}$git_status %f";
-  fi
+  # if [[ -n $git_status ]]; then
+  #   echo -n "%F{1}$git_status %f";
+  # fi
+  echo -n "%F{176}$GIT_BRANCH_ICON $brunch "
+  echo -n "%F{1}$git_status %f";
 }
