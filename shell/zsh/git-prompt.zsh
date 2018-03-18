@@ -10,8 +10,6 @@ GIT_AHEAD_ICON="⇡"
 GIT_BEHIND_ICON="⇣"
 GIT_DIVERGED_ICON="⇕"
 
-local magenta="%F{176}"
-
 
 # ahead_behind() {
 #   curr_branch=$(git rev-parse --abbrev-ref HEAD)
@@ -131,6 +129,7 @@ prompt_git_status() {
   # if [[ -n $git_status ]]; then
   #   echo -n "%F{1}$git_status %f";
   # fi
-  echo -n "%F{176}$GIT_BRANCH_ICON $brunch "
+  # echo -n "%F{176}$GIT_BRANCH_ICON $brunch "
+  echo -n "%F{176}$brunch "
   echo -n "%F{1}$git_status %f";
 }

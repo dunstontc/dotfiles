@@ -2,8 +2,8 @@
 # https://stackoverflow.com/questions/6159856/how-do-zsh-ansi-colour-codes-work
 
 setopt PROMPT_SUBST
-autoload -U add-zsh-hook
-precmd() { vcs_info }
+# autoload -U add-zsh-hook
+# precmd() { vcs_info }
 # precmd_functions+=(prompt_fn_one)
 source $DOTFILES/shell/zsh/git-prompt.zsh
 
@@ -20,6 +20,7 @@ local cyan="%F{43}"
 local magenta="%F{176}"
 
 local purp="%F{128}"
+local venv_yellow="%F{220}"
 # }}}
 
 # Prompt Character {{{
@@ -47,8 +48,15 @@ suffix() {
 # }}}
 
 # ==============================================================================
-# Spaceship Sections
+# Spaceship Sections --> https://github.com/denysdovhan/spaceship-prompt
 # ==============================================================================
+# Prompt Icons {{{
+if [[ $NERDFONT == "TRUE" ]]; then
+  test_symbol="PASS"
+else
+  test_symbol="FAIL"
+fi
+
 local git_symbol=""
 local ansible_symbol=""
 local dotnet_symbol=""
@@ -59,8 +67,11 @@ local jobs_symbol="♩"
 local node_symbol=""
 local npm_symbol="npm" # 
 local swift_symbol=""
+local venv_symbol="" # TODO: Which one of these works across nerdfonts?
+local pyenv_symbol="" # TODO: Which one of these works across nerdfonts?
+# }}}
 
-
+# ==============================================================================
 # If there are Go-specific files in current directory, or current directory is under the GOPATH {{{
 prompt_golang() {
   [[ -d Godeps || -f glide.yaml || -n *.go(#qN^/) || -f Gopkg.yml || -f Gopkg.lock || ( $GOPATH && $PWD =~ $GOPATH ) ]] || return
@@ -69,6 +80,7 @@ prompt_golang() {
   echo -n "$light_blue$golang_symbol v${go_version} "
 }  # }}}
 
+# ==============================================================================
 # Show icon if there's a working jobs in the background {{{
 prompt_jobs() {
   local jobs_amount=$( (jobs) | wc -l )
@@ -79,6 +91,7 @@ prompt_jobs() {
   echo -n "$yellow${jobs_symbol}${jobs_amount}%f "
 }  # }}}
 
+# ==============================================================================
 # Show current version of .NET SDK {{{
 prompt_dotnet() {
   # Show DOTNET status only for folders containing project.json, global.json, .csproj, .xproj or .sln files
@@ -91,6 +104,7 @@ prompt_dotnet() {
   echo -n "$purp${dotnet_symbol} ${dotnet_version}%f "
 }  # }}}
 
+# ==============================================================================
 # Show NPM version only when repository is a package {{{
 prompt_npm() {
   [[ -f package.json ]] || return
@@ -109,6 +123,7 @@ prompt_npm() {
 }
 # }}}
 
+# ==============================================================================
 # Show NODE status only for JS-specific folders {{{
 prompt_node() {
   [[ -f package.json || -d node_modules || -n *.js(#qN^/) ]] || return
@@ -119,6 +134,7 @@ prompt_node() {
 }
 # }}}
 
+# ==============================================================================
 # Show current Docker version and connected machine {{{
 prompt_docker() {
   # Show Docker status only for Docker-specific folders
@@ -136,13 +152,38 @@ prompt_docker() {
 }
 # }}}
 
+# ==============================================================================
+# Show current virtual environment (Python) {{{
+
+# The (A) expansion flag creates an array, the '=' activates word splitting
+spaceship_venv_generic_names="${(A)=spaceship_venv_generic_names=virtualenv venv .venv}"
+
+prompt_venv() {
+  # Check if the current directory running via Virtualenv
+  [ -n "$VIRTUAL_ENV" ] || return
+
+  local venv
+
+  if [[ "${spaceship_venv_generic_names[(i)$VIRTUAL_ENV:t]}" -le \
+        "${#spaceship_venv_generic_names}" ]]
+  then
+    venv="$VIRTUAL_ENV:h:t"
+  else
+    venv="$VIRTUAL_ENV:t"
+  fi
+
+  echo -n "$venv_yellow$venv_symbol $venv %f"
+}
+# }}}
+
 prompt_parts=(
   git_status
+  docker
+  venv
   dotnet
   golang
   node
   npm
-  docker
   jobs
 )
 
@@ -159,21 +200,25 @@ built_prompt() {
 }
 
 
-# *  -  Unstaged Change
-# +  -  Staged Change
-# %  -  Untracked Files
-# $  -  Stashed
-# <  -  Behind Upstream
-# >  -  Ahead of Upstream
-# <> -  D
-# =  -  No difference between upstream
-# $(__git_ps1 " (%s)")
-
 PS1=""
-PS1+="%B$blue%1~%f "
-PS1+='%B$(built_prompt)%b'
+PS1+="$blue%1~%f "
+PS1+="\$(built_prompt)"
 PS1+="$newline"
-PS1+="$green%B\$(suffix)%b%f "
+
+PS1+="["
+PS1+="$green%n%f"
+PS1+="@"
+PS1+="$green%m%f"
+PS1+="]"
+
+PS1+="$green\$(suffix)%f "
+
+# PS1=""
+# PS1+="%B$t_dark_blue%1~%f "
+# PS1+='%B$(built_prompt)%b'
+# PS1+="$newline"
+# PS1+="$t_green%B\$(suffix)%b%f$t_reset "
+
 
 
 # ==============================================================================

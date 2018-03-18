@@ -2,7 +2,7 @@
 freenode:
   - "#alpine-devel"
   - "#alpine-linux"
-  - "#archlinux"           # Support and general discussion about Arch Linux.
+  - "#archlinux"           # Support and general discussion about Arch Linux
   - "#archlinux-offtopic"  # Social
   - "#elasticsearch"
   - "#docker-compose"
@@ -11,3 +11,7 @@ freenode:
   - "#manjaro"
   - "#parabola"
   - "#tmux"
+
+"irc.mozilla.org":
+  - "#rust"                # A venue for general discussion about Rust
+  - "#rust-beginners"      # A good place to ask for help

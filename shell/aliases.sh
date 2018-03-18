@@ -48,6 +48,9 @@ alias npo="npm outdated"
 alias npr="npm run"
 alias npp="npm init -y"
 
+# pip
+alias pipls="pip list --format=columns"
+
 # Shortcuts
 alias keyring="nvim -c 'VimFiler -explorer ~/Projects/GitHub/KeyRing/keys'"
 alias dots='cd $DOTFILES'
@@ -57,9 +60,11 @@ alias dl="cd ~/Downloads"
 
 # Reload zsh
 alias zr="source ~/.zshrc"
+alias ,z="\$EDITOR ~/.zshrc"
 
 # Reload bash
 alias br="source ~/.bashrc"
+alias ,b="\$EDITOR ~/.bashrc"
 
 # Configure Neovim
 alias vimcept="nvim ~/.config/nvim/init.vim"
@@ -105,9 +110,12 @@ tree \
 -I 'node_modules|bower_components|cache|ignore|undo|dein'\
 "
 
-alias ,="nvim \$(find $DOTFILES -name \"*\" -not -path \"*/.git/**\" -not -path \"*/plugged/**\" -not -path \"*/ignore/**\" | fzf)"
+# alias fag="ag --nobreak --nonumbers --noheading . | fzf"
+
+alias ,="\$EDITOR \$(find \$DOTFILES -name \"*\" -not -path \"*/.git/**\" -not -path \"*/plugged/**\" -not -path \"*/ignore/**\" | fzf)"
+
 alias repos="cd \$(find \$(pwd) -type d -exec test -e '{}/.git' ';' -print -prune | fzf)"
-# alias fzag="ag --nobreak --nonumbers --noheading . | fzf"
+
 
 # alias ccat='ccat -G String="yellow" -G Keyword="blue" -G Comment="darkgray" -G Type="teal" -G Literal="blue" -G Punctuation="lightgray" -G Plaintext="lightgray" -G Tag="darkgray" -G HTMLTag="darkgray" -G HTMLAttrName="blue" -G HTMLAttrValue="yellow" -G Decimal="green"'
 alias kat='chroma -s paraiso-dark'

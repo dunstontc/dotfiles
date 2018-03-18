@@ -1,4 +1,8 @@
+# $DOTFILES/shell/exports.sh
+
 export TERM="xterm-256color"
+
+export NERDFONT="TRUE"
 
 export EDITOR="nvim"
 
@@ -12,7 +16,7 @@ export XDG_CACHE_HOME="$HOME/.cache"
 
 export GOPATH="$HOME/go"
 export GOBIN="$HOME/go/bin"
-export GOROOT="$(go env GOROOT)"
+export GOROOT="\$(go env GOROOT)"
 
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home"
 export JDK_16="/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home"
@@ -44,8 +48,15 @@ export DONE_FILE="$TODO_DIR/done.txt"
 # export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
 # export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
 # export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
+
+if ! command -v fd > /dev/null 2>&1; then
+  export FZF_DEFAULT_COMMAND='find -not -path "*/.git/**"'
+else
+  export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+fi
+
 # export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
-export FZF_DEFAULT_COMMAND='find -not -path "*/.git/**"'
+# export FZF_DEFAULT_COMMAND='find -not -path "*/.git/**"'
 export FZF_DEFAULT_OPTS='
   --height 40% --reverse --border
   --color=bg:#1e1e1e,fg:#505050,hl:#4ec9b0

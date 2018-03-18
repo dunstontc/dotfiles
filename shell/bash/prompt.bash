@@ -71,6 +71,7 @@ else
   CHAR='$'
 fi
 
+
 PS1="";
 PS1="\[${blue}\]\w/";
 # PS1+="\[${magenta}\] $(get_branch)";
@@ -83,6 +84,16 @@ PS1+="\[${hostStyle}\]\h";
 PS1+="\[${green}\]]";
 PS1+="\[${bright_white}\]$CHAR \[${reset}\]";
 export PS1;
+
+# Git PS1 Legend:
+# *  -  Unstaged Change
+# +  -  Staged Change
+# %  -  Untracked Files
+# $  -  Stashed
+# <  -  Behind Upstream
+# >  -  Ahead of Upstream
+# <> -  D
+# =  -  No difference between upstream
 
 
 PS2="\[${yellow}\]→ \[${reset}\]";
