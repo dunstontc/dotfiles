@@ -6,10 +6,6 @@
 "     \ \__/ /     \ \__\ \__\    \ \__\ \__\\ _\\ \_______\
 "      \|__|/       \|__|\|__|     \|__|\|__|\|__|\|_______|
 "
-if has('nvim')
-  finish
-endif
-
 " if has('win32')
 "   let $VIMHOME = expand('~\vimfiles')
 " else
@@ -50,7 +46,6 @@ Plug 'haya14busa/vim-edgemotion'
 Plug 'itchyny/vim-cursorword'        " Hilight all occurances of the word under the cursor
 Plug 'jszakmeister/vim-togglecursor' " Switch between block & horizontal line
 Plug 'vim-airline/vim-airline'
-" Colorful Things
 Plug 'dunstontc/vim-vscode-theme'
 " Utilities
 Plug 'pbrisbin/vim-mkdir'             " Make new directories along with new files
@@ -79,12 +74,12 @@ set encoding=utf-8 nobomb
 " set nocompatible               " Not compatible with vi
 set modeline                   " Respect modeline in files
 set modelines=5                " Well, in the first 5 lines of files
-set shell=/usr/local/bin/bash
+set shell=/bin/bash
 if has('mouse')
-    set mouse=a                " Enable mouse in all modes
+  set mouse=a                " Enable mouse in all modes
 endif
 if has('mouse_sgr')            " Way better mouse support
-    set ttymouse=sgr
+  set ttymouse=sgr
 endif
 set noerrorbells               " Disable error bells
 set novisualbell                 " ☝
@@ -111,14 +106,18 @@ set cursorline                 " Highlight current line
 set scrolloff=5                " Start scrolling x lines before horizontal border of window
 set sidescrolloff=5            " Start scrolling x columns before vertical border of window
 set sidescroll=5
-set showmatch                  " Highlight matching braces
-set noshowmode                 " Show the current mode
-if has('showcmd')
-  set noshowcmd                " Show the (partial) command as it’s being typed
-endif
-set winminheight=0             " Allow splits to be reduced to a single line
 set splitright                 " New split placed right
 set splitbelow                 " New split placed below
+set winminheight=0             " Allow splits to be reduced to a single line
+if exists('+showmatch')
+  set showmatch                  " Highlight matching braces
+endif
+if exists('+showmode')
+  set noshowmode               " Show the current mode
+endif
+if exists('+showcmd')
+  set noshowcmd                " Show the (partial) command as it’s being typed
+endif
 
 
 " ==== Theming ====
@@ -128,20 +127,21 @@ if &term =~# '(^screen|^tmux)'
 endif
 set background=dark
 colorscheme dark_plus
-" colorscheme gruvbox
 " set termguicolors
 " set t_Co=256
 highlight! Comment gui=italic cterm=italic
 
 " ==== Invisible Characters ====
-set listchars+=tab:→\
-set listchars+=eol:¬
-set listchars+=trail:·
-set listchars+=nbsp:·
-set listchars+=extends:❯
-set listchars+=precedes:❮
-set showbreak=↪
-set nolist
+if exists('listchars')
+  set listchars+=tab:→\
+  set listchars+=eol:¬
+  set listchars+=trail:·
+  set listchars+=nbsp:·
+  set listchars+=extends:❯
+  set listchars+=precedes:❮
+  set showbreak=↪
+  set nolist
+endif
 
 " For conceal markers.
 if has('conceal')

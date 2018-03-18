@@ -116,9 +116,9 @@ prompt_git_status() {
   git_status+="$GIT_STATUS_AHEAD";
   git_status+="$GIT_STATUS_BEHIND";
 
-  git_status+="$GIT_STATUS_ADDED";
 
   git_status+="$GIT_STATUS_MODIFIED";
+  git_status+="$GIT_STATUS_ADDED";
   git_status+="$GIT_STATUS_UNTRACKED";
   git_status+="$GIT_STATUS_DELETED";
   # git_status+="$GIT_STATUS_RENAMED";
