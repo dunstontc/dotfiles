@@ -4,11 +4,16 @@ export TERM="xterm-256color"
 
 export NERDFONT="TRUE"
 
-export EDITOR="nvim"
+if command -v nvim > /dev/null 2>&1; then
+  export EDITOR="nvim"
+  export MANPAGER="nvim -c 'set ft=man' -"
+elif command -v vim > /dev/null 2>&1; then
+  export EDITOR="vim"
+else
+  export EDITOR="vi"
+fi
 
-# export PAGER='less'
-
-export MANPAGER="nvim -c 'set ft=man' -"
+export PAGER="less"
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -16,7 +21,11 @@ export XDG_CACHE_HOME="$HOME/.cache"
 
 export GOPATH="$HOME/go"
 export GOBIN="$HOME/go/bin"
-export GOROOT="\$(go env GOROOT)"
+if command -v brew > /dev/null 2>&1; then
+  export GOROOT="$(brew --prefix golang)/libexec"
+# else
+  # export GOROOT="$(go env GOROOT)"
+fi
 
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home"
 export JDK_16="/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home"
