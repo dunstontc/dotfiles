@@ -125,13 +125,17 @@ if &term =~# '(^screen|^tmux)'
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 endif
-set background=dark
-colorscheme dark_plus
-" set termguicolors
+
 " set t_Co=256
+if has('nvim-0.1.5')        " True color in neovim wasn't added until 0.1.5
+  set termguicolors
+endif
+
+colorscheme dark_plus
+set background=dark
 highlight! Comment gui=italic cterm=italic
 
-" ==== Invisible Characters ====
+" ==== Formatting Characters ====
 if exists('listchars')
   set listchars+=tab:→\
   set listchars+=eol:¬
@@ -335,10 +339,10 @@ nnoremap <leader>tw :set list!<CR>
 
 
 " ==== deoplete ====
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#auto_completion_start_length = 1
-let g:deoplete#enable_smart_case = 1
-let g:deoplete#file#enable_buffer_path=1
+" let g:deoplete#enable_at_startup = 1
+" let g:deoplete#auto_completion_start_length = 1
+" let g:deoplete#enable_smart_case = 1
+" let g:deoplete#file#enable_buffer_path=1
 
 " call deoplete#custom#set('vim',           'mark', 'V ')
 " call deoplete#custom#set('omni',          'mark', '⌾ ')
@@ -351,13 +355,13 @@ let g:deoplete#file#enable_buffer_path=1
 " call deoplete#custom#set('ultisnips',     'mark', '<>')
 " call deoplete#custom#set('neosnippet',    'mark', '<>')
 " call deoplete#custom#set('necosyntax',    'mark', 'ns')
-call deoplete#custom#set('tmux-complete', 'mark', '⧉ ')
+" call deoplete#custom#set('tmux-complete', 'mark', '⧉ ')
 
-call deoplete#custom#set('jedi', 'matchers', ['matcher_fuzzy'])
-call deoplete#custom#set('necovim', 'matchers', ['matcher_fuzzy'])
-call deoplete#custom#set('ultisnips', 'matchers', ['matcher_fuzzy'])
-call deoplete#custom#set('necosyntax', 'matchers', ['matcher_fuzzy'])
-call deoplete#custom#set('tmux-complete', 'matchers', ['matcher_fuzzy'])
+" call deoplete#custom#set('jedi', 'matchers', ['matcher_fuzzy'])
+" call deoplete#custom#set('necovim', 'matchers', ['matcher_fuzzy'])
+" call deoplete#custom#set('ultisnips', 'matchers', ['matcher_fuzzy'])
+" call deoplete#custom#set('necosyntax', 'matchers', ['matcher_fuzzy'])
+" call deoplete#custom#set('tmux-complete', 'matchers', ['matcher_fuzzy'])
 
 
 " ==== Neosnippet ====
@@ -365,15 +369,15 @@ call deoplete#custom#set('tmux-complete', 'matchers', ['matcher_fuzzy'])
 " let g:neosnippet#enable_snipmate_compatibility = 1
 " let g:neosnippet#snippets_directory='~/.vim/plugged/vim-snippets/snippets'
 
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+" imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 " smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 " xmap <C-k>     <Plug>(neosnippet_expand_target)
-imap <expr><TAB>
-  \ pumvisible() ? "\<C-n>" :
-  \   neosnippet#expandable_or_jumpable() ?
-  \     "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-  \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+" imap <expr><TAB>
+"   \ pumvisible() ? "\<C-n>" :
+"   \   neosnippet#expandable_or_jumpable() ?
+"   \     "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+" smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+"   \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
 
 " ==== easy-align ====
@@ -400,4 +404,5 @@ let g:togglecursor_disable_default_init = 1
 
 " ==== vim-airline ====
 let g:airline_powerline_fonts = 0
+let g:airline_theme='dark_plus'
 

@@ -15,6 +15,7 @@ local red="%F{167}"
 local yellow="%F{179}"
 local green="%F{65}"
 local blue="%F{75}"
+local grey="%F{8}"
 local light_blue="%F{117}"
 local cyan="%F{43}"
 local magenta="%F{176}"
@@ -201,23 +202,19 @@ built_prompt() {
 
 
 PS1=""
+
 PS1+="$blue%1~%f "
 PS1+="\$(built_prompt)"
 PS1+="$newline"
 
-PS1+="["
+PS1+="%F{8}[%f"
 PS1+="$green%n%f"
-PS1+="@"
+PS1+="$grey@%f"
 PS1+="$green%m%f"
-PS1+="]"
+PS1+="$grey]%f"
 
 PS1+="$green\$(suffix)%f "
 
-# PS1=""
-# PS1+="%B$t_dark_blue%1~%f "
-# PS1+='%B$(built_prompt)%b'
-# PS1+="$newline"
-# PS1+="$t_green%B\$(suffix)%b%f$t_reset "
 
 
 
