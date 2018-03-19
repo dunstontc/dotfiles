@@ -146,9 +146,12 @@ bindkey -e
 # make <S-Tab> work *correctly*
 bindkey '^[[Z' reverse-menu-complete
 
-# bindkey '[F' forward-word
-# bindkey '[C' forward-word
-# bindkey '[D' backward-word
+bindkey '[C' forward-word
+bindkey '[D' backward-word
+bindkey "^[[1;3C" forward-word   # Ubuntu
+bindkey "^[[1;3D" backward-word  # Ubuntu
+bindkey "^[[1;5C" forward-word   # CentOS 7
+bindkey "^[[1;5D" backward-word  # CentOS 7
 
 # History Searching
 autoload history-search-end
@@ -157,9 +160,6 @@ zle -N history-beginning-search-forward-end history-search-end
 
 bindkey '^[[A' history-beginning-search-backward-end
 bindkey '^[[B' history-beginning-search-forward-end
-
-bindkey "^[[1;3C" forward-word
-bindkey "^[[1;3D" backward-word
 
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
