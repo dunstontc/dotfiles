@@ -3,3 +3,4 @@
 (D) 2017-12-17 Unicode completion for NerdFonts +vim
 (A) 2018-01-19 Speed up shell (@zsh) startup. +dotfiles
 (B) 2018-03-18 Handle detatched-head in git prompt.
+(B) 2018-03-19 Clipcopy scripts.

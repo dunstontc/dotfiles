@@ -37,6 +37,7 @@
 
 [alias]
 	aliases = "config --get-regexp alias"
+	abort = "reset --hard origin/master"
 	ca = "!git add -A && git commit -av"
 	c = "clone --recursive"
 	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
