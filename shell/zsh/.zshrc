@@ -169,8 +169,6 @@ WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_COMPLETION_TRIGGER='//'
 
-# # zplug "zsh-users/zsh-completions", from:github, as:plugin
-
 source ~/.zsh/plugins/fzf-marks/fzf-marks.plugin.zsh
 source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh

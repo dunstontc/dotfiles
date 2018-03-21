@@ -87,6 +87,8 @@ export TCD_BASH_COMPLETION_DIR="/usr/local/etc/bash_completion.d"
 
 export TEMPLE_DIR="$XDG_CONFIG_HOME/temple/templates"
 
+export CODE_FOLDER="/Users/clay/Library/Application\ Support/Code\ -\ Insiders"
+
 
 # export RANGER_LOAD_DEFAULT_RC=FALSE
 # export W3MIMGDISPLAY_PATH=$HOME/.iterm2/bin/imgcat

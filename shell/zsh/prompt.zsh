@@ -40,6 +40,10 @@ suffix() {
     local char='$'
   fi
 
+  if [[ "$IN_VSCODE" == "1" ]]; then
+    local char=' '
+  fi
+
   #  Mix it all up
   for (( i = 0; i < $lvl; i++ )); do
     suffix+=$char;
@@ -53,23 +57,23 @@ suffix() {
 # ==============================================================================
 # Prompt Icons {{{
 if [[ $NERDFONT == "TRUE" ]]; then
-  test_symbol="PASS"
+  local jobs_symbol="♩"
 else
-  test_symbol="FAIL"
+  local jobs_symbol=""
 fi
 
 local git_symbol=""
 local ansible_symbol=""
 local dotnet_symbol=""
 # local dotnet_symbol=".NET"
+# local docker_symbol=""
 local docker_symbol=""
 local golang_symbol=""
-local jobs_symbol="♩"
 local node_symbol=""
-local npm_symbol="npm" # 
+local npm_symbol="" # 
+# local npm_symbol="" # 
 local swift_symbol=""
-local venv_symbol="" # TODO: Which one of these works across nerdfonts?
-local pyenv_symbol="" # TODO: Which one of these works across nerdfonts?
+local python_symbol=""
 # }}}
 
 # ==============================================================================
@@ -78,7 +82,7 @@ prompt_golang() {
   [[ -d Godeps || -f glide.yaml || -n *.go(#qN^/) || -f Gopkg.yml || -f Gopkg.lock || ( $GOPATH && $PWD =~ $GOPATH ) ]] || return
 
   local go_version=$(go version | grep --colour=never -oE '[[:digit:]].[[:digit:]]')
-  echo -n "$light_blue$golang_symbol v${go_version} "
+  echo -n "${light_blue}${golang_symbol} v${go_version} "
 }  # }}}
 
 # ==============================================================================
@@ -89,7 +93,7 @@ prompt_jobs() {
   [[ $jobs_amount -gt 0 ]] || return
   [[ $jobs_amount -eq 1 ]] && jobs_amount=''
 
-  echo -n "$yellow${jobs_symbol}${jobs_amount}%f "
+  echo -n "${yellow}${jobs_symbol}${jobs_amount}%f "
 }  # }}}
 
 # ==============================================================================
@@ -98,11 +102,9 @@ prompt_dotnet() {
   # Show DOTNET status only for folders containing project.json, global.json, .csproj, .xproj or .sln files
   [[ -f project.json || -f global.json || -n *.csproj(#qN^/) || -n *.xproj(#qN^/) || -n *.sln(#qN^/) ]] || return
 
-  # dotnet-cli automatically handles SDK pinning (specified in a global.json file)
-  # therefore, this already returns the expected version for the current directory
   local dotnet_version=$(dotnet --version 2>/dev/null)
 
-  echo -n "$purp${dotnet_symbol} ${dotnet_version}%f "
+  echo -n "${purp}${dotnet_symbol} ${dotnet_version}%f "
 }  # }}}
 
 # ==============================================================================
@@ -114,13 +116,13 @@ prompt_npm() {
   local package_version=$(grep -E '"version": "v?([0-9]+\.){1,}' package.json | cut -d\" -f4 2> /dev/null)
 
   # Handle version not found
-  if [ ! "$package_version" ]; then
-    package_version="⚠"
-  else
-    package_version="v${package_version}"
-  fi
+  # if [ ! "$package_version" ]; then
+  #   package_version="⚠"
+  # else
+  #   package_version="v${package_version}"
+  # fi
 
-  echo -n "$red${npm_symbol} ${package_version}%f "
+  echo -n "%F{226}${npm_symbol} ${package_version}%f "
 }
 # }}}
 
@@ -131,7 +133,7 @@ prompt_node() {
 
   local node_version=$(node -v 2>/dev/null)
 
-  echo -n "$green${node_symbol} ${node_version}%f "
+  echo -n "${green}${node_symbol} ${node_version}%f "
 }
 # }}}
 
@@ -149,7 +151,7 @@ prompt_docker() {
     docker_version+=" via ($DOCKER_MACHINE_NAME)"
   fi
 
-    echo -n "$light_blue${docker_symbol} ${docker_version}%f "
+    echo -n "${light_blue}${docker_symbol} ${docker_version}%f "
 }
 # }}}
 
@@ -173,7 +175,7 @@ prompt_venv() {
     venv="$VIRTUAL_ENV:t"
   fi
 
-  echo -n "$venv_yellow$venv_symbol $venv %f"
+  echo -n "${venv_yellow}${python_symbol} ${venv} %f"
 }
 # }}}
 
@@ -183,7 +185,7 @@ prompt_parts=(
   venv
   dotnet
   golang
-  node
+  # node
   npm
   jobs
 )

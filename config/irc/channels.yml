@@ -11,6 +11,7 @@ freenode:
   - "#manjaro"
   - "#parabola"
   - "#tmux"
+  - "#vault-tool"
 
 "irc.mozilla.org":
   - "#rust"                # A venue for general discussion about Rust

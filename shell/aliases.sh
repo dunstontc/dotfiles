@@ -67,10 +67,12 @@ alias br="source ~/.bashrc"
 alias ,b="\$EDITOR ~/.bashrc"
 
 # Configure Neovim
-alias vimcept="nvim ~/.config/nvim/init.vim"
+alias ,v="\$EDITOR ~/.vimrc"
+alias ,n="\$EDITOR ~/.config/nvim/init.vim"
+
 
 # Configure tmux
-alias remux="nvim $DOTFILES/config/.tmux.conf"
+alias remux="\$EDITOR \$DOTFILES/config/.tmux.conf"
 
 # Print each PATH entry on a separate line
 alias list_path='echo -e ${PATH//:/\\n}'
@@ -81,7 +83,7 @@ alias fshow="defaults write com.apple.finder AppleShowAllFiles -bool true && kil
 alias fhide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 
 # Copy cwd to the clipboard
-alias hdp="pwd | pbcopy"
+# alias hdp="pwd | pbcopy"
 
 # Get our IP
 alias ips="ifconfig -a | perl -nle\"/(\d+\.\d+\.\d+\.\d+)/ && print $1\""
