@@ -12,6 +12,7 @@ local nbsp=" "
 local newline='
 '
 local red="%F{167}"
+local orange="%F{173}"
 local yellow="%F{179}"
 local green="%F{65}"
 local blue="%F{75}"
@@ -57,23 +58,27 @@ suffix() {
 # ==============================================================================
 # Prompt Icons {{{
 if [[ $NERDFONT == "TRUE" ]]; then
-  local jobs_symbol="♩"
-else
+  local docker_symbol=""
+  local dotnet_symbol=""
+  local git_symbol=""
+  local golang_symbol=""
   local jobs_symbol=""
+  local node_symbol=""
+  local npm_symbol="" #   ⬢  ﯶ 
+  local python_symbol=""
+else
+  local docker_symbol=""
+  local dotnet_symbol="NET"
+  local git_symbol=""
+  local golang_symbol="GO"
+  local jobs_symbol="♩"
+  local node_symbol="JS"
+  local npm_symbol="⬢" #  ⬢
+  local python_symbol="PY"
 fi
 
-local git_symbol=""
 local ansible_symbol=""
-local dotnet_symbol=""
-# local dotnet_symbol=".NET"
-# local docker_symbol=""
-local docker_symbol=""
-local golang_symbol=""
-local node_symbol=""
-local npm_symbol="" # 
-# local npm_symbol="" # 
 local swift_symbol=""
-local python_symbol=""
 # }}}
 
 # ==============================================================================
@@ -115,14 +120,7 @@ prompt_npm() {
   # Grep and cut out package version
   local package_version=$(grep -E '"version": "v?([0-9]+\.){1,}' package.json | cut -d\" -f4 2> /dev/null)
 
-  # Handle version not found
-  # if [ ! "$package_version" ]; then
-  #   package_version="⚠"
-  # else
-  #   package_version="v${package_version}"
-  # fi
-
-  echo -n "%F{226}${npm_symbol} ${package_version}%f "
+  echo -n "${orange}${npm_symbol} ${package_version}%f "
 }
 # }}}
 

@@ -1,4 +1,11 @@
-GIT_BRANCH_ICON=""
+# if [[ $NERDFONT == "TRUE" ]]; then
+#   GIT_BRANCH_ICON=" "  # 
+# else
+#   GIT_BRANCH_ICON=""
+# fi
+GIT_BRANCH_ICON=""
+
+
 GIT_UNTRACKED_ICON="?"
 GIT_ADDED_ICON="+"  # FIXME: staged files
 GIT_MODIFIED_ICON="!"
@@ -105,8 +112,8 @@ prompt_git_status() {
   if [[ "$is_ahead" == true && "$is_behind" == true ]]; then
     GIT_STATUS_DIVERGED="$GIT_DIVERGED_ICON"
   else
-    [[ "$is_ahead" == true ]] && GIT_STATUS_AHEAD="$GIT_AHEAD_ICON ";
-    [[ "$is_behind" == true ]] && GIT_STATUS_BEHIND="$GIT_BEHIND_ICON ";
+    [[ "$is_ahead" == true ]] && GIT_STATUS_AHEAD="$GIT_AHEAD_ICON";
+    [[ "$is_behind" == true ]] && GIT_STATUS_BEHIND="$GIT_BEHIND_ICON";
     # GIT_STATUS_ADDED="";
   fi
 
@@ -126,10 +133,9 @@ prompt_git_status() {
   git_status+="$GIT_STATUS_STASHED";
 
 
-  # if [[ -n $git_status ]]; then
-  #   echo -n "%F{1}$git_status %f";
-  # fi
-  # echo -n "%F{176}$GIT_BRANCH_ICON $brunch "
-  echo -n "%F{176}$brunch "
-  echo -n "%F{1}$git_status %f";
+  echo -n "%F{176}${GIT_BRANCH_ICON}${brunch}";
+  if [[ -n $git_status ]]; then
+    echo -n "%F{1}[${git_status}]%f";
+  fi
+  echo -n " ";
 }

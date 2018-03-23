@@ -29,7 +29,6 @@ module.exports = {
       // 'imports': 'always-multiline',
       // 'exports': 'always-multiline',
       // 'functions': 'ignore',
-      // }
     ],
     'computed-property-spacing': [ 'error', 'never' ],
     'curly': 'error',

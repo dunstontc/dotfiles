@@ -1,4 +1,9 @@
 # Be careful
+
+# Thanks brew
+# alias python="python2.7"
+# alias python3=""
+
 alias mr='rmtrash'
 alias mrd='rmdirtrash'
 alias cp='cp -iv'

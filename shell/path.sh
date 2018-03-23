@@ -10,13 +10,11 @@ PATH="/usr/local/mysql/bin:$PATH"                      # MySQL
 PATH="/usr/local/bin:$PATH"
 PATH="node_modules/.bin:vendor/bin:$PATH"              # use local packages before global
 PATH="$HOME/.node_global/bin:$PATH"                    # npm installed -g
-
 if command -v brew > /dev/null 2>&1; then
   PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH" # GNU Coreutils
 else
   PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"   # GNU Coreutils
 fi
-
 PATH="/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin:$PATH"
 
 export PATH

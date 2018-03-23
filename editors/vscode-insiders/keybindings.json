@@ -44,17 +44,33 @@
       "key": "ctrl+q",
       "command": "-workbench.action.quickOpenNavigateNextInViewPicker"
   },
-  // {
-  //  "key": "shift+cmd+[",
-  //  "command": "workbench.action.compareEditor.nextChange"
-  // }
+  {
+    "key": "cmd+k cmd+m",
+    "command": "-workbench.extensions.action.showRecommendedKeymapExtensions"
+  },
+  // ===========================================================================
+  // CMD+K
+  // ===========================================================================
+  {
+    "key": "cmd+k cmd+i",  // Icons
+    "command": "workbench.action.selectIconTheme"
+  },
+  {
+    "key": "cmd+k cmd+p",  // Pretty handy...
+    "command": "editor.action.inspectTMScopes"
+  },
+  {
+    "key": "cmd+k cmd+l",  // Language
+    "command": "workbench.action.editor.changeLanguageMode",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "cmd+k cmd+m",  // Mappings
+    "command": "workbench.action.openGlobalKeybindingsFile"
+  },
   // ===========================================================================
   // Native
   // ===========================================================================
-  // {
-  //   "key": "alt+cmd+i",
-  //   "command":
-  // },
   {
       "key": "ctrl+tab",
       "command": "workbench.action.nextEditor"
@@ -70,10 +86,6 @@
   {
       "key": "ctrl+cmd+e",
       "command": "workbench.files.action.focusFilesExplorer"
-  },
-  {
-      "key": "cmd+k cmd+i",
-      "command": "workbench.action.selectIconTheme"
   },
   {
       "key": "cmd+enter",
@@ -170,40 +182,8 @@
       "command": "terminalTabs.createNamedTerminal"
   },
   {
-      "key": "cmd+1",
-      "command": "terminalTabs.showTerminal1"
-  },
-  {
-      "key": "cmd+2",
-      "command": "terminalTabs.showTerminal2"
-  },
-  {
-      "key": "cmd+3",
-      "command": "terminalTabs.showTerminal3"
-  },
-  {
-      "key": "cmd+4",
-      "command": "terminalTabs.showTerminal4"
-  },
-  {
-      "key": "ctrl+shift+`",
-      "command": "-workbench.action.terminal.new"
-  },
-  {
-      "key": "ctrl+`",
-      "command": "-workbench.action.terminal.toggleTerminal"
-  },
-  {
       "key": "shift+cmd+c",
       "command": "-workbench.action.terminal.openNativeConsole",
       "when": "!terminalFocus"
-},
-{
-    "key": "cmd+n",
-    "command": "extension.advancedNewFile"
-},
-{
-    "key": "alt+cmd+n",
-    "command": "-extension.advancedNewFile"
-}
+  },
 ]
