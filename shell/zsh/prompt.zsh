@@ -86,7 +86,7 @@ local swift_symbol=""
 prompt_golang() {
   [[ -d Godeps || -f glide.yaml || -n *.go(#qN^/) || -f Gopkg.yml || -f Gopkg.lock || ( $GOPATH && $PWD =~ $GOPATH ) ]] || return
 
-  local go_version=$(go version | grep --colour=never -oE '[[:digit:]].[[:digit:]]')
+  local go_version=$(go version | grep --colour=never -oE '[[:digit:]].([[:digit:]])+')
   echo -n "${light_blue}${golang_symbol} v${go_version} "
 }  # }}}
 

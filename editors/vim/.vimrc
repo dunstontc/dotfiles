@@ -30,6 +30,7 @@ Plug 'tpope/vim-repeat'              " Repeat plugin actions with '.'
 Plug 'tpope/vim-surround'            " Alter surrounding punctuation
 Plug 'tpope/vim-fugitive'            " Git interface
 Plug 'tomtom/tcomment_vim'           " Comments
+Plug 'tpope/vim-commentary'          " Comments
 Plug 'raimondi/delimitmate'          " Automatically close delimiters
 Plug 'junegunn/vim-peekaboo'         " Visual interface for registers
 Plug 'junegunn/vim-easy-align'       " Easily align all of the things
@@ -46,12 +47,12 @@ Plug 'haya14busa/vim-edgemotion'
 Plug 'itchyny/vim-cursorword'        " Hilight all occurances of the word under the cursor
 Plug 'jszakmeister/vim-togglecursor' " Switch between block & horizontal line
 Plug 'vim-airline/vim-airline'
-Plug 'dunstontc/vim-vscode-theme'
+" Plug 'dunstontc/vim-vscode-theme'
+Plug '/Users/clay/Projects/GitHub/vim-vscode-theme'
 " Utilities
 Plug 'pbrisbin/vim-mkdir'             " Make new directories along with new files
 Plug 'sgur/vim-editorconfig'          " .editorconfig support
 Plug 'ciaranm/securemodelines'        " Better safe than sorry
-Plug 'dietsche/vim-lastplace'         " Persist cursor position
 Plug 'christoomey/vim-tmux-navigator' " Move smoothly between vim & tmux
 " Enhancements
 Plug 'roxma/nvim-yarp'                " Make deoplete play nice with Vim8
@@ -101,7 +102,7 @@ set notitle                    " Show the filename in the window titlebar
 set nowrap                     " Do not wrap lines
 set ruler                      " Show the cursor line
 set number                     " Enable line numbers
-set relativenumber             " Enable relative line numbers
+" set relativenumber             " Enable relative line numbers
 set cursorline                 " Highlight current line
 set scrolloff=5                " Start scrolling x lines before horizontal border of window
 set sidescrolloff=5            " Start scrolling x columns before vertical border of window
@@ -121,10 +122,10 @@ endif
 
 
 " ==== Theming ====
-if &term =~# '(^screen|^tmux)'
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-endif
+" if &term =~# '(^screen|^tmux)'
+"   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+"   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+" endif
 
 " set t_Co=256
 if has('nvim-0.1.5')        " True color in neovim wasn't added until 0.1.5
@@ -241,11 +242,12 @@ vnoremap ; :
 " nnoremap / /\v
 " vnoremap / /\v
 
+
 " Use ctrl-q instead of ⎋ , stay on the home row
-inoremap <C-Q> <C-c>
-nnoremap <C-Q> <Nop>
-vnoremap <C-Q> <C-c>
-cnoremap <C-Q> <C-c>
+inoremap <C-q> <C-c>
+nnoremap <C-q> <Nop>
+vnoremap <C-q> <C-c>
+cnoremap <C-q> <C-c>
 
 
 " Small edits in Normal mode
@@ -258,12 +260,17 @@ nnoremap q :q<CR>
 noremap Q @q
 " Clear highlights & commands
 nnoremap <silent>\ :noh<CR>:echo<CR>
+" Write Quick
+nnoremap fj :w<CR>
+inoremap fj <esc>:w<CR>i
 " gtfo
-nnoremap fj :x<CR>
-inoremap fj <esc>:x<CR>
+nnoremap jf :x<CR>
+inoremap jf <esc>:x<CR>
+
 
 noremap <S-H> 0
 noremap <S-L> $
+nnoremap <S-U> <C-R>
 
 " Yank into the void
 noremap d "_d
@@ -277,6 +284,7 @@ nnoremap <S-y> y$
 nnoremap yy Vy
 
 
+
 " =============================================================================
 " ==== Leader Maps ====
 " =============================================================================
@@ -287,6 +295,31 @@ let g:mapleader="\<Space>"
 nnoremap <leader><leader> <esc>
 
 
+" left  -- Close Folds
+nnoremap <leader><Left> zc
+" right -- Open  Folds
+nnoremap <leader><Right> zo
+nnoremap <leader><Up> :bprev<CR>
+nnoremap <leader><Down> :bnext<CR>
+
+
+" ==============================================================================
+"  === b -- Buffers=== {{{
+" ==============================================================================
+" l -- List Buffers
+nnoremap <leader>b :Denite buffer -mode=normal<CR>
+" Next Buffer
+nnoremap <leader>bn :bn<CR>
+" Previous Buffer
+nnoremap <leader>bp :bp<CR>
+" Allocate all buffers into Horizontal Splits
+nnoremap <leader>bh :ball<CR>
+" Allocate all buffers into Vertical Splits
+nnoremap <leader>bv :vert ball<CR>
+" Done with a buffer
+nnoremap <leader>bd :bd<CR>
+" Close a buffer, leave it on the list
+nnoremap <leader>bq :q<CR>
 " ==== e -- Edit ====
 nnoremap <silent> <leader>ev :vsplit $MYVIMRC<CR>
 nnoremap <silent> <leader>e<S-V> :edit $MYVIMRC<CR>
@@ -300,10 +333,6 @@ nnoremap <leader>pc :PlugClean<CR>
 
 " ==== r -- Reload ====
 nnoremap <silent> <leader><S-s> :source $MYVIMRC<CR>
-
-
-" ==== u -- Redo (un-undo...)
-nnoremap <leader>u :redo<CR>
 
 
 " ==== t -- Toggle ====
@@ -388,7 +417,7 @@ nmap ga <Plug>(EasyAlign)
 " ==== TComment ====
 let g:tcommentMaps=0
 let g:tcommentMapLeader1=''
-let g:tcommentMapLeader2=''
+" " let g:tcommentMapLeader2=''
 let g:tcommentMapLeaderCommentAnyway=''
 let g:tcommentTextObjectInlineComment=''
 

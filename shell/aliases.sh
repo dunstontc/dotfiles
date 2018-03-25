@@ -88,7 +88,7 @@ alias fshow="defaults write com.apple.finder AppleShowAllFiles -bool true && kil
 alias fhide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 
 # Copy cwd to the clipboard
-# alias hdp="pwd | pbcopy"
+alias hdp="pwd | pbcopy"
 
 # Get our IP
 alias ips="ifconfig -a | perl -nle\"/(\d+\.\d+\.\d+\.\d+)/ && print $1\""
@@ -102,6 +102,8 @@ alias gcom="git checkout master"
 alias gcod="git checkout dev"
 alias gp="git push"
 alias gs="git status -s"
+alias gb="git branch -a"
+
 alias repoz="find \$(pwd) -type d -exec test -e '{}/.git' ';' -print -prune"
 
 # Kill all the tabs in Chrome to free up memory
