@@ -1,4 +1,4 @@
-let snippets = {
+const snippets = {
   javascript: [
     'Divider': {
       "prefix": "div",
@@ -45,7 +45,22 @@ let snippets = {
       "description": "Vuex store boilerplate"
     },
   ],
-  markdown: [
-
-  ],
+  markdown: [],
+  json: {
+    'key:value,': {
+      prefix: "|,",
+      body: "\"${1:Key}\": \"${2:Value}\",$0",
+      description: "\"key\": \"value\",",
+    },
+    'JSON Object': {
+      prefix: "||,",
+      body: "\"${1:Key}\": {\n  $0\n},",
+      description: "JSON object"
+    },
+    'JSON Array,': {
+      prefix: "|||,",
+      body: "\"${1:Key}\": [\n  $0\n],",
+      description: "JSON array,"
+    }
+  }
 };

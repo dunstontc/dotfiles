@@ -92,7 +92,6 @@
     titleBar: "custom"
   "dark-plus-syntax": {}
   editor:
-    fontSize: 10
     preferredLineLength: 100000000000
     scrollPastEnd: true
     scrollSensitivity: 75
@@ -154,6 +153,8 @@
         brightRed: "#be5046"
         brightWhite: "#5c6370"
         brightYellow: "#e5c07b"
+    core:
+      shellEnv: "IN_ATOM=1"
     iconColors:
       blue: "#61afef"
       cyan: "#56b6c2"
@@ -163,7 +164,7 @@
       red: "#be5046"
       yellow: "#e5c07b"
     style:
-      fontFamily: "SpaceMono Nerd Font Mono"
+      fontFamily: "UbuntuMono Nerd Font"
       theme: "one-dark"
     toggles:
       cursorBlink: false
