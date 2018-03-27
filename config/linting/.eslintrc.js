@@ -79,7 +79,7 @@ module.exports = {
         },
       },
     ],
-    'quotes': [ 'warn', 'single' ],
+    // 'quotes': [ 'warn', 'single' ],
     'semi': [ 'error', 'always' ],
     // 'space-in-parens': [
     //   'error', 'never', {
@@ -96,30 +96,30 @@ module.exports = {
     }],
     'prefer-const': 1,
     'complexity': [ 1, 5 ],
-    'indent': [
-      'error', 2,
-      {
-        'VariableDeclarator': {
-          'var': 2,
-          'let': 2,
-          'const': 3,
-        },
-        'FunctionDeclaration': {
-          'parameters': 'first',
-        },
-        'FunctionExpression': {
-          'parameters': 'first',
-        },
-        'CallExpression': {
-          'arguments': 'first',
-        },
-        'ArrayExpression': 'first',
-        'ObjectExpression': 1,
-        'ImportDeclaration': 'first',
-        'flatTernaryExpressions': true,
-        'ignoreComments': true,
-      },
-    ],
+    // 'indent': [
+    //   'error', 2,
+    //   {
+    //     'VariableDeclarator': {
+    //       'var': 2,
+    //       'let': 2,
+    //       'const': 3,
+    //     },
+    //     'FunctionDeclaration': {
+    //       'parameters': 'first',
+    //     },
+    //     'FunctionExpression': {
+    //       'parameters': 'first',
+    //     },
+    //     'CallExpression': {
+    //       'arguments': 'first',
+    //     },
+    //     'ArrayExpression': 'first',
+    //     'ObjectExpression': 1,
+    //     'ImportDeclaration': 'first',
+    //     'flatTernaryExpressions': true,
+    //     'ignoreComments': true,
+    //   },
+    // ],
   },
 };
 
