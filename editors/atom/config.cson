@@ -54,7 +54,6 @@
       "autosave"
       "wrap-guide"
       "whitespace"
-      "welcome"
       "block-cursor"
       "background-tips"
       "flex-tool-bar"
@@ -84,7 +83,7 @@
     ]
     projectHome: "/Users/ClayDunston/Projects/atom/"
     reopenProjectMenuCount: 5
-    telemetryConsent: "limited"
+    telemetryConsent: "no"
     themes: [
       "one-dark-ui"
       "dark-plus-syntax"
