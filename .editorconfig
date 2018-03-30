@@ -17,23 +17,23 @@ trim_trailing_whitespace = true
 [*.{md,csv,tsv}]
 trim_trailing_whitespace = false
 
-[*.{go,tsv}]
+[*.{go,swift,tsv},Makefile]
 indent_style = tab
 
 [*.{bash,html,js,json,lua,md,rb,sh,vim}]
 indent_size = 2
-indent_style = space
+# indent_style = space
 
 [*.{c,cs,jar,java,kt,php,pl,py,rs,swift}]
 indent_size = 4
-indent_style = space
+# indent_style = space
 
 [*.go]
 indent_size = 8
-indent_style = tab
+# indent_style = tab
 
-[{Makefile,**.mk}]
-indent_style = tab
+# [Makefile]
+# indent_style = tab
 
 # [*.{rb,sh,bash,zsh}]
 # indent_size = 4

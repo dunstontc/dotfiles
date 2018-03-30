@@ -3,6 +3,7 @@
 export TERM="xterm-256color"
 
 export NERDFONT="TRUE"
+export RP="TRUE"
 
 if command -v nvim > /dev/null 2>&1; then
   export EDITOR="nvim"
@@ -21,10 +22,12 @@ export XDG_CACHE_HOME="$HOME/.cache"
 
 export GOPATH="$HOME/go"
 export GOBIN="$HOME/go/bin"
-if command -v brew > /dev/null 2>&1; then
-  export GOROOT="$(brew --prefix golang)/libexec"
-# else
-  # export GOROOT="$(go env GOROOT)"
+
+if [ "$(uname -a)" == "linux" ]; then
+  GOROOT="$(brew --prefix golang)/libexec";
+  export GOROOT;
+else
+  export GOROOT="/usr/local/go/bin";
 fi
 
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home"
