@@ -6,8 +6,8 @@
   "editor.cursorBlinking": "solid",
   "editor.cursorStyle"   : "block-outline",
   "editor.dragAndDrop"   : false,
-  "editor.fontFamily"   : "Fira Code",
-  // "editor.fontFamily"   : "Operator Mono",
+  "editor.fontFamily"   : "FuraCode Nerd Font",
+  // "editor.fontFamily"   : "UbuntuMono Nerd Font",
   // "editor.fontFamily"   : "Monaco",
   "editor.fontSize"     : 11,
   "editor.letterSpacing": 0,
@@ -16,7 +16,13 @@
   "editor.mouseWheelScrollSensitivity": 1.1,
   "editor.renderIndentGuides"         : true,
   "editor.snippetSuggestions"         : "top",
-  "emmet.excludeLanguages"         : [],
+  "emmet.excludeLanguages"         : [
+    "javascript",
+    "javascriptreact"
+  ],
+  "emmet.includeLanguages": {
+    "gohtml": "html",
+  },
   "emmet.extensionsPath"           : "",
   "emmet.preferences"              : {},
   "emmet.showSuggestionsAsSnippets": true,
@@ -53,11 +59,13 @@
       ".viminfo": "shellscript",
       ".nvimrc": "viml",
       "ractive": "javascript",
-      "*.html": "vue-html",
+      // "*.html": "vue-html",
       "*.jinja": "html",
       "*.jinja2": "html",
       "*.blade": "blade",
-      ".postcssrc": "jsonc"
+      ".postcssrc": "jsonc",
+      "Gopkg.lock": "toml",
+      "*.JSON-tmLanguage": "json",
   },
   "[markdown]": {
       "editor.wordWrap"        : "off",
@@ -69,11 +77,14 @@
   "vsicons.dontShowConfigManuallyChangedMessage": true,
   "workbench.iconTheme": "file-icons",
   "go.formatTool": "gofmt",
+  "go.buildOnSave": "off",
+  "go.useLanguageServer": true,
   "terminal.integrated.env.osx":     {"IN_VSCODE": "1"},
   "terminal.integrated.env.linux":   {"IN_VSCODE": "1"},
   "terminal.integrated.env.windows": {"IN_VSCODE": "1"},
   // === Vim ===
   "vim.disableExtension": false,
+  "vim.showcmd": true,
   "vim.useCtrlKeys": true,
   "vim.easymotion":  true,
   "vim.incsearch":   true,
@@ -89,6 +100,16 @@
     }
   ],
   "vim.otherModesKeyBindingsNonRecursive": [
+    {
+      "before": ["q"],
+      "after": [],
+      "commands": [
+        {
+          "command": "vim",
+          "args": []
+        },
+      ]
+    },
     {
       "before": ["q"],
       "after": [],
@@ -115,6 +136,16 @@
           "command": "workbench.action.closeActiveEditor",
           "args": []
         }
+      ]
+    },
+    {
+      "before": ["v", "i", "e"],
+      "after": [],
+      "commands": [
+        {
+          "command": "editor.action.selectAll",
+          "args": []
+        },
       ]
     },
     {
@@ -153,14 +184,28 @@
     // "<C-a>": false,
     "<C-f>": false,
     "<C-e>": false,
+    "x": false,
     // "<C-q>": true
   },
   "workbench.colorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": [
+          "comment",
+          "comment.line.double-slash.js",
+          "punctuation.definition.comment",
+          "source.shell comment.line.number-sign.shell",
+        ],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      }
+    ],
     "diffEditor.insertedTextBorder": "#608b4e",
     "diffEditor.removedTextBorder": "#d16969",
     "editor.findMatchBackground": "#cc00b1",
-    "editor.findMatchBorder": "#ff0000",
-    "editor.findMatchHighlightBorder": "#6796e6",
+    // "editor.findMatchBorder": "#ff0000",
+    // "editor.findMatchHighlightBorder": "#6796e6",
     "editorActiveLineNumber.foreground": "#608b4e",
     "editor.findMatchHighlightBackground": "#1e1e1e",
     "editorGutter.addedBackground": "#608b4e",
@@ -215,11 +260,15 @@
     "javascript",
     "yaml"
 ],
-"colorize.files_extensions": [],
+"colorize.files_extensions": [
+  ".js"
+],
 "eslint.packageManager": "npm",
+"eslint.enable": false,
 "eslint.autoFixOnSave": false,
 "eslint.options": {
   "configFile": "/Users/clay/.eslintrc.js"
 },
 "workbench.colorTheme": "dark-plus-syntax",
 }
+
