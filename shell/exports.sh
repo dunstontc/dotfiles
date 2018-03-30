@@ -23,11 +23,12 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export GOPATH="$HOME/go"
 export GOBIN="$HOME/go/bin"
 
-if [ "$(uname -a)" == "linux" ]; then
+if [[ "$(uname -a)" == "Darwin" ]]; then
   GOROOT="$(brew --prefix golang)/libexec";
   export GOROOT;
 else
-  export GOROOT="/usr/local/go/bin";
+  GOROOT="/usr/local/go/bin";
+  export GOROOT;
 fi
 
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home"
