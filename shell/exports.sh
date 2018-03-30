@@ -23,7 +23,7 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export GOPATH="$HOME/go"
 export GOBIN="$HOME/go/bin"
 
-if [[ "$(uname -a)" == "Darwin" ]]; then
+if [[ "$(uname -s)" == "Darwin" ]]; then
   GOROOT="$(brew --prefix golang)/libexec";
   export GOROOT;
 else

@@ -11,10 +11,11 @@ PATH="/usr/local/mysql/bin:$PATH"                      # MySQL
 PATH="/usr/local/bin:$PATH"
 PATH="node_modules/.bin:vendor/bin:$PATH"              # use local packages before global
 PATH="$HOME/.node_global/bin:$PATH"                    # npm installed -g
-if [[ "$(uname -a)" == "Darwin" ]]; then
-  PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH" # GNU Coreutils
+if [[ "$(uname -s)" == "Darwin" ]]; then
+  PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+  PATH="/usr/local/opt/go/libexec/bin:$PATH"
 else
-  PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"   # GNU Coreutils
+  PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
   PATH="/usr/local/go/bin:$PATH"
 fi
 PATH="/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin:$PATH"
