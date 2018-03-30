@@ -1,6 +1,7 @@
 # export MANPATH="/usr/local/man:$MANPATH"
 # export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
+PATH="$DOTFILES/bin:$PATH"                             # Handwritten stuff
 PATH="$HOME/bin:$PATH"                                 # Handwritten stuff
 PATH=$GOBIN:$PATH                                      # Go
 PATH="$HOME/.cargo/bin:$PATH"                          # Rust
