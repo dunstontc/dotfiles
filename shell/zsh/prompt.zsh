@@ -218,12 +218,17 @@ PS1+="$grey]%f"
 
 PS1+="$green\$(suffix)%f "
 
+RPROMPT="%B$blue%~%f%b"
+if [[ $RP == "TRUE" ]]; then
+  RPROMPT="%B$blue%~%f%b"
+else
+  RPROMPT=""
+fi
 
-
+alias rpr="export RP='nope' && source $DOTFILES/shell/zsh/prompt.zsh;";
+alias rp="export RP='TRUE' && source $DOTFILES/shell/zsh/prompt.zsh;";
 
 # ==============================================================================
-RPROMPT="%B$blue%~%f%b"
-
 # %D{╔═ %a %I:%M %p
 #    ╚═ ✨ "
 
