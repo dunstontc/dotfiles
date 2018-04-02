@@ -40,11 +40,13 @@ komet() {
 
 # @description Add upstream remote to a Git repository. (Usually used after forking).
 #
-# @param url The address of the repo to add.
-forrk() {
-  git remote add upstream "$1"
-  git remote -v
+# @param url The owner of the repo to add as an upstream remote.
+upstream() {
+  cur_repo=$(basename -s .git $(git config --get remote.origin.url));
+  git remote add upstream "https://github.com/$1/$cur_repo.git";
+  git remote -v;
 }
+
 
 ahead_behind() {
   curr_branch=$(git rev-parse --abbrev-ref HEAD)

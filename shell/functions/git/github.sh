@@ -12,6 +12,7 @@ alias gcom='git checkout master'
 alias gd='git diff'
 alias gf='git fetch'
 alias gl='git pull origin $(git_branch)'
+alias gg='git pull origin $(git_branch)'
 alias glg='git log'
 alias gm='git merge'
 alias gmm='git merge master'
@@ -33,7 +34,8 @@ forrk() {
 
 upstream() {
   # git remote add upstream "https://github.com/$1/$(pwd).git";
-  echo "https://github.com/$1/${PWD##*/}.git";
+  cur_repo=$(basename -s .git $(git config --get remote.origin.url))
+  echo "https://github.com/$1/$cur_repo.git";
   # git remote -v;
 }
 
