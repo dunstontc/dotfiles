@@ -1,27 +1,19 @@
-# ~/.dotfiles #
+# ~/.dotfiles
  
 > Feel free to have a look around.
 
-<!-- <div align="center"> -->
-<!--   <br> -->
-<!--   <img src="https://raw.githubusercontent.com/dunstontc/dotfiles/master/misc/shellshot1.png" alt="screenshot"/> -->
-<!--   <br><br> -->
-<!-- </div> -->
-
-
-
-## Contents ##
+## Contents
   - Bash *4.4.12*
   - Zsh *5.4.2*
   - tmux *2.6*
-  - Atom *1.24.0*
-  - VS Code *1.21.0-insider*
+  - Atom *1.25.0*
+  - VS Code *1.22.0-insider*
   - [Neovim](https://github.com/dunstontc/nvim.d) *0.2.3-dev*
   - Vim *8.0.125*
-  - iTerm2 *3.1.6beta3*
+  - iTerm2 *3.1.6beta5*
 
 
-### Reference: ###
+### Resource & Reference
   - [Mathias Bynens' dotfiles](https://github.com/mathiasbynens/dotfiles)
     - 🔧 .files, including ~/.macos — sensible hacker defaults for macOS
   - [Shougo/shougo-s-github](https://github.com/Shougo/shougo-s-github)
@@ -66,5 +58,5 @@
     - An Emacs configuration for the stubborn martian vimmer
   - [guide to neovim](http://nerditya.com/code/guide-to-neovim/)
 
-## [License](https://github.com/dunstontc/dotfiles/blob/master/LICENSE.md) ##
+<!-- ## [License](https://github.com/dunstontc/dotfiles/blob/master/LICENSE.md) -->
 
