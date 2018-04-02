@@ -56,11 +56,13 @@
       "whitespace"
       "block-cursor"
       "background-tips"
-      "flex-tool-bar"
-      "tool-bar"
       "emmet"
       "tree-view-autoresize"
-      "vim-mode-plus"
+      "pigments"
+      "atom-section-divider"
+      "atom-easy-jsdoc"
+      "language-shellscript"
+      "language-fish-shell"
     ]
     excludeVcsIgnoredPaths: false
     ignoredNames: [
@@ -80,6 +82,7 @@
       "tree-view"
       "platformio-ide-terminal"
       "fuzzy-theme-switcher"
+      "go-plus"
     ]
     projectHome: "/Users/ClayDunston/Projects/atom/"
     reopenProjectMenuCount: 5
@@ -91,6 +94,7 @@
     titleBar: "custom"
   "dark-plus-syntax": {}
   editor:
+    fontSize: 12
     preferredLineLength: 100000000000
     scrollPastEnd: true
     scrollSensitivity: 75
@@ -98,6 +102,19 @@
     userId: "203b703e-f085-4a60-82c1-775b13bb5428"
   "file-icons": {}
   "flex-tool-bar": {}
+  "go-plus":
+    autocomplete:
+      suppressBuiltinAutocompleteProvider: false
+    config:
+      compileOnSave: false
+    format:
+      tool: "gofmt"
+    panel:
+      displayMode: "closed"
+    test:
+      runTestsOnSave: false
+      runTestsWithCoverage: false
+      runTestsWithShortFlag: false
   "language-markdown":
     indentListItems: false
   "line-ending-selector":

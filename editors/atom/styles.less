@@ -3,16 +3,11 @@
 atom-text-editor {
     * {
           font-variant-ligatures: normal;
+          text-rendering: optimizeLegibility;
           // (GitHub Flavored FontFamily)
           // font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace
-          // font-family: 'Noto Mono';
-          // font-family: 'Operator Mono';
-          font-family: 'UbuntuMono Nerd Font';
-          // font-family: 'FuraCode Nerd Font Mono';
-          // font-family: 'SpaceMono Nerd Font';
-          // font-family: 'FantasqueSansMono Nerd Font';
-          // font-family: 'mononoki Nerd Font Mono';
-          // font-family: 'CodeNewRoman Nerd Font';
+          // font-family: 'UbuntuMono Nerd Font';
+          font-family: 'FuraCode Nerd Font';
 
     }
 
@@ -28,6 +23,10 @@ atom-text-editor {
     }
 }
 
+atom-text-editor.editor .syntax--string.syntax--quoted,
+atom-text-editor.editor .syntax--string.syntax--regexp {
+  -webkit-font-feature-settings: "liga" off, "calt" off;
+}
 
 status-bar {
     .atom-clock { color: #569CD6; }
