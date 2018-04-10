@@ -4,3 +4,4 @@
 (A) 2018-01-19 Speed up shell (@zsh) startup. +dotfiles
 (B) 2018-03-18 Handle detatched-head in git prompt.
 (B) 2018-03-19 Clipcopy scripts.
+(B) 2018-04-04 Add colors back into tmux using battstat.

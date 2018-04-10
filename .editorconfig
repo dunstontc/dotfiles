@@ -24,7 +24,7 @@ indent_style = tab
 indent_size = 2
 # indent_style = space
 
-[*.{c,cs,jar,java,kt,php,pl,py,rs,swift}]
+[*.{c,cs,jar,java,kt,php,pl,py,rs,swift,ts}]
 indent_size = 4
 # indent_style = space
 

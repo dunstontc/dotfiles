@@ -241,6 +241,8 @@ vnoremap ; :
 " Better searching
 " nnoremap / /\v
 " vnoremap / /\v
+" ,/ --> Search & Replace
+nnoremap ,/ :%s///g<left><left><left>
 
 
 " Use ctrl-q instead of ⎋ , stay on the home row
@@ -249,10 +251,27 @@ nnoremap <C-q> <Nop>
 vnoremap <C-q> <C-c>
 cnoremap <C-q> <C-c>
 
+" Use ctrl-s to save. (Can mess with flow control)
+nnoremap <silent><C-s> :w<CR>
+inoremap <silent><C-s> <C-o>:w<CR>
 
-" Small edits in Normal mode
-nnoremap <BS> i<DEL><esc><right>
+" ctrl-d = Dupe lines
+nnoremap <C-d> mxV"zy"zp`xjmx
+inoremap <C-d> <esc>mxV"zy"zp`xjmx
+vnoremap <C-d> Vypgv
+noremap <M-S-Down> <nop>
+
+" Move splits around, as we use ctrl-hjkl to navigate
+nnoremap <C-W><left> <C-W>H
+nnoremap <C-W><right> <C-W>L
+nnoremap <C-W><down> <C-W>J
+nnoremap <C-W><up> <C-W>K
+
+" Edits in normal mode
+nnoremap <BS> mdi<DEL><esc>`dmd
 nnoremap ,, i<space><esc>
+nnoremap [<Space> mwO<esc>`wmw
+nnoremap ]<Space> mwo<esc>`wmw
 
 " q to Quit
 nnoremap q :q<CR>
@@ -272,21 +291,39 @@ noremap <S-H> 0
 noremap <S-L> $
 nnoremap <S-U> <C-R>
 
+" Paste & persist
+vnoremap p pgvy
+
 " Yank into the void
-noremap d "_d
-noremap D "_D
-noremap dd "_dd
-noremap c "_c
-noremap C "_C
+" noremap d "_d
+" noremap D "_D
+" noremap dd "_dd
+" noremap c "_c
+" noremap C "_C
+
+" Yank into the void
+nnoremap d "_d
+vnoremap d "_d
+nnoremap D "_D
+vnoremap D "_D
+" noremap dd "_dd
+nnoremap c "_c
+vnoremap c "_c
+nnoremap C "_C
+vnoremap C "_C
+
+" Fixes clipboard after deleting into `"_`
+inoremap <esc> <esc><esc>
 
 " Yank Better
 nnoremap <S-y> y$
 nnoremap yy Vy
 
-
+" Cut better
+nnoremap X Vx
 
 " =============================================================================
-" ==== Leader Maps ====
+" === Leader Maps ===
 " =============================================================================
 set timeoutlen=1000
 
@@ -303,9 +340,7 @@ nnoremap <leader><Up> :bprev<CR>
 nnoremap <leader><Down> :bnext<CR>
 
 
-" ==============================================================================
-"  === b -- Buffers=== {{{
-" ==============================================================================
+"  === b -- Buffers===
 " l -- List Buffers
 nnoremap <leader>b :Denite buffer -mode=normal<CR>
 " Next Buffer
@@ -320,22 +355,35 @@ nnoremap <leader>bv :vert ball<CR>
 nnoremap <leader>bd :bd<CR>
 " Close a buffer, leave it on the list
 nnoremap <leader>bq :q<CR>
-" ==== e -- Edit ====
+
+
+" === e -- Edit ===
 nnoremap <silent> <leader>ev :vsplit $MYVIMRC<CR>
 nnoremap <silent> <leader>e<S-V> :edit $MYVIMRC<CR>
 
 
-" ==== p -- Plug ====
+" === h -- Help
+" Describe Character
+nmap     <leader>hdc :<Plug>(characterize)<CR>
+" nnoremap <leader>hdc :ascii<CR>
+" Describe Filetype
+nnoremap <leader>hdf :set filetype?<CR>
+" Describe Current Path'       ],
+nnoremap <leader>hdp :GetFullPath<CR>
+" Describe Syntax at the cursosr
+nnoremap <leader>hds :SynDef<CR>
+
+" === p -- Plug ===
 nnoremap <leader>pi :PlugInstall<CR>
 nnoremap <leader>ps :PlugStatus<CR>
 nnoremap <leader>pc :PlugClean<CR>
 
 
-" ==== r -- Reload ====
-nnoremap <silent> <leader><S-s> :source $MYVIMRC<CR>
+" === r -- Reload ===
+nnoremap <silent> <leader>rr :source $MYVIMRC<CR>
 
 
-" ==== t -- Toggle ====
+" === t -- Toggle ===
 " Toggle Comments
 " nnoremap <leader>tc :TComment<CR>
 " Toggle Folding
@@ -365,32 +413,6 @@ nnoremap <leader>tw :set list!<CR>
 " =============================================================================
 "  Plugins Settings
 " =============================================================================
-
-
-" ==== deoplete ====
-" let g:deoplete#enable_at_startup = 1
-" let g:deoplete#auto_completion_start_length = 1
-" let g:deoplete#enable_smart_case = 1
-" let g:deoplete#file#enable_buffer_path=1
-
-" call deoplete#custom#set('vim',           'mark', 'V ')
-" call deoplete#custom#set('omni',          'mark', '⌾ ')
-" call deoplete#custom#set('file',          'mark', ' ')
-" call deoplete#custom#set('jedi',          'mark', ' ')
-" call deoplete#custom#set('around',        'mark', '↻ ')
-" call deoplete#custom#set('buffer',        'mark', ' ')
-" call deoplete#custom#set('member',        'mark', 'mb')
-" call deoplete#custom#set('necovim',       'mark', 'nv')
-" call deoplete#custom#set('ultisnips',     'mark', '<>')
-" call deoplete#custom#set('neosnippet',    'mark', '<>')
-" call deoplete#custom#set('necosyntax',    'mark', 'ns')
-" call deoplete#custom#set('tmux-complete', 'mark', '⧉ ')
-
-" call deoplete#custom#set('jedi', 'matchers', ['matcher_fuzzy'])
-" call deoplete#custom#set('necovim', 'matchers', ['matcher_fuzzy'])
-" call deoplete#custom#set('ultisnips', 'matchers', ['matcher_fuzzy'])
-" call deoplete#custom#set('necosyntax', 'matchers', ['matcher_fuzzy'])
-" call deoplete#custom#set('tmux-complete', 'matchers', ['matcher_fuzzy'])
 
 
 " ==== Neosnippet ====

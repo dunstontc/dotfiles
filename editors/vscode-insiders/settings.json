@@ -17,8 +17,8 @@
   "editor.renderIndentGuides"         : true,
   "editor.snippetSuggestions"         : "top",
   "emmet.excludeLanguages"         : [
-    "javascript",
-    "javascriptreact"
+    // "javascript",
+    // "javascriptreact"
   ],
   "emmet.includeLanguages": {
     "gohtml": "html",
@@ -42,7 +42,7 @@
   "git.autofetch":         true,
   "git.enableSmartCommit": true,
   "git.confirmSync"      : false,
-  "diffEditor.ignoreTrimWhitespace": true,
+  "diffEditor.ignoreTrimWhitespace": false,
   // "markdown.styles": [
   //     "/Users/clay/Projects/vscode/vscode-custom-markdown-preview/build/vscode-syntax.css",
   //     "/Users/clay/Projects/vscode/vscode-custom-markdown-preview/build/custom-markdown.css"
@@ -53,19 +53,17 @@
   "terminal.integrated.fontWeight": "100",
   "terminal.integrated.fontWeightBold": "100",
   "files.associations": {
-      ".aliases": "shellscript",
+      ".{aliases,path,viminfo}": "shellscript",
       ".env": "properties",
-      ".path": "shellscript",
-      ".viminfo": "shellscript",
       ".nvimrc": "viml",
-      "ractive": "javascript",
-      // "*.html": "vue-html",
-      "*.jinja": "html",
-      "*.jinja2": "html",
+      ".ractive": "javascript",
+      "*.{jinja,jinja2}": "html",
+      "*.tmpl": "gohtml",
       "*.blade": "blade",
       ".postcssrc": "jsonc",
       "Gopkg.lock": "toml",
-      "*.JSON-tmLanguage": "json",
+      ".vscodeignore": "gitignore",
+      "*.{jsonc,json5,JSON-tmLanguage}": "jsonc",
   },
   "[markdown]": {
       "editor.wordWrap"        : "off",
@@ -75,7 +73,6 @@
   "workbench.statusBar.feedback.visible": false,
   "vsicons.dontShowNewVersionMessage": true,
   "vsicons.dontShowConfigManuallyChangedMessage": true,
-  "workbench.iconTheme": "file-icons",
   "go.formatTool": "gofmt",
   "go.buildOnSave": "off",
   "go.useLanguageServer": true,
@@ -188,25 +185,12 @@
     // "<C-q>": true
   },
   "workbench.colorCustomizations": {
-    "textMateRules": [
-      {
-        "scope": [
-          "comment",
-          "comment.line.double-slash.js",
-          "punctuation.definition.comment",
-          "source.shell comment.line.number-sign.shell",
-        ],
-        "settings": {
-          "fontStyle": "italic"
-        }
-      }
-    ],
     "diffEditor.insertedTextBorder": "#608b4e",
     "diffEditor.removedTextBorder": "#d16969",
     "editor.findMatchBackground": "#cc00b1",
     // "editor.findMatchBorder": "#ff0000",
     // "editor.findMatchHighlightBorder": "#6796e6",
-    "editorActiveLineNumber.foreground": "#608b4e",
+    "editorLineNumber.activeForeground": "#608b4e",
     "editor.findMatchHighlightBackground": "#1e1e1e",
     "editorGutter.addedBackground": "#608b4e",
     "editorGutter.modifiedBackground": "#d7ba7d",
@@ -263,12 +247,73 @@
 "colorize.files_extensions": [
   ".js"
 ],
-"eslint.packageManager": "npm",
-"eslint.enable": false,
-"eslint.autoFixOnSave": false,
-"eslint.options": {
-  "configFile": "/Users/clay/.eslintrc.js"
+"todohighlight.include": [
+  "**/*.go",
+  "**/*.js",
+  "**/*.jsx",
+  "**/*.json",
+  "**/*.ts",
+  "**/*.tsx",
+  "**/*.html",
+  "**/*.php",
+  "**/*.css",
+  "**/*.scss"
+],
+"todohighlight.defaultStyle": {
+  "color": "#1e1e1e",
+  "backgroundColor": "#608b4e",
+  "overviewRulerColor": "#608b4e",
+  // "cursor": "pointer",
+  "border": "0px",
+  // "borderRadius": "2px",
+  "isWholeLine": false,
 },
+"todohighlight.keywords": [
+  "DEBUG:",
+  "REVIEW:",
+  "TODO:",
+  {
+    "text": "TODO:",
+    "color": "#1e1e1e",
+    "border": "0px",
+    // "borderRadius": "2px", //NOTE: using borderRadius along with `border` or you will see nothing change
+    "backgroundColor": "#608b4e",
+  },
+],
+"workbench.iconTheme": "file-icons",
+"javascript.suggestionActions.enabled": false,
+"docker-explorer.showAzureRegistries": false,
+"docker-explorer.showSuggestedDockerImages": false,
+"msbuildProjectTools": {
+  "logging": {
+    "level": "Information",
+    "seq": {},
+    "file": "",
+    "trace": false
+  },
+  "language": {
+    "disableFeature": {},
+    "useClassicProvider": false,
+    "disable": {
+      "hover": false
+    }
+  },
+  "nuget": {
+    "newestVersionsFirst": true,
+    "includePreRelease": true,
+    "disablePrefetch": false
+  },
+  "schemaVersion": 1
+},
+"importCost.largePackageColor":  "#d16969",
+"importCost.mediumPackageColor": "#ce9178",
+"importCost.smallPackageColor":  "#608b4e",
+"importCost.mediumPackageSize": 100,  // Upper size limit, in KB, that will count a package as a medium package
+"importCost.smallPackageSize": 50,    // Upper size limit, in KB, that will count a package as a small package
+"importCost.typescriptExtensions": [  // File extensions to be parsed by the Typescript parser
+  "\\.tsx?$"
+],
+"vsicons.projectDetection.disableDetect": true,
 "workbench.colorTheme": "dark-plus-syntax",
 }
 

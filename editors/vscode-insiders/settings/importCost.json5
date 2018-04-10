@@ -1,0 +1,10 @@
+{
+  "importCost.largePackageColor": "#d16969",
+  "importCost.mediumPackageColor": "#ce9178",
+  "importCost.smallPackageColor": "#608b4e",
+  "importCost.mediumPackageSize": 100,  // Upper size limit, in KB, that will count a package as a medium package
+  "importCost.smallPackageSize": 50,    // Upper size limit, in KB, that will count a package as a small package
+  "importCost.typescriptExtensions": [  // File extensions to be parsed by the Typescript parser
+    "\\.tsx?$"
+  ],
+}

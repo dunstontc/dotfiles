@@ -14,11 +14,12 @@ module.exports = {
     },
   },
   'rules': {
-    'array-bracket-spacing': [ 'error', 'always', {
-      'singleValue': true,
-      'arraysInArrays': false,
-      'objectsInArrays': false,
-    }],
+    'array-bracket-spacing': ['off'],
+    // 'array-bracket-spacing': [ 'error', 'always', {
+      // 'singleValue': true,
+      // 'arraysInArrays': false,
+      // 'objectsInArrays': false,
+    // }],
     'arrow-parens': [ 'error', 'as-needed', {
       'requireForBlockBody': true,
     }],
@@ -33,7 +34,7 @@ module.exports = {
     'computed-property-spacing': [ 'error', 'never' ],
     'curly': 'error',
     'eqeqeq': 'error',
-    'id-length': [ 'error', {
+    'id-length': [ 'warn', {
       'min': 3,
     }],
     // 'generator-star-spacing': [
@@ -66,11 +67,11 @@ module.exports = {
     // ],
     'no-inline-comments': 'off',
     'no-console': 'off',
-    'object-curly-spacing': [
-      'error', 'always', {
-        'arraysInObjects': true,
-      },
-    ],
+    // 'object-curly-spacing': [
+    //   'error', 'always', {
+    //     'arraysInObjects': true,
+    //   },
+    // ],
     'operator-linebreak': [
       'error', 'before', {
         'overrides': {
