@@ -34,9 +34,9 @@ module.exports = {
     'computed-property-spacing': [ 'error', 'never' ],
     'curly': 'error',
     'eqeqeq': 'error',
-    'id-length': [ 'warn', {
-      'min': 3,
-    }],
+    // 'id-length': [ 'warn', {
+    //   'min': 3,
+    // }],
     // 'generator-star-spacing': [
     //   'error',
     //   {

@@ -2,6 +2,9 @@
 #   │ ┬│ │ ││ ┬││││ │├┬┘├┤
 #  o└─┘┴ ┴ ┴└─┘┘└┘└─┘┴└─└─┘
 
+# Misc.
+!.gitkeep
+
 # Mac files
 Icon?
 .DS_store
@@ -19,20 +22,18 @@ Thumbs.db
 .projectile
 **/tags
 
-# dependencies
-node_modules/**
-bower_components/**
+# Dependencies
+**/node_modules/**
+**/bower_components/**
 
 # Built files
-Build/**
-build/**
+**/[bB]uild/**
 dist/**
 
 # Local files
 .env
 .variables
-.ignore/**
-ignore/**
+.?ignore/**
 
 # Python stuff
 **/__pycache__/
@@ -44,9 +45,6 @@ VENV
 npm-debug.log
 npm-debug.log.*
 yarn-error.log
-
-# Misc.
-!.gitkeep
 
 # ~/.dotfiles
 editors/vim/undo/**
