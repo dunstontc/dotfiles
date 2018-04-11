@@ -1,0 +1,15 @@
+{
+  "name": "dotfiles",
+  "version": "0.0.0",
+  "author": "Clay Dunston <dunstontc@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "fortune | lolcat;",
+    "code:settings": "gulp code:compile-settings"
+  },
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-json5-to-json": "^0.2.1",
+    "gulp-merge-json": "^1.3.0"
+  }
+}
