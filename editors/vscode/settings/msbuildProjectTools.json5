@@ -1,0 +1,23 @@
+{
+  "msbuildProjectTools": {
+    "logging": {
+      "level": "Information",
+      "seq": {},
+      "file": "",
+      "trace": false
+    },
+    "language": {
+      "disableFeature": {},
+      "useClassicProvider": false,
+      "disable": {
+        "hover": false
+      }
+    },
+    "nuget": {
+      "newestVersionsFirst": true,
+      "includePreRelease": true,
+      "disablePrefetch": false
+    },
+    "schemaVersion": 1
+  },
+}

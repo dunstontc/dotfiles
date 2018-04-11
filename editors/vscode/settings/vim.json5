@@ -1,0 +1,107 @@
+{
+    // === Vim ===
+    "vim.disableExtension": false,
+    "vim.showcmd": true,
+    "vim.useCtrlKeys": true,
+    "vim.easymotion":  true,
+    "vim.incsearch":   true,
+    "vim.hlsearch":    true,
+    "vim.useSystemClipboard": false,
+    "vim.cmdLineInitialColon": true,
+    "vim.statusBarColorControl": false,
+    "vim.neovimPath": "/usr/local/bin/nvim",
+    "vim.insertModeKeyBindings": [
+      {
+        "before": ["<c-q>"],
+        "after": ["<Esc>"]
+      }
+    ],
+    "vim.otherModesKeyBindingsNonRecursive": [
+      {
+        "before": ["q"],
+        "after": [],
+        "commands": [
+          {
+            "command": "vim",
+            "args": []
+          },
+        ]
+      },
+      {
+        "before": ["q"],
+        "after": [],
+        "commands": [
+          {
+            "command": "workbench.action.files.save",
+            "args": []
+          },
+          {
+            "command": "workbench.action.closeActiveEditor",
+            "args": []
+          }
+        ]
+      },
+      {
+        "before": ["f", "j"],
+        "after": [],
+        "commands": [
+          {
+            "command": "workbench.action.files.save",
+            "args": []
+          },
+          {
+            "command": "workbench.action.closeActiveEditor",
+            "args": []
+          }
+        ]
+      },
+      {
+        "before": ["v", "i", "e"],
+        "after": [],
+        "commands": [
+          {
+            "command": "editor.action.selectAll",
+            "args": []
+          },
+        ]
+      },
+      {
+        "before": [","],
+        "after": ["i", "<space>", "<esc>"]
+      },
+      {
+        "before": ["<bs>"],
+        "after": ["a", "<bs>", "<esc>", "<right>"]
+      },
+      {
+        "before": ["L"],
+        "after": ["$"]
+      },
+      {
+        "before": ["H"],
+        "after": ["0"]
+      },
+      {
+        "before": ["U"],
+        "after": ["<C-r>"]
+      },
+      {
+        "before": ["<leader>", "h", "d", "s"],
+        "after": [],
+        "commands": [
+          {
+            "command": "editor.action.inspectTMScopes",
+            "args": []
+          },
+        ]
+      },
+    ],
+    "vim.leader": "<space>",
+    "vim.handleKeys":{
+      // "<C-a>": false,
+      "<C-f>": false,
+      "<C-e>": false,
+      "x": false,
+      // "<C-q>": true,
+    },
+}

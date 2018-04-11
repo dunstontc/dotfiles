@@ -1,0 +1,98 @@
+{
+  "telemetry.enableTelemetry": false,
+  "telemetry.enableCrashReporter": false,
+  "extensions.autoUpdate": false,
+  "extensions.ignoreRecommendations": true,
+  "extensions.showRecommendationsOnlyOnDemand": true,
+
+  "workbench.startupEditor": "none",
+  "workbench.statusBar.feedback.visible": false,
+  "workbench.iconTheme": "file-icons",
+  "workbench.colorTheme": "dark-plus-syntax",
+
+  "editor.cursorBlinking": "solid",
+  "editor.cursorStyle": "block-outline",
+  "editor.dragAndDrop": false,
+  "editor.fontFamily": "FuraCode Nerd Font",
+  // "editor.fontFamily"   : "UbuntuMono Nerd Font",
+  // "editor.fontFamily"   : "Monaco",
+  "editor.fontSize": 11,
+  "editor.letterSpacing": 0,
+  "editor.fontLigatures": true,
+  "editor.minimap.enabled": false,
+  "editor.mouseWheelScrollSensitivity": 1.1,
+  "editor.renderIndentGuides": true,
+  "editor.snippetSuggestions": "top",
+
+  "explorer.sortOrder": "type",
+  "explorer.openEditors.visible": 0,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+
+  "diffEditor.ignoreTrimWhitespace": false,
+
+  "git.autofetch": true,
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "Icon?": true,
+    "**/tags": true,
+  },
+
+  "files.associations": {
+    ".{aliases,path,viminfo}": "shellscript",
+    ".env": "properties",
+    ".nvimrc": "viml",
+    ".ractive": "javascript",
+    "*.{jinja,jinja2}": "html",
+    "*.tmpl": "gohtml",
+    "*.blade": "blade",
+    ".postcssrc": "jsonc",
+    "Gopkg.lock": "toml",
+    ".vscodeignore": "gitignore",
+    "*.{jsonc,json5,JSON-tmLanguage}": "jsonc",
+    "*.el": "lisp",
+  },
+
+  // =============================================================================
+  // Extensions
+  // =============================================================================
+
+  "dateTime.customFormat": "  hh:mm a  ",
+
+  "docker-explorer.showAzureRegistries": false,
+  "docker-explorer.showSuggestedDockerImages": false,
+
+  "projectManager.showProjectNameInStatusBar": false,
+
+  "material-icon-theme.showUpdateMessage": false,
+
+  "vsicons.dontShowNewVersionMessage": true,
+  "vsicons.projectDetection.disableDetect": true,
+  "vsicons.dontShowConfigManuallyChangedMessage": true,
+
+  // =============================================================================
+  // Language Settings
+  // =============================================================================
+
+  "javascript.suggestionActions.enabled": false,
+
+  "go.formatTool": "gofmt",
+  "go.buildOnSave": "off",
+  "go.useLanguageServer": true,
+
+  "[markdown]": {
+    "editor.wordWrap": "off",
+    "editor.quickSuggestions": true
+  },
+  // "markdown.styles": [
+  //     "/Users/clay/Projects/vscode/vscode-custom-markdown-preview/build/vscode-syntax.css",
+  //     "/Users/clay/Projects/vscode/vscode-custom-markdown-preview/build/custom-markdown.css"
+  // ],
+}

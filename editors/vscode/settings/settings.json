@@ -1,0 +1,352 @@
+{
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false,
+    "extensions.autoUpdate": false,
+    "extensions.ignoreRecommendations": true,
+    "extensions.showRecommendationsOnlyOnDemand": true,
+    "workbench.startupEditor": "none",
+    "workbench.statusBar.feedback.visible": false,
+    "workbench.iconTheme": "file-icons",
+    "workbench.colorTheme": "dark-plus-syntax",
+    "editor.cursorBlinking": "solid",
+    "editor.cursorStyle": "block-outline",
+    "editor.dragAndDrop": false,
+    "editor.fontFamily": "FuraCode Nerd Font",
+    "editor.fontSize": 11,
+    "editor.letterSpacing": 0,
+    "editor.fontLigatures": true,
+    "editor.minimap.enabled": false,
+    "editor.mouseWheelScrollSensitivity": 1.1,
+    "editor.renderIndentGuides": true,
+    "editor.snippetSuggestions": "top",
+    "explorer.sortOrder": "type",
+    "explorer.openEditors.visible": 0,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "git.autofetch": true,
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "Icon?": true,
+        "**/tags": true
+    },
+    "files.associations": {
+        ".{aliases,path,viminfo}": "shellscript",
+        ".env": "properties",
+        ".nvimrc": "viml",
+        ".ractive": "javascript",
+        "*.{jinja,jinja2}": "html",
+        "*.tmpl": "gohtml",
+        "*.blade": "blade",
+        ".postcssrc": "jsonc",
+        "Gopkg.lock": "toml",
+        ".vscodeignore": "gitignore",
+        "*.{jsonc,json5,JSON-tmLanguage}": "jsonc",
+        "*.el": "lisp"
+    },
+    "dateTime.customFormat": "  hh:mm a  ",
+    "docker-explorer.showAzureRegistries": false,
+    "docker-explorer.showSuggestedDockerImages": false,
+    "projectManager.showProjectNameInStatusBar": false,
+    "material-icon-theme.showUpdateMessage": false,
+    "vsicons.dontShowNewVersionMessage": true,
+    "vsicons.projectDetection.disableDetect": true,
+    "vsicons.dontShowConfigManuallyChangedMessage": true,
+    "javascript.suggestionActions.enabled": false,
+    "go.formatTool": "gofmt",
+    "go.buildOnSave": "off",
+    "go.useLanguageServer": true,
+    "[markdown]": {
+        "editor.wordWrap": "off",
+        "editor.quickSuggestions": true
+    },
+    "colorize.languages": [
+        "css",
+        "sass",
+        "scss",
+        "less",
+        "stylus",
+        "xml",
+        "svg",
+        "json",
+        "javascript",
+        "yaml"
+    ],
+    "colorize.files_extensions": [
+        ".js"
+    ],
+    "workbench.colorCustomizations": {
+        "diffEditor.insertedTextBorder": "#608b4e",
+        "diffEditor.removedTextBorder": "#d16969",
+        "editor.findMatchBackground": "#cc00b1",
+        "editorLineNumber.activeForeground": "#608b4e",
+        "editor.findMatchHighlightBackground": "#1e1e1e",
+        "editorGutter.addedBackground": "#608b4e",
+        "editorGutter.modifiedBackground": "#d7ba7d",
+        "editorGutter.deletedBackground": "#d16969",
+        "editorOverviewRuler.addedForeground": "#608b4e",
+        "editorOverviewRuler.modifiedForeground": "#d7ba7d",
+        "editorOverviewRuler.deletedForeground": "#d16969",
+        "gitDecoration.modifiedResourceForeground": "#608b4e",
+        "gitDecoration.deletedResourceForeground": "#d7ba7d",
+        "gitDecoration.untrackedResourceForeground": "#d7ba7d",
+        "gitDecoration.ignoredResourceForeground": "#808080",
+        "gitDecoration.conflictingResourceForeground": "#d16969",
+        "terminal.background": "#1e1e1e",
+        "terminal.ansiBlack": "#808080",
+        "terminal.ansiBrightBlack": "#808080",
+        "terminal.ansiRed": "#d16969",
+        "terminal.ansiBrightRed": "#d16969",
+        "terminal.ansiBlue": "#569cd6",
+        "terminal.ansiBrightBlue": "#569cd6",
+        "terminal.ansiGreen": "#608b4e",
+        "terminal.ansiBrightGreen": "#608b4e",
+        "terminal.ansiCyan": "#4ec9b0",
+        "terminal.ansiBrightCyan": "#4ec9b0",
+        "terminal.ansiYellow": "#d7ba7d",
+        "terminal.ansiBrightYellow": "#ce9178",
+        "terminal.ansiMagenta": "#c586c0",
+        "terminal.ansiBrightMagenta": "#c586c0",
+        "terminal.ansiWhite": "#d4d4d4",
+        "terminal.ansiBrightWhite": "#d4d4d4",
+        "terminal.selectionBackground": "#add6ff26",
+        "terminalCursor.foreground": "#808080",
+        "statusBar.background": "#303030",
+        "statusBar.noFolderBackground": "#303030",
+        "statusBar.debuggingBackground": "#303030"
+    },
+    "emmet.excludeLanguages": [],
+    "emmet.includeLanguages": {
+        "gohtml": "html"
+    },
+    "emmet.extensionsPath": "",
+    "emmet.preferences": {},
+    "emmet.showSuggestionsAsSnippets": true,
+    "emmet.triggerExpansionOnTab": true,
+    "importCost.largePackageColor": "#d16969",
+    "importCost.mediumPackageColor": "#ce9178",
+    "importCost.smallPackageColor": "#608b4e",
+    "importCost.mediumPackageSize": 100,
+    "importCost.smallPackageSize": 50,
+    "importCost.typescriptExtensions": [
+        "\\.tsx?$"
+    ],
+    "msbuildProjectTools": {
+        "logging": {
+            "level": "Information",
+            "seq": {},
+            "file": "",
+            "trace": false
+        },
+        "language": {
+            "disableFeature": {},
+            "useClassicProvider": false,
+            "disable": {
+                "hover": false
+            }
+        },
+        "nuget": {
+            "newestVersionsFirst": true,
+            "includePreRelease": true,
+            "disablePrefetch": false
+        },
+        "schemaVersion": 1
+    },
+    "terminal.integrated.fontFamily": "UbuntuMono Nerd Font",
+    "terminal.integrated.fontSize": 12,
+    "terminal.integrated.lineHeight": 1.1,
+    "terminal.integrated.fontWeight": "100",
+    "terminal.integrated.fontWeightBold": "100",
+    "terminal.integrated.env.osx": {
+        "IN_VSCODE": "1"
+    },
+    "terminal.integrated.env.linux": {
+        "IN_VSCODE": "1"
+    },
+    "terminal.integrated.env.windows": {
+        "IN_VSCODE": "1"
+    },
+    "todohighlight.include": [
+        "**/*.go",
+        "**/*.js",
+        "**/*.jsx",
+        "**/*.json",
+        "**/*.ts",
+        "**/*.tsx",
+        "**/*.html",
+        "**/*.php",
+        "**/*.css",
+        "**/*.scss"
+    ],
+    "todohighlight.defaultStyle": {
+        "color": "#1e1e1e",
+        "backgroundColor": "#608b4e",
+        "overviewRulerColor": "#608b4e",
+        "border": "0px",
+        "isWholeLine": false
+    },
+    "todohighlight.keywords": [
+        "DEBUG:",
+        "REVIEW:",
+        "TODO:",
+        {
+            "text": "TODO:",
+            "color": "#1e1e1e",
+            "border": "0px",
+            "backgroundColor": "#608b4e"
+        }
+    ],
+    "vim.disableExtension": false,
+    "vim.showcmd": true,
+    "vim.useCtrlKeys": true,
+    "vim.easymotion": true,
+    "vim.incsearch": true,
+    "vim.hlsearch": true,
+    "vim.useSystemClipboard": false,
+    "vim.cmdLineInitialColon": true,
+    "vim.statusBarColorControl": false,
+    "vim.neovimPath": "/usr/local/bin/nvim",
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "<c-q>"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        }
+    ],
+    "vim.otherModesKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "q"
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "vim",
+                    "args": []
+                }
+            ]
+        },
+        {
+            "before": [
+                "q"
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "workbench.action.files.save",
+                    "args": []
+                },
+                {
+                    "command": "workbench.action.closeActiveEditor",
+                    "args": []
+                }
+            ]
+        },
+        {
+            "before": [
+                "f",
+                "j"
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "workbench.action.files.save",
+                    "args": []
+                },
+                {
+                    "command": "workbench.action.closeActiveEditor",
+                    "args": []
+                }
+            ]
+        },
+        {
+            "before": [
+                "v",
+                "i",
+                "e"
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "editor.action.selectAll",
+                    "args": []
+                }
+            ]
+        },
+        {
+            "before": [
+                ","
+            ],
+            "after": [
+                "i",
+                "<space>",
+                "<esc>"
+            ]
+        },
+        {
+            "before": [
+                "<bs>"
+            ],
+            "after": [
+                "a",
+                "<bs>",
+                "<esc>",
+                "<right>"
+            ]
+        },
+        {
+            "before": [
+                "L"
+            ],
+            "after": [
+                "$"
+            ]
+        },
+        {
+            "before": [
+                "H"
+            ],
+            "after": [
+                "0"
+            ]
+        },
+        {
+            "before": [
+                "U"
+            ],
+            "after": [
+                "<C-r>"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "h",
+                "d",
+                "s"
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "editor.action.inspectTMScopes",
+                    "args": []
+                }
+            ]
+        }
+    ],
+    "vim.leader": "<space>",
+    "vim.handleKeys": {
+        "<C-f>": false,
+        "<C-e>": false,
+        "x": false
+    }
+}

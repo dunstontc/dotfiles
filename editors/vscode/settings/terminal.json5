@@ -1,0 +1,16 @@
+{
+  "terminal.integrated.fontFamily": "UbuntuMono Nerd Font",
+  "terminal.integrated.fontSize": 12,
+  "terminal.integrated.lineHeight": 1.1,
+  "terminal.integrated.fontWeight": "100",
+  "terminal.integrated.fontWeightBold": "100",
+  "terminal.integrated.env.osx": {
+    "IN_VSCODE": "1"
+  },
+  "terminal.integrated.env.linux": {
+    "IN_VSCODE": "1"
+  },
+  "terminal.integrated.env.windows": {
+    "IN_VSCODE": "1"
+  },
+}

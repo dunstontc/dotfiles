@@ -1,0 +1,35 @@
+{
+  "todohighlight.include": [
+    "**/*.go",
+    "**/*.js",
+    "**/*.jsx",
+    "**/*.json",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.html",
+    "**/*.php",
+    "**/*.css",
+    "**/*.scss"
+  ],
+  "todohighlight.defaultStyle": {
+    "color": "#1e1e1e",
+    "backgroundColor": "#608b4e",
+    "overviewRulerColor": "#608b4e",
+    // "cursor": "pointer",
+    "border": "0px",
+    // "borderRadius": "2px",
+    "isWholeLine": false,
+  },
+  "todohighlight.keywords": [
+    "DEBUG:",
+    "REVIEW:",
+    "TODO:",
+    {
+      "text": "TODO:",
+      "color": "#1e1e1e",
+      "border": "0px",
+      // "borderRadius": "2px", //NOTE: using borderRadius along with `border` or you will see nothing change
+      "backgroundColor": "#608b4e",
+    },
+  ],
+}

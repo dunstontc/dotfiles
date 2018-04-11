@@ -1,0 +1,17 @@
+{
+  "colorize.languages": [
+    "css",
+    "sass",
+    "scss",
+    "less",
+    "stylus",
+    "xml",
+    "svg",
+    "json",
+    "javascript",
+    "yaml"
+],
+"colorize.files_extensions": [
+  ".js"
+],
+}

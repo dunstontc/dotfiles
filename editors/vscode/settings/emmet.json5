@@ -1,0 +1,13 @@
+{
+  "emmet.excludeLanguages"         : [
+    // "javascript",
+    // "javascriptreact"
+  ],
+  "emmet.includeLanguages": {
+    "gohtml": "html",
+  },
+  "emmet.extensionsPath"           : "",
+  "emmet.preferences"              : {},
+  "emmet.showSuggestionsAsSnippets": true,
+  "emmet.triggerExpansionOnTab"    : true,
+}
