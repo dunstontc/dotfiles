@@ -2,68 +2,48 @@
     // === Vim ===
     "vim.disableExtension": false,
     "vim.showcmd": true,
+    "vim.timeout":     3000,
     "vim.useCtrlKeys": true,
-    "vim.easymotion":  true,
+    "vim.easymotion":  false,
     "vim.incsearch":   true,
     "vim.hlsearch":    true,
     "vim.useSystemClipboard": false,
     "vim.cmdLineInitialColon": true,
+    "vim.substituteGlobalFlag": true,
     "vim.statusBarColorControl": false,
     "vim.neovimPath": "/usr/local/bin/nvim",
     "vim.insertModeKeyBindings": [
       {
-        "before": ["<c-q>"],
+        "before": ["<C-q>"],
         "after": ["<Esc>"]
       }
     ],
     "vim.otherModesKeyBindingsNonRecursive": [
+      // {
+      //   "before": ["q"],
+      //   "after": [],
+      //   "commands": [{ "command": "vim", "args": [] }]
+      // },
       {
         "before": ["q"],
         "after": [],
         "commands": [
-          {
-            "command": "vim",
-            "args": []
-          },
-        ]
-      },
-      {
-        "before": ["q"],
-        "after": [],
-        "commands": [
-          {
-            "command": "workbench.action.files.save",
-            "args": []
-          },
-          {
-            "command": "workbench.action.closeActiveEditor",
-            "args": []
-          }
+          { "command": "workbench.action.files.save", "args": [] },
+          { "command": "workbench.action.closeActiveEditor", "args": [] }
         ]
       },
       {
         "before": ["f", "j"],
         "after": [],
         "commands": [
-          {
-            "command": "workbench.action.files.save",
-            "args": []
-          },
-          {
-            "command": "workbench.action.closeActiveEditor",
-            "args": []
-          }
+          { "command": "workbench.action.files.save", "args": [] },
+          { "command": "workbench.action.closeActiveEditor", "args": [] }
         ]
       },
       {
         "before": ["v", "i", "e"],
         "after": [],
-        "commands": [
-          {
-            "command": "editor.action.selectAll",
-            "args": []
-          },
-        ]
+        "commands": [{ "command": "editor.action.selectAll", "args": [] }]
       },
       {
         "before": [","],
@@ -86,22 +66,48 @@
         "after": ["<C-r>"]
       },
       {
+        "before": ["<leader>", "<leader>"],
+        "after": ["<Esc>"],
+      },
+      // {
+      //   "before": ["<leader>", "s"],
+      //   "after": [],
+      //   "commands": [{ "command": "", "args": [] }]
+      // },
+      {
+        "before": ["<leader>", "tab"],
+        "after": [],
+        "commands": [{ "command": "workbench.action.quickOpenNavigateNextInEditorPicker", "args": [] }]
+      },
+      {
+        "before": ["<leader>", "<shift>", "<tab>"],
+        "after": [],
+        "commands": [{ "command": "workbench.action.quickOpenNavigatePreviousInEditorPicker", "args": [] }]
+      },
+      {
         "before": ["<leader>", "h", "d", "s"],
         "after": [],
-        "commands": [
-          {
-            "command": "editor.action.inspectTMScopes",
-            "args": []
-          },
-        ]
+        "commands": [{ "command": "editor.action.inspectTMScopes", "args": [] }]
+      },
+      {
+        "before": ["<leader>", "h", "d", "p"],
+        "after": [],
+        "commands": [{ "command": "workbench.action.files.copyPathofActiveFile", "args": [] }]
+      },
+      {
+        "before": ["<leader>", "f", "t"],
+        "after": [],
+        "commands": [{ "command": "workbench.action.toggleSidebarVisibility", "args": [] }]
       },
     ],
     "vim.leader": "<space>",
     "vim.handleKeys":{
       // "<C-a>": false,
+      // "<C-q>": false,
       "<C-f>": false,
       "<C-e>": false,
       "x": false,
+      "/": false,
       // "<C-q>": true,
     },
 }

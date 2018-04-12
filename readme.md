@@ -21,7 +21,7 @@
   - [mhartington/dotfiles](https://github.com/mhartington/dotfiles)
     - Nothing super crazy going on here, but some sensible vim and tmux configs.
   - [wincent/wincent 🕴](https://github.com/wincent/wincent)
-    - Dot-files *(Most of this is over my head. Dude is a wizard)*
+    - Dot-files *(Dude is a wizard)*
   - [skwp/dotfiles](https://github.com/skwp/dotfiles)
     - YADR is an opinionated dotfile repo that will make your heart sing
   - [nicknisi/dotfiles](https://github.com/nicknisi/dotfiles/blob/master/config/nvim/init.vim)

@@ -53,9 +53,9 @@
     "*.{jinja,jinja2}": "html",
     "*.tmpl": "gohtml",
     "*.blade": "blade",
-    ".postcssrc": "jsonc",
     "Gopkg.lock": "toml",
-    ".vscodeignore": "gitignore",
+    ".{npmignore,vscodeignore}": "gitignore",
+    ".{babelrc,postcssrc}": "jsonc",
     "*.{jsonc,json5,JSON-tmLanguage}": "jsonc",
     "*.el": "lisp",
   },
@@ -91,8 +91,18 @@
     "editor.wordWrap": "off",
     "editor.quickSuggestions": true
   },
+  "markdown.preview.breaks": false,
   // "markdown.styles": [
   //     "/Users/clay/Projects/vscode/vscode-custom-markdown-preview/build/vscode-syntax.css",
   //     "/Users/clay/Projects/vscode/vscode-custom-markdown-preview/build/custom-markdown.css"
   // ],
+
+  "typescript.format.enable": true,
+  "javascript.format.insertSpaceAfterConstructor": false,
+  "javascript.format.placeOpenBraceOnNewLineForFunctions": false,
+  "jsDocCompletion.enabled": true,
+  "typescript.autoImportSuggestions.enabled": true,
+  "typescript.format.insertSpaceAfterTypeAssertion": true,
+  "typescript.format.placeOpenBraceOnNewLineForControlBlocks": false,
+  "typescript.format.placeOpenBraceOnNewLineForFunctions": true,
 }
