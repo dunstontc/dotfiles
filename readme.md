@@ -58,5 +58,4 @@
     - An Emacs configuration for the stubborn martian vimmer
   - [guide to neovim](http://nerditya.com/code/guide-to-neovim/)
 
-<!-- ## [License](https://github.com/dunstontc/dotfiles/blob/master/LICENSE.md) -->
 
