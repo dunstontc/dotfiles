@@ -47,6 +47,7 @@ npm-debug.log.*
 yarn-error.log
 
 # ~/.dotfiles
+config/.npmrc
 editors/vim/undo/**
 editors/vim/backups/**
 editors/vim/plugged
