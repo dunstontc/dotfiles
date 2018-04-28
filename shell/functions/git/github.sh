@@ -41,6 +41,6 @@ upstream() {
 
 # Stop tracking an ignored file.
 g4get() {
-  git -rm --cached "$1";
+  git rm --cached "$1";
   git add .;
 }
