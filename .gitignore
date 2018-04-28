@@ -53,5 +53,3 @@ editors/vim/backups/**
 editors/vim/plugged
 shell/fish/fundle/**
 shell/zsh/plugins/zsh-autosuggestions
-
-
