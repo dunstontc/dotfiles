@@ -7,8 +7,9 @@ brew update
 brew upgrade
 
 brew tap caskroom/cask
-
 brew tap caskroom/versions
+
+brew tap dart-lang/dart
 
 brew install ack
 # brew install asciinema
@@ -33,9 +34,7 @@ brew install lastpass-cli --with-pinentry
 brew install less
 brew install libgcrypt
 brew install lua
-# brew install neomutt/homebrew-neomutt/neomutt
 brew install neovim --HEAD
-# brew install notmuch
 brew install openssl
 brew install openssl@1.1
 # brew install postgresql
