@@ -1,0 +1,34 @@
+{
+    "Struct": {
+        "prefix": "struct",
+        "body": [
+            "type $1 struct {",
+            "\t$0",
+            "}"
+        ],
+        "description": "Struct"
+    },
+    "Import": {
+        "prefix": "import",
+        "body": [
+            "import (",
+            "\t$0",
+            ")"
+        ],
+        "description": "Import statement."
+    },
+    "Function": {
+        "prefix": "func",
+        "body": [
+            "func $1($2) $3 {",
+            "\t$0",
+            "}"
+        ],
+        "description": "Function"
+    },
+    "Prop": {
+        "prefix": "json",
+        "body": "${1:Name} ${2:Type}, `json:\"${3:Value}\"`$0",
+        "description": "Struct property w/ JSON definition."
+    }
+}
