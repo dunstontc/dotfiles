@@ -20,5 +20,7 @@ mkdir -p ~/.zsh/completion
 curl -L https://raw.githubusercontent.com/docker/cli/master/contrib/completion/zsh/_docker > ~/.zsh/completion/_docker
 
 curl -L https://raw.githubusercontent.com/docker/compose/1.19.0/contrib/completion/zsh/_docker-compose > ~/.zsh/completion/_docker-compose
+
+curl -L https://raw.githubusercontent.com/rust-lang/cargo/master/src/etc/_cargo > ~/.zsh/completion/_cargo
 ```
 
