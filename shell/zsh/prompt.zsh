@@ -1,3 +1,4 @@
+
 # https://stackoverflow.com/questions/689765/how-can-i-change-the-color-of-my-prompt-in-zsh-different-from-normal-text
 # https://stackoverflow.com/questions/6159856/how-do-zsh-ansi-colour-codes-work
 
@@ -179,6 +180,36 @@ prompt_venv() {
   echo -n "${venv_yellow}${python_symbol} ${venv} %f"
 }
 # }}}
+
+# # Show current version of Ruby {{{
+# spaceship_ruby() {
+#   [[ $SPACESHIP_RUBY_SHOW == false ]] && return
+
+#   # Show versions only for Ruby-specific folders
+#   [[ -f Gemfile || -f Rakefile || -n *.rb(#qN^/) ]] || return
+
+#   local ruby_version
+
+#   if spaceship::exists rvm-prompt; then
+#     ruby_version=$(rvm-prompt i v g)
+#   elif spaceship::exists chruby; then
+#     ruby_version=$(chruby | sed -n -e 's/ \* //p')
+#   elif spaceship::exists rbenv; then
+#     ruby_version=$(rbenv version-name)
+#   elif spaceship::exists asdf; then
+#     ruby_version=$(asdf current ruby | awk '{print $1}')
+#   else
+#     return
+#   fi
+
+#   [[ -z $ruby_version || "${ruby_version}" == "system" ]] && return
+
+#   # Add 'v' before ruby version that starts with a number
+#   [[ "${ruby_version}" =~ ^[0-9].+$ ]] && ruby_version="v${ruby_version}"
+
+#     echo -n "${ruby_color}${ruby_symbol} ${ruby_version} %f"
+# }
+# # }}}
 
 prompt_parts=(
   git_status

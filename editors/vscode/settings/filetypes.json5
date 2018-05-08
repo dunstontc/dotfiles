@@ -1,0 +1,28 @@
+{
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "Icon?": true,
+    "**/tags": true,
+  },
+  "files.associations": {
+    ".{aliases,path,viminfo}": "shellscript",
+    "*.blade": "blade",
+    ".{babelrc,postcssrc}": "jsonc",
+    "cargo.lock": "toml",
+    "Cargo.lock": "toml",
+    ".env": "properties",
+    "*.el": "lisp",
+    "*.eex": "erb",
+    "Gopkg.lock": "toml",
+    "*.{jsonc,json5,JSON-tmLanguage}": "jsonc",
+    "*.{jinja,jinja2}": "html",
+    ".{nvimrc,ideavimrc}": "viml",
+    ".ractive": "javascript",
+    "*.tmpl": "gohtml",
+    ".{dockerignore,eslintignore,npmignore,vscodeignore}": "gitignore",
+  },
+}

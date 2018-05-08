@@ -12,13 +12,14 @@ PATH="/usr/local/bin:$PATH"
 PATH="node_modules/.bin:vendor/bin:$PATH"              # use local packages before global
 PATH="$HOME/.node_global/bin:$PATH"                    # npm installed -g
 if [[ "$(uname -s)" == "Darwin" ]]; then
+  PATH="/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin:$PATH"
   PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
   PATH="/usr/local/opt/go/libexec/bin:$PATH"
+  PATH="/usr/local/opt/llvm@5/bin:$PATH"
 else
   PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
   PATH="/usr/local/go/bin:$PATH"
 fi
-PATH="/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin:$PATH"
 
 export PATH
 

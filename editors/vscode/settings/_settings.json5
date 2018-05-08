@@ -21,7 +21,7 @@
   "editor.fontLigatures": true,
   "editor.minimap.enabled": false,
   "editor.mouseWheelScrollSensitivity": 1.1,
-  "editor.renderIndentGuides": true,
+  "editor.renderIndentGuides": false,
   "editor.snippetSuggestions": "top",
 
   "explorer.sortOrder": "type",
@@ -35,30 +35,6 @@
   "git.enableSmartCommit": true,
   "git.confirmSync": false,
 
-  "files.exclude": {
-    "**/.git": true,
-    "**/.svn": true,
-    "**/.hg": true,
-    "**/CVS": true,
-    "**/.DS_Store": true,
-    "Icon?": true,
-    "**/tags": true,
-  },
-
-  "files.associations": {
-    ".{aliases,path,viminfo}": "shellscript",
-    ".env": "properties",
-    ".nvimrc": "viml",
-    ".ractive": "javascript",
-    "*.{jinja,jinja2}": "html",
-    "*.tmpl": "gohtml",
-    "*.blade": "blade",
-    "Gopkg.lock": "toml",
-    ".{npmignore,vscodeignore}": "gitignore",
-    ".{babelrc,postcssrc}": "jsonc",
-    "*.{jsonc,json5,JSON-tmLanguage}": "jsonc",
-    "*.el": "lisp",
-  },
 
   // =============================================================================
   // Extensions
@@ -72,6 +48,8 @@
   "projectManager.showProjectNameInStatusBar": false,
 
   "material-icon-theme.showUpdateMessage": false,
+
+  "markdown-toc.updateOnSave": false,
 
   "vsicons.dontShowNewVersionMessage": true,
   "vsicons.projectDetection.disableDetect": true,

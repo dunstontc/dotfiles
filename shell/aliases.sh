@@ -113,6 +113,8 @@ alias sleepchrome="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v exte
 # Not xterm-italic
 # alias ssh="TERM=xterm-256color ssh"
 
+alias portainer="docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer"
+
 alias treee="
 tree \
 --dirsfirst \
@@ -125,7 +127,7 @@ alias ,="\$EDITOR \$(find \$DOTFILES -name \"*\" -not -path \"*/.git/**\" -not -
 
 alias repos="cd \$(find \$(pwd) -type d -exec test -e '{}/.git' ';' -print -prune | fzf)"
 
-
 # alias ccat='ccat -G String="yellow" -G Keyword="blue" -G Comment="darkgray" -G Type="teal" -G Literal="blue" -G Punctuation="lightgray" -G Plaintext="lightgray" -G Tag="darkgray" -G HTMLTag="darkgray" -G HTMLAttrName="blue" -G HTMLAttrValue="yellow" -G Decimal="green"'
 alias kat='chroma -s paraiso-dark'
 alias mac='mmake'
+

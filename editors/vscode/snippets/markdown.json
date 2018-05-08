@@ -28,6 +28,11 @@
       "body": "[$1]($2)$0",
       "description": "Insert a link"
     },
+    "repo": {
+      "prefix": "repo",
+      "body": "[$1](https://github.com/$1)$0",
+      "description": "Link to a GitHub repository"
+    },
     "image": {
       "prefix": "image",
       "body": "[![${1:alt}](${2:img src})](${3:link})$0",
