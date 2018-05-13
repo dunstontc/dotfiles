@@ -28,6 +28,7 @@ alias ll="exa -al --git --group-directories-first"
 # Abbreviations
 alias c="clear"
 alias d="docker"
+alias dk="docker-compose"
 alias e="exit"
 alias g="git"
 alias j="jump"

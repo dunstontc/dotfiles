@@ -16,6 +16,7 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
   PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
   PATH="/usr/local/opt/go/libexec/bin:$PATH"
   PATH="/usr/local/opt/llvm@5/bin:$PATH"
+  PATH="$HOME/Library/Haskell/bin:$PATH"
 else
   PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
   PATH="/usr/local/go/bin:$PATH"

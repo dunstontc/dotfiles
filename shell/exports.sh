@@ -31,23 +31,13 @@ else
   export GOROOT;
 fi
 
+# https://github.com/crystal-lang/crystal/issues/4745#issuecomment-332553374
+export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
+
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home"
 export JDK_16="/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home"
 export JDK_17="/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home"
 export JDK_18="/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home"
-
-# export LUA_CPATH='/Users/clay/.luarocks/lib/lua/5.2/?.so;/usr/local/lib/lua/5.2/?.so;/usr/local/lib/lua/5.2/loadall.so;./?.so'
-# export LUA_PATH='/Users/clay/.luarocks/share/lua/5.2/?.lua;/Users/clay/.luarocks/share/lua/5.2/?/init.lua;/usr/local/share/lua/5.2/?.lua;/usr/local/share/lua/5.2/?/init.lua;/usr/local/Cellar/lua/5.2.4_4/libexec/share/lua/5.2/?.lua;/usr/local/lib/lua/5.2/?.lua;/usr/local/lib/lua/5.2/?/init.lua;./?.lua'
-#   /Users/clay/.luarocks/share/lua/5.2/?.lua;
-#   /Users/clay/.luarocks/share/lua/5.2/?/init.lua;
-#   /usr/local/share/lua/5.2/?.lua;
-#   /usr/local/share/lua/5.2/?/init.lua;
-#   /usr/local/Cellar/lua/5.2.4_4/libexec/share/lua/5.2/?.lua;
-#   /usr/local/lib/lua/5.2/?.lua;
-#   /usr/local/lib/lua/5.2/?/init.lua;
-#   ./?.lua
-export LUA_PATH='/Users/clay/.luarocks/share/lua/5.2/?.lua;/Users/clay/.luarocks/share/lua/5.2/?/init.lua'
-export LUA_CPATH='/Users/clay/.luarocks/lib/lua/5.2/?.so'
 
 export TODOTXT_CFG_FILE="$DOTFILES/config/todo/todo.config"
 export TODO_DIR="$HOME/.todo"
@@ -85,21 +75,14 @@ export MYVIFMRC="$HOME/.vifm/vifmrc"
 export HL_DIR="$HOME/.highlight"
 export HIGHLIGHT_DATADIR="$HOME/.highlight"
 
-export TCD_BASH_COMPLETION_DIR="/usr/local/etc/bash_completion.d"
-# export ZSH_COMPLETION_DIR="/usr/local/share/zsh/site-functions"
-# export FISH_COMPLETION_DIR="/usr/local/share/fish/vendor_completions.d"
 
-export TEMPLE_DIR="$XDG_CONFIG_HOME/temple/templates"
+export TMPL_DIR="$XDG_CONFIG_HOME/tmpl/templates"
 
 export CODE_FOLDER="/Users/clay/Library/Application\ Support/Code\ -\ Insiders"
 
 
 # export RANGER_LOAD_DEFAULT_RC=FALSE
 # export W3MIMGDISPLAY_PATH=$HOME/.iterm2/bin/imgcat
-
-# export NODE_REPL_HISTORY=~/.node_history;  # Enable persistent REPL history for `node`.
-# export NODE_REPL_HISTORY_SIZE='32768';     # Allow 32³ entries; the default is 1000.
-# export NODE_REPL_MODE='sloppy';            # Use sloppy mode by default, matching web browsers.
 
 #  Avoid issues with `gpg` as installed via Homebrew.
 #  (https://stackoverflow.com/a/42265848/96656)
