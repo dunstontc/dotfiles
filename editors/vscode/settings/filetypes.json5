@@ -21,6 +21,7 @@
     "*.{jsonc,json5,JSON-tmLanguage}": "jsonc",
     "*.{jinja,jinja2}": "html",
     ".{nvimrc,ideavimrc}": "viml",
+    "*.plist": "xml",
     ".ractive": "javascript",
     "*.tmpl": "gohtml",
     ".{dockerignore,eslintignore,npmignore,vscodeignore}": "gitignore",
