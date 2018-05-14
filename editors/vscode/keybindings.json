@@ -119,46 +119,14 @@
     "key": "ctrl+s",
     "command": "workbench.action.files.save"
   },
+{
+  "key": "ctrl+d",
+  "command": "editor.action.copyLinesUpAction",
+},
   // ===========================================================================
   // Emmet
   // ===========================================================================
-  {
-      "key": "shift+cmd+d",
-      "command": "editor.emmet.action.balanceInward",
-      "when": "editorFocus"
-  },
-  {
-      "key": "cmd+d",
-      "command": "editor.emmet.action.balanceOutward",
-      "when": "editorFocus"
-  },
-  // ===========================================================================
-  // Macros
-  // ===========================================================================
-  {
-      "key": "ctrl+shift+b",
-      "command": "macros.lineBreak"
-  },
-  {
-      "key": "ctrl+cmd+backspace",
-      "command": "macros.bsPlus"
-  },
-  {
-      "key": "ctrl+shift+backspace",
-      "command": "macros.bsPlus2"
-  },
-  {
-      "key": "ctrl+shift+right",
-      "command": "macros.downRightPaste"
-  },
-  {
-      "key": "ctrl+shift+left",
-      "command": "macros.downLeftPaste"
-  },
-  // ===========================================================================
-  // Extensions
-  // ===========================================================================
-  {
+{
       "key": "shift+alt+f",
       "command": "HookyQR.beautifyFile"
   },
@@ -185,5 +153,13 @@
       "key": "shift+cmd+c",
       "command": "-workbench.action.terminal.openNativeConsole",
       "when": "!terminalFocus"
-  },
+},
+{
+    "key": "cmd+k cmd+e",
+    "command": "workbench.extensions.action.listOutdatedExtensions"
+},
+{
+    "key": "cmd+k p",
+    "command": "-workbench.action.files.copyPathOfActiveFile"
+},
 ]
