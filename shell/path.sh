@@ -11,6 +11,7 @@ PATH="/usr/local/mysql/bin:$PATH"                      # MySQL
 PATH="/usr/local/bin:$PATH"
 PATH="node_modules/.bin:vendor/bin:$PATH"              # use local packages before global
 PATH="$HOME/.node_global/bin:$PATH"                    # npm installed -g
+PATH="/usr/local/go/bin:$PATH"
 if [[ "$(uname -s)" == "Darwin" ]]; then
   PATH="/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin:$PATH"
   PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
@@ -19,7 +20,6 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
   PATH="$HOME/Library/Haskell/bin:$PATH"
 else
   PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-  PATH="/usr/local/go/bin:$PATH"
 fi
 
 export PATH
