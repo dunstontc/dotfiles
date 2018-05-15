@@ -1,7 +1,6 @@
 module.exports = {
   'brew': [
     'bash',
-    'mongodb',
     'neovim',
     'python',
     'reattach-to-user-namespace',
@@ -28,7 +27,7 @@ module.exports = {
   ],
   'pip3': [
     'glances',
-    'jrnl,'
+    'jrnl',
     'neovim',
     'proselint',
     'Pygments',
@@ -42,7 +41,6 @@ module.exports = {
     'Atom',
     'BetterTouchTool',
     'DB Browser for SQLite',
-    'Freeter',
     'IconJar',
     'iTerm2',
     'KeyCastr',
