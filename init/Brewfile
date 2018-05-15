@@ -11,6 +11,7 @@ brew tap caskroom/versions
 
 # brew tap dart-lang/dart
 # brew install dart
+brew install --HEAD universal-ctags/universal-ctags/universal-ctags
 
 brew install ack
 brew install bash
