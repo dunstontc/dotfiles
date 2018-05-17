@@ -1,12 +1,12 @@
 {
     "bold": {
-      "prefix": "bold",
+      "prefix": "bd",
       "body": "**$1**$0",
       "rightLabelHTML": "<span>&nbsp; Make things bold </span>",
       "description": "Make things bold"
     },
     "italic": {
-      "prefix": "italic",
+      "prefix": "ic",
       "body": "*$1*$0",
       "rightLabelHTML": "<span>&nbsp; Make things italic </span>",
       "description": " Make things italic "
@@ -43,18 +43,13 @@
       "body": "- [$1]($2) \n    - $0"
     },
     "Markdown code block": {
-      "prefix": "code block",
+      "prefix": "fence",
       "body": "```$1\n$0\n```"
     },
     "Line Break": {
       "prefix": "br",
       "body": "<br/>",
       "rightLabelHTML": "<span> &lt;br/&gt; </span>"
-    },
-    "Definition": {
-      "prefix": "definition",
-      "body": "__${1:Term}__ &nbsp;-&nbsp; ${0:Definition}",
-      "rightLabelHTML": "<span> &nbsp;<strong>Term</strong> - Definition </span>"
     },
     "h1": {
       "prefix": "h1",
