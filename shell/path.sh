@@ -20,6 +20,7 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
   PATH="$HOME/Library/Haskell/bin:$PATH"
 else
   PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+  PATH="$HOME/.rbenv/bin:$PATH"
 fi
 
 export PATH
