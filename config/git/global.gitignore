@@ -13,8 +13,8 @@ Thumbs.db
 
 # Editor files
 *.userprefs
-.idea
-.vscode
+# .idea
+# .vscode
 .vs
 .projectile
 **/tags
