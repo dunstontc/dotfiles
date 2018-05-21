@@ -26,7 +26,7 @@ alias l='ls -lAh --group-directories-first --color=always'
 alias ll="exa -al --git --group-directories-first"
 
 # Abbreviations
-alias c="clear"
+alias cls="clear"
 alias d="docker"
 alias dk="docker-compose"
 alias e="exit"

@@ -18,59 +18,56 @@ brew install bash
 brew install bash-completion2
 brew install cmake
 brew install coreutils
-brew install elinks
+# brew install elinks
 # brew install fzf
-brew install ffmpeg
+# brew install ffmpeg
 brew install git
 brew install gnupg
 brew install gnupg2
 brew install go
-brew install highlight
+# brew install highlight
 brew install imagemagick
 # brew install lastpass-cli --with-pinentry
 brew install jq
 brew install less
-brew install libgcrypt
+# brew install libgcrypt
 # brew install lua
 brew install neovim --HEAD
-brew install openssl
-brew install openssl@1.1
-# brew install postgresql
-# brew install python
-# brew install python3
-brew install ranger
+# brew install openssl
+# brew install openssl@1.1
+brew install postgres  # not postgresql
+brew install python
+brew install python@2
+# brew install ranger
 brew install readline
 brew install reattach-to-user-namespace
-brew install shared-mime-info
+# brew install shared-mime-info
 brew install shellcheck
 brew install sqlite
-brew install tag
-brew install tig
-brew install terminal-notifier
-brew install todo-txt
+# brew install tag
+# brew install tig
+# brew install terminal-notifier
+# brew install todo-txt
 brew install tmux --HEAD
 brew install tree
 brew install unrar
 brew install wget
 brew install zsh
 
-brew cask install xquartz #Pre-req for some packages
-brew cask install caskroom/versions/1password-beta
 brew cask install atom
 brew cask install alfred
 brew cask install bartender
 # brew cask install dropbox
-# brew cask install emacs
-# brew cask install istat-menus
 brew cask install iina
 brew cask install iterm2-nightly
 brew cask install firefox
-brew cask install flux
+# brew cask install flux
 brew cask install google-chrome
 brew cask install google-chrome-canary
-brew cask install vienna
+# brew cask install vienna
 brew cask install visual-studio-code
 # brew cask install vlc
+brew cask install xquartz
 
 brew cleanup
 
