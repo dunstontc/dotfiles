@@ -2,16 +2,6 @@ const gulp  = require('gulp');
 const merge = require('gulp-merge-json');
 const json5 = require('gulp-json5-to-json');
 
-let codeFolder = () => {
-  if (process.platform === 'darwin') {
-    return `${process.env.HOME}/Library/Application Support/Code - Insiders/User`
-  } else if (process.platform === 'linux') {
-    return `${process.env.HOME}/.config/Code/User`
-  } else if (process.platform === 'win32') {
-    return "FIXME: code settings folder on windows?"
-  }
-}
-
 gulp.task('default', () => { });
 
 gulp.task('code:compile-settings', () =>
@@ -23,3 +13,22 @@ gulp.task('code:compile-settings', () =>
     .pipe(json5({beautify:true}))
     .pipe(gulp.dest(codeFolder()))
 );
+
+let codeFolder = () => {
+  switch (process.platform) {
+    case 'darwin':
+      return `${process.env.HOME}/Library/Application Support/Code - Insiders/User`;
+      break;
+    case 'linux':
+      return `${process.env.HOME}/.config/Code/User`;
+      break;
+    // case 'win32':
+    //   return "FIXME: code settings folder on windows?"
+    //   break;
+
+    default:
+      console.log('unconfigured os');
+      return '';
+      break;
+  }
+}
