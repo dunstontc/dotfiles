@@ -11,30 +11,23 @@ end_of_line = lf
 indent_size = 2
 indent_style = space
 insert_final_newline = true
-max_line_length = 233
+max_line_length = 256
 trim_trailing_whitespace = true
 
 [*.{md,csv,tsv}]
 trim_trailing_whitespace = false
 
-[*.{go,swift,tsv},Makefile]
+[*.{go,swift,tsv}]
 indent_style = tab
 
 [*.{bash,html,js,json,lua,md,rb,sh,vim}]
 indent_size = 2
-# indent_style = space
 
 [*.{c,cs,jar,java,kt,php,pl,py,rs,swift,ts}]
 indent_size = 4
-# indent_style = space
 
 [*.go]
 indent_size = 8
-# indent_style = tab
 
-# [Makefile]
-# indent_style = tab
-
-# [*.{rb,sh,bash,zsh}]
-# indent_size = 4
-# indent_style = space
+[Makefile]
+indent_style = tab
