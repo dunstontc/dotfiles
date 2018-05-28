@@ -130,5 +130,5 @@ alias repos="cd \$(find \$(pwd) -type d -exec test -e '{}/.git' ';' -print -prun
 
 # alias ccat='ccat -G String="yellow" -G Keyword="blue" -G Comment="darkgray" -G Type="teal" -G Literal="blue" -G Punctuation="lightgray" -G Plaintext="lightgray" -G Tag="darkgray" -G HTMLTag="darkgray" -G HTMLAttrName="blue" -G HTMLAttrValue="yellow" -G Decimal="green"'
 alias kat='chroma -s paraiso-dark'
-alias mac='mmake'
+alias m='mmake'
 
