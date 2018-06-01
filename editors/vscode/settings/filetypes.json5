@@ -17,6 +17,7 @@
     ".env": "properties",
     "*.el": "lisp",
     "*.eex": "erb",
+    "Gemfile.lock": "gemfile",
     "mix.lock": "elixir",
     "*.mak": "makefile",
     "Gopkg.lock": "toml",

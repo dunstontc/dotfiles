@@ -97,7 +97,7 @@ set undodir=~/.vim/undodir
 " =============================================================================
 "  Styles
 " =============================================================================
-" ==== General ====
+" === General ===
 set notitle                    " Show the filename in the window titlebar
 set nowrap                     " Do not wrap lines
 set ruler                      " Show the cursor line
@@ -121,22 +121,22 @@ if exists('+showcmd')
 endif
 
 
-" ==== Theming ====
+" === Theming ===
 " if &term =~# '(^screen|^tmux)'
 "   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 "   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 " endif
 
 " set t_Co=256
-if has('nvim-0.1.5')        " True color in neovim wasn't added until 0.1.5
+if has('nvim-0.1.5') " True color in neovim wasn't added until 0.1.5
   set termguicolors
 endif
 
-colorscheme dark_plus
-set background=dark
-highlight! Comment gui=italic cterm=italic
+" colorscheme dark_plus
+" set background=dark
+" highlight! Comment gui=italic cterm=italic
 
-" ==== Formatting Characters ====
+" === Formatting Characters ===
 if exists('listchars')
   set listchars+=tab:→\
   set listchars+=eol:¬
@@ -157,7 +157,7 @@ endif
 " =============================================================================
 "  Preferences
 " =============================================================================
-" ==== General ====
+" === General ===
 if has('unnamedplus')
   set clipboard=unnamedplus
 else
@@ -166,15 +166,15 @@ endif
 set laststatus=2               " Always show status line
 set nopaste
 
-" ==== Input ====
+" === Input ===
 set backspace=indent,eol,start " Set backspace in insert mode
-set esckeys                    " Allow cursor keys in insert mode
+set esckeys                    " Allow cursor keys in insert mode (≈legacy)
 set nostartofline              " Don’t reset cursor to start of line when moving around.
 if has('virtualedit')          " Allow cursor to move where there is no text in visual block mode
   set virtualedit=block
 endif
 
-" ==== Tabs & Spaces ====
+" === Tabs & Spaces ===
 set autoindent                 " Autoidentation on
 set copyindent                 " Copy indent from the previous line
 set expandtab                  " Expand Tabs (pressing Tab inserts spaces)
@@ -183,7 +183,7 @@ set smarttab                   " Tab respects 'tabstop', 'shiftwidth', and 'soft
 set nojoinspaces               " Don't autoinsert two spaces after '.', '?', '!' for join command
 
 
-" ==== Search ====
+" === Search ===
 set ignorecase                 " Ignore case of searches
 set smartcase                  " Ignore 'ignorecase' if search p
 set hlsearch                   " Highlight matches
@@ -192,7 +192,7 @@ set magic                      " Enable extended regexes
 set gdefault                   " By default add g flag to search/replace. Add g to toggle
 
 
-" ==== Command Completion ====
+" === Command Completion ===
 set wildmenu                   " Visual autocomplete for command menu
 set wildignore+=*.pyc          " Stuff to ignore when tab completing
 set wildignore+=.git/*
@@ -208,7 +208,7 @@ set wildignorecase
 set wildmode=list:longest,full
 
 
-" ==== Folding ====
+" === Folding ===
 if has('folding')
   set foldenable               " Enable folding
   set foldmethod=indent        " Syntax isn't fast
@@ -340,7 +340,7 @@ nnoremap <leader><Up> :bprev<CR>
 nnoremap <leader><Down> :bnext<CR>
 
 
-"  === b -- Buffers===
+"  === Buffers ===
 " l -- List Buffers
 nnoremap <leader>b :Denite buffer -mode=normal<CR>
 " Next Buffer
@@ -357,12 +357,12 @@ nnoremap <leader>bd :bd<CR>
 nnoremap <leader>bq :q<CR>
 
 
-" === e -- Edit ===
+" === Edit ===
 nnoremap <silent> <leader>ev :vsplit $MYVIMRC<CR>
 nnoremap <silent> <leader>e<S-V> :edit $MYVIMRC<CR>
 
 
-" === h -- Help
+" === Help ===
 " Describe Character
 nmap     <leader>hdc :<Plug>(characterize)<CR>
 " nnoremap <leader>hdc :ascii<CR>
@@ -373,17 +373,17 @@ nnoremap <leader>hdp :GetFullPath<CR>
 " Describe Syntax at the cursosr
 nnoremap <leader>hds :SynDef<CR>
 
-" === p -- Plug ===
+" === Plug ===
 nnoremap <leader>pi :PlugInstall<CR>
 nnoremap <leader>ps :PlugStatus<CR>
 nnoremap <leader>pc :PlugClean<CR>
 
 
-" === r -- Reload ===
+" === Reload ===
 nnoremap <silent> <leader>rr :source $MYVIMRC<CR>
 
 
-" === t -- Toggle ===
+" === Toggle ===
 " Toggle Comments
 " nnoremap <leader>tc :TComment<CR>
 " Toggle Folding
@@ -436,7 +436,7 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 
-" ==== TComment ====
+" === TComment ===
 let g:tcommentMaps=0
 let g:tcommentMapLeader1=''
 " " let g:tcommentMapLeader2=''
@@ -444,7 +444,7 @@ let g:tcommentMapLeaderCommentAnyway=''
 let g:tcommentTextObjectInlineComment=''
 
 
-" ==== vim-togglecursor ====
+" === vim-togglecursor ===
 let g:togglecursor_default = 'block'
 let g:togglecursor_insert = 'line'
 let g:togglecursor_leave = 'block'
@@ -453,7 +453,7 @@ let g:togglecursor_disable_tmux = 0
 let g:togglecursor_disable_default_init = 1
 
 
-" ==== vim-airline ====
+" === vim-airline ===
 let g:airline_powerline_fonts = 0
-let g:airline_theme='dark_plus'
+" let g:airline_theme='dark_plus'
 
