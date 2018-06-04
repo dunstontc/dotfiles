@@ -11,7 +11,7 @@
   "files.associations": {
     ".{aliases,path,viminfo}": "shellscript",
     "*.blade": "blade",
-    ".{babelrc,postcssrc}": "jsonc",
+    ".{babelrc,eslintrc,postcssrc,stylelintrc}": "jsonc",
     "cargo.lock": "toml",
     "Cargo.lock": "toml",
     ".env": "properties",

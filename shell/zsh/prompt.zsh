@@ -217,7 +217,7 @@ prompt_parts=(
   venv
   dotnet
   golang
-  # node
+  node
   npm
   jobs
 )
