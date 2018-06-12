@@ -13,6 +13,7 @@
     "*.blade": "blade",
     ".{babelrc,eslintrc,postcssrc,stylelintrc}": "jsonc",
     "cargo.lock": "toml",
+    "Dockerfile.*": "dockerfile",
     "Cargo.lock": "toml",
     ".env": "properties",
     "*.el": "lisp",
