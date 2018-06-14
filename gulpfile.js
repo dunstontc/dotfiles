@@ -18,17 +18,12 @@ let codeFolder = () => {
   switch (process.platform) {
     case 'darwin':
       return `${process.env.HOME}/Library/Application Support/Code - Insiders/User`;
-      break;
     case 'linux':
       return `${process.env.HOME}/.config/Code/User`;
-      break;
-    // case 'win32':
-    //   return "FIXME: code settings folder on windows?"
-    //   break;
-
+    case 'win32':
+      return `${process.env.APPDATA}\\Code\\User`;
     default:
       console.log('unconfigured os');
       return '';
-      break;
   }
 }
