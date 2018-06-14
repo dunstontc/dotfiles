@@ -57,15 +57,15 @@
   "vsicons.dontShowConfigManuallyChangedMessage": true,
 
   // =============================================================================
-  // Language Settings
+  // Golang
   // =============================================================================
-
-  "javascript.suggestionActions.enabled": false,
-
   "go.formatTool": "gofmt",
   "go.buildOnSave": "off",
   "go.useLanguageServer": true,
 
+  // ===========================================================================
+  // Markdown
+  // ===========================================================================
   "[markdown]": {
     "editor.wordWrap": "off",
     "editor.quickSuggestions": true
@@ -76,12 +76,32 @@
   //     "/Users/clay/Projects/vscode/vscode-custom-markdown-preview/build/custom-markdown.css"
   // ],
 
-  "typescript.format.enable": true,
+  // ===========================================================================
+  // Javascript
+  // ===========================================================================
+  "javascript.suggestionActions.enabled": false,
   "javascript.format.insertSpaceAfterConstructor": false,
   "javascript.format.placeOpenBraceOnNewLineForFunctions": false,
   "jsDocCompletion.enabled": true,
+  "typescript.format.enable": true,
   "typescript.autoImportSuggestions.enabled": true,
   "typescript.format.insertSpaceAfterTypeAssertion": true,
   "typescript.format.placeOpenBraceOnNewLineForControlBlocks": false,
   "typescript.format.placeOpenBraceOnNewLineForFunctions": true,
+
+  // ===========================================================================
+  // Python
+  // ===========================================================================
+  "python.linting.pylintEnabled": false,
+  "python.linting.pep8Enabled": true,
+  "python.linting.pydocstyleEnabled": true,
+  "python.linting.mypyEnabled": true,
+  // // Folders in your home directory to look into for virtual environments.
+  // "python.venvFolders": [
+  //   "envs",
+  //   ".pyenv",
+  //   ".direnv"
+  // ],
+  // // Path to folder with a list of Virtual Environments (e.g. ~/.pyenv, ~/Envs, ~/.virtualenvs).
+  // "python.venvPath": "",
 }
