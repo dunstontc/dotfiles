@@ -3,16 +3,13 @@
     "$DOTFILES/.editorconfig":                 "$HOME/.editorconfig",
     "$DOTFILES/config/git/global.gitignore":   "$HOME/.gitignore",
     "$DOTFILES/config/git/.gitconfig":         "$HOME/.gitconfig",
-    "$DOTFILES/shell/.profile":                "$HOME/.profile",
-    "$DOTFILES/shell/bash/.bashrc":            "$HOME/.bashrc",
-    "$DOTFILES/shell/input/.inputrc":          "$HOME/.inputrc",
-    "$DOTFILES/shell/zsh/.zshrc":              "$HOME/.zshrc",
     "$DOTFILES/config/.tmux.conf":             "$HOME/.tmux.conf",
     "$DOTFILES/config/.hyper.js":              "$HOME/.hyper.js",
     "$DOTFILES/config/.npmrc":                 "$HOME/.npmrc",
     "$DOTFILES/config/ranger/scope.sh":        "$HOME/.config/ranger/scope.sh",
     "$DOTFILES/config/ranger/rc.conf":         "$HOME/.config/ranger/rc.conf",
     "$DOTFILES/config/ranger/rifle.conf":      "$HOME/.config/ranger/rifle.conf",
+    "$DOTFILES/config/linting/tox.ini":        "$HOME/tox.ini",
     "$DOTFILES/editors/atom/config.cson":      "$HOME/.atom/config.cson",
     "$DOTFILES/editors/atom/snippets.cson":    "$HOME/.atom/snippets.cson",
     "$DOTFILES/editors/atom/keymaps":          "$HOME/.atom/keymaps",
@@ -21,6 +18,10 @@
     "$DOTFILES/editors/atom/toolbar.cson":     "$HOME/.atom/toolbar.cson",
     "$DOTFILES/editors/vim/.vimrc":            "$HOME/.vimrc",
     "$DOTFILES/editors/emacs/.spacemacs.d":    "$HOME/.spacemacs.d",
-    "$DOTFILES/editors/.ideavimrc":            "$HOME/.ideavimrc"
+    "$DOTFILES/editors/.ideavimrc":            "$HOME/.ideavimrc",
+    "$DOTFILES/shell/.profile":                "$HOME/.profile",
+    "$DOTFILES/shell/bash/.bashrc":            "$HOME/.bashrc",
+    "$DOTFILES/shell/bash/.inputrc":          "$HOME/.inputrc",
+    "$DOTFILES/shell/zsh/.zshrc":              "$HOME/.zshrc"
   }
 }

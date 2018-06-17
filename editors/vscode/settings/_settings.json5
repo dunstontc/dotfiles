@@ -92,8 +92,11 @@
   // ===========================================================================
   // Python
   // ===========================================================================
+  // Path to Python, you can use a custom version of Python by modifying this setting to include the full path.
+  // "python.pythonPath": "/usr/local/bin/python3",
+  "python.pythonPath": "python3",
   "python.linting.pylintEnabled": false,
-  "python.linting.pep8Enabled": true,
+  "python.linting.pep8Enabled": false,
   "python.linting.pydocstyleEnabled": true,
   "python.linting.mypyEnabled": true,
   // // Folders in your home directory to look into for virtual environments.
