@@ -1,0 +1,7 @@
+{
+	"docstring": {
+		"prefix": "doc",
+		"body": ["\"\"\"$1.\"\"\"",],
+		"description": "Tripple-quoted doc string."
+  }
+}

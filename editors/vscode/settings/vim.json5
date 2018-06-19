@@ -18,7 +18,17 @@
         "after": ["<Esc>"]
       }
     ],
-    "vim.otherModesKeyBindingsNonRecursive": [
+    "vim.visualModeKeyBidnings": [
+      {
+        "before": ["l"],
+        "after": ["$"]
+      },
+      {
+        "before": ["H"],
+        "after": ["0"]
+      },
+    ],
+    "vim.normalModeKeyBindings": [
       // {
       //   "before": ["q"],
       //   "after": [],
@@ -40,11 +50,11 @@
           { "command": "workbench.action.closeActiveEditor", "args": [] }
         ]
       },
-      {
-        "before": ["v", "i", "e"],
-        "after": [],
-        "commands": [{ "command": "editor.action.selectAll", "args": [] }]
-      },
+      // {
+      //   "before": ["v", "i", "e"],
+      //   "after": [],
+      //   "commands": [{ "command": "editor.action.selectAll", "args": [] }]
+      // },
       {
         "before": [","],
         "after": ["i", "<space>", "<esc>"]
@@ -53,14 +63,14 @@
         "before": ["<bs>"],
         "after": ["a", "<bs>", "<esc>", "<right>"]
       },
-      {
-        "before": ["L"],
-        "after": ["$"]
-      },
-      {
-        "before": ["H"],
-        "after": ["0"]
-      },
+      // {
+      //   "before": ["L"],
+      //   "after": ["$"]
+      // },
+      // {
+      //   "before": ["H"],
+      //   "after": ["0"]
+      // },
       {
         "before": ["U"],
         "after": ["<C-r>"]
@@ -74,26 +84,16 @@
       //   "after": [],
       //   "commands": [{ "command": "", "args": [] }]
       // },
-      {
-        "before": ["<leader>", "tab"],
-        "after": [],
-        "commands": [{ "command": "workbench.action.quickOpenNavigateNextInEditorPicker", "args": [] }]
-      },
-      {
-        "before": ["<leader>", "<shift>", "<tab>"],
-        "after": [],
-        "commands": [{ "command": "workbench.action.quickOpenNavigatePreviousInEditorPicker", "args": [] }]
-      },
-      {
-        "before": ["<leader>", "h", "d", "s"],
-        "after": [],
-        "commands": [{ "command": "editor.action.inspectTMScopes", "args": [] }]
-      },
-      {
-        "before": ["<leader>", "h", "d", "p"],
-        "after": [],
-        "commands": [{ "command": "workbench.action.files.copyPathofActiveFile", "args": [] }]
-      },
+      // {
+      //   "before": ["<leader>", "h", "d", "s"],
+      //   "after": [],
+      //   "commands": [{ "command": "editor.action.inspectTMScopes", "args": [] }]
+      // },
+      // {
+      //   "before": ["<leader>", "h", "d", "p"],
+      //   "after": [],
+      //   "commands": [{ "command": "workbench.action.files.copyPathofActiveFile", "args": [] }]
+      // },
       {
         "before": ["<leader>", "f", "t"],
         "after": [],
