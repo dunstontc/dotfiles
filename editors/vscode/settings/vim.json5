@@ -1,15 +1,17 @@
 {
     // === Vim ===
     "vim.disableExtension": false,
-    "vim.showcmd": true,
-    "vim.timeout":     3000,
+    "vim.showcmd":     true,
+    "vim.timeout":     2000,
     "vim.useCtrlKeys": true,
+    "vim.surround":    true,
     "vim.easymotion":  false,
     "vim.incsearch":   true,
     "vim.hlsearch":    true,
-    "vim.useSystemClipboard": false,
-    "vim.cmdLineInitialColon": true,
-    "vim.substituteGlobalFlag": true,
+    "vim.smartcase":   true,
+    "vim.useSystemClipboard":    false,
+    "vim.cmdLineInitialColon":   true,
+    "vim.substituteGlobalFlag":  true,
     "vim.statusBarColorControl": false,
     "vim.neovimPath": "/usr/local/bin/nvim",
     "vim.insertModeKeyBindings": [
@@ -29,32 +31,20 @@
       },
     ],
     "vim.normalModeKeyBindings": [
-      // {
-      //   "before": ["q"],
-      //   "after": [],
-      //   "commands": [{ "command": "vim", "args": [] }]
-      // },
       {
-        "before": ["q"],
-        "after": [],
+        "before": ["q"], "after": [],
         "commands": [
           { "command": "workbench.action.files.save", "args": [] },
           { "command": "workbench.action.closeActiveEditor", "args": [] }
         ]
       },
       {
-        "before": ["f", "j"],
-        "after": [],
+        "before": ["f", "j"], "after": [],
         "commands": [
           { "command": "workbench.action.files.save", "args": [] },
           { "command": "workbench.action.closeActiveEditor", "args": [] }
         ]
       },
-      // {
-      //   "before": ["v", "i", "e"],
-      //   "after": [],
-      //   "commands": [{ "command": "editor.action.selectAll", "args": [] }]
-      // },
       {
         "before": [","],
         "after": ["i", "<space>", "<esc>"]
@@ -79,21 +69,10 @@
         "before": ["<leader>", "<leader>"],
         "after": ["<Esc>"],
       },
-      // {
-      //   "before": ["<leader>", "s"],
-      //   "after": [],
-      //   "commands": [{ "command": "", "args": [] }]
-      // },
-      // {
-      //   "before": ["<leader>", "h", "d", "s"],
-      //   "after": [],
-      //   "commands": [{ "command": "editor.action.inspectTMScopes", "args": [] }]
-      // },
-      // {
-      //   "before": ["<leader>", "h", "d", "p"],
-      //   "after": [],
-      //   "commands": [{ "command": "workbench.action.files.copyPathofActiveFile", "args": [] }]
-      // },
+      {
+        "before": ["<leader>", "l"], "after": [],
+        "commands": [{ "command": "editor.action.format", "args": [] }]
+      },
       {
         "before": ["<leader>", "f", "t"],
         "after": [],

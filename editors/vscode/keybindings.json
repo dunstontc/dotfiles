@@ -27,6 +27,10 @@
     "key": "cmd+k cmd+r",
     "command": "workbench.action.openRecent"
   },
+  {                        // View
+    "key": "cmd+k cmd+v",
+    "command": "markdown.showPreviewToSide"
+  },
   // ===========================================================================
   // Native
   // ===========================================================================

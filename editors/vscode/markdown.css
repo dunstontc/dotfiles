@@ -1,0 +1,41 @@
+/* style for html inside of browsers */
+.katex { font-size: 1em !important; } /* align KaTeX font-size to surrounding text */
+
+eq { display: inline-block; }
+
+eqn { display: block}
+
+section.eqno {
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    align-items: center;
+}
+
+section.eqno > eqn {
+    width: 100%;
+    margin-left: 3em;
+}
+
+section.eqno > span {
+    width:3em;
+    text-align:right;
+}
+
+p { text-align: justify; }
+
+table, figure {
+    margin: 0.5em auto;
+}
+
+figure > img {
+    display: block;
+    margin: 0 auto;
+    page-break-inside: avoid;
+}
+
+figcaption {
+    display: block;
+    text-align: center;
+    margin-top: 0.5em;
+}

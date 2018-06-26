@@ -42,12 +42,12 @@ suffix() {
     local char='$'
   fi
 
-  if [[ "$IN_VSCODE" == "1" ]]; then
-    local char=' '
-  fi
-  if [[ "$IN_ATOM" == "1" ]]; then
-    local char=' '  #  
-  fi
+  # if [[ "$IN_VSCODE" == "1" ]]; then
+  #   local char=' '
+  # fi
+  # if [[ "$IN_ATOM" == "1" ]]; then
+  #   local char=' '  #  
+  # fi
 
   #  Mix it all up
   for (( i = 0; i < $lvl; i++ )); do
