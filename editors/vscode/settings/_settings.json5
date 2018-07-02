@@ -97,7 +97,7 @@
   "python.pythonPath": "python3",
   "python.linting.pylintEnabled": false,
   "python.linting.pep8Enabled": false,
-  "python.linting.pydocstyleEnabled": true,
+  // "python.linting.pydocstyleEnabled": true,
   "python.linting.mypyEnabled": true,
   // // Folders in your home directory to look into for virtual environments.
   // "python.venvFolders": [
