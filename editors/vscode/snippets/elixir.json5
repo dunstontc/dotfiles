@@ -1,0 +1,11 @@
+{
+	"defmodule": {
+		"prefix": "module",
+		"body": [
+      "defmodule $1 do",
+      "$0",
+      "end",
+		],
+		"description": "Top-level module definition"
+	}
+}
