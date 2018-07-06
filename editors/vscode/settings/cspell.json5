@@ -1,10 +1,14 @@
 {
-  "cSpell.userWords": [
-    "Erlang",
-    "Gearfire",
-    "Protobuf",
-    "animsition",
-    "clearfix",
-    "novalidate"
-  ]
+    "cSpell.userWords": [
+        "Erlang",
+        "Gearfire",
+        "Protobuf",
+        "animsition",
+        "arity",
+        "clearfix",
+        "inequivalence",
+        "novalidate",
+        "pluralsight",
+        "truthy"
+    ],
 }
