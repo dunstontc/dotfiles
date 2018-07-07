@@ -8,7 +8,7 @@
     "Icon?": true,
     "**/tags": true,
     "**/__pycache__": true,
-    "**/mypy_cache": true,
+    "**/.mypy_cache": true,
   },
   "files.associations": {
     ".{aliases,path,viminfo}": "shellscript",
