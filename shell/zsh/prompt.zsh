@@ -24,6 +24,7 @@ local magenta="%F{176}"
 
 local purp="%F{128}"
 local venv_yellow="%F{220}"
+local elixir_purp="%F{92}"
 # }}}
 
 # Prompt Character {{{
@@ -70,6 +71,7 @@ if [[ $NERDFONT == "TRUE" ]]; then
   local node_symbol=""
   local npm_symbol="" #   ⬢  ﯶ 
   local python_symbol=""
+  local elixir_symbol=""
 else
   local docker_symbol=""
   local dotnet_symbol="NET"
@@ -79,6 +81,7 @@ else
   local node_symbol="JS"
   local npm_symbol="⬢" #  ⬢
   local python_symbol="PY"
+  local elixir_symbol="EX"
 fi
 
 local ansible_symbol=""
@@ -181,42 +184,43 @@ prompt_venv() {
 }
 # }}}
 
-# # Show current version of Ruby {{{
-# spaceship_ruby() {
-#   [[ $SPACESHIP_RUBY_SHOW == false ]] && return
+# ==============================================================================
+# Show current version of Elixir {{{
+prompt_elixir() {
 
-#   # Show versions only for Ruby-specific folders
-#   [[ -f Gemfile || -f Rakefile || -n *.rb(#qN^/) ]] || return
+  # Show versions only for Elixir-specific folders
+  [[ -f mix.exs || -n *.ex(#qN^/) || -n *.exs(#qN^/) ]] || return
 
-#   local ruby_version
+  local elixir_version
 
-#   if spaceship::exists rvm-prompt; then
-#     ruby_version=$(rvm-prompt i v g)
-#   elif spaceship::exists chruby; then
-#     ruby_version=$(chruby | sed -n -e 's/ \* //p')
-#   elif spaceship::exists rbenv; then
-#     ruby_version=$(rbenv version-name)
-#   elif spaceship::exists asdf; then
-#     ruby_version=$(asdf current ruby | awk '{print $1}')
-#   else
-#     return
-#   fi
+  # if spaceship::exists kiex; then
+  #   elixir_version="${ELIXIR_VERSION}"
+  # elif spaceship::exists exenv; then
+  #   elixir_version=$(exenv version-name)
+  # fi
 
-#   [[ -z $ruby_version || "${ruby_version}" == "system" ]] && return
+  if [[ $elixir_version == "" ]]; then
+    # spaceship::exists elixir || return
+    elixir_version=$(elixir -v 2>/dev/null | grep "Elixir" --color=never | cut -d ' ' -f 2)
+  fi
 
-#   # Add 'v' before ruby version that starts with a number
-#   [[ "${ruby_version}" =~ ^[0-9].+$ ]] && ruby_version="v${ruby_version}"
+  [[ $elixir_version == "system" ]] && return
+  [[ $elixir_version == $SPACESHIP_ELIXIR_DEFAULT_VERSION ]] && return
 
-#     echo -n "${ruby_color}${ruby_symbol} ${ruby_version} %f"
-# }
-# # }}}
+  # Add 'v' before elixir version that starts with a number
+  [[ "${elixir_version}" =~ ^[0-9].+$ ]] && elixir_version="v${elixir_version}"
 
+    echo -n "${elixir_purp}${elixir_symbol} ${elixir_version} %f"
+}
+
+# ==============================================================================
 prompt_parts=(
   git_status
   docker
   venv
   dotnet
   golang
+  elixir
   node
   npm
   jobs

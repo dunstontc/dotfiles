@@ -19,7 +19,7 @@
     "Cargo.lock": "toml",
     ".env": "properties",
     "*.el": "lisp",
-    "*.eex": "erb",
+    // "*.eex": "erb",
     "*.ipynb": "json",
     "Gemfile.lock": "gemfile",
     "mix.lock": "elixir",

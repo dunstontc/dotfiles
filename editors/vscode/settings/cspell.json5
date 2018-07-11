@@ -1,15 +1,26 @@
 {
   "cSpell.userWords": [
+    "Bootcamp",
     "Erlang",
     "Gearfire",
     "Protobuf",
     "animsition",
     "arity",
     "clearfix",
+    "dataset",
     "dunstontc",
+    "ecto",
     "inequivalence",
+    "lightbox",
+    "nginx",
     "novalidate",
     "pluralsight",
-    "truthy"
-  ],
+    "polyfill",
+    "scrapy",
+    "templating",
+    "toml",
+    "truthy",
+    "tumblr",
+    "twilio"
+],
 }
