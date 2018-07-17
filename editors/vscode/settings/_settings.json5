@@ -88,6 +88,12 @@
   "typescript.format.insertSpaceAfterTypeAssertion": true,
   "typescript.format.placeOpenBraceOnNewLineForControlBlocks": false,
   "typescript.format.placeOpenBraceOnNewLineForFunctions": true,
+   // Preferred path style for auto imports:
+   // - "relative" to the file location.
+   // - "non-relative" based on the 'baseUrl' configured in your 'jsconfig.json' / 'tsconfig.json'.
+   // - "auto" infer the shortest path type.
+   // Requires using TypeScript 2.9 or newer in the workspace.
+   "javascript.preferences.importModuleSpecifier": "auto",
 
   // ===========================================================================
   // Python
