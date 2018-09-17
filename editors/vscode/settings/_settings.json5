@@ -22,7 +22,7 @@
   "editor.minimap.enabled": true,
   "editor.minimap.renderCharacters": true,
   "editor.mouseWheelScrollSensitivity": 1.1,
-  "editor.renderIndentGuides": false,
+  "editor.renderIndentGuides": true,
   "editor.snippetSuggestions": "top",
 
   "explorer.sortOrder": "type",
@@ -40,6 +40,15 @@
   // =============================================================================
   // Extensions
   // =============================================================================
+
+  "gitlens.advanced.messages": {
+    "suppressShowKeyBindingsNotice": true
+  },
+  "gitlens.gitExplorer.enabled": false,
+  "gitlens.codeLens.enabled": false,
+  "gitlens.currentLine.enabled": false,
+  "gitlens.hovers.currentLine.over": "line",
+  "gitHistory.hideCommitViewExplorer": false,
 
   "dateTime.customFormat": "  hh:mm a  ",
 
@@ -82,7 +91,10 @@
   "javascript.suggestionActions.enabled": false,
   "javascript.format.insertSpaceAfterConstructor": false,
   "javascript.format.placeOpenBraceOnNewLineForFunctions": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+
   "jsDocCompletion.enabled": true,
+
   "typescript.format.enable": true,
   "typescript.autoImportSuggestions.enabled": true,
   "typescript.format.insertSpaceAfterTypeAssertion": true,
@@ -95,16 +107,16 @@
    // Requires using TypeScript 2.9 or newer in the workspace.
    "javascript.preferences.importModuleSpecifier": "auto",
 
-  // ===========================================================================
-  // Python
-  // ===========================================================================
-  // Path to Python, you can use a custom version of Python by modifying this setting to include the full path.
-  "python.formatting.provider": "black",
-  "python.pythonPath": "python3",
-  "python.linting.flake8Enabled": true,
-  "python.linting.mypyEnabled": true,
-  "python.linting.pylintEnabled": false,
-  "python.linting.pep8Enabled": false,
+   // ===========================================================================
+   // Python
+   // ===========================================================================
+   // Path to Python, you can use a custom version of Python by modifying this setting to include the full path.
+   "python.formatting.provider": "black",
+   "python.pythonPath": "python3",
+   "python.linting.flake8Enabled": true,
+   "python.linting.mypyEnabled": true,
+   "python.linting.pylintEnabled": false,
+   "python.linting.pep8Enabled": false,
   // "python.linting.pydocstyleEnabled": true,
   // // Folders in your home directory to look into for virtual environments.
   // "python.venvFolders": [

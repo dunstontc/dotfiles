@@ -4,7 +4,7 @@
     // "javascriptreact"
   ],
   "emmet.includeLanguages": {
-    "gohtml": "html",
+    "GoHTML": "html",
   },
   "emmet.extensionsPath"           : "",
   "emmet.preferences"              : {},
