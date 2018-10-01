@@ -6,6 +6,8 @@
     "$DOTFILES/config/.tmux.conf":             "$HOME/.tmux.conf",
     "$DOTFILES/config/.hyper.js":              "$HOME/.hyper.js",
     "$DOTFILES/config/.npmrc":                 "$HOME/.npmrc",
+    "$DOTFILES/config/.pryrc":                 "$HOME/.pryrc",
+    "$DOTFILES/config/dark-plus.prytheme.rb":  "$HOME/.pry/themes/dark-plus.prytheme.rb",
     "$DOTFILES/config/ranger/scope.sh":        "$HOME/.config/ranger/scope.sh",
     "$DOTFILES/config/ranger/rc.conf":         "$HOME/.config/ranger/rc.conf",
     "$DOTFILES/config/ranger/rifle.conf":      "$HOME/.config/ranger/rifle.conf",
@@ -21,7 +23,7 @@
     "$DOTFILES/editors/.ideavimrc":            "$HOME/.ideavimrc",
     "$DOTFILES/shell/.profile":                "$HOME/.profile",
     "$DOTFILES/shell/bash/.bashrc":            "$HOME/.bashrc",
-    "$DOTFILES/shell/bash/.inputrc":          "$HOME/.inputrc",
+    "$DOTFILES/shell/bash/.inputrc":           "$HOME/.inputrc",
     "$DOTFILES/shell/zsh/.zshrc":              "$HOME/.zshrc"
   }
 }
