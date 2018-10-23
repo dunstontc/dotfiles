@@ -32,13 +32,6 @@
     ],
     "vim.normalModeKeyBindings": [
       {
-        "before": ["q"], "after": [],
-        "commands": [
-          { "command": "workbench.action.files.save", "args": [] },
-          { "command": "workbench.action.closeActiveEditor", "args": [] }
-        ]
-      },
-      {
         "before": ["f", "j"], "after": [],
         "commands": [
           { "command": "workbench.action.files.save", "args": [] },

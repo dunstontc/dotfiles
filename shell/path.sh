@@ -22,6 +22,7 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
 else
   PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH" # GNU coreutils
   PATH="$HOME/.rbenv/bin:$PATH"                        # Ruby
+  PATH="$HOME/.pyenv/bin:$PATH"                        # Ruby
 fi
 
 export PATH

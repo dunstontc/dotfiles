@@ -206,3 +206,6 @@ source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export PRJR_LIST=~/prjr.json
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
+
+# added by travis gem
+[ -f /Users/clay/.travis/travis.sh ] && source /Users/clay/.travis/travis.sh
