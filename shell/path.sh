@@ -18,7 +18,6 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
   PATH="/usr/local/opt/go/libexec/bin:$PATH"           # Go via Brew
   PATH="/usr/local/opt/llvm@5/bin:$PATH"               # Clang
   PATH="$HOME/Library/Haskell/bin:$PATH"               # Haskell
-  PATH="$HOME/anaconda3/bin:$PATH"                     # Python
 else
   PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH" # GNU coreutils
   PATH="$HOME/.rbenv/bin:$PATH"                        # Ruby
