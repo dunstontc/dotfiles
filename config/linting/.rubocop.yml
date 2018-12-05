@@ -4,22 +4,24 @@ Metrics/LineLength:
   Enabled: true
   Max: 120
 
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: when_needed, always, never
 Style/FrozenStringLiteralComment:
   Enabled: false
 
 Style/MethodCallWithoutArgsParentheses:
   Enabled: false
 
-# Cop supports --auto-correct.
+Style/Next:
+  Enabled: false
+
 # Configuration parameters: AllowMultipleReturnValues.
 Style/RedundantReturn:
   Enabled: false
 
-# Cop supports --auto-correct.
 Style/RedundantSelf:
   Enabled: false
 
 Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInHashLiteral:
   EnforcedStyleForMultiline: comma
