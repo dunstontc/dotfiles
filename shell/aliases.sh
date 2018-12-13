@@ -23,7 +23,6 @@ alias 5='cd -5'
 
 # Directories
 alias l='ls -lAh --group-directories-first --color=always'
-alias ll="exa -al --git --group-directories-first"
 
 # Abbreviations
 alias cls="clear"
@@ -34,6 +33,7 @@ alias g="git"
 alias j="jump"
 alias py2="python2"
 alias py3="python3"
+alias rb="ruby"
 alias rgr="ranger"
 alias rss="terminews"
 # alias task="todo.sh"
