@@ -1,0 +1,72 @@
+{
+	"Exception block": {
+		"prefix": "begin",
+		"body": [
+			"begin",
+			"\t$1",
+			"rescue StandardError => e",
+			"\t",
+			"end"
+		]
+  },
+  "Class definition with initialize": {
+		"prefix": "class init",
+		"body": [
+			"class ${1:ClassName}",
+			"\tdef initialize",
+			"\t\t$0",
+			"\tend",
+			"end"
+		]
+	},
+	"Class definition": {
+		"prefix": "class",
+		"body": [
+			"class ${1:ClassName}",
+			"\t$0",
+			"end"
+		]
+  },
+  "if": {
+		"prefix": "if",
+		"body": [
+			"if ${1:test}",
+			"\t$0",
+			"end"
+		]
+	},
+	"if else": {
+		"prefix": "if else",
+		"body": [
+			"if ${1:test}",
+			"\t$0",
+			"else",
+			"\t",
+			"end"
+		]
+  },
+  "Module definition": {
+		"prefix": "module",
+		"body": [
+			"module ${1:ModuleName}",
+			"\t$0",
+			"end"
+		]
+	},
+	"unless": {
+		"prefix": "unless",
+		"body": [
+			"unless ${1:test}",
+			"\t$0",
+			"end"
+		]
+  },
+	"method definition": {
+		"prefix": "def",
+		"body": [
+			"def ${1:method_name}",
+			"\t$0",
+			"end"
+		]
+	}
+}
