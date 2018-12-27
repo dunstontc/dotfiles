@@ -203,8 +203,9 @@ source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 [ -f ~/dircolors.sh ] && eval $(dircolors ~/dircolors.sh)
 
-export PRJR_LIST=~/prjr.json
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+if which jenv > /dev/null; then eval "$(jenv init -)"; fi
+
 
 
 # added by travis gem

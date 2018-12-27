@@ -11,6 +11,7 @@ PATH="/usr/local/bin:$PATH"                            # user bin before system 
 PATH="node_modules/.bin:vendor/bin:$PATH"              # use local packages before global
 PATH="$HOME/.node_global/bin:$PATH"                    # npm installed -g
 PATH="/usr/local/go/bin:$PATH"                         # Go
+PATH="$HOME/.jenv/bin:$PATH"                           # https://github.com/gcuisinier/jenv
 if [[ "$(uname -s)" == "Darwin" ]]; then
   PATH="/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin:$PATH"
   PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
@@ -20,8 +21,8 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
   PATH="$HOME/Library/Haskell/bin:$PATH"               # Haskell
 else
   PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH" # GNU coreutils
-  PATH="$HOME/.rbenv/bin:$PATH"                        # Ruby
-  PATH="$HOME/.pyenv/bin:$PATH"                        # Ruby
+  PATH="$HOME/.rbenv/bin:$PATH"                        # https://github.com/rbenv/rbenv
+  PATH="$HOME/.pyenv/bin:$PATH"                        # Python
 fi
 
 export PATH
