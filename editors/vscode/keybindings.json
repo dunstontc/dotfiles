@@ -7,8 +7,8 @@
     "command": "workbench.action.selectIconTheme"
   },
   {                        // Extensions
-      "key": "cmd+k cmd+e",
-      "command": "workbench.extensions.action.listOutdatedExtensions"
+    "key": "cmd+k cmd+e",
+    "command": "workbench.extensions.action.listOutdatedExtensions"
   },
   {
     "key": "cmd+k cmd+p",  // Pretty handy...
@@ -35,63 +35,63 @@
   // Native
   // ===========================================================================
   {
-      "key": "ctrl+tab",
-      "command": "workbench.action.nextEditor"
+    "key": "ctrl+tab",
+    "command": "workbench.action.nextEditor"
   },
   {
-      "key": "ctrl+shift+tab",
-      "command": "workbench.action.previousEditor"
+    "key": "ctrl+shift+tab",
+    "command": "workbench.action.previousEditor"
   },
   {
-      "key": "cmd+alt+c",
-      "command": "workbench.action.files.copyPathOfActiveFile"
+    "key": "cmd+alt+c",
+    "command": "workbench.action.files.copyPathOfActiveFile"
   },
   {
-      "key": "ctrl+cmd+e",
-      "command": "workbench.files.action.focusFilesExplorer"
+    "key": "ctrl+cmd+e",
+    "command": "workbench.files.action.focusFilesExplorer"
   },
   {
-      "key": "cmd+enter",
-      "command": "editor.action.insertLineAfter",
-      "when": "editorTextFocus && !editorReadonly"
+    "key": "cmd+enter",
+    "command": "editor.action.insertLineAfter",
+    "when": "editorTextFocus && !editorReadonly"
   },
   {
-      "key": "shift+cmd+enter",
-      "command": "editor.action.insertLineBefore",
-      "when": "editorTextFocus && !editorReadonly"
+    "key": "shift+cmd+enter",
+    "command": "editor.action.insertLineBefore",
+    "when": "editorTextFocus && !editorReadonly"
   },
   {
-      "key": "cmd+r",
-      "command": "workbench.action.reloadWindow"
-  },
-{
-      "key": "cmd+i",
-      "command": "editor.action.addSelectionToNextFindMatch",
-      "when": "editorFocus"
+    "key": "cmd+r",
+    "command": "workbench.action.reloadWindow"
   },
   {
-      "key": "ctrl+cmd+p",
-      "command": "editor.action.inspectTMScopes"
+    "key": "cmd+i",
+    "command": "editor.action.addSelectionToNextFindMatch",
+    "when": "editorFocus"
   },
   {
-      "key": "shift+cmd+i",
-      "command": "expandLineSelection",
-      "when": "editorTextFocus"
+    "key": "ctrl+cmd+p",
+    "command": "editor.action.inspectTMScopes"
+  },
+  {
+    "key": "shift+cmd+i",
+    "command": "expandLineSelection",
+    "when": "editorTextFocus"
   },
   {
     "key": "ctrl+s",
     "command": "workbench.action.files.save"
   },
-{
-  "key": "ctrl+d",
-  "command": "editor.action.copyLinesUpAction",
-},
+  {
+    "key": "ctrl+d",
+    "command": "editor.action.copyLinesUpAction",
+  },
   // ===========================================================================
   // Emmet
   // ===========================================================================
 {
-      "key": "shift+alt+f",
-      "command": "HookyQR.beautifyFile"
+    "key": "shift+alt+f",
+    "command": "HookyQR.beautifyFile"
   },
   // {
   //   "key": "ctrl+shift+p",
@@ -101,16 +101,16 @@
   // Terminal
   // ===========================================================================
   {
-      "key": "ctrl+`",
-      "command": "workbench.action.terminal.new"
+    "key": "ctrl+`",
+    "command": "workbench.action.terminal.new"
   },
   {
-      "key": "ctrl+`",
-      "command": "workbench.action.terminal.toggleTerminal"
+    "key": "ctrl+`",
+    "command": "workbench.action.terminal.toggleTerminal"
   },
   {
-      "key": "ctrl+shift+`",
-      "command": "terminalTabs.createNamedTerminal"
+    "key": "ctrl+shift+`",
+    "command": "terminalTabs.createNamedTerminal"
   },
   // ===========================================================================
   // Removed
@@ -119,55 +119,55 @@
     "key": "cmd+enter",
     "command": "-editor.action.insertLineAfter",
     "when": "editorTextFocus && !editorReadonly"
-},
-{
+  },
+  {
     "key": "cmd+enter",
     "command": "-task.new",
     "when": "editorTextFocus"
-},
-{
+  },
+  {
     "key": "shift+cmd+enter",
     "command": "-editor.action.insertLineBefore",
     "when": "editorTextFocus && !editorReadonly"
-},
-{
+  },
+  {
     "key": "cmd+n",
     "command": "-workbench.action.files.newUntitledFile"
-},
-{
+  },
+  {
     "key": "ctrl+d",
     "command": "-deleteRight",
     "when": "editorTextFocus && !editorReadonly"
-},
-{
+  },
+  {
     "key": "cmd+d",
     "command": "-editor.action.addSelectionToNextFindMatch",
     "when": "editorFocus"
-},
-{
+  },
+  {
     "key": "cmd+i",
     "command": "-expandLineSelection",
     "when": "editorTextFocus"
-},
-{
+  },
+  {
     "key": "ctrl+q",
     "command": "-workbench.action.quickOpenView"
-},
-{
+  },
+  {
     "key": "ctrl+q",
     "command": "-workbench.action.quickOpenNavigateNextInViewPicker"
-},
-{
-  "key": "cmd+k cmd+m",
-  "command": "-workbench.extensions.action.showRecommendedKeymapExtensions"
-},
-{
-  "key": "shift+cmd+c",
-  "command": "-workbench.action.terminal.openNativeConsole",
-  "when": "!terminalFocus"
-},
-{
-  "key": "cmd+k p",
-  "command": "-workbench.action.files.copyPathOfActiveFile"
-},
+  },
+  {
+    "key": "cmd+k cmd+m",
+    "command": "-workbench.extensions.action.showRecommendedKeymapExtensions"
+  },
+  {
+    "key": "shift+cmd+c",
+    "command": "-workbench.action.terminal.openNativeConsole",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "cmd+k p",
+    "command": "-workbench.action.files.copyPathOfActiveFile"
+  },
 ]
