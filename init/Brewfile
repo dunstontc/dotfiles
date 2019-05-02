@@ -36,6 +36,7 @@ brew install neovim --HEAD
 # brew install openssl
 # brew install openssl@1.1
 brew install postgres  # not postgresql
+brew install proctools
 brew install python
 brew install python@2
 # brew install ranger
