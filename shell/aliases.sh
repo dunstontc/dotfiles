@@ -92,7 +92,7 @@ alias fhide="defaults write com.apple.finder AppleShowAllFiles -bool false && ki
 alias hdp="pwd | pbcopy"
 
 # Get our IP
-alias ips="ifconfig -a | perl -nle\"/(\d+\.\d+\.\d+\.\d+)/ && print $1\""
+alias ipis="ifconfig -a | perl -nle\"/(\d+\.\d+\.\d+\.\d+)/ && print $1\""
 
 # Get gpg keys
 alias gitkeys="gpg --list-secret-keys --keyid-format LONG"
@@ -110,6 +110,9 @@ alias repoz="find \$(pwd) -type d -exec test -e '{}/.git' ';' -print -prune"
 # Kill all the tabs in Chrome to free up memory
 # [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
 alias sleepchrome="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
+
+# fucking Adobe bloatware
+alias noadobe="ps aux | grep -v 'grep' |grep -i 'adobe' | awk '{print $2}' | xargs kill -9 "
 
 # Not xterm-italic
 # alias ssh="TERM=xterm-256color ssh"
@@ -131,4 +134,3 @@ alias repos="cd \$(find \$(pwd) -type d -exec test -e '{}/.git' ';' -print -prun
 # alias ccat='ccat -G String="yellow" -G Keyword="blue" -G Comment="darkgray" -G Type="teal" -G Literal="blue" -G Punctuation="lightgray" -G Plaintext="lightgray" -G Tag="darkgray" -G HTMLTag="darkgray" -G HTMLAttrName="blue" -G HTMLAttrValue="yellow" -G Decimal="green"'
 alias kat='chroma -s paraiso-dark'
 alias m='mmake'
-

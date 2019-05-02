@@ -166,21 +166,6 @@ ghq() {
   command ghq "$@"
 }
 
-# @description Get the most used words in an input.
-wordfrequency() {
-  awk '
-  BEGIN { FS="[^a-zA-Z]+" } {
-      for (i=1; i<=NF; i++) {
-          word = tolower($i)
-          words[word]++
-      }
-  }
-  END {
-      for (w in words)
-          printf("%3d %s\n", words[w], w)
-  } ' | sort -rn
-}
-
 # =============================================================================
 
 # # `n` with no arguments opens the current directory in Vim, otherwise opens the given location
