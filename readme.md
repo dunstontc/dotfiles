@@ -3,14 +3,14 @@
 > Feel free to have a look around.
 
 ## Contents
-  - Bash *4.4.12*
-  - Zsh *5.4.2*
-  - tmux *2.6*
-  - Atom *1.25.0*
-  - VS Code *1.22.0-insider*
-  - [Neovim](https://github.com/dunstontc/nvim.d) *0.2.3-dev*
-  - Vim *8.0.125*
-  - iTerm2 *3.1.6beta5*
+  - Bash *4.4.12+*
+  - Zsh *5.4.2+*
+  - tmux *2.6+*
+  - Atom *1.25.0+*
+  - VS Code *1.22.0-insider+*
+  - [Neovim](https://github.com/dunstontc/nvim.d) *0.2.3-dev+*
+  - Vim *8.0.125+*
+  - iTerm2 *3.1.6beta5+*
 
 
 ### Resource & Reference
@@ -52,6 +52,8 @@
     - Config files for my *nix systems* *(Tmux)*
   - [MaxMEllon/.dotfiles](https://github.com/MaxMEllon/.dotfiles)
     - 🔧 my configuration files ( .zshrc , .tmux.conf , etc... ) 
+  - [LukeSmithxyz/voidrice](https://github.com/LukeSmithxyz/voidrice)
+    - My dotfiles (deployed by LARBS)
   - [hrs/dotfiles](https://github.com/hrs/dotfiles)
     - Let's be honest: mostly Emacs.
   - [hlissner/doom-emacs](https://github.com/hlissner/doom-emacs)
