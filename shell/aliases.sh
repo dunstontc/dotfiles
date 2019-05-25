@@ -10,16 +10,11 @@ alias cp='cp -iv'
 alias mv='mv -iv'
 
 # Navigation
+alias ~="cd ~"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
-alias ~="cd ~"
-alias 1='cd -'
-alias 2='cd -2'
-alias 3='cd -3'
-alias 4='cd -4'
-alias 5='cd -5'
 
 # Directories
 alias l='ls -lAh --group-directories-first --color=always'
@@ -31,16 +26,9 @@ alias dk="docker-compose"
 alias e="exit"
 alias g="git"
 alias j="jump"
-alias py2="python2"
-alias py3="python3"
-alias rb="ruby"
 alias rgr="ranger"
-alias rss="terminews"
-# alias task="todo.sh"
-# alias todo="todo.sh"
-alias tpd="topydo"
 alias v="vim"
-# alias vi="nvim"
+alias vi="vim"
 alias n="nvim"
 
 # todo.txt
@@ -49,16 +37,12 @@ alias tls="todo.sh ls"
 # NPM
 alias npi="npm install"
 alias npmlg="ls /Users/clay/.node_global/bin" # Much faster & gives Process Names as opposed to Package Names
-alias npmD="npm i -D "
-alias npo="npm outdated"
 alias npr="npm run"
-alias npp="npm init -y"
 
 # pip
 alias pipls="pip list --format=columns"
 
 # Shortcuts
-alias keyring="nvim -c 'VimFiler -explorer ~/Projects/GitHub/KeyRing/keys'"
 alias dots='cd $DOTFILES'
 alias nv="cd ~/.config/nvim"
 alias pj="cd ~/Projects"
@@ -110,9 +94,6 @@ alias repoz="find \$(pwd) -type d -exec test -e '{}/.git' ';' -print -prune"
 # Kill all the tabs in Chrome to free up memory
 # [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
 alias sleepchrome="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
-
-# fucking Adobe bloatware
-alias noadobe="ps aux | grep -v 'grep' |grep -i 'adobe' | awk '{print $2}' | xargs kill -9 "
 
 # Not xterm-italic
 # alias ssh="TERM=xterm-256color ssh"

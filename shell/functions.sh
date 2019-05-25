@@ -11,14 +11,6 @@ include () {
   [[ -f "$1" ]] && source "$1"
 }
 
-# @description Change working directory to the top-most Finder window location.
-# 'CD-Finder'
-#
-# @param $1 Directory to change into.
-cdf() {
-  cd "$(osascript -e 'tell app \"Finder\" to POSIX path of (insertion location as alias)')" || return
-}
-
 # @description Define an alias.
 watdo() {
   alias | grep "$1"
@@ -47,14 +39,6 @@ upstream() {
   git remote -v;
 }
 
-
-ahead_behind() {
-  curr_branch=$(git rev-parse --abbrev-ref HEAD)
-  curr_remote=$(git config branch.$curr_branch.remote)
-  curr_merge_branch=$(git config branch.$curr_branch.merge | cut -d / -f 3)
-  git rev-list --left-right --count $curr_branch...$curr_remote/$curr_merge_branch | tr -s '\t' '|'
-}
-
 nman() {
   nvim -c 'set filetype=man $1'
 }
@@ -64,36 +48,9 @@ yank() {
   cat "$1" | pbcopy;
 }
 
+# @description Copy the contents of your clipboard to a file
 put() {
   pbpaste > "$1";
-}
-
-# @description Returns an escaped string wrapped in single quotes. Hopefully.
-#
-# @param string The string to escape. (hopefully)
-#
-# @see https://github.com/scop/bash-completion/blob/233421469b12d3b60e7595822cc9166016abe384/bash_completion#L138
-quote() {
-  local quoted=${1//\'/\'\\\'\'}
-  printf "'%s'" "$quoted"
-}
-
-# This is used for escaping command lines for remote execution.
-# From StackOverflow: https://goo.gl/sTKReB
-# Using this approach: "Put the whole string in single quotes. This works for all chars except
-# single quote itself. To escape the single quote, close the quoting before it, insert the single
-# quote, and re-open the quoting."
-#
-escape_cmd_line() {
-  escape_cmd_line_rv=""
-  for arg in "$@"; do
-    escape_cmd_line_rv+=" '"${arg/\'/\'\\\'\'}"'"
-    # This should be equivalent to the sed command below.  The quadruple backslash encodes one
-    # backslash in the replacement string. We don't need that in the pure-bash implementation above.
-    # sed -e "s/'/'\\\\''/g; 1s/^/'/; \$s/\$/'/"
-  done
-  # Remove the leading space if necessary.
-  escape_cmd_line_rv=${escape_cmd_line_rv# }
 }
 
 # @description Prints an array of colors to test for True Color support.
@@ -125,10 +82,6 @@ fn_codes() {
     echo
   done
 }
-
-# armour() {
-#   gpg --armor --export $1
-# }
 
 # @description Determine size of a file or total size of a directory.
 #
@@ -166,22 +119,7 @@ ghq() {
   command ghq "$@"
 }
 
-# =============================================================================
-
-# # `n` with no arguments opens the current directory in Vim, otherwise opens the given location
-# n() {
-#   if [ $# -eq 0 ]; then
-#     nvim .;
-#   else
-#     nvim "$@";
-#   fi;
-# }
-
-# # `o` with no arguments opens the current directory, otherwise opens the given location
-# o() {
-#   if [ $# -eq 0 ]; then
-#     open .;
-#   else
-#     open "$@";
-#   fi;
-# }
+# @description Put Adobe processes to sleep.
+noadobe() {
+  ps aux | grep -v 'grep' | grep -i 'adobe' | awk '{print $2}' | xargs kill -9
+}
