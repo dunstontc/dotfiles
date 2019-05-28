@@ -13,7 +13,6 @@ brew tap caskroom/versions
 # brew install dart
 brew install --HEAD universal-ctags/universal-ctags/universal-ctags
 
-brew install ack
 brew install bash
 brew install bash-completion2
 brew install cmake
@@ -24,11 +23,11 @@ brew install coreutils
 brew install git
 brew install gnupg
 brew install gnupg2
-brew install go
+# brew install go
 # brew install highlight
 brew install imagemagick
 # brew install lastpass-cli --with-pinentry
-brew install jq
+# brew install jq
 brew install less
 # brew install libgcrypt
 # brew install lua
@@ -36,7 +35,7 @@ brew install neovim --HEAD
 # brew install openssl
 # brew install openssl@1.1
 brew install postgres  # not postgresql
-brew install proctools
+brew install proctools # (pgrep, pkill, pfind)
 brew install python
 brew install python@2
 # brew install ranger
@@ -46,7 +45,7 @@ brew install reattach-to-user-namespace
 brew install shellcheck
 brew install sqlite
 # brew install tag
-# brew install tig
+brew install tig
 # brew install terminal-notifier
 # brew install todo-txt
 brew install tmux --HEAD
@@ -58,18 +57,13 @@ brew install zsh
 brew cask install atom
 brew cask install alfred
 brew cask install bartender
-# brew cask install dropbox
 brew cask install iina
 brew cask install iterm2-nightly
 brew cask install firefox
-# brew cask install flux
 brew cask install google-chrome
-brew cask install google-chrome-canary
 # brew cask install vienna
 brew cask install visual-studio-code
-# brew cask install vlc
 brew cask install xquartz
 
 brew cleanup
-
 brew cask cleanup
