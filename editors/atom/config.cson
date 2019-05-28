@@ -101,7 +101,6 @@
   "exception-reporting":
     userId: "203b703e-f085-4a60-82c1-775b13bb5428"
   "file-icons": {}
-  "flex-tool-bar": {}
   "go-plus":
     autocomplete:
       suppressBuiltinAutocompleteProvider: false
