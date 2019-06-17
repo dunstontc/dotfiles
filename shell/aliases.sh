@@ -10,14 +10,13 @@ alias cp='cp -iv'
 alias mv='mv -iv'
 
 # Navigation
-alias ~="cd ~"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
 # Directories
-alias l='ls -lAh --group-directories-first --color=always'
+alias ll='ls -lAh --group-directories-first --color=always'
 
 # Abbreviations
 alias cls="clear"
