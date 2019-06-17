@@ -7,7 +7,7 @@ export RP="TRUE"
 
 if command -v nvim > /dev/null 2>&1; then
   export EDITOR="nvim"
-  export MANPAGER="nvim -c 'set ft=man' -"
+  # export MANPAGER="nvim -c 'set ft=man' -"
 elif command -v vim > /dev/null 2>&1; then
   export EDITOR="vim"
 else
