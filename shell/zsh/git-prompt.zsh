@@ -38,7 +38,7 @@ prompt_git_status() {
   local GIT_STATUS_DIVERGED=""
   $(command git rev-parse --is-inside-work-tree &>/dev/null) || return
 
-  local brunch=$(command git symbolic-ref HEAD | cut -d'/' -f3)
+  local brunch=$(command git symbolic-ref HEAD | cut -d'/' -f3-)
   local index=$(command git status --porcelain -b -s 2> /dev/null)
   local git_status=""
 
