@@ -99,7 +99,7 @@
   "typescript.autoImportSuggestions.enabled": true,
   "typescript.format.insertSpaceAfterTypeAssertion": true,
   "typescript.format.placeOpenBraceOnNewLineForControlBlocks": false,
-  "typescript.format.placeOpenBraceOnNewLineForFunctions": true,
+  "typescript.format.placeOpenBraceOnNewLineForFunctions": false,
    // Preferred path style for auto imports:
    // - "relative" to the file location.
    // - "non-relative" based on the 'baseUrl' configured in your 'jsconfig.json' / 'tsconfig.json'.
