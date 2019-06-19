@@ -14,7 +14,7 @@ while read line; do
 
     # echo "$from --> $to"
     mkdir -p $destination
-    ln -sfv $from $to
+    ln -sfv $to $from
   fi
 
 done < $filename
