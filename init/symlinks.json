@@ -3,6 +3,7 @@
     "$DOTFILES/.editorconfig":                 "$HOME/.editorconfig",
     "$DOTFILES/config/git/global.gitignore":   "$HOME/.gitignore",
     "$DOTFILES/config/git/.gitconfig":         "$HOME/.gitconfig",
+    "$DOTFILES/config/git/.tigrc":             "$HOME/.config/tig/config",
     "$DOTFILES/config/.tmux.conf":             "$HOME/.tmux.conf",
     "$DOTFILES/config/.hyper.js":              "$HOME/.hyper.js",
     "$DOTFILES/config/.npmrc":                 "$HOME/.npmrc",
