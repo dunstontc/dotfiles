@@ -13,8 +13,8 @@ while read line; do
     destination=${to%/*}
 
     # echo "$from --> $to"
-    mkdir -p $destination
-    ln -sfv $to $from
+    mkdir -p $destination;
+    ln -sfv $from $to;
   fi
 
 done < $filename
