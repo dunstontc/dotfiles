@@ -6,8 +6,11 @@ while read line; do
   from=$(echo $line | awk '{print $1}')
   to=$(echo $line | awk '{print $2}')
 
-  from=$(eval echo $from)
-  to=$(eval echo $to)
+  if [ ! -z "${from##*#*}" ] ; then
+    from=$(eval echo $from)
+    to=$(eval echo $to)
 
-  echo "$from --> $to"
+    echo "$from --> $to"
+  fi
+
 done < $filename
