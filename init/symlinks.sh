@@ -10,7 +10,11 @@ while read line; do
     from=$(eval echo $from)
     to=$(eval echo $to)
 
-    echo "$from --> $to"
+    destination=${to%/*}
+
+    # echo "$from --> $to"
+    mkdir $destination
+    ln -sfv $from $to
   fi
 
 done < $filename
