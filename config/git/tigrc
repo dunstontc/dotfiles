@@ -322,7 +322,7 @@ color " -"			red	default
 color "index "			blue	default
 color "old file mode "		yellow	default
 color "new file mode "		yellow	default
-color "deleted file mode "	yellow	default
+color "deleted file mode "	red	default
 color "copy from "		yellow	default
 color "copy to "		yellow	default
 color "rename from "		yellow	default
@@ -335,9 +335,9 @@ color "Commit: "		magenta	default
 color "Tagger: "		magenta	default
 color "Merge: "			blue	default
 color "Date: "			242	default
-color "AuthorDate: "		yellow	default
-color "CommitDate: "		yellow	default
-color "TaggerDate: "		yellow	default
+color "AuthorDate: "		151	default
+color "CommitDate: "		151	default
+color "TaggerDate: "		151	default
 color "Refs: "			red	default
 color "Reflog: "		red	default
 color "Reflog message: "	yellow	default
@@ -352,7 +352,7 @@ color "    Acked-by"		yellow	default
 color "    Tested-by"		yellow	default
 color "    Reviewed-by"		yellow	default
 color default			default	default	normal
-color cursor			default	236
+color cursor			white	green
 color status			green	default
 color delimiter			magenta	default
 color date			242	default
@@ -366,8 +366,8 @@ color file			33	default
 color grep.file			33	default
 color file-size			default	default
 color line-number		151	default
-color title-blur		white	blue
-color title-focus		green	black
+color title-blur		white	default
+color title-focus		green	default
 color main-commit		default	default
 color main-tag			magenta	default	bold
 color main-local-tag		magenta	default
