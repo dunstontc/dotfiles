@@ -1,20 +1,27 @@
 #!/bin/bash
 
-filename="$HOME/.dotfiles/init/symlinks.txt"
+read -p 'This will overwrite all of your system settings.
+Are you sure you want to proceed? [y/n] ' -n 1 -r
 
-while read line; do
-  from=$(echo $line | awk '{print $1}')
-  to=$(echo $line | awk '{print $2}')
+echo
 
-  if [ ! -z "${from##*#*}" ] ; then
-    from=$(eval echo $from)
-    to=$(eval echo $to)
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    filename="$HOME/.dotfiles/init/symlinks.txt"
 
-    destination=${to%/*}
+    while read line; do
+      from=$(echo $line | awk '{print $1}')
+      to=$(echo $line | awk '{print $2}')
 
-    # echo "$from --> $to"
-    mkdir -p $destination;
-    ln -sfv $from $to;
-  fi
+      if [ ! -z "${from##*#*}" ] ; then
+        from=$(eval echo $from)
+        to=$(eval echo $to)
 
-done < $filename
+        destination=${to%/*}
+
+        mkdir -p $destination;
+        ln -sfv $from $to;
+      fi
+
+    done < $filename
+fi
+
