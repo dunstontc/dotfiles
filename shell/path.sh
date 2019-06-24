@@ -23,6 +23,7 @@ else
   PATH="$HOME/.rbenv/bin:$PATH"                        # https://github.com/rbenv/rbenv
   PATH="$HOME/.pyenv/bin:$PATH"                        # Python
 fi
+PATH=".:$PATH"
 
 export PATH
 
