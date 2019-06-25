@@ -64,8 +64,8 @@ alias ,n="\$EDITOR ~/.config/nvim/init.vim"
 alias remux="\$EDITOR \$DOTFILES/config/.tmux.conf"
 
 # Print each PATH entry on a separate line
-alias list_path='echo -e ${PATH//:/\\n}'
-alias list_fpath='echo -e ${FPATH//:/\\n}'
+alias listpath='echo -e ${PATH//:/\\n}'
+alias listfpath='echo -e ${FPATH//:/\\n}'
 
 # Show/hide hidden files in Finder
 alias fshow="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
