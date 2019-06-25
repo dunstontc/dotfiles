@@ -74,7 +74,7 @@ case $OS_NAME in
     export OS_ICON=""
     export OS_PKG=""
     ;;
-  "windows")
+  "wsl")
     export OS_NAME="windows"
     export OS_ICON=""
     export OS_PKG=""
