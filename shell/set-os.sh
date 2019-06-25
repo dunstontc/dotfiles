@@ -1,15 +1,16 @@
 stringContains() { [ -z "${2##*$1*}" ] && [ -z "$1" -o -n "$2" ]; }
 
-if stringContains 'Darwin' "$(uname -a)";  then OS_NAME="darwin";  fi
-if stringContains 'Debian' "$(uname -a)";  then OS_NAME="debian";  fi
-if stringContains 'Ubuntu' "$(uname -a)";  then OS_NAME="ubuntu";  fi
-if stringContains 'el6' "$(uname -a)";     then OS_NAME="redhat";  fi
-if stringContains 'el7' "$(uname -a)";     then OS_NAME="redhat";  fi
-if stringContains 'fc26' "$(uname -a)";    then OS_NAME="fedora";  fi
-if stringContains 'fc27' "$(uname -a)";    then OS_NAME="fedora";  fi
-if stringContains 'MANJARO' "$(uname -a)"; then OS_NAME="arch";    fi
-if stringContains 'aufs' "$(uname -a)";    then OS_NAME="arch";    fi
-if stringContains 'android' "$(uname -a)"; then OS_NAME="android"; fi
+if stringContains 'Darwin' "$(uname -a)";    then OS_NAME="darwin";  fi
+if stringContains 'Debian' "$(uname -a)";    then OS_NAME="debian";  fi
+if stringContains 'Ubuntu' "$(uname -a)";    then OS_NAME="ubuntu";  fi
+if stringContains 'el6' "$(uname -a)";       then OS_NAME="redhat";  fi
+if stringContains 'el7' "$(uname -a)";       then OS_NAME="redhat";  fi
+if stringContains 'fc26' "$(uname -a)";      then OS_NAME="fedora";  fi
+if stringContains 'fc27' "$(uname -a)";      then OS_NAME="fedora";  fi
+if stringContains 'MANJARO' "$(uname -a)";   then OS_NAME="arch";    fi
+if stringContains 'aufs' "$(uname -a)";      then OS_NAME="arch";    fi
+if stringContains 'android' "$(uname -a)";   then OS_NAME="android"; fi
+if stringContains 'Microsoft' "$(uname -a)"; then OS_NAME="wsl";     fi
 
 #         
 case $OS_NAME in
@@ -71,6 +72,11 @@ case $OS_NAME in
   "android")
     export OS_NAME="android"
     export OS_ICON=""
+    export OS_PKG=""
+    ;;
+  "windows")
+    export OS_NAME="windows"
+    export OS_ICON=""
     export OS_PKG=""
     ;;
   *)
