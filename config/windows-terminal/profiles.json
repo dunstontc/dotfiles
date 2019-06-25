@@ -1,7 +1,7 @@
 {
     "globals": {
         "alwaysShowTabs": true,
-        "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+        "defaultProfile": "{2c4de342-38b7-51cf-b940-2309a097f518}",
         "initialCols": 120,
         "initialRows": 30,
         "keybindings": [
@@ -159,7 +159,7 @@
         {
             "acrylicOpacity": 0.5,
             "closeOnExit": true,
-            "colorScheme": "Campbell",
+            "colorScheme": "DarkPlus",
             "commandline": "wsl.exe -d Ubuntu",
             "cursorColor": "#FFFFFF",
             "cursorShape": "bar",
@@ -299,7 +299,7 @@
             "purple": "#c586c0",
             "red": "#f44747",
             "white": "#d4d4d4",
-            "yellow": "##d7ba7d"
+            "yellow": "#d7ba7d"
         }
     ]
 }
