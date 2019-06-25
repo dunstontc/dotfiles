@@ -2,6 +2,8 @@
 [user]
 	name = Clay Dunston
 	email = dunstontc@gmail.com
+[includeIf "gitdir:~/tcd/"]
+	path = ~/tcd/.gitconfig
 [github]
 	name = dunstontc
 [credential]
