@@ -1,0 +1,2 @@
+# noadobe:  Kill all running processes with 'Adobe' in the name.
+ps aux | grep -v 'grep' | grep -i 'adobe' | awk '{print $2}' | xargs kill
