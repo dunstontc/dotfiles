@@ -99,16 +99,6 @@ siz() {
   fi
 }
 
-# @description Should probably be an alias.
-hdi() {
-  howdoi "$*" -c -n 5
-}
-
-# @description Colorize --help output.
-help() {
-  "$1" --help | ccat
-}
-
 # @description Wrap ghq() to avoid nesting shells.
 ghq() {
   if [ "$1" = look -a -n "$2" ]; then
@@ -117,9 +107,4 @@ ghq() {
   fi
 
   command ghq "$@"
-}
-
-# @description Put Adobe processes to sleep.
-noadobe() {
-  ps aux | grep -v 'grep' | grep -i 'adobe' | awk '{print $2}' | xargs kill -9
 }
