@@ -1,2 +1,3 @@
 # noadobe:  Kill all running processes with 'Adobe' in the name.
 ps aux | grep -v 'grep' | grep -i 'adobe' | awk '{print $2}' | xargs kill
+ps aux | grep -v 'grep' | grep -i 'Core Sync Helper' | awk '{print $2}' | xargs kill
