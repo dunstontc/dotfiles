@@ -1,7 +1,8 @@
-# export MANPATH="/usr/local/man:$MANPATH"
-# export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+export MANPATH="/usr/local/man:$MANPATH"
+export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
-PATH="$DOTFILES/bin:$PATH"                             # Handwritten stuff
+PATH=".:$PATH"
+PATH="$DOTFILES/bin:$PATH"                             # Look in CWD first
 PATH="$HOME/bin:$PATH"                                 # Handwritten stuff
 PATH=$GOBIN:$PATH                                      # Go
 PATH="$HOME/.cargo/bin:$PATH"                          # Rust
@@ -23,7 +24,6 @@ else
   PATH="$HOME/.rbenv/bin:$PATH"                        # https://github.com/rbenv/rbenv
   PATH="$HOME/.pyenv/bin:$PATH"                        # Python
 fi
-PATH=".:$PATH"
 
 export PATH
 
