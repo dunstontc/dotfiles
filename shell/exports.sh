@@ -26,9 +26,6 @@ export GOBIN="$HOME/go/bin"
 if [[ $OS_NAME == 'darwin' ]]; then
   GOROOT="$(brew --prefix golang)/libexec";
   export GOROOT;
-else
-  GOROOT="$(which go)"
-  export GOROOT;
 fi
 
 # https://github.com/crystal-lang/crystal/issues/4745#issuecomment-332553374
