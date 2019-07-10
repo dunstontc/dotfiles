@@ -8,6 +8,9 @@ export SHELL=/usr/local/bin/zsh
 
 # =============================================================================
 
+# Figure out where we are
+source $DOTFILES/shell/set-os.sh
+
 # Source our dotfiles
 for file in $DOTFILES/shell/*.sh; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file";

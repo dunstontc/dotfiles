@@ -6,8 +6,12 @@
 # ============================================================================
 
 export DOTFILES=$HOME/.dotfiles
-shellfiles="$DOTFILES/shell/*.sh"
+
+# Figure out where we are
+source $DOTFILES/shell/set-os.sh
+
 # Source our dotfiles
+shellfiles="$DOTFILES/shell/*.sh"
 for file in ${shellfiles[@]}; do
   [ -f "$file" ] && source "$file";
 done;
