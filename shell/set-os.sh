@@ -15,7 +15,7 @@ if stringContains 'Microsoft' "$(uname -a)"; then OS_NAME="wsl";     fi
 #         
 case $OS_NAME in
   "darwin")
-    export OS_NAME="macos"
+    export OS_NAME="darwin"
     export OS_ICON=""
     export OS_PKG="brew"
     ;;
