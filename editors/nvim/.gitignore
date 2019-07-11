@@ -1,0 +1,33 @@
+#   ┌─┐┬┌┬┐┬┌─┐┌┐┌┌─┐┬─┐┌─┐
+#   │ ┬│ │ ││ ┬││││ │├┬┘├┤
+#  o└─┘┴ ┴ ┴└─┘┘└┘└─┘┴└─└─┘
+
+**/!.gitkeep
+state_nvim.vim
+rplugin.vim
+cache_nvim
+
+# Folders
+sessions
+undo
+
+# mac system files
+Icon?
+.DS_Store
+
+# local files
+.env
+.variables
+ignore/**
+
+# other
+*.pyc
+*.behind
+.netrwhist
+tags
+.tags
+.cscope
+.O
+.class
+
+
