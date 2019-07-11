@@ -88,11 +88,9 @@ alias gp="git push"
 alias gs="git status -s"
 alias gb="git branch -a"
 
-alias repoz="find \$(pwd) -type d -exec test -e '{}/.git' ';' -print -prune"
+alias tgit='GIT_SSH_COMMAND="ssh -i ~/.ssh/id_rsa_tcd" git push -u origin master'
 
-# Kill all the tabs in Chrome to free up memory
-# [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
-alias sleepchrome="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
+alias repoz="find \$(pwd) -type d -exec test -e '{}/.git' ';' -print -prune"
 
 # Not xterm-italic
 # alias ssh="TERM=xterm-256color ssh"
