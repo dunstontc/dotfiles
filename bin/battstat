@@ -14,25 +14,30 @@
 # WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+#
+# Edited by Clay Dunston <dunstontc@gmail.com>
+
 
 charging_icon="⚡"     #  U+26A1 - Thunderbolt
 discharging_icon="🔋" # U+1F50B - Battery
 
 print_help() {
-    echo "usage: battstat [options] format"
-    echo ""
-    echo "options:"
-    echo "    -h, --help                display help information"
-    echo "    -c, --charging-icon       string to display in icon's place when battery is charging"
-    echo "    -d, --discharging-icon    string to display in icon's place when battery is discharging"
-    echo "    --percent-when-charged    only display percent when charged"
-    echo ""
-    echo "format:"
-    echo "    {i}    display icon"
-    echo "    {t}    display time remaining"
-    echo "    {p}    display percent"
-    echo ""
-    echo "    Note: There must be a space between each format token."
+    cat<<END
+    usage: battstat [options] format
+
+    options:
+        -h, --help                display help information
+        -c, --charging-icon       string to display in icon's place when battery is charging
+        -d, --discharging-icon    string to display in icon's place when battery is discharging
+        --percent-when-charged    only display percent when charged
+
+    format:
+        {i}    display icon
+        {t}    display time remaining
+        {p}    display percent
+
+        Note: There must be a space between each format token.
+END
 }
 
 exit_no_battery() {
@@ -45,7 +50,7 @@ get_darwin_details() {
 
     # Exit if no battery exists.
     if ! echo "$battery_details" | grep -q InternalBattery; then
-	exit_no_battery
+        exit_no_battery
     fi
 
     charged=$(echo "$battery_details" | grep -w 'charged')
@@ -60,7 +65,7 @@ get_linux_details() {
 
     # Exit if no batery exists.
     if [ -z "$battery_details" ]; then
-	exit_no_battery
+        exit_no_battery
     fi
 
     charged=$(echo "$battery_details" | grep 'state' | grep -w 'fully-charged')
@@ -69,24 +74,24 @@ get_linux_details() {
     percent=$(echo "$battery_details"| grep 'percentage' | awk '{print $2}')
 
     case $(echo "$battery_details" | grep 'time' | awk '{print $5}') in
-	"hours")
-	    hours=$(echo "$battery_details" | grep 'time' | awk '{print $4}' | cut -d . -f1)
-	    minutes=$(echo "$battery_details" | grep 'time' | awk '{print $4}' | cut -d . -f2)
-	    minutes=$(echo .$minutes \* 60 | bc -l | cut -d. -f1)
-	    ;;
-	"minutes")
-	    minutes=$(echo "$battery_details" | grep 'time' | awk '{print $4}' | cut -d . -f1)
-	    ;;
+        "hours")
+            hours=$(echo "$battery_details" | grep 'time' | awk '{print $4}' | cut -d . -f1)
+            minutes=$(echo "$battery_details" | grep 'time' | awk '{print $4}' | cut -d . -f2)
+            minutes=$(echo .$minutes \* 60 | bc -l | cut -d. -f1)
+            ;;
+        "minutes")
+            minutes=$(echo "$battery_details" | grep 'time' | awk '{print $4}' | cut -d . -f1)
+            ;;
     esac
 
     # Diplay 0 in the hours spot when only minutes remain.
     if [ -z "$hours" ]; then
-	hours="0"
+        hours="0"
     fi
 
     # Prefix 0 when minutes drop below 10.
     if [ ${#minutes} -eq '1' ]; then
-	minutes="0$minutes"
+        minutes="0$minutes"
     fi
 
     time=$hours:$minutes
@@ -97,7 +102,7 @@ get_openbsd_details() {
 
     # Exit if no battery exists.
     if [ -z "$battery_details" ]; then
-	exit_no_battery
+        exit_no_battery
     fi
 
     charging=$(echo $battery_details | grep -w 'state: connected')
@@ -117,7 +122,7 @@ get_openbsd_details() {
 
         # Prefix 0 when minutes drop below 10.
         if [ ${#minutes} -eq '1' ]; then
-	    minutes="0$minutes"
+            minutes="0$minutes"
         fi
 
         time=$hours:$minutes
@@ -126,15 +131,15 @@ get_openbsd_details() {
 
 hide_percent_until_charged() {
     if [ -z "$charged" ]; then
-	percent=""
+        percent=""
     fi
 }
 
 print_icon() {
     if [ ! -z "$charging" ] || [ ! -z "$charged" ]; then
-	icon=$charging_icon
+        icon=$charging_icon
     elif [ ! -z "$discharging" ]; then
-	icon=$discharging_icon
+        icon=$discharging_icon
     fi
 
     printf " %s " $icon
@@ -143,23 +148,23 @@ print_icon() {
 print_time() {
     # Display "calc..." when calculating time remaining.
     if [ -z "$time" ] || [ $time = "0:00" ]; then
-	time="calc..."
+        time="calc..."
     fi
 
     # Hide time when fully charged.
     if [ ! -z "$charged" ]; then
-	time=""
+        time=""
     fi
 
     if [ ! -z "$time" ]; then
-	printf " %s " $time
+        printf " %s " $time
     fi
 
 }
 
 print_percent() {
     if [ ! -z "$percent" ]; then
-	printf " %s " $percent
+        printf " %s " $percent
     fi
 }
 
@@ -170,18 +175,18 @@ fi
 
 case $(uname) in
     "Darwin")
-	get_darwin_details
-	;;
+        get_darwin_details
+        ;;
     "Linux")
-	get_linux_details
-	;;
+        get_linux_details
+        ;;
     "OpenBSD")
-	get_openbsd_details
-	;;
+        get_openbsd_details
+        ;;
     *)
-	echo "battstat: operating system not supported"
-	exit 1
-	;;
+        echo "battstat: operating system not supported"
+        exit 1
+        ;;
 esac
 
 if [ $# -eq 0 ]; then
@@ -192,36 +197,36 @@ fi
 
 while test $# -gt 0; do
     case "$1" in
-	--percent-when-charged)
-	    hide_percent_until_charged
-	    shift
-	    ;;
-	-c|--charging-icon)
-	    charging_icon="$2"
-	    shift
-	    shift
-	    ;;
-	-d|--discharging-icon)
-	    discharging_icon="$2"
-	    shift
-	    shift
-	    ;;
-	{i})
-	    print_icon
-	    shift
-	    ;;
-	{t})
-	    print_time
-	    shift
-	    ;;
-	{p})
-	    print_percent
-	    shift
-	    ;;
-	*)
-	    print_help
-	    break
-	    ;;
+        --percent-when-charged)
+            hide_percent_until_charged
+            shift
+            ;;
+        -c|--charging-icon)
+            charging_icon="$2"
+            shift
+            shift
+            ;;
+        -d|--discharging-icon)
+            discharging_icon="$2"
+            shift
+            shift
+            ;;
+        {i})
+            print_icon
+            shift
+            ;;
+        {t})
+            print_time
+            shift
+            ;;
+        {p})
+            print_percent
+            shift
+            ;;
+        *)
+            print_help
+            break
+            ;;
     esac
 done
 
