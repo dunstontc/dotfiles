@@ -17,6 +17,7 @@ $HOME/.dotfiles/config/linting/tox.ini           $HOME/tox.ini
 # $HOME/.dotfiles/editors/atom/styles.less         $HOME/.atom/styles.less
 # $HOME/.dotfiles/editors/atom/menu-config.json    $HOME/.atom/menu-config.json
 # $HOME/.dotfiles/editors/atom/toolbar.cson        $HOME/.atom/toolbar.cson
+$HOME/.dotfiles/editors/nvim                     $HOME/.config/nvim
 $HOME/.dotfiles/editors/vim/.vimrc               $HOME/.vimrc
 $HOME/.dotfiles/editors/emacs/.spacemacs.d       $HOME/.spacemacs.d
 $HOME/.dotfiles/editors/.ideavimrc               $HOME/.ideavimrc
