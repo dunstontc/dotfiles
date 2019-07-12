@@ -23,17 +23,24 @@ call plug#begin('~/.local/nvim/plugged')
   endif
   Plug 'junegunn/vim-peekaboo'     " Show the contents of registers on a sidebar.
   Plug 'airblade/vim-gitgutter'    " Shows a git diff in the gutter (sign column) and stages/undoes hunks.
-  Plug 'ryanoasis/vim-devicons'  " Adds file type glyphs/icons to popular Vim plugins.
+  Plug 'ryanoasis/vim-devicons'    " Adds file type glyphs/icons to popular Vim plugins.
   " Plug 'itchyny/vim-cursorword'  " Underlines the word under the cursor.
   " Plug 'xtal8/traces.vim'        " Range, pattern and substitute preview for Vim.
+  " Plug 'osyo-manga/vim-anzu'       " Vim search status (current/found).
 
 
   " === Language ===
   Plug 'justinmk/vim-syntax-extra',     {'for': ['c']}
-  Plug 'gutenye/json5.vim',             {'for': 'json5'}
   Plug 'kchmck/vim-coffee-script',      {'for': ['coff', 'coffee', 'cson']}
+  Plug 'gutenye/json5.vim',             {'for': 'json5'}
   Plug 'dunstontc/syntax-vim-ex',       {'for': 'vim'}
+  Plug 'rust-lang/rust.vim',            {'for': 'rust'}
+  Plug 'racer-rust/vim-racer',          {'for': 'rust'}
 
+  " === Linting ===
+  Plug 'sbdchd/neoformat'                                      " A (Neo)vim plugin for formatting code.
+  " Plug 'neomake/neomake',     {'do': 'make build/vimhelplint'} " Asynchronous linting and make framework for Neovim/Vim
+  " Plug 'ternjs/tern_for_vim', {'for': ['javascript']}
 
   " === Lazy ===
   Plug 'ciaranm/securemodelines'                                   " A secure alternative to Vim modelines
@@ -50,10 +57,10 @@ call plug#begin('~/.local/nvim/plugged')
   Plug 'kana/vim-textobj-user'               " Create your own text objects.
   Plug 'kana/vim-textobj-line'               " Text objects for the current line.
   Plug 'kana/vim-textobj-entire'             " Text objects for the entire content of a buffer.
-  " Plug 'beloglazov/vim-textobj-quotes'       " Text objects for the closest pairs of quotes of any type.
   Plug 'glts/vim-textobj-comment'            " Text objects for comments.
   Plug 'michaeljsmith/vim-indent-object'     " Text objects for levels of indentation.
   Plug 'Julian/vim-textobj-variable-segment' " Text objects for variable segments in PascalCase, camelCase, snake_case, or kebab-case.
+  " Plug 'beloglazov/vim-textobj-quotes'       " Text objects for the closest pairs of quotes of any type.
   " Plug 'Julian/vim-textobj-brace'            " A text object for the closest inner () {} *or* []
 
   " === Editing ===
@@ -85,7 +92,7 @@ call plug#begin('~/.local/nvim/plugged')
   " Plug 'duff/vim-bufonly', {'on': 'BufOnly'} " Unload all buffers but the current one.
   " Plug 'mhinz/vim-sayonara'                  " Sane buffer/window deletion.
   " Plug 'ervandew/supertab'                   " Perform all your vim insert mode completions with Tab.
-  " Plug 'airblade/vim-matchquote'             " %-style motion for single / double quotation marks, backticks and pipe.
+  Plug 'airblade/vim-matchquote'             " %-style motion for single / double quotation marks, backticks and pipe.
   Plug 'Raimondi/delimitMate'                " Provides insert mode auto-completion for quotes, parens, brackets, etc.
   Plug 'sgur/vim-editorconfig'               " Yet another EditorConfig plugin for vim written in vimscript only.
   Plug 'christoomey/vim-tmux-navigator'      " Seamless navigation between tmux panes and vim splits.
@@ -93,6 +100,32 @@ call plug#begin('~/.local/nvim/plugged')
   " Plug 'Shougo/context_filetype.vim'         " Context filetype library for Vim script?
   " Plug 'Shougo/echodoc.vim'                  " Print documents in echo area.
   " Plug 'mattn/webapi-vim'                    " An Interface to WEB APIs.
+
+  " " === Completion ===
+  " Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'} " Asynchronous completion framework for neovim/Vim8
+  " Plug 'Shougo/neco-vim'
+  " Plug 'Shougo/neco-syntax'
+  " Plug 'Shougo/neoinclude.vim'
+  " " Plug 'ujihisa/neco-look'
+  " Plug 'SirVer/ultisnips'
+  " Plug 'wellle/tmux-complete.vim'
+  " Plug 'mattn/emmet-vim',               {'for': ['jsx', 'html', 'vue', 'gohtml' ]}
+  " " Plug 'zchee/deoplete-clang',         {'for': ['c', 'cpp', 'objc', 'objcpp']}
+  " " Plug 'tweekmonster/deoplete-clang2', {'for': ['c', 'cpp', 'objc', 'objcpp']}
+  " Plug 'Shougo/deoplete-clangx',        {'for': ['c', 'cpp', 'objc', 'objcpp']}
+  " " Plug 'Rip-Rip/clang_complete',        {'for': ['c', 'cpp', 'objc', 'objcpp']}
+  " Plug 'zchee/deoplete-jedi',           {'for': 'python'}
+  " Plug 'zchee/deoplete-zsh',            {'for': 'zsh'}
+  " Plug 'ponko2/deoplete-fish',          {'for': 'fish'}
+  " Plug 'carlitux/deoplete-ternjs',      {'for': ['jsx', 'javascript' ]}
+  " Plug 'sebastianmarkow/deoplete-rust', {'for': 'rust'}
+  " " Plug 'fishbullet/deoplete-ruby',      {'for': 'ruby'}
+  " Plug 'uplus/deoplete-solargraph',     {'for': 'ruby'}
+  " Plug 'padawan-php/deoplete-padawan',  {'for': 'php'}
+  " " Plug 'artur-shaik/vim-javacomplete2', {'for': 'java'}
+  " Plug 'zchee/deoplete-go',             {'for': 'go', 'do':  'make'}
+  " Plug 'fcpg/vim-complimentary',        {'for': 'vim'}  " Improves the completion of VimL builtin functions, commands, variables and options.
+  " " Plug '1995eaton/vim-better-javascript-completion'
 
 call plug#end()
 
