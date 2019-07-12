@@ -13,12 +13,87 @@ let g:uname = substitute(system('uname'), '\n', '', '')
 "  Plugins
 " ==============================================================================
 
-call plug#begin('~/.local/share/nvim/plugged')
-  if g:uname ==? 'Darwin'
+call plug#begin('~/.local/nvim/plugged')
+
+  " === Theme/UI ===
+  if g:uname == 'Darwin'
     Plug '/Users/clay/Projects/vim/vim-vscode-theme'
   else
     Plug 'dunstontc/vim-vscode-theme'
   endif
+  Plug 'junegunn/vim-peekaboo'     " Show the contents of registers on a sidebar.
+  Plug 'airblade/vim-gitgutter'    " Shows a git diff in the gutter (sign column) and stages/undoes hunks.
+  Plug 'ryanoasis/vim-devicons'  " Adds file type glyphs/icons to popular Vim plugins.
+  " Plug 'itchyny/vim-cursorword'  " Underlines the word under the cursor.
+  " Plug 'xtal8/traces.vim'        " Range, pattern and substitute preview for Vim.
+
+
+  " === Language ===
+  Plug 'justinmk/vim-syntax-extra',     {'for': ['c']}
+  Plug 'gutenye/json5.vim',             {'for': 'json5'}
+  Plug 'kchmck/vim-coffee-script',      {'for': ['coff', 'coffee', 'cson']}
+  Plug 'dunstontc/syntax-vim-ex',       {'for': 'vim'}
+
+
+  " === Lazy ===
+  Plug 'ciaranm/securemodelines'                                   " A secure alternative to Vim modelines
+  Plug 'Shougo/vinarise.vim',           { 'on': 'Vinarise'}        " Hex editing
+  Plug 'tweekmonster/startuptime.vim',  { 'on': 'StartupTime'}     " Breakdown Vim's --startuptime output
+  Plug 'tyru/capture.vim',              { 'on': 'Capture'}         " Show Ex command output in a buffer
+  Plug 'chrisbra/Colorizer',            { 'on': 'ColorToggle'}     " Colors hex codes and color names
+  Plug 'dhruvasagar/vim-table-mode',    { 'on': 'TableModeToggle'} " Automatic table creator & formatter
+  Plug 'majutsushi/tagbar',             { 'on': 'TagbarToggle'}    " Provides an easy way to browse the tags of the current file and get an overview of its structure.
+  Plug 'mbbill/undotree',               { 'on': 'UndotreeToggle'}  " Undo history visualizer
+  Plug 'guns/xterm-color-table.vim',    { 'on': 'XtermColorTable'} " All 256 xterm colors with their RGB equivalents
+
+  " === Text Objects ===
+  Plug 'kana/vim-textobj-user'               " Create your own text objects.
+  Plug 'kana/vim-textobj-line'               " Text objects for the current line.
+  Plug 'kana/vim-textobj-entire'             " Text objects for the entire content of a buffer.
+  " Plug 'beloglazov/vim-textobj-quotes'       " Text objects for the closest pairs of quotes of any type.
+  Plug 'glts/vim-textobj-comment'            " Text objects for comments.
+  Plug 'michaeljsmith/vim-indent-object'     " Text objects for levels of indentation.
+  Plug 'Julian/vim-textobj-variable-segment' " Text objects for variable segments in PascalCase, camelCase, snake_case, or kebab-case.
+  " Plug 'Julian/vim-textobj-brace'            " A text object for the closest inner () {} *or* []
+
+  " === Editing ===
+  Plug 'junegunn/vim-easy-align'   " A Vim alignment plugin
+  " Plug 'tpope/vim-commentary'      " Comment stuff out.
+  Plug 'tomtom/tcomment_vim'       " An extensible & universal comment vim-plugin that also handles embedded filetypes.
+  " Plug 'kana/vim-niceblock'        " Make blockwise Visual mode more useful.
+  Plug 'haya14busa/vim-edgemotion' " Move to the edge! (with J/K)
+  " Plug 'machakann/vim-swap'      " Reorder delimited items.
+  Plug 'valloric/matchtagalways',   {'for': ['html', 'xml', 'gohtml']}            " Always highlights the enclosing html/xml tags.
+  " Plug 'AndrewRadev/switch.vim',    {'on': 'Switch'}                            " Switch segments of text with predefined replacements.
+  Plug 'dkarter/bullets.vim',       {'for' : ['gitcommit', 'markdown', 'rst', 'scratch', 'text', 'text', 'yaml']} " Automated bullet lists
+
+  " === Utilities ===
+  Plug '/usr/local/opt/fzf'
+  Plug 'junegunn/fzf.vim'                    " Wrapper for using FZF in Vim.
+  " Plug 'djoshea/vim-autoread'                " Have Vim automatically reload a file that has changed externally.
+  Plug 'tpope/vim-rsi'                       " Readline style insertion.
+  " Plug 'tpope/vim-eunuch'                    " Vim sugar for the UNIX shell commands that need it the most.
+  " Plug 'tpope/vim-repeat'                    " Enable repeating supported plugin maps with "."
+  Plug 'tpope/vim-fugitive'                  " A Git wrapper so awesome, it should be illegal.
+  Plug 'tpope/vim-surround'                  " Provides mappings to easily delete, change, and add surroundings in pairs.
+  " Plug 'tpope/vim-dispatch'                  " Asynchronous build and test dispatcher.
+  " Plug 'tpope/vim-speeddating'               " Use CTRL-A/CTRL-X to increment dates, times, and more.
+  " Plug 'tpope/vim-endwise'                   " Helps to end certain structures automatically.
+  " Plug 'airblade/vim-rooter'                 " Changes Vim working directory to project root.
+  " Plug 'pbrisbin/vim-mkdir'                  " Automatically create any non-existent directories before writing the buffer.
+  Plug 'kopischke/vim-stay'                  " Make Vim persist editing state without fuss.
+  " Plug 'duff/vim-bufonly', {'on': 'BufOnly'} " Unload all buffers but the current one.
+  " Plug 'mhinz/vim-sayonara'                  " Sane buffer/window deletion.
+  " Plug 'ervandew/supertab'                   " Perform all your vim insert mode completions with Tab.
+  " Plug 'airblade/vim-matchquote'             " %-style motion for single / double quotation marks, backticks and pipe.
+  Plug 'Raimondi/delimitMate'                " Provides insert mode auto-completion for quotes, parens, brackets, etc.
+  Plug 'sgur/vim-editorconfig'               " Yet another EditorConfig plugin for vim written in vimscript only.
+  Plug 'christoomey/vim-tmux-navigator'      " Seamless navigation between tmux panes and vim splits.
+  " Plug 'ludovicchabant/vim-gutentags'        " A Vim plugin that manages your tag files.
+  " Plug 'Shougo/context_filetype.vim'         " Context filetype library for Vim script?
+  " Plug 'Shougo/echodoc.vim'                  " Print documents in echo area.
+  " Plug 'mattn/webapi-vim'                    " An Interface to WEB APIs.
+
 call plug#end()
 
 " ==============================================================================
@@ -30,7 +105,7 @@ syntax on
 set nocompatible
 
 " Python Settings
-if g:uname ==? 'Darwin'
+if g:uname == 'Darwin'
   let g:python3_host_prog  = '/usr/local/bin/python3'
 endif
 
