@@ -22,8 +22,9 @@ set winminheight=0           " Allow splits to be reduced to a single line
 set viewoptions=cursor,folds,slash,unix " What to save in sessions
 set cmdheight=1
 set showcmd                  " Show (partial) command in the last line of the screen.
-set noshowmode                 " Don't show the current mode (airline takes care of this)
-set report=1                   " Report more than x lines changed at once
+set noshowmode               " Don't show the current mode (airline takes care of this)
+set report=1                 " Report more than x lines changed at once
+set laststatus=2             " Always show the statusline
 
 set shell=/bin/bash
 
