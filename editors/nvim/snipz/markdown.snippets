@@ -1,0 +1,80 @@
+    priority -50
+
+###########################
+# sections and paragraphs #
+###########################
+
+snippet h1 "section" b
+# $1 #$0
+endsnippet
+
+snippet h2 "sub section" b
+## $1 ##$0
+endsnippet
+
+snippet h3 "subsub section" b
+### $1 ###$0
+endsnippet
+
+snippet h4 "paragraph" b
+#### $1 ####$0
+endsnippet
+
+snippet h5 "paragraph" b
+##### $1 #####$0
+endsnippet
+
+################
+# common stuff #
+################
+
+snippet bd "**bold**"
+**$1**$0
+endsnippet
+
+snippet ic "*italic*"
+*$1*$0
+endsnippet
+
+snippet strike "~~Strike~~"
+~~$1~~$0
+endsnippet
+
+snippet link "[title](address)"
+[$2]($1)$0
+endsnippet
+
+snippet plink "Paste Link from clipboard"
+[$1](`!v getreg('*')`)$0
+endsnippet
+
+snippet repo "Link to GitHub repo in clipboard"
+[`!v getreg('+')`](https://github.com/`!v getreg('+')`)$0
+endsnippet
+
+snippet markdownlink "Full link snippet"
+[${1:2ext}](${3:http://${2:www.url.com}})$0
+endsnippet
+
+snippet code "a block of code" b
+\`\`\`$1
+$0
+\`\`\`
+endsnippet
+
+snippet image "Markdown image"
+![$1]($2)$0
+endsnippet
+
+snippet new_project "H1, shields, & a centered image." b
+# `!v expand('%:p:h:t')`
+[![GitHub issues](https://img.shields.io/github/issues/dunstontc/$1.svg)](https://github.com/dunstontc/$1/issues)
+[![License](https://img.shields.io/github/license/dunstontc/$1.svg)](https://github.com/dunstontc/$1/blob/master/LICENSE)
+
+$0
+
+## [License](https://github.com/dunstontc/${1:`!v expand('%:p:h:t')`}/blob/master/LICENSE)
+
+endsnippet
+
+# vim:ft=snippets:

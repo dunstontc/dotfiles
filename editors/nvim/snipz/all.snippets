@@ -1,0 +1,43 @@
+# Global Snippets
+priority -55
+
+snippet todo "TODO comment" bw
+`!p snip.rv=get_comment_format()[0]` ${2:TODO}: $0${3: <${4:`!v strftime('%d-%m-%y')`}${5:, `!v g:snips_author`}>} `!p snip.rv=get_comment_format()[2]`
+endsnippet
+
+snippet modeline "Vim settings" b
+vim:${1:filetype=$2:}${3:foldmethod=${4:marker}:}${5:${7:tabstop=${6:4}:}${9:shiftwidth=${8:4}:}${11:softtabstop=${10:4}:}${12:noexpandtab:}}
+endsnippet
+
+snippet date "YYYY-MM-DD" w
+`!v strftime("%Y-%m-%d")`
+endsnippet
+
+snippet time "HH:MM" w
+`!v strftime("%H:%M")`
+endsnippet
+
+snippet dtime_readable "1997 Apr 27 11:53:25" w
+`!v strftime("%Y %b %d %X")`
+endsnippet
+
+snippet dtime_iso8601 "1997 Apr 27 11:53:25" w
+`!v strftime("%Y-%m-%dT%H:%M:%S")`
+endsnippet
+
+snippet timestamp
+`!v strftime("%Y-%m-%d %H:%M:%S")`
+endsnippet
+
+# # `!p snip.rv=get_comment_format()[0]` =============================================================================
+# snippet divider "Divider" b
+# endsnippet
+
+# snippet section "Section Divider" b
+# `!p snip.rv=get_comment_format()[0]` =============================================================================
+# `!p snip.rv=get_comment_format()[0]` === ${1:title} ===
+# `!p snip.rv=get_comment_format()[0]` =============================================================================
+# $0
+# endsnippet
+
+# vim:ft=snippets:
