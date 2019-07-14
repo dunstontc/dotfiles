@@ -29,6 +29,7 @@ let g:myline.mode_map = {
     \ }
 
 function! myline#mode() abort
+  call myline_colors#UpdateColor()
   return ' ' . g:myline.mode_map[mode()] . ' '
 endfunction
 
@@ -374,4 +375,5 @@ endfunction
 " let s:p.normal.error =    [ [ s:red,      s:brightblack ] ]
 " let s:p.normal.warning =  [ [ s:yellow,   s:brightblack ] ]
 " let s:p.normal.special =  [ [ s:cyan,     s:brightblack ] ]
+
 
