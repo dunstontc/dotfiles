@@ -426,7 +426,6 @@ nnoremap <leader><S-Tab> :bp<CR>
 nnoremap <leader>/ :%s///g<left><left><left>
 " a   -- Add
 nnoremap <leader>a <Plug>(place-insert)
-nnoremap <leader>` :Deol -split -start-insert<CR>
 " c   -- Comment
 noremap <silent> <leader>c :TComment<CR>
 " f   -- Find (grep)
@@ -438,14 +437,11 @@ nnoremap <leader>m @
 " q   -- Quit
 " nnoremap <leader>q qq
 " r   -- Reload
-nnoremap <leader>rr :source $MYVIMRC<CR>:call lightline#update_once()<CR>
+nnoremap <leader>rr :source $MYVIMRC <CR>:echo<CR>
 " f t -- FileTree
 nnoremap <leader>ft :VimFilerExplorer<CR>
 " v   -- Vertical Split
 nnoremap <leader>v :vsplit \| :echo<CR>
-" x   -- ...Todo...
-nnoremap <leader>x :Denite -start-filter todo<CR>
-nnoremap <leader><S-X> :Denite -start-filter todotxt<CR>
 
 " left  -- Close Folds
 nnoremap <leader><Left> zc
