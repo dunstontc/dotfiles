@@ -46,6 +46,7 @@ alias dots='cd $DOTFILES'
 alias nv="cd ~/.config/nvim"
 alias pj="cd ~/Projects"
 alias dl="cd ~/Downloads"
+alias doc="cd ~/Documents"
 
 # Reload zsh
 alias zr="source ~/.zshrc"
