@@ -80,8 +80,6 @@ function! myline#Filename() abort
     return ' ' . l:filename
   elseif &filetype ==# 'denite'
     return ' ' . denite#get_status("sources")
-  elseif &filetype ==# 'tagbar'
-    return ' '.g:lightline.fname
   else
     return &filetype !~# g:myline#blacklist ? ('  '.l:filename.''.l:modified) : " "
   endif
@@ -114,11 +112,10 @@ function! myline#FileSize() abort
 endfunction
 
 ""
-" @function(Devicon)
-" In specific filetypes, above a specified width, returns the corresponding filetype icon.
-function! myline#Devicon()
-  " return &filetype !~# g:myline#blacklist && winwidth(0) > 70 ? ('['.&filetype.']') : ''
-  return &filetype !~# g:myline#blacklist && winwidth(0) > 70 ? (WebDevIconsGetFileTypeSymbol()) : ''
+" @function(Filetype)
+" In specific filetypes, above a specified width, returns the filetype.
+function! myline#Filetype()
+  return &filetype !~# g:myline#blacklist && winwidth(0) > 70 ? ('['.&filetype.']') : ''
 endfunction
 
 ""
@@ -218,7 +215,7 @@ set statusline+=%{myline#Readonly()}
 set statusline+=%3*
 set statusline+=\  "
 set statusline+=\  "
-set statusline+=%{myline#Devicon()}
+set statusline+=%{myline#Filetype()}
 set statusline+=\  "
 set statusline+=\  "
 set statusline+=%{myline#FileSize()}
