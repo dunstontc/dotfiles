@@ -49,6 +49,7 @@ augroup filetypes
   autocmd BufNewFile,BufRead *.sln setlocal filetype=solution
 
   autocmd BufNewFile,BufReadPost *{snippets,snip} set filetype=snippets
+  autocmd BufNewFile,BufReadPost *.sublime-snippet set filetype=xml
 
   " .NET filetypes
   autocmd BufNewFile,BufRead *.proj  set filetype=xml
