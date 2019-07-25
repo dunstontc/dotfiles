@@ -1,11 +1,11 @@
 # vim:tabstop=4:shiftwidth=4:noexpandtab:
 [user]
 	name = Clay Dunston
-	email = dunstontc@gmail.com
+	email = claydunston@gmail.com
 [includeIf "gitdir:~/tcd/"]
 	path = ~/tcd/.gitconfig
 [github]
-	name = dunstontc
+	name = tcd
 [credential]
 	helper = osxkeychain
 [push]
