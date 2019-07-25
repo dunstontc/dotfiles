@@ -1,9 +1,7 @@
 # vim:tabstop=4:shiftwidth=4:noexpandtab:
 [user]
 	name = Clay Dunston
-	email = claydunston@gmail.com
-[includeIf "gitdir:~/tcd/"]
-	path = ~/tcd/.gitconfig
+	email = dunstontc@gmail.com
 [github]
 	name = tcd
 [credential]
