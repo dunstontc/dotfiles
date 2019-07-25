@@ -304,8 +304,8 @@ let g:swoopUseDefaultKeyMap = 0
 
 " === tomtom/tcomment === {{{
 let g:tcomment_maps=1
-let g:tcomment_mapleader1='<C-d>'
-let g:tcomment_mapleader2='<C-d>'
+" let g:tcomment_mapleader1='<C-d>'
+" let g:tcomment_mapleader2='<C-d>'
 let g:tcomment_mapleader_comment_anyway=''
 let g:tcomment_textobject_inlinecomment=''
 " }}}
@@ -380,11 +380,6 @@ let g:bookmark_no_default_key_mappings = 0
 let g:gitgutter_map_keys = 0
 " }}}
 
-" === frioux/vim-regedit === {{{
-nmap gr <Plug>(RegEditPrefix)
-nmap g<S-R> <Plug>(RegEditPostfix)
-" }}}
-
 ""
 " @subsection Custom Motions & Objects
 
@@ -455,7 +450,7 @@ nnoremap <leader><Down> :bnext<CR>
 "  === b -- Buffers=== {{{
 " ==============================================================================
 " l -- List Buffers
-nnoremap <leader>b :Denite -start-filter buffer<CR>
+nnoremap <leader>b :Buffers<CR>
 " Next Buffer
 nnoremap <leader>bn :bn<CR>
 " Previous Buffer
@@ -533,8 +528,8 @@ nnoremap <leader>e<S-P> :edit ~/.config/nvim/plugin/plugins.vim<CR>:echo<CR>
 nnoremap <leader>ei :vsplit ~/.config/nvim/plugin/ui.vim<CR>:echo<CR>
 nnoremap <leader>e<S-I> :edit ~/.config/nvim/plugin/ui.vim<CR>:echo<CR>
 " Edit Theme
-nnoremap <leader>et :vsplit ~/Projects/GitHub/vim-vscode-theme/colors/dark_plus.vim<CR>:echo<CR>
-nnoremap <leader>eT :edit ~/Projects/GitHub/vim-vscode-theme/colors/dark_plus.vim<CR>:echo<CR>
+nnoremap <leader>et :vsplit ~/Projects/vim/vim-vscode-theme/src/json/groups.json5<CR>:echo<CR>
+nnoremap <leader>eT :edit ~/Projects/vim/vim-vscode-theme/src/json/groups.json5<CR>:echo<CR>
 " Edit Ultisnips
 nnoremap <leader>eu :VimFiler -explorer ~/.config/nvim/snipz<CR>
 " }}}
