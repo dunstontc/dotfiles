@@ -26,8 +26,7 @@ let g:neomake_warning_sign = {'text': '●', 'texthl': 'NeomakeWarningSign' }
 let g:neomake_message_sign = {'text': '➤', 'texthl': 'NeomakeMessageSign' }
 let g:neomake_info_sign =    {'text': 'ℹ', 'texthl': 'NeomakeInfoSign'    }
 
-let g:neomake_virtualtext_prefix = ' ➤ '
-
+let g:neomake_virtualtext_prefix = ' ●  '
 
 let g:neomake_css_enabled_makers = []
 let g:neomake_cs_enabled_makers = ['mcs']
