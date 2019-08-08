@@ -87,7 +87,6 @@ call plug#begin('~/.local/nvim/plugged')
   " === Utilities ===
   Plug '/usr/local/opt/fzf'
   Plug 'junegunn/fzf.vim'                    " Wrapper for using FZF in Vim.
-  " Plug 'djoshea/vim-autoread'                " Have Vim automatically reload a file that has changed externally.
   Plug 'tpope/vim-rsi'                       " Readline style insertion.
   " Plug 'tpope/vim-eunuch'                    " Vim sugar for the UNIX shell commands that need it the most.
   Plug 'tpope/vim-repeat'                    " Enable repeating supported plugin maps with "."
@@ -96,31 +95,31 @@ call plug#begin('~/.local/nvim/plugged')
   " Plug 'tpope/vim-dispatch'                  " Asynchronous build and test dispatcher.
   Plug 'tpope/vim-speeddating'               " Use CTRL-A/CTRL-X to increment dates, times, and more.
   " Plug 'tpope/vim-endwise'                   " Helps to end certain structures automatically.
-  " Plug 'airblade/vim-rooter'                 " Changes Vim working directory to project root.
+  Plug 'airblade/vim-rooter'                 " Changes Vim working directory to project root.
   Plug 'pbrisbin/vim-mkdir'                  " Automatically create any non-existent directories before writing the buffer.
   Plug 'kopischke/vim-stay'                  " Make Vim persist editing state without fuss.
   " Plug 'duff/vim-bufonly', {'on': 'BufOnly'} " Unload all buffers but the current one.
-  " Plug 'mhinz/vim-sayonara'                  " Sane buffer/window deletion.
+  Plug 'mhinz/vim-sayonara'                  " Sane buffer/window deletion.
   Plug 'airblade/vim-matchquote'             " %-style motion for single / double quotation marks, backticks and pipe.
   Plug 'Raimondi/delimitMate'                " Provides insert mode auto-completion for quotes, parens, brackets, etc.
   Plug 'sgur/vim-editorconfig'               " Yet another EditorConfig plugin for vim written in vimscript only.
   Plug 'christoomey/vim-tmux-navigator'      " Seamless navigation between tmux panes and vim splits.
   " Plug 'ludovicchabant/vim-gutentags'        " A Vim plugin that manages your tag files.
   Plug 'Shougo/context_filetype.vim'         " Context filetype library for Vim script?
-  " Plug 'Shougo/echodoc.vim'                  " Print documents in echo area.
+  Plug 'Shougo/echodoc.vim'                  " Print documents in echo area.
   " Plug 'mattn/webapi-vim'                    " An Interface to WEB APIs.
 
   " === Completion ===
   Plug 'SirVer/ultisnips'
-  Plug 'ervandew/supertab'                   " Perform all your vim insert mode completions with Tab.
+  Plug 'ervandew/supertab' " Perform all your vim insert mode completions with Tab.
+  Plug 'mattn/emmet-vim',               {'for': ['jsx', 'html', 'vue', 'gohtml' ]}
   Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'} " Asynchronous completion framework for neovim/Vim8
   Plug 'Shougo/neco-vim'
   Plug 'Shougo/neco-syntax'
   Plug 'Shougo/neoinclude.vim'
+  Plug 'wellle/tmux-complete.vim'
   Plug 'zchee/deoplete-go',             {'for': 'go', 'do':  'make'}
   " Plug 'ujihisa/neco-look'
-  " Plug 'wellle/tmux-complete.vim'
-  " Plug 'mattn/emmet-vim',               {'for': ['jsx', 'html', 'vue', 'gohtml' ]}
   " Plug 'zchee/deoplete-clang',         {'for': ['c', 'cpp', 'objc', 'objcpp']}
   " Plug 'tweekmonster/deoplete-clang2', {'for': ['c', 'cpp', 'objc', 'objcpp']}
   " Plug 'Shougo/deoplete-clangx',        {'for': ['c', 'cpp', 'objc', 'objcpp']}
