@@ -41,6 +41,8 @@
   // Extensions
   // =============================================================================
 
+  "ActiveFileInStatusBar.fullpath": false,
+
   "gitlens.advanced.messages": {
     "suppressShowKeyBindingsNotice": true
   },
@@ -48,6 +50,7 @@
   "gitlens.codeLens.enabled": false,
   "gitlens.currentLine.enabled": false,
   "gitlens.hovers.currentLine.over": "line",
+
   "gitHistory.hideCommitViewExplorer": false,
 
   "dateTime.customFormat": "  hh:mm a  ",

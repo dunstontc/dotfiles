@@ -11,6 +11,7 @@
     "**/.mypy_cache": true,
   },
   "files.associations": {
+    ".{1,2,3,4,5,6,7,man}": "troff",
     ".{aliases,path,viminfo}": "shellscript",
     "*.blade": "blade",
     ".{babelrc,eslintrc,postcssrc,stylelintrc}": "jsonc",
