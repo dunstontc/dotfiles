@@ -509,9 +509,9 @@ nnoremap <leader>e<S-V> :edit $MYVIMRC<CR>:echo<CR>
 " Edit Settings
 nnoremap <leader>es :vs ~/.config/nvim/plugin/settings.vim<CR>:echo<CR>
 nnoremap <leader>e<S-S> :edit ~/.config/nvim/plugin/settings.vim<CR>:echo<CR>
-" Edit Lightline
-nnoremap <leader>el :vsplit ~/.config/nvim/plugin/lightline.vim<CR>:echo<CR>
-nnoremap <leader>e<S-L> :edit ~/.config/nvim/plugin/lightline.vim<CR>:echo<CR>
+" Edit Statusline
+nnoremap <leader>el :vsplit ~/.config/nvim/plugin/myline.vim<CR>:echo<CR>
+nnoremap <leader>e<S-L> :edit ~/.config/nvim/plugin/myline.vim<CR>:echo<CR>
 " Edit Keys
 nnoremap <leader>ek :vsplit ~/.config/nvim/plugin/mappings.vim<CR>:echo<CR>
 nnoremap <leader>e<S-K> :edit ~/.config/nvim/plugin/mappings.vim<CR>:echo<CR>
