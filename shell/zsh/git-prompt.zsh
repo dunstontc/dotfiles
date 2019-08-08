@@ -7,9 +7,9 @@ GIT_BRANCH_ICON=""
 
 
 GIT_UNTRACKED_ICON="?"
-GIT_ADDED_ICON="+"  # FIXME: staged files
+GIT_ADDED_ICON="+"
 GIT_MODIFIED_ICON="!"
-# GIT_RENAMED_ICON="»"
+GIT_STAGED_ICON="§"
 GIT_DELETED_ICON="✘"
 GIT_STASHED_ICON="$"
 GIT_UNMERGED_ICON="="
@@ -29,7 +29,7 @@ prompt_git_status() {
   local GIT_STATUS_UNTRACKED=""
   local GIT_STATUS_ADDED=""
   local GIT_STATUS_MODIFIED=""
-  # local GIT_STATUS_RENAMED=""
+  local GIT_STATUS_STAGED=""
   local GIT_STATUS_DELETED=""
   local GIT_STATUS_STASHED=""
   local GIT_STATUS_UNMERGED=""
@@ -47,19 +47,12 @@ prompt_git_status() {
     GIT_STATUS_UNTRACKED="$GIT_UNTRACKED_ICON";
   fi
 
-  # Check for staged files
+  # Check for added files
   if $(echo "$index" | command grep '^A[ MDAU] ' &> /dev/null); then
     GIT_STATUS_ADDED="$GIT_ADDED_ICON";
   elif $(echo "$index" | command grep '^UA' &> /dev/null); then
     GIT_STATUS_ADDED="$GIT_ADDED_ICON";
   fi
-
-  # if $(command git diff --name-only --cached &> /dev/null) == ""; then
-  # if [ -z $(command git diff --name-only --cached &> /dev/null) ]; then
-  #   GIT_STATUS_ADDED="";
-  # else
-  #   GIT_STATUS_ADDED="$GIT_ADDED_ICON";
-  # fi
 
   # Check for modified files
   if $(echo "$index" | command grep '^M[ MD] ' &> /dev/null); then
@@ -68,16 +61,20 @@ prompt_git_status() {
     GIT_STATUS_MODIFIED="$GIT_MODIFIED_ICON"
   fi
 
-  # Check for renamed files
-  # if $(echo "$index" | command grep '^R[ MD] ' &> /dev/null); then
-  #   GIT_STATUS_RENAMED="$GIT_RENAMED_ICON";
-  # fi
-
   # Check for deleted files
   if $(echo "$index" | command grep '^[MARCDU ]D ' &> /dev/null); then
     GIT_STATUS_DELETED="$GIT_DELETED_ICON";
   elif $(echo "$index" | command grep '^D[ UM] ' &> /dev/null); then
     GIT_STATUS_DELETED="$GIT_DELETED_ICON";
+  fi
+
+  # Check for staged files
+  if $(echo "$index" | command grep '^A[ MDAU] ' &> /dev/null); then
+    GIT_STATUS_STAGED="$GIT_STAGED_ICON"
+  elif $(echo "$index" | command grep '^M[ MD] ' &> /dev/null); then
+    GIT_STATUS_STAGED="$GIT_STAGED_ICON"
+  elif $(echo "$index" | command grep '^UA' &> /dev/null); then
+    GIT_STATUS_STAGED="$GIT_STAGED_ICON"
   fi
 
   # Check for stashes
@@ -114,7 +111,6 @@ prompt_git_status() {
   else
     [[ "$is_ahead" == true ]] && GIT_STATUS_AHEAD="$GIT_AHEAD_ICON";
     [[ "$is_behind" == true ]] && GIT_STATUS_BEHIND="$GIT_BEHIND_ICON";
-    # GIT_STATUS_ADDED="";
   fi
 
   git_status+="$GIT_STATUS_DIVERGED";
@@ -128,7 +124,7 @@ prompt_git_status() {
   git_status+="$GIT_STATUS_ADDED";
   git_status+="$GIT_STATUS_UNTRACKED";
   git_status+="$GIT_STATUS_DELETED";
-  # git_status+="$GIT_STATUS_RENAMED";
+  git_status+="$GIT_STATUS_STAGED";
 
   git_status+="$GIT_STATUS_STASHED";
 
