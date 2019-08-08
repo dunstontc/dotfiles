@@ -31,3 +31,6 @@ indent_size = 8
 
 [Makefile]
 indent_style = tab
+indent_size = 4
+trim_trailing_whitespace = false
+
