@@ -1,0 +1,2 @@
+emoji=$(cat ~/.dotfiles/emoji.txt | fzf | awk '{print $1}')
+echo $emoji | pbcopy
