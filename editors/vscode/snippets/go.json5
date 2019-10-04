@@ -1,34 +1,47 @@
 {
-    "Struct": {
-        "prefix": "struct",
-        "body": [
-            "type $1 struct {",
-            "\t$0",
-            "}"
-        ],
-        "description": "Struct"
-    },
-    "Import": {
-        "prefix": "import",
-        "body": [
-            "import (",
-            "\t$0",
-            ")"
-        ],
-        "description": "Import statement."
-    },
-    "Function": {
-        "prefix": "func",
-        "body": [
-            "func $1($2) $3 {",
-            "\t$0",
-            "}"
-        ],
-        "description": "Function"
-    },
-    "Prop": {
-        "prefix": "json",
-        "body": "${1:Name} ${2:Type}, `json:\"${3:Value}\"`$0",
-        "description": "Struct property w/ JSON definition."
-    }
+  "Struct": {
+    "prefix": "struct",
+    "body": [
+      "type $1 struct {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Struct"
+  },
+  "Import": {
+    "prefix": "import",
+    "body": [
+      "import (",
+      "\t$0",
+      ")"
+    ],
+    "description": "Import statement."
+  },
+  "Function": {
+    "prefix": "func",
+    "body": [
+      "func $1($2) $3 {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Function"
+  },
+  "Prop": {
+    "prefix": "json",
+    "body": "${1:Name} ${2:Type}, `json:\"${3:Value}\"`$0",
+    "description": "Struct property w/ JSON definition."
+  },
+  "Test": {
+    "prefix": "test",
+    "body": [
+      "func Test$1(t *testing.T) {",
+      "\thave := \"What I want, what I really really want\"",
+      "\twant := \"What I want, what I really really want\"",
+      "$0",
+      "\tif have != want {",
+      "\t\tt.Errorf(\"have: %s, want: %s\", have, want)",
+      "\t}",
+      "}"
+    ]
+  }
 }
