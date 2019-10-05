@@ -5,7 +5,6 @@ export HISTFILE=~/.cache/shell/.zsh_history
 export DOTFILES=$HOME/.dotfiles
 export SHELL=/usr/local/bin/zsh
 
-
 # =============================================================================
 
 # Figure out where we are
@@ -17,12 +16,9 @@ for file in $DOTFILES/shell/*.sh; do
 done;
 unset file;
 
-
-
 [[ -f "$DOTFILES/ignore/.private" ]] && source "$DOTFILES/ignore/.private"
 source "$DOTFILES/shell/zsh/prompt.zsh"
 source "$DOTFILES/shell/functions/.fzf.functions"
-
 
 # =============================================================================
 #  Syntax
@@ -47,22 +43,6 @@ ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=11'
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=15'
 
 # =============================================================================
-# # # Make sure the terminal is in application mode, which zle is active. Only then
-# # are the values from $terminfo valid.
-# # See http://zshwiki.org/home/zle/bindkeys#reading_terminfo.
-# if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
-#   function zle-line-init() {
-#     echoti smkx
-#   }
-#
-#   function zle-line-finish() {
-#     echoti rmkx
-#   }
-#   zle -N zle-line-init
-#   zle -N zle-line-finish
-# fi
-
-# =============================================================================
 # Fix issues with zsh completion:
 function fixzsh() {
   rm ~/.zcompdump*;
@@ -71,30 +51,16 @@ function fixzsh() {
   exec zsh;
 }
 # =============================================================================
-# Pick up additional site-functions that may not be on system zsh's
-# $fpath by default
-# function get_them_completions() {
-#   local site_dir site_dirs
-#
-#   site_dirs=( /usr/local/share/zsh/site-functions )
-#   if [[ -n $HOMEBREW_PREFIX ]]; then
-#     site_dirs+=$HOMEBREW_PREFIX/share/zsh/site-functions
-#   fi
-#   for site_dir ( $site_dirs ); do
-#     if [[ -d $site_dir  && ${fpath[(I)$site_dir]} == 0 ]]; then
-#       FPATH=$site_dir:$FPATH
-#     fi
-#   done
-# }
-# get_them_completions()
-fpath=(~/.zsh/completion $fpath)
+
+fpath=($DOTFILES/shell/zsh/completion $fpath)
 fpath=(~/.zsh/plugins/zsh-completions/src $fpath)
 
 # dotnet cli completion
-source $DOTFILES/shell/zsh/functions/dotnet.completions.zsh
+# source $DOTFILES/shell/zsh/functions/dotnet.completions.zsh
 # source $DOTFILES/shell/zsh/functions/awscli.completions.sh
 # Clipboard compat for MacOS/Linux
 source $DOTFILES/shell/zsh/functions/clipcopy.zsh
+# source $DOTFILES/shell/zsh/functions/fzf-docker.plugin.zsh
 
 # =============================================================================
 # If this option is unset, output flow control via start/stop characters
@@ -102,9 +68,6 @@ source $DOTFILES/shell/zsh/functions/clipcopy.zsh
 # stty start undef
 # stty stop undef
 setopt noflowcontrol
-
-# zmodload zsh/complist
-# autoload -Uz compinit
 
 # setopt no_case_glob
 # setopt correctall
@@ -135,38 +98,7 @@ zstyle ':completion:*:*:docker-*:*' option-stacking yes
 
 autoload -Uz compinit && compinit
 
-compdef "_files -W ~/.ghq/github.com/ -/" ghq
-
-# Allow SSH tab completion for mosh hostnames
-compdef mosh=ssh
-compdef vboxmanage=VBoxManage
-compdef vmb=VBoxManage
-
-
-# =============================================================================
-#  NVM
-# =============================================================================
-# place this after nvm initialization!
-# autoload -U add-zsh-hook
-# load-nvmrc() {
-#   local node_version="$(nvm version)"
-#   local nvmrc_path="$(nvm_find_nvmrc)"
-#
-#   if [ -n "$nvmrc_path" ]; then
-#     local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-#
-#     if [ "$nvmrc_node_version" = "N/A" ]; then
-#       nvm install
-#     elif [ "$nvmrc_node_version" != "$node_version" ]; then
-#       nvm use
-#     fi
-#   elif [ "$node_version" != "$(nvm version default)" ]; then
-#     echo "Reverting to nvm default version"
-#     nvm use default
-#   fi
-# }
-# add-zsh-hook chpwd load-nvmrc
-# load-nvmrc
+# compdef "_files -W ~/.ghq/github.com/ -/" ghq
 
 # =============================================================================
 #  Mappings
@@ -195,9 +127,8 @@ WORDCHARS='*?_-[]~=&;!#$%^(){}<>'
 # =============================================================================
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export FZF_COMPLETION_TRIGGER='//'
+export FZF_COMPLETION_TRIGGER='**'
 
 source ~/.zsh/plugins/fzf-marks/fzf-marks.plugin.zsh
 source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -207,7 +138,3 @@ source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 [ -f ~/dircolors.sh ] && eval $(dircolors ~/dircolors.sh)
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
-
-# added by travis gem
-[ -f /Users/clay/.travis/travis.sh ] && source /Users/clay/.travis/travis.sh
