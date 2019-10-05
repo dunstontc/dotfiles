@@ -6,7 +6,6 @@ PATH="$DOTFILES/bin:$PATH"                             # Look in CWD first
 PATH="$HOME/bin:$PATH"                                 # Handwritten stuff
 PATH=$GOBIN:$PATH                                      # Go
 PATH="$HOME/.cargo/bin:$PATH"                          # Rust
-PATH="$HOME/.composer/vendor/bin:$PATH"                # PHP
 if [[ "$(uname -s)" == "Darwin" ]]; then
   PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH" # Use GNU instead of BSD
 fi
@@ -18,7 +17,6 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
   PATH="/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin:$PATH"
   PATH="/usr/local/opt/ncurses/bin:$PATH"              # Newer ncurses
   PATH="/usr/local/opt/go/libexec/bin:$PATH"           # Go via Brew
-  PATH="/usr/local/opt/llvm@5/bin:$PATH"               # Clang
   PATH="$HOME/Library/Haskell/bin:$PATH"               # Haskell
   PATH="/usr/local/mysql/bin:$PATH"                    # MySQL via Brew
 else
