@@ -7,7 +7,7 @@
   - Zsh *5.4.2+*
   - tmux *2.6+*
   - Atom *1.25.0+*
-  - VS Code *1.22.0-insider+*
+  - VS Code *1.39.0-insider+*
   - [Neovim](https://github.com/dunstontc/nvim.d) *0.2.3-dev+*
   - Vim *8.0.125+*
   - iTerm2 *3.1.6beta5+*

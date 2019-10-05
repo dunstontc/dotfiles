@@ -58,15 +58,34 @@
   "docker-explorer.showAzureRegistries": false,
   "docker-explorer.showSuggestedDockerImages": false,
 
-  "projectManager.showProjectNameInStatusBar": false,
-
   "material-icon-theme.showUpdateMessage": false,
 
   "markdown-toc.updateOnSave": false,
 
+  "projectManager.showProjectNameInStatusBar": false,
+
+  "todo-tree.defaultHighlight": {
+    "foreground": "green",
+    "type": "none"
+  },
+  "todo-tree.customHighlight": {
+    "TODO": {},
+    "FIXME": {}
+  },
+
   "vsicons.dontShowNewVersionMessage": true,
   "vsicons.projectDetection.disableDetect": true,
   "vsicons.dontShowConfigManuallyChangedMessage": true,
+
+  // ===========================================================================
+  // JSON
+  // ===========================================================================
+  "json.schemas": [
+    {
+      "fileMatch": ["envs.json"],
+      "url": "https://raw.githubusercontent.com/tcd/envs/master/envs.schema.json"
+    }
+  ],
 
   // =============================================================================
   // Golang
@@ -103,12 +122,13 @@
   "typescript.format.insertSpaceAfterTypeAssertion": true,
   "typescript.format.placeOpenBraceOnNewLineForControlBlocks": false,
   "typescript.format.placeOpenBraceOnNewLineForFunctions": false,
-   // Preferred path style for auto imports:
-   // - "relative" to the file location.
-   // - "non-relative" based on the 'baseUrl' configured in your 'jsconfig.json' / 'tsconfig.json'.
-   // - "auto" infer the shortest path type.
-   // Requires using TypeScript 2.9 or newer in the workspace.
-   "javascript.preferences.importModuleSpecifier": "auto",
+  // Preferred path style for auto imports:
+  // - "relative" to the file location.
+  // - "non-relative" based on the 'baseUrl' configured in your 'jsconfig.json' / 'tsconfig.json'.
+  // - "auto" infer the shortest path type.
+  // Requires using TypeScript 2.9 or newer in the workspace.
+  "javascript.preferences.importModuleSpecifier": "auto",
+  "typescript.updateImportsOnFileMove.enabled": "always",
 
    // ===========================================================================
    // Python
@@ -133,12 +153,18 @@
   // ===========================================================================
   // Ruby
   // ===========================================================================
-  // If not specified searches for 'rubocop' executable available on PATH (default and recommended)
-  // "ruby.rubocop.executePath": "",
+  "solargraph.diagnostics": true,
+  "ruby.format": "rubocop",
+  "[ruby]": { "editor.defaultFormatter": "misogi.ruby-rubocop" },
 
   // If not specified, it assumes a null value by default.
   "ruby.rubocop.configFilePath": "/Users/clay/.dotfiles/config/linting/.rubocop.yml",
 
   // default true
-  "ruby.rubocop.onSave": true
+  "ruby.rubocop.onSave": true,
+
+  "ruby.lint": {
+    "rubocop": true,
+    "fasterer": true,
+  },
 }

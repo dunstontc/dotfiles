@@ -24,6 +24,7 @@
     "DEBUG:",
     "REVIEW:",
     "TODO:",
+    "NOTE:",
     {
       "text": "TODO:",
       "color": "#1e1e1e",

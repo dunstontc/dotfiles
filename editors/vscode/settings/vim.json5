@@ -1,5 +1,4 @@
 {
-    // === Vim ===
     "vim.disableExtension": false,
     "vim.showcmd":     true,
     "vim.timeout":     2000,

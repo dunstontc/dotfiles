@@ -10,8 +10,9 @@
     "json",
     "javascript",
     "yaml"
-],
-"colorize.files_extensions": [
-  ".js"
-],
+  ],
+  "colorize.include": [
+    ".js"
+  ],
+  "colorize.ignore_search_variables_info": true,
 }
