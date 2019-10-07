@@ -19,7 +19,7 @@
         "after": ["<Esc>"]
       }
     ],
-    "vim.visualModeKeyBidnings": [
+    "vim.visualModeKeyBindings": [
       {
         "before": ["l"],
         "after": ["$"]
@@ -45,14 +45,14 @@
         "before": ["<bs>"],
         "after": ["a", "<bs>", "<esc>", "<right>"]
       },
-      // {
-      //   "before": ["L"],
-      //   "after": ["$"]
-      // },
-      // {
-      //   "before": ["H"],
-      //   "after": ["0"]
-      // },
+      {
+        "before": ["H"],
+        "after": ["0"]
+      },
+      {
+        "before": ["L"],
+        "after": ["$"]
+      },
       {
         "before": ["U"],
         "after": ["<C-r>"]
@@ -64,6 +64,11 @@
       {
         "before": ["<leader>", "l"], "after": [],
         "commands": [{ "command": "editor.action.format", "args": [] }]
+      },
+      {
+        "before": ["z", "g"],
+        "after": [],
+        "commands": [{"command": "cSpell.addWordToUserDictionary", "args": []}]
       },
       {
         "before": ["<leader>", "f", "t"],

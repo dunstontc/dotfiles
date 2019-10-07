@@ -48,5 +48,6 @@
     "*.el": "lisp",
     "*.plist": "xml",
     "*.psql": "sql",
-},
+    "*.service": "ini",
+  }
 }
