@@ -6,21 +6,10 @@ take() {
   cd "$1" || return
 }
 
-# @description Source a file if it exists.
-include () {
-  [[ -f "$1" ]] && source "$1"
-}
 
 # @description Define an alias.
 watdo() {
   alias | grep "$1"
-}
-
-# @description Walk & Talk
-#
-# @param $1 Directory to change into.
-cdd() {
-  cd "$1" && ls -a
 }
 
 # @description Add all changes and commit with a message.
@@ -39,6 +28,7 @@ upstream() {
   git remote -v;
 }
 
+# @description Open a manpage with Neovim
 nman() {
   nvim -c 'set filetype=man $1'
 }
@@ -99,12 +89,10 @@ siz() {
   fi
 }
 
-# @description Wrap ghq() to avoid nesting shells.
-ghq() {
-  if [ "$1" = look -a -n "$2" ]; then
-    cd $(command ghq list -e -p $2)
-    return
-  fi
+# @description github.com/tcd/prjr
+pjcd() {
+  local destination
 
-  command ghq "$@"
+  destination=$(prjr list | fzf -0 -1 | awk '{print $2}')
+  cd "$destination"
 }
