@@ -18,7 +18,7 @@ let g:neomake_echo_current_error = 0
 " Default: 1
 let g:neomake_verbose = 0
 
-let g:neomake_logfile = expand('$XDG_CACHE_HOME').'/logs/neomake.log'
+" let g:neomake_logfile = expand('$HOME').'/.cache/neomake/neomake.log'
 
 " ✗ ✖ ◊ ➤ ● ℹ ⚠
 let g:neomake_error_sign =   {'text': '✗', 'texthl': 'NeomakeErrorSign'   }
@@ -42,11 +42,6 @@ let g:neomake_typescript_enabled_makers = ['tsc', 'tslint']
 let g:neomake_yaml_enabled_makers = ['yamllint']
 let g:neomake_vim_enabled_makers = ['vint']
 let g:neomake_zsh_enabled_makers = ['zsh']
-
-" let g:neomake_cs_mcs_maker = {
-"   \ 'args': ['@.mcs'],
-"   \ 'errorformat': '%f(%l\,%c): %trror %m',
-"   \ }
 
 let g:neomake_javascript_eslint_args = ['-f', 'compact', '--no-ignore']
 

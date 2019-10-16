@@ -5,12 +5,11 @@ let g:LanguageClient_serverCommands = {
     \ 'ocaml':  ['ocaml-language-server', '--stdio'],
     \ 'reason': ['ocaml-language-server', '--stdio'],
     \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+    \ 'ruby': ['solargraph', 'stdio'],
     \ 'javascript': ['javascript-typescript-stdio'],
     \ 'typescript': ['javascript-typescript-stdio'],
     \ 'vue': ['vls'],
     \ }
-    " \ 'javascript.jsx': ['javascript-typescript-stdio'],
-    " \ 'javascript': ['/opt/javascript-typescript-langserver/lib/language-server-stdio.js'],
 
 
 let g:LanguageClient_rootMarkers = {
@@ -28,9 +27,9 @@ let g:LanguageClient_selectionUI = "location-list"
 
 let g:LanguageClient_diagnosticsList = "location"
 
-let g:LanguageClient_diagnosticsEnable = 1
+" let g:LanguageClient_diagnosticsEnable = 1
 
-let g:LanguageClient_windowLogMessageLevel = 3
+" let g:LanguageClient_windowLogMessageLevel = 3
 
 " let g:LanguageClient_settingsPath=
 " let g:LanguageClient_loadSettings = 0

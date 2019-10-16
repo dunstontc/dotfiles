@@ -23,7 +23,7 @@ call plug#begin('~/.local/nvim/plugged')
   endif
   Plug 'junegunn/vim-peekaboo'     " Show the contents of registers on a sidebar.
   Plug 'airblade/vim-gitgutter'    " Shows a git diff in the gutter (sign column) and stages/undoes hunks.
-  Plug 'ryanoasis/vim-devicons'    " Adds file type glyphs/icons to popular Vim plugins.
+  " Plug 'ryanoasis/vim-devicons'    " Adds file type glyphs/icons to popular Vim plugins.
   " Plug 'itchyny/vim-cursorword'  " Underlines the word under the cursor.
   " Plug 'xtal8/traces.vim'        " Range, pattern and substitute preview for Vim.
   " Plug 'osyo-manga/vim-anzu'       " Vim search status (current/found).
@@ -45,8 +45,7 @@ call plug#begin('~/.local/nvim/plugged')
   Plug 'tmux-plugins/vim-tmux',             {'for': 'tmux'}
   Plug 'cespare/vim-toml',                  {'for': ['toml', 'tml']}
   Plug 'dunstontc/syntax-vim-ex',           {'for': 'vim'}
-
-
+  Plug 'autozimu/LanguageClient-neovim',    {'branch': 'next', 'do': 'bash install.sh'}
 
   " === Linting ===
   Plug 'sbdchd/neoformat'                     " A (Neo)vim plugin for formatting code.
@@ -88,17 +87,14 @@ call plug#begin('~/.local/nvim/plugged')
   Plug '/usr/local/opt/fzf'
   Plug 'junegunn/fzf.vim'                    " Wrapper for using FZF in Vim.
   Plug 'tpope/vim-rsi'                       " Readline style insertion.
-  " Plug 'tpope/vim-eunuch'                    " Vim sugar for the UNIX shell commands that need it the most.
   Plug 'tpope/vim-repeat'                    " Enable repeating supported plugin maps with "."
   Plug 'tpope/vim-fugitive'                  " A Git wrapper so awesome, it should be illegal.
   Plug 'tpope/vim-surround'                  " Provides mappings to easily delete, change, and add surroundings in pairs.
-  " Plug 'tpope/vim-dispatch'                  " Asynchronous build and test dispatcher.
   Plug 'tpope/vim-speeddating'               " Use CTRL-A/CTRL-X to increment dates, times, and more.
-  " Plug 'tpope/vim-endwise'                   " Helps to end certain structures automatically.
+  Plug 'tpope/vim-endwise'                   " Helps to end certain structures automatically.
   Plug 'airblade/vim-rooter'                 " Changes Vim working directory to project root.
   Plug 'pbrisbin/vim-mkdir'                  " Automatically create any non-existent directories before writing the buffer.
   Plug 'kopischke/vim-stay'                  " Make Vim persist editing state without fuss.
-  " Plug 'duff/vim-bufonly', {'on': 'BufOnly'} " Unload all buffers but the current one.
   Plug 'mhinz/vim-sayonara'                  " Sane buffer/window deletion.
   Plug 'airblade/vim-matchquote'             " %-style motion for single / double quotation marks, backticks and pipe.
   Plug 'Raimondi/delimitMate'                " Provides insert mode auto-completion for quotes, parens, brackets, etc.
@@ -108,6 +104,7 @@ call plug#begin('~/.local/nvim/plugged')
   Plug 'Shougo/context_filetype.vim'         " Context filetype library for Vim script?
   Plug 'Shougo/echodoc.vim'                  " Print documents in echo area.
   " Plug 'mattn/webapi-vim'                    " An Interface to WEB APIs.
+  Plug 'qpkorr/vim-renamer'                  " Bulk file renaming.
 
   " === Completion ===
   Plug 'SirVer/ultisnips'
@@ -117,7 +114,7 @@ call plug#begin('~/.local/nvim/plugged')
   Plug 'Shougo/neco-vim'
   Plug 'Shougo/neco-syntax'
   Plug 'Shougo/neoinclude.vim'
-  Plug 'wellle/tmux-complete.vim'
+  " Plug 'wellle/tmux-complete.vim'
   Plug 'zchee/deoplete-go',             {'for': 'go', 'do':  'make'}
   " Plug 'ujihisa/neco-look'
   " Plug 'zchee/deoplete-clang',         {'for': ['c', 'cpp', 'objc', 'objcpp']}
@@ -172,6 +169,7 @@ let g:loaded_tutor_mode_plugin = 1
 let g:loaded_vimballPlugin     = 1
 let g:loaded_zipPlugin         = 1
 
+
 " ==============================================================================
 "  === fatih/vim-go === {{{
 " ==============================================================================
@@ -188,7 +186,7 @@ let g:go_metalinter_autosave_enabled = []
 " Use this option to auto |:GoFmt| on save.
 " Default: 1
 let g:go_fmt_autosave = 1
-let g:go_fmt_command = 'gofmt'
+let g:go_fmt_command = 'goimports'
 let g:go_fmt_options = {}
 " This experimental mode is superior to the current mode
 " as it fully saves the undo history, so undo/redo doesn't break.
