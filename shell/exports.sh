@@ -3,7 +3,6 @@
 export TERM="xterm-256color"
 
 export NERDFONT="TRUE"
-export RP="TRUE"
 
 if command -v nvim > /dev/null 2>&1; then
   export EDITOR="nvim"
@@ -17,24 +16,21 @@ fi
 export PAGER="less"
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_CACHE_HOME="$HOME/.cache"
+# export XDG_CONFIG_HOME="$HOME/.config"
+# export XDG_CACHE_HOME="$HOME/.cache"
 
 export GOPATH="$HOME/go"
 export GOBIN="$HOME/go/bin"
 
-if [[ $OS_NAME == 'darwin' ]]; then
-  GOROOT="$(brew --prefix golang)/libexec";
-  export GOROOT;
-fi
+# if [[ $OS_NAME == 'darwin' ]]; then
+#   GOROOT="$(brew --prefix golang)/libexec";
+#   export GOROOT;
+# fi
 
 # https://github.com/crystal-lang/crystal/issues/4745#issuecomment-332553374
 export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
 
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home"
-# export JDK_16="/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home"
-# export JDK_17="/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home"
-# export JDK_18="/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home"
 
 export TODOTXT_CFG_FILE="$DOTFILES/config/todo/todo.config"
 export TODO_DIR="$HOME/.todo"
@@ -72,11 +68,9 @@ export MYVIFMRC="$HOME/.vifm/vifmrc"
 export HL_DIR="$HOME/.highlight"
 export HIGHLIGHT_DATADIR="$HOME/.highlight"
 
-
 export TMPL_DIR="$XDG_CONFIG_HOME/tmpl/templates"
 
 export CODE_FOLDER="/Users/clay/Library/Application\ Support/Code\ -\ Insiders"
-
 
 # export RANGER_LOAD_DEFAULT_RC=FALSE
 # export W3MIMGDISPLAY_PATH=$HOME/.iterm2/bin/imgcat
