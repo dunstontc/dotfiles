@@ -27,6 +27,15 @@
 			"end"
 		]
   },
+  "initialize": {
+		"prefix": "init",
+		"body": [
+      "def initialize($1)",
+      "$0",
+			"end"
+		],
+		"description": "Class initializer"
+  },
   "if": {
 		"prefix": "if",
 		"body": [
@@ -45,6 +54,17 @@
 			"end"
 		]
   },
+  "Case statement": {
+		"prefix": "case",
+		"body": [
+			"case $1",
+			"when $2",
+			"when $3",
+      "else",
+      "\t$0",
+			"end"
+    ]
+	},
   "Module definition": {
 		"prefix": "module",
 		"body": [
@@ -68,5 +88,20 @@
 			"\t$0",
 			"end"
 		]
-	}
+  },
+  "yard @return": {
+    "prefix": "yret",
+    "body": "# @return [$1]$0"
+  },
+  "yard @param": {
+    "prefix": "ypar",
+    "body": "# @param $1 [$2] $0"
+  },
+  "yard @!attribute": {
+    "prefix": "yattr",
+    "body": [
+      "# @!attribute [$1] $2",
+      "#   @return [$0]"
+    ]
+  },
 }
