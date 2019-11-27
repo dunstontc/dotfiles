@@ -32,6 +32,8 @@
     "shard.lock": "yaml",
     "mix.lock": "elixir",
     ".ruby-version": "plaintext",
+    ".pryrc": "ruby",
+    ".aprc": "ruby",
     // Shell/CLI
     "*.mak": "makefile",
     ".gitignore": "gitignore",

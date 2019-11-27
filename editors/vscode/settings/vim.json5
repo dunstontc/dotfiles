@@ -75,6 +75,16 @@
         "after": [],
         "commands": [{ "command": "workbench.action.toggleSidebarVisibility", "args": [] }]
       },
+      {
+        "before": ["<leader>", "e", "s"],
+        "after": [],
+        "commands": [{ "command": "workbench.action.openSettingsJson", "args": [] }]
+      },
+      {
+        "before": ["<leader>", "t", "m"],
+        "after": [],
+        "commands": [{ "command": "extension.table.formatCurrent", "args": [] }]
+      },
     ],
     "vim.leader": "<space>",
     "vim.handleKeys":{

@@ -11,10 +11,6 @@
     "command": "workbench.extensions.action.listOutdatedExtensions"
   },
   {
-    "key": "cmd+k cmd+p",  // Pretty handy...
-    "command": "editor.action.inspectTMScopes"
-  },
-  {
     "key": "cmd+k cmd+l",  // Language
     "command": "workbench.action.editor.changeLanguageMode",
     "when": "editorTextFocus"
@@ -22,6 +18,14 @@
   {
     "key": "cmd+k cmd+m",  // Mappings
     "command": "workbench.action.openGlobalKeybindingsFile"
+  },
+  {
+    "key": "cmd+k cmd+o",  // Open file from git diff view
+    "command": "git.openFile"
+  },
+  {
+    "key": "cmd+k cmd+p",  // Pretty handy...
+    "command": "editor.action.inspectTMScopes"
   },
   {                        // Recent
     "key": "cmd+k cmd+r",

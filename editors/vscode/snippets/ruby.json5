@@ -12,8 +12,9 @@
   "Class definition with initialize": {
 		"prefix": "class init",
 		"body": [
-			"class ${1:ClassName}",
-			"\tdef initialize",
+      "class ${1:ClassName}",
+      "\t# @return [void]",
+			"\tdef initialize()",
 			"\t\t$0",
 			"\tend",
 			"end"
@@ -30,6 +31,7 @@
   "initialize": {
 		"prefix": "init",
 		"body": [
+      "# @return [void]",
       "def initialize($1)",
       "$0",
 			"end"
@@ -81,10 +83,19 @@
 			"end"
 		]
   },
-	"method definition": {
+	"function definition": {
 		"prefix": "def",
 		"body": [
 			"def ${1:method_name}",
+			"\t$0",
+			"end"
+		]
+  },
+	"method definition with docs": {
+		"prefix": "deff",
+		"body": [
+      "# @return [${1:return_type}]",
+			"def ${2:method_name}(${3:params})",
 			"\t$0",
 			"end"
 		]
