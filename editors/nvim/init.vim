@@ -40,6 +40,7 @@ call plug#begin('~/.local/nvim/plugged')
   Plug 'tpope/vim-markdown',                {'for': 'markdown'}
   Plug 'tyru/markdown-codehl-onthefly.vim', {'for': 'markdown'}
   Plug 'chr4/nginx.vim',                    {'for': 'nginx'}
+  Plug 'joker1007/vim-ruby-heredoc-syntax', {'for': 'ruby'}
   Plug 'rust-lang/rust.vim',                {'for': 'rust'}
   Plug 'racer-rust/vim-racer',              {'for': 'rust'}
   Plug 'tmux-plugins/vim-tmux',             {'for': 'tmux'}
@@ -79,6 +80,7 @@ call plug#begin('~/.local/nvim/plugged')
   Plug 'tomtom/tcomment_vim'       " An extensible & universal comment vim-plugin that also handles embedded filetypes.
   Plug 'haya14busa/vim-edgemotion' " Move to the edge! (with J/K)
   Plug 'valloric/matchtagalways',   {'for': ['html', 'xml', 'gohtml']}            " Always highlights the enclosing html/xml tags.
+  Plug 'AndrewRadev/splitjoin.vim' " Transition between multiline and single-line code.
   " Plug 'machakann/vim-swap'      " Reorder delimited items.
   " Plug 'AndrewRadev/switch.vim',    {'on': 'Switch'}                            " Switch segments of text with predefined replacements.
   Plug 'dkarter/bullets.vim',       {'for' : ['gitcommit', 'markdown', 'rst', 'scratch', 'text', 'text', 'yaml']} " Automated bullet lists

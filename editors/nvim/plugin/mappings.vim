@@ -35,8 +35,8 @@ nmap <S-U> <C-r>
 nnoremap <C-u> hv0"_d<esc>
 
 " Quit with Q
-nnoremap q :x<CR>
-nnoremap <S-Q> q
+" nnoremap q :x<CR>
+" nnoremap <S-Q> q
 
 " Clear highlights & commands
 nnoremap <silent>\ :noh<CR>:echo<CR>
