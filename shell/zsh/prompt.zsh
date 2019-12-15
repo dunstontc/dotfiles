@@ -65,23 +65,25 @@ suffix() {
 if [[ $NERDFONT == "TRUE" ]]; then
   local docker_symbol=""
   local dotnet_symbol=""
+  local elixir_symbol=""
   local git_symbol=""
   local golang_symbol=""
   local jobs_symbol=""
   local node_symbol=""
   local npm_symbol="" #   ⬢  ﯶ 
   local python_symbol=""
-  local elixir_symbol=""
+  local ruby_symbol="" #      
 else
   local docker_symbol=""
   local dotnet_symbol="NET"
+  local elixir_symbol="EX"
   local git_symbol=""
   local golang_symbol="GO"
   local jobs_symbol="♩"
   local node_symbol="JS"
   local npm_symbol="⬢" #  ⬢
   local python_symbol="PY"
-  local elixir_symbol="EX"
+  local ruby_symbol="RB"
 fi
 
 local ansible_symbol=""
@@ -143,6 +145,33 @@ prompt_node() {
 # }}}
 
 # ==============================================================================
+# Show versions only for Ruby-specific folders {{{
+prompt_ruby() {
+  [[ -f Gemfile || -f Rakefile || -n *.rb(#qN^/) ]] || return
+  # ""    rails (5.2.1)
+
+  local ruby_version
+
+  # if spaceship::exists rvm-prompt; then
+  #   ruby_version=$(rvm-prompt i v g)
+  # elif spaceship::exists chruby; then
+  #   ruby_version=$(chruby | sed -n -e 's/ \* //p')
+  # elif spaceship::exists rbenv; then
+    ruby_version=$(rbenv version-name)
+  # else
+  #   return
+  # fi
+
+  [[ -z $ruby_version || "${ruby_version}" == "system" ]] && return
+
+  # Add 'v' before ruby version that starts with a number
+  [[ "${ruby_version}" =~ ^[0-9].+$ ]] && ruby_version="v${ruby_version}"
+
+  echo -n "${red}${ruby_symbol} ${ruby_version}%f "
+}
+# }}}
+
+# ==============================================================================
 # Show current Docker version and connected machine {{{
 prompt_docker() {
   # Show Docker status only for Docker-specific folders
@@ -156,7 +185,7 @@ prompt_docker() {
     docker_version+=" via ($DOCKER_MACHINE_NAME)"
   fi
 
-    echo -n "${light_blue}${docker_symbol} ${docker_version}%f "
+  echo -n "${light_blue}${docker_symbol} ${docker_version}%f "
 }
 # }}}
 
@@ -212,6 +241,7 @@ prompt_elixir() {
 
     echo -n "${elixir_purp}${elixir_symbol} ${elixir_version} %f"
 }
+# }}}
 
 # ==============================================================================
 prompt_parts=(
@@ -220,6 +250,7 @@ prompt_parts=(
   venv
   dotnet
   golang
+  ruby
   elixir
   node
   npm
