@@ -19,16 +19,17 @@
   "editor.fontSize": 11,
   "editor.letterSpacing": 0,
   "editor.fontLigatures": true,
-  "editor.minimap.enabled": true,
+  "editor.minimap.enabled": false,
   "editor.minimap.renderCharacters": true,
   "editor.mouseWheelScrollSensitivity": 1.1,
   "editor.renderIndentGuides": true,
   "editor.snippetSuggestions": "top",
 
-  "explorer.sortOrder": "type",
-  "explorer.openEditors.visible": 0,
-  "explorer.confirmDragAndDrop": false,
+  "explorer.compressSingleChildFolders": false,
   "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.openEditors.visible": 0,
+  "explorer.sortOrder": "type",
 
   "diffEditor.ignoreTrimWhitespace": false,
 
@@ -86,6 +87,13 @@
       "url": "https://raw.githubusercontent.com/tcd/envs/master/envs.schema.json"
     }
   ],
+
+  // ===========================================================================
+  // YAML
+  // ===========================================================================
+  "yaml.schemas": {
+    "http://json-schema.org/draft-07/schema": "/*.schema.yml"
+  },
 
   // =============================================================================
   // Golang
