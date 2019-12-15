@@ -21,24 +21,26 @@ komet() {
 
 # @description Add upstream remote to a Git repository. (Usually used after forking).
 #
-# @param url The owner of the repo to add as an upstream remote.
+# @param $1 url The owner of the repo to add as an upstream remote.
 upstream() {
   cur_repo=$(basename -s .git $(git config --get remote.origin.url));
   git remote add upstream "https://github.com/$1/$cur_repo.git";
   git remote -v;
 }
 
-# @description Open a manpage with Neovim
+# @description Open a manpage with Neovim.
 nman() {
   nvim -c 'set filetype=man $1'
 }
 
-# @description Copy the contents of a file to your clipboard
+# @description Copy the contents of a file to your clipboard.
+# @param $1 string Name of the file to copy.
 yank() {
   cat "$1" | pbcopy;
 }
 
-# @description Copy the contents of your clipboard to a file
+# @description Copy the contents of your clipboard to a file.
+# @param $1 string Name of the file paste to.
 put() {
   pbpaste > "$1";
 }
