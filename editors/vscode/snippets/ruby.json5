@@ -1,29 +1,52 @@
 {
-	"Exception block": {
-		"prefix": "begin",
+  // ===========================================================================
+  // Classes & Modules
+  // ===========================================================================
+  "Module definition": {
+		"prefix": "module",
 		"body": [
-			"begin",
-			"\t$1",
-			"rescue StandardError => e",
-			"\t",
+			"module ${1:ModuleName}",
+			"\t$0",
 			"end"
 		]
-  },
+	},
   "Class definition with initialize": {
 		"prefix": "class init",
 		"body": [
-      "class ${1:ClassName}",
+      "# $1",
+      "class ${2:ClassName}",
       "\t# @return [void]",
 			"\tdef initialize()",
 			"\t\t$0",
 			"\tend",
 			"end"
 		]
-	},
-	"Class definition": {
+  },
+  "Class definition": {
 		"prefix": "class",
 		"body": [
-			"class ${1:ClassName}",
+      "# $1",
+			"class ${2:ClassName}",
+			"\t$0",
+			"end"
+		]
+  },
+  // =============================================================================
+  // Functions & Methods
+  // =============================================================================
+	"function definition": {
+		"prefix": "def",
+		"body": [
+			"def ${1:method_name}",
+			"\t$0",
+			"end"
+		]
+  },
+	"method definition with docs": {
+		"prefix": "deff",
+		"body": [
+      "# @return [${1:return_type}]",
+			"def ${2:method_name}(${3:params})",
 			"\t$0",
 			"end"
 		]
@@ -37,6 +60,52 @@
 			"end"
 		],
 		"description": "Class initializer"
+  },
+  // ===========================================================================
+  // YARD
+  // ===========================================================================
+  "yard @return": {
+    "prefix": "yret",
+    "body": "# @return [$1]$0"
+  },
+  "yard @param": {
+    "prefix": "ypar",
+    "body": "# @param $1 [$2] $0"
+  },
+  "yard @!attribute": {
+    "prefix": "yattr",
+    "body": [
+      "# @!attribute [$1] $2",
+      "#   @return [$0]"
+    ]
+  },
+  // ===========================================================================
+  // Misc
+  // ===========================================================================
+  "block": {
+    "prefix": "block",
+    "body": "{ |$1| $0 }"
+  },
+  "Case statement": {
+		"prefix": "case",
+		"body": [
+			"case $1",
+			"when $2",
+			"when $3",
+      "else",
+      "\t$0",
+			"end"
+    ]
+	},
+	"Exception block": {
+		"prefix": "begin",
+		"body": [
+			"begin",
+			"\t$1",
+			"rescue StandardError => e",
+			"\t",
+			"end"
+		]
   },
   "if": {
 		"prefix": "if",
@@ -56,25 +125,6 @@
 			"end"
 		]
   },
-  "Case statement": {
-		"prefix": "case",
-		"body": [
-			"case $1",
-			"when $2",
-			"when $3",
-      "else",
-      "\t$0",
-			"end"
-    ]
-	},
-  "Module definition": {
-		"prefix": "module",
-		"body": [
-			"module ${1:ModuleName}",
-			"\t$0",
-			"end"
-		]
-	},
 	"unless": {
 		"prefix": "unless",
 		"body": [
@@ -82,37 +132,5 @@
 			"\t$0",
 			"end"
 		]
-  },
-	"function definition": {
-		"prefix": "def",
-		"body": [
-			"def ${1:method_name}",
-			"\t$0",
-			"end"
-		]
-  },
-	"method definition with docs": {
-		"prefix": "deff",
-		"body": [
-      "# @return [${1:return_type}]",
-			"def ${2:method_name}(${3:params})",
-			"\t$0",
-			"end"
-		]
-  },
-  "yard @return": {
-    "prefix": "yret",
-    "body": "# @return [$1]$0"
-  },
-  "yard @param": {
-    "prefix": "ypar",
-    "body": "# @param $1 [$2] $0"
-  },
-  "yard @!attribute": {
-    "prefix": "yattr",
-    "body": [
-      "# @!attribute [$1] $2",
-      "#   @return [$0]"
-    ]
   },
 }
