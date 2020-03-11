@@ -8,23 +8,28 @@ root = true
 [*]
 charset = utf-8
 end_of_line = lf
-indent_size = 2
+# indent_size = 2
 indent_style = space
 insert_final_newline = true
 max_line_length = 256
 trim_trailing_whitespace = true
 
-[*.{md,csv,tsv}]
+[*.md]
+indent_size = 4
+indent_style = space
+trim_trailing_whitespace = false
+
+[*.{csv,tsv}]
 trim_trailing_whitespace = false
 
 [*.{go,swift,tsv}]
 indent_style = tab
 
 [*.{bash,html,js,json,lua,md,rb,sh,vim}]
-indent_size = 2
+# indent_size = 2
 
 [*.{c,cs,jar,java,kt,php,pl,py,rs,swift,ts}]
-indent_size = 4
+# indent_size = 4
 
 [*.go]
 indent_size = 8
