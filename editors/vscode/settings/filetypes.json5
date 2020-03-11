@@ -13,6 +13,7 @@
   "files.associations": {
     // JS
     "*.ractive": "javascript",
+    "*.nycrc": "json",
     "*.{jsonc,json5,JSON-tmLanguage}": "jsonc",
     ".{babelrc,eslintrc,postcssrc,stylelintrc}": "jsonc",
     // Rust
