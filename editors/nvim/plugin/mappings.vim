@@ -111,13 +111,21 @@ nmap ]q <Plug>tcd_qf_previous
 " === fn key mappings === {{{
 " https://unix.stackexchange.com/questions/53581/sending-function-keys-f1-f12-over-ssh
 
-" Edits in normal mode
+" Edits in normal mode:
+
+" Delete under the cursor
 nnoremap <BS> mdi<DEL><esc>`dmd
+" Insert a space
 nnoremap ,, i<space><esc>
+" Insert line above
 nnoremap [<Space> mwO<esc>`wmw
+" Insert line below
 nnoremap ]<Space> mwo<esc>`wmw
+" Insert line below
 nnoremap <F18> mwo<esc>`wmw
+" Insert line above
 nnoremap <F19> mwO<esc>`wmw
+
 
 " Comment wih <CMD>/
 " F14 -- ^[[1;2Q
