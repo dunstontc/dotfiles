@@ -1,0 +1,433 @@
+{
+    
+    // =========================================================================
+    // General
+    // =========================================================================
+    // -------------------------------------------------------------------------
+    // 🖕
+    // -------------------------------------------------------------------------
+    "telemetry.enableTelemetry":     false,
+    "telemetry.enableCrashReporter": false,
+    // -------------------------------------------------------------------------
+    // Editor
+    // -------------------------------------------------------------------------
+    "editor.copyWithSyntaxHighlighting": false,
+    "editor.cursorBlinking": "solid",
+    "editor.fontFamily": "'Fira Code', Consolas, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "editor.minimap.enabled": false,
+    "editor.suggestSelection": "first",
+    "editor.wordWrapColumn": 120,
+    "editor.wrappingIndent": "none",
+    "editor.wrappingStrategy": "advanced",
+    // -------------------------------------------------------------------------
+    // File Explorer
+    // -------------------------------------------------------------------------
+    "explorer.autoReveal": false,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.sortOrder": "type",
+    // -------------------------------------------------------------------------
+    // Files & Filetypes
+    // -------------------------------------------------------------------------
+    "files.associations": {
+        "*.tmpl": "handlebars",
+        "appsettings.json": "jsonc",
+        "appsettings.*.json": "jsonc",
+        ".tfignore": "gitignore",
+    },
+    // Read more about glob patterns [here](https://code.visualstudio.com/docs/editor/codebasics#_advanced-search-options).
+    "files.exclude": {
+        // Version Control
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        // MacOS config file
+        "**/.DS_Store": true,
+        // Visual Studio / C# / .NET
+        "**/bin": true,
+        "**/obj": true,
+        "**/*.csproj.user": true,
+        "**/*.vspscc": true,
+    },
+    "search.exclude": {
+        ".vs/**"   : true,
+        ".vscode/**"   : true,
+        "**/*.min*"   : true,
+        "**/*.map"    : true,
+        "**/*.cfm.bak": true,
+        "**/Migrations/2020*.cs": true,
+        "**/Migrations/2021*.cs": true,
+        "**/*ModelSnapshot.cs": true,
+    },
+
+    // -------------------------------------------------------------------------
+    // Emmet                                 https://docs.emmet.io/abbreviations
+    // -------------------------------------------------------------------------
+    "emmet.triggerExpansionOnTab": true,
+    "emmet.includeLanguages": {
+        "cshtml": "html"
+    },
+    // -------------------------------------------------------------------------
+    // Version Control
+    // -------------------------------------------------------------------------
+    "git.confirmSync": false,
+    "git.enableSmartCommit": true,
+    "tfs.location": "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/TeamFoundation/Team Explorer/TF.exe",
+    // -------------------------------------------------------------------------
+    // Other
+    // -------------------------------------------------------------------------
+    "workbench.colorTheme": "dark-plus-syntax",
+    "workbench.iconTheme": "file-icons",
+    "workbench.startupEditor": "none",
+    "debug.console.wordWrap": false,
+    // "terminal.integrated.shell.windows": "C:\\Program Files\\PowerShell\\7-preview\\pwsh.exe",
+    // "[cfml]": {
+    //     "editor.defaultFormatter": "vscode.html-language-features" // Doesn't ork. TODO: File issue for this. Is this setting real?
+    // },
+    "[markdown]": {
+        "editor.wordWrap": "off",
+        "editor.quickSuggestions": true,
+    },
+    "html.format.wrapAttributes": "aligned-multiple",
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "typescript.tsserver.log": "off",
+    "fold.level": 3,
+    // -------------------------------------------------------------------------
+    // C# & .NET
+    // -------------------------------------------------------------------------
+    "csharp.testsCodeLens.enabled": false,
+    "csharp.referencesCodeLens.enabled": false,
+    // "omnisharp.enableEditorConfigSupport": true,
+    // "razor.disableBlazorDebugPrompt": true,
+    // -------------------------------------------------------------------------
+    // TODO Highlight             https://github.com/wayou/vscode-todo-highlight
+    // -------------------------------------------------------------------------
+    "todohighlight.isEnable": true,
+    "todohighlight.isCaseSensitive": true,
+    // "todohighlight.defaultStyle": {},
+    "todohighlight.defaultStyle": {
+        "color": "#1e1e1e",
+        "backgroundColor": "#608B4E",
+        "overviewRulerColor": "#4EC9B0",
+        // "cursor": "pointer",
+        // "border": "1px solid #4EC9B0",
+        // "borderRadius": "2px",
+        "isWholeLine": false,
+        "fontWeight": "bold",
+        // other styling properties goes here ... 
+    },
+    "todohighlight.keywords": [
+        "FIXME:",
+        "HACK:",
+        "NOTE:",
+        "QUESTION:",
+        "TODO:",
+        "DBTYPE:",
+        // "(NOTE\\([^)]+\\)?:)",
+        // "NOTE\\(([^)]+)\\):",
+        {
+            "text": "TODO:",
+            "color": "#1e1e1e",
+            "backgroundColor": "#608B4E",
+            // "overviewRulerColor": "#4EC9B0",
+            // "border": "1px solid #4EC9B0",
+            "isWholeLine": false,
+            "borderRadius": "2px", //NOTE: using borderRadius along with `border` or you will see nothing change
+            // "backgroundColor": "rgba(0,0,0,.2)",
+        },
+        {
+            "text": "FIXME:",
+            "color": "#1e1e1e",
+            "backgroundColor": "#608B4E",
+            "overviewRulerColor": "#4EC9B0",
+        },
+    ],
+    // "todohighlight.keywordsPattern": "TODO:|FIXME:|\\(([^)]+)\\)", //highlight `TODO:`,`FIXME:` or content between parentheses
+    // "todohighlight.keywordsPattern": "(NOTE\\([^)]+\\)?:)",
+    // "todohighlight.keywordsPattern": "(DEBUG|FIXME|HACK|NOTE|TODO|QUESTION\\([^)]+\\)?:)",
+    // =========================================================================
+    // Vim                                     https://github.com/VSCodeVim/Vim 
+    // =========================================================================
+    "vim.debug.silent": true,
+    "vim.textwidth": 120,
+    "vim.gdefault": true,
+    "vim.highlightedyank.enable": true,
+    "vim.leader": "<Space>",
+    "vim.visualstar": true,
+    "vim.autoindent": true,
+    // "vim.changeWordIncludesWhitespace": true, // esses up `O` indentation
+    "vim.useCtrlKeys": false,
+    "vim.handleKeys":{
+        "<C-q>": true,
+        "<C-a>": true,
+        "<C-x>": false,
+        // "<C-f>": false,
+        // "<C-e>": false,
+        // "x": false,
+        // "/": false,
+        // "<C-q>": true,
+    },
+    // -----------------------------------------------------------
+    // Easymotion
+    // -----------------------------------------------------------
+    "vim.easymotion": true,
+    "vim.easymotionDimColor":                           "#505050",
+    "vim.easymotionMarkerBackgroundColor":              "#1e1e1e",
+    "vim.easymotionMarkerForegroundColorOneChar":       "#608b4e",
+    "vim.easymotionMarkerForegroundColorTwoCharFirst":  "#608b4e",
+    "vim.easymotionMarkerForegroundColorTwoCharSecond": "#608b4e",
+    // -----------------------------------------------------
+    // Keybindings
+    // -----------------------------------------------------
+    "vim.insertModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<C-q>"],
+            "after":  ["<Esc>"]
+        },
+        {
+            "before": ["<C-a>"],
+            "commands": ["editor.action.selectAll"]
+        },
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": ["L"],
+            "after":  ["$", "<left>"]
+        },
+        {
+            "before": ["H"],
+            "after":  ["0"]
+        },
+        {
+            "before":   [">"],
+            "commands": ["editor.action.indentLines"]
+        },
+        {
+            "before":   ["<"],
+            "commands": ["editor.action.outdentLines"]
+        },
+        {
+            "before":   ["g", "a"],
+            "commands": ["wwm.aligncode"]
+        },
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [","],
+            "after":  ["i", "<space>", "<esc>"]
+        },
+        {
+            "before": ["<bs>"],
+            "after":  ["a", "<bs>", "<esc>", "<right>"]
+        },
+        {
+            "before": ["H"],
+            "after":  ["0"]
+        },
+        {
+            "before": ["L"],
+            "after":  ["$"]
+        },
+        // {
+        //     "before":   [">"],
+        //     "commands": ["editor.action.indentLines"]
+        // },
+        // {
+        //     "before":   ["<"],
+        //     "commands": ["editor.action.outdentLines"]
+        // },
+        {
+            "before":   ["<leader>", "t", "l"],
+            "commands": ["editor.action.toggleWordWrap"]
+        },
+        {
+            "before":   ["<leader>", "t", "m"],
+            "commands": ["extension.table.formatCurrent"]
+        },
+        {
+            "before": ["<C-a>"],
+            "commands": ["editor.action.selectAll"]
+        },
+        {
+            "before": ["s"],
+            "after": ["<C-a>"],
+            // 74
+        },
+        // {
+        //     "before": ["S"],
+        //     "after": ["<C-x>"],
+        //     // 74
+        // },
+    ],
+    "vim.normalModeKeyBindings": [
+        {
+            "before":   [">"],
+            "after": ["<TAB>"]
+        },
+        {
+            "before":   ["<"],
+            "after":   ["<s+tab>"], // This doesn't work
+        },
+        {
+            "before":   ["<", "<"],
+            "commands": ["editor.action.outdentLines"]
+        },
+        {
+            "before":   ["<TAB>"],
+            "commands": ["editor.action.indentLines"]
+        },
+        {
+            "before":   ["<shift+TAB>"],
+            "commands": ["editor.action.outdentLines"]
+        },
+    ],
+    // -----------------------------------------------------
+    // Status Bar Colors
+    // -----------------------------------------------------
+    "vim.statusBarColorControl": false,
+    "vim.statusBarColors.normal": ["#608B4E"],
+    "vim.statusBarColors.insert": "#569CD6",
+    "vim.statusBarColors.visual": "#C586C0",
+    "vim.statusBarColors.visualline": "#C586C0",
+    "vim.statusBarColors.visualblock": "#C586C0",
+    "vim.statusBarColors.replace": "#D16969",
+    "vim.statusBarColors.commandlineinprogress": "#007ACC",
+    "vim.statusBarColors.searchinprogressmode": "#007ACC",
+    "vim.statusBarColors.easymotionmode": "#D4D4D4",
+    "vim.statusBarColors.easymotioninputmode": "#D4D4D4",
+    "vim.statusBarColors.surroundinputmode": "#D4D4D4",
+    // =========================================================================
+    // Custom Colors
+    // =========================================================================
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            // -----------------------------------------------------------------
+            // JS
+            // -----------------------------------------------------------------
+            {
+                "scope": [
+                    "comment.block.documentation.js punctuation.definition.comment.js"],
+                "settings": {"foreground": "#608B4E"},
+            },
+            // -----------------------------------------------------------------
+            // CS
+            // -----------------------------------------------------------------
+            // {
+            //     "scope": [
+            //         "variable.other.object.cs",
+            //     ],
+            //     "settings": {"foreground": "#4EC9B0"},
+            // },
+            {
+                "scope": [
+                    "entity.name.variable.tuple-element.cs",
+                    "entity.name.variable.enum-member.cs",
+                ],
+                "settings": {"foreground": "#9CDCFE"},
+            },
+            {
+                "scope": [
+                    "string.quoted.double.cs meta.interpolation.cs punctuation.parenthesis.open.cs",
+                    "string.quoted.double.cs meta.interpolation.cs punctuation.parenthesis.close.cs",
+                ],
+                "settings": {"foreground": "#D4D4D4"},
+            },
+            {
+                "scope": [
+                    "meta.comment.razor comment.block.razor",
+                    "meta.comment.razor keyword.control.razor.comment.star",
+                    "meta.comment.razor keyword.control.cshtml.transition",
+                ],
+                "settings": {"foreground": "#608B4E"},
+            },
+            {
+                "scope": [
+                    "meta.preprocessor.cs",
+                    "meta.preprocessor.cs string.unquoted.preprocessor.message.cs",
+                    "meta.preprocessor.cs punctuation.separator.hash.cs",
+                    "meta.preprocessor.cs keyword.preprocessor.region.cs",
+                    "meta.preprocessor.cs keyword.preprocessor.endregion.cs",
+                ],
+                "settings": {
+                    "foreground": "#608B4E",
+                    "fontStyle": "italic",
+                },
+            },
+            {
+                "scope": [
+                    "keyword.other.base.cs",
+                ],
+                "settings": {
+                    "fontStyle": "italic",
+                },
+            },
+            // -----------------------------------------------------------------
+            // CFML
+            // -----------------------------------------------------------------
+            {
+                "scope": [
+                    "comment.block.cfml",
+                    "comment.line.cfml",
+                ],
+                "settings": {"foreground": "#608B4E"},
+            },
+            {
+                "scope": [
+                    "punctuation.definition.template-expression.begin.cfml",
+                    "punctuation.definition.template-expression.end.cfml",
+                    "constant.character.hash.cfml.start", // ilich/vscode-coldfusion
+                    "constant.character.hash.cfml.end", // ilich/vscode-coldfusion
+                ],
+                "settings": {"foreground": "#569CD6"},
+            },
+            {
+                "scope": [
+                    "meta.property.cfml",
+                    "meta.property.constant.cfml",
+                ],
+                "settings": {"foreground": "#9CDCFE"},
+            },
+            {
+                "scope": [
+                    // "entity.name.tag.cfml",
+                    "punctuation.accessor.cfml",
+                ],
+                "settings": {"foreground": "#C586C0"},
+            },
+            {
+                "scope": [
+                    "entity.name.tag.custom.cfml",
+                ],
+                "settings": {"foreground": "#4EC9B0",},
+            },
+            {
+                "scope": [
+                    "entity.name.tag.cfml",
+                ],
+                "settings": {"foreground": "#808080",},
+            },
+            {
+                "scope": [
+                    "punctuation.definition.tag.begin.cfml",
+                    "punctuation.definition.tag.end.cfml",
+                ],
+                "settings": {"foreground": "#505050",},
+            },
+        ]
+    },
+    "diffEditor.ignoreTrimWhitespace": false,
+    "emmet.showSuggestionsAsSnippets": true,
+    // "editor.suggest.maxVisibleSuggestions": 15,
+    "task.quickOpen.detail": true,
+    // "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.snippetSuggestions": "top",
+    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "focus.highlightRange": "none",
+    "csharpFormatUsings.splitGroups": false,
+    "redhat.telemetry.enabled": false,
+    "projectManager.groupList": true,
+}
