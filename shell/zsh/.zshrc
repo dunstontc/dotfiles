@@ -2,7 +2,9 @@ HISTSIZE=10000
 SAVEHIST=10000
 export HISTFILE=~/.cache/shell/.zsh_history
 
+# Where our settings are
 export DOTFILES=$HOME/.dotfiles
+# Which shell to use
 export SHELL=/usr/local/bin/zsh
 
 # =============================================================================
@@ -138,9 +140,3 @@ source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-
-###-tns-completion-start-###
-if [ -f /Users/clay/.tnsrc ]; then 
-    source /Users/clay/.tnsrc 
-fi
-###-tns-completion-end-###
