@@ -126,3 +126,19 @@ _yargs_completions()
 complete -F _yargs_completions nps
 ###-end-nps-completions-###
 
+
+# =============================================================================
+#  FZF
+# =============================================================================
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+source /mnt/c/Users/ClayDunston/source/repos/personal/fzf-marks/fzf-marks.plugin.bash
+
+
+# =============================================================================
+# NVM
+# =============================================================================
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+

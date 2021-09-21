@@ -58,7 +58,7 @@ fpath=($DOTFILES/shell/zsh/completion $fpath)
 # source $DOTFILES/shell/zsh/functions/dotnet.completions.zsh
 # source $DOTFILES/shell/zsh/functions/awscli.completions.sh
 # Clipboard compat for MacOS/Linux
-source $DOTFILES/shell/zsh/functions/clipcopy.zsh
+# source $DOTFILES/shell/zsh/functions/clipcopy.zsh
 # source $DOTFILES/shell/zsh/functions/fzf-docker.plugin.zsh
 
 # =============================================================================
@@ -137,10 +137,3 @@ source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 [ -f ~/dircolors.sh ] && eval $(dircolors ~/dircolors.sh)
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
-
-###-tns-completion-start-###
-if [ -f /Users/clay/.tnsrc ]; then 
-    source /Users/clay/.tnsrc 
-fi
-###-tns-completion-end-###
