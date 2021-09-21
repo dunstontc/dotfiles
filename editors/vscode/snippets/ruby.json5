@@ -7,7 +7,7 @@
 		"body": [
 			"module ${1:ModuleName}",
 			"\t$0",
-			"end"
+			"end",
 		]
 	},
   "Class definition with initialize": {
@@ -19,7 +19,7 @@
 			"\tdef initialize()",
 			"\t\t$0",
 			"\tend",
-			"end"
+			"end",
 		]
   },
   "Class definition": {
@@ -28,7 +28,7 @@
       "# $1",
 			"class ${2:ClassName}",
 			"\t$0",
-			"end"
+			"end",
 		]
   },
   // =============================================================================
@@ -39,7 +39,7 @@
 		"body": [
 			"def ${1:method_name}",
 			"\t$0",
-			"end"
+			"end",
 		]
   },
 	"method definition with docs": {
@@ -48,7 +48,7 @@
       "# @return [${1:return_type}]",
 			"def ${2:method_name}(${3:params})",
 			"\t$0",
-			"end"
+			"end",
 		]
   },
   "initialize": {
@@ -57,9 +57,33 @@
       "# @return [void]",
       "def initialize($1)",
       "$0",
-			"end"
+	   "end",
 		],
 		"description": "Class initializer"
+  },
+  // ===========================================================================
+  // Rails
+  // ===========================================================================
+  "scopes section": {
+    "prefix": "snipscopes",
+    "body": [
+      "# ==========================================================================",
+      "# Scopes",
+      "# ==========================================================================",
+      "",
+      "# @!group Scopes",
+      "",
+      "# @!endgroup Scopes",
+      "",
+    ]
+  },
+  "acrive record scope": {
+    "prefix": "yscope",
+    "body": [
+      "# @!method self.$1()",
+      "#   @return [$2::ActiveRecord_Relation]",
+      "scope(:$1, -> { where($3) })"
+    ]
   },
   // ===========================================================================
   // YARD
@@ -75,7 +99,7 @@
   "yard @!attribute": {
     "prefix": "yattr",
     "body": [
-      "# @!attribute [$1] $2",
+      "# @!attribute $1 [rw]",
       "#   @return [$0]"
     ]
   },
@@ -94,7 +118,7 @@
 			"when $3",
       "else",
       "\t$0",
-			"end"
+			"end",
     ]
 	},
 	"Exception block": {
@@ -104,7 +128,7 @@
 			"\t$1",
 			"rescue StandardError => e",
 			"\t",
-			"end"
+			"end",
 		]
   },
   "if": {
@@ -112,7 +136,7 @@
 		"body": [
 			"if ${1:test}",
 			"\t$0",
-			"end"
+			"end",
 		]
 	},
 	"if else": {
@@ -122,7 +146,7 @@
 			"\t$0",
 			"else",
 			"\t",
-			"end"
+			"end",
 		]
   },
 	"unless": {
@@ -130,7 +154,7 @@
 		"body": [
 			"unless ${1:test}",
 			"\t$0",
-			"end"
+			"end",
 		]
   },
 }

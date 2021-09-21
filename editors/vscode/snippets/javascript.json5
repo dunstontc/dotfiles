@@ -16,7 +16,7 @@
     },
     "Import (ES6)": {
       "prefix": "import",
-      "body": "import ${3:{ $2 }} from '$1';$0",
+      "body": "import ${3:{ $2 }} from \"$1\"$0",
       "description": "ES6 Import Statement"
     },
     "Strict Mode": {
