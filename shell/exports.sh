@@ -4,6 +4,7 @@ export TERM="xterm-256color"
 
 export NERDFONT="TRUE"
 
+# export EDITOR="code --wait"
 if command -v nvim > /dev/null 2>&1; then
   export EDITOR="nvim"
   # export MANPAGER="nvim -c 'set ft=man' -"
@@ -29,8 +30,6 @@ export GOBIN="$HOME/go/bin"
 
 # https://github.com/crystal-lang/crystal/issues/4745#issuecomment-332553374
 export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
-
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home"
 
 export TODOTXT_CFG_FILE="$DOTFILES/config/todo/todo.config"
 export TODO_DIR="$HOME/.todo"
