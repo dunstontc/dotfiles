@@ -1,4 +1,5 @@
 {
+  "telemetry.telemetryLevel": "off",
   "telemetry.enableTelemetry": false,
   "telemetry.enableCrashReporter": false,
   "extensions.autoUpdate": false,
@@ -186,9 +187,9 @@
   // ===========================================================================
   // Colors
   // ===========================================================================
-  "editor.semanticHighlighting.enabled": false,
   "editor.occurrencesHighlight": false,
   "editor.tokenColorCustomizations": {
+    "semanticHighlighting": false,
     "textMateRules": [
       {
         "scope": [
@@ -200,18 +201,6 @@
       // {
       //   "scope": ["comment"],
       //   "settings": {"fontStyle": "italic"},
-      // },
-      // {
-      //   "scope": [
-      //       // "meta.attribute.unrecognized.(click).html entity.other.attribute-name.html",
-      //       // "meta.attribute.unrecognized.*ngFor.html entity.other.attribute-name.html",
-      //       // "meta.attribute.unrecognized.*ngIf.html entity.other.attribute-name.html",
-      //       // "meta.attribute.unrecognized.[ngIf].html entity.other.attribute-name.html",
-      //       // "meta.attribute.unrecognized.[ngClass].html entity.other.attribute-name.html",
-
-      //       "meta.attribute.unrecognized entity.other.attribute-name.html",
-      //   ],
-      //   "settings": {"foreground": "#c586c0"},
       // },
     ]
   },
