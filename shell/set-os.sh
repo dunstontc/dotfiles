@@ -11,6 +11,7 @@ if stringContains 'MANJARO' "$(uname -a)";   then OS_NAME="manjaro"; fi
 if stringContains 'aufs' "$(uname -a)";      then OS_NAME="arch";    fi
 if stringContains 'android' "$(uname -a)";   then OS_NAME="android"; fi
 if stringContains 'Microsoft' "$(uname -a)"; then OS_NAME="wsl";     fi
+if stringContains 'microsoft' "$(uname -a)"; then OS_NAME="wsl";     fi
 
 #         
 case $OS_NAME in
