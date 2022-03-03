@@ -16,7 +16,7 @@ Style/DocumentationMethod:
 # Layout
 # ==============================================================================
 
-Metrics/LineLength:
+Layout/LineLength:
   Max: 150
 
 Layout/EmptyLineAfterGuardClause:
@@ -32,7 +32,7 @@ Layout/EmptyLinesAroundBlockBody:
   Enabled: false
 
 # https://unix.stackexchange.com/a/18789
-Layout/TrailingBlankLines:
+Layout/TrailingEmptyLines:
   EnforcedStyle: final_newline
 
 # ==============================================================================
@@ -71,9 +71,9 @@ Style/DefWithParentheses:
 Style/MethodCallWithoutArgsParentheses:
   Enabled: false
 
-# Only use braces if the function expects a hash argument. [different in Ruby 2.7+](https://blog.saeloun.com/2019/10/07/ruby-2-7-keyword-arguments-redesign.html)
-Style/BracesAroundHashParameters:
-  Enabled: false
+# # Only use braces if the function expects a hash argument. [different in Ruby 2.7+](https://blog.saeloun.com/2019/10/07/ruby-2-7-keyword-arguments-redesign.html)
+# Style/BracesAroundHashParameters:
+#   Enabled: false
 
 Style/WordArray:
   EnforcedStyle: brackets
@@ -135,15 +135,15 @@ Style/RedundantSelf:
 
 # Default value (special_inside_parentheses) is ridiculous.
 # Look for yourself: https://www.rubydoc.info/gems/rubocop/0.69.0/RuboCop/Cop/Layout/IndentFirstHashElement
-Layout/IndentFirstHashElement:
+Layout/FirstHashElementIndentation:
   EnforcedStyle: consistent
 
 # Default value (special_inside_parentheses) is ridiculous.
 # Look for yourself: https://www.rubydoc.info/gems/rubocop/0.69.0/RuboCop/Cop/Layout/IndentFirstArrayElement
-Layout/IndentFirstArrayElement:
+Layout/FirstArrayElementIndentation:
   EnforcedStyle: consistent
 
-Layout/AlignHash:
+Layout/HashAlignment:
   Enabled: false
 
 # `x&.y&.[](:argument)` isn't what I'd call "readable".
@@ -158,7 +158,7 @@ Style/ConditionalAssignment:
 Style/TernaryParentheses:
   EnforcedStyle: require_parentheses_when_complex
 
-Lint/HandleExceptions:
+Lint/SuppressedException:
   AllowComments: true
 
 Style/CommentedKeyword:
